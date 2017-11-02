@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+  <data-sources />
+  
+  <form-beans>
+     <form-bean name="sysproductcateForm" type="netTestWeb.category.form.SysproductcateForm" />
+	 <form-bean name="productcategoryvalueForm" type="netTestWeb.category.form.ProductcategoryvalueForm" />
+	 <form-bean name="productcategoryForm" type="netTestWeb.category.form.ProductcategoryForm" />
+	 <form-bean name="hotcategoryForm" type="netTestWeb.category.form.HotcategoryForm" />
+     <form-bean name="userproductForm" type="netTestWeb.product.form.UserproductForm" />
+     <form-bean name="productForm" type="netTestWeb.product.form.ProductForm" />
+     <form-bean name="prodcateshopForm" type="netTestWeb.category.form.ProdcateshopForm" />
+     <form-bean name="userprodbuylogForm" type="netTestWeb.product.form.UserprodbuylogForm" />
+     <form-bean name="userprodstatuslogForm" type="netTestWeb.product.form.UserprodstatuslogForm" />
+     <form-bean name="coursepostForm" type="netTestWeb.product.form.CoursepostForm" />
+     <form-bean name="openactivitymemberForm" type="netTestWeb.product.form.OpenactivitymemberForm" />
+	 <form-bean name="openactivityForm" type="netTestWeb.product.form.OpenactivityForm" />
+  </form-beans>
+  
+  <global-exceptions>
+      <exception key="commonWeb.java.commonaction.errors.noLogin" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoLoginException" path="/login_forward.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.editPage.noSuchRecord" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoSuchRecordException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.resubmit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.ResubmitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.DaoException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="org.springframework.dao.DataAccessException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.Unauthorized" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoRightException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.LogicErr" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.LogicException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.InvalidVisit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.InvalideVisitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.SystemError" handler="commonWeb.base.StrutsExceptionHandler" type="java.lang.Throwable" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+  </global-exceptions>
+  
+  <global-forwards>
+     <forward name="errorPage" path="/pubs/errorPage.jsp" ></forward>
+     <forward name="failure" path="/pubs/404.jsp" ></forward>
+     <forward name="messagePage" path="/pubs/message.jsp" ></forward>
+     <forward name="messageClosePage" path="/pubs/messageClose.jsp" ></forward>
+     <forward name="treeXml" path="/pubs/treeXml.jsp" ></forward>
+     <forward name="forwardToUrl" path="/pubs/forwardToUrl.jsp" ></forward>
+     <forward name="toUrl" path="/pubs/toUrl.jsp" ></forward>
+	 <forward name="inprogress" path="/pubs/inprogress.jsp"/>
+	 <forward name="leftMenu" path="/pubs/leftMenu.jsp"/>
+	 <forward name="topMenu" path="/pubs/topMenu.jsp"/>
+  </global-forwards>
+    
+  <action-mappings>
+     
+     <!-- 
+     <action
+      attribute="productcategoryForm" input="/productcategory/productcategory_addEdit.jsp"
+      name="productcategoryForm" path="/productcategory/productcategory" scope="request"
+      type="netTestWeb.category.action.ProductcategoryAction" parameter="method" validate="true">    
+	      <forward name="list" path="/productcategory/productcategory_list.jsp"></forward>
+	      <forward name="addPage" path="/productcategory/productcategory_add.jsp"></forward>
+	      <forward name="editPage" path="/productcategory/productcategory_edit.jsp"></forward>
+	      <forward name="viewPage" path="/productcategory/productcategory_view.jsp"></forward>
+	      <forward name="selectTree" path="/productcategory/prodcate_select_tree.jsp"></forward>
+     </action>
+      -->
+      
+     <action parameter="index" path="/index" name="productForm" type="netTestWeb.product.action.ProductAction" scope="request">
+        <forward name="index" path="/index/index_default.jsp"></forward>
+     </action>
+     
+     <!-- productcategory begin -->
+     <action parameter="listproductcategory" path="/productcategory/listproductcategory" name="productcategoryForm" type="netTestWeb.category.action.ProductcategoryAction" scope="request">
+        <forward name="list" path="/productcategory/productcategory_list.jsp"></forward>
+     </action>
+     
+     <action parameter="toprodcategorytreepage" path="/productcategory/toprodcategorytreepage" name="productcategoryForm" type="netTestWeb.category.action.ProductcategoryAction" scope="request">
+        <forward name="catetreepage" path="/productcategory/productcategory_tree.jsp"></forward>
+        <forward name="catetreepage_mag" path="/productcategory/productcategory_tree_mag.jsp"></forward>
+     </action>
+     
+     <action parameter="selprodcategorytreepage" path="/productcategory/selprodcategorytreepage" name="productcategoryForm" type="netTestWeb.category.action.ProductcategoryAction" scope="request">
+        <forward name="seltreepage" path="/productcategory/prodcate_select_tree.jsp"></forward>
+     </action>
+     
+     <action parameter="prodcategorytree" path="/productcategory/prodcategorytree" name="productcategoryForm" type="netTestWeb.category.action.ProductcategoryAction" scope="request">
+       
+     </action>
+     
+     <action parameter="saveproductcategory" path="/productcategory/saveproductcategory" name="productcategoryForm" type="netTestWeb.category.action.ProductcategoryAction" scope="request">
+        <forward name="list" path="/productcategory/productcategory_list.jsp"></forward>
+     </action>
+     
+     <action parameter="addproductcategory" path="/productcategory/addproductcategory" name="productcategoryForm" type="netTestWeb.category.action.ProductcategoryAction" scope="request">
+        <forward name="addPage" path="/productcategory/productcategory_add.jsp"></forward>
+     </action>
+     
+     <action parameter="editproductcategory" path="/productcategory/editproductcategory" name="productcategoryForm" type="netTestWeb.category.action.ProductcategoryAction" scope="request">
+         <forward name="editPage" path="/productcategory/productcategory_edit.jsp"></forward>
+     </action>
+     
+     <action parameter="viewproductcategory" path="/productcategory/viewproductcategory" name="productcategoryForm" type="netTestWeb.category.action.ProductcategoryAction" scope="request">
+	     <forward name="viewPage" path="/productcategory/productcategory_view.jsp"></forward>
+     </action>
+     
+     <action parameter="delproductcategory" path="/productcategory/delproductcategory" name="productcategoryForm" type="netTestWeb.category.action.ProductcategoryAction" scope="request">
+	     <forward name="list" path="/productcategory/productcategory_list.jsp"></forward>
+     </action>
+     <!-- productcategory end -->
+    
+     <!-- productcategoryvalue begin -->
+     <action parameter="listProductcategoryvalue" path="/productcategory/listProductcategoryvalue" name="productcategoryvalueForm" type="netTestWeb.category.action.ProductcategoryvalueAction" scope="request">
+       <forward name="list" path="/productcategory/productcategoryvalue_list.jsp"></forward>
+     </action>
+    
+     <action parameter="saveProductcategoryvalue" path="/productcategory/saveProductcategoryvalue" name="productcategoryvalueForm" type="netTestWeb.category.action.ProductcategoryvalueAction" scope="request">
+       <forward name="list" path="/productcategory/productcategoryvalue_list.jsp"></forward>
+     </action>
+    
+     <action parameter="editProductcategoryvalue" path="/productcategory/editProductcategoryvalue" name="productcategoryvalueForm" type="netTestWeb.category.action.ProductcategoryvalueAction" scope="request">
+       <forward name="addEditPage" path="/productcategory/productcategoryvalue_addEdit.jsp"></forward>
+     </action>
+    
+     <action parameter="addProductcategoryvalue" path="/productcategory/addProductcategoryvalue" name="productcategoryvalueForm" type="netTestWeb.category.action.ProductcategoryvalueAction" scope="request">
+       <forward name="addEditPage" path="/productcategory/productcategoryvalue_addEdit.jsp"></forward>
+     </action>
+    
+     <action parameter="deleteProductcategoryvalue" path="/productcategory/deleteProductcategoryvalue" name="productcategoryvalueForm" type="netTestWeb.category.action.ProductcategoryvalueAction" scope="request">
+       <forward name="list" path="/productcategory/productcategoryvalue_list.jsp"></forward>
+     </action>
+     <!-- productcategoryvalue end -->
+
+     <!-- sysproductcate begin -->
+     <action parameter="listSysproductcate" path="/productcategory/listSysproductcate" name="sysproductcateForm" type="netTestWeb.category.action.SysproductcateAction" scope="request">
+       <forward name="list" path="/productcategory/sysproductcate_list.jsp"></forward>
+     </action>
+    
+     <action parameter="saveSysproductcate" path="/productcategory/saveSysproductcate" name="sysproductcateForm" type="netTestWeb.category.action.SysproductcateAction" scope="request">
+       <forward name="list" path="/productcategory/sysproductcate_list.jsp"></forward>
+     </action>
+    
+     <action parameter="deleteSysproductcate" path="/productcategory/deleteSysproductcate" name="sysproductcateForm" type="netTestWeb.category.action.SysproductcateAction" scope="request">
+       <forward name="list" path="/productcategory/sysproductcate_list.jsp"></forward>
+     </action>
+     <!-- sysproductcate end -->
+    
+     <!-- HotcategoryAction begin -->
+     <action parameter="listHotcategory" path="/productcategory/listHotcategory" name="hotcategoryForm" type="netTestWeb.category.action.HotcategoryAction" scope="request">
+       <forward name="list" path="/productcategory/hotcategory_list.jsp"></forward>
+     </action>
+    
+     <action parameter="magHotcategory" path="/productcategory/magHotcategory" name="hotcategoryForm" type="netTestWeb.category.action.HotcategoryAction" scope="request">
+       <forward name="listMag" path="/productcategory/hotcategory_mag.jsp"></forward>
+     </action>
+     
+     <action parameter="addHotcategory" path="/productcategory/addHotcategory" name="hotcategoryForm" type="netTestWeb.category.action.HotcategoryAction" scope="request">
+       <forward name="addpage" path="/productcategory/hotcategory_add.jsp"></forward>
+     </action>
+    
+     <action parameter="saveHotcategory" path="/productcategory/saveHotcategory" name="hotcategoryForm" type="netTestWeb.category.action.HotcategoryAction" scope="request">
+       <forward name="listMag" path="/productcategory/hotcategory_mag.jsp"></forward>
+     </action>
+    
+     <action parameter="delHotcategory" path="/productcategory/delHotcategory" name="hotcategoryForm" type="netTestWeb.category.action.HotcategoryAction" scope="request">
+       <forward name="listMag" path="/productcategory/hotcategory_mag.jsp"></forward>
+     </action>
+     <!-- HotcategoryAction end -->
+     
+     <!-- prodcateshop begin -->
+     <action parameter="shopprodcatetreepage" path="/productcategory/shopprodcatetreepage" name="prodcateshopForm" type="netTestWeb.category.action.ProdcateshopAction" scope="request">
+        <forward name="treePage" path="/productcategory/prodcateshop_tree.jsp"></forward>
+        <forward name="selectPage" path="/productcategory/prodcateshop_tree_select.jsp"></forward>
+     </action>
+    
+     <action parameter="shoprodcateTree" path="/productcategory/shoprodcateTree" name="prodcateshopForm" type="netTestWeb.category.action.ProdcateshopAction" scope="request">
+     </action>
+    
+     <action parameter="saveProdcateshop" path="/productcategory/saveProdcateshop" name="prodcateshopForm" type="netTestWeb.category.action.ProdcateshopAction" scope="request">
+        <forward name="treePage" path="/productcategory/prodcateshop_tree.jsp"></forward>
+     </action>
+    
+     <action parameter="deleteProdcateshop" path="/productcategory/deleteProdcateshop" name="prodcateshopForm" type="netTestWeb.category.action.ProdcateshopAction" scope="request">
+        <forward name="treePage" path="/productcategory/prodcateshop_tree.jsp"></forward>
+     </action>
+     <!-- prodcateshop end -->
+     
+     <!-- UserproductAction begin -->
+     <action parameter="myUserproduct" path="/product/myUserproduct" name="userproductForm" type="netTestWeb.product.action.UserproductAction" scope="request">
+        <forward name="listpage" path="/product/myuserproduct_list.jsp"></forward>
+     </action>
+     
+     <action parameter="listshopprodforuser" path="/product/listshopprodforuser" name="userproductForm" type="netTestWeb.product.action.UserproductAction" scope="request">
+        <forward name="listpage" path="/product/usershopprodlist_mag.jsp"></forward>
+     </action>
+     
+     <action parameter="listoneproduser" path="/userproduct/listoneproduser" name="userproductForm" type="netTestWeb.product.action.UserproductAction" scope="request">
+        <forward name="listonepage" path="/userproduct/listoneproduser.jsp"></forward>
+     </action>
+     
+     <action parameter="listuserprodmag" path="/userproduct/listuserprodmag" name="userproductForm" type="netTestWeb.product.action.UserproductAction" scope="request">
+        <forward name="listallpage" path="/userproduct/listuserprod_mag.jsp"></forward>
+     </action>
+     
+     <action parameter="seloneprodmaguser" path="/userproduct/seloneprodmaguser" name="userproductForm" type="netTestWeb.product.action.UserproductAction" scope="request">
+       <forward name="listpage" path="/userproduct/sel_oneprodmaguser.jsp"></forward>
+     </action>
+     
+     <action parameter="seluserbyproduct" path="/userproduct/seluserbyproduct" name="userproductForm" type="netTestWeb.product.action.UserproductAction" scope="request">
+        <forward name="listpage" path="/userproduct/selProductUser.jsp"></forward>
+     </action>
+    
+     <action parameter="adduserprod" path="/product/adduserprod" name="userproductForm" type="netTestWeb.product.action.UserproductAction" scope="request">
+        <forward name="addpage" path="/product/userprod_add.jsp"></forward>
+     </action>
+     
+     <action parameter="edituserprod" path="/product/edituserprod" name="userproductForm" type="netTestWeb.product.action.UserproductAction" scope="request">
+        <forward name="editpage" path="/product/userprod_edit.jsp"></forward>
+     </action>
+    
+     <action parameter="saveoneuserprod" path="/product/saveoneuserprod" name="userproductForm" type="netTestWeb.product.action.UserproductAction" scope="request">
+        <forward name="listpage" path="/product/userprodlist_mag.jsp"></forward>
+     </action>
+     
+     <action parameter="deluserprod" path="/product/deluserprod" name="userproductForm" type="netTestWeb.product.action.UserproductAction" scope="request">
+        <forward name="listpage" path="/product/userprodlist_mag.jsp"></forward>
+     </action>
+    
+     <action parameter="viewUserproduct" path="/product/viewUserproduct" name="userproductForm" type="netTestWeb.product.action.UserproductAction" scope="request">
+        <forward name="detailpage" path="/product/userproduct_view.jsp"></forward>
+     </action>
+     
+     <action parameter="addprodmoreuserpage" path="/userproduct/addprodmoreuserpage" name="userproductForm" type="netTestWeb.product.action.UserproductAction" scope="request">
+        <forward name="addpage" path="/userproduct/selectUserForAddProd.jsp"></forward>
+     </action>
+     
+     <action parameter="saveprodmoreuser" path="/userproduct/saveprodmoreuser" name="userproductForm" type="netTestWeb.product.action.UserproductAction" scope="request">
+        
+     </action>
+     <!-- UserproductAction end -->    
+     
+     <!-- UserprodbuylogAction begin -->
+     <action parameter="listmyendprodlog" path="/userproduct/listmyendprodlog" name="userprodbuylogForm" type="netTestWeb.product.action.UserprodbuylogAction" scope="request">
+        <forward name="listpage" path="/userproduct/listmyendprodlog.jsp"></forward>
+     </action>
+     
+     <action parameter="listuserendprodlog" path="/userproduct/listuserendprodlog" name="userprodbuylogForm" type="netTestWeb.product.action.UserprodbuylogAction" scope="request">
+        <forward name="listpage" path="/userproduct/listuserendprodlog.jsp"></forward>
+     </action>
+     <!-- UserprodbuylogAction begin -->
+     
+     <!-- UserprodstatuslogAction begin -->
+     <action parameter="listuserprodstatuslog" path="/userproduct/listuserprodstatuslog" name="userprodstatuslogForm" type="netTestWeb.product.action.UserprodstatuslogAction" scope="request">
+        <forward name="listpage" path="/userproduct/listuserprodstatuslog.jsp"></forward>
+     </action>
+     <!-- UserprodstatuslogAction begin -->
+     
+     <!-- ProductAction begin -->
+     <action parameter="searchProductList" path="/shopping/searchProductList" name="productForm" type="netTestWeb.product.action.ProductAction" scope="request">
+       <forward name="list" path="/shopping/searchproduct_list.jsp"></forward>
+     </action>
+     
+     <action parameter="viewProductListMag" path="/product/viewProductListMag" name="productForm" type="netTestWeb.product.action.ProductAction" scope="request">
+       <forward name="list" path="/product/allproduct_list.jsp"></forward>
+     </action>
+     
+     <action parameter="listshopproductmag" path="/product/listshopproductmag" name="productForm" type="netTestWeb.product.action.ProductAction" scope="request">
+       <forward name="list" path="/product/shopproduct_list.jsp"></forward>
+     </action>
+    
+     <action parameter="listshopopenproduct" path="/product/listshopopenproduct" name="productForm" type="netTestWeb.product.action.ProductAction" scope="request">
+       <forward name="listshopproduct" path="/product/shopopenproduct_show.jsp"></forward>
+     </action>
+    
+     <action parameter="saveproduct" path="/product/saveproduct" name="productForm" type="netTestWeb.product.action.ProductAction" scope="request">
+       <forward name="viewPage" path="/product/product_view.jsp"></forward>
+       <forward name="addPage" path="/product/product_add.jsp"></forward>
+     </action>
+    
+     <action parameter="addproduct" path="/product/addproduct" name="productForm" type="netTestWeb.product.action.ProductAction" scope="request">
+       <forward name="addPage" path="/product/product_add.jsp"></forward>
+     </action>
+    
+     <action parameter="editproduct" path="/product/editproduct" name="productForm" type="netTestWeb.product.action.ProductAction" scope="request">
+       <forward name="editPage" path="/product/product_edit.jsp"></forward>
+     </action>
+    
+     <action parameter="viewproduct" path="/product/viewproduct" name="productForm" type="netTestWeb.product.action.ProductAction" scope="request">
+       <forward name="viewPage" path="/product/product_view.jsp"></forward>
+     </action>
+     
+     <action parameter="delproduct" path="/product/delproduct" name="productForm" type="netTestWeb.product.action.ProductAction" scope="request">
+       <forward name="list" path="/product/shopproduct_list.jsp"></forward>
+     </action>
+     
+     <action parameter="viewproductdesc" path="/product/viewproductdesc" name="productForm" type="netTestWeb.product.action.ProductAction" scope="request">
+       <forward name="viewproddesc" path="/product/product_description.jsp"></forward>
+     </action>
+     
+     <action parameter="viewproddescedit" path="/product/viewproddescedit" name="productForm" type="netTestWeb.product.action.ProductAction" scope="request">
+       <forward name="viewproddescedit" path="/product/product_description_viewedit.jsp"></forward>
+     </action>
+     
+     <action parameter="editproductdesc" path="/product/editproductdesc" name="productForm" type="netTestWeb.product.action.ProductAction" scope="request">
+       <forward name="editproddesc" path="/product/product_description_edit.jsp"></forward>
+     </action>
+     
+     <action parameter="saveproductdesc" path="/product/saveproductdesc" name="productForm" type="netTestWeb.product.action.ProductAction" scope="request">
+       <forward name="viewproddescedit" path="/product/product_description_viewedit.jsp"></forward>
+     </action>
+     
+     <action parameter="viewproductsatis" path="/product/viewproductsatis" name="productForm" type="netTestWeb.product.action.ProductAction" scope="request">
+       <forward name="viewprodsatis" path="/product/product_satis.jsp"></forward>
+     </action>
+     
+     <action parameter="viewCourseToBuy" path="/product/viewCourseToBuy" name="productForm" type="netTestWeb.product.action.ProductAction" scope="request">
+       <forward name="viewbuyprodPage" path="/product/product_detail_buy.jsp"></forward>
+     </action>
+     
+     <action parameter="addGoodProduct" path="/product/addGoodProduct" name="productForm" type="netTestWeb.product.action.ProductAction" scope="request">
+     </action>
+     
+     <action parameter="deleteGoodProduct" path="/product/deleteGoodProduct" name="productForm" type="netTestWeb.product.action.ProductAction" scope="request">
+     </action>
+     <!-- ProductAction end --> 
+     
+     <!-- CoursepostAction begin --> 
+     <action parameter="listcoursepost" path="/product/listcoursepost" name="coursepostForm" type="netTestWeb.product.action.CoursepostAction" scope="request">
+        <forward name="list" path="/product/prodpost_list.jsp"></forward>
+     </action>
+     <action parameter="listcoursepostmag" path="/product/listcoursepostmag" name="coursepostForm" type="netTestWeb.product.action.CoursepostAction" scope="request">
+        <forward name="listmag" path="/product/prodpost_list_mag.jsp"></forward>
+     </action>
+     <action parameter="savecoursepost" path="/product/savecoursepost" name="coursepostForm" type="netTestWeb.product.action.CoursepostAction" scope="request">
+        <forward name="listmag" path="/product/prodpost_list_mag.jsp"></forward>
+     </action>
+     <action parameter="editcoursepost" path="/product/editcoursepost" name="coursepostForm" type="netTestWeb.product.action.CoursepostAction" scope="request">
+        <forward name="addEditPage" path="/product/prodpost_addEdit.jsp"></forward>
+     </action>
+     <action parameter="addcoursepost" path="/product/addcoursepost" name="coursepostForm" type="netTestWeb.product.action.CoursepostAction" scope="request">
+        <forward name="addEditPage" path="/product/prodpost_addEdit.jsp"></forward>
+     </action>
+     <action parameter="delcoursepost" path="/product/delcoursepost" name="coursepostForm" type="netTestWeb.product.action.CoursepostAction" scope="request">
+        <forward name="listmag" path=""></forward>
+     </action>
+     <!-- CoursepostAction end -->
+      
+    <!-- openactivity begin -->
+    <action parameter="listOpenactivity" path="/product/listOpenactivity" name="openactivityForm" type="netTestWeb.product.action.OpenactivityAction" scope="request">
+       <forward name="list" path="/product/openactivity_list.jsp"></forward>
+       <forward name="listinshop" path="/product/openactivity_inshop.jsp"></forward>
+       <forward name="listadmin" path="/product/openactivity_listadmin.jsp"></forward>
+       <forward name="listforprodadmin" path="/product/openactivity_listforprod.jsp"></forward>
+       <forward name="listforprodlearn" path="/product/openactivity_forprodlearn.jsp"></forward>
+       <forward name="listforprodbuyframe" path="/product/openactivity_listforprodbuyframe.jsp"></forward>
+    </action>
+    
+    <action parameter="saveOpenactivity" path="/product/saveOpenactivity" name="openactivityForm" type="netTestWeb.product.action.OpenactivityAction" scope="request">
+       <forward name="list" path="/product/openactivity_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editOpenactivity" path="/product/editOpenactivity" name="openactivityForm" type="netTestWeb.product.action.OpenactivityAction" scope="request">
+       <forward name="addEditPage" path="/product/openactivity_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewOpenactivity" path="/product/viewOpenactivity" name="openactivityForm" type="netTestWeb.product.action.OpenactivityAction" scope="request">
+        <forward name="viewPage" path="/product/openactivity_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addOpenactivity" path="/product/addOpenactivity" name="openactivityForm" type="netTestWeb.product.action.OpenactivityAction" scope="request">
+       <forward name="addEditPage" path="/product/openactivity_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteOpenactivity" path="/product/deleteOpenactivity" name="openactivityForm" type="netTestWeb.product.action.OpenactivityAction" scope="request">
+       <forward name="list" path="/product/openactivity_list.jsp"></forward>
+    </action>
+    <!-- openactivity end -->
+    
+    <!-- openactivitymember begin -->
+    <action parameter="listOpenactivitymember" path="/product/listOpenactivitymember" name="openactivitymemberForm" type="netTestWeb.product.action.OpenactivitymemberAction" scope="request">
+       <forward name="list" path="/product/openactivitymember_list.jsp"></forward>
+    </action>
+    
+    <action parameter="listMyOpenactivity" path="/product/listMyOpenactivity" name="openactivitymemberForm" type="netTestWeb.product.action.OpenactivitymemberAction" scope="request">
+       <forward name="list" path="/product/openactivity_mylist.jsp"></forward>
+    </action>
+    
+    <action parameter="toJoinActivityPage" path="/product/toJoinActivityPage" name="openactivitymemberForm" type="netTestWeb.product.action.OpenactivitymemberAction" scope="request">
+       <forward name="addEditPage" path="/product/openactivitymember_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="joinOpenactivity" path="/product/joinOpenactivity" name="openactivitymemberForm" type="netTestWeb.product.action.OpenactivitymemberAction" scope="request">
+    </action>
+    
+    <action parameter="editOpenactivitymember" path="/product/editOpenactivitymember" name="openactivitymemberForm" type="netTestWeb.product.action.OpenactivitymemberAction" scope="request">
+       <forward name="addEditPage" path="/product/openactivitymember_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="userleaveactivity" path="/product/userleaveactivity" name="openactivitymemberForm" type="netTestWeb.product.action.OpenactivitymemberAction" scope="request">
+    </action>
+    <!-- openactivitymember end -->
+       
+  </action-mappings>
+  
+  <message-resources parameter="netTestWeb.resource.PagetextResources" />
+  <message-resources key="BizKey" parameter="netTestWeb.resource.BizMessResources" />
+  <message-resources key="platform.pagemess" parameter="netTestWeb.platform.resource.PagetextResources" />
+    
+</struts-config>

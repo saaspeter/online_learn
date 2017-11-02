@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;netTestWeb/WebRoot/learncont/qiniu_upload.html&apos; to &apos;qiniu_upload.jsp&apos;" description="Rename resource &apos;qiniu_upload.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebRoot/learncont/qiniu_upload.html" name="qiniu_upload.jsp" stamp="1408071514982" updateReferences="true"/>
+</session>

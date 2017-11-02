@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Useranswer">
+<!-- ###################### useranswerResultWithoutBLOBs ########################## -->
+  <resultMap id="UseranswerResultWithoutBLOBs" class="netTest.exam.vo.Useranswer">
+    <result column="userAnswerID" property="useranswerid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="testID" property="testid" jdbcType="BIGINT"/>
+    <result column="userID" property="userid" jdbcType="BIGINT"/>
+    <result column="paperID" property="paperid" jdbcType="BIGINT"/>
+    <result column="quesID" property="quesid" jdbcType="BIGINT"/>
+    <result column="quesItemFlag" property="quesitemflag" jdbcType="VARCHAR"/>
+    <result column="quesTypeID" property="questypeid" jdbcType="BIGINT"/>
+    <result column="quesType" property="questype" jdbcType="INTEGER"/>
+    <result column="pID" property="pid" jdbcType="BIGINT"/>
+    <result column="quesCheckType" property="queschecktype" jdbcType="SMALLINT"/>
+    <result column="answerScore" property="answerscore" jdbcType="REAL"/>
+    <result column="isRight" property="isright" jdbcType="VARCHAR"/>
+    <result column="examineStatus" property="examinestatus" jdbcType="SMALLINT"/>
+    <result column="quesOrder" property="quesorder" jdbcType="INTEGER"/>
+    <result column="itemOrderStr" property="itemorderstr" jdbcType="VARCHAR"/>
+
+  </resultMap>
+  
+<!-- ###################### useranswerResult ########################## -->
+  <resultMap id="UseranswerResult" class="netTest.exam.vo.Useranswer" extends="Useranswer.UseranswerResultWithoutBLOBs">
+     <result column="answer" property="answer" jdbcType="VARCHAR"/>
+
+  </resultMap>
+  
+  
+  <!-- ###################### QuantityResult ########################## -->
+  <resultMap id="QuantityResult" class="netTest.exam.dto.UseranswerQuery">
+     <result column="quantity" property="quantity" jdbcType="BIGINT"/>
+     <result column="quesID" property="quesid" jdbcType="BIGINT"/>
+     <result column="examineStatus" property="examinestatus" jdbcType="SMALLINT"/>
+  </resultMap>
+  
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="useranswerid"><![CDATA[ userAnswerID=#useranswerid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="testid"><![CDATA[ testID=#testid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="userid"><![CDATA[ userID=#userid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="paperid"><![CDATA[ paperID=#paperid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="quesid"><![CDATA[ quesID=#quesid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="quesitemflag"><![CDATA[ quesItemFlag=#quesitemflag:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="questypeid"><![CDATA[ quesTypeID=#questypeid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="questype"><![CDATA[ quesType=#questype:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="and" property="pid"><![CDATA[ pID=#pid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="queschecktype"><![CDATA[ quesCheckType=#queschecktype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="answerscore"><![CDATA[ answerScore=#answerscore:REAL# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="isright"><![CDATA[ isRight=#isright:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="examinestatus"><![CDATA[ examineStatus=#examinestatus:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="quesorder"><![CDATA[ quesOrder=#quesorder:INTEGER# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="itemorderstr"><![CDATA[ itemOrderStr=#itemorderstr:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="answer"><![CDATA[ answer=#answer:VARCHAR# ]]></isNotEmpty>
+	  <isNotNull prepend="and" property="searchCheckType"><![CDATA[ (quesCheckType=1 or quesCheckType=3) ]]></isNotNull>
+	  <isNotNull prepend="limit" property="pagesize">
+		  <isNotNull property="startnum">
+			 <![CDATA[ #startnum:BIGINT#,#pagesize:BIGINT# ]]>
+		  </isNotNull>
+	  </isNotNull>
+    </dynamic>
+  </sql>
+   
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="UseranswerResult" parameterClass="java.lang.Long"> 
+     select 
+         userAnswerID,
+    shopID,
+    testID,
+    userID,
+    paperID,
+    quesID,
+    quesItemFlag,
+    quesTypeID,
+    quesType,
+    pID,quesCheckType,
+    answerScore,
+    isRight,
+    examineStatus,
+    quesOrder,
+    itemOrderStr,
+    answer 
+     from useranswer 
+     where userAnswerID = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="UseranswerResult" parameterClass="netTest.exam.dto.UseranswerQuery"> 
+     select 
+         userAnswerID,
+    shopID,
+    testID,
+    userID,
+    paperID,
+    quesID,
+    quesItemFlag,
+    quesTypeID,
+    quesType,
+    pID,quesCheckType,
+    answerScore,
+    isRight,
+    examineStatus,
+    quesOrder,
+    itemOrderStr,
+    answer
+     from useranswer
+    <include refid="Useranswer.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+<!-- ###################### selectByVOWithoutBLOBs ########################## -->
+  <select id="selectByVOWithoutBLOBs" resultMap="UseranswerResultWithoutBLOBs" parameterClass="netTest.exam.dto.UseranswerQuery"> 
+     select 
+         userAnswerID,
+    shopID,
+    testID,
+    userID,
+    paperID,
+    quesID,
+    quesItemFlag,
+    quesTypeID,
+    quesType,
+    pID,quesCheckType,
+    answerScore,
+    isRight,
+    examineStatus,
+    quesOrder,
+    itemOrderStr
+     from useranswer
+    <include refid="Useranswer.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.exam.vo.Useranswer"> 
+     insert into useranswer
+     (     userAnswerID,
+    shopID,
+    testID,
+    userID,
+    paperID,
+    quesID,
+    quesItemFlag,
+    quesTypeID,
+    quesType,
+    pID,quesCheckType,
+    answerScore,
+    isRight,
+    examineStatus,
+    quesOrder,
+    itemOrderStr,
+    answer ) 
+    values 
+     (     #useranswerid:BIGINT#, 
+    #shopid:BIGINT#, 
+    #testid:BIGINT#, 
+    #userid:BIGINT#, 
+    #paperid:BIGINT#, 
+    #quesid:BIGINT#, 
+    #quesitemflag:VARCHAR#, 
+    #questypeid:BIGINT#,
+    #questype:INTEGER#, 
+    #pid:BIGINT#, #queschecktype:SMALLINT#,
+    #answerscore:REAL#, 
+    #isright:VARCHAR#, 
+    #examinestatus:SMALLINT#, 
+    #quesorder:INTEGER#, 
+    #itemorderstr:VARCHAR#, 
+    #answer:VARCHAR# )
+	  <selectKey resultClass="java.lang.Long" keyProperty="useranswerid" >  
+          SELECT   LAST_INSERT_ID()  
+      </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.exam.vo.Useranswer"> 
+     update useranswer
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="quesitemflag"><![CDATA[ quesItemFlag=#quesitemflag:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="questypeid"><![CDATA[ quesTypeID=#questypeid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="questype"><![CDATA[ quesType=#questype:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="pid"><![CDATA[ pID=#pid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="answerscore"><![CDATA[ answerScore=#answerscore:REAL# ]]></isNotNull>
+      <isNotNull prepend="," property="isright"><![CDATA[ isRight=#isright:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="examinestatus"><![CDATA[ examineStatus=#examinestatus:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="quesorder"><![CDATA[ quesOrder=#quesorder:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="itemorderstr"><![CDATA[ itemOrderStr=#itemorderstr:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="answer"><![CDATA[ answer=#answer:VARCHAR# ]]></isNotNull>
+
+    </dynamic> where userAnswerID = #useranswerid:BIGINT#
+  </update>
+  
+  <!-- ###################### updUseranswerPK ########################## -->
+  <update id="updUseranswerPK" parameterClass="netTest.exam.vo.Useranswer"> 
+     update useranswer
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="quesitemflag"><![CDATA[ quesItemFlag=#quesitemflag:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="answerscore"><![CDATA[ answerScore=#answerscore:REAL# ]]></isNotNull>
+      <isNotNull prepend="," property="isright"><![CDATA[ isRight=#isright:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="examinestatus"><![CDATA[ examineStatus=#examinestatus:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="answer"><![CDATA[ answer=#answer:VARCHAR# ]]></isNotNull>
+    </dynamic> where userAnswerID = #useranswerid:BIGINT#
+  </update>
+  
+  <!-- ###################### updStatusByPK ########################## -->
+  <update id="updStatusByPK" parameterClass="netTest.exam.vo.Useranswer"> 
+     update useranswer set  examineStatus=#examinestatus:SMALLINT# 
+     where userAnswerID = #useranswerid:BIGINT#
+  </update>
+  
+  <!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from useranswer where userAnswerID = #value#
+  </delete>
+  
+  <!-- ###################### deleteByTest ########################## -->
+  <delete id="deleteByTest" parameterClass="netTest.exam.dto.UseranswerQuery"> 
+     delete from useranswer where testID = #testid:BIGINT# 
+     <dynamic> 
+        <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+        <isNotNull prepend="and" property="paperid"><![CDATA[ paperID=#paperid:BIGINT# ]]></isNotNull>
+     </dynamic>
+  </delete>
+  
+  <!-- ###################### cleanOpentestUseranswer1 ########################## -->
+  <delete id="cleanOpentestUseranswer1" parameterClass="java.util.Date"> 
+     <![CDATA[ delete from useranswer where exists(select 1 from testinfo 
+     where useranswer.testid=testinfo.testid
+	 and testinfo.openType=2 and testinfo.testStatus=15 
+	 and updateTime < #value:TIMESTAMP#) ]]>
+  </delete>
+  
+  <!-- ###################### cleanOpentestUseranswer2 ########################## -->
+  <delete id="cleanOpentestUseranswer2" parameterClass="java.util.Date"> 
+     <![CDATA[ delete from useranswer where exists(select 1 from testinfo 
+     where useranswer.testid=testinfo.testid and testinfo.openType=2 and testinfo.viewResultType=3) 
+     and exists(select 1 from testuser where testuser.testid=useranswer.testid 
+                and testuser.endTime<#value:TIMESTAMP#) ]]>
+  </delete>
+      
+  <!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.exam.dto.UseranswerQuery"> 
+     select count(*) from useranswer
+     <include refid="Useranswer.where_Clause"/>  
+  </select>
+  
+  <!-- ###################### selectByVOWithoutBLOBsCount ########################## -->
+  <select id="selectByVOWithoutBLOBsCount" resultClass="java.lang.Integer" parameterClass="netTest.exam.dto.UseranswerQuery"> 
+     select count(*) from useranswer 
+     <include refid="Useranswer.where_Clause"/>  
+  </select>
+  
+  <!-- ###################### countAllTestAnswer ########################## -->
+  <select id="countAllTestAnswer" resultClass="java.lang.Long" parameterClass="netTest.exam.dto.UseranswerQuery"> 
+     select count(*) from useranswer where shopID=#shopid:BIGINT# and testID=#testid:BIGINT# 
+            and paperID=#paperid:BIGINT# 
+     <isNotNull prepend="and" property="examinestatus">
+         examineStatus=#examinestatus:SMALLINT#
+     </isNotNull>
+     <isNotNull property="searchCheckType">
+         <isEqual prepend="and" property="searchCheckType" compareValue="1">
+             <![CDATA[ quesCheckType=1 ]]>
+         </isEqual>
+         <isEqual prepend="and" property="searchCheckType" compareValue="2">
+             <![CDATA[ quesCheckType=2 ]]>
+         </isEqual>
+         <isEqual prepend="and" property="searchCheckType" compareValue="3">
+             <![CDATA[ quesCheckType=3 ]]>
+         </isEqual>
+         <isEqual prepend="and" property="searchCheckType" compareValue="4">
+             <![CDATA[ (quesCheckType=1 or quesCheckType=3) ]]>
+         </isEqual>
+         <isEqual prepend="and" property="searchCheckType" compareValue="5">
+             <![CDATA[ (quesCheckType=2 or quesCheckType=3) ]]>
+         </isEqual>
+     </isNotNull>
+  </select>
+  
+    <!-- ###################### countQuestypeAnswer ########################## -->
+  <select id="countQuestypeAnswer" resultMap="QuantityResult" parameterClass="netTest.exam.dto.UseranswerQuery"> 
+     select count(userAnswerID) as quantity, quesID, examineStatus from useranswer where shopID=#shopid:BIGINT# and testID=#testid:BIGINT# 
+            and paperID=#paperid:BIGINT# 
+     <isNotNull property="searchCheckType">
+         <isEqual prepend="and" property="searchCheckType" compareValue="1">
+             <![CDATA[ quesCheckType=1 ]]>
+         </isEqual>
+         <isEqual prepend="and" property="searchCheckType" compareValue="2">
+             <![CDATA[ quesCheckType=2 ]]>
+         </isEqual>
+         <isEqual prepend="and" property="searchCheckType" compareValue="3">
+             <![CDATA[ quesCheckType=3 ]]>
+         </isEqual>
+         <isEqual prepend="and" property="searchCheckType" compareValue="4">
+             <![CDATA[ (quesCheckType=1 or quesCheckType=3) ]]>
+         </isEqual>
+         <isEqual prepend="and" property="searchCheckType" compareValue="5">
+             <![CDATA[ (quesCheckType=2 or quesCheckType=3) ]]>
+         </isEqual>
+         group by quesID,examineStatus
+     </isNotNull>
+  </select>
+  
+</sqlMap>

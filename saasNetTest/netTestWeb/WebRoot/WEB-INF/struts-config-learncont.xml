@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources/>
+  <form-beans>
+      <form-bean name="learncontentForm" type="netTestWeb.learncont.form.LearncontentForm" />
+  </form-beans>
+
+  <global-exceptions>
+      <exception key="commonWeb.java.commonaction.errors.noLogin" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoLoginException" path="/login_forward.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.editPage.noSuchRecord" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoSuchRecordException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.resubmit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.ResubmitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.DaoException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="org.springframework.dao.DataAccessException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.Unauthorized" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoRightException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.LogicErr" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.LogicException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.InvalidVisit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.InvalideVisitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>  
+      <exception key="commonWeb.java.commonaction.errors.SystemError" handler="commonWeb.base.StrutsExceptionHandler" type="java.lang.Throwable" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+  </global-exceptions>
+  
+  <global-forwards>
+      <forward name="errorPage" path="/pubs/errorPage.jsp" ></forward>
+      <forward name="messagePage" path="/pubs/message.jsp" ></forward>
+      <forward name="treeXml" path="/pubs/treeXml.jsp" ></forward>
+      <forward name="forwardToUrl" path="/pubs/forwardToUrl.jsp" ></forward>
+      <forward name="toUrl" path="/pubs/toUrl.jsp" ></forward>
+  </global-forwards>
+  
+  <action-mappings>
+  
+        <!-- Learncontent begin -->
+	    <action parameter="listLearncontent" path="/learncont/listLearncontent" name="learncontentForm" type="netTestWeb.learncont.action.LearncontentAction" scope="request">
+	       <forward name="list" path="/learncont/learncontent_listmag.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="selfLearncontent" path="/learncont/selfLearncontent" name="learncontentForm" type="netTestWeb.learncont.action.LearncontentAction" scope="request">
+	       <forward name="list_main" path="/learncont/learncontent_list2.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="listcontentsidebar" path="/learncont/listcontentsidebar" name="learncontentForm" type="netTestWeb.learncont.action.LearncontentAction" scope="request">
+	       <forward name="listinside" path="/learncont/learncontent_sidebar.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="downloadlearnfile" path="/learncont/downloadlearnfile" name="learncontentForm" type="netTestWeb.learncont.action.LearncontentAction" scope="request">
+	       <forward name="downloadpage" path="/learncont/learncontent_download.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="saveLearncontent" path="/learncont/saveLearncontent" name="learncontentForm" type="netTestWeb.learncont.action.LearncontentAction" scope="request">
+	       <forward name="list" path="/learncont/learncontent_listmag.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="editLearncontent" path="/learncont/editLearncontent" name="learncontentForm" type="netTestWeb.learncont.action.LearncontentAction" scope="request">
+	       <forward name="editPage_html" path="/learncont/learncontent_addEditHtml.jsp"></forward>
+	       <forward name="editPage_file" path="/learncont/learncontent_addEditFile.jsp"></forward>
+	    </action>
+	        
+	    <action parameter="viewLearncontent" path="/learncont/viewLearncontent" name="learncontentForm" type="netTestWeb.learncont.action.LearncontentAction" scope="request">
+	       <forward name="viewPage_html" path="/learncont/learncontent_viewHtml.jsp"></forward>
+	       <!-- 
+	       <forward name="viewPage_file" path="/learncont/learncontent_mediaelement.jsp"></forward>
+	        -->
+	       <forward name="viewPage_file" path="/learncont/learncontent_viewFile.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="addLearncontent" path="/learncont/addLearncontent" name="learncontentForm" type="netTestWeb.learncont.action.LearncontentAction" scope="request">
+	       <forward name="addPage_html" path="/learncont/learncontent_addEditHtml.jsp"></forward>
+	       <forward name="addPage_file" path="/learncont/learncontent_addEditFile.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="deleteLearncontent" path="/learncont/deleteLearncontent" name="learncontentForm" type="netTestWeb.learncont.action.LearncontentAction" scope="request">
+	       <forward name="list" path="/learncont/learncontent_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="markfinishlearn" path="/learncont/markfinishlearn" name="learncontentForm" type="netTestWeb.learncont.action.LearncontentAction" scope="request">
+	    </action>
+	    
+	    <action parameter="autolearn" path="/learncont/autolearn" name="learncontentForm" type="netTestWeb.learncont.action.LearncontentAction" scope="request">
+	    </action>
+	    
+	    <action parameter="openuploadpage" path="/openuploadpage" name="learncontentForm" type="netTestWeb.learncont.action.LearncontentAction" scope="request">
+	       <forward name="uploadpage_qiniu" path="/learncont/qiniu_upload.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="afteruploadfilecb" path="/afteruploadfilecb" name="learncontentForm" type="netTestWeb.learncont.action.LearncontentAction" scope="request">
+	    </action>
+	    
+	    <action parameter="deleteexistfile" path="/deleteexistfile" name="learncontentForm" type="netTestWeb.learncont.action.LearncontentAction" scope="request">
+	    </action>
+	    <!-- Learncontent end -->
+
+  </action-mappings>
+
+  <message-resources parameter="netTestWeb.resource.PagetextResources" />
+  <message-resources key="BizKey" parameter="netTestWeb.resource.BizMessResources" />
+</struts-config>
+

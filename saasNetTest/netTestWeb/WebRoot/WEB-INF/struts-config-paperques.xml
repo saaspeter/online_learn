@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources/>
+  <form-beans>
+      <form-bean name="paperquesForm" type="netTestWeb.paper.form.PaperquesForm" />
+  </form-beans>
+
+  <global-exceptions>
+      <exception key="commonWeb.java.commonaction.errors.noLogin" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoLoginException" path="/login_forward.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.editPage.noSuchRecord" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoSuchRecordException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.resubmit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.ResubmitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.DaoException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="org.springframework.dao.DataAccessException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.Unauthorized" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoRightException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.LogicErr" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.LogicException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.InvalidVisit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.InvalideVisitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.SystemError" handler="commonWeb.base.StrutsExceptionHandler" type="java.lang.Throwable" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+  </global-exceptions>
+  
+  <global-forwards>
+      <forward name="errorPage" path="/pubs/errorPage.jsp"></forward>
+      <forward name="messagePage" path="/pubs/message.jsp"></forward>
+      <forward name="treeXml" path="/pubs/treeXml.jsp"></forward>
+      <forward name="forwardToUrl" path="/pubs/forwardToUrl.jsp"></forward>
+      <forward name="toUrl" path="/pubs/toUrl.jsp"></forward>
+  </global-forwards>
+  
+  <action-mappings>
+  	    
+	    <!-- paperques begin -->
+	    
+	    <action parameter="addPaperQues" path="/paper/addPaperQues" name="paperquesForm" type="netTestWeb.paper.action.PaperquesAction" scope="request">
+	       
+	    </action>
+	    
+	    <action parameter="changeQues" path="/paper/changeQues" name="paperquesForm" type="netTestWeb.paper.action.PaperquesAction" scope="request">
+	       
+	    </action>
+	    
+	    <action parameter="deletePaperques" path="/paper/deletePaperques" name="paperquesForm" type="netTestWeb.paper.action.PaperquesAction" scope="request">
+	       
+	    </action>
+	    <!-- paperques end -->	    
+
+  </action-mappings>
+
+  <message-resources parameter="netTestWeb.resource.PagetextResources" />
+  <message-resources key="BizKey" parameter="netTestWeb.resource.BizMessResources" />
+</struts-config>
+

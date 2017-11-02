@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Emailtemplate">
+<!-- ###################### emailtemplateResult ########################## -->
+  <resultMap id="EmailtemplateResult" class="platform.mail.vo.Emailtemplate">
+    <result column="id" property="id" jdbcType="BIGINT"/>
+    <result column="templateName" property="templatename" jdbcType="VARCHAR"/>
+    <result column="recipient" property="recipient" jdbcType="VARCHAR"/>
+    <result column="fromwho" property="fromwho" jdbcType="VARCHAR"/>
+    <result column="replyTo" property="replyto" jdbcType="VARCHAR"/>
+    <result column="subject" property="subject" jdbcType="VARCHAR"/>
+    <result column="locale" property="locale" jdbcType="CHAR"/>
+    <result column="syscode" property="syscode" jdbcType="CHAR"/>
+    <result column="content" property="content" jdbcType="VARCHAR"/>
+    <result column="lasttime" property="lasttime" jdbcType="TIMESTAMP"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotEmpty prepend="and" property="templatename"><![CDATA[ templateName=#templatename:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="recipient"><![CDATA[ recipient=#recipient:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="fromwho"><![CDATA[ fromwho=#fromwho:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="replyto"><![CDATA[ replyTo=#replyto:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="locale"><![CDATA[ locale=#locale:CHAR# ]]></isNotNull>
+      <isNotNull prepend="and" property="syscode"><![CDATA[ syscode=#syscode:CHAR# ]]></isNotNull>
+    </dynamic>
+  </sql>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="EmailtemplateResult" parameterClass="java.lang.Long"> 
+     select 
+         id,
+    templateName,
+    recipient,
+    fromwho,
+    replyTo,
+    subject,
+    locale,
+    syscode,
+    content,
+    lasttime 
+     from emailtemplate 
+     where id = #value#
+  </select>
+  
+<!-- ###################### selectByLogicPK ########################## -->
+  <select id="selectByLogicPK" resultMap="EmailtemplateResult" parameterClass="platform.mail.vo.Emailtemplate"> 
+     select 
+         id,
+    templateName,
+    recipient,
+    fromwho,
+    replyTo,
+    subject,
+    locale,
+    syscode,
+    content,
+    lasttime 
+     from emailtemplate 
+     where <![CDATA[ templateName=#templatename:VARCHAR# 
+         and locale=#locale:CHAR# and syscode=#syscode:CHAR#
+     ]]>
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="EmailtemplateResult" parameterClass="platform.mail.vo.Emailtemplate"> 
+     select 
+         id,
+    templateName,
+    recipient,
+    fromwho,
+    replyTo,
+    subject,
+    locale,
+    syscode,
+    content,
+    lasttime
+     from emailtemplate
+    <include refid="Emailtemplate.where_Clause"/>  
+  </select>
+  
+  <!-- ###################### selectBySyscode ########################## -->
+  <select id="selectBySyscode" resultMap="EmailtemplateResult" parameterClass="java.lang.String"> 
+     select  id, templateName, recipient, fromwho, replyTo, subject,
+    		 locale, syscode, content, lasttime 
+     from emailtemplate 
+     where syscode = #value#
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="platform.mail.vo.Emailtemplate"> 
+     insert into emailtemplate
+     (     id,
+    templateName,
+    recipient,
+    fromwho,
+    replyTo,
+    subject,
+    locale,
+    syscode,
+    content,
+    lasttime ) 
+    values 
+     (     #id:BIGINT#, 
+    #templatename:VARCHAR#, 
+    #recipient:VARCHAR#, 
+    #fromwho:VARCHAR#, 
+    #replyto:VARCHAR#, 
+    #subject:VARCHAR#, 
+    #locale:CHAR#, 
+    #syscode:CHAR#, 
+    #content:VARCHAR#, 
+    #lasttime:TIMESTAMP# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="id" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="platform.mail.vo.Emailtemplate"> 
+     update emailtemplate
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="templatename"><![CDATA[ templateName=#templatename:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="recipient"><![CDATA[ recipient=#recipient:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="fromwho"><![CDATA[ fromwho=#fromwho:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="replyto"><![CDATA[ replyTo=#replyto:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="subject"><![CDATA[ subject=#subject:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="locale"><![CDATA[ locale=#locale:CHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="syscode"><![CDATA[ syscode=#syscode:CHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="content"><![CDATA[ content=#content:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="lasttime"><![CDATA[ lasttime=#lasttime:TIMESTAMP# ]]></isNotNull>
+    </dynamic> where id = #id:BIGINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from emailtemplate where id = #value#
+  </delete>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="platform.mail.vo.Emailtemplate"> 
+     select count(*) from emailtemplate
+     <include refid="Emailtemplate.where_Clause"/>  
+  </select>
+    
+</sqlMap>

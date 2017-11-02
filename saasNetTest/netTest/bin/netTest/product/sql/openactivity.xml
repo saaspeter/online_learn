@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Openactivity">
+<!-- ###################### OpenactivityResult ########################## -->
+  <resultMap id="OpenactivityResult" class="netTest.product.vo.Openactivity">
+    <result column="activityID" property="activityid" jdbcType="BIGINT"/>
+    <result column="name" property="name" jdbcType="VARCHAR"/>
+    <result column="startTime" property="starttime" jdbcType="TIMESTAMP"/>
+    <result column="endTime" property="endtime" jdbcType="TIMESTAMP"/>
+    <result column="joinType" property="jointype" jdbcType="SMALLINT"/>
+    <result column="onlineUrl" property="onlineurl" jdbcType="VARCHAR"/>
+    <result column="localeID" property="localeid" jdbcType="BIGINT"/>
+    <result column="regionCode" property="regioncode" jdbcType="VARCHAR"/>
+    <result column="place" property="place" jdbcType="VARCHAR"/>
+    <result column="contactInfo" property="contactinfo" jdbcType="VARCHAR"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="categoryID" property="categoryid" jdbcType="BIGINT"/>
+    <result column="productid" property="productid" jdbcType="BIGINT"/>
+    <result column="creatorID" property="creatorid" jdbcType="BIGINT"/>
+    <result column="status" property="status" jdbcType="SMALLINT"/>
+    <result column="userNum" property="usernum" jdbcType="INTEGER"/>
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP"/>
+    <result column="lastUpdateTime" property="lastupdatetime" jdbcType="TIMESTAMP"/>
+  </resultMap>
+  
+  <resultMap id="OpenactivityResultEx" class="netTest.product.vo.Openactivity" extends="Openactivity.OpenactivityResult">
+     <result column="description" property="description" jdbcType="VARCHAR"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where">
+      <isNotEmpty prepend="and" property="name"><![CDATA[ name like CONCAT('%',#name:VARCHAR#,'%') ]]></isNotEmpty>
+      <isNotNull prepend="and" property="starttime2"><![CDATA[ startTime<=#starttime2:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="and" property="endtime1"><![CDATA[ endTime>=#endtime1:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="and" property="jointype"><![CDATA[ joinType=#jointype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="localeid"><![CDATA[ localeID=#localeid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="regioncode"><![CDATA[ regionCode=#regioncode:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="categoryid"><![CDATA[ categoryID=#categoryid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="productid"><![CDATA[ productid=#productid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="creatorid"><![CDATA[ creatorID=#creatorid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="limit" property="rownumfrom">
+		 <isNotNull property="rownum">
+			 <![CDATA[ #rownumfrom:INTEGER#,#rownum:INTEGER# ]]>
+		 </isNotNull>
+	  </isNotNull>
+    </dynamic>
+  </sql>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="OpenactivityResultEx" parameterClass="java.lang.Long"> 
+     select  a.activityID, a.name, a.startTime, a.endTime, a.joinType, a.onlineUrl, a.localeID, a.regionCode,
+    a.place, a.contactInfo, a.shopID, a.categoryID, a.productid, a.creatorID, a.status, a.userNum,
+    a.createTime, a.lastUpdateTime, b.description 
+    from openactivity a, openactivitycontent b 
+     where a.activityID = #value# and a.activityID=b.activityID
+  </select>
+  
+  <!-- ###################### selectByPKSimple ########################## -->
+  <select id="selectByPKSimple" resultMap="OpenactivityResult" parameterClass="java.lang.Long"> 
+     select  activityID, name, startTime, endTime, joinType, onlineUrl, localeID, regionCode,
+    place, contactInfo, shopID, categoryID, productid, creatorID, status, userNum,
+    createTime, lastUpdateTime 
+    from openactivity 
+     where activityID = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="OpenactivityResult" parameterClass="netTest.product.dto.OpenactivityQuery"> 
+     select  activityID, name, startTime, endTime, joinType, onlineUrl, localeID, regionCode,
+    place, contactInfo, shopID, categoryID, productid, creatorID, status, userNum,
+    createTime, lastUpdateTime  from openactivity 
+    <include refid="Openactivity.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by startTime desc ]]></isNotEmpty> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.product.vo.Openactivity"> 
+     insert into openactivity
+     ( activityID, name, startTime, endTime, joinType, onlineUrl, localeID,
+    regionCode, place, contactInfo, shopID, categoryID, productid, creatorID,
+    status, userNum, createTime, lastUpdateTime ) 
+    values 
+     ( #activityid:BIGINT#, #name:VARCHAR#, #starttime:TIMESTAMP#, #endtime:TIMESTAMP#, 
+    #jointype:SMALLINT#, #onlineurl:VARCHAR#, #localeid:BIGINT#, #regioncode:VARCHAR#, 
+    #place:VARCHAR#, #contactinfo:VARCHAR#, #shopid:BIGINT#, #categoryid:BIGINT#, 
+    #productid:BIGINT#, #creatorid:BIGINT#, #status:SMALLINT#, #usernum:INTEGER#, 
+    #createtime:TIMESTAMP#, #lastupdatetime:TIMESTAMP# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="activityid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+  <!-- ###################### insertContent ########################## -->
+  <insert id="insertContent" parameterClass="netTest.product.vo.Openactivity"> 
+     insert into openactivitycontent
+     ( activityID, shopID, description ) 
+    values 
+     ( #activityid:BIGINT#, #shopid:BIGINT#, #description:VARCHAR# )
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.product.vo.Openactivity"> 
+     update openactivity
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="name"><![CDATA[ name=#name:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="starttime"><![CDATA[ startTime=#starttime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="endtime"><![CDATA[ endTime=#endtime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="jointype"><![CDATA[ joinType=#jointype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="onlineurl"><![CDATA[ onlineUrl=#onlineurl:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="regioncode"><![CDATA[ regionCode=#regioncode:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="place"><![CDATA[ place=#place:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="contactinfo"><![CDATA[ contactInfo=#contactinfo:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="categoryid"><![CDATA[ categoryID=#categoryid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="productid"><![CDATA[ productid=#productid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="creatorid"><![CDATA[ creatorID=#creatorid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="usernum"><![CDATA[ userNum=#usernum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="lastupdatetime"><![CDATA[ lastUpdateTime=#lastupdatetime:TIMESTAMP# ]]></isNotNull>
+    </dynamic> where activityID = #activityid:BIGINT#
+  </update>
+  
+  <!-- ###################### updateContentByPK ########################## -->
+  <update id="updateContentByPK" parameterClass="netTest.product.vo.Openactivity"> 
+     update openactivitycontent set description=#description:VARCHAR# where activityID = #activityid:BIGINT#
+  </update>
+  
+  <!-- ###################### updateUserNum ########################## -->
+  <update id="updateUserNum" parameterClass="netTest.product.vo.Openactivity"> 
+     update openactivity set userNum=IF(ISNULL(userNum),0,userNum)+#usernum:INTEGER# where activityID = #activityid:BIGINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from openactivity where activityID = #value#
+  </delete>
+  
+  <!-- ###################### deleteContentByPK ########################## -->
+  <delete id="deleteContentByPK" parameterClass="java.lang.Long"> 
+     delete from openactivitycontent where activityID = #value#
+  </delete>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.product.dto.OpenactivityQuery"> 
+     select count(*) from openactivity
+     <include refid="Openactivity.where_Clause"/>  
+  </select>
+    
+</sqlMap>

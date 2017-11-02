@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/shop/toshop.do" location="50,50" dimension="303,104" />
+  <StrutsActivity path="/shop/myJoinShops.do" location="950,850" dimension="250,104" />
+  <StrutsActivity path="/shop/myOwnShops.do" location="1550,550" dimension="226,104" />
+  <StrutsActivity path="/shop/updatesaveshop.do" location="950,50" dimension="250,104" />
+  <StrutsActivity path="/shop/adminsaveshop.do" location="1250,50" dimension="303,104" />
+  <StrutsActivity path="/shop/editshoppage.do" location="350,2050" dimension="226,104" />
+  <StrutsActivity path="/shop/viewshoppage.do" location="650,2150" dimension="226,104" />
+  <StrutsActivity path="/shop/viewshopeditpage.do" location="350,3750" dimension="303,104" />
+  <StrutsActivity path="/shop/listshop.do" location="2750,1650" dimension="258,104" />
+  <StrutsActivity path="/shop/listShopIndex.do" location="2750,2350" dimension="258,104" />
+  <StrutsActivity path="/shop/shopStatusChangePage.do" location="2150,2550" dimension="258,104" />
+  <StrutsActivity path="/shop/saveShopStatus.do" location="2750,2550" dimension="258,104" />
+  <StrutsActivity path="/shop/deleteShop.do" location="50,2650" dimension="258,104" />
+  <StrutsActivity path="/shop/shopmagmessage.do" location="3350,2450" dimension="303,104" />
+  <StrutsActivity path="/shop/listapplyshopauthen.do" location="3350,3350" dimension="303,104" />
+  <StrutsActivity path="/shop/applyshopauthen.do" location="3350,3550" dimension="303,104" />
+  <StrutsActivity path="/shop/saveapplyshopauthen.do" location="950,3750" dimension="303,104" />
+  <StrutsActivity path="/shop/approveshopauthen.do" location="2150,150" dimension="303,104" />
+  <StrutsActivity path="/shop/listmyshopapp.do" location="2150,1150" dimension="249,104" />
+  <StrutsActivity path="/shop/listshopapp.do" location="1850,1350" dimension="249,104" />
+  <StrutsActivity path="/shop/applyNewShop.do" location="2150,1350" dimension="249,104" />
+  <StrutsActivity path="/shop/saveApplyNewShop.do" location="1250,1750" dimension="249,104" />
+  <StrutsActivity path="/shop/approveshopapp.do" location="1850,1750" dimension="249,104" />
+  <StrutsActivity path="/shop/editshopappPage.do" location="50,1850" dimension="249,104" />
+  <StrutsActivity path="/shop/viewshopappPage.do" location="350,1850" dimension="249,104" />
+  <StrutsActivity path="/shop/delshopapp.do" location="650,1950" dimension="249,104" />
+  <StrutsActivity path="/shop/listShoppost.do" location="50,950" dimension="284,104" />
+  <StrutsActivity path="/shop/shoppostviewlist.do" location="1250,950" dimension="284,104" />
+  <StrutsActivity path="/shop/saveShoppost.do" location="1550,1150" dimension="284,104" />
+  <StrutsActivity path="/shop/editShoppost.do" location="1250,1350" dimension="284,104" />
+  <StrutsActivity path="/shop/viewShoppost.do" location="650,1550" dimension="284,104" />
+  <StrutsActivity path="/shop/addShoppost.do" location="1250,1550" dimension="284,104" />
+  <StrutsActivity path="/shop/deleteShoppost.do" location="650,1750" dimension="284,104" />
+  <StrutsActivity path="/shop/listshopcontactpublic.do" location="3050,1450" dimension="367,104" />
+  <StrutsActivity path="/shop/listshopcontact.do" location="1850,2150" dimension="367,104" />
+  <StrutsActivity path="/shop/editshopcontact.do" location="50,2250" dimension="367,104" />
+  <StrutsActivity path="/shop/saveshopcontact.do" location="650,2350" dimension="367,104" />
+  <StrutsActivity path="/shop/viewshopcontact.do" location="1250,2350" dimension="367,104" />
+  <StrutsActivity path="/shop/addshopcontact.do" location="2450,850" dimension="367,104" />
+  <StrutsActivity path="/shop/delshopcontact.do" location="2450,1050" dimension="367,104" />
+  <StrutsActivity path="/shop/editshopdescript.do" location="2450,1450" dimension="256,104" />
+  <StrutsActivity path="/shop/viewshopintroduce.do" location="2750,1850" dimension="333,104" />
+  <StrutsActivity path="/shop/viewshopdescedit.do" location="2150,350" dimension="333,104" />
+  <StrutsActivity path="/shop/saveshopdescript.do" location="2450,2150" dimension="256,104" />
+  <StrutsActivity path="/shop/addshopvaluepage.do" location="1250,2150" dimension="333,104" />
+  <StrutsActivity path="/shop/addshopvalue.do" location="2450,2950" dimension="333,104" />
+  <StrutsActivity path="/shop/deleteShopValue.do" location="50,3050" dimension="333,104" />
+  <StrutsActivity path="/shop/listshopstatus.do" location="650,2750" dimension="311,104" />
+  <StrutsActivity path="/shop/saveshopdescarticle.do" location="3050,2750" dimension="320,104" />
+  <StrutsActivity path="/shop/editshopdescarticle.do" location="3050,2050" dimension="320,104" />
+  <StrutsActivity path="/shop/viewshopdescarticle.do" location="3050,2950" dimension="320,104" />
+  <StrutsActivity path="/shop/viewshopdescarticleedit.do" location="3050,3150" dimension="320,104" />
+  <StrutsActivity path="/shop/addshopdescarticle.do" location="650,3350" dimension="320,104" />
+  <StrutsActivity path="/shop/deleteshopdescarticle.do" location="1250,3350" dimension="320,104" />
+  <StrutsActivity path="errorPage;6" location="441,1258" dimension="161,87" />
+  <StrutsActivity path="failure;6" location="368,1543" dimension="123,87" />
+  <StrutsActivity path="messagePage;6" location="847,1258" dimension="154,87" />
+  <StrutsActivity path="messageClosePage;6" location="0,1258" dimension="186,87" />
+  <StrutsActivity path="treeXml;6" location="0,1543" dimension="147,87" />
+  <StrutsActivity path="toUrl;6" location="192,1543" dimension="131,87" />
+  <StrutsActivity path="inprogress;6" location="231,1258" dimension="165,87" />
+  <StrutsActivity path="leftMenu;6" location="1046,1258" dimension="153,87" />
+  <StrutsActivity path="topMenu;6" location="647,1258" dimension="155,87" />
+  <StrutsActivity path="emptyPage;6" location="50,3650" dimension="168,87" />
+  <StrutsActivity path="/shop/shop_default.jsp" location="3350,1850" dimension="165,53" />
+  <StrutsActivity path="/shop/userjoinshoplist.jsp" location="50,450" dimension="182,53" />
+  <StrutsActivity path="/shop/useropenshoplist.jsp" location="1550,750" dimension="191,53" />
+  <StrutsActivity path="/platform/shop/shop_edit.jsp" location="1250,450" dimension="202,53" />
+  <StrutsActivity path="/platform/shop/shop_view.jsp" location="950,2150" dimension="205,53" />
+  <StrutsActivity path="/platform/shop/shop_viewedit.jsp" location="3350,1650" dimension="227,53" />
+  <StrutsActivity path="/platform/shop/shop_list1.jsp" location="1850,2750" dimension="203,53" />
+  <StrutsActivity path="/platform/shop/shoplist_index.jsp" location="2150,2750" dimension="227,53" />
+  <StrutsActivity path="/platform/shop/shopstatus_change.jsp" location="2450,2750" dimension="256,53" />
+  <StrutsActivity path="/shop/shopmag_mess.jsp" location="3350,550" dimension="181,53" />
+  <StrutsActivity path="/platform/shop/shopauthen_list.jsp" location="1250,650" dimension="235,53" />
+  <StrutsActivity path="/platform/shop/shopauthen_edit.jsp" location="2450,1950" dimension="241,53" />
+  <StrutsActivity path="/platform/shop/shopapp_listmyapp.jsp" location="650,1050" dimension="259,53" />
+  <StrutsActivity path="/platform/shop/shopapp_listapp.jsp" location="50,2850" dimension="242,53" />
+  <StrutsActivity path="/platform/shop/shop_add.jsp" location="1850,450" dimension="203,53" />
+  <StrutsActivity path="/platform/shop/shopapp_view.jsp" location="2150,550" dimension="228,53" />
+  <StrutsActivity path="/platform/shop/shopapp_approve.jsp" location="2150,1750" dimension="252,53" />
+  <StrutsActivity path="/platform/shop/shoppost_list.jsp" location="350,2850" dimension="222,53" />
+  <StrutsActivity path="/platform/shop/shoppost_viewlist.jsp" location="650,2950" dimension="247,53" />
+  <StrutsActivity path="/platform/shop/shoppost_addEdit.jsp" location="950,2950" dimension="251,53" />
+  <StrutsActivity path="/platform/shop/shoppost_view.jsp" location="1550,2950" dimension="231,53" />
+  <StrutsActivity path="/platform/shop/shopcontact_publiclist.jsp" location="2750,650" dimension="273,53" />
+  <StrutsActivity path="/platform/shop/shopcontact_list.jsp" location="2450,650" dimension="238,53" />
+  <StrutsActivity path="/platform/shop/shopcontact_addEdit.jsp" location="1550,2550" dimension="267,53" />
+  <StrutsActivity path="/platform/shop/shopcontact_view.jsp" location="2450,2350" dimension="247,53" />
+  <StrutsActivity path="/platform/shop/shopdesc_addEdit.jsp" location="2450,1250" dimension="252,53" />
+  <StrutsActivity path="/platform/shop/shopintroduce_view.jsp" location="2450,3150" dimension="260,53" />
+  <StrutsActivity path="/platform/shop/shopdesc_viewedit.jsp" location="2750,3350" dimension="254,53" />
+  <StrutsActivity path="/platform/shop/shopvalue_list.jsp" location="650,3150" dimension="226,53" />
+  <StrutsActivity path="/platform/shop/shopvalue_addEdit.jsp" location="950,3150" dimension="255,53" />
+  <StrutsActivity path="/platform/shop/shopstatuslog_list.jsp" location="1550,2750" dimension="249,53" />
+  <StrutsActivity path="/platform/shop/shopdescarticle_viewedit.jsp" location="1850,3550" dimension="289,53" />
+  <StrutsActivity path="/platform/shop/shopdescarticle_addEdit.jsp" location="650,3550" dimension="287,53" />
+  <StrutsActivity path="/platform/shop/shopdescarticle_view.jsp" location="1250,3550" dimension="267,53" />
+  <StrutsActivity path="/platform/shop/shopdescarticle_emptypage.jsp" location="2450,3550" dimension="308,53" />
+  <StrutsActivity path="/pubs/errorPage.jsp" location="446,1445" dimension="150,53" />
+  <StrutsActivity path="/pubs/404.jsp" location="373,1730" dimension="112,53" />
+  <StrutsActivity path="/pubs/message.jsp" location="852,1445" dimension="143,53" />
+  <StrutsActivity path="/pubs/messageClose.jsp" location="5,1445" dimension="175,53" />
+  <StrutsActivity path="/pubs/treeXml.jsp" location="5,1730" dimension="136,53" />
+  <StrutsActivity path="/pubs/toUrl.jsp" location="197,1730" dimension="120,53" />
+  <StrutsActivity path="/pubs/inprogress.jsp" location="236,1445" dimension="154,53" />
+  <StrutsActivity path="/pubs/leftMenu.jsp" location="1051,1445" dimension="142,53" />
+  <StrutsActivity path="/pubs/topMenu.jsp" location="652,1445" dimension="144,53" />
+  <StrutsActivity path="/pubs/emptypage.jsp" location="3050,3550" dimension="157,53" />
+  <StrutsActivity path="/platform/shop/shopdesc_view.jsp" location="1850,2350" dimension="232,53" />
+  <StrutsActivity path="/shop/banner_shop.jsp" location="950,550" dimension="166,53" />
+  <StrutsActivity path="/shop_default.jsp" location="350,450" dimension="131,53" />
+  <StrutsActivity path="/category/prodcateshop_tree.jsp" location="650,450" dimension="223,53" />
+  <StrutsActivity path="/shop/shop_list1.jsp" location="1838,254" dimension="148,53" />
+  <StrutsActivity path="/shop/shoplist_index.jsp" location="0,254" dimension="172,53" />
+  <StrutsActivity path="/shop/shopstatus_change.jsp" location="1537,254" dimension="201,53" />
+  <StrutsActivity path="/shop/shopapp_listapp.jsp" location="1250,1950" dimension="187,53" />
+  <StrutsActivity path="/shop/shoppost_list.jsp" location="442,858" dimension="167,53" />
+  <StrutsActivity path="/shop/shoppost_viewlist.jsp" location="759,1160" dimension="192,53" />
+  <StrutsActivity path="/shop/shoppost_addEdit.jsp" location="236,1160" dimension="196,53" />
+  <StrutsActivity path="/shop/shoppost_view.jsp" location="1096,1160" dimension="176,53" />
+  <StrutsActivity path="/platform/shop/shopapp_addEdit.jsp" location="2150,2350" dimension="248,53" />
+  <StrutsActivity path="shopapp_edit.jsp" location="1550,1950" dimension="131,53" />
+  <StrutsActivity path="" location="1850,1950" dimension="32,53" />
+  <StrutsActivity path="/shop/shopapp_view.jsp" location="2150,1950" dimension="173,53" />
+  <StrutsActivity path="/default.jsp" location="350,750" dimension="97,53" />
+  <StrutsActivity path="/shop/usershoplist.jsp" location="650,750" dimension="161,53" />
+  <StrutsActivity path="/shop/prodcateshop_tree.jsp" location="463,556" dimension="201,53" />
+  <StrutsActivity path="/shop/shop_edit.jsp" location="272,254" dimension="147,53" />
+  <StrutsActivity path="/shop/shop_list2.jsp" location="519,254" dimension="148,53" />
+  <StrutsActivity path="/shop/shop_forword.jsp" location="767,254" dimension="172,53" />
+  <StrutsActivity path="/shop/shop_view.jsp" location="1039,254" dimension="150,53" />
+  <StrutsActivity path="/shop/shop_add.jsp" location="1289,254" dimension="148,53" />
+  <StrutsActivity path="/bizCommon/selProduct.jsp" location="50,750" dimension="193,53" />
+  <StrutsActivity path="/shop/shopapp_listmyapp.jsp" location="950,1950" dimension="204,53" />
+  <StrutsActivity path="/platform/shop/shopapp_edit.jsp" location="50,2050" dimension="225,53" />
+  <StrutsActivity path="/shop/shopvalue_list.jsp" location="650,2550" dimension="171,53" />
+  <StrutsActivity path="/shop/shopvalue_addEdit.jsp" location="950,2550" dimension="200,53" />
+  <StrutsActivity path="/shop/shopvalue_view.jsp" location="1250,2550" dimension="180,53" />
+  <StrutsActivity path="/shop/shopdesc_view.jsp" location="50,2450" dimension="177,53" />
+  <StrutsActivity path="/shop/shopdesc_addEdit.jsp" location="350,2450" dimension="197,53" />
+  <StrutsActivity path="/shop/shopstatuslog_list.jsp" location="1250,2750" dimension="194,53" />
+  <StrutsActivity path="/productcategory/prodcateshop_tree.jsp" location="1850,2950" dimension="269,53" />
+  <StrutsActivity path="/platform/shop/shopvalue_view.jsp" location="1550,3150" dimension="235,53" />
+  <StrutsActivity path="/platform/shop/viewshopcontact.jsp" location="1850,3150" dimension="242,53" />
+  <StrutsActivity path="/platform/shop/publicviewshopcontact.jsp" location="50,3250" dimension="277,53" />
+  <StrutsActivity path="/platform/shop/shopcontact.jsp" location="3050,1050" dimension="217,53" />
+  <StrutsActivity path="/platform/shop/shopcontactview.jsp" location="3050,1250" dimension="242,53" />
+  <StrutsActivity path="/shop/shopdescarticle_list.jsp" location="1850,3350" dimension="203,53" />
+  <StrutsActivity path="/shop/shopdescarticle_addEdit.jsp" location="2150,3350" dimension="232,53" />
+  <StrutsActivity path="/shop/shopdescarticle_view.jsp" location="2450,3350" dimension="212,53" />
+  <StrutsActivity path="/shop/shopdescarticle_viewedit.jsp" location="2150,3150" dimension="234,53" />
+  <StrutsActivity path="/platform/shop/shopdescarticle_list.jsp" location="50,3450" dimension="258,53" />
+  <StrutsActivity path="/platform/shop/shop_editview.jsp" location="3350,1150" dimension="227,53" />
+  <StrutsActivity path="/shop/ shop_default.jsp" location="3350,2250" dimension="169,53" />
+  <StrutsActivity path="/shop/shopauthen_list.jsp" location="1550,1750" dimension="180,53" />
+  <StrutsTransition id="/shop/editshopdescarticle.do,addEditPage,/platform/shop/shopdescarticle_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3370,2102" />
+      <AbsolutePoint location="4062,2102" />
+      <AbsolutePoint location="4062,3678" />
+      <AbsolutePoint location="793,3678" />
+      <AbsolutePoint location="793,3603" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/applyshopauthen.do,editpage,/platform/shop/shopauthen_edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3653,3602" />
+      <AbsolutePoint location="3762,3602" />
+      <AbsolutePoint location="3762,1976" />
+      <AbsolutePoint location="2691,1976" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="messageClosePage;6,null,/pubs/messageClose.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="93,1345" />
+      <AbsolutePoint location="93,1445" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/saveshopdescript.do,viewPage,/platform/shop/shopdesc_viewedit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2706,2202" />
+      <AbsolutePoint location="3185,2202" />
+      <AbsolutePoint location="3185,2699" />
+      <AbsolutePoint location="2877,2699" />
+      <AbsolutePoint location="2877,3350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/editshoppage.do,editPage,/platform/shop/shop_edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="350,2118" />
+      <AbsolutePoint location="-450,2118" />
+      <AbsolutePoint location="-450,382" />
+      <AbsolutePoint location="1351,382" />
+      <AbsolutePoint location="1351,450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/deleteShopValue.do,list,/platform/shop/shopvalue_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="383,3108" />
+      <AbsolutePoint location="763,3108" />
+      <AbsolutePoint location="763,3150" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/delshopcontact.do,list,/platform/shop/shopcontact_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2450,1118" />
+      <AbsolutePoint location="2334,1118" />
+      <AbsolutePoint location="2334,676" />
+      <AbsolutePoint location="2450,676" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/myOwnShops.do,useropenshoplist,/shop/useropenshoplist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1663,654" />
+      <AbsolutePoint location="1663,750" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/viewshopcontact.do,viewPage,/platform/shop/shopcontact_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1617,2448" />
+      <AbsolutePoint location="2548,2448" />
+      <AbsolutePoint location="2548,2403" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/editshopappPage.do,approvepage,/platform/shop/shopapp_approve.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="165,1850" />
+      <AbsolutePoint location="165,1699" />
+      <AbsolutePoint location="1096,1699" />
+      <AbsolutePoint location="1096,1869" />
+      <AbsolutePoint location="2276,1869" />
+      <AbsolutePoint location="2276,1803" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/applyNewShop.do,addpage,/platform/shop/shop_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2274,1350" />
+      <AbsolutePoint location="2274,1273" />
+      <AbsolutePoint location="1944,1273" />
+      <AbsolutePoint location="1944,503" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/applyNewShop.do,limittippage,/platform/shop/shop_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2150,1402" />
+      <AbsolutePoint location="2114,1402" />
+      <AbsolutePoint location="2114,476" />
+      <AbsolutePoint location="2053,476" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/listapplyshopauthen.do,listpage,/platform/shop/shopauthen_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3501,3402" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/listShopIndex.do,shoplistIndex,/platform/shop/shoplist_index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2750,2418" />
+      <AbsolutePoint location="2127,2418" />
+      <AbsolutePoint location="2127,2776" />
+      <AbsolutePoint location="2150,2776" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/viewshopdescedit.do,viewPageCanEdit,/platform/shop/shopdesc_viewedit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="2877,3376" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/viewshopdescarticleedit.do,viewPageCanEdit,/platform/shop/shopdescarticle_viewedit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3050,3218" />
+      <AbsolutePoint location="2068,3218" />
+      <AbsolutePoint location="2068,3550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/deleteshopdescarticle.do,emptypageedit,/platform/shop/shopdescarticle_emptypage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1570,3418" />
+      <AbsolutePoint location="2574,3418" />
+      <AbsolutePoint location="2574,3550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/listshopvalue.do,list,/platform/shop/shopvalue_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2183,1602" />
+      <AbsolutePoint location="3732,1602" />
+      <AbsolutePoint location="3732,3299" />
+      <AbsolutePoint location="763,3299" />
+      <AbsolutePoint location="763,3203" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="errorPage;6,null,/pubs/errorPage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="521,1345" />
+      <AbsolutePoint location="521,1445" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/listshopcontact.do,listCanEdit,/platform/shop/shopcontact_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2114,2150" />
+      <AbsolutePoint location="2114,1832" />
+      <AbsolutePoint location="3882,1832" />
+      <AbsolutePoint location="3882,825" />
+      <AbsolutePoint location="2539,825" />
+      <AbsolutePoint location="2539,703" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/listshopcontactpublic.do,list,/platform/shop/shopcontact_publiclist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3050,1502" />
+      <AbsolutePoint location="2886,1502" />
+      <AbsolutePoint location="2886,703" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="emptyPage;6,null,/pubs/emptypage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="218,3708" />
+      <AbsolutePoint location="3128,3708" />
+      <AbsolutePoint location="3128,3603" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/editShoppost.do,addEditPage,/platform/shop/shoppost_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1392,1454" />
+      <AbsolutePoint location="1392,1513" />
+      <AbsolutePoint location="1170,1513" />
+      <AbsolutePoint location="1170,2950" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="topMenu;6,null,/pubs/topMenu.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="724,1345" />
+      <AbsolutePoint location="724,1445" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/myJoinShops.do,userjoinshoplist,/shop/userjoinshoplist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,926" />
+      <AbsolutePoint location="317,926" />
+      <AbsolutePoint location="317,476" />
+      <AbsolutePoint location="232,476" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/shopStatusChangePage.do,statusChangePage,/platform/shop/shopstatus_change.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2408,2602" />
+      <AbsolutePoint location="2548,2602" />
+      <AbsolutePoint location="2548,2750" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="leftMenu;6,null,/pubs/leftMenu.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1122,1345" />
+      <AbsolutePoint location="1122,1445" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/toshop.do,default,/shop/shop_default.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="201,154" />
+      <AbsolutePoint location="201,199" />
+      <AbsolutePoint location="3622,199" />
+      <AbsolutePoint location="3622,1876" />
+      <AbsolutePoint location="3515,1876" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="treeXml;6,null,/pubs/treeXml.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="73,1630" />
+      <AbsolutePoint location="73,1730" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/addShoppost.do,addEditPage,/platform/shop/shoppost_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1534,1602" />
+      <AbsolutePoint location="1814,1602" />
+      <AbsolutePoint location="1814,2518" />
+      <AbsolutePoint location="1519,2518" />
+      <AbsolutePoint location="1519,2976" />
+      <AbsolutePoint location="1201,2976" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/listshopapp.do,listapp,/platform/shop/shopapp_listapp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1974,1350" />
+      <AbsolutePoint location="1974,1118" />
+      <AbsolutePoint location="-225,1118" />
+      <AbsolutePoint location="-225,2876" />
+      <AbsolutePoint location="50,2876" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/addshopcontact.do,addEditPage,/platform/shop/shopcontact_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2817,902" />
+      <AbsolutePoint location="3792,902" />
+      <AbsolutePoint location="3792,2729" />
+      <AbsolutePoint location="1683,2729" />
+      <AbsolutePoint location="1683,2603" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/viewshopdescarticle.do,viewPage,/platform/shop/shopdescarticle_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3370,3002" />
+      <AbsolutePoint location="3672,3002" />
+      <AbsolutePoint location="3672,3518" />
+      <AbsolutePoint location="1380,3518" />
+      <AbsolutePoint location="1380,3550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/saveshopcontact.do,listCanEdit,/platform/shop/shopcontact_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,2402" />
+      <AbsolutePoint location="-30,2402" />
+      <AbsolutePoint location="-30,718" />
+      <AbsolutePoint location="2569,718" />
+      <AbsolutePoint location="2569,703" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="toUrl;6,null,/pubs/toUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="257,1630" />
+      <AbsolutePoint location="257,1730" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/saveShoppost.do,list,/platform/shop/shoppost_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1692,1254" />
+      <AbsolutePoint location="1692,1699" />
+      <AbsolutePoint location="1216,1699" />
+      <AbsolutePoint location="1216,3078" />
+      <AbsolutePoint location="461,3078" />
+      <AbsolutePoint location="461,2903" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/addshopvalue.do,list,/platform/shop/shopvalue_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2450,3018" />
+      <AbsolutePoint location="793,3018" />
+      <AbsolutePoint location="793,3150" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/saveshopdescarticle.do,viewPageCanEdit,/platform/shop/shopdescarticle_viewedit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3050,2829" />
+      <AbsolutePoint location="2444,2829" />
+      <AbsolutePoint location="2444,3576" />
+      <AbsolutePoint location="2139,3576" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="messagePage;6,null,/pubs/message.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="924,1345" />
+      <AbsolutePoint location="924,1445" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/addshopvaluepage.do,addEditPage,/platform/shop/shopvalue_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1583,2202" />
+      <AbsolutePoint location="1756,2202" />
+      <AbsolutePoint location="1756,2478" />
+      <AbsolutePoint location="1489,2478" />
+      <AbsolutePoint location="1489,3176" />
+      <AbsolutePoint location="1205,3176" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/viewshopeditpage.do,viewEditPage,/platform/shop/shop_viewedit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="501,3854" />
+      <AbsolutePoint location="501,3929" />
+      <AbsolutePoint location="3702,3929" />
+      <AbsolutePoint location="3702,1676" />
+      <AbsolutePoint location="3577,1676" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/viewshopdescarticleedit.do,emptypageedit,/platform/shop/shopdescarticle_emptypage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3192,3254" />
+      <AbsolutePoint location="3192,3418" />
+      <AbsolutePoint location="2608,3418" />
+      <AbsolutePoint location="2608,3550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/shoppostviewlist.do,listview,/platform/shop/shoppost_viewlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1392,1054" />
+      <AbsolutePoint location="1392,1228" />
+      <AbsolutePoint location="-60,1228" />
+      <AbsolutePoint location="-60,2976" />
+      <AbsolutePoint location="650,2976" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="inprogress;6,null,/pubs/inprogress.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="313,1345" />
+      <AbsolutePoint location="313,1445" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/viewShoppost.do,viewPage,/platform/shop/shoppost_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,1645" />
+      <AbsolutePoint location="-375,1645" />
+      <AbsolutePoint location="-375,2929" />
+      <AbsolutePoint location="1674,2929" />
+      <AbsolutePoint location="1674,2950" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/listshop.do,list1,/platform/shop/shop_list1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2750,1699" />
+      <AbsolutePoint location="2721,1699" />
+      <AbsolutePoint location="2721,2669" />
+      <AbsolutePoint location="1951,2669" />
+      <AbsolutePoint location="1951,2750" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/editshopcontact.do,addEditPage,/platform/shop/shopcontact_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="417,2299" />
+      <AbsolutePoint location="1666,2299" />
+      <AbsolutePoint location="1666,2550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/listmyshopapp.do,listmyapp,/platform/shop/shopapp_listmyapp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2274,1150" />
+      <AbsolutePoint location="2274,1076" />
+      <AbsolutePoint location="909,1076" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/listshopstatus.do,list,/platform/shop/shopstatuslog_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="961,2829" />
+      <AbsolutePoint location="1674,2829" />
+      <AbsolutePoint location="1674,2803" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="failure;6,null,/pubs/404.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="429,1630" />
+      <AbsolutePoint location="429,1730" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/editshopappPage.do,viewpage,/platform/shop/shopapp_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,1902" />
+      <AbsolutePoint location="-150,1902" />
+      <AbsolutePoint location="-150,-45" />
+      <AbsolutePoint location="2264,-45" />
+      <AbsolutePoint location="2264,550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/editshopdescript.do,addEditPage,/platform/shop/shopdesc_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2578,1450" />
+      <AbsolutePoint location="2578,1303" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/viewshopappPage.do,viewpage,/platform/shop/shopapp_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="599,1902" />
+      <AbsolutePoint location="2414,1902" />
+      <AbsolutePoint location="2414,576" />
+      <AbsolutePoint location="2378,576" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/deleteShoppost.do,list,/platform/shop/shoppost_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,1802" />
+      <AbsolutePoint location="-300,1802" />
+      <AbsolutePoint location="-300,2799" />
+      <AbsolutePoint location="461,2799" />
+      <AbsolutePoint location="461,2850" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/addshopdescarticle.do,addEditPage,/platform/shop/shopdescarticle_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="810,3454" />
+      <AbsolutePoint location="810,3550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/viewshoppage.do,viewPage,/platform/shop/shop_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="876,2188" />
+      <AbsolutePoint location="950,2188" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/shopmagmessage.do,shopmagmesspage,/shop/shopmag_mess.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3592,2450" />
+      <AbsolutePoint location="3592,576" />
+      <AbsolutePoint location="3531,576" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/listShoppost.do,list,/platform/shop/shoppost_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="334,1002" />
+      <AbsolutePoint location="624,1002" />
+      <AbsolutePoint location="624,2876" />
+      <AbsolutePoint location="572,2876" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/viewshopintroduce.do,viewPage,/platform/shop/shopintroduce_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3023,1954" />
+      <AbsolutePoint location="3023,3176" />
+      <AbsolutePoint location="2710,3176" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

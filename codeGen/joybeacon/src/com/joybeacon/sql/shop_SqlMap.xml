@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="shop" >
+
+  <resultMap id="ShopResult" class="com.joybeacon.model.Shop" >
+    <result column="shopID" property="shopid" jdbcType="BIGINT" />
+    <result column="shopname" property="shopname" jdbcType="VARCHAR" />
+    <result column="shopcode" property="shopcode" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="updateTime" property="updatetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  
+  <sql id="Where_Clause" >
+    <dynamic prepend="where" >
+       <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+       <isNotNull prepend="and" property="shopname"><![CDATA[ shopname=#shopname:VARCHAR# ]]></isNotNull>
+       <isNotNull prepend="and" property="shopcode"><![CDATA[ shopcode=#shopcode:BIGINT# ]]></isNotNull>
+    </dynamic>
+  </sql>
+  
+  <select id="selectByPK" resultMap="ShopResult" parameterClass="com.joybeacon.model.Shop" >
+    select shopID, shopname, shopcode, description, createTime, updateTime
+    from shop
+    where shopID = #shopid:BIGINT#
+  </select>
+  
+  <select id="selectByVO" resultMap="ShopResult" parameterClass="com.joybeacon.model.Shop" >
+    select shopID, shopname, shopcode, description, createTime, updateTime
+    from shop
+    <isParameterPresent >
+      <include refid="shop.Where_Clause" />
+      <isPropertyAvailable property="orderbyclause" >
+        order by $orderbyclause$
+      </isPropertyAvailable>
+    </isParameterPresent>
+  </select>
+  
+  <delete id="deleteByPK" parameterClass="com.joybeacon.model.Shop" >
+    delete from shop
+    where shopID = #shopid:BIGINT#
+  </delete>
+  
+  <delete id="deleteByExample" parameterClass="java.util.Map" >
+    delete from shop
+    <include refid="shop.Example_Where_Clause" />
+  </delete>
+  
+  <insert id="insert" parameterClass="com.joybeacon.model.Shop" >
+    insert into shop (shopID, shopname, shopcode, description, createTime, updateTime)
+    values (#shopid:BIGINT#, #shopname:VARCHAR#, #shopcode:VARCHAR#, #description:VARCHAR#,
+      #createtime:TIMESTAMP#, #updatetime:TIMESTAMP#)
+  </insert>
+  
+  <update id="updateByPK" parameterClass="com.joybeacon.model.Shop" >
+    update shop
+    set shopname = #shopname:VARCHAR#,
+      shopcode = #shopcode:VARCHAR#,
+      description = #description:VARCHAR#,
+      createTime = #createtime:TIMESTAMP#,
+      updateTime = #updatetime:TIMESTAMP#
+    where shopID = #shopid:BIGINT#
+  </update>
+  
+  <update id="updateByPKSelective" parameterClass="com.joybeacon.model.Shop" >
+    update shop
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="shopname" >
+        shopname = #shopname:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="shopcode" >
+        shopcode = #shopcode:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="description" >
+        description = #description:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="createtime" >
+        createTime = #createtime:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="," property="updatetime" >
+        updateTime = #updatetime:TIMESTAMP#
+      </isNotNull>
+    </dynamic>
+    where shopID = #shopid#
+  </update>
+  
+</sqlMap>

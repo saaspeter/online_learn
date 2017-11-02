@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE abatorConfiguration PUBLIC "-//Apache Software Foundation//DTD Abator for iBATIS Configuration 1.0//EN" "http://ibatis.apache.org/dtd/abator-config_1_0.dtd" >
+<abatorConfiguration >
+  <abatorContext >
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://localhost:3306/saasnettest?autoReconnect=true"
+        userId="peter"
+        password="peter">
+      <classPathEntry location="G:\Program Files\MySQL\MySQL Server 5.0\mysql-connector-3.1.12.jar" />
+    </jdbcConnection>
+    
+    <javaModelGenerator targetPackage="acegi.vo" targetProject="acegi" />
+    <sqlMapGenerator targetPackage="acegi.sql22" targetProject="acegi" />
+    
+    <table tableName="resources">
+    </table>
+    
+    <table tableName="roles">
+    </table>
+    
+    <table tableName="users">
+    </table>
+    
+    <table tableName="role_resc">
+    </table>
+    
+    <table tableName="user_role">
+    </table>
+    
+    <table tableName="custorder">
+    </table>
+    
+    <table tableName="rolesValue">
+    </table>
+    
+    <table tableName="menus">
+    </table>
+    
+    <table tableName="resourcesValue">
+    </table>
+    
+    <table tableName="menusValue">
+    </table>
+    
+    <table tableName="rescLink">
+    </table>
+    
+  </abatorContext>
+</abatorConfiguration>

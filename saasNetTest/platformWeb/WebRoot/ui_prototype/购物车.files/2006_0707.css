@@ -1,0 +1,48 @@
+#cuecontainer {
+	BORDER-RIGHT: #739c5c 6px solid; BORDER-TOP: #9eca89 6px solid; FONT-SIZE: 12px; Z-INDEX: 100; BACKGROUND: url(http://images.koolearn.com/www/popup/2006_0707/bg_tip_01.gif) #ffffff no-repeat 1px 1px; LEFT: 300px; BORDER-LEFT: #9eca89 6px solid; WIDTH: 265px; BORDER-BOTTOM: #739c5c 6px solid; POSITION: absolute; TOP: 200px; TEXT-ALIGN: left
+}
+P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL {
+	LIST-STYLE-TYPE: none
+}
+.red {
+	COLOR: #ff5500
+}
+#cuecontent .btnstyle1 {
+	BORDER-RIGHT: #b2b2b2 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #b2b2b2 1px solid; PADDING-LEFT: 0px; FONT-SIZE: 12px; BACKGROUND: url(http://images.koolearn.com/www/popup/2006_0707/bg_btn_01.gif) #ffffff repeat-x 0px 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 3px 4px 0px; OVERFLOW: hidden; BORDER-LEFT: #b2b2b2 1px solid; CURSOR: pointer; LINE-HEIGHT: 18px; PADDING-TOP: 0px; BORDER-BOTTOM: #b2b2b2 1px solid; HEIGHT: 19px
+}
+#cuecontent .btnstyle2 {
+	BORDER-RIGHT: #b2b2b2 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #b2b2b2 1px solid; PADDING-LEFT: 0px; FONT-SIZE: 12px; BACKGROUND: url(http://images.koolearn.com/www/popup/2006_0707/bg_btn_01.gif) #ffffff repeat-x 0px 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 3px 4px 0px; OVERFLOW: hidden; BORDER-LEFT: #b2b2b2 1px solid; CURSOR: pointer; LINE-HEIGHT: 18px; PADDING-TOP: 0px; BORDER-BOTTOM: #b2b2b2 1px solid; HEIGHT: 19px
+}
+#cuecontent .btnstyle3 {
+	BORDER-RIGHT: #b2b2b2 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #b2b2b2 1px solid; PADDING-LEFT: 0px; FONT-SIZE: 12px; BACKGROUND: url(http://images.koolearn.com/www/popup/2006_0707/bg_btn_01.gif) #ffffff repeat-x 0px 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 3px 4px 0px; OVERFLOW: hidden; BORDER-LEFT: #b2b2b2 1px solid; CURSOR: pointer; LINE-HEIGHT: 18px; PADDING-TOP: 0px; BORDER-BOTTOM: #b2b2b2 1px solid; HEIGHT: 19px
+}
+#cuecontent .btnstyle2 {
+	WIDTH: 70px
+}
+#cuecontent .btnstyle3 {
+	WIDTH: 80px
+}
+#cuecontent {
+	BORDER-RIGHT: #ffffff 4px solid; PADDING-RIGHT: 10px; BORDER-TOP: #ffffff 4px solid; PADDING-LEFT: 84px; PADDING-BOTTOM: 15px; BORDER-LEFT: #ffffff 4px solid; CURSOR: move; LINE-HEIGHT: 19px; PADDING-TOP: 48px; BORDER-BOTTOM: #ffffff 4px solid
+}
+#cuecontent P {
+	CURSOR: default
+}
+#cuecontent UL {
+	CURSOR: default
+}
+#cuecontent UL.ulbg LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 7px; BACKGROUND: url(http://images.koolearn.com/www/popup/2006_0707/dot_ul_01.gif) no-repeat 0px 7px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+P.cuebtnarea {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 5px; TEXT-ALIGN: center
+}

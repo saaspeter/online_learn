@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Shopapp">
+<!-- ###################### shopappResult ########################## -->
+  <resultMap id="ShopappResult" class="platform.vo.Shopapp">
+    <result column="shopAppID" property="shopappid" jdbcType="BIGINT"/>
+    <result column="shopName" property="shopname" jdbcType="VARCHAR"/>
+    <result column="shopCode" property="shopcode" jdbcType="VARCHAR"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="localeID" property="localeid" jdbcType="BIGINT"/>
+    <result column="userID" property="userid" jdbcType="BIGINT"/>
+    <result column="openType" property="opentype" jdbcType="SMALLINT"/>
+    <result column="userNumScale" property="usernumscale" jdbcType="VARCHAR"/>
+    <result column="ownerType" property="ownertype" jdbcType="SMALLINT"/>
+    <result column="bizArea" property="bizarea" jdbcType="INTEGER"/>
+    <result column="appDate" property="appdate" jdbcType="TIMESTAMP"/>
+    <result column="appStatus" property="appstatus" jdbcType="SMALLINT"/>
+    <result column="replyDate" property="replydate" jdbcType="TIMESTAMP"/>
+    <result column="regionCode" property="regioncode" jdbcType="VARCHAR"/>
+    <result column="contactname" property="contactname" jdbcType="VARCHAR"/>
+    <result column="email" property="email" jdbcType="VARCHAR"/>
+    <result column="telephone" property="telephone" jdbcType="VARCHAR"/>
+    <result column="postcode" property="postcode" jdbcType="VARCHAR"/>
+    <result column="address" property="address" jdbcType="VARCHAR"/>
+    <result column="notes" property="notes" jdbcType="VARCHAR"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="shopappid"><![CDATA[ shopAppID=#shopappid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="shopname"><![CDATA[ shopName like CONCAT('%',#shopname:VARCHAR#,'%') ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="shopcode"><![CDATA[ shopCode like CONCAT('%',#shopcode:VARCHAR#,'%') ]]></isNotEmpty>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="userid"><![CDATA[ userID=#userid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="opentype"><![CDATA[ openType=#opentype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="ownertype"><![CDATA[ ownerType=#ownertype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="bizarea"><![CDATA[ bizArea=#bizarea:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="and" property="appdate"><![CDATA[ appDate=#appdate:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="and" property="appstatus"><![CDATA[ appStatus=#appstatus:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="replydate"><![CDATA[ replyDate=#replydate:TIMESTAMP# ]]></isNotNull>
+    </dynamic>
+  </sql>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="ShopappResult" parameterClass="java.lang.Long"> 
+     select 
+         shopAppID,
+    shopName,
+    shopCode, shopID, 
+    localeID,
+    userID,
+    openType, userNumScale, ownerType, bizArea,
+    appDate,
+    appStatus,
+    replyDate,regionCode,contactname,email,telephone,postcode,address,
+    notes 
+     from shopapp 
+     where shopAppID = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="ShopappResult" parameterClass="platform.dto.ShopappQuery"> 
+     select 
+         shopAppID,
+    shopName,
+    shopCode, shopID, 
+    localeID,
+    userID,
+    openType, userNumScale, ownerType, bizArea,
+    appDate,
+    appStatus,
+    replyDate,regionCode,contactname,email,telephone,postcode,address,
+    notes
+     from shopapp
+    <include refid="Shopapp.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="platform.vo.Shopapp"> 
+     insert into shopapp
+     ( shopAppID,
+    shopName,
+    shopCode, shopID, 
+    localeID,
+    userID,
+    openType, userNumScale, ownerType, bizArea,
+    appDate,
+    appStatus,
+    replyDate,regionCode,contactname,email,telephone,postcode,address,
+    notes ) 
+    values 
+     ( #shopappid:BIGINT#, 
+    #shopname:VARCHAR#, 
+    #shopcode:VARCHAR#, #shopid:BIGINT#,
+    #localeid:BIGINT#, 
+    #userid:BIGINT#, 
+    #opentype:SMALLINT#, #usernumscale:VARCHAR#, #ownertype:SMALLINT#, #bizarea:INTEGER#, 
+    #appdate:TIMESTAMP#, 
+    #appstatus:SMALLINT#, 
+    #replydate:TIMESTAMP#, #regioncode:VARCHAR#, #contactname:VARCHAR#,
+    #email:VARCHAR#, #telephone:VARCHAR#, #postcode:VARCHAR#, #address:VARCHAR#,
+    #notes:VARCHAR# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="shopappid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="platform.vo.Shopapp"> 
+     update shopapp
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="opentype"><![CDATA[ openType=#opentype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="usernumscale"><![CDATA[ userNumScale=#usernumscale:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="ownertype"><![CDATA[ ownerType=#ownertype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="bizarea"><![CDATA[ bizArea=#bizarea:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="appstatus"><![CDATA[ appStatus=#appstatus:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="replydate"><![CDATA[ replyDate=#replydate:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="regioncode"><![CDATA[ regionCode=#regioncode:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="contactname"><![CDATA[ contactname=#contactname:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="email"><![CDATA[ email=#email:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="telephone"><![CDATA[ telephone=#telephone:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="postcode"><![CDATA[ postcode=#postcode:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="address"><![CDATA[ address=#address:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="notes"><![CDATA[ notes=#notes:VARCHAR# ]]></isNotNull>
+    </dynamic> where shopAppID = #shopappid:BIGINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from shopapp where shopAppID = #value#
+  </delete>
+  
+<!-- ###################### deleteByVO ########################## -->
+  <delete id="deleteByVO" parameterClass="platform.dto.ShopappQuery"> 
+     delete from shopapp
+     <include refid="Shopapp.where_Clause"/> 
+  </delete>
+  
+<!-- ###################### selectAllCount ########################## -->
+  <select id="selectAllCount" resultClass="java.lang.Integer"> 
+     select count(*) from shopapp
+  </select>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="platform.dto.ShopappQuery"> 
+     select count(*) from shopapp
+     <include refid="Shopapp.where_Clause"/>  
+  </select>
+  
+  <!-- ###################### selectCountByOwner ########################## -->
+  <select id="selectCountByOwner" resultClass="java.lang.Integer" parameterClass="platform.vo.Shopapp"> 
+     select count(shopAppID) from shopapp where userID=#userid:BIGINT# 
+        <isNotNull prepend="and" property="appstatus"><![CDATA[ appStatus=#appstatus:SMALLINT# ]]></isNotNull>
+  </select>
+    
+</sqlMap>

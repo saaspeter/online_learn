@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;resources_data.xls&apos; to &apos;resources_data.xls&apos;&#x0D;&#x0A;- Original project: &apos;commonService&apos;&#x0D;&#x0A;- Destination element: &apos;resources_data.xls&apos;&#x0D;&#x0A;- Original element: &apos;resources_data.xls&apos;" description="Copy file" element1="src/java/commonWeb/security/magtool/resources_data.xls" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1431268754553" target="/commonService/src/java/commonWeb/security/magtool/resources_data.xls" units="0" version="1.0"/>
+</session>

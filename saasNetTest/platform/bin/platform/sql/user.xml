@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="User">
+  
+  <!-- ###################### UserResult ########################## -->
+  <resultMap id="UserResult" class="platform.vo.User">
+    <result column="userID" property="userid" jdbcType="BIGINT"/>
+    <result column="displayname" property="displayname" jdbcType="VARCHAR"/>
+    <result column="loginname" property="loginname" jdbcType="VARCHAR"/>
+    <result column="email" property="email" jdbcType="VARCHAR"/>
+    <result column="pass" property="pass" jdbcType="VARCHAR"/>
+    <result column="gender" property="gender" jdbcType="SMALLINT"/>
+    <result column="localeID" property="localeid" jdbcType="BIGINT"/>
+    <result column="timezone" property="timezone" jdbcType="VARCHAR"/>
+    <result column="lcoinRemain" property="lcoinremain" jdbcType="DOUBLE"/>
+    <result column="regisTime" property="registime" jdbcType="TIMESTAMP"/>
+    <result column="userType" property="usertype" jdbcType="SMALLINT"/>
+    <result column="status" property="status" jdbcType="SMALLINT"/>
+    <result column="stageStatus" property="stagestatus" jdbcType="SMALLINT"/>
+  </resultMap>
+  
+   
+  <!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+       <isNotNull prepend="and" property="userid"><![CDATA[ userID=#userid:BIGINT# ]]></isNotNull>
+       <isNotEmpty prepend="and" property="displayname"><![CDATA[ displayname like CONCAT('%',#displayname:VARCHAR#,'%') ]]></isNotEmpty>
+       <isNotEmpty prepend="and" property="loginname"><![CDATA[ loginname=#loginname:VARCHAR# ]]></isNotEmpty>
+       <isNotNull prepend="and" property="gender"><![CDATA[ gender=#gender:SMALLINT# ]]></isNotNull>
+       <isNotEmpty prepend="and" property="email"><![CDATA[ email=#email:VARCHAR# ]]></isNotEmpty>
+       <isNotNull prepend="and" property="localeid"><![CDATA[ localeID=#localeid:BIGINT# ]]></isNotNull>
+       <isNotNull prepend="and" property="registime"><![CDATA[ regisTime=#registime:TIMESTAMP# ]]></isNotNull>
+       <isNotNull prepend="and" property="usertype"><![CDATA[ userType=#usertype:SMALLINT# ]]></isNotNull>
+       <isNotNull prepend="and" property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+       <isNotNull prepend="and" property="stagestatus"><![CDATA[ stageStatus=#stagestatus:SMALLINT# ]]></isNotNull>
+    </dynamic>
+  </sql>
+  
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="UserResult" parameterClass="java.lang.Long"> 
+     select  
+        userID, displayname, loginname, email, pass, gender, localeID, 
+    	timezone, lcoinRemain, regisTime, userType, status, stageStatus  
+     from User 
+     where userID = #value#
+  </select>
+  
+  <!-- ###################### selectByLogin ########################## -->
+  <select id="selectByLogin" resultMap="UserResult" parameterClass="java.lang.String"> 
+     select 
+         userID, displayname, loginname, email, pass, gender, localeID, 
+    	 timezone, lcoinRemain, regisTime, userType, status, stageStatus 
+     from User  
+     where loginname = #value#
+  </select>
+  
+  <!-- ###################### selectByEmail ########################## -->
+  <select id="selectByEmail" resultMap="UserResult" parameterClass="java.lang.String"> 
+     select 
+         userID, displayname, loginname, email, pass, gender, localeID, 
+    	 timezone, lcoinRemain, regisTime, userType, status, stageStatus 
+     from User
+     where email = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="UserResult" parameterClass="platform.dto.UserQuery"> 
+     select 
+		 userID, displayname, loginname, email, pass, gender, localeID, 
+    	 timezone, lcoinRemain, regisTime, userType, status, stageStatus 
+     from User
+    <include refid="User.where_Clause"/>  
+    <isNotNull property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotNull> 
+  </select>
+  
+  <!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="platform.dto.UserQuery"> 
+     select count(*) from User
+     <include refid="User.where_Clause"/>
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="platform.vo.User"> 
+     insert into User
+     ( userID,
+    displayname,
+    loginname, email,
+    pass, gender,
+    localeID,timezone,
+    lcoinRemain,
+    regisTime,
+    userType,
+    status,
+    stageStatus ) 
+    values 
+     ( #userid:BIGINT#, 
+    #displayname:VARCHAR#, 
+    #loginname:VARCHAR#, 
+    #email:VARCHAR#, 
+    #pass:VARCHAR#, #gender:SMALLINT#,
+    #localeid:BIGINT#, #timezone:VARCHAR#,
+    #lcoinremain:DOUBLE#, 
+    #registime:TIMESTAMP#, 
+    #usertype:SMALLINT#, 
+    #status:SMALLINT#,
+    #stagestatus:SMALLINT# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="userid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="platform.vo.User"> 
+     update user
+    <dynamic prepend="set"> 
+      <isNotEmpty prepend="," property="displayname"><![CDATA[ displayname=#displayname:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="," property="gender"><![CDATA[ gender=#gender:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="localeid"><![CDATA[ localeID=#localeid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="," property="timezone"><![CDATA[ timezone=#timezone:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="," property="lcoinremain"><![CDATA[ lcoinRemain=#lcoinremain:DOUBLE# ]]></isNotNull>
+      <isNotNull prepend="," property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+	  <isNotNull prepend="," property="stagestatus"><![CDATA[ stageStatus=#stagestatus:SMALLINT# ]]></isNotNull>
+    </dynamic> where userID = #userid:BIGINT#
+  </update>
+  
+  <!-- ###################### updatePassword ########################## -->
+  <update id="updatePassword" parameterClass="platform.vo.User"> 
+     update User set <![CDATA[ pass=#pass:VARCHAR# ]]>
+      where userID = #userid:BIGINT#
+  </update>
+  
+  <!-- ###################### updateLoginamePassEmailStatus ########################## -->
+  <update id="updateLoginamePassEmailStatus" parameterClass="platform.vo.User"> 
+     update User set <![CDATA[ loginname=#loginname:VARCHAR#, pass=#pass:VARCHAR# ]]>
+         		<dynamic>
+         		    <isNotEmpty prepend="," property="email"><![CDATA[ email=#email:VARCHAR# ]]></isNotEmpty>
+         		    <isNotNull prepend="," property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+                    <isNotNull prepend="," property="stagestatus"><![CDATA[ stageStatus=#stagestatus:SMALLINT# ]]></isNotNull>
+                </dynamic>
+      where userID = #userid:BIGINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from User where userID = #value:BIGINT#
+  </delete>
+  
+  <!-- ###################### selectByRoleId ########################## -->
+  <select id="selectByRoleId" resultMap="UserResult" parameterClass="platform.dto.UserQuery"> 
+     select  
+         userID, displayname, loginname, email, pass, gender, localeID, 
+    	 timezone, lcoinRemain, regisTime, userType, status, stageStatus 
+      from User  
+     <dynamic prepend="where"> 
+         <isNotEmpty prepend="and" property="loginname"><![CDATA[ loginname like CONCAT('%',#loginname:VARCHAR#,'%') ]]></isNotEmpty>
+	     <isNotNull prepend="and" property="roleId">
+	     <![CDATA[
+	      exists
+	     (select user_role.role_id from user_role 
+	      where User.userID=user_role.user_id and user_role.syscode=#syscode:VARCHAR# 
+	            and user_role.role_id=#roleId:BIGINT#)
+	      ]]></isNotNull>
+     </dynamic>
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+  <!-- ###################### selectByRoleIdCount ########################## -->
+  <select id="selectByRoleIdCount" resultClass="java.lang.Integer" parameterClass="platform.dto.UserQuery"> 
+     select count(*) from User 
+     <dynamic prepend="where">
+        <isNotEmpty prepend="and" property="loginname"><![CDATA[ loginname like CONCAT('%',#loginname:VARCHAR#,'%') ]]></isNotEmpty>
+        <isNotNull prepend="and" property="roleId">
+        <![CDATA[
+          exists
+           (select user_role.role_id from user_role 
+            where User.userID=user_role.user_id and user_role.syscode=#syscode:VARCHAR# 
+            and user_role.role_id=#roleId:BIGINT#)
+      ]]></isNotNull>
+      </dynamic>
+  </select>
+  
+  <!-- ###################### selectUsersForRoleAdd ########################## -->
+  <select id="selectUsersForRoleAdd" resultMap="UserResult" parameterClass="platform.dto.UserQuery"> 
+     select  
+         userID, displayname, loginname, email, pass, gender, localeID, 
+    	 timezone, lcoinRemain, regisTime, userType, status, stageStatus 
+      from User  
+     <dynamic prepend="where"> 
+         <isNotEmpty prepend="and" property="loginname"><![CDATA[ 
+             loginname like CONCAT('%',#loginname:VARCHAR#,'%') ]]>
+         </isNotEmpty>
+         <isNotNull prepend="and" property="status">
+             status=#status:SMALLINT#
+         </isNotNull>
+         <isNotNull prepend="and" property="roleId">
+             <![CDATA[
+                not exists
+                (select user_role.role_id from user_role 
+                 where user_role.user_id = User.userID 
+                 and user_role.role_id=#roleId:BIGINT#)
+             ]]>
+         </isNotNull>
+     </dynamic>
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+  <!-- ###################### selectUsersForRoleAddCount ########################## -->
+  <select id="selectUsersForRoleAddCount" resultClass="java.lang.Integer" parameterClass="platform.dto.UserQuery"> 
+     select count(*) from User 
+     <dynamic prepend="where"> 
+         <isNotNull prepend="and" property="status">
+             status=#status:SMALLINT#
+         </isNotNull>
+         <isNotNull prepend="and" property="roleId">
+             <![CDATA[
+                not exists
+                (select user_role.role_id from user_role 
+                 where user_role.user_id = User.userID 
+                 and user_role.role_id=#roleId:BIGINT#)
+             ]]>
+         </isNotNull>
+     </dynamic>
+  </select>
+    
+</sqlMap>

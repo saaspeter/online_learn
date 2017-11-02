@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="{[#className#]}">
+<!-- ###################### {[#tableName#]}Result ########################## -->
+  <resultMap id="{[#className#]}Result" class="netTest.product.vo.{[#className#]}">
+{[#results#]}
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+{[#where_Clause#]}
+    </dynamic>
+  </sql>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="{[#className#]}Result" parameterClass="java.lang.Long"> 
+     select 
+     {[#columnsList_select#]} 
+     from {[#tableName#]} 
+     where {[#pk#]} = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="{[#className#]}Result" parameterClass="netTest.product.dto.{[#className#]}Query"> 
+     select 
+     {[#columnsList_select#]}
+     from {[#tableName#]}
+    <include refid="{[#className#]}.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.product.vo.{[#className#]}"> 
+     insert into {[#tableName#]}
+     ( {[#columnsList_select#]} ) 
+    values 
+     ( {[#columnValuesList_insert#]} )
+	 <selectKey resultClass="java.lang.Long" keyProperty="{[#pkProperty#]}" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.product.vo.{[#className#]}"> 
+     update {[#tableName#]}
+    <dynamic prepend="set"> 
+{[#updateSetClause#]}
+    </dynamic> where {[#pk#]} = {[#pkValue#]}
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from {[#tableName#]} where {[#pk#]} = #value#
+  </delete>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.product.dto.{[#className#]}Query"> 
+     select count(*) from {[#tableName#]}
+     <include refid="{[#className#]}.where_Clause"/>  
+  </select>
+    
+</sqlMap>

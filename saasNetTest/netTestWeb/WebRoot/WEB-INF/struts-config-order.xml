@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+  <data-sources />
+  
+  <form-beans>
+     <form-bean name="shoppingCartForm" type="netTestWeb.order.form.ShoppingCartForm" />
+	 <form-bean name="custorderForm" type="netTestWeb.order.form.CustorderForm" />
+     <form-bean name="orderproductForm" type="netTestWeb.order.form.OrderproductForm" />
+  </form-beans>
+  
+  <global-exceptions>
+      <exception key="commonWeb.java.commonaction.errors.noLogin" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoLoginException" path="/login_forward.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.editPage.noSuchRecord" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoSuchRecordException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.resubmit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.ResubmitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.DaoException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="org.springframework.dao.DataAccessException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.Unauthorized" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoRightException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.LogicErr" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.LogicException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.InvalidVisit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.InvalideVisitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.SystemError" handler="commonWeb.base.StrutsExceptionHandler" type="java.lang.Throwable" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+  </global-exceptions>
+  
+  <global-forwards>
+     <forward name="errorPage" path="/pubs/errorPage.jsp" ></forward>
+     <forward name="failure" path="/pubs/404.jsp" ></forward>
+     <forward name="messagePage" path="/pubs/message.jsp" ></forward>
+     <forward name="messageClosePage" path="/pubs/messageClose.jsp" ></forward>
+     <forward name="treeXml" path="/pubs/treeXml.jsp" ></forward>
+     <forward name="toUrl" path="/pubs/toUrl.jsp" ></forward>
+	 <forward name="inprogress" path="/pubs/inprogress.jsp"/>
+	 <forward name="leftMenu" path="/pubs/leftMenu.jsp"/>
+	 <forward name="topMenu" path="/pubs/topMenu.jsp"/>
+  </global-forwards>
+    
+  <action-mappings>
+   
+    <!-- shoppingCart begin -->    
+    <action parameter="shoppingcartList" path="/shopping/shoppingcartList" name="shoppingCartForm" type="netTestWeb.order.action.ShoppingCartAction" scope="request">
+       <forward name="shopping_cart" path="/shopping/shopping_cart.jsp"></forward>
+    </action>
+    
+    <action parameter="addProdToCart" path="/shopping/addProdToCart" name="shoppingCartForm" type="netTestWeb.order.action.ShoppingCartAction" scope="request">
+       <forward name="shopping_cart" path="/shopping/shopping_cart.jsp"></forward>
+    </action>
+    
+    <action parameter="delProdFromCart" path="/shopping/delProdFromCart" name="shoppingCartForm" type="netTestWeb.order.action.ShoppingCartAction" scope="request">
+       <forward name="shopping_cart" path="/shopping/shopping_cart.jsp"></forward>
+    </action>
+    
+    <action parameter="cancelShoppingOrder" path="/shopping/cancelShoppingOrder" name="shoppingCartForm" type="netTestWeb.order.action.ShoppingCartAction" scope="request">
+       <forward name="shopping_cart" path="/shopping/shopping_cart.jsp"></forward>
+    </action>
+    <!-- shoppingCart end -->
+    
+    <!-- CustOrderAction begin -->
+    <action parameter="listOrderMag" path="/order/listOrderMag" name="custorderForm" type="netTestWeb.order.action.CustorderAction" scope="request">
+       <forward name="listOrder" path="/order/custorder_list.jsp"></forward>
+    </action>
+    
+    <action parameter="myOrderlist" path="/order/myOrderlist" name="custorderForm" type="netTestWeb.order.action.CustorderAction" scope="request">
+       <forward name="listOrder" path="/order/cust_custorder_list.jsp"></forward>
+    </action>
+    
+    <action parameter="shopOrderlist" path="/order/shopOrderlist" name="custorderForm" type="netTestWeb.order.action.CustorderAction" scope="request">
+       <forward name="listOrder" path="/order/custorder_list.jsp"></forward>
+    </action>
+    
+    <action parameter="viewOrderUser" path="/order/viewOrderUser" name="custorderForm" type="netTestWeb.order.action.CustorderAction" scope="request">
+       <forward name="viewOrder" path="/order/custorder_view_user.jsp"></forward>
+    </action>
+    
+    <action parameter="viewOrderMag" path="/order/viewOrderMag" name="custorderForm" type="netTestWeb.order.action.CustorderAction" scope="request">
+       <forward name="viewOrder" path="/order/custorder_view_mag.jsp"></forward>
+    </action>
+    
+    <action parameter="cancelOrder" path="/order/cancelOrder" name="custorderForm" type="netTestWeb.order.action.CustorderAction" scope="request">
+    </action>
+    
+    <action parameter="editCustNotes" path="/order/editCustNotes" name="custorderForm" type="netTestWeb.order.action.CustorderAction" scope="request"> 
+    </action>
+    
+    <action parameter="geneOrder" path="/order/geneOrder" name="custorderForm" type="netTestWeb.order.action.CustorderAction" scope="request">
+       <forward name="successfulTipPage" path="/order/custorder_createTipPage.jsp"></forward>
+    </action>
+    
+    <action parameter="approveOrder" path="/order/approveOrder" name="custorderForm" type="netTestWeb.order.action.CustorderAction" scope="request">
+    </action>
+    
+    <action parameter="toApproveOrderPage" path="/order/toApproveOrderPage" name="custorderForm" type="netTestWeb.order.action.CustorderAction" scope="request">
+       <forward name="approvePage" path="/order/confirmCustorder.jsp"></forward>
+    </action>
+    <!-- CustOrderAction end -->
+         
+       
+  </action-mappings>
+  
+  <message-resources parameter="netTestWeb.resource.PagetextResources" />
+  <message-resources key="BizKey" parameter="netTestWeb.resource.BizMessResources" />
+    
+</struts-config>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Shopcosrecdet">
+<!-- ###################### shopcosrecdetResult ########################## -->
+  <resultMap id="ShopcosrecdetResult" class="platform.vo.Shopcosrecdet">
+    <result column="shopCosRecDetID" property="shopcosrecdetid" jdbcType="BIGINT"/>
+    <result column="costRecordID" property="costrecordid" jdbcType="BIGINT"/>
+    <result column="baseAccountID" property="baseaccountid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="functionCode" property="functioncode" jdbcType="BIGINT"/>
+    <result column="systemID" property="systemid" jdbcType="CHAR"/>
+    <result column="functionName" property="functionname" jdbcType="VARCHAR"/>
+    <result column="payType" property="paytype" jdbcType="SMALLINT"/>
+    <result column="payTime" property="paytime" jdbcType="TIMESTAMP"/>
+    <result column="cost" property="cost" jdbcType="BIGINT"/>
+    <result column="isPay" property="ispay" jdbcType="SMALLINT"/>
+    <result column="costType" property="costtype" jdbcType="SMALLINT"/>
+    <result column="costDisc" property="costdisc" jdbcType="VARCHAR"/>
+
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="shopcosrecdetid"><![CDATA[ shopCosRecDetID=#shopcosrecdetid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="costrecordid"><![CDATA[ costRecordID=#costrecordid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="baseaccountid"><![CDATA[ baseAccountID=#baseaccountid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="functioncode"><![CDATA[ functionCode=#functioncode:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="systemid"><![CDATA[ systemID=#systemid:CHAR# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="functionname"><![CDATA[ functionName=#functionname:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="paytype"><![CDATA[ payType=#paytype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="paytime"><![CDATA[ payTime=#paytime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="and" property="cost"><![CDATA[ cost=#cost:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="ispay"><![CDATA[ isPay=#ispay:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="costtype"><![CDATA[ costType=#costtype:SMALLINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="costdisc"><![CDATA[ costDisc=#costdisc:VARCHAR# ]]></isNotEmpty>
+
+    </dynamic>
+  </sql>
+  
+<!-- ###################### selectAll ########################## -->
+  <select id="selectAll" resultMap="ShopcosrecdetResult"> 
+     select 
+         shopCosRecDetID,
+    costRecordID,
+    baseAccountID,
+    shopID,
+    functionCode,
+    systemID,
+    functionName,
+    payType,
+    payTime,
+    cost,
+    isPay,
+    costType,
+    costDisc 
+     from shopcosrecdet
+  </select>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="ShopcosrecdetResult" parameterClass="java.lang.Long"> 
+     select 
+         shopCosRecDetID,
+    costRecordID,
+    baseAccountID,
+    shopID,
+    functionCode,
+    systemID,
+    functionName,
+    payType,
+    payTime,
+    cost,
+    isPay,
+    costType,
+    costDisc 
+     from shopcosrecdet 
+     where shopCosRecDetID = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="ShopcosrecdetResult" parameterClass="platform.dto.ShopcosrecdetQuery"> 
+     select 
+         shopCosRecDetID,
+    costRecordID,
+    baseAccountID,
+    shopID,
+    functionCode,
+    systemID,
+    functionName,
+    payType,
+    payTime,
+    cost,
+    isPay,
+    costType,
+    costDisc
+     from shopcosrecdet
+    <include refid="Shopcosrecdet.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="platform.vo.Shopcosrecdet"> 
+     insert into shopcosrecdet
+     (     shopCosRecDetID,
+    costRecordID,
+    baseAccountID,
+    shopID,
+    functionCode,
+    systemID,
+    functionName,
+    payType,
+    payTime,
+    cost,
+    isPay,
+    costType,
+    costDisc ) 
+    values 
+     (     #shopcosrecdetid:BIGINT#, 
+    #costrecordid:BIGINT#, 
+    #baseaccountid:BIGINT#, 
+    #shopid:BIGINT#, 
+    #functioncode:BIGINT#, 
+    #systemid:CHAR#, 
+    #functionname:VARCHAR#, 
+    #paytype:SMALLINT#, 
+    #paytime:TIMESTAMP#, 
+    #cost:BIGINT#, 
+    #ispay:SMALLINT#, 
+    #costtype:SMALLINT#, 
+    #costdisc:VARCHAR# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="shopcosrecdetid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="platform.vo.Shopcosrecdet"> 
+     update shopcosrecdet
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="costrecordid"><![CDATA[ costRecordID=#costrecordid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="baseaccountid"><![CDATA[ baseAccountID=#baseaccountid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="functioncode"><![CDATA[ functionCode=#functioncode:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="systemid"><![CDATA[ systemID=#systemid:CHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="functionname"><![CDATA[ functionName=#functionname:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="paytype"><![CDATA[ payType=#paytype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="paytime"><![CDATA[ payTime=#paytime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="cost"><![CDATA[ cost=#cost:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="ispay"><![CDATA[ isPay=#ispay:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="costtype"><![CDATA[ costType=#costtype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="costdisc"><![CDATA[ costDisc=#costdisc:VARCHAR# ]]></isNotNull>
+
+    </dynamic> where shopCosRecDetID = #shopcosrecdetid:BIGINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from shopcosrecdet where shopCosRecDetID = #value#
+  </delete>
+  
+  <!-- ###################### delByShopID ########################## -->
+  <delete id="delByShopID" parameterClass="java.lang.Long"> 
+     delete from shopcosrecdet where shopID = #value#
+  </delete>
+  
+  <!-- ###################### delByAccountID ########################## -->
+  <delete id="delByAccountID" parameterClass="java.lang.Long"> 
+     delete from shopcosrecdet where baseAccountID = #value#
+  </delete>
+  
+<!-- ###################### deleteByVO ########################## -->
+  <delete id="deleteByVO" parameterClass="platform.dto.ShopcosrecdetQuery"> 
+     delete from shopcosrecdet
+     <include refid="Shopcosrecdet.where_Clause"/> 
+  </delete>
+  
+<!-- ###################### selectAllCount ########################## -->
+  <select id="selectAllCount" resultClass="java.lang.Integer"> 
+     select count(*) from shopcosrecdet
+  </select>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="platform.dto.ShopcosrecdetQuery"> 
+     select count(*) from shopcosrecdet
+     <include refid="Shopcosrecdet.where_Clause"/>  
+  </select>
+    
+</sqlMap>

@@ -1,0 +1,12 @@
+        <td><bean:message key="commonTool.page.{[#folder#]}.systemlog.logcode"/></td>
+
+        <td><bean:message key="commonTool.page.{[#folder#]}.systemlog.createtime"/></td>
+
+        <td><bean:message key="commonTool.page.{[#folder#]}.systemlog.endtime"/></td>
+
+        <td><bean:message key="commonTool.page.{[#folder#]}.systemlog.result"/></td>
+
+        <td><bean:message key="commonTool.page.{[#folder#]}.systemlog.content"/></td>
+
+
+

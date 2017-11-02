@@ -1,0 +1,1 @@
+        <td><bean:write name="vo" property="{[#property#]}"/></td>

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Productbase">
+<!-- ###################### productbaseResult ########################## -->
+  <resultMap id="ProductbaseResult" class="netTest.product.vo.Productbase">
+    <result column="productBaseID" property="productbaseid" jdbcType="BIGINT"/>
+    <result column="categoryID" property="categoryid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="productName" property="productname" jdbcType="VARCHAR"/>
+    <result column="productPrice" property="productprice" jdbcType="DOUBLE"/>
+    <result column="payType" property="paytype" jdbcType="SMALLINT"/>
+    <result column="useLimitNum" property="uselimitnum" jdbcType="INTEGER"/>
+    <result column="canTry" property="cantry" jdbcType="SMALLINT"/>
+    <result column="tryUseType" property="tryusetype" jdbcType="SMALLINT"/>
+    <result column="tryUseLimitNum" property="tryuselimitnum" jdbcType="INTEGER"/>
+    <result column="isNeedApprove" property="isneedapprove" jdbcType="SMALLINT"/>
+    <result column="promotable" property="promotable" jdbcType="SMALLINT"/>
+    <result column="isOpen" property="isopen" jdbcType="SMALLINT"/>
+    <result column="status" property="status" jdbcType="SMALLINT"/>
+    <result column="logoImage" property="logoimage" jdbcType="VARCHAR"/>
+  </resultMap>
+  
+  <resultMap id="ProductbaseResultExt" class="netTest.product.vo.Productbase">
+     <result column="productBaseID" property="productbaseid" jdbcType="BIGINT"/>
+     <result column="productDesc" property="productdesc" jdbcType="VARCHAR"/>
+  </resultMap>
+  
+  <resultMap id="ProductResultSatis" class="netTest.product.vo.Productbase">
+     <result column="productBaseID" property="productbaseid" jdbcType="BIGINT"/>
+     <result column="warequesNum" property="warequesnum" jdbcType="BIGINT"/>
+     <result column="learncontDocNum" property="learncontdocnum" jdbcType="INTEGER"/>
+     <result column="learncontMediaNum" property="learncontmedianum" jdbcType="INTEGER"/>
+     <result column="paperNum" property="papernum" jdbcType="INTEGER"/>
+     <result column="exerciseNum" property="exercisenum" jdbcType="INTEGER"/>
+     <result column="testinfoNum" property="testinfonum" jdbcType="INTEGER"/>
+     <result column="currentLearnUserNum" property="currentlearnusernum" jdbcType="INTEGER"/>
+     <result column="allLearnedUserNum" property="alllearnedusernum" jdbcType="INTEGER"/>
+  </resultMap>
+  
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="productbaseid"><![CDATA[ a.productBaseID=#productbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ a.shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="productname"><![CDATA[ a.productName like CONCAT('%',#productname:VARCHAR#,'%') ]]></isNotEmpty>
+      <isNotNull prepend="and" property="productprice"><![CDATA[ a.productPrice=#productprice:DOUBLE# ]]></isNotNull>
+      <isNotNull prepend="and" property="cantry"><![CDATA[ a.canTry=#cantry:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="tryusetype"><![CDATA[ a.tryUseType=#tryusetype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="isneedapprove"><![CDATA[ a.isNeedApprove=#isneedapprove:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="promotable"><![CDATA[ a.promotable=#promotable:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="isopen"><![CDATA[ a.isOpen=#isopen:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="status"><![CDATA[ a.status=#status:SMALLINT# ]]></isNotNull>
+      <isNotNull property="paytype">
+         <isEqual prepend="and"  property="paytype" compareValue="-2">
+            <![CDATA[ a.payType!=0 ]]>
+         </isEqual>
+         <isNotEqual prepend="and"  property="paytype" compareValue="-2">
+            <![CDATA[ a.payType=#paytype:SMALLINT# ]]>
+         </isNotEqual>
+      </isNotNull>
+      <isNotNull property="categoryid">
+         <isEqual prepend="and"  property="isIncludeChild" compareValue="1" ><![CDATA[ a.categoryID=#categoryid:BIGINT# ]]></isEqual>
+         <isEqual prepend="and"  property="isIncludeChild" compareValue="2" >
+           <![CDATA[
+             exists (
+                     select 1 from ProductCategory z where a.categoryID=z.categoryID 
+                      and find_in_set(#categoryid:BIGINT#, z.path)>0 
+             ) 
+            ]]>
+         </isEqual>
+         <isEqual prepend="and" property="issysgoodproduct" compareValue="1" >
+            <![CDATA[
+             exists (
+                     select 1 from GoodProduct y where a.productBaseID=y.productBaseID 
+             ) 
+            ]]>
+         </isEqual>
+      </isNotNull>
+      <isNotNull prepend="and" property="localeid">
+         <isEmpty property="regioncode">
+             exists( select * from shopvalue w where a.shopID = w.shopID and w.localeID = #localeid:BIGINT# )
+         </isEmpty>
+         <isNotEmpty property="regioncode"><![CDATA[ 
+            exists( select * from ShopContactInfo x where a.shopID=x.shopID 
+                 and x.localeID = #localeid:BIGINT# and x.regionCode=#regioncode:VARCHAR# )
+            ]]>
+         </isNotEmpty>
+      </isNotNull>
+    </dynamic>
+  </sql>
+  
+   
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="ProductbaseResult" parameterClass="java.lang.Long"> 
+     select  productBaseID, categoryID, shopID, productName, productPrice,
+             payType, useLimitNum, canTry, tryUseType, tryUseLimitNum, isNeedApprove, 
+             promotable, isOpen, status, logoImage
+     from productbase 
+     where  productBaseID = #value#
+  </select>
+  
+  <!-- ###################### selectProdDesc ########################## -->
+  <select id="selectProdDesc" resultMap="ProductbaseResultExt" parameterClass="java.lang.Long"> 
+     select  productBaseID, productDesc 
+     from ProductExt  
+     where  productBaseID = #value#
+  </select>
+  
+  <!-- ###################### selectProdSatis ########################## -->
+  <select id="selectProdSatis" resultMap="ProductResultSatis" parameterClass="java.lang.Long"> 
+     select  productBaseID, warequesNum, learncontDocNum, learncontMediaNum,
+             paperNum, exerciseNum, testinfoNum, currentLearnUserNum, allLearnedUserNum 
+     from ProductSatis  
+     where  productBaseID = #value#
+  </select>
+  
+  <!-- ###################### selectMostLearned ########################## -->
+  <select id="selectMostLearned" resultMap="ProductResultSatis" parameterClass="java.lang.Long"> 
+     select  a.productBaseID, a.warequesNum, a.learncontDocNum, a.learncontMediaNum,
+             a.paperNum, a.exerciseNum, a.testinfoNum, a.currentLearnUserNum, a.allLearnedUserNum 
+     from ProductSatis a   
+     where 1=1 
+     <isNotNull prepend="and" property="value">
+	    exists ( select 1 from productbase z where a.productBaseID=z.productBaseID 
+	             and z.categoryID=#value:BIGINT# )
+	 </isNotNull>
+     order by a.currentLearnUserNum desc limit 0,10
+  </select>
+  
+  <!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="ProductbaseResult" parameterClass="netTest.product.dto.ProductbaseQuery"> 
+     select  a.productBaseID, a.categoryID, a.shopID, a.productName, a.productPrice,
+    		 a.payType, a.useLimitNum, a.canTry, a.tryUseType, a.tryUseLimitNum, 
+    		 a.isNeedApprove, a.promotable, a.isOpen, a.status, a.logoImage
+     from productbase a 
+    <include refid="Productbase.where_Clause"/>  
+    <isNotNull property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotNull> 
+  </select>
+  
+  <!-- ###################### selectByShop ########################## -->
+  <select id="selectByShop" resultMap="ProductbaseResult" parameterClass="java.lang.Long"> 
+     select  productBaseID,categoryID,shopID, productName, productPrice,
+    		payType,useLimitNum,canTry,tryUseType,tryUseLimitNum,
+    		isNeedApprove,promotable,isOpen, status, logoImage
+     from productbase
+     where  shopID = #value#
+  </select>
+  
+  <!-- ###################### selectByPkStr ########################## -->
+  <select id="selectByPkStr" resultMap="ProductbaseResult" parameterClass="java.lang.String"> 
+     select  productBaseID,categoryID,shopID,
+    productName, productPrice,
+    payType,useLimitNum,canTry,tryUseType,
+    tryUseLimitNum,isNeedApprove,promotable,
+    isOpen, status, logoImage
+     from productbase
+    where productBaseID in ($value$)
+  </select>
+
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.product.vo.Productbase"> 
+     insert into productbase
+     (     productBaseID,
+    categoryID,
+    shopID, productName, 
+    productPrice,
+    payType,
+    useLimitNum,
+    canTry,
+    tryUseType,
+    tryUseLimitNum,
+    isNeedApprove,promotable,
+    isOpen,
+    status, logoImage ) 
+    values 
+     (     #productbaseid:BIGINT#, 
+    #categoryid:BIGINT#, 
+    #shopid:BIGINT#, #productname:VARCHAR#,
+    #productprice:DOUBLE#, 
+    #paytype:SMALLINT#,
+    #uselimitnum:INTEGER#,
+    #cantry:SMALLINT#, 
+    #tryusetype:SMALLINT#, 
+    #tryuselimitnum:INTEGER#, 
+    #isneedapprove:SMALLINT#,#promotable:SMALLINT#,
+    #isopen:SMALLINT#,  
+    #status:SMALLINT#, #logoimage:VARCHAR# )
+	  <selectKey resultClass="java.lang.Long" keyProperty="productbaseid" >  
+          SELECT   LAST_INSERT_ID()  
+      </selectKey> 
+  </insert>
+  
+  <!-- ###################### insertExt ########################## -->
+  <insert id="insertExt" parameterClass="netTest.product.vo.Productbase"> 
+     insert into ProductExt
+     (productBaseID, productDesc) 
+    values 
+     (#productbaseid:BIGINT#, #productdesc:VARCHAR#)
+  </insert>
+  
+  <!-- ###################### insertProductSatis ########################## -->
+  <insert id="insertProductSatis" parameterClass="netTest.product.vo.Productbase"> 
+     insert into ProductSatis
+     (productBaseID, warequesNum, learncontDocNum, learncontMediaNum, 
+      paperNum, exerciseNum, testinfoNum, currentLearnUserNum, allLearnedUserNum) 
+    values 
+     (#productbaseid:BIGINT#, #warequesnum:BIGINT#, #learncontdocnum:INTEGER#,
+      #learncontmedianum:INTEGER#, #papernum:INTEGER#, #exercisenum:INTEGER#,
+      #testinfonum:INTEGER#, #currentlearnusernum:INTEGER#, #alllearnedusernum:INTEGER#)
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.product.vo.Productbase"> 
+     update productbase
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="categoryid"><![CDATA[ categoryID=#categoryid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="," property="productname"><![CDATA[ productName=#productname:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="," property="productprice"><![CDATA[ productPrice=#productprice:DOUBLE# ]]></isNotNull>
+      <isNotNull prepend="," property="paytype"><![CDATA[ payType=#paytype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="uselimitnum"><![CDATA[ useLimitNum=#uselimitnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="cantry"><![CDATA[ canTry=#cantry:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="tryusetype"><![CDATA[ tryUseType=#tryusetype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="tryuselimitnum"><![CDATA[ tryUseLimitNum=#tryuselimitnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="isneedapprove"><![CDATA[ isNeedApprove=#isneedapprove:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="promotable"><![CDATA[ promotable=#promotable:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="isopen"><![CDATA[ isOpen=#isopen:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="logoimage"><![CDATA[ logoImage=#logoimage:VARCHAR# ]]></isNotNull>
+    </dynamic> where productBaseID = #productbaseid:BIGINT#
+  </update>
+  
+  <!-- ###################### updateExtByPK ########################## -->
+  <update id="updateExtByPK" parameterClass="netTest.product.vo.Productbase"> 
+     update ProductExt
+    <dynamic prepend="set"> 
+      <isNotEmpty prepend="," property="productdesc"><![CDATA[ productDesc=#productdesc:VARCHAR# ]]></isNotEmpty>
+    </dynamic> where productBaseID = #productbaseid:BIGINT#
+  </update>
+  
+  <!-- ###################### updateProdSatis1ByPK ########################## -->
+  <update id="updateProdSatis1ByPK" parameterClass="netTest.product.vo.Productbase"> 
+     update ProductSatis
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="warequesnum"><![CDATA[ warequesNum=IFNULL(warequesNum,0) + #warequesnum:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="learncontdocnum"><![CDATA[ learncontDocNum=IFNULL(learncontDocNum,0) + #learncontdocnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="learncontmedianum"><![CDATA[ learncontMediaNum=IFNULL(learncontMediaNum,0) + #learncontmedianum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="papernum"><![CDATA[ paperNum=IFNULL(paperNum,0) + #papernum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="exercisenum"><![CDATA[ exerciseNum=IFNULL(exerciseNum,0) + #exercisenum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="testinfonum"><![CDATA[ testinfoNum=IFNULL(testinfoNum,0) + #testinfonum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="currentlearnusernum"><![CDATA[ currentLearnUserNum=IFNULL(currentLearnUserNum,0) + #currentlearnusernum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="alllearnedusernum"><![CDATA[ allLearnedUserNum=IFNULL(allLearnedUserNum,0) + #alllearnedusernum:INTEGER# ]]></isNotNull>
+    </dynamic> where productBaseID = #productbaseid:BIGINT#
+  </update>
+  
+  <!-- ###################### updateProdSatis2ByPK ########################## -->
+  <update id="updateProdSatis2ByPK" parameterClass="netTest.product.vo.Productbase"> 
+     update ProductSatis
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="warequesnum"><![CDATA[ warequesNum=#warequesnum:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="learncontdocnum"><![CDATA[ learncontDocNum=#learncontdocnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="learncontmedianum"><![CDATA[ learncontMediaNum=#learncontmedianum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="papernum"><![CDATA[ paperNum=#papernum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="exercisenum"><![CDATA[ exerciseNum=#exercisenum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="testinfonum"><![CDATA[ testinfoNum=#testinfonum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="currentlearnusernum"><![CDATA[ currentLearnUserNum=#currentlearnusernum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="alllearnedusernum"><![CDATA[ allLearnedUserNum=#alllearnedusernum:INTEGER# ]]></isNotNull>
+    </dynamic> where productBaseID = #productbaseid:BIGINT#
+  </update>
+  
+  <!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from productbase where productBaseID = #value#
+  </delete>
+      
+  <!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.product.dto.ProductbaseQuery"> 
+     select count(*) from productbase a 
+     <include refid="Productbase.where_Clause"/>  
+  </select>
+  
+  <!-- ###################### selShopProdCount ########################## -->
+  <select id="selShopProdCount" resultClass="java.lang.Integer" parameterClass="java.lang.Long"> 
+     select count(*) from productbase where shopID=#shopid:BIGINT#
+  </select>
+  
+  <!-- ###################### existProdExt ########################## -->
+  <select id="existProdExt" resultClass="java.lang.Long" parameterClass="java.lang.Long"> 
+     select productBaseID from ProductExt where productBaseID = #value#
+  </select>
+  
+  <!-- ###################### deleteExtByPK ########################## -->
+  <delete id="deleteExtByPK" parameterClass="java.lang.Long"> 
+     delete from ProductExt where productBaseID = #value#
+  </delete>
+  
+  <!-- ###################### delProdSatisByPK ########################## -->
+  <delete id="delProdSatisByPK" parameterClass="java.lang.Long"> 
+     delete from ProductSatis where productBaseID = #value#
+  </delete>
+  
+</sqlMap>

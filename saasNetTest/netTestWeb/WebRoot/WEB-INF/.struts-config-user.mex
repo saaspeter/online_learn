@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/customers/listuser.do" location="950,550" dimension="223,104" />
+  <StrutsActivity path="/customers/registeruser.do" location="1250,550" dimension="223,104" />
+  <StrutsActivity path="/customers/activeuserregister.do" location="1250,1550" dimension="296,104" />
+  <StrutsActivity path="/customers/saveuser.do" location="1550,550" dimension="223,104" />
+  <StrutsActivity path="/customers/edituser.do" location="1850,550" dimension="223,104" />
+  <StrutsActivity path="/customers/viewuser.do" location="50,650" dimension="223,104" />
+  <StrutsActivity path="/customers/viewprofile.do" location="650,1250" dimension="296,104" />
+  <StrutsActivity path="/customers/adduser.do" location="350,650" dimension="223,104" />
+  <StrutsActivity path="/customers/deleteuser.do" location="650,650" dimension="223,104" />
+  <StrutsActivity path="/customers/updatepassword.do" location="950,750" dimension="223,104" />
+  <StrutsActivity path="/customers/statuschangepage.do" location="1850,1450" dimension="322,104" />
+  <StrutsActivity path="/customers/savestatus.do" location="50,1550" dimension="322,104" />
+  <StrutsActivity path="/user/showuseraccountsetting.do" location="2150,2250" dimension="296,104" />
+  <StrutsActivity path="/user/updateuseraccountsetting.do" location="1550,150" dimension="296,104" />
+  <StrutsActivity path="/usershop/updatenickname.do" location="2150,1850" dimension="325,104" />
+  <StrutsActivity path="/customers/requestresetpassemail.do" location="2450,1550" dimension="384,104" />
+  <StrutsActivity path="/customers/toresetpassmailpage.do" location="2450,950" dimension="384,104" />
+  <StrutsActivity path="/customers/saveresetpassmail.do" location="50,250" dimension="384,104" />
+  <StrutsActivity path="errorPage;6" location="736,1812" dimension="161,87" />
+  <StrutsActivity path="failure;6" location="1907,1812" dimension="123,87" />
+  <StrutsActivity path="messagePage;6" location="1142,1812" dimension="154,87" />
+  <StrutsActivity path="messageClosePage;6" location="295,1812" dimension="186,87" />
+  <StrutsActivity path="treeXml;6" location="1539,1812" dimension="147,87" />
+  <StrutsActivity path="toUrl;6" location="1731,1812" dimension="131,87" />
+  <StrutsActivity path="inprogress;6" location="526,1812" dimension="165,87" />
+  <StrutsActivity path="leftMenu;6" location="1341,1812" dimension="153,87" />
+  <StrutsActivity path="topMenu;6" location="942,1812" dimension="155,87" />
+  <StrutsActivity path="/platform/user/user_list.jsp" location="1550,950" dimension="188,53" />
+  <StrutsActivity path="/platform/user/user_register_complete.jsp" location="1850,950" dimension="276,53" />
+  <StrutsActivity path="/platform/user/user_add.jsp" location="350,1250" dimension="195,53" />
+  <StrutsActivity path="/platform/user/user_edit.jsp" location="650,1050" dimension="194,53" />
+  <StrutsActivity path="/platform/user/user_view.jsp" location="50,1250" dimension="197,53" />
+  <StrutsActivity path="/platform/user/user_profile.jsp" location="1250,1250" dimension="210,53" />
+  <StrutsActivity path="/platform/user/custstatus_change.jsp" location="2150,1150" dimension="246,53" />
+  <StrutsActivity path="/platform/user/showusersetting.jsp" location="350,2150" dimension="236,53" />
+  <StrutsActivity path="/platform/user/userforgetpass.jsp" location="50,2350" dimension="230,53" />
+  <StrutsActivity path="/platform/user/user_setforgetpass.jsp" location="2450,1350" dimension="252,53" />
+  <StrutsActivity path="/pubs/errorPage.jsp" location="741,1999" dimension="150,53" />
+  <StrutsActivity path="/pubs/404.jsp" location="1912,1999" dimension="112,53" />
+  <StrutsActivity path="/pubs/message.jsp" location="1147,1999" dimension="143,53" />
+  <StrutsActivity path="/pubs/messageClose.jsp" location="300,1999" dimension="175,53" />
+  <StrutsActivity path="/pubs/treeXml.jsp" location="1544,1999" dimension="136,53" />
+  <StrutsActivity path="/pubs/toUrl.jsp" location="1736,1999" dimension="120,53" />
+  <StrutsActivity path="/pubs/inprogress.jsp" location="531,1999" dimension="154,53" />
+  <StrutsActivity path="/pubs/leftMenu.jsp" location="1346,1999" dimension="142,53" />
+  <StrutsActivity path="/pubs/topMenu.jsp" location="947,1999" dimension="144,53" />
+  <StrutsActivity path="/orguser/sel_shopuser.jsp" location="1550,2150" dimension="183,53" />
+  <StrutsActivity path="/customers/user_add.jsp" location="650,850" dimension="175,53" />
+  <StrutsActivity path="/orguser/shopuser_list.jsp" location="1250,2150" dimension="183,53" />
+  <StrutsActivity path="/shop_default.jsp" location="1072,1714" dimension="131,53" />
+  <StrutsActivity path="/shop/userjoinshoplist.jsp" location="1342,1714" dimension="182,53" />
+  <StrutsActivity path="/shop/useropenshoplist.jsp" location="1632,1714" dimension="191,53" />
+  <StrutsActivity path="/platform/shop/shop_edit.jsp" location="1922,1714" dimension="202,53" />
+  <StrutsActivity path="/platform/shop/shop_view.jsp" location="22,2016" dimension="205,53" />
+  <StrutsActivity path="/platform/shop/shopapp_listmyapp.jsp" location="411,1412" dimension="259,53" />
+  <StrutsActivity path="/shop/shopapp_listapp.jsp" location="818,1412" dimension="187,53" />
+  <StrutsActivity path="/platform/shop/shop_add.jsp" location="1181,1412" dimension="203,53" />
+  <StrutsActivity path="/platform/shop/shopapp_approve.jsp" location="1528,1412" dimension="252,53" />
+  <StrutsActivity path="/platform/shop/shopapp_view.jsp" location="49,1714" dimension="228,53" />
+  <StrutsActivity path="/shop/shoppost_list.jsp" location="430,808" dimension="167,53" />
+  <StrutsActivity path="/shop/shoppost_viewlist.jsp" location="413,1714" dimension="192,53" />
+  <StrutsActivity path="/shop/shoppost_addEdit.jsp" location="1039,1110" dimension="196,53" />
+  <StrutsActivity path="/shop/shoppost_view.jsp" location="742,1714" dimension="176,53" />
+  <StrutsActivity path="/category/prodcateshop_tree.jsp" location="473,506" dimension="223,53" />
+  <StrutsActivity path="/platform/shop/shopcontact_list.jsp" location="531,204" dimension="238,53" />
+  <StrutsActivity path="/platform/shop/shopcontact_addEdit.jsp" location="1356,808" dimension="267,53" />
+  <StrutsActivity path="/platform/shop/shopcontact_view.jsp" location="1568,1110" dimension="247,53" />
+  <StrutsActivity path="/platform/shop/shopdesc_addEdit.jsp" location="40,1412" dimension="252,53" />
+  <StrutsActivity path="/platform/shop/shopdesc_view.jsp" location="267,1110" dimension="232,53" />
+  <StrutsActivity path="/customers/user_list.jsp" location="1850,750" dimension="168,53" />
+  <StrutsActivity path="/customers/user_register_complete.jsp" location="50,850" dimension="256,53" />
+  <StrutsActivity path="/customers/user_edit.jsp" location="950,950" dimension="174,53" />
+  <StrutsActivity path="/customers/user_view.jsp" location="1250,950" dimension="177,53" />
+  <StrutsActivity path="/platform/user/user_updPassword.jsp" location="1550,1250" dimension="251,53" />
+  <StrutsActivity path="/customers/custstatus_change.jsp" location="650,1550" dimension="226,53" />
+  <StrutsActivity path="/users/custstatus_change.jsp" location="950,1550" dimension="197,53" />
+  <StrutsActivity path="/platform/users/custstatus_change.jsp" location="2150,750" dimension="252,53" />
+  <StrutsActivity path="/userprodshop/shopuser_list.jsp" location="2150,2050" dimension="220,53" />
+  <StrutsActivity path="/userproduct/sel_oneprodmaguser.jsp" location="650,2150" dimension="256,53" />
+  <StrutsActivity path="/u/sel_oneprodmaguser.jsp" location="50,1850" dimension="192,53" />
+  <StrutsActivity path="/orguser/sel_oneprodmaguser.jsp" location="1850,2150" dimension="231,53" />
+  <StrutsActivity path="/platform/customers/user_add.jsp" location="50,2150" dimension="230,53" />
+  <StrutsActivity path="/orguser/user_setforgetpass.jsp" location="2450,1150" dimension="218,53" />
+  <StrutsTransition id="/platform/user/user_add.jsp,null,/customers/registeruser.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="514,1250" />
+      <AbsolutePoint location="514,1018" />
+      <AbsolutePoint location="1218,1018" />
+      <AbsolutePoint location="1218,602" />
+      <AbsolutePoint location="1250,602" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customers/deleteuser.do,list,/platform/user/user_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="873,732" />
+      <AbsolutePoint location="1661,732" />
+      <AbsolutePoint location="1661,950" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="toUrl;6,null,/pubs/toUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1796,1899" />
+      <AbsolutePoint location="1796,1999" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="failure;6,null,/pubs/404.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1968,1899" />
+      <AbsolutePoint location="1968,1999" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/platform/user/user_edit.jsp,null,/customers/saveuser.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="844,1076" />
+      <AbsolutePoint location="1753,1076" />
+      <AbsolutePoint location="1753,654" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="errorPage;6,null,/pubs/errorPage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="816,1899" />
+      <AbsolutePoint location="816,1999" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customers/saveuser.do,viewedit,/customers/viewuser.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1661,550" />
+      <AbsolutePoint location="1661,392" />
+      <AbsolutePoint location="161,392" />
+      <AbsolutePoint location="161,650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="messageClosePage;6,null,/pubs/messageClose.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="388,1899" />
+      <AbsolutePoint location="388,1999" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="messagePage;6,null,/pubs/message.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1219,1899" />
+      <AbsolutePoint location="1219,1999" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customers/registeruser.do,registerCompletePage,/platform/user/user_register_complete.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1371,654" />
+      <AbsolutePoint location="1371,699" />
+      <AbsolutePoint location="2033,699" />
+      <AbsolutePoint location="2033,950" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customers/statuschangepage.do,statusChangePage,/platform/user/custstatus_change.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2165,1450" />
+      <AbsolutePoint location="2165,1203" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="topMenu;6,null,/pubs/topMenu.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1019,1899" />
+      <AbsolutePoint location="1019,1999" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/user/showuseraccountsetting.do,usersettingpage,/platform/user/showusersetting.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2150,2302" />
+      <AbsolutePoint location="468,2302" />
+      <AbsolutePoint location="468,2203" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/user/updateuseraccountsetting.do,usersettingpage,/platform/user/showusersetting.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1846,202" />
+      <AbsolutePoint location="2909,202" />
+      <AbsolutePoint location="2909,2478" />
+      <AbsolutePoint location="438,2478" />
+      <AbsolutePoint location="438,2203" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="leftMenu;6,null,/pubs/leftMenu.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1417,1899" />
+      <AbsolutePoint location="1417,1999" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/platform/user/userforgetpass.jsp,null,/customers/requestresetpassemail.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="280,2376" />
+      <AbsolutePoint location="2642,2376" />
+      <AbsolutePoint location="2642,1654" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="treeXml;6,null,/pubs/treeXml.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1612,1899" />
+      <AbsolutePoint location="1612,1999" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customers/listuser.do,list,/platform/user/user_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1061,654" />
+      <AbsolutePoint location="1061,669" />
+      <AbsolutePoint location="1691,669" />
+      <AbsolutePoint location="1691,950" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customers/viewuser.do,vieweditPage,/platform/user/user_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,702" />
+      <AbsolutePoint location="-53,702" />
+      <AbsolutePoint location="-53,1276" />
+      <AbsolutePoint location="50,1276" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="inprogress;6,null,/pubs/inprogress.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="608,1899" />
+      <AbsolutePoint location="608,1999" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customers/edituser.do,editPage,/platform/user/user_edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2063,654" />
+      <AbsolutePoint location="2063,918" />
+      <AbsolutePoint location="751,918" />
+      <AbsolutePoint location="751,1050" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customers/adduser.do,addPage,/platform/user/user_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="573,702" />
+      <AbsolutePoint location="612,702" />
+      <AbsolutePoint location="612,1276" />
+      <AbsolutePoint location="545,1276" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customers/viewprofile.do,viewPage,/platform/user/user_profile.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="946,1288" />
+      <AbsolutePoint location="1250,1288" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customers/toresetpassmailpage.do,resetpass,/platform/user/user_setforgetpass.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2683,1054" />
+      <AbsolutePoint location="2683,1350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>商店列表</title>
+<style type="text/css">
+<!--
+div{
+    margin:0 auto;
+	margin-bottom:5px;
+}
+.br{
+    height:7px;
+	background-color:#FFFFFF;
+}
+#Layer2 {
+    width:80%;
+	height:100px;
+	background-color:#eeeeee;
+}
+#Layer3 {
+	width:10%;
+	height:800px;
+	background-color:#FFFFFF;
+}
+#Layer4 {
+	width:80%;
+	height:20px;
+}
+#Layer5 {
+	width:80%;
+	height:20px;
+}
+#Layer6 {
+    width:80%;
+	background-color:#eeeeee;
+}
+#Layer8 {
+	width:49%;
+	height:150px;
+	background-color: #eeeeee;
+}
+#Layer9 {
+    width:49%;
+	height:150px;
+	background-color: #eeeeee;
+}
+#Layer10 {
+	width:80%;
+	height:20px;
+	background-color: #eeeeee;
+}
+#Layer11 {
+	width:80%;
+	height:20px;
+	background-color: #eeeeee;
+}
+#Layer12 {
+	width:70%;
+}
+#Layer16 {
+	position:relative;
+	width:70%;
+}
+#Layer17 {
+	position:relative;
+	width:70%;
+}
+#Layer15 {
+	width:30%;
+}
+
+#Layer14 {
+	width:80%;
+	height:20px;
+	background-color: #eeeeee;
+}
+-->
+</style>
+</head>
+
+<body>
+<div id="Layer2">
+    <div id="Layer15">
+	   <img src="" alt="公司logo" name="logo" id="logo" style="background-color: #33CCFF" />
+	</div>
+    <div id="Layer12">从这里<a href="#">登陆</a>,如果还没有账号，请<a href="#">注册</a>，
+	<a href="#">帮助</a></div>
+	<div id="Layer16"><a href="#">如何申请消费卡</a>，<a href="#">如何充值</a></div>
+	<div id="Layer17"><a href="#">bbs论坛</a></div>
+</div>
+<div id="Layer4">
+  <table width="100%" height="100%" border="1" align="center" cellpadding="0" cellspacing="0"  bordercolor="#FFFFFF" bgcolor="#33CCFF">
+    <tr>
+      <td align="center"><a href="home.html">首页</a></td>
+      <td align="center" bgcolor="#00FF00"><strong>英语</strong></td>
+      <td align="center">法律</td>
+      <td align="center">会计</td>
+      <td align="center">公务员</td>
+      <td align="center">计算机</td>
+      <td align="center">报关员</td>
+      <td align="center">集团用户</td>
+    </tr>
+  </table>
+</div>
+<div id="Layer5">
+  <table border="1" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bgcolor="#99eeFf">
+    <tr>
+      <td>四级</td>
+      <td bgcolor="#00FF00"><strong>六级</strong></td>
+      <td>托福</td>
+      <td>GRE</td>
+	  <td>（二级目录，当点击一级目录时出现）</td>
+    </tr>
+  </table>
+</div>
+
+<div id="Layer6">
+
+  <select name="search_type">
+	 <option value="auction"> </option>
+	 <option value="info">培训科目</option>
+	 <option value="web" selected="selected">培训机构</option>
+  </select>
+	<select id="cat" name="cat">
+	  <option value="">所有分类</option>
+	  <option>英语</option>
+	  <option selected="selected">英语/四六级</option>
+	  <option>英语/托福</option>
+	  <option>法律/司法考试</option>
+	  <option>会计/注会考试</option>	
+		
+	</select>
+	<button type="button" id="DoSearch" onclick="doSearch();"> 搜 索 </button>
+	<a href="http://search1.taobao.com/browse/ad_search.htm" target="_top"></a>
+	<a href="http://service.taobao.com/support/7-132-134/help-1350.htm" target="_blank"></a></div>
+<div id="Layer11">
+  更多的搜索字段
+</div>
+
+<div id="Layer10">商店排列规则</div>
+
+<div id="Layer14">
+  <table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF">
+    <tr>
+      <td colspan="8" align="center"><strong>商店列表</strong></td>
+    </tr>
+    <tr>
+      <td><strong>店名</strong></td>
+      <td><strong>经营科目</strong></td>
+      <td><strong>所在地址</strong></td>
+      <td><strong>总人数</strong></td>
+      <td><strong>信用</strong></td>
+	  <td><strong>是否开放</strong></td>
+      <td><strong>进入首页</strong></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>英语之家</td>
+      <td>四六级、考研英语</td>
+      <td>广州</td>
+      <td>100</td>
+      <td>银级</td>
+      <td>公开</td>
+      <td><a href="yyzj.html">进入首页</a></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>普特英语</td>
+      <td>口语、口译、外贸英语</td>
+      <td>北京</td>
+      <td>2000</td>
+      <td>钻石级</td>
+      <td>公开</td>
+      <td><a href="yyzj.html">进入首页</a></td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>美美私利学校</td>
+      <td>少儿英语</td>
+      <td>北京</td>
+      <td>2000</td>
+      <td></td>
+      <td>不公开</td>
+      <td><a href="yyzj.html">进入首页</a></td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

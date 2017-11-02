@@ -1,0 +1,2439 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+	xmlns:o="urn:schemas-microsoft-com:office:office"
+	xmlns:w="urn:schemas-microsoft-com:office:word"
+	xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+	xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 14">
+<meta name=Originator content="Microsoft Word 14">
+<link rel=File-List href="howto-make-record_files/filelist.xml">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Xuelin Fan</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Xuelin Fan</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>536</o:TotalTime>
+  <o:Created>2014-06-06T16:41:00Z</o:Created>
+  <o:LastSaved>2014-06-06T16:41:00Z</o:LastSaved>
+  <o:Pages>7</o:Pages>
+  <o:Words>328</o:Words>
+  <o:Characters>1873</o:Characters>
+  <o:Company>Cisco Systems</o:Company>
+  <o:Lines>15</o:Lines>
+  <o:Paragraphs>4</o:Paragraphs>
+  <o:CharactersWithSpaces>2197</o:CharactersWithSpaces>
+  <o:Version>14.00</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel=themeData href="howto-make-record_files/themedata.thmx">
+<link rel=colorSchemeMapping
+	href="howto-make-record_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>ZH-CN</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]-->
+<!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!-- /* Font Definitions */
+@font-face {
+	font-family: Wingdings;
+	panose-1: 5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset: 2;
+	mso-generic-font-family: auto;
+	mso-font-pitch: variable;
+	mso-font-signature: 0 268435456 0 0 -2147483648 0;
+}
+
+@font-face {
+	font-family: 宋体;
+	panose-1: 2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt: SimSun;
+	mso-font-charset: 134;
+	mso-generic-font-family: auto;
+	mso-font-pitch: variable;
+	mso-font-signature: 3 680460288 22 0 262145 0;
+}
+
+@font-face {
+	font-family: 宋体;
+	panose-1: 2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt: SimSun;
+	mso-font-charset: 134;
+	mso-generic-font-family: auto;
+	mso-font-pitch: variable;
+	mso-font-signature: 3 680460288 22 0 262145 0;
+}
+
+@font-face {
+	font-family: Cambria;
+	panose-1: 2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset: 0;
+	mso-generic-font-family: roman;
+	mso-font-pitch: variable;
+	mso-font-signature: -536870145 1073743103 0 0 415 0;
+}
+
+@font-face {
+	font-family: Calibri;
+	panose-1: 2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset: 0;
+	mso-generic-font-family: swiss;
+	mso-font-pitch: variable;
+	mso-font-signature: -536870145 1073786111 1 0 415 0;
+}
+
+@font-face {
+	font-family: Tahoma;
+	panose-1: 2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset: 0;
+	mso-generic-font-family: swiss;
+	mso-font-format: other;
+	mso-font-pitch: variable;
+	mso-font-signature: 3 0 0 0 1 0;
+}
+
+@font-face {
+	font-family: "\@宋体";
+	panose-1: 2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset: 134;
+	mso-generic-font-family: auto;
+	mso-font-pitch: variable;
+	mso-font-signature: 3 680460288 22 0 262145 0;
+}
+/* Style Definitions */
+p.MsoNormal,li.MsoNormal,div.MsoNormal {
+	mso-style-unhide: no;
+	mso-style-qformat: yes;
+	mso-style-parent: "";
+	margin-top: 0cm;
+	margin-right: 0cm;
+	margin-bottom: 10.0pt;
+	margin-left: 0cm;
+	line-height: 115%;
+	mso-pagination: widow-orphan;
+	font-size: 11.0pt;
+	font-family: "Calibri", "sans-serif";
+	mso-ascii-font-family: Calibri;
+	mso-ascii-theme-font: minor-latin;
+	mso-fareast-font-family: 宋体;
+	mso-fareast-theme-font: minor-fareast;
+	mso-hansi-font-family: Calibri;
+	mso-hansi-theme-font: minor-latin;
+	mso-bidi-font-family: "Times New Roman";
+	mso-bidi-theme-font: minor-bidi;
+}
+
+h1 {
+	mso-style-priority: 9;
+	mso-style-unhide: no;
+	mso-style-qformat: yes;
+	mso-style-link: "Heading 1 Char";
+	mso-style-next: Normal;
+	margin-top: 24.0pt;
+	margin-right: 0cm;
+	margin-bottom: 0cm;
+	margin-left: 0cm;
+	margin-bottom: .0001pt;
+	line-height: 115%;
+	mso-pagination: widow-orphan lines-together;
+	page-break-after: avoid;
+	mso-outline-level: 1;
+	font-size: 14.0pt;
+	font-family: "Cambria", "serif";
+	mso-ascii-font-family: Cambria;
+	mso-ascii-theme-font: major-latin;
+	mso-fareast-font-family: 宋体;
+	mso-fareast-theme-font: major-fareast;
+	mso-hansi-font-family: Cambria;
+	mso-hansi-theme-font: major-latin;
+	mso-bidi-font-family: "Times New Roman";
+	mso-bidi-theme-font: major-bidi;
+	color: #365F91;
+	mso-themecolor: accent1;
+	mso-themeshade: 191;
+	mso-font-kerning: 0pt;
+}
+
+p.MsoHeader,li.MsoHeader,div.MsoHeader {
+	mso-style-priority: 99;
+	mso-style-link: "Header Char";
+	margin: 0cm;
+	margin-bottom: .0001pt;
+	mso-pagination: widow-orphan;
+	tab-stops: center 216.0pt right 432.0pt;
+	font-size: 11.0pt;
+	font-family: "Calibri", "sans-serif";
+	mso-ascii-font-family: Calibri;
+	mso-ascii-theme-font: minor-latin;
+	mso-fareast-font-family: 宋体;
+	mso-fareast-theme-font: minor-fareast;
+	mso-hansi-font-family: Calibri;
+	mso-hansi-theme-font: minor-latin;
+	mso-bidi-font-family: "Times New Roman";
+	mso-bidi-theme-font: minor-bidi;
+}
+
+p.MsoFooter,li.MsoFooter,div.MsoFooter {
+	mso-style-priority: 99;
+	mso-style-link: "Footer Char";
+	margin: 0cm;
+	margin-bottom: .0001pt;
+	mso-pagination: widow-orphan;
+	tab-stops: center 216.0pt right 432.0pt;
+	font-size: 11.0pt;
+	font-family: "Calibri", "sans-serif";
+	mso-ascii-font-family: Calibri;
+	mso-ascii-theme-font: minor-latin;
+	mso-fareast-font-family: 宋体;
+	mso-fareast-theme-font: minor-fareast;
+	mso-hansi-font-family: Calibri;
+	mso-hansi-theme-font: minor-latin;
+	mso-bidi-font-family: "Times New Roman";
+	mso-bidi-theme-font: minor-bidi;
+}
+
+p.MsoTitle,li.MsoTitle,div.MsoTitle {
+	mso-style-priority: 10;
+	mso-style-unhide: no;
+	mso-style-qformat: yes;
+	mso-style-link: "Title Char";
+	mso-style-next: Normal;
+	margin-top: 0cm;
+	margin-right: 0cm;
+	margin-bottom: 15.0pt;
+	margin-left: 0cm;
+	mso-add-space: auto;
+	mso-pagination: widow-orphan;
+	border: none;
+	mso-border-bottom-alt: solid #4F81BD 1.0pt;
+	mso-border-bottom-themecolor: accent1;
+	padding: 0cm;
+	mso-padding-alt: 0cm 0cm 4.0pt 0cm;
+	font-size: 26.0pt;
+	font-family: "Cambria", "serif";
+	mso-ascii-font-family: Cambria;
+	mso-ascii-theme-font: major-latin;
+	mso-fareast-font-family: 宋体;
+	mso-fareast-theme-font: major-fareast;
+	mso-hansi-font-family: Cambria;
+	mso-hansi-theme-font: major-latin;
+	mso-bidi-font-family: "Times New Roman";
+	mso-bidi-theme-font: major-bidi;
+	color: #17365D;
+	mso-themecolor: text2;
+	mso-themeshade: 191;
+	letter-spacing: .25pt;
+	mso-font-kerning: 14.0pt;
+}
+
+p.MsoTitleCxSpFirst,li.MsoTitleCxSpFirst,div.MsoTitleCxSpFirst {
+	mso-style-priority: 10;
+	mso-style-unhide: no;
+	mso-style-qformat: yes;
+	mso-style-link: "Title Char";
+	mso-style-next: Normal;
+	mso-style-type: export-only;
+	margin: 0cm;
+	margin-bottom: .0001pt;
+	mso-add-space: auto;
+	mso-pagination: widow-orphan;
+	border: none;
+	mso-border-bottom-alt: solid #4F81BD 1.0pt;
+	mso-border-bottom-themecolor: accent1;
+	padding: 0cm;
+	mso-padding-alt: 0cm 0cm 4.0pt 0cm;
+	font-size: 26.0pt;
+	font-family: "Cambria", "serif";
+	mso-ascii-font-family: Cambria;
+	mso-ascii-theme-font: major-latin;
+	mso-fareast-font-family: 宋体;
+	mso-fareast-theme-font: major-fareast;
+	mso-hansi-font-family: Cambria;
+	mso-hansi-theme-font: major-latin;
+	mso-bidi-font-family: "Times New Roman";
+	mso-bidi-theme-font: major-bidi;
+	color: #17365D;
+	mso-themecolor: text2;
+	mso-themeshade: 191;
+	letter-spacing: .25pt;
+	mso-font-kerning: 14.0pt;
+}
+
+p.MsoTitleCxSpMiddle,li.MsoTitleCxSpMiddle,div.MsoTitleCxSpMiddle {
+	mso-style-priority: 10;
+	mso-style-unhide: no;
+	mso-style-qformat: yes;
+	mso-style-link: "Title Char";
+	mso-style-next: Normal;
+	mso-style-type: export-only;
+	margin: 0cm;
+	margin-bottom: .0001pt;
+	mso-add-space: auto;
+	mso-pagination: widow-orphan;
+	border: none;
+	mso-border-bottom-alt: solid #4F81BD 1.0pt;
+	mso-border-bottom-themecolor: accent1;
+	padding: 0cm;
+	mso-padding-alt: 0cm 0cm 4.0pt 0cm;
+	font-size: 26.0pt;
+	font-family: "Cambria", "serif";
+	mso-ascii-font-family: Cambria;
+	mso-ascii-theme-font: major-latin;
+	mso-fareast-font-family: 宋体;
+	mso-fareast-theme-font: major-fareast;
+	mso-hansi-font-family: Cambria;
+	mso-hansi-theme-font: major-latin;
+	mso-bidi-font-family: "Times New Roman";
+	mso-bidi-theme-font: major-bidi;
+	color: #17365D;
+	mso-themecolor: text2;
+	mso-themeshade: 191;
+	letter-spacing: .25pt;
+	mso-font-kerning: 14.0pt;
+}
+
+p.MsoTitleCxSpLast,li.MsoTitleCxSpLast,div.MsoTitleCxSpLast {
+	mso-style-priority: 10;
+	mso-style-unhide: no;
+	mso-style-qformat: yes;
+	mso-style-link: "Title Char";
+	mso-style-next: Normal;
+	mso-style-type: export-only;
+	margin-top: 0cm;
+	margin-right: 0cm;
+	margin-bottom: 15.0pt;
+	margin-left: 0cm;
+	mso-add-space: auto;
+	mso-pagination: widow-orphan;
+	border: none;
+	mso-border-bottom-alt: solid #4F81BD 1.0pt;
+	mso-border-bottom-themecolor: accent1;
+	padding: 0cm;
+	mso-padding-alt: 0cm 0cm 4.0pt 0cm;
+	font-size: 26.0pt;
+	font-family: "Cambria", "serif";
+	mso-ascii-font-family: Cambria;
+	mso-ascii-theme-font: major-latin;
+	mso-fareast-font-family: 宋体;
+	mso-fareast-theme-font: major-fareast;
+	mso-hansi-font-family: Cambria;
+	mso-hansi-theme-font: major-latin;
+	mso-bidi-font-family: "Times New Roman";
+	mso-bidi-theme-font: major-bidi;
+	color: #17365D;
+	mso-themecolor: text2;
+	mso-themeshade: 191;
+	letter-spacing: .25pt;
+	mso-font-kerning: 14.0pt;
+}
+
+a:link,span.MsoHyperlink {
+	mso-style-priority: 99;
+	color: blue;
+	mso-themecolor: hyperlink;
+	text-decoration: underline;
+	text-underline: single;
+}
+
+a:visited,span.MsoHyperlinkFollowed {
+	mso-style-noshow: yes;
+	mso-style-priority: 99;
+	color: purple;
+	mso-themecolor: followedhyperlink;
+	text-decoration: underline;
+	text-underline: single;
+}
+
+p.MsoAcetate,li.MsoAcetate,div.MsoAcetate {
+	mso-style-noshow: yes;
+	mso-style-priority: 99;
+	mso-style-link: "Balloon Text Char";
+	margin: 0cm;
+	margin-bottom: .0001pt;
+	mso-pagination: widow-orphan;
+	font-size: 8.0pt;
+	font-family: "Tahoma", "sans-serif";
+	mso-fareast-font-family: 宋体;
+	mso-fareast-theme-font: minor-fareast;
+	mso-bidi-font-family: Tahoma;
+}
+
+p.MsoListParagraph,li.MsoListParagraph,div.MsoListParagraph {
+	mso-style-priority: 34;
+	mso-style-unhide: no;
+	mso-style-qformat: yes;
+	margin-top: 0cm;
+	margin-right: 0cm;
+	margin-bottom: 10.0pt;
+	margin-left: 36.0pt;
+	mso-add-space: auto;
+	line-height: 115%;
+	mso-pagination: widow-orphan;
+	font-size: 11.0pt;
+	font-family: "Calibri", "sans-serif";
+	mso-ascii-font-family: Calibri;
+	mso-ascii-theme-font: minor-latin;
+	mso-fareast-font-family: 宋体;
+	mso-fareast-theme-font: minor-fareast;
+	mso-hansi-font-family: Calibri;
+	mso-hansi-theme-font: minor-latin;
+	mso-bidi-font-family: "Times New Roman";
+	mso-bidi-theme-font: minor-bidi;
+}
+
+p.MsoListParagraphCxSpFirst,li.MsoListParagraphCxSpFirst,div.MsoListParagraphCxSpFirst
+	{
+	mso-style-priority: 34;
+	mso-style-unhide: no;
+	mso-style-qformat: yes;
+	mso-style-type: export-only;
+	margin-top: 0cm;
+	margin-right: 0cm;
+	margin-bottom: 0cm;
+	margin-left: 36.0pt;
+	margin-bottom: .0001pt;
+	mso-add-space: auto;
+	line-height: 115%;
+	mso-pagination: widow-orphan;
+	font-size: 11.0pt;
+	font-family: "Calibri", "sans-serif";
+	mso-ascii-font-family: Calibri;
+	mso-ascii-theme-font: minor-latin;
+	mso-fareast-font-family: 宋体;
+	mso-fareast-theme-font: minor-fareast;
+	mso-hansi-font-family: Calibri;
+	mso-hansi-theme-font: minor-latin;
+	mso-bidi-font-family: "Times New Roman";
+	mso-bidi-theme-font: minor-bidi;
+}
+
+p.MsoListParagraphCxSpMiddle,li.MsoListParagraphCxSpMiddle,div.MsoListParagraphCxSpMiddle
+	{
+	mso-style-priority: 34;
+	mso-style-unhide: no;
+	mso-style-qformat: yes;
+	mso-style-type: export-only;
+	margin-top: 0cm;
+	margin-right: 0cm;
+	margin-bottom: 0cm;
+	margin-left: 36.0pt;
+	margin-bottom: .0001pt;
+	mso-add-space: auto;
+	line-height: 115%;
+	mso-pagination: widow-orphan;
+	font-size: 11.0pt;
+	font-family: "Calibri", "sans-serif";
+	mso-ascii-font-family: Calibri;
+	mso-ascii-theme-font: minor-latin;
+	mso-fareast-font-family: 宋体;
+	mso-fareast-theme-font: minor-fareast;
+	mso-hansi-font-family: Calibri;
+	mso-hansi-theme-font: minor-latin;
+	mso-bidi-font-family: "Times New Roman";
+	mso-bidi-theme-font: minor-bidi;
+}
+
+p.MsoListParagraphCxSpLast,li.MsoListParagraphCxSpLast,div.MsoListParagraphCxSpLast
+	{
+	mso-style-priority: 34;
+	mso-style-unhide: no;
+	mso-style-qformat: yes;
+	mso-style-type: export-only;
+	margin-top: 0cm;
+	margin-right: 0cm;
+	margin-bottom: 10.0pt;
+	margin-left: 36.0pt;
+	mso-add-space: auto;
+	line-height: 115%;
+	mso-pagination: widow-orphan;
+	font-size: 11.0pt;
+	font-family: "Calibri", "sans-serif";
+	mso-ascii-font-family: Calibri;
+	mso-ascii-theme-font: minor-latin;
+	mso-fareast-font-family: 宋体;
+	mso-fareast-theme-font: minor-fareast;
+	mso-hansi-font-family: Calibri;
+	mso-hansi-theme-font: minor-latin;
+	mso-bidi-font-family: "Times New Roman";
+	mso-bidi-theme-font: minor-bidi;
+}
+
+span.BalloonTextChar {
+	mso-style-name: "Balloon Text Char";
+	mso-style-noshow: yes;
+	mso-style-priority: 99;
+	mso-style-unhide: no;
+	mso-style-locked: yes;
+	mso-style-link: "Balloon Text";
+	mso-ansi-font-size: 8.0pt;
+	mso-bidi-font-size: 8.0pt;
+	font-family: "Tahoma", "sans-serif";
+	mso-ascii-font-family: Tahoma;
+	mso-hansi-font-family: Tahoma;
+	mso-bidi-font-family: Tahoma;
+}
+
+span.Heading1Char {
+	mso-style-name: "Heading 1 Char";
+	mso-style-priority: 9;
+	mso-style-unhide: no;
+	mso-style-locked: yes;
+	mso-style-link: "Heading 1";
+	mso-ansi-font-size: 14.0pt;
+	mso-bidi-font-size: 14.0pt;
+	font-family: "Cambria", "serif";
+	mso-ascii-font-family: Cambria;
+	mso-ascii-theme-font: major-latin;
+	mso-fareast-font-family: 宋体;
+	mso-fareast-theme-font: major-fareast;
+	mso-hansi-font-family: Cambria;
+	mso-hansi-theme-font: major-latin;
+	mso-bidi-font-family: "Times New Roman";
+	mso-bidi-theme-font: major-bidi;
+	color: #365F91;
+	mso-themecolor: accent1;
+	mso-themeshade: 191;
+	font-weight: bold;
+}
+
+span.TitleChar {
+	mso-style-name: "Title Char";
+	mso-style-priority: 10;
+	mso-style-unhide: no;
+	mso-style-locked: yes;
+	mso-style-link: Title;
+	mso-ansi-font-size: 26.0pt;
+	mso-bidi-font-size: 26.0pt;
+	font-family: "Cambria", "serif";
+	mso-ascii-font-family: Cambria;
+	mso-ascii-theme-font: major-latin;
+	mso-fareast-font-family: 宋体;
+	mso-fareast-theme-font: major-fareast;
+	mso-hansi-font-family: Cambria;
+	mso-hansi-theme-font: major-latin;
+	mso-bidi-font-family: "Times New Roman";
+	mso-bidi-theme-font: major-bidi;
+	color: #17365D;
+	mso-themecolor: text2;
+	mso-themeshade: 191;
+	letter-spacing: .25pt;
+	mso-font-kerning: 14.0pt;
+}
+
+span.HeaderChar {
+	mso-style-name: "Header Char";
+	mso-style-priority: 99;
+	mso-style-unhide: no;
+	mso-style-locked: yes;
+	mso-style-link: Header;
+}
+
+span.FooterChar {
+	mso-style-name: "Footer Char";
+	mso-style-priority: 99;
+	mso-style-unhide: no;
+	mso-style-locked: yes;
+	mso-style-link: Footer;
+}
+
+span.SpellE {
+	mso-style-name: "";
+	mso-spl-e: yes;
+}
+
+span.GramE {
+	mso-style-name: "";
+	mso-gram-e: yes;
+}
+
+.MsoChpDefault {
+	mso-style-type: export-only;
+	mso-default-props: yes;
+	font-family: "Calibri", "sans-serif";
+	mso-ascii-font-family: Calibri;
+	mso-ascii-theme-font: minor-latin;
+	mso-fareast-font-family: 宋体;
+	mso-fareast-theme-font: minor-fareast;
+	mso-hansi-font-family: Calibri;
+	mso-hansi-theme-font: minor-latin;
+	mso-bidi-font-family: "Times New Roman";
+	mso-bidi-theme-font: minor-bidi;
+}
+
+.MsoPapDefault {
+	mso-style-type: export-only;
+	margin-bottom: 10.0pt;
+	line-height: 115%;
+}
+/* Page Definitions */
+@page {
+	mso-footnote-separator: url("howto-make-record_files/header.html") fs;
+	mso-footnote-continuation-separator:
+		url("howto-make-record_files/header.html") fcs;
+	mso-endnote-separator: url("howto-make-record_files/header.html") es;
+	mso-endnote-continuation-separator:
+		url("howto-make-record_files/header.html") ecs;
+}
+
+@page WordSection1 {
+	size: 612.0pt 792.0pt;
+	margin: 72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin: 35.4pt;
+	mso-footer-margin: 35.4pt;
+	mso-paper-source: 0;
+}
+
+div.WordSection1 {
+	page: WordSection1;
+}
+/* List Definitions */
+@
+list l0 {
+	mso-list-id: 213666713;
+	mso-list-type: hybrid;
+	mso-list-template-ids: -270771726 67698689 67698691 67698693 67698689
+		67698691 67698693 67698689 67698691 67698693;
+}
+
+@
+list l0:level1 {
+	mso-level-number-format: bullet;
+	mso-level-text: \F0B7;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 60.6pt;
+	text-indent: -18.0pt;
+	font-family: Symbol;
+}
+
+@
+list l0:level2 {
+	mso-level-number-format: bullet;
+	mso-level-text: o;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 96.6pt;
+	text-indent: -18.0pt;
+	font-family: "Courier New";
+}
+
+@
+list l0:level3 {
+	mso-level-number-format: bullet;
+	mso-level-text: \F0A7;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 132.6pt;
+	text-indent: -18.0pt;
+	font-family: Wingdings;
+}
+
+@
+list l0:level4 {
+	mso-level-number-format: bullet;
+	mso-level-text: \F0B7;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 168.6pt;
+	text-indent: -18.0pt;
+	font-family: Symbol;
+}
+
+@
+list l0:level5 {
+	mso-level-number-format: bullet;
+	mso-level-text: o;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 204.6pt;
+	text-indent: -18.0pt;
+	font-family: "Courier New";
+}
+
+@
+list l0:level6 {
+	mso-level-number-format: bullet;
+	mso-level-text: \F0A7;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 240.6pt;
+	text-indent: -18.0pt;
+	font-family: Wingdings;
+}
+
+@
+list l0:level7 {
+	mso-level-number-format: bullet;
+	mso-level-text: \F0B7;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 276.6pt;
+	text-indent: -18.0pt;
+	font-family: Symbol;
+}
+
+@
+list l0:level8 {
+	mso-level-number-format: bullet;
+	mso-level-text: o;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 312.6pt;
+	text-indent: -18.0pt;
+	font-family: "Courier New";
+}
+
+@
+list l0:level9 {
+	mso-level-number-format: bullet;
+	mso-level-text: \F0A7;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 348.6pt;
+	text-indent: -18.0pt;
+	font-family: Wingdings;
+}
+
+@
+list l1 {
+	mso-list-id: 394358128;
+	mso-list-type: hybrid;
+	mso-list-template-ids: 1239073210 -133631556 67698713 67698715 67698703
+		67698713 67698715 67698703 67698713 67698715;
+}
+
+@
+list l1:level1 {
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 37.2pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l1:level2 {
+	mso-level-number-format: alpha-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 73.2pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l1:level3 {
+	mso-level-number-format: roman-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: right;
+	margin-left: 109.2pt;
+	text-indent: -9.0pt;
+}
+
+@
+list l1:level4 {
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 145.2pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l1:level5 {
+	mso-level-number-format: alpha-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 181.2pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l1:level6 {
+	mso-level-number-format: roman-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: right;
+	margin-left: 217.2pt;
+	text-indent: -9.0pt;
+}
+
+@
+list l1:level7 {
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 253.2pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l1:level8 {
+	mso-level-number-format: alpha-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 289.2pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l1:level9 {
+	mso-level-number-format: roman-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: right;
+	margin-left: 325.2pt;
+	text-indent: -9.0pt;
+}
+
+@
+list l2 {
+	mso-list-id: 423574982;
+	mso-list-type: hybrid;
+	mso-list-template-ids: 548575190 2131906724 67698713 67698715 67698703
+		67698713 67698715 67698703 67698713 67698715;
+}
+
+@
+list l2:level1 {
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 37.2pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l2:level2 {
+	mso-level-number-format: alpha-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 73.2pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l2:level3 {
+	mso-level-number-format: roman-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: right;
+	margin-left: 109.2pt;
+	text-indent: -9.0pt;
+}
+
+@
+list l2:level4 {
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 145.2pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l2:level5 {
+	mso-level-number-format: alpha-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 181.2pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l2:level6 {
+	mso-level-number-format: roman-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: right;
+	margin-left: 217.2pt;
+	text-indent: -9.0pt;
+}
+
+@
+list l2:level7 {
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 253.2pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l2:level8 {
+	mso-level-number-format: alpha-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 289.2pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l2:level9 {
+	mso-level-number-format: roman-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: right;
+	margin-left: 325.2pt;
+	text-indent: -9.0pt;
+}
+
+@
+list l3 {
+	mso-list-id: 748815728;
+	mso-list-type: hybrid;
+	mso-list-template-ids: 1576560930 579640394 67698713 67698715 67698703
+		67698713 67698715 67698703 67698713 67698715;
+}
+
+@
+list l3:level1 {
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 42.6pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l3:level2 {
+	mso-level-number-format: alpha-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 78.6pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l3:level3 {
+	mso-level-number-format: roman-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: right;
+	margin-left: 114.6pt;
+	text-indent: -9.0pt;
+}
+
+@
+list l3:level4 {
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 150.6pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l3:level5 {
+	mso-level-number-format: alpha-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 186.6pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l3:level6 {
+	mso-level-number-format: roman-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: right;
+	margin-left: 222.6pt;
+	text-indent: -9.0pt;
+}
+
+@
+list l3:level7 {
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 258.6pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l3:level8 {
+	mso-level-number-format: alpha-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 294.6pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l3:level9 {
+	mso-level-number-format: roman-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: right;
+	margin-left: 330.6pt;
+	text-indent: -9.0pt;
+}
+
+@
+list l4 {
+	mso-list-id: 1187520911;
+	mso-list-type: hybrid;
+	mso-list-template-ids: -888104788 -1451700968 67698713 67698715 67698703
+		67698713 67698715 67698703 67698713 67698715;
+}
+
+@
+list l4:level1 {
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 54.0pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l4:level2 {
+	mso-level-number-format: alpha-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 90.0pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l4:level3 {
+	mso-level-number-format: roman-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: right;
+	margin-left: 126.0pt;
+	text-indent: -9.0pt;
+}
+
+@
+list l4:level4 {
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 162.0pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l4:level5 {
+	mso-level-number-format: alpha-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 198.0pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l4:level6 {
+	mso-level-number-format: roman-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: right;
+	margin-left: 234.0pt;
+	text-indent: -9.0pt;
+}
+
+@
+list l4:level7 {
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 270.0pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l4:level8 {
+	mso-level-number-format: alpha-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 306.0pt;
+	text-indent: -18.0pt;
+}
+
+@
+list l4:level9 {
+	mso-level-number-format: roman-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: right;
+	margin-left: 342.0pt;
+	text-indent: -9.0pt;
+}
+
+@
+list l5 {
+	mso-list-id: 1385258404;
+	mso-list-type: hybrid;
+	mso-list-template-ids: 2014882668 67698703 67698713 67698715 67698703
+		67698713 67698715 67698703 67698713 67698715;
+}
+
+@
+list l5:level1 {
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	text-indent: -18.0pt;
+}
+
+@
+list l5:level2 {
+	mso-level-number-format: alpha-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	text-indent: -18.0pt;
+}
+
+@
+list l5:level3 {
+	mso-level-number-format: roman-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: right;
+	text-indent: -9.0pt;
+}
+
+@
+list l5:level4 {
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	text-indent: -18.0pt;
+}
+
+@
+list l5:level5 {
+	mso-level-number-format: alpha-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	text-indent: -18.0pt;
+}
+
+@
+list l5:level6 {
+	mso-level-number-format: roman-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: right;
+	text-indent: -9.0pt;
+}
+
+@
+list l5:level7 {
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	text-indent: -18.0pt;
+}
+
+@
+list l5:level8 {
+	mso-level-number-format: alpha-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	text-indent: -18.0pt;
+}
+
+@
+list l5:level9 {
+	mso-level-number-format: roman-lower;
+	mso-level-tab-stop: none;
+	mso-level-number-position: right;
+	text-indent: -9.0pt;
+}
+
+@
+list l6 {
+	mso-list-id: 1441802897;
+	mso-list-type: hybrid;
+	mso-list-template-ids: 1241916922 67698699 67698691 67698693 67698689
+		67698691 67698693 67698689 67698691 67698693;
+}
+
+@
+list l6:level1 {
+	mso-level-number-format: bullet;
+	mso-level-text: \F0D8;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 55.2pt;
+	text-indent: -18.0pt;
+	font-family: Wingdings;
+}
+
+@
+list l6:level2 {
+	mso-level-number-format: bullet;
+	mso-level-text: o;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 91.2pt;
+	text-indent: -18.0pt;
+	font-family: "Courier New";
+}
+
+@
+list l6:level3 {
+	mso-level-number-format: bullet;
+	mso-level-text: \F0A7;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 127.2pt;
+	text-indent: -18.0pt;
+	font-family: Wingdings;
+}
+
+@
+list l6:level4 {
+	mso-level-number-format: bullet;
+	mso-level-text: \F0B7;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 163.2pt;
+	text-indent: -18.0pt;
+	font-family: Symbol;
+}
+
+@
+list l6:level5 {
+	mso-level-number-format: bullet;
+	mso-level-text: o;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 199.2pt;
+	text-indent: -18.0pt;
+	font-family: "Courier New";
+}
+
+@
+list l6:level6 {
+	mso-level-number-format: bullet;
+	mso-level-text: \F0A7;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 235.2pt;
+	text-indent: -18.0pt;
+	font-family: Wingdings;
+}
+
+@
+list l6:level7 {
+	mso-level-number-format: bullet;
+	mso-level-text: \F0B7;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 271.2pt;
+	text-indent: -18.0pt;
+	font-family: Symbol;
+}
+
+@
+list l6:level8 {
+	mso-level-number-format: bullet;
+	mso-level-text: o;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 307.2pt;
+	text-indent: -18.0pt;
+	font-family: "Courier New";
+}
+
+@
+list l6:level9 {
+	mso-level-number-format: bullet;
+	mso-level-text: \F0A7;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	margin-left: 343.2pt;
+	text-indent: -18.0pt;
+	font-family: Wingdings;
+}
+
+@
+list l7 {
+	mso-list-id: 2087726746;
+	mso-list-type: hybrid;
+	mso-list-template-ids: -1777701466 67698689 67698691 67698693 67698689
+		67698691 67698693 67698689 67698691 67698693;
+}
+
+@
+list l7:level1 {
+	mso-level-number-format: bullet;
+	mso-level-text: \F0B7;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	text-indent: -18.0pt;
+	font-family: Symbol;
+}
+
+@
+list l7:level2 {
+	mso-level-number-format: bullet;
+	mso-level-text: o;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	text-indent: -18.0pt;
+	font-family: "Courier New";
+}
+
+@
+list l7:level3 {
+	mso-level-number-format: bullet;
+	mso-level-text: \F0A7;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	text-indent: -18.0pt;
+	font-family: Wingdings;
+}
+
+@
+list l7:level4 {
+	mso-level-number-format: bullet;
+	mso-level-text: \F0B7;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	text-indent: -18.0pt;
+	font-family: Symbol;
+}
+
+@
+list l7:level5 {
+	mso-level-number-format: bullet;
+	mso-level-text: o;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	text-indent: -18.0pt;
+	font-family: "Courier New";
+}
+
+@
+list l7:level6 {
+	mso-level-number-format: bullet;
+	mso-level-text: \F0A7;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	text-indent: -18.0pt;
+	font-family: Wingdings;
+}
+
+@
+list l7:level7 {
+	mso-level-number-format: bullet;
+	mso-level-text: \F0B7;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	text-indent: -18.0pt;
+	font-family: Symbol;
+}
+
+@
+list l7:level8 {
+	mso-level-number-format: bullet;
+	mso-level-text: o;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	text-indent: -18.0pt;
+	font-family: "Courier New";
+}
+
+@
+list l7:level9 {
+	mso-level-number-format: bullet;
+	mso-level-text: \F0A7;
+	mso-level-tab-stop: none;
+	mso-level-number-position: left;
+	text-indent: -18.0pt;
+	font-family: Wingdings;
+}
+
+ol {
+	margin-bottom: 0cm;
+}
+
+ul {
+	margin-bottom: 0cm;
+}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin-top:0cm;
+	mso-para-margin-right:0cm;
+	mso-para-margin-bottom:10.0pt;
+	mso-para-margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;}
+</style>
+<![endif]-->
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2049"/>
+</xml><![endif]-->
+<!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval: 36.0pt'>
+
+	<div class=WordSection1>
+
+		<p class=MsoNormal align=center style='text-align: center'>
+			<span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>屏幕录制推荐教程</span><span
+				style='font-size: 12.0pt; line-height: 115%'><o:p></o:p></span>
+		</p>
+
+		<p class=MsoNormal>
+			<span style='font-size: 12.0pt; line-height: 115%'><o:p>&nbsp;</o:p></span>
+		</p>
+
+		<p class=MsoNormal>
+			<span style='font-size: 12.0pt; line-height: 115%'><span
+				style='mso-spacerun: yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</span></span><span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>屏幕录制有很多软件，有专业收费的也有免费版的，今天我们介绍的是全球会议软件巨头</span><span
+				style='font-size: 12.0pt; line-height: 115%'>WebEx</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>公司的视屏录制软件，包括</span><span
+				style='font-size: 12.0pt; line-height: 115%'>2</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>个可执行安装软件：用于录制屏幕的软件和用于格式转换的软件，大家可以自己到</span><span
+				style='font-size: 12.0pt; line-height: 115%'>WebEx</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>公司网站自行下载或从</span><span
+				style='font-size: 12.0pt; line-height: 115%'><a
+				href="http://pan.baidu.com/s/1gdEJKgb"><span lang=ZH-CN
+					style='font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>这里镜像下载</span></a></span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>。</span><span
+				style='font-size: 12.0pt; line-height: 115%'><o:p></o:p></span>
+		</p>
+
+		<div
+			style='mso-element: para-border-div; border: none; border-bottom: solid #4F81BD 1.0pt; mso-border-bottom-themecolor: accent1; padding: 0cm 0cm 4.0pt 0cm'>
+
+			<p class=MsoTitle>
+				<span lang=ZH-CN
+					style='font-family: 宋体; mso-ascii-font-family: Cambria; mso-ascii-theme-font: major-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: major-fareast; mso-hansi-font-family: Cambria; mso-hansi-theme-font: major-latin'>准备工作：</span>
+			</p>
+
+		</div>
+
+		<p class=MsoListParagraphCxSpFirst
+			style='margin-left: 37.2pt; mso-add-space: auto; text-indent: -18.0pt; mso-list: l1 level1 lfo5'>
+			<![if !supportLists]>
+			<span
+				style='font-size: 12.0pt; line-height: 115%; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-bidi-font-family: Calibri; mso-bidi-theme-font: minor-latin'><span
+				style='mso-list: Ignore'>1.<span
+					style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+				</span></span></span>
+			<![endif]>
+			<span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>下载</span><span
+				style='font-size: 12.0pt; line-height: 115%'>WebEx</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>相关软件</span><span
+				style='font-size: 12.0pt; line-height: 115%'><span
+				style='mso-spacerun: yes'>&nbsp; </span>
+			<o:p></o:p></span>
+		</p>
+
+		<p class=MsoListParagraphCxSpMiddle
+			style='margin-left: 37.2pt; mso-add-space: auto'>
+			<span style='font-size: 12.0pt; line-height: 115%'><o:p>&nbsp;</o:p></span>
+		</p>
+
+		<p class=MsoListParagraphCxSpMiddle
+			style='margin-left: 35.45pt; mso-add-space: auto; text-indent: -18.0pt; mso-list: l6 level1 lfo6'>
+			<![if !supportLists]>
+			<span
+				style='font-size: 12.0pt; line-height: 115%; font-family: Wingdings; mso-fareast-font-family: Wingdings; mso-bidi-font-family: Wingdings'><span
+				style='mso-list: Ignore'>&Oslash;<span
+					style='font: 7.0pt "Times New Roman"'>&nbsp; </span></span></span>
+			<![endif]>
+			<span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>如何从</span><span
+				style='font-size: 12.0pt; line-height: 115%'>WebEx</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>网站下载，请参考</span><span
+				lang=ZH-CN style='font-size: 12.0pt; line-height: 115%'> </span><span
+				style='font-size: 12.0pt; line-height: 115%'><span
+				style='mso-spacerun: yes'>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			<o:p></o:p></span>
+		</p>
+
+		<p class=MsoListParagraphCxSpMiddle
+			style='margin-left: 35.45pt; mso-add-space: auto'>
+			<span style='font-size: 12.0pt; line-height: 115%'><o:p>&nbsp;</o:p></span>
+		</p>
+
+		<p class=MsoListParagraphCxSpMiddle
+			style='text-indent: -18.0pt; mso-list: l7 level1 lfo2'>
+			<![if !supportLists]>
+			<span
+				style='font-size: 12.0pt; line-height: 115%; font-family: Symbol; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol'><span
+				style='mso-list: Ignore'>·<span
+					style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</span></span></span>
+			<![endif]>
+			<span style='font-size: 12.0pt; line-height: 115%'>WebEx</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>录制软件</span><a
+				href="https://support.webex.com/MyAccountWeb/knowledgeBase.do?root=Tools&amp;parent=Knowledge&amp;articleId=WBX20856"><span
+				style='font-size: 12.0pt; line-height: 115%'>https://support.webex.com/MyAccountWeb/knowledgeBase.do?root=Tools&amp;parent=Knowledge&amp;articleId=WBX20856</span></a><span
+				style='font-size: 12.0pt; line-height: 115%'><o:p></o:p></span>
+		</p>
+
+		<p class=MsoListParagraphCxSpMiddle
+			style='text-indent: -18.0pt; mso-list: l7 level1 lfo2'>
+			<![if !supportLists]>
+			<span
+				style='font-size: 12.0pt; line-height: 115%; font-family: Symbol; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol'><span
+				style='mso-list: Ignore'>·<span
+					style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</span></span></span>
+			<![endif]>
+			<span style='font-size: 12.0pt; line-height: 115%'>WebEx</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>视频编辑软件</span><span
+				style='font-size: 12.0pt; line-height: 115%'>(</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>格式转换成</span><span
+				style='font-size: 12.0pt; line-height: 115%'>WMV)<o:p></o:p></span>
+		</p>
+
+		<p class=MsoListParagraphCxSpMiddle>
+			<a
+				href="http://www.question-defense.com/wp-content/uploads/2010/05/ateditor-version-3.0.zip"><span
+				style='font-size: 12.0pt; line-height: 115%'>http://www.question-defense.com/wp-content/uploads/2010/05/ateditor-version-3.0.zip</span></a><span
+				style='font-size: 12.0pt; line-height: 115%'><o:p></o:p></span>
+		</p>
+
+		<p class=MsoListParagraphCxSpLast
+			style='text-indent: -18.0pt; mso-list: l7 level1 lfo2'>
+			<![if !supportLists]>
+			<span
+				style='font-size: 12.0pt; line-height: 115%; font-family: Symbol; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol'><span
+				style='mso-list: Ignore'>·<span
+					style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</span></span></span>
+			<![endif]>
+			<span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>转换成其他视频格式</span><span
+				style='font-size: 12.0pt; line-height: 115%'><o:p></o:p></span>
+		</p>
+
+		<p class=MsoNormal>
+			<span style='font-size: 12.0pt; line-height: 115%'><span
+				style='mso-tab-count: 1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</span></span><span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>可以使用</span><span
+				class=SpellE><span
+				style='font-size: 12.0pt; line-height: 115%'>AnyConvert</span></span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>专业转换视频格式。</span><span
+				style='font-size: 12.0pt; line-height: 115%'>(</span><a
+				href="http://www.freemake.com/free_video_converter/"><span
+				style='font-size: 12.0pt; line-height: 115%'>http://www.freemake.com/free_video_converter/</span></a><span
+				style='font-size: 12.0pt; line-height: 115%'> ) </span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>或者使用</span><span
+				style='font-size: 12.0pt; line-height: 115%'> VLC media
+				player</span><span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>来转换</span><span
+				style='font-size: 12.0pt; line-height: 115%'> (</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>以下教程以</span><span
+				style='font-size: 12.0pt; line-height: 115%'>VLC media player</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>来说明格式转换</span><span
+				style='font-size: 12.0pt; line-height: 115%'>)<o:p></o:p></span>
+		</p>
+
+		<p class=MsoListParagraph
+			style='margin-left: 35.45pt; mso-add-space: auto; text-indent: -18.0pt; mso-list: l6 level1 lfo6'>
+			<![if !supportLists]>
+			<span
+				style='font-size: 12.0pt; line-height: 115%; font-family: Wingdings; mso-fareast-font-family: Wingdings; mso-bidi-font-family: Wingdings'><span
+				style='mso-list: Ignore'>&Oslash;<span
+					style='font: 7.0pt "Times New Roman"'>&nbsp; </span></span></span>
+			<![endif]>
+			<span style='font-size: 12.0pt; line-height: 115%'><span
+				style='mso-spacerun: yes'>&nbsp;</span></span><a
+				href="http://pan.baidu.com/s/1gdEJKgb"><span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>镜像下载</span><span
+				style='font-size: 12.0pt; line-height: 115%'> (zip</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>压缩文件包</span><span
+				style='font-size: 12.0pt; line-height: 115%'>)</span></a><span
+				style='font-size: 12.0pt; line-height: 115%'><span
+				style='mso-spacerun: yes'>&nbsp;&nbsp; </span>
+			<o:p></o:p></span>
+		</p>
+
+		<p class=MsoNormal>
+			<span style='font-size: 12.0pt; line-height: 115%'><span
+				style='mso-spacerun: yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>
+			<o:p></o:p></span>
+		</p>
+
+		<p class=MsoListParagraphCxSpFirst
+			style='margin-left: 37.2pt; mso-add-space: auto; text-indent: -18.0pt; mso-list: l1 level1 lfo5'>
+			<![if !supportLists]>
+			<span
+				style='font-size: 12.0pt; line-height: 115%; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-bidi-font-family: Calibri; mso-bidi-theme-font: minor-latin'><span
+				style='mso-list: Ignore'>2.<span
+					style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+				</span></span></span>
+			<![endif]>
+			<span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>安装</span><span
+				style='font-size: 12.0pt; line-height: 115%'>WebEx</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>录制软件</span><span
+				style='font-size: 12.0pt; line-height: 115%'>atrecply.exe</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>和视频编辑软件</span><span
+				style='font-size: 12.0pt; line-height: 115%'>ateeditor.exe<o:p></o:p></span>
+		</p>
+
+		<p class=MsoListParagraphCxSpMiddle
+			style='margin-left: 37.2pt; mso-add-space: auto'>
+			<span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>两个文件都是英文软件，在安装过程中会提示接受</span><span
+				style='font-size: 12.0pt; line-height: 115%'>WebEx</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>协议，如下图，请选择红色框框内选项。</span><span
+				style='mso-no-proof: yes'>
+				<!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="Picture_x0020_1" o:spid="_x0000_i1038" type="#_x0000_t75"
+ style='width:318pt;height:237.6pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="howto-make-record_files/image001.png" o:title="" croptop="12336f"
+  cropleft="-512f" cropright="1f"/>
+</v:shape><![endif]-->
+				<![if !vml]><img border=0 width=530 height=396
+				src="howto-make-record_files/image002.jpg"
+				v:shapes="Picture_x0020_1">
+			<![endif]>
+			</span><span style='font-size: 12.0pt; line-height: 115%'><o:p></o:p></span>
+		</p>
+
+		<p class=MsoListParagraphCxSpLast
+			style='margin-left: 54.0pt; mso-add-space: auto'>
+			<span style='font-size: 12.0pt; line-height: 115%'><o:p>&nbsp;</o:p></span>
+		</p>
+
+		<p class=MsoNormal>
+			<span style='font-size: 12.0pt; line-height: 115%'><span
+				style='mso-spacerun: yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</span></span><span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>两个软件安装完成后会在开始菜单中有如下程序选项：</span><span
+				style='font-size: 12.0pt; line-height: 115%'><o:p></o:p></span>
+		</p>
+
+		<p class=MsoNormal>
+			<span style='font-size: 12.0pt; line-height: 115%'><span
+				style='mso-spacerun: yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</span><span style='mso-no-proof: yes'>
+					<!--[if gte vml 1]><v:shape id="Picture_x0020_5"
+ o:spid="_x0000_i1037" type="#_x0000_t75" style='width:174pt;height:72.6pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="howto-make-record_files/image003.png" o:title=""/>
+</v:shape><![endif]-->
+					<![if !vml]><img border=0 width=290 height=121
+					src="howto-make-record_files/image003.png"
+					v:shapes="Picture_x0020_5">
+				<![endif]>
+			</span>
+			<o:p></o:p></span>
+		</p>
+
+		<p class=MsoNormal>
+			<span style='font-size: 12.0pt; line-height: 115%'><span
+				style='mso-spacerun: yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</span>
+			<o:p></o:p></span>
+		</p>
+
+		<div
+			style='mso-element: para-border-div; border: none; border-bottom: solid #4F81BD 1.0pt; mso-border-bottom-themecolor: accent1; padding: 0cm 0cm 4.0pt 0cm'>
+
+			<p class=MsoTitle>
+				<span lang=ZH-CN
+					style='font-family: 宋体; mso-ascii-font-family: Cambria; mso-ascii-theme-font: major-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: major-fareast; mso-hansi-font-family: Cambria; mso-hansi-theme-font: major-latin'>屏幕录制</span>
+			</p>
+
+		</div>
+
+		<p class=MsoNormal>
+			<span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>屏幕录制，步骤如下图</span><span
+				style='font-size: 12.0pt; line-height: 115%'><o:p></o:p></span>
+		</p>
+
+		<p class=MsoListParagraphCxSpFirst>
+			<span style='font-size: 12.0pt; line-height: 115%'><o:p>&nbsp;</o:p></span>
+		</p>
+
+		<p class=MsoListParagraphCxSpMiddle>
+			<span style='font-size: 12.0pt; line-height: 115%; mso-no-proof: yes'>
+				<!--[if gte vml 1]><v:shape id="Picture_x0020_6" o:spid="_x0000_i1036"
+ type="#_x0000_t75" style='width:207.6pt;height:75.6pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="howto-make-record_files/image004.png" o:title=""/>
+</v:shape><![endif]-->
+				<![if !vml]><img border=0 width=346 height=126
+				src="howto-make-record_files/image004.png"
+				v:shapes="Picture_x0020_6">
+			<![endif]>
+			</span><span style='font-size: 12.0pt; line-height: 115%'><o:p></o:p></span>
+		</p>
+
+		<p class=MsoListParagraphCxSpMiddle>
+			<span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>图</span><span
+				style='font-size: 12.0pt; line-height: 115%'>1<span
+				style='mso-spacerun: yes'>&nbsp; </span></span><span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>打开</span><span
+				style='font-size: 12.0pt; line-height: 115%'>WebEx Recorder<o:p></o:p></span>
+		</p>
+
+		<p class=MsoListParagraphCxSpMiddle>
+			<span style='font-size: 12.0pt; line-height: 115%'>(</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>运行</span><span
+				style='font-size: 12.0pt; line-height: 115%'>: WebEx
+				Recording</span><span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>程序，如下图</span><span
+				style='font-size: 12.0pt; line-height: 115%'>1</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>，点击红圈部分，<span
+				class=GramE>这是用来选择需要录制什么程序的界面<span lang=EN-US
+					style='font-family: "Calibri", "sans-serif"; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>(</span></span>下图
+			</span><span style='font-size: 12.0pt; line-height: 115%'>2)</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>，默认是</span><span
+				lang=ZH-CN style='font-size: 12.0pt; line-height: 115%'> </span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>“</span><span
+				style='font-size: 12.0pt; line-height: 115%'>Windows Desktop</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>”，</span><span
+				lang=ZH-CN style='font-size: 12.0pt; line-height: 115%'> </span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>也可以选择其他程序</span><span
+				style='font-size: 12.0pt; line-height: 115%'>(</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>例如我只想录制我</span><span
+				style='font-size: 12.0pt; line-height: 115%'>PPT</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>幻灯片中的内容，其他程序的界面内容不想录制</span><span
+				style='font-size: 12.0pt; line-height: 115%'>))<o:p></o:p></span>
+		</p>
+
+		<p class=MsoListParagraphCxSpMiddle>
+			<span style='font-size: 12.0pt; line-height: 115%'><o:p>&nbsp;</o:p></span>
+		</p>
+
+		<p class=MsoListParagraphCxSpMiddle>
+			<span style='font-size: 12.0pt; line-height: 115%; mso-no-proof: yes'>
+				<!--[if gte vml 1]><v:shape id="Picture_x0020_8" o:spid="_x0000_i1035"
+ type="#_x0000_t75" style='width:275.4pt;height:232.2pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="howto-make-record_files/image005.png" o:title=""/>
+</v:shape><![endif]-->
+				<![if !vml]><img border=0 width=459 height=387
+				src="howto-make-record_files/image005.png"
+				v:shapes="Picture_x0020_8">
+			<![endif]>
+			</span><span style='font-size: 12.0pt; line-height: 115%'><o:p></o:p></span>
+		</p>
+
+		<p class=MsoListParagraphCxSpLast>
+			<span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>图</span><span
+				style='font-size: 12.0pt; line-height: 115%'>2<span
+				style='mso-spacerun: yes'>&nbsp; </span></span><span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>选择要录制的程序</span><span
+				style='font-size: 12.0pt; line-height: 115%'><o:p></o:p></span>
+		</p>
+
+		<p class=MsoNormal>
+			<span style='font-size: 12.0pt; line-height: 115%'><o:p>&nbsp;</o:p></span>
+		</p>
+
+		<p class=MsoListParagraphCxSpFirst style='text-indent: -21.8pt'>
+			<span style='font-size: 12.0pt; line-height: 115%; mso-no-proof: yes'>
+				<!--[if gte vml 1]><v:shape
+ id="Picture_x0020_9" o:spid="_x0000_i1034" type="#_x0000_t75" style='width:6in;
+ height:321.6pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="howto-make-record_files/image006.png" o:title=""/>
+</v:shape><![endif]-->
+				<![if !vml]><img border=0 width=720 height=536
+				src="howto-make-record_files/image007.jpg"
+				v:shapes="Picture_x0020_9">
+			<![endif]>
+			</span><span style='font-size: 12.0pt; line-height: 115%'><o:p></o:p></span>
+		</p>
+
+		<p class=MsoListParagraphCxSpLast>
+			<span style='font-size: 12.0pt; line-height: 115%'><span
+				style='mso-spacerun: yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</span></span><span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>图</span><span
+				style='font-size: 12.0pt; line-height: 115%'>3:<span
+				style='mso-spacerun: yes'>&nbsp; </span></span><span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>输入录制文件要保存的文件路径名称</span><span
+				style='font-size: 12.0pt; line-height: 115%'><o:p></o:p></span>
+		</p>
+
+		<p class=MsoNormal>
+			<span style='font-size: 12.0pt; line-height: 115%'><o:p>&nbsp;</o:p></span>
+		</p>
+
+		<p class=MsoNormal>
+			<span style='font-size: 12.0pt; line-height: 115%'><span
+				style='mso-tab-count: 2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</span><span style='mso-no-proof: yes'>
+					<!--[if gte vml 1]><v:shape id="Picture_x0020_10"
+ o:spid="_x0000_i1033" type="#_x0000_t75" style='width:82.8pt;height:75.6pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="howto-make-record_files/image008.png" o:title=""/>
+</v:shape><![endif]-->
+					<![if !vml]><img border=0 width=138 height=126
+					src="howto-make-record_files/image008.png"
+					v:shapes="Picture_x0020_10">
+				<![endif]>
+			</span>
+			<o:p></o:p></span>
+		</p>
+
+		<p class=MsoNormal>
+			<span style='font-size: 12.0pt; line-height: 115%'><span
+				style='mso-spacerun: yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</span></span><span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>图</span><span
+				style='font-size: 12.0pt; line-height: 115%'>4:<span
+				style='mso-spacerun: yes'>&nbsp; </span><span
+				style='mso-tab-count: 1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</span></span><span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>录制功能控制面板</span><span
+				style='font-size: 12.0pt; line-height: 115%'> (</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>点击红色圆点即开始录制，点击</span><span
+				lang=ZH-CN style='font-size: 12.0pt; line-height: 115%'> </span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>暂停录制，点击</span><span
+				lang=ZH-CN style='font-size: 12.0pt; line-height: 115%'> </span><span
+				style='font-size: 12.0pt; line-height: 115%; mso-no-proof: yes'>
+				<!--[if gte vml 1]><v:shape
+ id="Picture_x0020_3" o:spid="_x0000_i1032" type="#_x0000_t75" style='width:13.2pt;
+ height:10.2pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="howto-make-record_files/image009.png" o:title=""/>
+</v:shape><![endif]-->
+				<![if !vml]><img border=0 width=22 height=17
+				src="howto-make-record_files/image009.png"
+				v:shapes="Picture_x0020_3">
+			<![endif]>
+			</span><span style='font-size: 12.0pt; line-height: 115%'><span
+				style='mso-spacerun: yes'>&nbsp;</span></span><span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>停止录制，点击</span><span
+				lang=ZH-CN style='font-size: 12.0pt; line-height: 115%'> </span><span
+				style='font-size: 12.0pt; line-height: 115%; mso-no-proof: yes'>
+				<!--[if gte vml 1]><v:shape
+ id="Picture_x0020_2" o:spid="_x0000_i1031" type="#_x0000_t75" style='width:11.4pt;
+ height:9.6pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="howto-make-record_files/image010.png" o:title=""/>
+</v:shape><![endif]-->
+				<![if !vml]><img border=0 width=19 height=16
+				src="howto-make-record_files/image010.png"
+				v:shapes="Picture_x0020_2">
+			<![endif]>
+			</span><span style='font-size: 12.0pt; line-height: 115%'><span
+				style='mso-spacerun: yes'>&nbsp;</span></span><span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>可以在当前屏幕添加注解文字</span><span
+				style='font-size: 12.0pt; line-height: 115%'>)<o:p></o:p></span>
+		</p>
+
+		<p class=MsoNormal>
+			<span style='font-size: 12.0pt; line-height: 115%; mso-no-proof: yes'>
+				<!--[if gte vml 1]><v:shape id="Picture_x0020_4" o:spid="_x0000_i1030"
+ type="#_x0000_t75" style='width:6in;height:319.2pt;visibility:visible;
+ mso-wrap-style:square' o:bordertopcolor="yellow pure" o:borderleftcolor="yellow pure"
+ o:borderbottomcolor="yellow pure" o:borderrightcolor="yellow pure">
+ <v:imagedata src="howto-make-record_files/image011.png" o:title=""/>
+ <w:bordertop type="single" width="6"/>
+ <w:borderleft type="single" width="6"/>
+ <w:borderbottom type="single" width="6"/>
+ <w:borderright type="single" width="6"/>
+</v:shape><![endif]-->
+				<![if !vml]><img border=0 width=722 height=534
+				src="howto-make-record_files/image012.png"
+				v:shapes="Picture_x0020_4">
+			<![endif]>
+			</span><span style='font-size: 12.0pt; line-height: 115%'><o:p></o:p></span>
+		</p>
+
+		<p class=MsoNormal>
+			<span style='font-size: 12.0pt; line-height: 115%'><span
+				style='mso-spacerun: yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</span></span><span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>图</span><span
+				style='font-size: 12.0pt; line-height: 115%'>5<span
+				style='mso-spacerun: yes'>&nbsp;&nbsp; </span></span><span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>点击</span><span
+				lang=ZH-CN style='font-size: 12.0pt; line-height: 115%'> </span><span
+				style='font-size: 12.0pt; line-height: 115%; mso-no-proof: yes'>
+				<!--[if gte vml 1]><v:shape
+ id="Picture_x0020_7" o:spid="_x0000_i1029" type="#_x0000_t75" style='width:11.4pt;
+ height:9.6pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="howto-make-record_files/image010.png" o:title=""/>
+</v:shape><![endif]-->
+				<![if !vml]><img border=0 width=19 height=16
+				src="howto-make-record_files/image010.png"
+				v:shapes="Picture_x0020_7">
+			<![endif]>
+			</span><span style='font-size: 12.0pt; line-height: 115%'><span
+				style='mso-spacerun: yes'>&nbsp;</span></span><span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>在当前屏幕添加注解文字</span><span
+				style='font-size: 12.0pt; line-height: 115%'> (</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>添加好之后，点击鼠标右键，可以弹出活动菜单，选择</span><span
+				class=GramE><span
+				style='font-size: 12.0pt; line-height: 115%'>”</span></span><span
+				style='font-size: 12.0pt; line-height: 115%'>Stop Annotating<span
+				class=GramE>”</span></span><span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>即可返回录<span
+				class=GramE>屏功能</span>界面
+			</span><span style='font-size: 12.0pt; line-height: 115%'>)<o:p></o:p></span>
+		</p>
+
+		<p class=MsoNormal>
+			<span style='font-size: 12.0pt; line-height: 115%'><o:p>&nbsp;</o:p></span>
+		</p>
+
+		<p class=MsoNormal>
+			<span style='font-size: 12.0pt; line-height: 115%'><span
+				style='mso-spacerun: yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</span><span style='mso-no-proof: yes'>
+					<!--[if gte vml 1]><v:shape id="Picture_x0020_11"
+ o:spid="_x0000_i1028" type="#_x0000_t75" style='width:205.8pt;height:74.4pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="howto-make-record_files/image013.png" o:title=""/>
+</v:shape><![endif]-->
+					<![if !vml]><img border=0 width=343 height=124
+					src="howto-make-record_files/image013.png"
+					v:shapes="Picture_x0020_11">
+				<![endif]>
+			</span>
+			<o:p></o:p></span>
+		</p>
+
+		<p class=MsoNormal>
+			<span style='font-size: 12.0pt; line-height: 115%'><span
+				style='mso-spacerun: yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</span></span><span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>图</span><span
+				style='font-size: 12.0pt; line-height: 115%'>6</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>，</span><span
+				lang=ZH-CN style='font-size: 12.0pt; line-height: 115%'> </span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>点击</span><span
+				lang=ZH-CN style='font-size: 12.0pt; line-height: 115%'> </span><span
+				style='font-size: 12.0pt; line-height: 115%; mso-no-proof: yes'>
+				<!--[if gte vml 1]><v:shape
+ id="Picture_x0020_12" o:spid="_x0000_i1027" type="#_x0000_t75" style='width:13.2pt;
+ height:10.2pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="howto-make-record_files/image009.png" o:title=""/>
+</v:shape><![endif]-->
+				<![if !vml]><img border=0 width=22 height=17
+				src="howto-make-record_files/image009.png"
+				v:shapes="Picture_x0020_12">
+			<![endif]>
+			</span><span style='font-size: 12.0pt; line-height: 115%'><span
+				style='mso-spacerun: yes'>&nbsp;</span></span><span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>录屏结束，此时点击红色方框内播放按钮可以播放查看，保存下载的文件时</span><span
+				style='font-size: 12.0pt; line-height: 115%'>WRF</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>格式文件</span><span
+				style='font-size: 12.0pt; line-height: 115%'><o:p></o:p></span>
+		</p>
+
+		<p class=MsoNormal>
+			<span style='font-size: 12.0pt; line-height: 115%'><o:p>&nbsp;</o:p></span>
+		</p>
+
+		<div
+			style='mso-element: para-border-div; border: none; border-bottom: solid #4F81BD 1.0pt; mso-border-bottom-themecolor: accent1; padding: 0cm 0cm 4.0pt 0cm'>
+
+			<p class=MsoTitle>
+				<span lang=ZH-CN
+					style='font-family: 宋体; mso-ascii-font-family: Cambria; mso-ascii-theme-font: major-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: major-fareast; mso-hansi-font-family: Cambria; mso-hansi-theme-font: major-latin'>转换文件格式</span>
+			</p>
+
+		</div>
+
+		<p class=MsoNormal>
+			<span style='font-size: 12.0pt; line-height: 115%'><span
+				style='mso-spacerun: yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>刚录制好的屏幕视频文件时</span><span
+				style='font-size: 12.0pt; line-height: 115%'>WRF</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>文件，这是</span><span
+				style='font-size: 12.0pt; line-height: 115%'>WebEx</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>特有的文件格式，需要转换，分成两步。</span><span
+				style='font-size: 12.0pt; line-height: 115%'><o:p></o:p></span>
+		</p>
+
+		<p class=MsoListParagraphCxSpFirst
+			style='margin-left: 42.6pt; mso-add-space: auto; text-indent: -18.0pt; mso-list: l3 level1 lfo8'>
+			<![if !supportLists]>
+			<span
+				style='font-size: 12.0pt; line-height: 115%; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-bidi-font-family: Calibri; mso-bidi-theme-font: minor-latin'><span
+				style='mso-list: Ignore'>1.<span
+					style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+				</span></span></span>
+			<![endif]>
+			<span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>将录制文件转成</span><span
+				style='font-size: 12.0pt; line-height: 115%'>WMV</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>格式。打开程序“</span><span
+				style='font-size: 12.0pt; line-height: 115%'>WebEx Recording
+				Editor</span><span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>”，</span><span
+				lang=ZH-CN style='font-size: 12.0pt; line-height: 115%'> </span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>并且打开上面录制的</span><span
+				style='font-size: 12.0pt; line-height: 115%'>WRF</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>格式文件，然后点击“</span><span
+				style='font-size: 12.0pt; line-height: 115%'>File</span><span
+				style='font-size: 12.0pt; line-height: 115%; font-family: Wingdings; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-char-type: symbol; mso-symbol-font-family: Wingdings'><span
+				style='mso-char-type: symbol; mso-symbol-font-family: Wingdings'>à</span></span><span
+				style='font-size: 12.0pt; line-height: 115%'>Export to…</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>”，在弹出窗口中指定要保存的文件名，格式只能是</span><span
+				style='font-size: 12.0pt; line-height: 115%'>WMV</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>格式。</span><span
+				style='font-size: 12.0pt; line-height: 115%'><o:p></o:p></span>
+		</p>
+
+		<p class=MsoListParagraphCxSpMiddle
+			style='margin-left: 21.3pt; mso-add-space: auto; text-indent: -14.2pt'>
+			<span style='font-size: 12.0pt; line-height: 115%; mso-no-proof: yes'>
+				<!--[if gte vml 1]><v:shape id="Picture_x0020_14" o:spid="_x0000_i1026"
+ type="#_x0000_t75" style='width:457.2pt;height:256.8pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="howto-make-record_files/image014.png" o:title=""/>
+</v:shape><![endif]-->
+				<![if !vml]><img border=0 width=762 height=428
+				src="howto-make-record_files/image015.jpg"
+				v:shapes="Picture_x0020_14">
+			<![endif]>
+			</span><span style='font-size: 12.0pt; line-height: 115%'><o:p></o:p></span>
+		</p>
+
+		<p class=MsoListParagraphCxSpLast
+			style='margin-left: 42.6pt; mso-add-space: auto'>
+			<span style='font-size: 12.0pt; line-height: 115%'><o:p>&nbsp;</o:p></span>
+		</p>
+
+		<p class=MsoNormal>
+			<span style='font-size: 12.0pt; line-height: 115%'><span
+				style='mso-spacerun: yes'>&nbsp;&nbsp; </span><span
+				style='mso-no-proof: yes'>
+					<!--[if gte vml 1]><v:shape
+ id="Picture_x0020_15" o:spid="_x0000_i1025" type="#_x0000_t75" style='width:252pt;
+ height:246pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="howto-make-record_files/image016.png" o:title=""/>
+</v:shape><![endif]-->
+					<![if !vml]><img border=0 width=420 height=410
+					src="howto-make-record_files/image017.jpg"
+					v:shapes="Picture_x0020_15">
+				<![endif]>
+			</span>
+			<o:p></o:p></span>
+		</p>
+
+		<p class=MsoNormal>
+			<span style='font-size: 12.0pt; line-height: 115%'>(</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>这里</span><span
+				style='font-size: 12.0pt; line-height: 115%'>Video </span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>的</span><span
+				style='font-size: 12.0pt; line-height: 115%'>codec</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>默认是</span><span
+				style='font-size: 12.0pt; line-height: 115%'>: “Windows Media
+				Video 9 Screen”</span><span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>，如果录制的过程中有播放别的视频文件，推荐选择</span><span
+				style='font-size: 12.0pt; line-height: 115%'>”Windows Media
+				Video 9”)<o:p></o:p>
+			</span>
+		</p>
+
+		<p class=MsoListParagraph
+			style='margin-left: 42.6pt; mso-add-space: auto; text-indent: -18.0pt; mso-list: l3 level1 lfo8'>
+			<![if !supportLists]>
+			<span
+				style='font-size: 12.0pt; line-height: 115%; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-bidi-font-family: Calibri; mso-bidi-theme-font: minor-latin'><span
+				style='mso-list: Ignore'>2.<span
+					style='font: 7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+				</span></span></span>
+			<![endif]>
+			<span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>将</span><span
+				style='font-size: 12.0pt; line-height: 115%'>WMV</span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>格式转成任意格式文件，并且可以自由编辑。这里我们推荐的软件是“</span><a
+				href="http://www.freemake.com/free_video_converter/"><span
+				style='font-size: 12.0pt; line-height: 115%'>Free Video
+					Convert</span></a><span lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>”，</span><span
+				lang=ZH-CN style='font-size: 12.0pt; line-height: 115%'> </span><span
+				lang=ZH-CN
+				style='font-size: 12.0pt; line-height: 115%; font-family: 宋体; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin'>下载并安装。转换基本流程是选择源文件，选择要转换的目标格式，然后转换，详细教程，请参考：</span><a
+				href="http://www.freemake.com/how_to/free_wmv_converter"><span
+				style='font-size: 12.0pt; line-height: 115%'>http://www.freemake.com/how_to/free_wmv_converter</span></a>
+		<p>
+	</div>
+	
+	<hr/>
+	
+	<div>
+	    <h1>使用其他录制软件</h1>
+	    <p>
+	</div>
+	<div>
+	    1. 如果使用windows操作系统，那么除了Webex公司的录制软件，还可以选择微软公司的录制编码转换软件，<a href="http://www.microsoft.com/zh-CN/download/details.aspx?id=24601">点击此处下载</a>，教程请见: <a href="http://technofyi.com/2013/01/05/how-to-record-your-pcs-screen-in-hd-for-free/">http://technofyi.com/2013/01/05/how-to-record-your-pcs-screen-in-hd-for-free/</a>,
+	                   缺点是如果使用免费版本，则每次只能录制10分钟，不过把多个10分钟的录制视频拼接起来成长视频.
+	    <p>
+	    2. 如果使用苹果Mac操作系统，请参见教程: <a href="http://technofyi.com/2013/01/05/how-to-record-your-macs-screen-in-hd-for-free/">http://technofyi.com/2013/01/05/how-to-record-your-macs-screen-in-hd-for-free/</a>
+	</div>
+
+</body>
+
+</html>

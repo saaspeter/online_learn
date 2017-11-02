@@ -1,0 +1,241 @@
+
+.font2Large{
+	font-size: 2em;
+}
+
+#functionLineDiv{
+	background-color: #DCEAFC;
+}
+
+#functionButtonDiv{
+
+}
+
+#functionButtonDiv ul{
+
+}
+
+#functionButtonDiv li{
+
+}
+
+#help{
+
+}
+
+#searchDiv{
+
+}
+
+#searchDiv input, #complexSearchDiv input{
+   font-size: 1em;
+}
+
+#searchDiv select, #complexSearchDiv select{
+   font-size: 1em;
+}
+
+#pageNumLineDiv{
+
+}
+
+.alertFont {
+	font-weight: bold;
+	color: #FF0000;
+}
+
+#displayMessDiv{
+    color:#FF0000;
+    background-color:#EEEEEE;
+}
+
+#DataTableDiv{
+
+}
+
+.noUnderline a {
+	text-decoration: none;
+}
+
+.noUnderline a:hover {
+	text-decoration: underline;
+}
+
+.titleBar{
+    text-align:center;
+	font-size:2em;
+	background-color:#F5FBFE;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.fieldsTitleDiv{
+	background-color: #DCEAFC;
+	font-size:25px; text-align: center;
+	padding-top:10px; padding-bottom:10px;
+	margin-top:10px; margin-bottom:25px;
+	clear:both;
+}
+
+.dashLine{
+
+}
+
+.articleList {
+   text-align: left;
+   margin: 0px; padding: 0px;
+}
+
+.articleList li{
+   padding-top: 8px;
+   padding-bottom: 8px;
+   margin-left: 15px;
+   list-style-type: square;
+   border-bottom: dashed 1px #cccccc;
+}
+
+.articleList li a{
+   margin-right: 10px;
+}
+
+.articleList li:HOVER{
+	background-color:#FFFFCC;
+}
+
+.listDataTable {
+   background-color:#FFFFFF;
+   border-collapse: separate; 
+}
+
+.listDataTable tbody tr:HOVER{
+	background-color:#FFFFCC;
+}
+
+.listDataTable td{
+   padding: 8px;
+   empty-cells:show;
+   border-bottom: dashed 1px #cccccc;
+}
+
+/*** 列表信息链接的样式 ***/
+.listDataTable a {
+
+}
+/*** 列表信息链接中鼠标Over的样式 ***/
+.listDataTable a:hover {
+   
+}
+
+.listDataTableHead {
+   width: 100%;
+   background-color:#DCEAFC;
+   font-weight: bold;
+}
+
+.listDataTableHead td{
+   padding: 8px;
+   height: 20px;
+   margin-bottom: 20px;
+   white-space: nowrap;
+   border-bottom: 0px;
+}
+
+/*** 奇数行信息：定义“列表信息表格”table中的奇数行信息的tr ***/
+.oddRow {
+   width: 100%;
+   color:#000000;
+   background-color: #ffffff;
+   height:20px;
+}
+/*** 偶数行信息：定义“列表信息表格”table中的偶数行信息的tr ***/
+.evenRow {
+   width: 100%;
+   color:#000000;
+   text-align:left;
+   background-color: #ECF5FF;
+   height:20px;
+}
+
+.clickedRow {
+   width: 100%;
+   color:#000000;
+   text-align:left;
+   background-color: #FFFFF4;
+   height:20px;
+}
+
+.readonly{
+	background-color: #efefef;
+}
+
+.ModerateButton {
+	font-size: 20px;
+}
+
+.bigButton{
+	font-size:25px;
+}
+
+.searchTxt_second {
+	width:360px; font-size:large;
+	padding: 2px 2px 2px 4px;
+	border: 1px solid #FF99CC;
+}
+
+.searchBtn_second {
+    font-size: large;
+    padding: 2px 5px 2px 5px;"	
+}
+
+.select_second {
+    font-size: large;
+    padding: 2px 5px 2px 5px;"	
+}
+
+.pageNumberPress{
+	text-decoration:none;
+	font-weight: bold;
+	margin: 4px;
+}
+
+.pageNumberNormal{
+	text-decoration:underline;
+	margin: 4px;
+}
+
+.newDivclass{
+    margin:0px;
+}
+
+.newDivclass iframe{
+    margin:0px;
+}
+
+.font_input{
+	font-size: larger;
+}
+
+input[type=checkbox]{
+    display: inline;
+    padding:0;
+    height: 1.2em;
+    width: 1.2em;
+}
+
+input[type=radio]{
+    display: inline;
+    padding:0;
+    height: 1.2em;
+    width: 1.2em;
+}
+
+.messLink{
+    margin-left: 0px !important;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.disableImage {
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* msie */
+}

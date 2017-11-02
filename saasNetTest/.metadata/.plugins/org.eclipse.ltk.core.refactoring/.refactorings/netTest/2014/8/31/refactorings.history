@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;netTest.util.CopyOfUploadFileUtil&apos; to &apos;QiniuFileUtil&apos;&#x0D;&#x0A;- Original project: &apos;netTest&apos;&#x0D;&#x0A;- Original element: &apos;netTest.util.CopyOfUploadFileUtil&apos;&#x0D;&#x0A;- Renamed element: &apos;netTest.util.QiniuFileUtil&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;CopyOfUploadFileUtil&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;netTest.util{CopyOfUploadFileUtil.java[CopyOfUploadFileUtil" matchStrategy="1" name="QiniuFileUtil" qualified="false" references="true" similarDeclarations="false" stamp="1406858064098" textual="false" version="1.0"/>
+</session>

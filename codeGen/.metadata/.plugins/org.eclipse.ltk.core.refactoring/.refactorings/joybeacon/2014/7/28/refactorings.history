@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;joybeacon/abatorConfig_platform.xml&apos; to &apos;abatorConfig.xml&apos;" description="Rename resource &apos;abatorConfig_platform.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="abatorConfig_platform.xml" name="abatorConfig.xml" stamp="1405180990441" updateReferences="true"/>
+</session>

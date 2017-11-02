@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Menus">
+<!-- ###################### menusResult ########################## -->
+  <resultMap id="MenusResult" class="acegi.vo.Menus">
+    <result column="id" property="id" jdbcType="BIGINT"/>
+    <result column="title" property="title" jdbcType="VARCHAR"/>
+    <result column="target" property="target" jdbcType="VARCHAR"/>
+    <result column="onclick" property="onclick" jdbcType="VARCHAR"/>
+    <result column="onmouseover" property="onmouseover" jdbcType="VARCHAR"/>
+    <result column="onmouseout" property="onmouseout" jdbcType="VARCHAR"/>
+    <result column="image" property="image" jdbcType="VARCHAR"/>
+    <result column="altImage" property="altimage" jdbcType="VARCHAR"/>
+    <result column="tooltip" property="tooltip" jdbcType="VARCHAR"/>
+    <result column="page" property="page" jdbcType="VARCHAR"/>
+    <result column="width" property="width" jdbcType="VARCHAR"/>
+    <result column="height" property="height" jdbcType="VARCHAR"/>
+    <result column="forward" property="forward" jdbcType="VARCHAR"/>
+    <result column="action" property="action" jdbcType="VARCHAR"/>
+    <result column="menuType" property="menutype" jdbcType="SMALLINT"/>
+
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="id"><![CDATA[ id=#id:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="title"><![CDATA[ title=#title:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="target"><![CDATA[ target=#target:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="onclick"><![CDATA[ onclick=#onclick:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="onmouseover"><![CDATA[ onmouseover=#onmouseover:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="onmouseout"><![CDATA[ onmouseout=#onmouseout:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="image"><![CDATA[ image=#image:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="altimage"><![CDATA[ altImage=#altimage:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="tooltip"><![CDATA[ tooltip=#tooltip:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="page"><![CDATA[ page=#page:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="width"><![CDATA[ width=#width:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="height"><![CDATA[ height=#height:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="forward"><![CDATA[ forward=#forward:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="action"><![CDATA[ action=#action:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="menutype"><![CDATA[ menuType=#menutype:SMALLINT# ]]></isNotNull>
+
+    </dynamic>
+  </sql>
+  
+<!-- ###################### selectAll ########################## -->
+  <select id="selectAll" resultMap="MenusResult"> 
+     select 
+         id,
+    title,
+    target,
+    onclick,
+    onmouseover,
+    onmouseout,
+    image,
+    altImage,
+    tooltip,
+    page,
+    width,
+    height,
+    forward,
+    action,
+    menuType 
+     from menus
+  </select>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="MenusResult" parameterClass="java.lang.Long"> 
+     select 
+         id,
+    title,
+    target,
+    onclick,
+    onmouseover,
+    onmouseout,
+    image,
+    altImage,
+    tooltip,
+    page,
+    width,
+    height,
+    forward,
+    action,
+    menuType 
+     from menus 
+     where id = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="MenusResult" parameterClass="acegi.dto.MenusQuery"> 
+     select 
+         id,
+    title,
+    target,
+    onclick,
+    onmouseover,
+    onmouseout,
+    image,
+    altImage,
+    tooltip,
+    page,
+    width,
+    height,
+    forward,
+    action,
+    menuType
+     from menus
+    <include refid="Menus.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="acegi.vo.Menus"> 
+     insert into menus
+     (     id,
+    title,
+    target,
+    onclick,
+    onmouseover,
+    onmouseout,
+    image,
+    altImage,
+    tooltip,
+    page,
+    width,
+    height,
+    forward,
+    action,
+    menuType ) 
+    values 
+     (     #id:BIGINT#, 
+    #title:VARCHAR#, 
+    #target:VARCHAR#, 
+    #onclick:VARCHAR#, 
+    #onmouseover:VARCHAR#, 
+    #onmouseout:VARCHAR#, 
+    #image:VARCHAR#, 
+    #altimage:VARCHAR#, 
+    #tooltip:VARCHAR#, 
+    #page:VARCHAR#, 
+    #width:VARCHAR#, 
+    #height:VARCHAR#, 
+    #forward:VARCHAR#, 
+    #action:VARCHAR#, 
+    #menutype:SMALLINT# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="id" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="acegi.vo.Menus"> 
+     update menus
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="title"><![CDATA[ title=#title:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="target"><![CDATA[ target=#target:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="onclick"><![CDATA[ onclick=#onclick:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="onmouseover"><![CDATA[ onmouseover=#onmouseover:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="onmouseout"><![CDATA[ onmouseout=#onmouseout:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="image"><![CDATA[ image=#image:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="altimage"><![CDATA[ altImage=#altimage:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="tooltip"><![CDATA[ tooltip=#tooltip:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="page"><![CDATA[ page=#page:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="width"><![CDATA[ width=#width:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="height"><![CDATA[ height=#height:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="forward"><![CDATA[ forward=#forward:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="action"><![CDATA[ action=#action:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="menutype"><![CDATA[ menuType=#menutype:SMALLINT# ]]></isNotNull>
+
+    </dynamic> where id = #id:BIGINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from menus where id = #value#
+  </delete>
+  
+<!-- ###################### deleteByVO ########################## -->
+  <delete id="deleteByVO" parameterClass="acegi.dto.MenusQuery"> 
+     delete from menus
+     <include refid="Menus.where_Clause"/> 
+  </delete>
+  
+<!-- ###################### selectAllCount ########################## -->
+  <select id="selectAllCount" resultClass="java.lang.Integer"> 
+     select count(*) from menus
+  </select>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="acegi.dto.MenusQuery"> 
+     select count(*) from menus
+     <include refid="Menus.where_Clause"/>  
+  </select>
+    
+</sqlMap>

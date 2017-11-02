@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="SocialNewsSource">
+<!-- ###################### SocialNewsSourceResult ########################## -->
+  <resultMap id="SocialNewsSourceResult" class="platform.social.vo.SocialNewsSource">
+    <result column="id" property="id" jdbcType="BIGINT"/>
+    <result column="newsCategoryID" property="newscategoryid" jdbcType="BIGINT"/>
+    <result column="source" property="source" jdbcType="VARCHAR"/>
+    <result column="fromAccount" property="fromaccount" jdbcType="VARCHAR"/>
+    <result column="syncTime" property="synctime" jdbcType="TIMESTAMP"/>
+    <result column="lastUpdateTime" property="lastupdatetime" jdbcType="TIMESTAMP"/>
+  </resultMap>
+    
+  <!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="SocialNewsSourceResult" parameterClass="platform.social.vo.SocialNewsSource"> 
+     select  id, newsCategoryID, source, fromAccount, syncTime, lastUpdateTime
+     from SocialNewsSource 
+     where id = #id:BIGINT#
+  </select>
+  
+  <!-- ###################### selectAll ########################## -->
+  <select id="selectAll" resultMap="SocialNewsSourceResult"> 
+     select  id, newsCategoryID, source, fromAccount, syncTime, lastUpdateTime
+     from SocialNewsSource
+  </select>
+   
+  <!-- ###################### selectByCategory ########################## -->
+  <select id="selectByCategory" resultMap="SocialNewsSourceResult" parameterClass="java.lang.Long"> 
+     select  id, newsCategoryID, source, fromAccount, syncTime, lastUpdateTime
+     from SocialNewsSource
+     where newsCategoryID = #value#
+  </select>
+  
+  <!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="platform.social.vo.SocialNewsSource"> 
+     insert into SocialNewsSource
+     ( id, newsCategoryID, source, fromAccount, syncTime, lastUpdateTime ) 
+    values 
+     ( #id:BIGINT#, #newscategoryid:BIGINT#, #source:VARCHAR#, #fromaccount:VARCHAR#
+       #synctime:TIMESTAMP#, #lastupdatetime:TIMESTAMP# )
+     <selectKey resultClass="java.lang.Long" keyProperty="id" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey>
+  </insert>
+  
+  <!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="platform.social.vo.SocialNewsSource"> 
+     update SocialNewsSource
+    <dynamic prepend="set">
+      <isNotEmpty prepend="," property="source"><![CDATA[ source=#source:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="," property="fromaccount"><![CDATA[ fromAccount=#fromaccount:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="," property="synctime"><![CDATA[ syncTime=#synctime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="lastupdatetime"><![CDATA[ lastUpdateTime=#lastupdatetime:TIMESTAMP# ]]></isNotNull>
+    </dynamic> 
+    where id = #id:BIGINT#
+  </update>
+    
+  <!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from SocialNewsSource where id = #value#
+  </delete>
+  
+  <!-- ###################### deleteByCategory ########################## -->
+  <delete id="deleteByCategory" parameterClass="java.lang.Long"> 
+     delete from SocialNewsSource where newsCategoryID = #newscategoryid:BIGINT#
+  </delete>
+    
+</sqlMap>

@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>首页</title>
+<style type="text/css">
+<!--
+#Layer1 {
+	height:800px;
+	float:left;
+	background-color:#FFFFFF;
+	margin-top:5em;
+}
+#content {
+    width:750px;
+	float:left;
+	margin:0 auto;
+}
+
+#Layer2 {
+	height:100px;
+	float:left;
+	background-color:#eeeeee;
+}
+#rightAD {
+	height:800px;
+	float:right;
+	clear:right;
+	    margin-top:5em;
+	background-color:#FFFFFF;
+}
+#Layer4 {
+	height:20px;
+	float:left;
+}
+#Layer5 {
+	width:80%;
+	height:20px;
+	float:left;
+}
+#Layer6 {
+    width:100%
+	float:left;
+	background-color:#eeeeee;
+}
+#Layer7 {
+	border-color: #eeeeee;
+	float:left;
+}
+#Layer8 {
+    position:relative;
+	float:left;
+	width:49%;
+	height:150px;
+	background-color: #eeeeee;
+}
+#Layer9 {
+    position:relative;
+    width:49%;
+	height:150px;
+    float:right;
+	background-color: #eeeeee;
+}
+#Layer10 {
+	float:left;
+	width:100%;
+	height:250px;
+	background-color: #eeeeee;
+}
+#Layer11 {
+	height:20px;
+	float:left;
+}
+
+#Layer31 {
+	float:left;
+	width:100%;
+	height:250px;
+	background-color: #eeeeee;
+}
+
+#Layer12 {
+	position:relative;
+    float:right;
+}
+#Layer16 {
+	position:relative;
+	width:70%;
+    float:right;
+}
+#Layer17 {
+	position:relative;
+	width:70%;
+    float:right;
+}
+#Layer15 {
+	position:relative;
+	width:30%;
+    float:left;
+}
+#Layer13 {
+	position:absolute;
+	left:728px;
+	top:638px;
+	width:32px;
+	height:820px;
+	z-index:13;
+}
+.br{
+   margin:9px;
+   clear:both;
+}
+
+-->
+</style>
+</head>
+
+<body>
+<div id="Layer1">左侧浮动广告区<br></div>
+<div id="content">
+<div id="Layer2">
+    <div id="Layer15">
+	   <img src="styles/imgs/logo_platform.jpg" alt="公司logo" name="logo" id="logo" style="background-color: #33CCFF" />
+	</div>
+    <div id="Layer12">从这里<a href="#">登陆</a>，请<a href="/platform/customers/tenant.do?method=addPage">机构注册</a>，<a href="/platform/customers/user.do?method=addPage">普通用户注册</a>，
+	<a href="#">帮助</a></div>
+	<div id="Layer16"><a href="#">如何申请消费卡</a>，<a href="#">如何充值</a>,<a href="#">bbs论坛</a></div>
+	<div class="br"></div>
+	<div id="Layer17"><a href="grtd.html">个人用户进入</a>，&nbsp;<a href="jggl.html">商店租户进入</a>，&nbsp;<a href="../sysAdmin/sysAdmin_index.jsp">管理平台系统</a></div>
+</div>
+
+<div id="Layer4">
+  <table width="100%" height="100%" border="1" align="center" cellpadding="0" cellspacing="0"  bordercolor="#FFFFFF" bgcolor="#33CCFF">
+    <tr>
+      <td align="center">首页</td>
+      <td align="center">英语</td>
+      <td align="center">法律</td>
+      <td align="center">会计</td>
+      <td align="center">公务员</td>
+      <td align="center">计算机</td>
+      <td align="center">报关员</td>
+      <td align="center">集团用户</td>
+    </tr>
+  </table>
+</div>
+<div id="Layer5">
+  <table border="1" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bgcolor="#99eeFf">
+    <tr>
+      <td><a href="shopList.html">四级</a></td>
+      <td><a href="shopList.html">六级</a></td>
+      <td><a href="shopList.html">托福</a></td>
+      <td><a href="shopList.html">GRE</a></td>
+	  <td>（二级目录，当点击一级目录时出现）</td>
+    </tr>
+  </table>
+</div>
+<div style="height:10px"></div>
+<div id="Layer6">
+<form>
+	 <select name="search_type">
+		  <option value="auction"> </option>
+		  <option value="info">培训科目</option>
+	      <option value="web">培训机构</option>
+	 </select>
+							
+	<select id="cat" name="cat">
+	  <option value="">所有分类</option>
+	  <option>英语</option>
+	  <option>英语/四六级</option>
+	  <option>英语/托福</option>
+	  <option>法律/司法考试</option>
+	  <option>会计/注会考试</option>	
+		
+	</select>
+	<button type="button" id="DoSearch" onclick="doSearch();"> 搜 索 </button>
+	<a href="http://search1.taobao.com/browse/ad_search.htm" target="_top"></a>
+	<a href="http://service.taobao.com/support/7-132-134/help-1350.htm" target="_blank"></a>
+  </form>
+</div>
+<div style="height:10px;"></div>
+<div id="Layer7">
+  <div id="Layer8">培训商店产品重点推介</div>
+   <div id="Layer9">公告栏，发布各商店的公告</div>
+</div>
+<div style="height:10px;"></div>
+<div id="Layer11">
+  <table width="100%" height="100%" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bgcolor="#33CCFF">
+    <tr>
+      <td align="center">英语</td>
+      <td align="center">法律</td>
+      <td align="center">会计</td>
+      <td align="center">公务员</td>
+      <td align="center">计算机</td>
+      <td align="center">报关员</td>
+      <td align="center">集团用户</td>
+    </tr>
+  </table>
+</div>
+<div id="Layer10">推荐精品商品列表，在上一行中点击一个tab页显示对应科目的优秀产品列表</div>
+
+<div id="Layer30">
+  <table width="100%" height="100%" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bgcolor="#33CCFF">
+    <tr>
+      <td align="center">英语</td>
+      <td align="center">法律</td>
+      <td align="center">会计</td>
+      <td align="center">公务员</td>
+      <td align="center">计算机</td>
+      <td align="center">报关员</td>
+      <td align="center">集团用户</td>
+    </tr>
+  </table>
+</div>
+<div id="Layer31">推荐培训机构列表，在上一行中点击一个tab页显示对应推荐培训机构列表</div>
+
+</div>
+<div id="rightAD">右侧浮动广告区</div>
+</body>
+</html>

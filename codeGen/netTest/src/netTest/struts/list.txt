@@ -1,0 +1,50 @@
+        <td><bean:message key="netTest.page.{[#folder#]}.shopopenactivitymember.userid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.shopopenactivitymember.displayname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.shopopenactivitymember.phone"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.shopopenactivitymember.othercontactinfo"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.shopopenactivitymember.registertime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.shopopenactivitymember.joinstatus"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.shopopenactivitymember.note"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.shopopenactivity.name"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.shopopenactivity.starttime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.shopopenactivity.during"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.shopopenactivity.jointype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.shopopenactivity.onlineurl"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.shopopenactivity.localeid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.shopopenactivity.regioncode"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.shopopenactivity.place"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.shopopenactivity.contactinfo"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.shopopenactivity.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.shopopenactivity.productid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.shopopenactivity.creatorid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.shopopenactivity.status"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.shopopenactivity.description"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.shopopenactivity.createtime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.shopopenactivity.lastupdatetime"/></td>
+
+
+

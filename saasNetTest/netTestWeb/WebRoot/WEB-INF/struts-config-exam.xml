@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources/>
+  <form-beans>
+	  <form-bean name="selfExamForm" type="netTestWeb.exam.form.SelfExamForm" />
+	  <form-bean name="testcheckerForm" type="netTestWeb.exam.form.TestcheckerForm" />
+	  <form-bean name="testdeptForm" type="netTestWeb.exam.form.TestdeptForm" />
+	  <form-bean name="testinfoForm" type="netTestWeb.exam.form.TestinfoForm" />
+	  <form-bean name="testuserForm" type="netTestWeb.exam.form.TestuserForm" />
+	  <form-bean name="checkPaperForm" type="netTestWeb.exam.form.CheckPaperForm" />
+  </form-beans>
+
+  <global-exceptions>
+      <exception key="commonWeb.java.commonaction.errors.noLogin" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoLoginException" path="/login_forward.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.editPage.noSuchRecord" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoSuchRecordException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.resubmit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.ResubmitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.DaoException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="org.springframework.dao.DataAccessException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.Unauthorized" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoRightException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.LogicErr" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.LogicException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.InvalidVisit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.InvalideVisitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.SystemError" handler="commonWeb.base.StrutsExceptionHandler" type="java.lang.Throwable" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+  </global-exceptions>
+  
+  <global-forwards>
+      <forward name="errorPage" path="/pubs/errorPage.jsp" ></forward>
+      <forward name="messagePage" path="/pubs/message.jsp" ></forward>
+      <forward name="treeXml" path="/pubs/treeXml.jsp" ></forward>
+      <forward name="forwardToUrl" path="/pubs/forwardToUrl.jsp" ></forward>
+      <forward name="toUrl" path="/pubs/toUrl.jsp" ></forward>
+  </global-forwards>
+  
+  <action-mappings>
+  
+	    <!-- selfExam begin -->
+	    <action parameter="selfExamInit" path="/exam/selfExamInit" name="selfExamForm" type="netTestWeb.exam.action.SelfExamAction" scope="request">
+	       <forward name="examPaper" path="/exam/exam_paper.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="testExamInit" path="/exam/testExamInit" name="selfExamForm" type="netTestWeb.exam.action.SelfExamAction" scope="request">
+	       <forward name="examPaper" path="/exam/exam_paper.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="selfExamShift" path="/exam/selfExamShift" name="selfExamForm" type="netTestWeb.exam.action.SelfExamAction" scope="request">
+	       <forward name="examPaper" path="/exam/exam_paper.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="selfExamSubmit" path="/exam/selfExamSubmit" name="selfExamForm" type="netTestWeb.exam.action.SelfExamAction" scope="request">
+	       <forward name="examResultPaper" path="/exam/examResult_paper.jsp"></forward>
+	       <forward name="userendtesttip" path="/exam/userendtesttip.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="seeExamerResult" path="/exam/seeExamerResult" name="selfExamForm" type="netTestWeb.exam.action.SelfExamAction" scope="request">
+	       <forward name="examResultPaper" path="/exam/examResult_paper.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="examResultShift" path="/exam/examResultShift" name="selfExamForm" type="netTestWeb.exam.action.SelfExamAction" scope="request">
+	       <forward name="examResultPaper" path="/exam/examResult_paper.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="cleanUseranswer" path="/exam/cleanUseranswer" name="selfExamForm" type="netTestWeb.exam.action.SelfExamAction" scope="request">
+	    </action>
+	    
+	    <!-- 
+	    <action parameter="suspendTest" path="/exam/suspendTest" name="selfExamForm" type="netTestWeb.exam.action.SelfExamAction" scope="request">
+	    </action>
+	     -->
+	    <!-- selfExam end -->
+	    
+	    <!-- testchecker begin -->
+	    <action parameter="listTestchecker" path="/exam/listTestchecker" name="testcheckerForm" type="netTestWeb.exam.action.TestcheckerAction" scope="request">
+	       <forward name="list" path="/exam/testchecker_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="saveTestchecker" path="/exam/saveTestchecker" name="testcheckerForm" type="netTestWeb.exam.action.TestcheckerAction" scope="request">
+	       <forward name="list" path="/exam/testchecker_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="deleteTestchecker" path="/exam/deleteTestchecker" name="testcheckerForm" type="netTestWeb.exam.action.TestcheckerAction" scope="request">
+	       <forward name="list" path="/exam/testchecker_list.jsp"></forward>
+	    </action>
+	    <!-- testchecker end -->
+	    
+	    <!-- testdept begin -->
+	    <action parameter="monitorTest" path="/exam/monitorTest" name="testdeptForm" type="netTestWeb.exam.action.TestdeptAction" scope="request">
+	       <forward name="monitorTestPage" path="/exam/testinfo_monitor.jsp"></forward>
+	       <forward name="testdeptresult" path="/exam/testdept_result.jsp"></forward>
+	    </action>
+	    <!-- testdept end -->
+	    
+	    <!-- testinfo begin -->
+	    <action parameter="showprodmagmess" path="/product/showprodmagmess" name="testinfoForm" type="netTestWeb.exam.action.TestinfoAction" scope="request">
+	       <forward name="magproductmess" path="/exam/productmag_mess.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="listTestinfo" path="/exam/listTestinfo" name="testinfoForm" type="netTestWeb.exam.action.TestinfoAction" scope="request">
+	       <forward name="list" path="/exam/testinfo_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="listTodoTestinfo" path="/exam/listTodoTestinfo" name="testinfoForm" type="netTestWeb.exam.action.TestinfoAction" scope="request">
+	       <forward name="listtodo" path="/exam/testinfo_todolist.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="savenewtestinfo" path="/exam/savenewtestinfo" name="testinfoForm" type="netTestWeb.exam.action.TestinfoAction" scope="request">
+	       <forward name="list" path="/exam/testinfo_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="saveTestinfo" path="/exam/saveTestinfo" name="testinfoForm" type="netTestWeb.exam.action.TestinfoAction" scope="request">
+	       <forward name="list" path="/exam/testinfo_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="editTestinfo" path="/exam/editTestinfo" name="testinfoForm" type="netTestWeb.exam.action.TestinfoAction" scope="request">
+	       <forward name="addEditPage" path="/exam/testinfo_addEdit.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="viewTestinfo" path="/exam/viewTestinfo" name="testinfoForm" type="netTestWeb.exam.action.TestinfoAction" scope="request">
+	        <forward name="viewPage" path="/exam/testinfo_view.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="addTestinfo" path="/exam/addTestinfo" name="testinfoForm" type="netTestWeb.exam.action.TestinfoAction" scope="request">
+	       <forward name="addEditPage" path="/exam/testinfo_addEdit.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="deleteTestinfo" path="/exam/deleteTestinfo" name="testinfoForm" type="netTestWeb.exam.action.TestinfoAction" scope="request">
+	       <forward name="list" path="/exam/testinfo_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="changeStatus" path="/exam/changeStatus" name="testinfoForm" type="netTestWeb.exam.action.TestinfoAction" scope="request">
+	    </action>
+	    <!-- testinfo end -->
+	    
+	    <!-- testuser begin -->
+	    <action parameter="listtestuser" path="/exam/listtestuser" name="testuserForm" type="netTestWeb.exam.action.TestuserAction" scope="request">
+	       <forward name="listuser" path="/exam/testuser_list.jsp"></forward>
+	       <forward name="listresultuser" path="/exam/testresultuser_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="listTestinfouser" path="/exam/listTestinfouser" name="testuserForm" type="netTestWeb.exam.action.TestuserAction" scope="request">
+	       <forward name="listTestinfouser" path="/exam/myTestinfo_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="saveTestuser" path="/exam/saveTestuser" name="testuserForm" type="netTestWeb.exam.action.TestuserAction" scope="request">
+	       <forward name="listuser" path="/exam/testuser_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="deleteTestuser" path="/exam/deleteTestuser" name="testuserForm" type="netTestWeb.exam.action.TestuserAction" scope="request">
+	       <forward name="list" path="/exam/testuser_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="joinopentest" path="/exam/joinopentest" name="testuserForm" type="netTestWeb.exam.action.TestuserAction" scope="request">
+	       
+	    </action>
+	    
+	    <action parameter="enterTestHall" path="/exam/enterTestHall" name="testuserForm" type="netTestWeb.exam.action.TestuserAction" scope="request">
+	       <forward name="testHall" path="/exam/testinfo_examhall.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="enteropentesthall" path="/exam/enteropentesthall" name="testuserForm" type="netTestWeb.exam.action.TestuserAction" scope="request">
+	       <forward name="testHall" path="/exam/testinfo_examhall.jsp"></forward>
+	    </action>
+	    <!-- testuser end -->
+	    
+	    <!-- checkpaper begin -->
+	    <action parameter="checktestinfo" path="/exam/checktestinfo" name="checkPaperForm" type="netTestWeb.exam.action.CheckPaperAction" scope="request">
+	    </action>
+	    <action parameter="manaualCheckPaper" path="/exam/manaualCheckPaper" name="checkPaperForm" type="netTestWeb.exam.action.CheckPaperAction" scope="request">
+	       <forward name="checkpaperMain" path="/exam/checkpaper_main.jsp"></forward>
+	    </action>
+	    <action parameter="checkanswerPage" path="/exam/checkanswerPage" name="checkPaperForm" type="netTestWeb.exam.action.CheckPaperAction" scope="request">
+	       <forward name="checkUseranswerPage" path="/exam/checkpaper_ques.jsp"></forward>
+	    </action>
+	    <action parameter="saveCheckResult" path="/exam/saveCheckResult" name="checkPaperForm" type="netTestWeb.exam.action.CheckPaperAction" scope="request">
+	       <forward name="checkUseranswerPage" path="/exam/checkpaper_ques.jsp"></forward>
+	    </action>
+	    <action parameter="finishcheckpaper" path="/exam/finishcheckpaper" name="checkPaperForm" type="netTestWeb.exam.action.CheckPaperAction" scope="request">
+	    </action>
+	    <!-- checkpaper end -->
+	    
+	    <action parameter="listIndexOpenTest" path="/index/listIndexOpenTest" name="testinfoForm" type="netTestWeb.exam.action.TestinfoAction" scope="request">
+	       <forward name="list" path="/index/opentest_list.jsp"></forward>
+	    </action>
+
+  </action-mappings>
+
+  <message-resources parameter="netTestWeb.resource.PagetextResources" />
+  <message-resources key="BizKey" parameter="netTestWeb.resource.BizMessResources" />
+</struts-config>
+

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Productcategory">
+<!-- ###################### productcategoryResult ########################## -->
+  <resultMap id="ProductcategoryResult" class="platform.vo.Productcategory">
+    <result column="categoryID" property="categoryid" jdbcType="BIGINT"/>
+    <result column="localeID" property="localeid" jdbcType="BIGINT"/>
+    <result column="categoryName" property="categoryname" jdbcType="VARCHAR"/>
+    <result column="pID" property="pid" jdbcType="BIGINT"/>
+    <result column="categoryLevel" property="categorylevel" jdbcType="SMALLINT"/>
+    <result column="categoryDesc" property="categorydesc" jdbcType="VARCHAR"/>
+    <result column="disOrder" property="disOrder" jdbcType="INTEGER"/>
+    <result column="path" property="path" jdbcType="VARCHAR"/>
+    <result column="status" property="status" jdbcType="SMALLINT"/>
+  </resultMap>
+  
+<!-- ###################### ProductcategoryResultChildnum ########################## -->
+  <resultMap id="ProductcategoryResultChildnum" class="platform.vo.Productcategory" extends="Productcategory.ProductcategoryResult">
+    <result column="childnum" property="childnum" jdbcType="INTEGER"/>
+  </resultMap>
+  
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic> 
+      <isNotNull prepend="and" property="categoryid"><![CDATA[ a.categoryID=#categoryid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="localeid"><![CDATA[ b.localeID=#localeid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="categoryname"><![CDATA[ a.categoryName like CONCAT('%',#categoryname:VARCHAR#,'%') ]]></isNotEmpty>
+      <isNotNull prepend="and" property="pid"><![CDATA[ a.pID=#pid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="categorylevel"><![CDATA[ a.categoryLevel=#categorylevel:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="disOrder"><![CDATA[ a.disOrder=#disOrder:INTEGER# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="path"><![CDATA[ a.path=#path:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="status"><![CDATA[ a.status=#status:SMALLINT# ]]></isNotNull>
+    </dynamic>
+  </sql>
+  
+<!-- ###################### selectAll ########################## -->
+  <select id="selectAll" resultMap="ProductcategoryResult"> 
+     select 
+         categoryID,
+    localeID,
+    categoryName,
+    pID,
+    categoryLevel,
+    categoryDesc,
+    disOrder,
+    path, status
+     from ProductCategory
+  </select>
+   
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="ProductcategoryResult" parameterClass="java.lang.Long"> 
+     select 
+         categoryID,
+    localeID,
+    categoryName,
+    pID,
+    categoryLevel,
+    categoryDesc,
+    disOrder,
+    path, status
+     from ProductCategory 
+     where categoryID = #value#
+  </select>
+  
+  <!-- ###################### selectByLoigcPK ########################## -->
+  <select id="selectByLoigcPK" resultMap="ProductcategoryResult" parameterClass="platform.vo.Productcategory"> 
+     select  a.categoryID, a.localeID, b.categoryName, a.pID, a.categoryLevel,
+    	     b.categoryDesc, a.disOrder, a.path, a.status  
+     from ProductCategory a, ProductCategoryValue b 
+     where a.categoryID=b.categoryID and a.categoryID = #categoryid:BIGINT# 
+      and b.localeID = #localeid:BIGINT#  
+  </select>
+  
+  <!-- ###################### getSystemTopCategory ########################## -->
+  <select id="getSystemTopCategory" resultClass="java.lang.Long" parameterClass="java.lang.String"> 
+	 select a.categoryID from ProductCategory a where a.categorylevel = 
+	    (select min(b.categorylevel) from ProductCategory b, sysproductcate c 
+	       where b.categoryid=c.categoryid and c.syscode=#value#)
+        and exists(select 1 from sysproductcate d where a.categoryid=d.categoryid and d.syscode=#value#);
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="ProductcategoryResult" parameterClass="platform.dto.ProductcategoryQuery"> 
+     select  a.categoryID,a.localeID,b.categoryName,a.pID,a.categoryLevel,
+             b.categoryDesc, a.disOrder, a.path, a.status 
+     from ProductCategory a, ProductCategoryValue b 
+     where a.categoryID=b.categoryID 
+    <include refid="Productcategory.where_Clause"/>  
+    <isNotNull property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotNull> 
+  </select> 
+  
+  <!-- ###################### selectByVOChildnum ########################## -->
+  <select id="selectByVOChildnum" resultMap="ProductcategoryResultChildnum" parameterClass="platform.dto.ProductcategoryQuery"> 
+     select a.categoryID, a.localeID, b.categoryName, a.pID, a.categoryLevel,
+    a.categoryDesc, a.disOrder, a.path, a.status, 
+    (select count(*) from ProductCategory c where c.pID=a.categoryID) as childnum 
+     from ProductCategory a ,ProductCategoryValue b 
+     where a.categoryID=b.categoryID 
+    <dynamic> 
+      <isNotNull prepend="and" property="pid"><![CDATA[ a.pID=#pid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="status"><![CDATA[ a.status=#status:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="localeid"><![CDATA[ b.localeID=#localeid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="syscode"><![CDATA[ 
+           exists(select * from SysProductCate d where a.categoryID=d.categoryID
+            and (d.syscode='00000000' or d.syscode=#syscode:VARCHAR#)) ]]></isNotEmpty>
+    </dynamic>   
+    order by a.disOrder
+  </select>
+
+  <!-- ###################### selectChildNum ########################## -->
+  <select id="selectChildNum" resultClass="java.lang.Integer" parameterClass="platform.dto.ProductcategoryQuery"> 
+     select count(*) from ProductCategory where pID = #pid:BIGINT# 
+     <dynamic> 
+      <isNotNull prepend="and" property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+    </dynamic> 
+  </select>
+
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="platform.vo.Productcategory"> 
+     insert into ProductCategory
+     ( categoryID, localeID, categoryName, pID, categoryLevel, categoryDesc, disOrder, path, status ) 
+    values 
+     ( #categoryid:BIGINT#, #localeid:BIGINT#, #categoryname:VARCHAR#, #pid:BIGINT#, 
+       #categorylevel:SMALLINT#, #categorydesc:VARCHAR#, #disOrder:INTEGER#, 
+       #path:VARCHAR#, #status:SMALLINT# )
+	  <selectKey resultClass="java.lang.Long" keyProperty="categoryid" >  
+          SELECT   LAST_INSERT_ID()  
+      </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="platform.vo.Productcategory"> 
+     update ProductCategory
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="localeid"><![CDATA[ localeID=#localeid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="categoryname"><![CDATA[ categoryName=#categoryname:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="pid"><![CDATA[ pID=#pid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="categorylevel"><![CDATA[ categoryLevel=#categorylevel:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="categorydesc"><![CDATA[ categoryDesc=#categorydesc:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="disOrder"><![CDATA[ disOrder=#disOrder:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="path"><![CDATA[ path=#path:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+    </dynamic> where categoryID = #categoryid:BIGINT# 
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from ProductCategory where categoryID = #categoryid:BIGINT# 
+  </delete>
+  
+<!-- ###################### deleteByVO ########################## -->
+  <delete id="deleteByVO" parameterClass="platform.dto.ProductcategoryQuery"> 
+     delete from ProductCategory a where 1=1 
+     <include refid="Productcategory.where_Clause"/> 
+  </delete>
+  
+  <!-- ###################### selectProdnumByCate ########################## -->
+  <select id="selectProdnumByCate" resultClass="java.lang.Integer" parameterClass="platform.dto.ProductcategoryQuery"> 
+     select  count(*) from ProductBase  
+     where  1=1
+     <dynamic prepend="and"> 
+         <isEqual property="isIncludeChild" compareValue="1" >
+             <![CDATA[ exists(select 1 from ProductCategory where 
+             ProductBase.categoryID=ProductCategory.categoryID
+             and find_in_set(#categoryid:BIGINT#,ProductCategory.path)>0) ]]>
+         </isEqual>
+         <isEqual property="isIncludeChild" compareValue="2" >
+             <![CDATA[
+                 categoryID=#categoryid:BIGINT#
+             ]]>
+         </isEqual>
+         
+     </dynamic>   
+  </select>
+  
+<!-- ###################### selectAllCount ########################## -->
+  <select id="selectAllCount" resultClass="java.lang.Integer"> 
+     select count(*) from ProductCategory
+  </select>
+      
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="platform.dto.ProductcategoryQuery"> 
+     select  count(*) 
+     from ProductCategory a, ProductCategoryValue b 
+     where a.categoryID=b.categoryID 
+    <include refid="Productcategory.where_Clause"/> 
+  </select>
+  
+  
+</sqlMap>

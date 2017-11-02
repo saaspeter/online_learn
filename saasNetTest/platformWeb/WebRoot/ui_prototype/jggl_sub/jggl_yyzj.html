@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>英语之家首页</title>
+
+<script type="text/javascript">
+function nTabs(thisObj,tag){
+	var tabList = document.getElementById("content").childNodes;
+	for(i=0; i <tabList.length; i++)
+	{
+		if (tabList[i].id == tag)
+		{   
+			thisObj.className = "active"; 
+    		document.getElementById(tabList[i].id).style.display = "block";
+		}else{
+		    
+			tabList[i].className = "normal"; 
+			document.getElementById(tabList[i].id).style.display = "none";
+		}
+	} 
+}
+</script>
+
+
+<style type="text/css">
+<!--
+.active{
+	font-weight: bold;
+	color: #0000FF;
+}
+.normal{
+	font-weight: normal;
+	color: #000000;
+}
+.br{
+   border-top:1px solid transparent;
+   border-top:0;
+   height:3px;
+   clear:both;
+}
+#body{
+    width:1000px;
+	background-color:#FFFFFF;
+}
+#main{
+    width:750px;
+	margin:0 auto;
+	background-color:#FFFFFF;
+}
+#shouye{
+    display:block;
+	margin:0 auto;
+	background-color:#FFFFFF;
+}
+#gsjj {
+	width:400px;
+	height:460px;
+	float:left;
+	clear:left;
+	border:1px solid;
+	margin:1px;
+}
+#ggl {
+    width:347px;
+	height:460px;
+	float:right;
+	clear:right;
+	border:1px solid;
+	margin:1px;
+}
+#zxzx{
+    display:none;
+	height:460px;
+	clear:both;
+	margin:0 auto;
+}
+#gmkc{
+    display:none;
+	height:460px;
+	clear:both;
+	margin:0 auto;
+    background-color:#eeeeee;
+}
+#gmcp{
+    display:none;
+	height:460px;
+	clear:both;
+	margin:0 auto;
+    background-color:#eeeeee;
+}
+#Layer2 {
+    width:100%;
+	height:100px;
+	float:left;
+	background-color:#eeeeee;
+}
+#Layer3 {
+	width:10%;
+	height:800px;
+	float:right;
+	background-color:#FFFFFF;
+}
+#Layer4 {
+	width:100%;
+	height:20px;
+	float:left;
+}
+#Layer5 {
+	width:100%;
+	height:20px;
+	float:left;
+}
+
+#Layer12 {
+    float:right;
+	clear:right;
+}
+
+#Layer15 {
+	position:relative;
+	width:30%;
+    float:left;
+}
+
+#Layer14 {
+	width:100%;
+	height:20px;
+	float:left;
+	background-color: #eeeeee;
+}
+#Layer18 {
+	float:left;
+    clear:left;
+	background-color: #eeeeee;
+}
+
+-->
+</style>
+</head>
+
+<body>
+<div id="body">
+<div id="main">
+<div id="Layer2">
+    <div id="Layer15">
+	   <img src="" alt="英语之家logo" name="logo" id="logo" style="background-color: #33CCFF" />	</div>
+    <div id="Layer12"><a href="">bbs论坛</a>，
+	<a href="">帮助</a></div>
+	<div id="Layer18"> 欢迎你，<a href="#">进入考试大厅</a>，<a href="#">返回个人设置</a>，如果还没有登陆，<a href="#">请登陆</a>
+	</div>
+</div>
+
+<div id="Layer4">
+  <table width="100%" height="100%" border="1" align="center" cellpadding="0" cellspacing="0"  bordercolor="#FFFFFF" bgcolor="#33CCFF">
+    <tr>
+      <td align="center" class="active" onclick="nTabs(this,'shouye');"><a href="#" onclick="return false;">首页</a></td>
+      <td align="center" class="normal" onclick="nTabs(this,'zxzx');"><a href="#" onclick="return false;">咨讯中心</a></td>
+      <td align="center" class="normal" onclick="nTabs(this,'gmkc');"><a href="#" onclick="return false;">购买课程</a></td>
+      <td align="center" class="normal" onclick="nTabs(this,'gmcp');"><a href="#" onclick="return false;">购买产品</a></td>
+      <td align="center">&nbsp;</td>
+    </tr>
+  </table>
+</div>
+<div class="br"></div>
+<div id="content">
+<div id="shouye">
+   <div id="gsjj">
+	   <TABLE>
+	   <TR>
+		<TD align="left">公司简介</TD>
+	   </TR>
+	   <TR>
+		<TD>英语之家是。。。。。。</TD>
+	   </TR>
+	   </TABLE>
+   </div>
+   <div id="ggl">
+       公告栏
+       <li>公司产品大优惠！</li>
+	   <li>2007年7月1日至4日组织四级模拟考试，请相关人员参加！</li>
+	   <li></li>
+   </div>
+</div>
+<div id="zxzx">
+      列出该培训商店的所有咨询！
+</div>
+<div id="gmkc">
+      <TABLE width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF">
+	  <TR>
+      	<TD colspan="6" align="center"><strong>所有课程列表</strong></TD>
+      	</TR>
+	  	  <TR>
+      	<TD colspan="6" align="right"><a href="#">查看购物车</a>，<a href="#">结帐</a></TD>
+      </TR>
+      <TR>
+      	<TD></TD>
+      	<TD>课程名称</TD>
+      	<TD>有效时间</TD>
+      	<TD>课程价格</TD>
+		<TD>付费方式</TD>
+        <TD>订购</TD>
+      </TR>
+      <TR>
+      	<TD></TD>
+      	<TD><a href="#">四级英语名师辅导</a></TD>
+      	<TD>2008年1月31日</TD>
+      	<TD>20元/月</TD>
+		<TD>单月支付</TD>
+		<TD><a href="购物车.htm">订购</a></TD>
+      </TR>
+      <TR>
+      	<TD></TD>
+      	<TD><a href="#">六级英语名师辅导</a></TD>
+      	<TD>2008年1月31日</TD>
+      	<TD>400元</TD>
+		<TD>一次购买</TD>
+		<TD><a href="购物车.htm">订购</a></TD>
+      </TR>
+      </TABLE>
+</div>
+<div id="gmcp">
+      <TABLE width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF">
+	  <TR>
+      	<TD colspan="6" align="center"><strong>所有资料列表</strong></TD>
+      </TR>
+	  <TR>
+      	<TD colspan="6" align="right"><a href="#">查看购物车</a>，<a href="#">结帐</a></TD>
+      </TR>
+      <TR>
+      	<TD></TD>
+      	<TD>资料名称</TD>
+      	<TD>资料简介</TD>
+      	<TD>资料价格</TD>
+		<TD><a href="#">详细信息</TD>
+        <TD>订购</TD>
+      </TR>
+      <TR>
+      	<TD></TD>
+      	<TD>经典四级视频</TD>
+      	<TD>综合多位多年钻研四六级的老师的经验为您服务。</TD>
+      	<TD>20元</TD>
+		<TD><a href="#">详细信息</a></TD>
+		<TD><a href="购物车.htm">订购</a></TD>
+      </TR>
+      <TR>
+      	<TD></TD>
+      	<TD>经典六级视频</TD>
+      	<TD>综合多位多年钻研四六级的老师的经验为您服务。</TD>
+      	<TD>20元</TD>
+		<TD><a href="#">详细信息</a></TD>
+		<TD><a href="购物车.htm">订购</a></TD>
+      </TR>
+      </TABLE>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/prodcont/listContentcatemag.do" location="1250,2450" dimension="314,104" />
+  <StrutsActivity path="/prodcont/listContentcatesel.do" location="2150,2450" dimension="314,104" />
+  <StrutsActivity path="/prodcont/saveContentcate.do" location="410,0" dimension="310,84" />
+  <StrutsActivity path="/prodcont/editContentcate.do" location="0,277" dimension="310,84" />
+  <StrutsActivity path="/prodcont/addContentcate.do" location="410,277" dimension="310,84" />
+  <StrutsActivity path="/prodcont/deleteContentcate.do" location="820,0" dimension="310,84" />
+  <StrutsActivity path="/prodcont/toContcateTree.do" location="355,554" dimension="310,84" />
+  <StrutsActivity path="/prodcont/selectContcateTree.do" location="650,2750" dimension="314,104" />
+  <StrutsActivity path="/prodcont/genecontcatetree.do" location="1250,150" dimension="314,104" />
+  <StrutsActivity path="/wareques/listWare1.do" location="1550,950" dimension="268,84" />
+  <StrutsActivity path="/wareques/listWareSelect.do" location="1250,2750" dimension="278,104" />
+  <StrutsActivity path="/wareques/saveWare.do" location="650,1150" dimension="268,84" />
+  <StrutsActivity path="/wareques/editWare.do" location="1250,1150" dimension="268,84" />
+  <StrutsActivity path="/wareques/viewWare.do" location="50,1250" dimension="268,84" />
+  <StrutsActivity path="/wareques/addWare.do" location="650,1350" dimension="268,84" />
+  <StrutsActivity path="/wareques/deleteWare.do" location="1250,1350" dimension="268,84" />
+  <StrutsActivity path="/wareques/listWareques1.do" location="1550,1850" dimension="292,84" />
+  <StrutsActivity path="/wareques/selWareques.do" location="50,1850" dimension="306,104" />
+  <StrutsActivity path="/wareques/saveWareques.do" location="1550,350" dimension="292,84" />
+  <StrutsActivity path="/wareques/importwarequespage.do" location="650,1850" dimension="306,104" />
+  <StrutsActivity path="/wareques/importwareques.do" location="2750,250" dimension="306,104" />
+  <StrutsActivity path="/wareques/editWareques.do" location="650,2050" dimension="292,84" />
+  <StrutsActivity path="/wareques/viewWareques.do" location="1250,2050" dimension="292,84" />
+  <StrutsActivity path="/wareques/addWarequesPage.do" location="1850,2050" dimension="292,84" />
+  <StrutsActivity path="/wareques/editSubques.do" location="2450,2650" dimension="292,84" />
+  <StrutsActivity path="/wareques/deleteWareques.do" location="50,2250" dimension="292,84" />
+  <StrutsActivity path="errorPage;6" location="0,831" dimension="160,72" />
+  <StrutsActivity path="messagePage;6" location="205,831" dimension="148,72" />
+  <StrutsActivity path="treeXml;6" location="398,831" dimension="148,72" />
+  <StrutsActivity path="forwardToUrl;6" location="710,554" dimension="178,72" />
+  <StrutsActivity path="toUrl;6" location="591,831" dimension="136,72" />
+  <StrutsActivity path="/prodcont/contentcate_list.jsp" location="455,184" dimension="220,48" />
+  <StrutsActivity path="/prodcont/contentcate_addEdit.jsp" location="241,461" dimension="238,48" />
+  <StrutsActivity path="/prodcont/contentcate_view.jsp" location="45,738" dimension="220,48" />
+  <StrutsActivity path="/prodcont/contentcate_tree.jsp" location="400,738" dimension="220,48" />
+  <StrutsActivity path="/prodcont/selContentcate_tree.jsp" location="2750,450" dimension="229,53" />
+  <StrutsActivity path="/wareques/ware_list1.jsp" location="2150,1950" dimension="184,48" />
+  <StrutsActivity path="/wareques/ware_sele1.jsp" location="350,2550" dimension="184,48" />
+  <StrutsActivity path="/wareques/ware_addEdit.jsp" location="650,1550" dimension="196,48" />
+  <StrutsActivity path="/wareques/ware_view.jsp" location="950,1550" dimension="178,48" />
+  <StrutsActivity path="/wareques/ware_list.jsp" location="350,1550" dimension="178,48" />
+  <StrutsActivity path="/wareques/quesdifft_sel.jsp" location="1850,2550" dimension="202,48" />
+  <StrutsActivity path="/wareques/quesdifficult_list.jsp" location="1250,1750" dimension="232,48" />
+  <StrutsActivity path="/wareques/quesdifficult_addEdit.jsp" location="1550,1750" dimension="250,48" />
+  <StrutsActivity path="/wareques/quesdifficult_view.jsp" location="1850,1750" dimension="232,48" />
+  <StrutsActivity path="/wareques/wareques1_list.jsp" location="1250,1950" dimension="208,48" />
+  <StrutsActivity path="/wareques/wareques_sel.jsp" location="350,2650" dimension="195,53" />
+  <StrutsActivity path="/wareques/question_imporpage.jsp" location="2150,1750" dimension="238,53" />
+  <StrutsActivity path="/wareques/quesImportResultPage.jsp" location="950,650" dimension="250,53" />
+  <StrutsActivity path="/wareques/wareques_wanxingtiankong.jsp" location="2450,1650" dimension="268,48" />
+  <StrutsActivity path="/wareques/wareques_panduan.jsp" location="2450,1150" dimension="220,48" />
+  <StrutsActivity path="/wareques/wareques_xuanze.jsp" location="2450,2050" dimension="214,48" />
+  <StrutsActivity path="/wareques/wareques_wenda.jsp" location="2450,1950" dimension="208,48" />
+  <StrutsActivity path="/wareques/wareques_yuedulijie.jsp" location="50,2050" dimension="238,48" />
+  <StrutsActivity path="/wareques/wareques_peidui.jsp" location="2450,1450" dimension="214,48" />
+  <StrutsActivity path="/wareques/wareques_cailiao.jsp" location="2450,1350" dimension="220,48" />
+  <StrutsActivity path="/wareques/wareques_tiankong.jsp" location="2450,1550" dimension="226,48" />
+  <StrutsActivity path="/wareques/wareques_wanxingtiankong_view.jsp" location="2450,2150" dimension="298,48" />
+  <StrutsActivity path="/wareques/wareques_cailiao_view.jsp" location="50,2650" dimension="250,48" />
+  <StrutsActivity path="/wareques/wareques_xuanze_view.jsp" location="350,2050" dimension="244,48" />
+  <StrutsActivity path="/wareques/wareques_wenda_view.jsp" location="50,2150" dimension="238,48" />
+  <StrutsActivity path="/wareques/wareques_panduan_view.jsp" location="650,2650" dimension="250,48" />
+  <StrutsActivity path="/wareques/wareques_tiankong_view.jsp" location="950,2650" dimension="256,48" />
+  <StrutsActivity path="/wareques/wareques_peidui_view.jsp" location="1550,2650" dimension="244,48" />
+  <StrutsActivity path="/wareques/wareques_yuedulijie_view.jsp" location="1850,2650" dimension="268,48" />
+  <StrutsActivity path="/wareques/wareques_list.jsp" location="650,2250" dimension="202,48" />
+  <StrutsActivity path="/pubs/errorPage.jsp" location="3,1003" dimension="154,48" />
+  <StrutsActivity path="/pubs/message.jsp" location="208,1003" dimension="142,48" />
+  <StrutsActivity path="/pubs/treeXml.jsp" location="401,1003" dimension="142,48" />
+  <StrutsActivity path="/pubs/forwardToUrl.jsp" location="713,726" dimension="172,48" />
+  <StrutsActivity path="/pubs/toUrl.jsp" location="594,1003" dimension="130,48" />
+  <StrutsActivity path="/wareques/questypeshop_list.jsp" location="2750,2250" dimension="221,53" />
+  <StrutsActivity path="/wareques/questypeshop_addEdit.jsp" location="2750,2450" dimension="250,53" />
+  <StrutsActivity path="/wareques/question_importExcel.jsp" location="1550,2250" dimension="241,53" />
+  <StrutsActivity path="/wareques/question_importTxt.jsp" location="1550,650" dimension="229,53" />
+  <StrutsActivity path="/wareques/questionitem_list.jsp" location="1250,2350" dimension="226,48" />
+  <StrutsActivity path="/wareques/questionitem_addEdit.jsp" location="50,2450" dimension="244,48" />
+  <StrutsActivity path="/wareques/questionitem_view.jsp" location="350,2450" dimension="226,48" />
+  <StrutsActivity path="/wareques/ware_list2.jsp" location="50,2550" dimension="184,48" />
+  <StrutsActivity path="/wareques/ware_sele2.jsp" location="2150,650" dimension="184,48" />
+  <StrutsActivity path="/wareques/wareques2_list.jsp" location="1850,2450" dimension="208,48" />
+  <StrutsActivity path="/wareques/warerelopen_list.jsp" location="50,1450" dimension="220,48" />
+  <StrutsActivity path="/wareques/warerelopen_edit.jsp" location="1850,650" dimension="220,48" />
+  <StrutsActivity path="/wareques/warerelopen_add.jsp" location="1250,1850" dimension="214,48" />
+  <StrutsActivity path="/wareques/wareques_danxuan.jsp" location="950,2550" dimension="220,48" />
+  <StrutsActivity path="/wareques/wareques_duoxuan.jsp" location="2450,1250" dimension="220,48" />
+  <StrutsActivity path="/wareques/wareques_addEdit.jsp" location="950,2250" dimension="220,48" />
+  <StrutsActivity path="/wareques/wareques_view.jsp" location="1250,2250" dimension="202,48" />
+  <StrutsActivity path="/wareques/wareques_edit_danxuan.jsp" location="650,2550" dimension="250,48" />
+  <StrutsActivity path="/wareques/warerelopen_addEdit.jsp" location="350,1450" dimension="238,48" />
+  <StrutsActivity path="/wareques/warerelopen_view.jsp" location="50,1550" dimension="220,48" />
+  <StrutsActivity path="/wareques/ques_import_success.jsp" location="1850,2250" dimension="239,53" />
+  <StrutsActivity path="/wareques/ques_import_result.jsp" location="2150,2250" dimension="227,53" />
+  <StrutsActivity path="/wareques/quesImport_result.jsp" location="2450,2250" dimension="223,53" />
+  <StrutsActivity path="/wareques/quesimportResultPage.jsp" location="650,2350" dimension="249,53" />
+  <StrutsTransition id="/wareques/listQuesdifficult.do,list,/wareques/quesdifficult_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1850,1192" />
+      <AbsolutePoint location="1677,1192" />
+      <AbsolutePoint location="1677,1695" />
+      <AbsolutePoint location="1366,1695" />
+      <AbsolutePoint location="1366,1750" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/viewWareques.do,view_ques_wenda,/wareques/wareques_wenda_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1542,2092" />
+      <AbsolutePoint location="1809,2092" />
+      <AbsolutePoint location="1809,3333" />
+      <AbsolutePoint location="-750,3333" />
+      <AbsolutePoint location="-750,2174" />
+      <AbsolutePoint location="50,2174" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/editQuesdifficult.do,addEditPage,/wareques/quesdifficult_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1565,1634" />
+      <AbsolutePoint location="1565,1750" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/viewWareques.do,view_ques_peidui,/wareques/wareques_peidui_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1483,2134" />
+      <AbsolutePoint location="1483,2425" />
+      <AbsolutePoint location="-311,2425" />
+      <AbsolutePoint location="-311,2635" />
+      <AbsolutePoint location="1677,2635" />
+      <AbsolutePoint location="1677,2650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/viewWareques.do,view_ques_panduan,/wareques/wareques_panduan_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1250,2062" />
+      <AbsolutePoint location="1185,2062" />
+      <AbsolutePoint location="1185,2465" />
+      <AbsolutePoint location="915,2465" />
+      <AbsolutePoint location="915,2674" />
+      <AbsolutePoint location="900,2674" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/selWareques.do,selwareques,/wareques/wareques_sel.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,1902" />
+      <AbsolutePoint location="-465,1902" />
+      <AbsolutePoint location="-465,3243" />
+      <AbsolutePoint location="417,3243" />
+      <AbsolutePoint location="417,2703" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/prodcont/saveContentcate.do,list,/prodcont/contentcate_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="535,84" />
+      <AbsolutePoint location="535,184" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/deleteWareques.do,list,/wareques/wareques_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="342,2283" />
+      <AbsolutePoint location="650,2283" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/viewWareques.do,view_ques_cailiao,/wareques/wareques_cailiao_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1396,2050" />
+      <AbsolutePoint location="1396,2035" />
+      <AbsolutePoint location="-176,2035" />
+      <AbsolutePoint location="-176,2674" />
+      <AbsolutePoint location="50,2674" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/listWare1.do,list_oper,/wareques/ware_list1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1707,1034" />
+      <AbsolutePoint location="1707,1725" />
+      <AbsolutePoint location="2127,1725" />
+      <AbsolutePoint location="2127,1974" />
+      <AbsolutePoint location="2150,1974" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/editSubques.do,ques_wanxingtiankong,/wareques/wareques_wanxingtiankong.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2742,2722" />
+      <AbsolutePoint location="3231,2722" />
+      <AbsolutePoint location="3231,1674" />
+      <AbsolutePoint location="2718,1674" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/prodcont/toContcateTree.do,contcateTree,/prodcont/contentcate_tree.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="510,638" />
+      <AbsolutePoint location="510,738" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/prodcont/editContentcate.do,addEditPage,/prodcont/contentcate_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="155,361" />
+      <AbsolutePoint location="155,411" />
+      <AbsolutePoint location="300,411" />
+      <AbsolutePoint location="300,461" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/addQuesdifficult.do,addEditPage,/wareques/quesdifficult_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,1692" />
+      <AbsolutePoint location="-375,1692" />
+      <AbsolutePoint location="-375,1066" />
+      <AbsolutePoint location="1647,1066" />
+      <AbsolutePoint location="1647,1750" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="errorPage;6,null,/pubs/errorPage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="80,903" />
+      <AbsolutePoint location="80,1003" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/viewWareques.do,view_ques_wanxingtiankong,/wareques/wareques_wanxingtiankong_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1483,2134" />
+      <AbsolutePoint location="1483,2419" />
+      <AbsolutePoint location="2705,2419" />
+      <AbsolutePoint location="2705,2198" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/addWarequesPage.do,ques_danxuan,/wareques/wareques_xuanze.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2142,2114" />
+      <AbsolutePoint location="2557,2114" />
+      <AbsolutePoint location="2557,2098" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/saveQuesdifficult.do,list,/wareques/quesdifficult_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1850,1392" />
+      <AbsolutePoint location="1737,1392" />
+      <AbsolutePoint location="1737,1665" />
+      <AbsolutePoint location="1336,1665" />
+      <AbsolutePoint location="1336,1750" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/viewWareques.do,view_ques_xuanze,/wareques/wareques_xuanze_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1396,2134" />
+      <AbsolutePoint location="1396,2235" />
+      <AbsolutePoint location="472,2235" />
+      <AbsolutePoint location="472,2098" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/listWareques1.do,list_oper,/wareques/wareques1_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1696,1934" />
+      <AbsolutePoint location="1696,1952" />
+      <AbsolutePoint location="1458,1952" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/addWarequesPage.do,ques_wanxingtiankong,/wareques/wareques_wanxingtiankong.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2097,2050" />
+      <AbsolutePoint location="2097,1665" />
+      <AbsolutePoint location="2450,1665" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/editWareques.do,ques_peidui,/wareques/wareques_peidui.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="805,2050" />
+      <AbsolutePoint location="805,1979" />
+      <AbsolutePoint location="1215,1979" />
+      <AbsolutePoint location="1215,1813" />
+      <AbsolutePoint location="1833,1813" />
+      <AbsolutePoint location="1833,1465" />
+      <AbsolutePoint location="2450,1465" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/editWareques.do,ques_duoxuan,/wareques/wareques_xuanze.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="826,2134" />
+      <AbsolutePoint location="826,2182" />
+      <AbsolutePoint location="1625,2182" />
+      <AbsolutePoint location="1625,2243" />
+      <AbsolutePoint location="2195,2243" />
+      <AbsolutePoint location="2195,2074" />
+      <AbsolutePoint location="2450,2074" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/deleteWare.do,list,/wareques/ware_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1250,1392" />
+      <AbsolutePoint location="1143,1392" />
+      <AbsolutePoint location="1143,1813" />
+      <AbsolutePoint location="469,1813" />
+      <AbsolutePoint location="469,1598" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/addWarequesPage.do,ques_cailiao,/wareques/wareques_cailiao.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2115,2134" />
+      <AbsolutePoint location="2115,2571" />
+      <AbsolutePoint location="3180,2571" />
+      <AbsolutePoint location="3180,1343" />
+      <AbsolutePoint location="2560,1343" />
+      <AbsolutePoint location="2560,1350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/editSubques.do,ques_peidui,/wareques/wareques_peidui.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2566,2650" />
+      <AbsolutePoint location="2566,2307" />
+      <AbsolutePoint location="3291,2307" />
+      <AbsolutePoint location="3291,1513" />
+      <AbsolutePoint location="2593,1513" />
+      <AbsolutePoint location="2593,1498" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/editSubques.do,ques_yuedulijie,/wareques/wareques_yuedulijie.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2450,2713" />
+      <AbsolutePoint location="-240,2713" />
+      <AbsolutePoint location="-240,2074" />
+      <AbsolutePoint location="50,2074" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="treeXml;6,null,/pubs/treeXml.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="472,903" />
+      <AbsolutePoint location="472,1003" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/prodcont/deleteContentcate.do,list,/prodcont/contentcate_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="975,84" />
+      <AbsolutePoint location="975,134" />
+      <AbsolutePoint location="638,134" />
+      <AbsolutePoint location="638,184" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/viewWareques.do,view_ques_yuedulijie,/wareques/wareques_yuedulijie_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1513,2134" />
+      <AbsolutePoint location="1513,2417" />
+      <AbsolutePoint location="2065,2417" />
+      <AbsolutePoint location="2065,2650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/editWareques.do,ques_danxuan,/wareques/wareques_xuanze.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="942,2092" />
+      <AbsolutePoint location="1245,2092" />
+      <AbsolutePoint location="1245,2973" />
+      <AbsolutePoint location="3351,2973" />
+      <AbsolutePoint location="3351,2074" />
+      <AbsolutePoint location="2664,2074" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/addWare.do,addEditPage,/wareques/ware_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="784,1434" />
+      <AbsolutePoint location="784,1550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/editWareques.do,ques_tiankong,/wareques/wareques_tiankong.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="775,2050" />
+      <AbsolutePoint location="775,1979" />
+      <AbsolutePoint location="543,1979" />
+      <AbsolutePoint location="543,1513" />
+      <AbsolutePoint location="2563,1513" />
+      <AbsolutePoint location="2563,1550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="toUrl;6,null,/pubs/toUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="659,903" />
+      <AbsolutePoint location="659,1003" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/editWareques.do,ques_cailiao,/wareques/wareques_cailiao.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="766,2134" />
+      <AbsolutePoint location="766,2213" />
+      <AbsolutePoint location="3126,2213" />
+      <AbsolutePoint location="3126,1313" />
+      <AbsolutePoint location="2542,1313" />
+      <AbsolutePoint location="2542,1350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/listQuesdifficult.do,select,/wareques/quesdifft_sel.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2011,1150" />
+      <AbsolutePoint location="2011,876" />
+      <AbsolutePoint location="3573,876" />
+      <AbsolutePoint location="3573,2381" />
+      <AbsolutePoint location="1756,2381" />
+      <AbsolutePoint location="1756,2574" />
+      <AbsolutePoint location="1850,2574" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/editWareques.do,ques_panduan,/wareques/wareques_panduan.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,2113" />
+      <AbsolutePoint location="-525,2113" />
+      <AbsolutePoint location="-525,-75" />
+      <AbsolutePoint location="2560,-75" />
+      <AbsolutePoint location="2560,1150" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/importwareques.do,importResultPage,/wareques/quesImportResultPage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2750,302" />
+      <AbsolutePoint location="1075,302" />
+      <AbsolutePoint location="1075,650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="messagePage;6,null,/pubs/message.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="279,903" />
+      <AbsolutePoint location="279,1003" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/addWarequesPage.do,ques_peidui,/wareques/wareques_peidui.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2142,2124" />
+      <AbsolutePoint location="3513,2124" />
+      <AbsolutePoint location="3513,1483" />
+      <AbsolutePoint location="2664,1483" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/editWareques.do,ques_wanxingtiankong,/wareques/wareques_wanxingtiankong.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="796,2134" />
+      <AbsolutePoint location="796,2149" />
+      <AbsolutePoint location="2673,2149" />
+      <AbsolutePoint location="2673,1698" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/prodcont/viewContentcate.do,viewPage,/prodcont/contentcate_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="155,638" />
+      <AbsolutePoint location="155,738" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/saveWareques.do,list,/wareques/wareques1_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1550,389" />
+      <AbsolutePoint location="1237,389" />
+      <AbsolutePoint location="1237,1979" />
+      <AbsolutePoint location="1250,1979" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="forwardToUrl;6,null,/pubs/forwardToUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="799,626" />
+      <AbsolutePoint location="799,726" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/editSubques.do,ques_cailiao,/wareques/wareques_cailiao.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2742,2692" />
+      <AbsolutePoint location="3045,2692" />
+      <AbsolutePoint location="3045,2149" />
+      <AbsolutePoint location="2733,2149" />
+      <AbsolutePoint location="2733,1374" />
+      <AbsolutePoint location="2670,1374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/listWareSelect.do,sel_oper,/wareques/ware_sele1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1389,2854" />
+      <AbsolutePoint location="1389,3411" />
+      <AbsolutePoint location="615,3411" />
+      <AbsolutePoint location="615,2596" />
+      <AbsolutePoint location="534,2596" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/viewWareques.do,view_ques_tiankong,/wareques/wareques_tiankong_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1535,2134" />
+      <AbsolutePoint location="1535,2381" />
+      <AbsolutePoint location="1677,2381" />
+      <AbsolutePoint location="1677,2619" />
+      <AbsolutePoint location="1078,2619" />
+      <AbsolutePoint location="1078,2650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/prodcont/selectContcateTree.do,selectTree,/prodcont/selContentcate_tree.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="807,2854" />
+      <AbsolutePoint location="807,3153" />
+      <AbsolutePoint location="3741,3153" />
+      <AbsolutePoint location="3741,476" />
+      <AbsolutePoint location="2979,476" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/addWarequesPage.do,ques_panduan,/wareques/wareques_panduan.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1996,2050" />
+      <AbsolutePoint location="1996,1869" />
+      <AbsolutePoint location="3651,1869" />
+      <AbsolutePoint location="3651,395" />
+      <AbsolutePoint location="2530,395" />
+      <AbsolutePoint location="2530,1150" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/deleteQuesdifficult.do,list,/wareques/quesdifficult_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="811,1734" />
+      <AbsolutePoint location="811,1774" />
+      <AbsolutePoint location="1250,1774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/prodcont/addContentcate.do,addEditPage,/prodcont/contentcate_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="565,361" />
+      <AbsolutePoint location="565,411" />
+      <AbsolutePoint location="419,411" />
+      <AbsolutePoint location="419,461" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/editSubques.do,list_oper,/wareques/wareques1_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2596,2734" />
+      <AbsolutePoint location="2596,3023" />
+      <AbsolutePoint location="-84,3023" />
+      <AbsolutePoint location="-84,1957" />
+      <AbsolutePoint location="1250,1957" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/importwarequespage.do,importpage,/wareques/question_imporpage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="781,1850" />
+      <AbsolutePoint location="781,1774" />
+      <AbsolutePoint location="15,1774" />
+      <AbsolutePoint location="15,1543" />
+      <AbsolutePoint location="2269,1543" />
+      <AbsolutePoint location="2269,1750" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/addWarequesPage.do,ques_tiankong,/wareques/wareques_tiankong.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1966,2050" />
+      <AbsolutePoint location="1966,1925" />
+      <AbsolutePoint location="3261,1925" />
+      <AbsolutePoint location="3261,1574" />
+      <AbsolutePoint location="2676,1574" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/editWare.do,addEditPage,/wareques/ware_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1250,1192" />
+      <AbsolutePoint location="1203,1192" />
+      <AbsolutePoint location="1203,1613" />
+      <AbsolutePoint location="748,1613" />
+      <AbsolutePoint location="748,1598" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/viewQuesdifficult.do,viewPage,/wareques/quesdifficult_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2011,1634" />
+      <AbsolutePoint location="2011,1750" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/saveWare.do,list_oper,/wareques/ware_list1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="918,1192" />
+      <AbsolutePoint location="1185,1192" />
+      <AbsolutePoint location="1185,2013" />
+      <AbsolutePoint location="2242,2013" />
+      <AbsolutePoint location="2242,1998" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/editWareques.do,ques_wenda,/wareques/wareques_wenda.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="871,2134" />
+      <AbsolutePoint location="871,2149" />
+      <AbsolutePoint location="2379,2149" />
+      <AbsolutePoint location="2379,1974" />
+      <AbsolutePoint location="2450,1974" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/prodcont/listContentcatesel.do,list,/prodcont/contentcate_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2409,2450" />
+      <AbsolutePoint location="2409,99" />
+      <AbsolutePoint location="565,99" />
+      <AbsolutePoint location="565,184" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/ware_addEdit.jsp,null,/wareques/saveWare.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,1574" />
+      <AbsolutePoint location="615,1574" />
+      <AbsolutePoint location="615,1192" />
+      <AbsolutePoint location="650,1192" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/editWareques.do,ques_yuedulijie,/wareques/wareques_yuedulijie.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="745,2050" />
+      <AbsolutePoint location="745,2013" />
+      <AbsolutePoint location="152,2013" />
+      <AbsolutePoint location="152,2050" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/addWarequesPage.do,ques_yuedulijie,/wareques/wareques_yuedulijie.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1936,2134" />
+      <AbsolutePoint location="1936,2182" />
+      <AbsolutePoint location="309,2182" />
+      <AbsolutePoint location="309,2074" />
+      <AbsolutePoint location="288,2074" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/prodcont/listContentcatemag.do,list,/prodcont/contentcate_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1250,2513" />
+      <AbsolutePoint location="-675,2513" />
+      <AbsolutePoint location="-675,208" />
+      <AbsolutePoint location="455,208" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/addWarequesPage.do,ques_duoxuan,/wareques/wareques_xuanze.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2142,2065" />
+      <AbsolutePoint location="2450,2065" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/viewWare.do,viewPage,/wareques/ware_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="318,1265" />
+      <AbsolutePoint location="1039,1265" />
+      <AbsolutePoint location="1039,1550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/wareques/addWarequesPage.do,ques_wenda,/wareques/wareques_wenda.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2127,2050" />
+      <AbsolutePoint location="2127,2043" />
+      <AbsolutePoint location="2554,2043" />
+      <AbsolutePoint location="2554,1998" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Role_resc">
+<!-- ###################### role_rescResult ########################## -->
+  <resultMap id="Role_rescResult" class="acegi.vo.Role_resc">
+    <result column="resc_id" property="rescId" jdbcType="BIGINT"/>
+    <result column="role_id" property="roleId" jdbcType="BIGINT"/>
+
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="rescId"><![CDATA[ resc_id=#rescId:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="roleId"><![CDATA[ role_id=#roleId:BIGINT# ]]></isNotNull>
+
+    </dynamic>
+  </sql>
+  
+<!-- ###################### selectAll ########################## -->
+  <select id="selectAll" resultMap="Role_rescResult"> 
+     select 
+         resc_id,
+    role_id 
+     from role_resc
+  </select>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="Role_rescResult" parameterClass="java.lang.Long"> 
+     select 
+         resc_id,
+    role_id 
+     from role_resc 
+     where {[#pk#]} = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="Role_rescResult" parameterClass="acegi.dto.Role_rescQuery"> 
+     select 
+         resc_id,
+    role_id
+     from role_resc
+    <include refid="Role_resc.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="acegi.vo.Role_resc"> 
+     insert into role_resc
+     (     resc_id,
+    role_id ) 
+    values 
+     (     #rescId:BIGINT#, 
+    #roleId:BIGINT# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="{[#pkProperty#]}" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="acegi.vo.Role_resc"> 
+     update role_resc
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="rescId"><![CDATA[ resc_id=#rescId:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="roleId"><![CDATA[ role_id=#roleId:BIGINT# ]]></isNotNull>
+
+    </dynamic> where {[#pk#]} = {[#pkValue#]}
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from role_resc where {[#pk#]} = #value#
+  </delete>
+  
+<!-- ###################### deleteByVO ########################## -->
+  <delete id="deleteByVO" parameterClass="acegi.dto.Role_rescQuery"> 
+     delete from role_resc
+     <include refid="Role_resc.where_Clause"/> 
+  </delete>
+  
+<!-- ###################### selectAllCount ########################## -->
+  <select id="selectAllCount" resultClass="java.lang.Integer"> 
+     select count(*) from role_resc
+  </select>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="acegi.dto.Role_rescQuery"> 
+     select count(*) from role_resc
+     <include refid="Role_resc.where_Clause"/>  
+  </select>
+    
+</sqlMap>

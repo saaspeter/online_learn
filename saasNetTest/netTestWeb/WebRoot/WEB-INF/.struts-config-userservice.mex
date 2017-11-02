@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/tologin.do" location="1250,1250" dimension="284,104" />
+  <StrutsActivity path="/login.do" location="1250,850" dimension="364,104" />
+  <StrutsActivity path="/usercontext/listshopforuser.do" location="0,0" dimension="370,104" />
+  <StrutsActivity path="/usercontext/listCanuseprod.do" location="415,0" dimension="370,104" />
+  <StrutsActivity path="/usercontext/listMymagProd.do" location="650,850" dimension="370,104" />
+  <StrutsActivity path="/user/myhomepage.do" location="950,450" dimension="284,104" />
+  <StrutsActivity path="/userAdmin/listnotification.do" location="950,50" dimension="364,104" />
+  <StrutsActivity path="/userAdmin/readnotification.do" location="950,250" dimension="364,104" />
+  <StrutsActivity path="/userAdmin/deletenotification.do" location="950,650" dimension="364,104" />
+  <StrutsActivity path="errorPage;6" location="534,302" dimension="161,87" />
+  <StrutsActivity path="messagePage;6" location="740,302" dimension="154,87" />
+  <StrutsActivity path="treeXml;6" location="0,604" dimension="147,87" />
+  <StrutsActivity path="forwardToUrl;6" location="309,302" dimension="180,87" />
+  <StrutsActivity path="toUrl;6" location="192,604" dimension="131,87" />
+  <StrutsActivity path="/login_simple.jsp" location="1250,1050" dimension="129,53" />
+  <StrutsActivity path="/login.jsp" location="950,1050" dimension="86,53" />
+  <StrutsActivity path="/userAdmin/login_forward.jsp" location="50,1150" dimension="204,53" />
+  <StrutsActivity path="/platform/sysAdmin/sysAdmin_index.jsp" location="350,1250" dimension="263,53" />
+  <StrutsActivity path="/platform/user/activeUserRegister.jsp" location="950,1250" dimension="250,53" />
+  <StrutsActivity path="/bizCommon/selShop.jsp" location="96,204" dimension="178,53" />
+  <StrutsActivity path="/bizCommon/selProduct.jsp" location="503,204" dimension="193,53" />
+  <StrutsActivity path="/userproduct/mymanageprod_list.jsp" location="650,1050" dimension="247,53" />
+  <StrutsActivity path="/userAdmin/userAdmin_index.jsp" location="650,650" dimension="222,53" />
+  <StrutsActivity path="/userAdmin/usernotification_list.jsp" location="50,950" dimension="234,53" />
+  <StrutsActivity path="/userAdmin/usernotification_view.jsp" location="50,1350" dimension="243,53" />
+  <StrutsActivity path="/pubs/errorPage.jsp" location="539,489" dimension="150,53" />
+  <StrutsActivity path="/pubs/message.jsp" location="745,489" dimension="143,53" />
+  <StrutsActivity path="/pubs/treeXml.jsp" location="5,791" dimension="136,53" />
+  <StrutsActivity path="/pubs/forwardToUrl.jsp" location="314,489" dimension="169,53" />
+  <StrutsActivity path="/pubs/toUrl.jsp" location="197,791" dimension="120,53" />
+  <StrutsActivity path="/notice/enterInfo_product.jsp" location="31,506" dimension="201,53" />
+  <StrutsActivity path="/bizCommon/mymanageprod_list.jsp" location="350,950" dimension="246,53" />
+  <StrutsActivity path="/userAdmin/savenotification.do" location="350,1450" dimension="364,104" />
+  <StrutsActivity path="/userAdmin/addnotification.do" location="950,1450" dimension="364,104" />
+  <StrutsActivity path="/userAdmin/usernotification_add.jsp" />
+  <StrutsTransition id="/tologin.do,loginsimple,/login_simple.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1364,1250" />
+      <AbsolutePoint location="1364,1103" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,userhomepage,/userAdmin/login_forward.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1432,954" />
+      <AbsolutePoint location="1432,1176" />
+      <AbsolutePoint location="254,1176" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="toUrl;6,null,/pubs/toUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="257,691" />
+      <AbsolutePoint location="257,791" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="errorPage;6,null,/pubs/errorPage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="614,389" />
+      <AbsolutePoint location="614,489" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/user/myhomepage.do,homepage,/userAdmin/userAdmin_index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,504" />
+      <AbsolutePoint location="909,504" />
+      <AbsolutePoint location="909,676" />
+      <AbsolutePoint location="872,676" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/userAdmin/addnotification.do,addpage,/userAdmin/usernotification_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1215,1450" />
+      <AbsolutePoint location="1215,1018" />
+      <AbsolutePoint location="167,1018" />
+      <AbsolutePoint location="167,1003" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,superadminpage,/platform/sysAdmin/sysAdmin_index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1402,954" />
+      <AbsolutePoint location="1402,1118" />
+      <AbsolutePoint location="481,1118" />
+      <AbsolutePoint location="481,1250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/userAdmin/readnotification.do,showdetailpage,/userAdmin/usernotification_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1132,302" />
+      <AbsolutePoint location="171,1376" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/userAdmin/savenotification.do,showdetailpage,/userAdmin/usernotification_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="532,1450" />
+      <AbsolutePoint location="532,1376" />
+      <AbsolutePoint location="293,1376" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="messagePage;6,null,/pubs/message.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="817,389" />
+      <AbsolutePoint location="817,489" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/userAdmin/addnotification.do,list,/userAdmin/usernotification_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1215,1450" />
+      <AbsolutePoint location="1215,1018" />
+      <AbsolutePoint location="167,1018" />
+      <AbsolutePoint location="167,1003" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="forwardToUrl;6,null,/pubs/forwardToUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="399,389" />
+      <AbsolutePoint location="399,489" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/userAdmin/listnotification.do,list,/userAdmin/usernotification_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="167,976" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/userAdmin/deletenotification.do,list,/userAdmin/usernotification_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="167,976" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,activeregisterpage,/platform/user/activeUserRegister.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1250,902" />
+      <AbsolutePoint location="1075,902" />
+      <AbsolutePoint location="1075,1250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/usercontext/listshopforuser.do,shoplist,/bizCommon/selShop.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="185,104" />
+      <AbsolutePoint location="185,204" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/usercontext/listCanuseprod.do,prodlist,/bizCommon/selProduct.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="600,104" />
+      <AbsolutePoint location="600,204" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/usercontext/listMymagProd.do,prodlist,/userproduct/mymanageprod_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="835,902" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="treeXml;6,null,/pubs/treeXml.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="73,691" />
+      <AbsolutePoint location="73,791" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/tologin.do,null,/login.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1392,1302" />
+      <AbsolutePoint location="1432,902" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/tologin.do,login,/login.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1402,1250" />
+      <AbsolutePoint location="1402,1218" />
+      <AbsolutePoint location="993,1218" />
+      <AbsolutePoint location="993,1103" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/userAdmin/addnotification.do,addpage,/userAdmin/usernotification_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1132,1502" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

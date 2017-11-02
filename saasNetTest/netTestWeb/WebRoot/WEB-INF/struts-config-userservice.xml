@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources/>
+  <form-beans>
+    <form-bean name="loginForm" type="netTestWeb.security.form.LoginForm" />
+	<form-bean name="noUseForm" type="netTestWeb.base.BaseForm" />
+	<form-bean name="userserviceForm" type="netTestWeb.user.form.UserServiceForm" />
+	<form-bean name="usernotificationForm" type="netTestWeb.platform.news.form.UsernotificationForm" />
+  </form-beans>
+
+  <global-exceptions>
+      <exception key="commonWeb.java.commonaction.errors.noLogin" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoLoginException" path="/login_forward.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.editPage.noSuchRecord" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoSuchRecordException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.resubmit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.ResubmitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.DaoException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="org.springframework.dao.DataAccessException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.Unauthorized" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoRightException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.LogicErr" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.LogicException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.InvalidVisit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.InvalideVisitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.SystemError" handler="commonWeb.base.StrutsExceptionHandler" type="java.lang.Throwable" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+  </global-exceptions>
+  
+  <global-forwards>
+      <forward name="errorPage" path="/pubs/errorPage.jsp" ></forward>
+      <forward name="messagePage" path="/pubs/message.jsp" ></forward>
+      <forward name="treeXml" path="/pubs/treeXml.jsp" ></forward>
+      <forward name="forwardToUrl" path="/pubs/forwardToUrl.jsp" ></forward>
+      <forward name="toUrl" path="/pubs/toUrl.jsp" ></forward>
+  </global-forwards>
+  
+  <action-mappings>
+  
+      <action parameter="tologin" path="/tologin" name="userserviceForm" type="netTestWeb.user.action.UserServiceAction" scope="request">
+         <forward name="login" path="/login.jsp"></forward>
+         <forward name="loginsimple" path="/login_simple.jsp"></forward>
+      </action>
+      
+      <action name="loginForm" path="/login" type="netTestWeb.security.action.LoginAction" validate="true" scope="request" input="/tologin.do">
+	     <forward name="activeregisterpage" path="/platform/user/activeUserRegister.jsp"></forward>
+	     <forward name="userhomepage" path="/userAdmin/userhome_forward.jsp"></forward>
+	     <forward name="superadminpage" path="/platform/sysAdmin/sysAdmin_index.jsp"></forward>
+	  </action>
+    
+      <!-- user's shop list -->
+      <action parameter="listshopforuser" path="/usercontext/listshopforuser" name="noUseForm" type="netTestWeb.common.action.SessUserShopProductAction" scope="request">
+         <forward name="shoplist" path="/bizCommon/selShop.jsp"></forward>
+      </action>
+    
+      <!-- user's product list -->
+      <action parameter="listCanuseprod" path="/usercontext/listCanuseprod" name="noUseForm" type="netTestWeb.common.action.SessUserShopProductAction" scope="request">
+         <forward name="prodlist" path="/bizCommon/selProduct.jsp"></forward>
+      </action>
+      
+      <action parameter="listMymagProd" path="/usercontext/listMymagProd" name="noUseForm" type="netTestWeb.common.action.SessUserShopProductAction" scope="request">
+         <forward name="prodlist" path="/userproduct/mymanageprod_list.jsp"></forward>
+      </action>
+    
+      <!-- user's home page -->
+      <action parameter="myhomepage" path="/user/myhomepage" name="userserviceForm" type="netTestWeb.user.action.UserServiceAction" scope="request">
+         <forward name="homepage" path="/userAdmin/userAdmin_index.jsp"></forward>
+      </action>
+      
+      <!-- UsernotificationAction begin -->
+      <action parameter="listnotification" path="/userAdmin/listnotification" name="usernotificationForm" type="netTestWeb.platform.news.action.UsernotificationAction" scope="request">
+         <forward name="list" path="/userAdmin/usernotification_list.jsp"></forward>
+      </action>
+      
+      <action parameter="addnotification" path="/userAdmin/addnotification" name="usernotificationForm" type="netTestWeb.platform.news.action.UsernotificationAction" scope="request">
+         <forward name="addpage" path="/userAdmin/usernotification_add.jsp"></forward>
+      </action>
+      
+      <action parameter="savenotification" path="/userAdmin/savenotification" name="usernotificationForm" type="netTestWeb.platform.news.action.UsernotificationAction" scope="request">
+      </action>
+      
+      <action parameter="readnotification" path="/userAdmin/readnotification" name="usernotificationForm" type="netTestWeb.platform.news.action.UsernotificationAction" scope="request">
+          <forward name="showdetailpage" path="/userAdmin/usernotification_view.jsp"></forward>
+      </action>
+      
+      <action parameter="deletenotification" path="/userAdmin/deletenotification" name="usernotificationForm" type="netTestWeb.platform.news.action.UsernotificationAction" scope="request">
+         <forward name="list" path="/userAdmin/usernotification_list.jsp"></forward>
+      </action>
+      <!-- UsernotificationAction end -->
+
+  </action-mappings>
+
+  <message-resources parameter="netTestWeb.resource.PagetextResources" />
+  <message-resources key="BizKey" parameter="netTestWeb.resource.BizMessResources" />
+</struts-config>
+

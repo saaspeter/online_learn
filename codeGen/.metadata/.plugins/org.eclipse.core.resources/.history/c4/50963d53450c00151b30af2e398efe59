@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE abatorConfiguration PUBLIC "-//Apache Software Foundation//DTD Abator for iBATIS Configuration 1.0//EN"
+  "http://ibatis.apache.org/dtd/abator-config_1_0.dtd">
+
+<abatorConfiguration>
+   <abatorContext>    <!-- TODO: Add Database Connection Information -->
+	   <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+	        connectionURL="jdbc:mysql://localhost:3306/saasNetTest?autoReconnect=true"
+	        userId="peter"
+	        password="peter">
+	       <classPathEntry location="C:\tools\RD\mysql\mysql-connector-java-3.1.12\mysql-connector-java-3.1.12-bin.jar" />
+	   </jdbcConnection>
+	
+	   <javaModelGenerator targetPackage="netTest.userproduct.vo" targetProject="netTest" />
+	   <sqlMapGenerator targetPackage="netTest.sql22" targetProject="netTest" />
+	   <!-- 
+	   <daoGenerator type="Spring" targetPackage="netTest.dao" targetProject="netTest" />
+        -->
+	    
+	   <table tableName="ShopOpenActivity"></table>
+	       
+   </abatorContext>
+</abatorConfiguration>

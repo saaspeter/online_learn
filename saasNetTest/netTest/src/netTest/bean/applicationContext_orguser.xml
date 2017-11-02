@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+  "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+ 
+  <!-- ========================= DAO DEFINITIONS: IBATIS IMPLEMENTATIONS ========================= -->
+  
+  
+  <!-- =====================================/////////////////// import platform bean,end -->
+
+  <!-- ========================= Class Deptinfo: CONFIGURE ========================= -->
+  <bean id="deptinfoDao" class="netTest.orguser.dao.impl.DeptinfoDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref bean="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref bean="sqlMapClient_netTest"/>
+    </property>
+  </bean>
+
+  <bean id="deptinfoDaoProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="deptinfoDao"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+  <!-- ========================= Class orguserLogic: CONFIGURE ========================= -->
+  <bean id="orguserLogicTarget" class="netTest.orguser.logic.impl.OrguserLogicImpl" singleton="true">
+    <property name="orguserDao">
+        <ref local="orguserDaoProxy"/>
+    </property>
+    <property name="orgDao">
+        <ref local="orgbaseDao"/>
+    </property>
+    <property name="usershopdao">
+        <ref bean="usershopDaoProxy"/>
+    </property>
+  </bean>
+
+  <bean id="orguserLogic" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="orguserLogicTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+  
+    <!-- ========================= Class OrgLogicImpl: CONFIGURE ========================= -->
+  <bean id="orgLogicTarget" class="netTest.orguser.logic.impl.OrgLogicImpl" singleton="true">
+    <property name="deptinfoDao">
+      <ref local="deptinfoDaoProxy"/>
+    </property>
+    <property name="orgbaseDao">
+      <ref local="orgbaseDaoProxy"/>
+    </property>
+  </bean>
+
+  <bean id="orgLogic" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="orgLogicTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+  <!-- ========================= Class Orgbase: CONFIGURE ========================= -->
+  <bean id="orgbaseDao" class="netTest.orguser.dao.impl.OrgbaseDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref bean="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref bean="sqlMapClient_netTest"/>
+    </property>
+  </bean>
+
+  <bean id="orgbaseDaoProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="orgbaseDao"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+  
+    <!-- ========================= Class Orguser: CONFIGURE ========================= -->
+  <bean id="orguserDao" class="netTest.orguser.dao.impl.OrguserDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref bean="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref bean="sqlMapClient_netTest"/>
+    </property>
+  </bean>
+
+  <bean id="orguserDaoProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref bean="orguserDao"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>  
+
+</beans>

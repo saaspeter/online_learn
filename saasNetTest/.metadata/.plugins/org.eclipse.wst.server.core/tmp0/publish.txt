@@ -1,0 +1,8 @@
+#Tomcat publish data
+#Sat Mar 19 22:50:14 CST 2016
+org.eclipse.jst.j2ee.server\:platform=C\:\\servers\\tomcat-7.0.53-nettest\\webapps\\netTestWeb\\WEB-INF\\lib\\platform.jar
+org.eclipse.jst.jee.server\:netTestWeb=C\:\\servers\\tomcat-7.0.53-nettest\\webapps\\netTestWeb
+org.eclipse.jst.j2ee.server\:commonService=C\:\\servers\\tomcat-7.0.53-nettest\\webapps\\netTestWeb\\WEB-INF\\lib\\commonService.jar
+org.eclipse.jst.j2ee.server\:commonTool=C\:\\servers\\tomcat-7.0.53-nettest\\webapps\\netTestWeb\\WEB-INF\\lib\\commonTool.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\workspace\\peter\\saasNetTest\\saasNetTest\\tools\\spring-web-3.2.4.RELEASE.jar=C\:\\servers\\tomcat-7.0.53-nettest\\webapps\\netTestWeb\\WEB-INF\\lib\\spring-web-3.2.4.RELEASE.jar
+org.eclipse.jst.j2ee.server\:netTest=C\:\\servers\\tomcat-7.0.53-nettest\\webapps\\netTestWeb\\WEB-INF\\lib\\netTest.jar

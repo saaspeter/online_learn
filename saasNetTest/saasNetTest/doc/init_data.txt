@@ -1,0 +1,32 @@
+
+-------------------------- init Resource data ---------------------------
+
+1. 整理excel资源文件：resources_data.xls
+
+2. 执行清理数据的SQL
+       delete from role_resc;
+	   truncate table resourcesValue;
+	   SET FOREIGN_KEY_CHECKS=0;
+	   truncate table resources;
+	   SET FOREIGN_KEY_CHECKS=1;
+
+3. 修改commonWeb.security.bean.BeanFactory类，屏蔽掉用类ApplicationContextProvider加载的getBeanFactory方法。
+        使用用ClassPathXmlApplicationContext加载的getBeanFactory
+   (具体链接DB信息参见: applicationContext_ResourceTemp.xml)
+   
+4. 运行类ResourceSQLGeneTool，该类生成表resources和role_resc表中的数据
+
+5. 修改commonWeb.security.bean.BeanFactory类，做和step3相反的代码屏蔽
+
+6. 运行SQL: (这一步不需要了，因为当insert resource时同时也insert了resourcevalue)
+   insert into resourcesValue(id, localeID, name, descn) select id, 1, name, descn from resources;
+
+--------------------------- init Emailtemplate data ---------------------
+1. delete all date in table emailtemplate.
+      truncate table emailtemplate;
+2. 整理emailtemplate_data.xls文件
+3. 执行类：EmailTemplateUtil.java
+       修改platform.bean.BeanFactory类，屏蔽掉用类ApplicationContextProvider加载的getBeanFactory方法。
+       使用用ClassPathXmlApplicationContext加载的getBeanFactory。
+       运行完后再设置回来
+   

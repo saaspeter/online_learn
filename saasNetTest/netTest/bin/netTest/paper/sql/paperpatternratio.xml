@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Paperpatternratio">
+<!-- ###################### paperpatternratioResult ########################## -->
+  <resultMap id="PaperpatternratioResult" class="netTest.paper.vo.Paperpatternratio">
+    <result column="elementID" property="elementid" jdbcType="BIGINT"/>
+    <result column="elementType" property="elementtype" jdbcType="SMALLINT"/>
+    <result column="paperID" property="paperid" jdbcType="BIGINT"/>
+    <result column="quesTypeID" property="questypeid" jdbcType="BIGINT"/>
+    <result column="quesType" property="questype" jdbcType="INTEGER"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="elementName" property="elementname" jdbcType="VARCHAR"/>
+    <result column="elementNum" property="elementnum" jdbcType="INTEGER"/>
+    <result column="elementRatio" property="elementratio" jdbcType="REAL"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="elementid"><![CDATA[ elementID=#elementid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="elementtype"><![CDATA[ elementType=#elementtype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="paperid"><![CDATA[ paperID=#paperid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="questypeid"><![CDATA[ quesTypeID=#questypeid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="questype"><![CDATA[ quesType=#questype:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="elementname"><![CDATA[ elementName=#elementname:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="elementnum"><![CDATA[ elementNum=#elementnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="and" property="elementratio"><![CDATA[ elementRatio=#elementratio:REAL# ]]></isNotNull>
+    </dynamic>
+  </sql>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="PaperpatternratioResult" parameterClass="java.lang.Long"> 
+     select 
+         elementID,
+    elementType,
+    paperID,quesTypeID,
+    quesType,
+    shopID,
+    elementName,
+    elementNum,
+    elementRatio 
+     from paperpatternratio 
+     where elementID = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="PaperpatternratioResult" parameterClass="netTest.paper.dto.PaperpatternratioQuery"> 
+     select 
+         elementID,
+    elementType,
+    paperID,quesTypeID,
+    quesType,
+    shopID,
+    elementName,
+    elementNum,
+    elementRatio
+     from paperpatternratio
+    <include refid="Paperpatternratio.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.paper.vo.Paperpatternratio"> 
+     insert into paperpatternratio
+     ( elementID,
+    elementType,
+    paperID,
+    quesTypeID,
+    quesType,
+    shopID,
+    elementName,
+    elementNum,
+    elementRatio ) 
+    values 
+     ( #elementid:BIGINT#, 
+    #elementtype:SMALLINT#, 
+    #paperid:BIGINT#, 
+    #questypeid:BIGINT#,
+    #questype:INTEGER#, 
+    #shopid:BIGINT#, 
+    #elementname:VARCHAR#, 
+    #elementnum:INTEGER#, 
+    #elementratio:REAL# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="elementid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.paper.vo.Paperpatternratio"> 
+     update paperpatternratio
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="elementtype"><![CDATA[ elementType=#elementtype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="paperid"><![CDATA[ paperID=#paperid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="questypeid"><![CDATA[ quesTypeID=#questypeid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="questype"><![CDATA[ quesType=#questype:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="elementname"><![CDATA[ elementName=#elementname:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="elementnum"><![CDATA[ elementNum=#elementnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="elementratio"><![CDATA[ elementRatio=#elementratio:REAL# ]]></isNotNull>
+
+    </dynamic> where elementID = #elementid:BIGINT#
+      and elementType = #elementtype:SMALLINT#
+      and paperID = #paperid:BIGINT#
+      and quesTypeID = #questypeid:BIGINT# 
+  </update>
+  
+  <!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="netTest.paper.vo.Paperpatternratio"> 
+     delete from paperpatternratio where elementID = #elementid:BIGINT#
+      					                 and elementType = #elementtype:SMALLINT#
+                                         and paperID = #paperid:BIGINT#
+                                         and quesTypeID = #questypeid:BIGINT# 
+  </delete>
+  
+    <!-- ###################### deleteByQuesPattern ########################## -->
+  <delete id="deleteByQuesPattern" parameterClass="netTest.paper.vo.Paperpatternratio"> 
+     delete from paperpatternratio where paperID = #paperid:BIGINT#
+                                         and quesTypeID = #questypeid:BIGINT# 
+  </delete>
+  
+  <!-- ###################### deleteByPaper ########################## -->
+  <delete id="deleteByPaper" parameterClass="java.lang.Long"> 
+     delete from paperpatternratio where paperID = #paperid:BIGINT#
+  </delete>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.paper.dto.PaperpatternratioQuery"> 
+     select count(*) from paperpatternratio
+     <include refid="Paperpatternratio.where_Clause"/>  
+  </select>
+    
+</sqlMap>

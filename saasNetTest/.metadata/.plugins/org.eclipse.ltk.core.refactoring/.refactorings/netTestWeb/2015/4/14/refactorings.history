@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;socialpost_list.jsp&apos; to &apos;socialpost_list.jsp&apos;&#x0D;&#x0A;- Original project: &apos;netTestWeb&apos;&#x0D;&#x0A;- Destination element: &apos;socialpost_list.jsp&apos;&#x0D;&#x0A;- Original element: &apos;socialpost_list.jsp&apos;" description="Copy file" element1="WebRoot/social/socialpost_list.jsp" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1427988298966" target="/netTestWeb/WebRoot/social/socialpost_list.jsp" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/paper/savePaperques.do" location="950,950" dimension="280,84" />
+  <StrutsActivity path="/paper/editPaperques.do" location="1550,950" dimension="280,84" />
+  <StrutsActivity path="/paper/editSubques.do" location="50,950" dimension="280,84" />
+  <StrutsActivity path="/paper/addPaperQues.do" location="1250,50" dimension="288,104" />
+  <StrutsActivity path="/paper/changeQues.do" location="2150,1950" dimension="280,84" />
+  <StrutsActivity path="/paper/deletePaperques.do" location="2450,1350" dimension="280,84" />
+  <StrutsActivity path="errorPage;6" location="2251,2279" dimension="160,72" />
+  <StrutsActivity path="messagePage;6" location="0,2556" dimension="148,72" />
+  <StrutsActivity path="treeXml;6" location="193,2556" dimension="148,72" />
+  <StrutsActivity path="forwardToUrl;6" location="2028,2279" dimension="178,72" />
+  <StrutsActivity path="toUrl;6" location="386,2556" dimension="136,72" />
+  <StrutsActivity path="/paper/paperques_wanxingtiankong.jsp" location="1250,1650" dimension="256,48" />
+  <StrutsActivity path="/paper/paperques_panduan.jsp" location="2150,1650" dimension="208,48" />
+  <StrutsActivity path="/paper/paperques_xuanze.jsp" location="950,1350" dimension="202,48" />
+  <StrutsActivity path="/paper/paperques_wenda.jsp" location="2450,1650" dimension="196,48" />
+  <StrutsActivity path="/paper/paperques_yuedulijie.jsp" location="50,1750" dimension="226,48" />
+  <StrutsActivity path="/paper/paperques_peidui.jsp" location="350,1750" dimension="202,48" />
+  <StrutsActivity path="/paper/paperques_cailiao.jsp" location="950,1450" dimension="208,48" />
+  <StrutsActivity path="/paper/paperques_tiankong.jsp" location="650,1750" dimension="214,48" />
+  <StrutsActivity path="/paper/paperques_wanxingtiankong_view.jsp" location="950,1750" dimension="286,48" />
+  <StrutsActivity path="/paper/paperques_cailiao_view.jsp" location="1550,1750" dimension="238,48" />
+  <StrutsActivity path="/paper/paperques_xuanze_view.jsp" location="1850,1750" dimension="232,48" />
+  <StrutsActivity path="/paper/paperques_wenda_view.jsp" location="2150,1750" dimension="226,48" />
+  <StrutsActivity path="/paper/paperques_panduan_view.jsp" location="2450,1750" dimension="238,48" />
+  <StrutsActivity path="/paper/paperques_tiankong_view.jsp" location="650,1850" dimension="244,48" />
+  <StrutsActivity path="/paper/paperques_peidui_view.jsp" location="2150,1850" dimension="232,48" />
+  <StrutsActivity path="/paper/paperques_yuedulijie_view.jsp" location="2450,1850" dimension="256,48" />
+  <StrutsActivity path="/paper/paperques1_list.jsp" location="650,1950" dimension="196,48" />
+  <StrutsActivity path="/paper/wareques_list.jsp" location="950,1650" dimension="184,48" />
+  <StrutsActivity path="/pubs/errorPage.jsp" location="2254,2451" dimension="154,48" />
+  <StrutsActivity path="/pubs/message.jsp" location="3,2728" dimension="142,48" />
+  <StrutsActivity path="/pubs/treeXml.jsp" location="196,2728" dimension="142,48" />
+  <StrutsActivity path="/pubs/forwardToUrl.jsp" location="2031,2451" dimension="172,48" />
+  <StrutsActivity path="/pubs/toUrl.jsp" location="389,2728" dimension="130,48" />
+  <StrutsActivity path="/paperques/wareques_list.jsp" location="2150,950" dimension="208,48" />
+  <StrutsActivity path="/paperques/paperques_wanxingtiankong.jsp" location="2150,1050" dimension="280,48" />
+  <StrutsActivity path="/paperques/paperques_panduan.jsp" location="50,1150" dimension="232,48" />
+  <StrutsActivity path="/paperques/paperques_xuanze.jsp" location="350,1150" dimension="226,48" />
+  <StrutsActivity path="/paperques/paperques_wenda.jsp" location="950,1150" dimension="220,48" />
+  <StrutsActivity path="/paperques/paperques_yuedulijie.jsp" location="1250,1150" dimension="250,48" />
+  <StrutsActivity path="/paperques/paperques_peidui.jsp" location="1550,1150" dimension="226,48" />
+  <StrutsActivity path="/paperques/paperques_cailiao.jsp" location="1850,1150" dimension="232,48" />
+  <StrutsActivity path="/paperques/paperques_tiankong.jsp" location="2150,1150" dimension="238,48" />
+  <StrutsActivity path="/paperques/paperques_wanxingtiankong_view.jsp" location="50,1250" dimension="310,48" />
+  <StrutsActivity path="/paperques/paperques_cailiao_view.jsp" location="650,1250" dimension="262,48" />
+  <StrutsActivity path="/paperques/paperques_xuanze_view.jsp" location="1250,1250" dimension="256,48" />
+  <StrutsActivity path="/paperques/paperques_wenda_view.jsp" location="1850,1250" dimension="250,48" />
+  <StrutsActivity path="/paperques/paperques_panduan_view.jsp" location="2150,1250" dimension="262,48" />
+  <StrutsActivity path="/paperques/paperques_tiankong_view.jsp" location="50,1550" dimension="268,48" />
+  <StrutsActivity path="/paperques/paperques_peidui_view.jsp" location="950,1550" dimension="256,48" />
+  <StrutsActivity path="/paperques/paperques_yuedulijie_view.jsp" location="2150,1550" dimension="280,48" />
+  <StrutsActivity path="/paperques/paperques1_list.jsp" location="50,1650" dimension="220,48" />
+  <StrutsActivity path="/prodcont/contentcate_list.jsp" location="1648,1632" dimension="220,48" />
+  <StrutsActivity path="/prodcont/contentcate_addEdit.jsp" location="1807,1909" dimension="238,48" />
+  <StrutsActivity path="/prodcont/contentcate_view.jsp" location="2183,2186" dimension="220,48" />
+  <StrutsActivity path="/prodcont/contentcate_tree.jsp" location="45,2463" dimension="220,48" />
+  <StrutsActivity path="/wareques/warerelopen_list.jsp" location="660,1078" dimension="220,48" />
+  <StrutsActivity path="/wareques/warerelopen_edit.jsp" location="400,2463" dimension="220,48" />
+  <StrutsActivity path="/wareques/warerelopen_add.jsp" location="758,2463" dimension="214,48" />
+  <StrutsActivity path="/wareques/ware_list1.jsp" location="1534,1355" dimension="184,48" />
+  <StrutsActivity path="/wareques/ware_sele1.jsp" location="1231,1355" dimension="184,48" />
+  <StrutsActivity path="/wareques/ware_sele2.jsp" location="2205,1355" dimension="184,48" />
+  <StrutsActivity path="/wareques/ware_list2.jsp" location="1902,1355" dimension="184,48" />
+  <StrutsActivity path="/wareques/ware_addEdit.jsp" location="949,2186" dimension="196,48" />
+  <StrutsActivity path="/wareques/ware_view.jsp" location="1447,2463" dimension="178,48" />
+  <StrutsActivity path="/wareques/ware_list.jsp" location="1760,2463" dimension="178,48" />
+  <StrutsActivity path="/wareques/quesdifft_sel.jsp" location="0,1355" dimension="202,48" />
+  <StrutsActivity path="/wareques/quesdifficult_list.jsp" location="487,1355" dimension="232,48" />
+  <StrutsActivity path="/wareques/quesdifficult_addEdit.jsp" location="247,1909" dimension="250,48" />
+  <StrutsActivity path="/wareques/quesdifficult_view.jsp" location="1455,2186" dimension="232,48" />
+  <StrutsActivity path="/wareques/wareques1_list.jsp" location="113,474" dimension="208,48" />
+  <StrutsActivity path="/wareques/wareques2_list.jsp" location="1107,2463" dimension="208,48" />
+  <StrutsActivity path="/wareques/wareques_list.jsp" location="241,2186" dimension="202,48" />
+  <StrutsActivity path="/wareques/wareques_wanxingtiankong.jsp" location="460,474" dimension="268,48" />
+  <StrutsActivity path="/wareques/wareques_panduan.jsp" location="1800,474" dimension="220,48" />
+  <StrutsActivity path="/wareques/wareques_xuanze.jsp" location="2120,474" dimension="214,48" />
+  <StrutsActivity path="/wareques/wareques_wenda.jsp" location="2434,474" dimension="208,48" />
+  <StrutsActivity path="/wareques/wareques_yuedulijie.jsp" location="828,474" dimension="238,48" />
+  <StrutsActivity path="/wareques/wareques_peidui.jsp" location="1166,474" dimension="214,48" />
+  <StrutsActivity path="/wareques/wareques_cailiao.jsp" location="1480,474" dimension="220,48" />
+  <StrutsActivity path="/wareques/wareques_tiankong.jsp" location="2742,474" dimension="226,48" />
+  <StrutsActivity path="/wareques/wareques_wanxingtiankong_view.jsp" location="0,801" dimension="298,48" />
+  <StrutsActivity path="/wareques/wareques_cailiao_view.jsp" location="397,801" dimension="250,48" />
+  <StrutsActivity path="/wareques/wareques_xuanze_view.jsp" location="747,801" dimension="244,48" />
+  <StrutsActivity path="/wareques/wareques_wenda_view.jsp" location="1092,801" dimension="238,48" />
+  <StrutsActivity path="/wareques/wareques_panduan_view.jsp" location="1430,801" dimension="250,48" />
+  <StrutsActivity path="/wareques/wareques_tiankong_view.jsp" location="1780,801" dimension="256,48" />
+  <StrutsActivity path="/wareques/wareques_peidui_view.jsp" location="2136,801" dimension="244,48" />
+  <StrutsActivity path="/wareques/wareques_yuedulijie_view.jsp" location="2480,801" dimension="268,48" />
+  <StrutsActivity path="/wareques/questionitem_list.jsp" location="461,1632" dimension="226,48" />
+  <StrutsActivity path="/wareques/questionitem_addEdit.jsp" location="1033,1909" dimension="244,48" />
+  <StrutsActivity path="/wareques/questionitem_view.jsp" location="1822,2186" dimension="226,48" />
+  <StrutsTransition id="/paper/viewPaperques.do,view_ques_peidui,/paper/paperques_peidui_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="2266,1874" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/paper/editSubques.do,ques_cailiao,/paper/paperques_cailiao.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="330,992" />
+      <AbsolutePoint location="621,992" />
+      <AbsolutePoint location="621,1265" />
+      <AbsolutePoint location="375,1265" />
+      <AbsolutePoint location="375,1474" />
+      <AbsolutePoint location="950,1474" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="toUrl;6,null,/pubs/toUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="454,2628" />
+      <AbsolutePoint location="454,2728" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/paper/editPaperques.do,ques_panduan,/paper/paperques_panduan.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1830,1013" />
+      <AbsolutePoint location="2853,1013" />
+      <AbsolutePoint location="2853,1613" />
+      <AbsolutePoint location="2254,1613" />
+      <AbsolutePoint location="2254,1650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/paper/viewPaperques.do,view_ques_cailiao,/paper/paperques_cailiao_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="1669,1774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="messagePage;6,null,/pubs/message.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="74,2628" />
+      <AbsolutePoint location="74,2728" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/paper/editPaperques.do,ques_peidui,/paper/paperques_peidui.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1550,992" />
+      <AbsolutePoint location="1549,992" />
+      <AbsolutePoint location="1549,1213" />
+      <AbsolutePoint location="446,1213" />
+      <AbsolutePoint location="446,1750" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/paper/editSubques.do,list_oper,/paper/paperques1_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,992" />
+      <AbsolutePoint location="-60,992" />
+      <AbsolutePoint location="-60,1974" />
+      <AbsolutePoint location="650,1974" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="forwardToUrl;6,null,/pubs/forwardToUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2117,2351" />
+      <AbsolutePoint location="2117,2451" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/paper/editPaperques.do,ques_wanxingtiankong,/paper/paperques_wanxingtiankong.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1830,983" />
+      <AbsolutePoint location="2135,983" />
+      <AbsolutePoint location="2135,1695" />
+      <AbsolutePoint location="1506,1695" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/paper/editPaperques.do,ques_yuedulijie,/paper/paperques_yuedulijie.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1720,1034" />
+      <AbsolutePoint location="1720,1065" />
+      <AbsolutePoint location="-165,1065" />
+      <AbsolutePoint location="-165,1774" />
+      <AbsolutePoint location="50,1774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/paper/editSubques.do,ques_wanxingtiankong,/paper/paperques_wanxingtiankong.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,1022" />
+      <AbsolutePoint location="-195,1022" />
+      <AbsolutePoint location="-195,1613" />
+      <AbsolutePoint location="1378,1613" />
+      <AbsolutePoint location="1378,1650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/paper/editPaperques.do,ques_tiankong,/paper/paperques_tiankong.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1660,1034" />
+      <AbsolutePoint location="1660,1113" />
+      <AbsolutePoint location="1185,1113" />
+      <AbsolutePoint location="1185,1513" />
+      <AbsolutePoint location="757,1513" />
+      <AbsolutePoint location="757,1750" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/paper/editSubques.do,ques_peidui,/paper/paperques_peidui.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="297,1034" />
+      <AbsolutePoint location="297,1213" />
+      <AbsolutePoint location="416,1213" />
+      <AbsolutePoint location="416,1750" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/paper/editSubques.do,ques_yuedulijie,/paper/paperques_yuedulijie.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="190,950" />
+      <AbsolutePoint location="190,894" />
+      <AbsolutePoint location="2793,894" />
+      <AbsolutePoint location="2793,2396" />
+      <AbsolutePoint location="163,2396" />
+      <AbsolutePoint location="163,1798" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/paper/viewPaperques.do,view_ques_wenda,/paper/paperques_wenda_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="2263,1774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/paper/viewPaperques.do,view_ques_panduan,/paper/paperques_panduan_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="2569,1774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="errorPage;6,null,/pubs/errorPage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2331,2351" />
+      <AbsolutePoint location="2331,2451" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/paper/viewPaperques.do,view_ques_wanxingtiankong,/paper/paperques_wanxingtiankong_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="1093,1774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/paper/viewPaperques.do,view_ques_yuedulijie,/paper/paperques_yuedulijie_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="2578,1874" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/paper/editPaperques.do,ques_duoxuan,/paper/paperques_xuanze.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1720,950" />
+      <AbsolutePoint location="1720,747" />
+      <AbsolutePoint location="-90,747" />
+      <AbsolutePoint location="-90,1313" />
+      <AbsolutePoint location="1030,1313" />
+      <AbsolutePoint location="1030,1350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="treeXml;6,null,/pubs/treeXml.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="267,2628" />
+      <AbsolutePoint location="267,2728" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/paper/viewPaperques.do,view_ques_xuanze,/paper/paperques_xuanze_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="1966,1774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/paper/editPaperques.do,ques_wenda,/paper/paperques_wenda.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1720,1034" />
+      <AbsolutePoint location="1720,1113" />
+      <AbsolutePoint location="3043,1113" />
+      <AbsolutePoint location="3043,1674" />
+      <AbsolutePoint location="2646,1674" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/paper/viewPaperques.do,view_ques_tiankong,/paper/paperques_tiankong_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="772,1874" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/paper/editPaperques.do,ques_cailiao,/paper/paperques_cailiao.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1821,1034" />
+      <AbsolutePoint location="1821,1474" />
+      <AbsolutePoint location="1158,1474" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/paper/editPaperques.do,ques_danxuan,/paper/paperques_xuanze.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1791,1034" />
+      <AbsolutePoint location="1791,1418" />
+      <AbsolutePoint location="1051,1418" />
+      <AbsolutePoint location="1051,1398" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/paper/deletePaperques.do,list,/paper/wareques_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2721,1434" />
+      <AbsolutePoint location="2721,2163" />
+      <AbsolutePoint location="597,2163" />
+      <AbsolutePoint location="597,1695" />
+      <AbsolutePoint location="950,1695" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

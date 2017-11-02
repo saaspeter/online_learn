@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>左侧功能栏</title>
+<script type="text/javascript">
+<!--
+function goUrl(mainUrl){
+   window.top.mainFrame.document.URL=mainUrl;
+}
+function ksgl_show(){
+   var status = document.getElementById("ksgl").style.display;
+   if(status=="none"){
+      document.getElementById("ksgl").style.display="block";
+   }else if(status=="block"){
+      document.getElementById("ksgl").style.display="none";
+   }else {
+      document.getElementById("ksgl").style.display="block";
+   }     
+}
+function xxgl_show(){
+   var status = document.getElementById("xxgl").style.display;
+   if(status=="none"){
+      document.getElementById("xxgl").style.display="block";
+   }else if(status=="block"){
+      document.getElementById("xxgl").style.display="none";
+   }else {
+      document.getElementById("xxgl").style.display="block";
+   }     
+}
+function xtsz_show(){
+   var status = document.getElementById("xtsz").style.display;
+   if(status=="none"){
+      document.getElementById("xtsz").style.display="block";
+   }else if(status=="block"){
+      document.getElementById("xtsz").style.display="none";
+   }else {
+      document.getElementById("xtsz").style.display="block";
+   }     
+}
+-->
+</script>
+<style type="text/css">
+<!--
+#leftbar{
+    width:98%;
+	border: 1px solid #dddddd;
+	margin-bottom: 1px;
+}
+#leftbar ul {
+	overflow: auto;
+	margin:7px;
+}
+#leftbar li {
+	display: inline;
+}
+#leftbar li a {
+	display: block;
+	margin-bottom: 10px;
+	background-color: #FFCC99;
+}
+#ksgl {
+    display:none;
+}
+#ksgl li {
+	display: inline;
+	margin-left: 6px;
+}
+#ksgl li a {
+	display: block;
+	margin-bottom: 10px;
+	background-color: #CCCC99;
+}
+
+#xxgl {
+    display:none;
+}
+#xxgl li {
+	display: inline;
+	margin-left: 6px;
+}
+#xxgl li a {
+	display: block;
+	margin-bottom: 10px;
+	background-color: #CCCC99;
+}
+
+#xtsz {
+    display:none;
+}
+#xtsz li {
+	display: inline;
+	margin-left: 6px;
+}
+#xtsz li a {
+	display: block;
+	margin-bottom: 10px;
+	background-color: #CCCC99;
+}
+-->
+</style>
+</head>
+
+<body>
+
+<div id="leftbar">
+<ul>
+   <li><a href="#" onclick="return false;">信息台</a></li>
+   <li><a href="#" onclick="ksgl_show();return false;">+考试管理</a></li>
+   <div id="ksgl">
+   <ul>
+      <li><a href="#" onclick="return false;">考试设置</a></li>
+	  <li><a href="#" onclick="return false;">评阅试卷</a></li>
+	  <li><a href="#" onclick="return false;">考试结果</a></li>
+   </ul>
+   </div>
+   <li><a href="#" onclick="xxgl_show();return false;">+学习管理</a></li>
+   <div id="xxgl">
+   <ul>
+      <li><a href="#" onclick="return false;">练习设置</a></li>
+	  <li><a href="#" onclick="return false;">评阅联系</a></li>
+   </ul>
+   </div>
+   <li><a href="#" onclick="return false;">维护试卷</a></li>
+   <li><a href="#" onclick="return false;">维护题库</a></li>
+   <li><a href="#" onclick="xtsz_show();return false;">+系统设置</a></li>
+   <div id="xtsz">
+   <ul>
+      <li><a href="#" onclick="return false;">单位设置</a></li>
+	  <li><a href="#" onclick="return false;">人员设置</a></li>
+	  <li><a href="#" onclick="return false;">小组设置</a></li>
+   </ul>
+   </div>
+</ul>
+</div>
+
+</body>
+</html>

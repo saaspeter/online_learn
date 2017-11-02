@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Learnactivity">
+<!-- ###################### learnactivityResult ########################## -->
+  <resultMap id="LearnactivityResult" class="netTest.product.vo.Learnactivity">
+    <result column="userID" property="userid" jdbcType="BIGINT"/>
+    <result column="objectID" property="objectid" jdbcType="BIGINT"/>
+    <result column="objectType" property="objecttype" jdbcType="VARCHAR"/>
+    <result column="actionType" property="actiontype" jdbcType="SMALLINT"/>
+    <result column="contentCateID" property="contentcateid" jdbcType="BIGINT"/>
+    <result column="productID" property="productid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="learnStatus" property="learnstatus" jdbcType="SMALLINT"/>
+    <result column="progress" property="progress" jdbcType="VARCHAR"/>
+    <result column="startTime" property="starttime" jdbcType="TIMESTAMP"/>
+    <result column="endTime" property="endtime" jdbcType="TIMESTAMP"/>
+
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="actiontype"><![CDATA[ actionType=#actiontype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="objectid"><![CDATA[ objectID=#objectid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="objecttype"><![CDATA[ objectType=#objecttype:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="userid"><![CDATA[ userID=#userid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="contentcateid"><![CDATA[ contentCateID=#contentcateid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="productid"><![CDATA[ productID=#productid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      
+    </dynamic>
+  </sql>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="LearnactivityResult" parameterClass="netTest.product.vo.Learnactivity"> 
+     select  actionType, objectID, objectType, userID, contentCateID,
+             productID, shopID, learnStatus, progress, startTime, endTime 
+     from learnactivity 
+     where userID=#userid:BIGINT# and objectID=#objectid:BIGINT#
+        and objectType=#objecttype:VARCHAR# and actionType=#actiontype:SMALLINT#
+  </select>
+  
+  <!-- ###################### selectLearnLastest ########################## -->
+  <select id="selectLearnLastest" resultMap="LearnactivityResult" parameterClass="netTest.product.vo.Learnactivity"> 
+     select  actionType, objectID, objectType, userID, contentCateID,
+             productID, shopID, learnStatus, progress, startTime, endTime
+     from learnactivity 
+     where userID=#userid:BIGINT# and productID=#productid:BIGINT#
+     order by startTime desc limit 1
+  </select>
+  
+  <!-- ###################### selectByBatchID ########################## -->
+  <select id="selectByBatchID" resultMap="LearnactivityResult" parameterClass="netTest.product.vo.Learnactivity"> 
+     select  actionType, objectID, objectType, userID, contentCateID,
+             productID, shopID, learnStatus, progress, startTime, endTime 
+     from learnactivity 
+     where userID=#userid:BIGINT# and productID=#productid:BIGINT#
+        and objectType=#objecttype:VARCHAR# 
+        <iterate prepend="AND" property="objectidList"
+			open="(" close=")" conjunction="OR">
+			objectID = #objectidList[]#
+	    </iterate>
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="LearnactivityResult" parameterClass="netTest.product.dto.LearnactivityQuery"> 
+     select 
+         actionType,
+    objectID,
+    objectType,
+    userID,
+    contentCateID,
+    productID,
+    shopID, learnStatus,
+    progress,
+    startTime,
+    endTime
+     from learnactivity
+    <include refid="Learnactivity.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.product.vo.Learnactivity"> 
+     insert into learnactivity
+     (     actionType,
+    objectID,
+    objectType,
+    userID,
+    contentCateID,
+    productID,
+    shopID, learnStatus,
+    progress,
+    startTime,
+    endTime ) 
+    values 
+     (     #actiontype:SMALLINT#, 
+    #objectid:BIGINT#, 
+    #objecttype:VARCHAR#, 
+    #userid:BIGINT#, 
+    #contentcateid:BIGINT#, 
+    #productid:BIGINT#, 
+    #shopid:BIGINT#, #learnstatus:SMALLINT#, 
+    #progress:VARCHAR#, 
+    #starttime:TIMESTAMP#, 
+    #endtime:TIMESTAMP# )
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.product.vo.Learnactivity"> 
+     update learnactivity
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="learnstatus"><![CDATA[ learnStatus=#learnstatus:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="progress"><![CDATA[ progress=#progress:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="starttime"><![CDATA[ startTime=#starttime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="endtime"><![CDATA[ endTime=#endtime:TIMESTAMP# ]]></isNotNull>
+    </dynamic> where userID = #userid:BIGINT# and objectID = #objectid:BIGINT#
+      		   and objectType = #objecttype:VARCHAR# and actionType = #actiontype:SMALLINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="netTest.product.vo.Learnactivity"> 
+     delete from learnactivity where userID=#userid:BIGINT# and objectID=#objectid:BIGINT#
+        and objectType=#objecttype:VARCHAR# and actionType=#actiontype:SMALLINT#
+  </delete>
+  
+  <!-- ###################### deleteByProduct ########################## -->
+  <delete id="deleteByProduct" parameterClass="netTest.product.vo.Learnactivity"> 
+     delete from learnactivity where
+     <dynamic prepend="1=1">  
+       <isNotNull prepend="and" property="userid"><![CDATA[ userID=#userid:BIGINT# ]]></isNotNull>
+       <isNotNull prepend="and" property="productid"><![CDATA[ productID=#productid:BIGINT# ]]></isNotNull>
+     </dynamic>
+  </delete>
+    
+</sqlMap>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources/>
+  <form-beans>
+     <form-bean name="commentsForm" type="netTestWeb.social.form.ProductcommentsForm" />
+     <form-bean name="leavemessageForm" type="commonWeb.social.form.LeavemessageForm" />
+     <form-bean name="usecommentForm" type="commonWeb.social.form.UsecommentForm" />
+  </form-beans>
+
+  <global-exceptions>
+      <exception key="commonWeb.java.commonaction.errors.noLogin" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoLoginException" path="/login_forward.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.editPage.noSuchRecord" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoSuchRecordException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.resubmit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.ResubmitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.DaoException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="org.springframework.dao.DataAccessException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.Unauthorized" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoRightException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.LogicErr" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.LogicException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.InvalidVisit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.InvalideVisitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.SystemError" handler="commonWeb.base.StrutsExceptionHandler" type="java.lang.Throwable" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+  </global-exceptions>
+  
+  <global-forwards>
+      <forward name="errorPage" path="/pubs/errorPage.jsp" ></forward>
+      <forward name="messagePage" path="/pubs/message.jsp" ></forward>
+      <forward name="treeXml" path="/pubs/treeXml.jsp" ></forward>
+      <forward name="forwardToUrl" path="/pubs/forwardToUrl.jsp" ></forward>
+      <forward name="toUrl" path="/pubs/toUrl.jsp" ></forward>
+  </global-forwards>
+  
+  <action-mappings>
+      
+     <!-- comments begin -->
+     <action parameter="listprodcommentsuser" path="/social/listprodcommentsuser" name="commentsForm" type="netTestWeb.social.action.CommentsAction" scope="request">
+        <forward name="listproduct_user" path="/social/prodCommentsUser_list.jsp"></forward>
+     </action>
+     
+     <action parameter="listprodcommentsmag" path="/social/listprodcommentsmag" name="commentsForm" type="netTestWeb.social.action.CommentsAction" scope="request">
+        <forward name="listproduct_mag" path="/social/prodCommentsMag_list.jsp"></forward>
+     </action>
+     
+     <action parameter="listComments" path="/social/listComments" name="commentsForm" type="commonWeb.social.action.CommentsAction" scope="request">
+        <forward name="list" path="/social/comments_list.jsp"></forward>
+     </action>
+    
+     <action parameter="saveComments" path="/social/saveComments" name="commentsForm" type="commonWeb.social.action.CommentsAction" scope="request">
+        <forward name="result" path="/social/comments_list.jsp"></forward>
+     </action>
+     
+     <action parameter="replycomments" path="/social/replycomments" name="commentsForm" type="commonWeb.social.action.CommentsAction" scope="request">
+        <forward name="result" path="/social/comments_list.jsp"></forward>
+     </action>
+    
+     <action parameter="editComments" path="/social/editComments" name="commentsForm" type="commonWeb.social.action.CommentsAction" scope="request">
+        <forward name="addEditPage" path="/social/comments_addEdit.jsp"></forward>
+        <forward name="editPage_product" path="/social/productComments_addEdit.jsp"></forward>
+     </action>
+    
+     <action parameter="addComments" path="/social/addComments" name="commentsForm" type="commonWeb.social.action.CommentsAction" scope="request">
+        <forward name="addEditPage" path="/social/comments_addEdit.jsp"></forward>
+        <forward name="addPage_product" path="/social/productComments_addEdit.jsp"></forward>
+     </action>
+    
+     <action parameter="deleteComments" path="/social/deleteComments" name="commentsForm" type="commonWeb.social.action.CommentsAction" scope="request">
+        <forward name="list" path="/social/comments_list.jsp"></forward>
+     </action>
+     
+     <action parameter="getSingleComment" path="/social/getSingleComment" name="commentsForm" type="commonWeb.social.action.CommentsAction" scope="request">    
+     </action>
+     <!-- comments end -->
+     
+     <!-- leavemessageForm begin -->
+     <action parameter="listleavemess" path="/social/listleavemess" name="leavemessageForm" type="netTestWeb.social.action.LeavemessageAction" scope="request">
+        <forward name="listsystem" path="/social/leavemessage_syslist.jsp"></forward>
+        <forward name="listshop" path="/social/leavemessage_shoplist.jsp"></forward>
+        <forward name="listprod" path="/social/leavemessage_prodlist.jsp"></forward>
+     </action>
+          
+     <action parameter="addleavemess" path="/social/addleavemess" name="leavemessageForm" type="netTestWeb.social.action.LeavemessageAction" scope="request">
+        <forward name="addEditPage" path="/social/leavemessage_edit.jsp"></forward>
+     </action>
+     
+     <action parameter="saveleavemess" path="/social/saveleavemess" name="leavemessageForm" type="netTestWeb.social.action.LeavemessageAction" scope="request">
+     </action>
+     
+     <action parameter="getsingleleavemess" path="/social/getsingleleavemess" name="leavemessageForm" type="netTestWeb.social.action.LeavemessageAction" scope="request">
+     </action>
+     
+     <action parameter="replysysleavemess" path="/social/replysysleavemess" name="leavemessageForm" type="netTestWeb.social.action.LeavemessageAction" scope="request">
+     </action>
+     
+     <action parameter="delshopleavemess" path="/social/delshopleavemess" name="leavemessageForm" type="netTestWeb.social.action.LeavemessageAction" scope="request">
+     </action>
+     
+     <action parameter="delsysleavemess" path="/social/delsysleavemess" name="leavemessageForm" type="netTestWeb.social.action.LeavemessageAction" scope="request">
+     </action>
+     
+     <action parameter="replyshopleavemess" path="/social/replyshopleavemess" name="leavemessageForm" type="netTestWeb.social.action.LeavemessageAction" scope="request">
+     </action>
+     
+     <action parameter="delprodleavemess" path="/social/delprodleavemess" name="leavemessageForm" type="netTestWeb.social.action.LeavemessageAction" scope="request">
+     </action>
+     
+     <action parameter="replyprodleavemess" path="/social/replyprodleavemess" name="leavemessageForm" type="netTestWeb.social.action.LeavemessageAction" scope="request">
+     </action>
+     <!-- leavemessageForm end -->
+     
+     <!-- use comments begin -->
+     <action parameter="listusecomment" path="/social/listusecomment" name="usecommentForm" type="commonWeb.social.action.UsecommentAction" scope="request">
+        <forward name="list" path="/social/produsecomment_list.jsp"></forward>
+     </action>
+     
+     <action parameter="editusecomment" path="/social/editusecomment" name="usecommentForm" type="netTestWeb.social.action.ProductUsecommentAction" scope="request">
+        <forward name="editpage" path="/social/usecomment_edit.jsp"></forward>
+     </action>
+     
+     <action parameter="saveprodusecomment" path="/social/saveprodusecomment" name="usecommentForm" type="netTestWeb.social.action.ProductUsecommentAction" scope="request">
+        
+     </action>
+     
+     <action parameter="deleteusecomment" path="/social/deleteusecomment" name="usecommentForm" type="commonWeb.social.action.UsecommentAction" scope="request">
+
+     </action>
+     <!-- use comments end -->
+     
+     <action parameter="goselectfile" path="/oath/goselectfile" type="netTestWeb.social.action.OauthFlowAction" scope="request">
+        <forward name="selectfilepage_skydrive" path="/social/selectfile_skydriver.jsp"></forward>
+        <forward name="selectfilepage_dropbox" path="/social/selectfile_dropbox.jsp"></forward>
+        <forward name="selectfilepage_google" path="/social/selectfile_google.jsp"></forward>
+     </action>
+     
+     <action parameter="saveloginwith" path="/social/saveloginwith" type="netTestWeb.social.action.OauthFlowAction" scope="request">
+     </action>
+
+  </action-mappings>
+
+  <message-resources parameter="netTestWeb.resource.PagetextResources" />
+  <message-resources key="BizKey" parameter="netTestWeb.resource.BizMessResources" />
+</struts-config>
+

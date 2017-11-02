@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+  "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+     <import resource="applicationContext_orguser.xml"/>
+     <import resource="applicationContext_wareques.xml"/>
+     <import resource="applicationContext_paper.xml"/>
+     <import resource="applicationContext_exam.xml"/>
+     <import resource="applicationContext_learncont.xml"/>
+     <import resource="applicationContext_exercise.xml"/>
+     <import resource="applicationContext_common.xml"/>
+     <import resource="applicationContext_order.xml"/>
+     <import resource="applicationContext_product.xml"/>
+</beans>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Questionitem">
+<!-- ###################### questionitemResultWithoutBLOBs ########################## -->
+  <resultMap id="QuestionitemResultWithoutBLOBs" class="netTest.wareques.vo.Questionitem">
+    <result column="quesItemID" property="quesitemid" jdbcType="BIGINT"/>
+    <result column="quesID" property="quesid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="quesItemFlag" property="quesitemflag" jdbcType="VARCHAR"/>
+    <result column="isRight" property="isright" jdbcType="SMALLINT"/>
+    <result column="fileUrl" property="fileurl" jdbcType="VARCHAR"/>
+    <result column="fileType" property="filetype" jdbcType="SMALLINT"/>
+    <result column="disOrder" property="disorder" jdbcType="INTEGER"/>
+  </resultMap>
+  
+<!-- ###################### questionitemResult ########################## -->
+  <resultMap id="QuestionitemResult" class="netTest.wareques.vo.Questionitem" extends="Questionitem.QuestionitemResultWithoutBLOBs">
+    <result column="quesItemContent" property="quesitemcontent" jdbcType="VARCHAR"/>
+
+  </resultMap>
+  
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="quesitemid"><![CDATA[ quesItemID=#quesitemid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="quesid"><![CDATA[ quesID=#quesid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="filetypeStr"><![CDATA[ fileType in ($filetypeStr$) ]]></isNotNull>
+      <isNotEmpty prepend="and" property="quesitemcontent"><![CDATA[ quesItemContent=#quesitemcontent:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="disorder"><![CDATA[ disOrder=#disorder:INTEGER# ]]></isNotNull>
+    </dynamic>
+  </sql>
+   
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="QuestionitemResult" parameterClass="java.lang.Long"> 
+     select 
+         quesItemID,
+    quesID,
+    shopID,
+    quesItemFlag,
+    isRight,
+    fileUrl,
+    fileType,
+    quesItemContent,disOrder  
+     from questionitem 
+     where quesItemID = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="QuestionitemResult" parameterClass="netTest.wareques.vo.Questionitem"> 
+     select 
+         quesItemID,
+    quesID,
+    shopID,
+    quesItemFlag,
+    isRight,
+    fileUrl,
+    fileType,
+    quesItemContent,disOrder 
+     from questionitem
+    <include refid="Questionitem.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+  <!-- ###################### selectByQues ########################## -->
+  <select id="selectByQues" resultMap="QuestionitemResult" parameterClass="netTest.wareques.vo.Questionitem"> 
+     select  quesItemID,quesID,shopID,quesItemFlag,isRight,fileUrl,fileType,quesItemContent,disOrder 
+     from questionitem 
+     where quesID = #quesid:BIGINT# 
+     <isNotEmpty property="shopid"><![CDATA[ and shopID = #shopid:BIGINT#  ]]></isNotEmpty> 
+     <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+  <!-- ###################### qryLargerDisorder ########################## -->
+  <select id="qryLargerDisorder" resultClass="java.lang.Integer" parameterClass="netTest.wareques.vo.Questionitem"> 
+     select  min(disOrder) as switchDisorder  
+     from questionitem 
+     where quesID = #quesid:BIGINT# 
+     <dynamic> 
+     <isNotNull prepend="and" property="disorder">
+         <![CDATA[ disOrder>#disorder:INTEGER# ]]>
+     </isNotNull>
+     </dynamic>
+  </select>
+  
+  <!-- ###################### qrySmallerDisorder ########################## -->
+  <select id="qrySmallerDisorder" resultClass="java.lang.Integer" parameterClass="netTest.wareques.vo.Questionitem"> 
+     select  max(disOrder) as switchDisorder  
+     from questionitem 
+     where quesID = #quesid:BIGINT#
+     <dynamic> 
+     <isNotNull prepend="and" property="disorder">
+         <![CDATA[ disOrder < #disorder:INTEGER# ]]>
+     </isNotNull>
+     </dynamic>
+  </select>
+  
+<!-- ###################### selectByVOWithoutBLOBs ########################## -->
+  <select id="selectByVOWithoutBLOBs" resultMap="QuestionitemResultWithoutBLOBs" parameterClass="netTest.wareques.vo.Questionitem"> 
+     select 
+         quesItemID,
+    quesID,
+    shopID,
+    quesItemFlag,
+    isRight,
+    fileUrl,
+    fileType,disOrder 
+     from questionitem
+    <include refid="Questionitem.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.wareques.vo.Questionitem"> 
+     insert into questionitem
+     (quesItemID,quesID,shopID,quesItemFlag,isRight,fileUrl,fileType,quesItemContent,disOrder) 
+      values 
+     (#quesitemid:BIGINT#,#quesid:BIGINT#,#shopid:BIGINT#,#quesitemflag:VARCHAR#, 
+      #isright:SMALLINT#,#fileurl:VARCHAR#,#filetype:SMALLINT#,#quesitemcontent:VARCHAR#,#disorder:INTEGER#)
+	  <selectKey resultClass="java.lang.Long" keyProperty="quesitemid" >  
+          SELECT   LAST_INSERT_ID()  
+      </selectKey> 
+  </insert>
+  
+  <!-- ###################### qryItemFlagSEQ ########################## -->
+  <insert id="qryItemFlagSEQ"> 
+      <![CDATA[ UPDATE SEQ_QuesItemFlag SET id=LAST_INSERT_ID(id+1) ]]>
+	  <selectKey resultClass="java.lang.Long" >  
+          SELECT  LAST_INSERT_ID()  
+      </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.wareques.vo.Questionitem"> 
+     update questionitem
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="quesitemflag"><![CDATA[ quesItemFlag=#quesitemflag:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="isright"><![CDATA[ isRight=#isright:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="fileurl"><![CDATA[ fileUrl=#fileurl:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="filetype"><![CDATA[ fileType=#filetype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="quesitemcontent"><![CDATA[ quesItemContent=#quesitemcontent:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="disorder"><![CDATA[ disOrder=#disorder:INTEGER# ]]></isNotNull>
+    </dynamic> where quesItemID = #quesitemid:BIGINT#
+  </update>
+  
+<!-- ###################### updateFileurl ########################## -->
+  <update id="updateFileurl" parameterClass="netTest.wareques.vo.Questionitem"> 
+     update questionitem
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="fileurl"><![CDATA[ fileUrl=#fileurl:VARCHAR# ]]></isNotNull>
+    </dynamic> where quesItemID = #quesitemid:BIGINT#
+  </update>
+  
+<!-- ###################### updateDisorder ########################## -->
+  <update id="updateDisorder" parameterClass="netTest.wareques.vo.Questionitem"> 
+     update questionitem set disOrder=#disorderSwitch:INTEGER#  
+    <dynamic prepend="where"> 
+       <isNotNull prepend="and" property="quesid"><![CDATA[ quesID=#quesid:BIGINT# ]]></isNotNull>
+       <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+       <isNotNull prepend="and" property="disorder"><![CDATA[ disOrder=#disorder:INTEGER# ]]></isNotNull>
+    </dynamic>
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from questionitem where quesItemID = #value#
+  </delete>  
+  
+  <!-- ###################### deleteByQuesid ########################## -->
+  <delete id="deleteByQuesid" parameterClass="java.lang.Long"> 
+     delete from questionitem where quesID = #value#
+  </delete>
+  
+  <!-- ###################### delSubquesitemByPid ########################## -->
+  <delete id="delSubquesitemByPid" parameterClass="java.lang.Long"> 
+     delete from questionitem where exists(select 1 from question where questionitem.quesID=question.quesID and question.pID=#value#) 
+  </delete>
+  
+  <!-- ###################### delByQuesidOrder ########################## -->
+  <delete id="delByQuesidOrder" parameterClass="netTest.wareques.vo.Questionitem"> 
+     delete from questionitem where quesID=#quesid:BIGINT# and disOrder=#disorder:INTEGER# 
+  </delete>
+  
+      
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.wareques.vo.Questionitem"> 
+     select count(*) from questionitem
+     <include refid="Questionitem.where_Clause"/>  
+  </select>
+  
+<!-- ###################### selectByVOWithoutBLOBsCount ########################## -->
+  <select id="selectByVOWithoutBLOBsCount" resultClass="java.lang.Integer" parameterClass="netTest.wareques.vo.Questionitem"> 
+     select count(*) from questionitem 
+     <include refid="Questionitem.where_Clause"/>  
+  </select>
+  
+</sqlMap>

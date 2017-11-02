@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<session version="1.0">
+<refactoring comment="Rename package 'platform.config' to 'platform.struts'&#13;&#10;- Original element: 'platform/src/platform.config'&#13;&#10;- Renamed element: 'platform/src/platform.struts'&#13;&#10;- Update references to refactored element&#13;&#10;- Update textual occurrences in comments and strings" description="Rename package 'platform.config'" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;platform.config" name="platform.struts" qualified="false" references="true" stamp="1187164129125" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+  "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+  
+  <!-- ========================= DAO DEFINITIONS: IBATIS IMPLEMENTATIONS ========================= -->
+  
+  <!-- =====================/////////////////// import platform bean,later it should use remote call,such as ejb,web services -->
+  
+    <!-- ========================= Class Questypeshop: CONFIGURE ========================= -->
+  <bean id="questypeshopDaoTarget" class="netTest.wareques.dao.impl.QuestypeshopDaoImpl" singleton="true">
+	 <property name="dataSource">
+	    <ref bean="dataSource"/>
+	 </property>
+	 <property name="sqlMapClient">
+	    <ref bean="sqlMapClient_netTest"/>
+	 </property>
+  </bean>
+
+  <bean id="questypeshopDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+     <property name="transactionManager">
+        <ref bean="transactionManager"/>
+     </property>
+     <property name="target">
+        <ref local="questypeshopDaoTarget"/>
+     </property>
+     <property name="transactionAttributes">
+        <props>
+          <prop key="*">PROPAGATION_REQUIRED</prop>
+        </props>
+     </property>
+  </bean>
+  
+  <!-- ========================= Class Contentcate: CONFIGURE ========================= -->
+  <bean id="contentcateDaoTarget" class="netTest.prodcont.dao.impl.ContentcateDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref bean="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref bean="sqlMapClient_netTest"/>
+    </property>
+  </bean>
+
+  <bean id="contentcateDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="contentcateDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+  
+  <!-- ========================= Class contentcateLogic: CONFIGURE ========================= -->
+  <bean id="contentcateLogic" class="netTest.prodcont.logic.impl.ContentcateLogicImpl" singleton="true">
+    <property name="dao">
+      <ref bean="contentcateDaoTarget"/>
+    </property>
+    <property name="learncontentDao">
+        <ref bean="learncontentDaoTarget"/>
+     </property>
+     <property name="exerciseDao">
+        <ref bean="exerciseDaoTarget"/>
+     </property>
+  </bean>
+
+  
+  <!-- ========================= Class Ware: CONFIGURE ========================= -->
+  <bean id="wareDaoTarget" class="netTest.wareques.dao.impl.WareDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref bean="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref bean="sqlMapClient_netTest"/>
+    </property>
+  </bean>
+
+  <bean id="wareDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="wareDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+  
+  <bean id="wareLogicTarget" class="netTest.wareques.logic.impl.WareLogicImpl" singleton="true">
+     <property name="dao">
+        <ref bean="wareDao"/>
+     </property>
+     <property name="warequesLogic">
+        <ref bean="warequesLogicTarget"/>
+     </property>  
+  </bean>
+  
+  <bean id="wareLogic" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="wareLogicTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+    
+  <!-- ========================= Class Wareques: CONFIGURE ========================= -->
+  <bean id="questionDao" class="netTest.wareques.dao.impl.QuestionDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref bean="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref bean="sqlMapClient_netTest"/>
+    </property>
+    <property name="quesanswerDao">
+      <ref bean="quesanswerDao"/>
+    </property>
+  </bean>
+
+  <!-- ========================= Class Quesanswer: CONFIGURE ========================= -->
+  <bean id="quesanswerDao" class="netTest.wareques.dao.impl.QuesanswerDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref bean="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref bean="sqlMapClient_netTest"/>
+    </property>
+  </bean>
+  
+  <!-- ========================= Class questionLogic: CONFIGURE ========================= -->
+  <bean id="questionLogicTarget" class="netTest.wareques.logic.impl.QuestionLogicImpl" singleton="true">
+    <property name="dao">
+      <ref bean="questionDao"/>
+    </property>
+    <property name="itemDao">
+      <ref bean="questionitemDao"/>
+    </property>
+    <property name="answerDao">
+      <ref bean="quesanswerDao"/>
+    </property>
+  </bean>
+
+  <bean id="questionLogic" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="questionLogicTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+  
+  <!-- ========================= Class warequesLogic: CONFIGURE ========================= -->
+  <bean id="warequesLogicTarget" class="netTest.wareques.logic.impl.WarequesLogicImpl" singleton="true">
+    <property name="quesdao">
+      <ref bean="questionDao"/>
+    </property>
+  </bean>
+
+  <bean id="warequesLogic" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="warequesLogicTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+  
+  <!-- ========================= Class Questionitem: CONFIGURE ========================= -->
+  <bean id="questionitemDao" class="netTest.wareques.dao.impl.QuestionitemDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref bean="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref bean="sqlMapClient_netTest"/>
+    </property>
+  </bean>
+
+</beans>

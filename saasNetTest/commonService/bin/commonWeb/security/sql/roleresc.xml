@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="RoleResc">
+<!-- ###################### RoleRescResult ########################## -->
+  <resultMap id="RoleRescResult" class="commonWeb.security.vo.RoleResc">
+    <result column="resc_id" property="rescId" jdbcType="BIGINT"/>
+    <result column="role_id" property="roleId" jdbcType="BIGINT"/>
+    <result column="syscode" property="syscode" jdbcType="VARCHAR"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="rescId"><![CDATA[ resc_id=#rescId:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="roleId"><![CDATA[ role_id=#roleId:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="syscode"><![CDATA[ syscode=#syscode:VARCHAR# ]]></isNotNull>
+    </dynamic>
+  </sql>
+  
+<!-- ###################### selectAll ########################## -->
+  <select id="selectAll" resultMap="RoleRescResult"> 
+     select   resc_id, role_id, syscode
+     from role_resc
+  </select>
+      
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="RoleRescResult" parameterClass="commonWeb.security.dto.RoleRescQuery"> 
+     select   resc_id, role_id, syscode 
+     from role_resc
+    <include refid="RoleResc.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="commonWeb.security.vo.RoleResc"> 
+     insert into role_resc
+     ( resc_id, role_id, syscode ) 
+    values 
+     ( #rescId:BIGINT#, #roleId:BIGINT#, #syscode:VARCHAR# )
+  </insert>
+  
+  <!-- ###################### insertSubPriv ########################## -->
+  <insert id="insertSubPriv" parameterClass="commonWeb.security.vo.RoleResc"> 
+     insert into role_resc
+     (resc_id, role_id, syscode ) 
+    select id, #roleId:BIGINT#, #syscode:VARCHAR# from resources where linkID = #rescId:BIGINT#
+                 and visible=0 and syscode = #syscode:VARCHAR# 
+  </insert>
+  
+  <!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="commonWeb.security.vo.RoleResc"> 
+     delete from role_resc where resc_id=#rescId:BIGINT# and role_id=#roleId:BIGINT# 
+  </delete>
+  
+  <!-- ###################### delByRoleStr ########################## -->
+  <delete id="delByRoleStr" parameterClass="java.lang.String"> 
+     delete from role_resc where role_id in($value$)   
+  </delete>
+  
+  <!-- ###################### delSubPrivByPK ########################## -->
+  <delete id="delSubPrivByPK" parameterClass="commonWeb.security.vo.RoleResc"> 
+     delete from role_resc where role_resc.role_id=#roleId:BIGINT#  
+            and exists(select 1 from resources where resources.linkID = #rescId:BIGINT#
+                 and resources.visible=0 and resources.id=role_resc.resc_id)
+  </delete>
+  
+  <!-- ###################### delMenuAndResc ########################## -->
+  <delete id="delMenuAndResc" parameterClass="commonWeb.security.vo.RoleResc"> 
+     delete from role_resc where role_resc.role_id=#roleId:BIGINT#  
+            and exists(select 1 from resources where find_in_set('$rescId$',resources.path)>0
+                 and resources.id=role_resc.resc_id)
+  </delete>
+  
+<!-- ###################### deleteByVO ########################## -->
+  <delete id="deleteByVO" parameterClass="commonWeb.security.dto.RoleRescQuery"> 
+     delete from role_resc
+     <include refid="RoleResc.where_Clause"/> 
+  </delete>
+  
+<!-- ###################### selectAllCount ########################## -->
+  <select id="selectAllCount" resultClass="java.lang.Integer"> 
+     select count(*) from role_resc
+  </select>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="commonWeb.security.dto.RoleRescQuery"> 
+     select count(*) from role_resc
+     <include refid="RoleResc.where_Clause"/>  
+  </select>
+
+    
+</sqlMap>

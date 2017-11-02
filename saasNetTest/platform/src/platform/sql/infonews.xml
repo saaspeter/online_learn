@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Infonews">
+<!-- ###################### InfonewsResult ########################## -->
+  <resultMap id="InfonewsResult" class="platform.vo.Infonews">
+    <result column="id" property="id" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="syscode" property="syscode" jdbcType="CHAR"/>
+    <result column="caption" property="caption" jdbcType="VARCHAR"/>
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP"/>
+    <result column="creator" property="creator" jdbcType="BIGINT"/>
+	<result column="content" property="content" jdbcType="LONGVARCHAR"/>
+	<result column="type" property="type" jdbcType="SMALLINT"/>
+	<result column="logoUrl" property="logourl" jdbcType="VARCHAR"/>
+    <result column="openUrl" property="openurl" jdbcType="VARCHAR"/>
+    <result column="refID" property="refid" jdbcType="BIGINT"/>
+    <result column="categoryID" property="categoryid" jdbcType="BIGINT"/>
+    <result column="status" property="status" jdbcType="SMALLINT"/>
+    <result column="orderNo" property="orderno" jdbcType="INTEGER"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause_search"> 
+    <dynamic> 
+        <isNotEmpty prepend="and" property="searchcontent">
+	        <![CDATA[ a.caption like CONCAT('%',#searchcontent:VARCHAR#,'%')]]>
+	    </isNotEmpty>
+	    <isNotNull prepend="and" property="refid">
+	        a.refID = #refid:BIGINT#
+	    </isNotNull>
+    </dynamic>
+  </sql>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="InfonewsResult" parameterClass="java.lang.Long"> 
+     select a.id, a.shopID, a.syscode, a.caption, a.createTime, a.creator, a.type, 
+            a.logoUrl, a.openUrl, a.refID, a.categoryID, a.status, a.orderNo, b.content   
+     from InfoNews a, InfoNewsText b  
+     where a.id = b.id and a.id = #value#
+  </select>
+     
+  <!-- ###################### search ########################## -->
+  <select id="search" resultMap="InfonewsResult" parameterClass="platform.dto.InfonewsQuery"> 
+     select  a.id, a.shopID, a.syscode, a.caption, a.createTime, a.creator, a.type, 
+             a.logoUrl, a.openUrl, a.refID, a.categoryID, a.status, a.orderNo,
+             null as content 
+     from InfoNews a
+     where a.status=1 and a.categoryID = #categoryid:BIGINT# 
+     <include refid="Infonews.where_Clause_search"/> 
+     order by a.createTime desc
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="platform.vo.Infonews"> 
+     insert into InfoNews
+     (     id,
+    shopID,
+    syscode,
+    caption,
+    createTime,
+    creator, type, logoUrl, openUrl, refID, categoryID, status, orderNo ) 
+    values 
+     (     #id:BIGINT#, 
+    #shopid:BIGINT#, 
+    #syscode:CHAR#, 
+    #caption:VARCHAR#, 
+    #createtime:TIMESTAMP#, 
+    #creator:BIGINT#,#type:SMALLINT#, #logourl:VARCHAR#, 
+    #openurl:VARCHAR#, 
+    #refid:BIGINT#, #categoryid:BIGINT#, 
+    #status:SMALLINT#, #orderno:INTEGER# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="id" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+  <!-- ###################### insertText ########################## -->
+  <insert id="insertText" parameterClass="platform.vo.Infonews"> 
+     insert into InfoNewsText
+     ( id, content ) 
+    values 
+     ( #id:BIGINT#, #content:LONGVARCHAR# )
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="platform.vo.Infonews"> 
+     update InfoNews
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="caption"><![CDATA[ caption=#caption:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="creator"><![CDATA[ creator=#creator:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="logourl"><![CDATA[ logoUrl=#logourl:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="openurl"><![CDATA[ openUrl=#openurl:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="orderno"><![CDATA[ orderNo=#orderno:INTEGER# ]]></isNotNull>
+    </dynamic> where id = #id:BIGINT#
+  </update>
+  
+  <!-- ###################### updateTextByPK ########################## -->
+  <update id="updateTextByPK" parameterClass="platform.vo.Infonews"> 
+     update InfoNewsText set <![CDATA[ content=#content:LONGVARCHAR# ]]> 
+     where id = #id:BIGINT#
+  </update>
+  
+  <!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from InfoNews where id = #value#
+  </delete>
+  
+  <!-- ###################### deleteTextByPK ########################## -->
+  <delete id="deleteTextByPK" parameterClass="java.lang.Long"> 
+     delete from InfoNewsText where id = #value#
+  </delete>
+    
+  <!-- ###################### searchCount ########################## -->
+  <select id="searchCount" resultClass="java.lang.Integer" parameterClass="platform.dto.InfonewsQuery"> 
+     select  count(*) from InfoNews a
+     where a.status=1 and a.categoryID = #categoryid:BIGINT# 
+     <include refid="Infonews.where_Clause_search"/>
+  </select>
+  
+  <!-- ###################### selectLongTimeData ########################## -->
+  <select id="selectLongTimeData" resultClass="java.lang.Long" parameterClass="platform.dto.InfonewsQuery"> 
+     select id from InfoNews
+     <![CDATA[ where status=#status:SMALLINT# 
+               and createTime > #createtime:TIMESTAMP# limit 0,600 ]]>
+  </select>
+    
+</sqlMap>

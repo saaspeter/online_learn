@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+  "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- ========================= RESOURCE DEFINITIONS ========================= -->
+
+	<!-- ========================= DAO DEFINITIONS: IBATIS IMPLEMENTATIONS ========================= -->
+
+	<bean id="useranswerDaoTarget"
+		class="netTest.exam.dao.impl.UseranswerDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_netTest" />
+		</property>
+	</bean>
+
+	<bean id="useranswerDao"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="useranswerDaoTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= Class PaperquesLogic: CONFIGURE ========================= -->
+
+	<bean id="exampaperLogicTarget" class="netTest.exam.logic.impl.ExampaperLogicImpl" singleton="true">
+		<property name="answerDao">
+		<ref local="useranswerDao"/>
+		</property>
+		<property name="paperLogic">
+		<ref bean="paperLogic"/>
+		</property>
+	</bean>
+
+	<bean id="exampaperLogic"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="exampaperLogicTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= Class Testinfo: CONFIGURE ========================= -->
+	<bean id="testinfoDaoTarget"
+		class="netTest.exam.dao.impl.TestinfoDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_netTest" />
+		</property>
+	</bean>
+
+	<bean id="testinfoDao"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="testinfoDaoTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	
+    <!-- ========================= Class TestinfoLoigc: CONFIGURE ========================= -->
+	<bean id="testinfoLogicTarget" class="netTest.exam.logic.impl.TestinfoLogicImpl" singleton="true">
+		<property name="testDao">
+			<ref local="testinfoDaoTarget" />
+		</property> 
+		<property name="checkerDao">
+			<ref local="testcheckerDaoTarget" />
+		</property>
+		<property name="testuserDao">
+			<ref local="testuserDaoTarget" />
+		</property>
+		<property name="testdeptDao">
+			<ref local="testdeptDaoTarget" />
+		</property>
+		<property name="paperDao">
+			<ref bean="paperDao" />
+		</property>
+		<property name="useranswerDao">
+			<ref bean="useranswerDaoTarget" />
+		</property>
+		<property name="checkpaperLogic">
+			<ref local="checkPaperLogicTarget" />
+		</property>
+	</bean>
+
+	<bean id="testinfoLogic"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="testinfoLogicTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= Class Testchecker: CONFIGURE ========================= -->
+	<bean id="testcheckerDaoTarget" class="netTest.exam.dao.impl.TestcheckerDaoImpl" singleton="true">
+	    <property name="dataSource">
+	      <ref bean="dataSource"/>
+	    </property>
+	    <property name="sqlMapClient">
+	      <ref bean="sqlMapClient_netTest"/>
+	    </property>
+	  </bean>
+	
+	  <bean id="testcheckerDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	    <property name="transactionManager">
+	      <ref bean="transactionManager"/>
+	    </property>
+	    <property name="target">
+	      <ref local="testcheckerDaoTarget"/>
+	    </property>
+	    <property name="transactionAttributes">
+	      <props>
+	        <prop key="*">PROPAGATION_REQUIRED</prop>
+	      </props>
+	    </property>
+	</bean>
+
+    <!-- ========================= Class Testdept: CONFIGURE ========================= -->
+    <bean id="testdeptDaoTarget" class="netTest.exam.dao.impl.TestdeptDaoImpl" singleton="true">
+	    <property name="dataSource">
+	      <ref bean="dataSource"/>
+	    </property>
+	    <property name="sqlMapClient">
+	      <ref bean="sqlMapClient_netTest"/>
+	    </property>
+	</bean>
+
+	<bean id="testdeptDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="testdeptDaoTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- ========================= Class TestdeptLogic: CONFIGURE ========================= -->
+	<bean id="testdeptLogic"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<bean class="netTest.exam.logic.impl.TestdeptLogicImpl">
+				<property name="testinfoDao">
+					<ref local="testinfoDaoTarget" />
+				</property>
+				<property name="testuserDao">
+					<ref local="testuserDaoTarget" />
+				</property>
+				<property name="testdeptDao">
+					<ref local="testdeptDaoTarget" />
+				</property>
+			</bean>
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= Class Testuser: CONFIGURE ========================= -->
+	<bean id="testuserDaoTarget"
+		class="netTest.exam.dao.impl.TestuserDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_netTest" />
+		</property>
+	</bean>
+
+	<bean id="testuserDao"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="testuserDaoTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- ========================= Class TestuserLogic: CONFIGURE ========================= -->
+	<bean id="testuserLogic"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<bean class="netTest.exam.logic.impl.TestuserLogicImpl">
+				<property name="testinfoDao">
+					<ref local="testinfoDaoTarget" />
+				</property>
+				<property name="testuserDao">
+					<ref local="testuserDaoTarget" />
+				</property>
+				<property name="testdeptDao">
+					<ref local="testdeptDaoTarget" />
+				</property> 
+				<property name="answerDao">
+					<ref local="useranswerDaoTarget" />
+				</property>
+				<property name="exampaperlogic">
+					<ref local="exampaperLogicTarget" />
+				</property>
+			</bean>
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+    <!-- ========================= Class CheckPaperLogic: CONFIGURE ========================= -->
+  	<bean id="checkPaperLogicTarget" class="netTest.exam.logic.impl.CheckPaperLogicImpl" singleton="true">
+		<property name="examLogic">
+		    <ref local="exampaperLogicTarget" />
+		</property>
+		<property name="answerDao">
+			<ref local="useranswerDao" />
+		</property>
+		<property name="testDao">
+			<ref local="testinfoDaoTarget" />
+		</property>
+		<property name="questypelogic">
+			<ref bean="paperquestypeLogic" />
+		</property>
+		<property name="testuserDao">
+			<ref bean="testuserDaoTarget" />
+		</property>
+		<property name="testdeptDao">
+			<ref bean="testdeptDaoTarget" />
+		</property>
+	</bean>
+			
+	<bean id="checkPaperLogic"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+            <ref local="checkPaperLogicTarget"/>
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+</beans>

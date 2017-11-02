@@ -1,0 +1,30 @@
+<form-bean name="systemlogForm" type="commonToolWeb.biz.form.SystemlogForm" />
+
+
+      
+    <!-- systemlog begin -->
+    <action parameter="listSystemlog" path="/biz/listSystemlog" name="systemlogForm" type="commonToolWeb.biz.action.SystemlogAction" scope="request">
+       <forward name="list" path="/biz/systemlog_list.jsp"></forward>
+    </action>
+    
+    <action parameter="saveSystemlog" path="/biz/saveSystemlog" name="systemlogForm" type="commonToolWeb.biz.action.SystemlogAction" scope="request">
+       <forward name="list" path="/biz/systemlog_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editSystemlog" path="/biz/editSystemlog" name="systemlogForm" type="commonToolWeb.biz.action.SystemlogAction" scope="request">
+       <forward name="addEditPage" path="/biz/systemlog_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewSystemlog" path="/biz/viewSystemlog" name="systemlogForm" type="commonToolWeb.biz.action.SystemlogAction" scope="request">
+        <forward name="viewPage" path="/biz/systemlog_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addSystemlog" path="/biz/addSystemlog" name="systemlogForm" type="commonToolWeb.biz.action.SystemlogAction" scope="request">
+       <forward name="addEditPage" path="/biz/systemlog_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteSystemlog" path="/biz/deleteSystemlog" name="systemlogForm" type="commonToolWeb.biz.action.SystemlogAction" scope="request">
+       <forward name="list" path="/biz/systemlog_list.jsp"></forward>
+    </action>
+    <!-- systemlog end -->
+

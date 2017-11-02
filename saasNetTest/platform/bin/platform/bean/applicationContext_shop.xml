@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+  "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- ========================= RESOURCE DEFINITIONS ========================= -->
+
+	<!-- 
+		<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+		<value>${datasource.jndi}</value>
+		</property>
+		</bean>
+	-->
+
+	<!-- ========================= Class shoppostDao: CONFIGURE ========================= -->
+	<bean id="shoppostDao"
+		class="platform.shop.dao.impl.ShoppostDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<bean id="shoppostLogic"
+		class="platform.shop.logic.impl.ShoppostLogicImpl" singleton="true">
+		<property name="shoppostDao">
+			<ref bean="shoppostDao" />
+		</property>
+	</bean>
+
+	<!-- ========================= Class Shopdescarticle: CONFIGURE ========================= -->
+	<bean id="shopdescarticleDao"
+		class="platform.shop.dao.impl.ShopdescarticleDaoImpl"
+		singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<!-- ========================= Class Shoplicense: CONFIGURE ========================= -->
+	<bean id="shoplicenseDao"
+		class="platform.shop.dao.impl.ShoplicenseDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<!-- ========================= Class Shoplicense: CONFIGURE ========================= -->
+	<bean id="shopextDao" class="platform.shop.dao.impl.ShopextDaoImpl"
+		singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<!-- ========================= Class ProdcateshopDao: CONFIGURE ========================= -->
+	<bean id="prodcateshopDao" class="platform.shop.dao.impl.ProdcateshopDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<!-- ========================= Class ProdcateshopLogic: CONFIGURE ========================= -->
+	<bean id="prodcateshopLogicTarget" class="platform.shop.logic.impl.ProdcateshopLogicImpl" singleton="true">
+		<property name="dao">
+			<ref local="prodcateshopDao" />
+		</property>
+	</bean>
+
+	<bean id="prodcateshopLogic" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="prodcateshopLogicTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+</beans>

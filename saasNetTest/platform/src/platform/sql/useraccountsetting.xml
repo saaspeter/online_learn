@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Useraccountsetting">
+
+  <!-- ###################### UseraccountsettingResult ########################## -->
+  <resultMap id="UseraccountsettingResult" class="platform.vo.Useraccountsetting">
+    <result column="userID" property="userid" jdbcType="BIGINT"/>
+    <result column="shopCreateable" property="shopcreateable" jdbcType="SMALLINT"/>
+  </resultMap>
+  
+  <!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="UseraccountsettingResult" parameterClass="java.lang.Long"> 
+     select userID, shopCreateable
+     from UserAccountSetting where userID = #value#
+  </select>
+  
+  <!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="platform.vo.Useraccountsetting"> 
+     insert into UserAccountSetting
+     ( userID, shopCreateable ) 
+    values 
+     ( #userid:BIGINT#, #shopcreateable:SMALLINT# )
+  </insert>
+  
+  <!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="platform.vo.Useraccountsetting"> 
+     update UserAccountSetting set shopCreateable = #shopcreateable:SMALLINT#
+     where userID = #userid:BIGINT#
+  </update>
+  
+  <!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from UserAccountSetting where userID = #value:BIGINT#
+  </delete>
+    
+</sqlMap>

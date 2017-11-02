@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="city" >
+
+  <resultMap id="CityResult" class="com.joybeacon.model.City" >
+    <result column="cityCode" property="citycode" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="zipcode" property="zipcode" jdbcType="VARCHAR" />
+    <result column="telRegionCode" property="telregioncode" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <sql id="Where_Clause" >
+    <dynamic prepend="where" >
+       <isNotNull prepend="and" property="citycode"><![CDATA[ cityCode=#citycode:BIGINT# ]]></isNotNull>
+       <isNotNull prepend="and" property="name"><![CDATA[ name=#name:BIGINT# ]]></isNotNull>
+       <isNotNull prepend="and" property="zipcode"><![CDATA[ zipcode=#zipcode:BIGINT# ]]></isNotNull>
+       <isNotNull prepend="and" property="telregioncode"><![CDATA[ telRegionCode=#telregioncode:BIGINT# ]]></isNotNull>
+    </dynamic>
+  </sql>
+  
+  <select id="selectByPK" resultMap="CityResult" parameterClass="com.joybeacon.model.City" >
+    select cityCode, name, zipcode, telRegionCode
+    from city
+    where cityCode = #citycode:VARCHAR#
+  </select>
+  
+  <select id="selectByVO" resultMap="CityResult" parameterClass="com.joybeacon.model.City" >
+    select cityCode, name, zipcode, telRegionCode
+    from city
+    <isParameterPresent >
+      <include refid="city.Where_Clause" />
+      <isPropertyAvailable property="orderbyclause" >
+        order by $orderbyclause$
+      </isPropertyAvailable>
+    </isParameterPresent>
+  </select>
+  
+  <delete id="deleteByPK" parameterClass="com.joybeacon.model.City" >
+    delete from city
+    where cityCode = #citycode:VARCHAR#
+  </delete>
+  
+  <insert id="insert" parameterClass="com.joybeacon.model.City" >
+    insert into city (cityCode, name, zipcode, telRegionCode)
+    values (#citycode:VARCHAR#, #name:VARCHAR#, #zipcode:VARCHAR#, #telregioncode:VARCHAR#)
+  </insert>
+  
+  <update id="updateByPK" parameterClass="com.joybeacon.model.City" >
+    update city
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="name" >
+        name = #name:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="zipcode" >
+        zipcode = #zipcode:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="telregioncode" >
+        telRegionCode = #telregioncode:VARCHAR#
+      </isNotNull>
+    </dynamic>
+    where cityCode = #citycode#
+  </update>
+</sqlMap>

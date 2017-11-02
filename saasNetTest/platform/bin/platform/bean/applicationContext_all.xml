@@ -1,0 +1,972 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+  "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- ========================= RESOURCE DEFINITIONS ========================= -->
+
+	<!-- 
+		<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+		<value>${datasource.jndi}</value>
+		</property>
+		</bean>
+	-->
+
+	<!-- ========================= DAO DEFINITIONS: IBATIS IMPLEMENTATIONS ========================= -->
+
+	<!-- ========================= Class useraccountsettingDao: CONFIGURE ========================= -->
+	<bean id="useraccountsettingDao"
+		class="platform.daoImpl.UseraccountsettingDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<!-- ========================= Class accountvalidatetaskDao: CONFIGURE ========================= -->
+	<bean id="accountvalidatetaskDao"
+		class="platform.user.dao.impl.AccountvalidatetaskDaoImpl"
+		singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<!-- ========================= Class useractivityDao: CONFIGURE ========================= -->
+	<bean id="useractivityDao"
+		class="platform.user.dao.impl.UseractivityDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<!-- ========================= Class accountvalidatetaskLogic: CONFIGURE ========================= -->
+	<bean id="accountvalidatetaskLogic"
+		class="platform.user.logic.impl.AccountvalidatetaskLogicImpl"
+		singleton="true">
+		<property name="accountvalidatetaskDao">
+			<ref bean="accountvalidatetaskDao" />
+		</property>
+		<property name="useractivityDao">
+			<ref bean="useractivityDao" />
+		</property>
+	</bean>
+
+	<!-- ========================= Class Productcategoryvalue: CONFIGURE ========================= -->
+	<bean id="productcategoryvalueDao"
+		class="platform.daoImpl.ProductcategoryvalueDaoImpl"
+		singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<bean id="productcategoryvalueDaoProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="productcategoryvalueDao" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= Class Sysproductcate: CONFIGURE ========================= -->
+	<bean id="sysproductcateDaoTarget"
+		class="platform.daoImpl.SysproductcateDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<bean id="sysproductcateDao"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="sysproductcateDaoTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ======productcategoryLogic: CONFIGURE ====== -->
+	<bean id="productcategoryLogicTarget"
+		class="platform.logicImpl.ProductcategoryLogicImpl"
+		singleton="true">
+		<property name="dao">
+			<ref local="productcategoryDaoProxy" />
+		</property>
+		<property name="daoValue">
+			<ref local="productcategoryvalueDaoProxy" />
+		</property>
+		<property name="sysprodcateDao">
+			<ref local="sysproductcateDao" />
+		</property>
+	</bean>
+
+	<bean id="productcategoryLogic"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="productcategoryLogicTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= Class Productcategory: CONFIGURE ========================= -->
+	<bean id="productcategoryDao"
+		class="platform.daoImpl.ProductcategoryDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<bean id="productcategoryDaoProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="productcategoryDao" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= Class shopcontactinfoDao: CONFIGURE ========================= -->
+	<bean id="shopcontactinfoDao"
+		class="platform.shop.dao.impl.ShopcontactinfoDaoImpl"
+		singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<!-- ========================= Class Shop: CONFIGURE ========================= -->
+	<bean id="shopDao" class="platform.daoImpl.ShopDaoImpl"
+		singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<bean id="shopDaoProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="shopDao" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= Class ShopLogic: CONFIGURE ========================= -->
+	<bean id="shopLogicTarget" class="platform.logicImpl.ShopLogicImpl"
+		singleton="true">
+		<property name="dao">
+			<ref local="shopDaoProxy" />
+		</property>
+		<property name="valueDao">
+			<ref local="shopvalueDaoProxy" />
+		</property>
+		<property name="usershopLogic">
+			<ref local="usershopLogic" />
+		</property>
+		<property name="shopstatuslogDao">
+			<ref local="shopstatuslogDao" />
+		</property>
+		<property name="usershopDao">
+			<ref local="usershopDaoProxy" />
+		</property>
+		<property name="shopappDao">
+			<ref local="shopappDao" />
+		</property>
+		<property name="shopcontactinfoDao">
+			<ref local="shopcontactinfoDao" />
+		</property>
+		<property name="shopextDao">
+			<ref bean="shopextDao" />
+		</property>
+		<property name="shopstyleconfigDao">
+		    <ref local="shopstyleconfigDao"/>
+		</property>
+	</bean>
+
+	<bean id="shopLogic"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="shopLogicTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= Class Shopvalue: CONFIGURE ========================= -->
+	<bean id="shopvalueDao" class="platform.daoImpl.ShopvalueDaoImpl"
+		singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<bean id="shopvalueDaoProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="shopvalueDao" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= Class ShopvalueLogic: CONFIGURE ========================= -->
+	<bean id="shopvalueLogicTarget"
+		class="platform.logicImpl.ShopvalueLogicImpl" singleton="true">
+		<property name="dao">
+			<ref local="shopvalueDaoProxy" />
+		</property>
+	</bean>
+
+	<bean id="shopvalueLogic"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="shopvalueLogicTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= Class Shopstyleconfig: CONFIGURE ========================= -->
+	<bean id="shopstyleconfigDao"
+		class="platform.daoImpl.ShopstyleconfigDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<!-- ========================= Class Rechargerecord: CONFIGURE ========================= -->
+	<bean id="rechargerecordDao"
+		class="platform.daoImpl.RechargerecordDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<bean id="rechargerecordDaoProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="rechargerecordDao" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+
+	<!-- ========================= Class User: CONFIGURE ========================= -->
+	<bean id="userDaoProxy" class="platform.daoImpl.UserDaoImpl"
+		singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<!-- 
+		<bean id="userDaoProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+		<ref bean="transactionManager"/>
+		</property>
+		<property name="target">
+		<ref local="userDao"/>
+		</property>
+		<property name="transactionAttributes">
+		<props>
+		<prop key="*">PROPAGATION_REQUIRED</prop>
+		</props>
+		</property>
+		</bean>
+	-->
+
+	<!-- ========================= Class Usershop: CONFIGURE ========================= -->
+	<bean id="usershopDao" class="platform.daoImpl.UsershopDaoImpl"
+		singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<bean id="usershopDaoProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="usershopDao" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= Class UsershopLogicImpl: CONFIGURE ========================= -->
+	<bean id="usershopLogicTarget"
+		class="platform.logicImpl.UsershopLogicImpl" singleton="true">
+		<property name="dao">
+			<ref local="usershopDaoProxy" />
+		</property>
+		<property name="userDao">
+			<ref local="userDaoProxy" />
+		</property>
+		<property name="shopDao">
+			<ref local="shopDao" />
+		</property>
+	</bean>
+
+	<bean id="usershopLogic"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="usershopLogicTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+
+	<!-- ========================= Class SysfunctionitemDao: CONFIGURE ========================= -->
+	<bean id="sysfunctionitemDaoTarget"
+		class="platform.daoImpl.SysfunctionitemDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<bean id="sysfunctionitemDao"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="sysfunctionitemDaoTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+
+	<!-- ========================= Class Shopfunc: CONFIGURE ========================= -->
+	<bean id="shopfuncDao" class="platform.daoImpl.ShopfuncDaoImpl"
+		singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<bean id="shopfuncDaoProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="shopfuncDao" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= Class ShopfuncLogic: CONFIGURE ========================= -->
+	<bean id="shopfuncLogicTarget"
+		class="platform.logicImpl.ShopfuncLogicImpl" singleton="true">
+		<property name="dao">
+			<ref local="shopfuncDao" />
+		</property>
+		<property name="funcDao">
+			<ref local="sysfunctionitemDaoTarget" />
+		</property>
+	</bean>
+
+	<bean id="shopfuncLogic"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="shopfuncLogicTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= Class Baseaccount: CONFIGURE ========================= -->
+	<bean id="baseaccountDao"
+		class="platform.daoImpl.BaseaccountDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<bean id="baseaccountDaoProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="baseaccountDao" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= Class BaseaccountLogic: CONFIGURE ========================= -->
+	<bean id="baseaccountLogicTarget"
+		class="platform.logicImpl.BaseaccountLogicImpl" singleton="true">
+		<property name="dao">
+			<ref local="baseaccountDaoProxy" />
+		</property>
+		<property name="userDao">
+			<ref local="userDaoProxy" />
+		</property>
+		<property name="shopDao">
+			<ref local="shopDaoProxy" />
+		</property>
+		<property name="usrcosrecdetDao">
+			<ref local="usrcosrecdetDaoProxy" />
+		</property>
+		<property name="shopcosrecdetDao">
+			<ref local="shopcosrecdetDao" />
+		</property>
+		<property name="costrecordDao">
+			<ref local="costrecordDaoProxy" />
+		</property>
+		<property name="rechargerecordDao">
+			<ref local="rechargerecordDaoProxy" />
+		</property>
+	</bean>
+
+	<bean id="baseaccountLogic"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="baseaccountLogicTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= Class Costrecord: CONFIGURE ========================= -->
+	<bean id="costrecordDao" class="platform.daoImpl.CostrecordDaoImpl"
+		singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<bean id="costrecordDaoProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="costrecordDao" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= Class Usrcosrecdet: CONFIGURE ========================= -->
+	<bean id="usrcosrecdetDao"
+		class="platform.daoImpl.UsrcosrecdetDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<bean id="usrcosrecdetDaoProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="usrcosrecdetDao" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ======UserLogic: CONFIGURE ====== -->
+	<bean id="userLogicTarget" class="platform.logicImpl.UserLogicImpl"
+		singleton="true">
+		<property name="userDao">
+			<ref local="userDaoProxy" />
+		</property>
+		<property name="accountDao">
+			<ref local="baseaccountDaoProxy" />
+		</property>
+		<property name="contactDao">
+			<ref local="usercontactinfoDao" />
+		</property>
+		<property name="custinfoexDao">
+			<ref local="custinfoexDao" />
+		</property>
+		<property name="custstatusDao">
+			<ref local="custstatusDao" />
+		</property>
+		<property name="useraccountsettingDao">
+			<ref local="useraccountsettingDao" />
+		</property>
+		<property name="accountvalidatetaskDao">
+			<ref local="accountvalidatetaskDao" />
+		</property>
+	</bean>
+
+	<bean id="userLogic"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="userLogicTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= Class Contactinfo: CONFIGURE ========================= -->
+	<bean id="usercontactinfoDaoTarget"
+		class="platform.daoImpl.UsercontactinfoDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<bean id="usercontactinfoDao"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="usercontactinfoDaoTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= Class Custinfoex: CONFIGURE ========================= -->
+	<bean id="custinfoexDaoTarget"
+		class="platform.daoImpl.CustinfoexDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<bean id="custinfoexDao"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="custinfoexDaoTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= Class Custstatus: CONFIGURE ========================= -->
+	<bean id="custstatusDaoTarget"
+		class="platform.daoImpl.CuststatusDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<bean id="custstatusDao"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="custstatusDaoTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= Class Shopcosrecdet: CONFIGURE ========================= -->
+	<bean id="shopcosrecdetDaoTarget"
+		class="platform.daoImpl.ShopcosrecdetDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<bean id="shopcosrecdetDao"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="shopcosrecdetDaoTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+
+
+	<!-- ========================= Class Shopstatuslog: CONFIGURE ========================= -->
+	<bean id="shopstatuslogDaoTarget"
+		class="platform.daoImpl.ShopstatuslogDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<bean id="shopstatuslogDao"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="shopstatuslogDaoTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= Class Shopapp: CONFIGURE ========================= -->
+	<bean id="shopappDaoTarget" class="platform.daoImpl.ShopappDaoImpl"
+		singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<bean id="shopappDao"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref local="shopappDaoTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="socialNewsSourceDao"
+		class="platform.social.dao.impl.SocialNewsSourceDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<bean id="newscategoryDao"
+		class="platform.daoImpl.NewscategoryDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+		<property name="socialNewsSourceDao">
+			<ref local="socialNewsSourceDao" />
+		</property>
+	</bean>
+
+	<!-- ========================= Class InfonewsDaoImpl: CONFIGURE ========================= -->
+	<bean id="infonewsDao" class="platform.daoImpl.InfonewsDaoImpl"
+		singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<!-- ========================= Class InfonewsLogic: CONFIGURE ========================= -->
+	<bean id="infonewsLogic"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="target">
+			<bean class="platform.logicImpl.InfonewsLogicImpl"
+				singleton="true">
+				<property name="infonewsDao">
+					<ref bean="infonewsDao" />
+				</property>
+			</bean>
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- ========================= Class Hotcategory: CONFIGURE ========================= -->
+	<bean id="hotcategoryDao"
+		class="platform.daoImpl.HotcategoryDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<!-- ======hotcategoryLogic: CONFIGURE ====== -->
+	<bean id="hotcategoryLogic"
+		class="platform.logicImpl.HotcategoryLogicImpl" singleton="true">
+		<property name="dao">
+			<ref local="hotcategoryDao" />
+		</property>
+		<property name="productcategoryLogic">
+			<ref local="productcategoryLogicTarget" />
+		</property>
+	</bean>
+
+	<!-- ========================= Class Comments: CONFIGURE ========================= -->
+	<bean id="commentsDao"
+		class="platform.social.dao.impl.CommentsDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<bean id="commentsLogic"
+		class="platform.social.logic.impl.CommentsLogicImpl" singleton="true"
+		autowire="byName">
+	</bean>
+
+	
+	<bean id="leavemessageDao"
+		class="platform.social.dao.impl.LeavemessageDaoImpl"
+		singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<bean id="leavemessageLogic"
+		class="platform.social.logic.impl.LeavemessageLogicImpl"
+		singleton="true" autowire="byName">
+	</bean>
+	
+	<bean id="usecommentDao"
+		class="platform.social.dao.impl.UsecommentDaoImpl" singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<!-- ========================= Class Comments: CONFIGURE ========================= -->
+	<bean id="socialoathtokenDao"
+		class="platform.social.dao.impl.SocialoathtokenDaoImpl"
+		singleton="true">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient_platform" />
+		</property>
+	</bean>
+
+	<bean id="socialoathtokenLogic"
+		class="platform.social.logic.impl.SocialoathtokenLogicImpl"
+		singleton="true" autowire="byName">
+	</bean>
+	
+	<bean id="socialNewsDao" class="platform.social.dao.impl.SocialNewsDaoImpl" singleton="true" lazy-init="true">
+	</bean>
+	
+	<bean id="socialNewsLogic"
+		class="platform.social.logic.impl.SocialNewsLogicImpl" singleton="true" lazy-init="true">
+		<property name="socialNewsSourceDao">
+			<ref local="socialNewsSourceDao" />
+		</property>
+		<property name="socialNewsDao">
+			<ref local="socialNewsDao" />
+		</property>
+	</bean>
+
+</beans>

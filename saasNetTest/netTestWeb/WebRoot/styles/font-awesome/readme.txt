@@ -1,0 +1,1 @@
+version: Font Awesome 4.3.0

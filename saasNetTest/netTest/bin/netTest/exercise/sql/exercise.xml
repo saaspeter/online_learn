@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Exercise">
+<!-- ###################### exerciseResult ########################## -->
+  <resultMap id="ExerciseResult" class="netTest.exercise.vo.Exercise">
+    <result column="exerID" property="exerid" jdbcType="BIGINT"/>
+    <result column="exerName" property="exername" jdbcType="VARCHAR"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="contentCateID" property="contentcateid" jdbcType="BIGINT"/>
+    <result column="productBaseID" property="productbaseid" jdbcType="BIGINT"/>
+    <result column="creatorID" property="creatorid" jdbcType="BIGINT"/>
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP"/>
+    <result column="version" property="version" jdbcType="INTEGER"/>
+    <result column="modiTime" property="moditime" jdbcType="TIMESTAMP"/>
+    <result column="totalScore" property="totalscore" jdbcType="REAL"/>
+    <result column="exerDesc" property="exerdesc" jdbcType="VARCHAR"/>
+
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="exerid"><![CDATA[ exerID=#exerid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="exername"><![CDATA[ exerName like CONCAT('%',#exername:VARCHAR#,'%') ]]></isNotEmpty>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="contentcateid">
+          <isEqual property="contentcateid" compareValue="-1">
+              contentCateID is null
+          </isEqual>
+          <isNotEqual property="contentcateid" compareValue="-1">
+              contentCateID=#contentcateid:BIGINT#
+          </isNotEqual>
+      </isNotNull>
+      <isNotNull prepend="and" property="productbaseid"><![CDATA[ productBaseID=#productbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="creatorid"><![CDATA[ creatorID=#creatorid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="createtime"><![CDATA[ createTime=#createtime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="and" property="version"><![CDATA[ version=#version:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="and" property="moditime"><![CDATA[ modiTime=#moditime:TIMESTAMP# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="prodidStr"><![CDATA[ productBaseID in ($prodidStr$) ]]></isNotEmpty>
+    </dynamic>
+  </sql>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="ExerciseResult" parameterClass="java.lang.Long"> 
+     select 
+         exerID,
+    exerName,
+    shopID,
+    contentCateID,
+    productBaseID,
+    creatorID,
+    createTime,version,modiTime,
+    totalScore,
+    exerDesc 
+     from exercise 
+     where exerID = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="ExerciseResult" parameterClass="netTest.exercise.dto.ExerciseQuery"> 
+     select 
+         exerID,
+    exerName,
+    shopID,
+    contentCateID,
+    productBaseID,
+    creatorID,
+    createTime,version,modiTime,
+    totalScore,
+    exerDesc
+     from exercise
+    <include refid="Exercise.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.exercise.vo.Exercise"> 
+     insert into exercise
+     (     exerID,
+    exerName,
+    shopID,
+    contentCateID,
+    productBaseID,
+    creatorID,
+    createTime,version,modiTime,
+    totalScore,
+    exerDesc ) 
+    values 
+     (     #exerid:BIGINT#, 
+    #exername:VARCHAR#, 
+    #shopid:BIGINT#, 
+    #contentcateid:BIGINT#, 
+    #productbaseid:BIGINT#, 
+    #creatorid:BIGINT#, 
+    #createtime:TIMESTAMP#, #version:INTEGER#,#moditime:TIMESTAMP#,
+    #totalscore:REAL#, 
+    #exerdesc:VARCHAR# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="exerid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.exercise.vo.Exercise"> 
+     update exercise
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="exername"><![CDATA[ exerName=#exername:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="contentcateid"><![CDATA[ contentCateID=#contentcateid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="productbaseid"><![CDATA[ productBaseID=#productbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="creatorid"><![CDATA[ creatorID=#creatorid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="createtime"><![CDATA[ createTime=#createtime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="version"><![CDATA[ version=#version:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="moditime"><![CDATA[ modiTime=#moditime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="totalscore"><![CDATA[ totalScore=#totalscore:REAL# ]]></isNotNull>
+      <isNotNull prepend="," property="exerdesc"><![CDATA[ exerDesc=#exerdesc:VARCHAR# ]]></isNotNull>
+    </dynamic> where exerID = #exerid:BIGINT#
+  </update>
+  
+  <!-- ###################### updateModInfo ########################## -->
+  <update id="updateModInfo" parameterClass="netTest.exercise.vo.Exercise"> 
+     update exercise set modiTime=#moditime:TIMESTAMP#, version = version+1 
+     where exerID = #exerid:BIGINT# and shopID=#shopid:BIGINT# 
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from exercise where exerID = #value#
+  </delete>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.exercise.dto.ExerciseQuery"> 
+     select count(*) from exercise
+     <include refid="Exercise.where_Clause"/>  
+  </select>
+    
+</sqlMap>

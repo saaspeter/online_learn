@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Paperques">
+<!-- ###################### PaperquesResult ########################## -->
+  <resultMap id="PaperquesResult" class="netTest.paper.vo.Paperques">
+    <result column="paperquesID" property="paperquesid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="paperID" property="paperid" jdbcType="BIGINT"/>
+    <result column="quesTypeID" property="questypeid" jdbcType="BIGINT"/>
+    <result column="quesType" property="questype" jdbcType="INTEGER"/>
+    <result column="quesCreateTime" property="quescreatetime" jdbcType="TIMESTAMP"/>
+    <result column="productBaseID" property="productbaseid" jdbcType="BIGINT"/>
+    <result column="paperQuesOrder" property="paperquesorder" jdbcType="INTEGER"/>
+    <result column="paperQuesScore" property="paperquesscore" jdbcType="REAL"/>
+    <result column="quesID" property="quesid" jdbcType="BIGINT"/>
+    <result column="wareID" property="wareid" jdbcType="BIGINT"/>
+  </resultMap>
+  
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="paperquesid"><![CDATA[ paperquesID=#paperquesid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="paperid"><![CDATA[ paperID=#paperid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="questypeid"><![CDATA[ quesTypeID=#questypeid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="questype"><![CDATA[ quesType=#questype:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="and" property="productbaseid"><![CDATA[ productBaseID=#productbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="paperquesscore"><![CDATA[ paperQuesScore=#paperquesscore:REAL# ]]></isNotNull>
+      <isNotNull prepend="and" property="quesid"><![CDATA[ quesID=#quesid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="wareid"><![CDATA[ wareID=#wareid:BIGINT# ]]></isNotNull>
+    </dynamic>
+  </sql>
+   
+  <!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="PaperquesResult" parameterClass="java.lang.Long"> 
+     select  paperquesID, shopID, paperID, quesTypeID, quesType, quesCreateTime, 
+             productBaseID, paperQuesOrder, paperQuesScore, quesID, wareID  
+     from PaperQues where paperquesID = #value#
+  </select>
+  
+  <!-- ###################### qryByPaperPatt ########################## -->
+  <select id="qryByPaperPatt" resultMap="PaperquesResult" parameterClass="netTest.paper.dto.PaperquesQuery"> 
+     select paperquesID, shopID, paperID, quesTypeID, quesType, quesCreateTime, 
+            productBaseID, paperQuesOrder, paperQuesScore, quesID, wareID    
+     from PaperQues 
+     where paperID=#paperid:BIGINT# and quesTypeID=#questypeid:BIGINT# 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.paper.vo.Paperques"> 
+     insert into PaperQues
+     ( paperquesID,
+    shopID,
+    paperID,
+    quesTypeID,
+    quesType,
+    quesCreateTime,
+    productBaseID,
+    paperQuesOrder,
+    paperQuesScore,
+    quesID, wareID ) 
+    values 
+     ( #paperquesid:BIGINT#, 
+    #shopid:BIGINT#, 
+    #paperid:BIGINT#, 
+    #questypeid:BIGINT#,
+    #questype:INTEGER#, 
+    #quescreatetime:TIMESTAMP#, 
+    #productbaseid:BIGINT#, 
+    #paperquesorder:INTEGER#, 
+    #paperquesscore:REAL#, 
+    #quesid:BIGINT#, #wareid:BIGINT# )
+	  <selectKey resultClass="java.lang.Long" keyProperty="paperquesid" >  
+          SELECT   LAST_INSERT_ID()  
+      </selectKey> 
+  </insert>
+  
+  <!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.paper.vo.Paperques"> 
+     update PaperQues
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="quescreatetime"><![CDATA[ quesCreateTime=#quescreatetime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="paperquesorder"><![CDATA[ paperQuesOrder=#paperquesorder:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="paperquesscore"><![CDATA[ paperQuesScore=#paperquesscore:REAL# ]]></isNotNull>
+    </dynamic> where paperquesID = #paperquesid:BIGINT#
+  </update>
+  
+  <!-- ###################### updateScoreByPatt ########################## -->
+  <update id="updateScoreByPatt" parameterClass="netTest.paper.vo.Paperques"> 
+     update PaperQues set paperQuesScore = #paperquesscore:REAL# 
+     where shopID=#shopid:BIGINT# and paperID=#paperid:BIGINT# and quesTypeID=#questypeid:BIGINT# 
+  </update>
+  
+  <!-- ###################### updateFileurl ########################## -->
+  <update id="updateFileurl" parameterClass="netTest.wareques.vo.Question"> 
+     update PaperQues set fileUrl=#fileurl:VARCHAR# 
+     where quesID = #quesid:BIGINT#
+  </update>
+  
+  <!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from PaperQues where paperquesID = #value#
+  </delete>
+  
+  <!-- ###################### delByPaperid ########################## -->
+  <delete id="delByPaperid" parameterClass="java.lang.Long"> 
+     delete from PaperQues where paperID = #value# 
+  </delete>
+      
+  <!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.paper.dto.PaperquesQuery"> 
+     select count(*) from PaperQues
+     <include refid="Paperques.where_Clause"/>  
+  </select>
+  
+    <!-- ###################### qryOptnumByPatt ########################## -->
+  <select id="qryOptnumByPatt" resultClass="java.lang.Integer" parameterClass="netTest.paper.dto.PaperquesQuery"> 
+     select  sum(quesOptNum) from Question 
+     where exists (select 1 from PaperQues where PaperQues.quesID=Question.quesID
+                   and PaperQues.paperID=#paperid:BIGINT# and PaperQues.shopID=#shopid:BIGINT# 
+                   and PaperQues.quesTypeID=#questypeid:BIGINT# ) 
+  </select>
+  
+  <!-- ###################### qryPaperquesByQuesID ########################## -->
+  <select id="qryPaperquesByQuesID" resultMap="PaperquesResult" parameterClass="netTest.paper.vo.Paperques"> 
+     select  paperquesID, shopID, paperID, quesTypeID, quesType, quesCreateTime, 
+             productBaseID, paperQuesOrder, paperQuesScore, quesID, wareID  
+     from PaperQues  where shopID=#shopid:BIGINT# 
+     <iterate prepend="AND" property="quesidlist"
+			open="(" close=")" conjunction="OR">
+			quesID = #quesidlist[]#
+	 </iterate>
+     <dynamic> 
+        <isNotNull prepend="and" property="paperid"><![CDATA[ paperID=#paperid:BIGINT# ]]></isNotNull>
+     </dynamic>
+  </select>
+  
+  <!-- ###################### qryPaperquesByOneQuesID ########################## -->
+  <select id="qryPaperquesByOneQuesID" resultMap="PaperquesResult" parameterClass="netTest.paper.vo.Paperques"> 
+     select  paperquesID, shopID, paperID, quesTypeID, quesType, quesCreateTime, 
+             productBaseID, paperQuesOrder, paperQuesScore, quesID, wareID  
+     from PaperQues  where quesID = #quesid:BIGINT# and paperID=#paperid:BIGINT# 
+  </select>
+    
+</sqlMap>

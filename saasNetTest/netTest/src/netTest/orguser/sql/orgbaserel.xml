@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Orgbaserel">
+<!-- ###################### orgbaserelResult ########################## -->
+  <resultMap id="OrgbaserelResult" class="netTest.orguser.vo.Orgbaserel">
+    <result column="orgBaseRelID" property="orgbaserelid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="parentID" property="parentid" jdbcType="BIGINT"/>
+    <result column="childID" property="childid" jdbcType="BIGINT"/>
+    <result column="relType" property="reltype" jdbcType="SMALLINT"/>
+
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="orgbaserelid"><![CDATA[ orgBaseRelID=#orgbaserelid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="parentid"><![CDATA[ parentID=#parentid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="childid"><![CDATA[ childID=#childid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="reltype"><![CDATA[ relType=#reltype:SMALLINT# ]]></isNotNull>
+
+    </dynamic>
+  </sql>
+  
+<!-- ###################### selectAll ########################## -->
+  <select id="selectAll" resultMap="OrgbaserelResult"> 
+     select 
+         orgBaseRelID,
+    shopID,
+    parentID,
+    childID,
+    relType 
+     from orgbaserel
+  </select>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="OrgbaserelResult" parameterClass="java.lang.Long"> 
+     select 
+         orgBaseRelID,
+    shopID,
+    parentID,
+    childID,
+    relType 
+     from orgbaserel 
+     where orgBaseRelID = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="OrgbaserelResult" parameterClass="netTest.orguser.dto.OrgbaserelQuery"> 
+     select 
+         orgBaseRelID,
+    shopID,
+    parentID,
+    childID,
+    relType
+     from orgbaserel
+    <include refid="Orgbaserel.where_Clause"/>  
+    <isNotNull property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotNull> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.orguser.vo.Orgbaserel"> 
+     insert into orgbaserel
+     (     orgBaseRelID,
+    shopID,
+    parentID,
+    childID,
+    relType ) 
+    values 
+     (     #orgbaserelid:BIGINT#, 
+    #shopid:BIGINT#, 
+    #parentid:BIGINT#, 
+    #childid:BIGINT#, 
+    #reltype:SMALLINT# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="orgbaserelid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.orguser.vo.Orgbaserel"> 
+     update orgbaserel
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="parentid"><![CDATA[ parentID=#parentid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="childid"><![CDATA[ childID=#childid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="reltype"><![CDATA[ relType=#reltype:SMALLINT# ]]></isNotNull>
+
+    </dynamic> where orgBaseRelID = #orgbaserelid:BIGINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from orgbaserel where orgBaseRelID = #value#
+  </delete>
+  
+<!-- ###################### deleteByVO ########################## -->
+  <delete id="deleteByVO" parameterClass="netTest.orguser.dto.OrgbaserelQuery"> 
+     delete from orgbaserel
+     <include refid="Orgbaserel.where_Clause"/> 
+  </delete>
+  
+<!-- ###################### selectAllCount ########################## -->
+  <select id="selectAllCount" resultClass="java.lang.Integer"> 
+     select count(*) from orgbaserel
+  </select>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.orguser.dto.OrgbaserelQuery"> 
+     select count(*) from orgbaserel
+     <include refid="Orgbaserel.where_Clause"/>  
+     <isNotNull property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotNull> 
+  </select>
+    
+</sqlMap>

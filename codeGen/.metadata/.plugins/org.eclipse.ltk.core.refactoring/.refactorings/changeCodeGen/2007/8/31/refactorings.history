@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit 'demo.template.daoImplTemplate.java' to 'daoImplTemplate_withBlobs.java'&#13;&#10;- Original element: 'demo.template.daoImplTemplate.java'&#13;&#10;- Renamed element: 'demo.template.daoImplTemplate_withBlobs.java'" description="Rename compilation unit 'daoImplTemplate.java'" flags="589830" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;demo.template{daoImplTemplate.java" name="daoImplTemplate_withBlobs.java" stamp="1186222993296" version="1.0"/>
+<refactoring comment="Rename compilation unit 'demo.template.daoTemplate.java' to 'daoTemplate_withBlobs.java'&#13;&#10;- Original element: 'demo.template.daoTemplate.java'&#13;&#10;- Renamed element: 'demo.template.daoTemplate_withBlobs.java'" description="Rename compilation unit 'daoTemplate.java'" flags="589830" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;demo.template{daoTemplate.java" name="daoTemplate_withBlobs.java" stamp="1186223020828" version="1.0"/>
+</session>

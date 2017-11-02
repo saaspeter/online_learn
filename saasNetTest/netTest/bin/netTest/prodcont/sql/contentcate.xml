@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Contentcate">
+<!-- ###################### contentcateResult ########################## -->
+  <resultMap id="ContentcateResult" class="netTest.prodcont.vo.Contentcate">
+    <result column="contentCateID" property="contentcateid" jdbcType="BIGINT"/>
+    <result column="productBaseID" property="productbaseid" jdbcType="BIGINT"/>
+    <result column="contentCateName" property="contentcatename" jdbcType="VARCHAR"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="description" property="description" jdbcType="VARCHAR"/>
+    <result column="pID" property="pid" jdbcType="BIGINT"/>
+    <result column="path" property="path" jdbcType="VARCHAR"/>
+    <result column="disOrder" property="disorder" jdbcType="INTEGER"/>
+
+  </resultMap>
+  
+  <resultMap class="netTest.prodcont.vo.Contentcate" id="ContentcateResultEx" extends="Contentcate.ContentcateResult">
+    <result column="childnum" property="childnum" jdbcType="INTEGER"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="contentcateid"><![CDATA[ contentCateID=#contentcateid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="productbaseid"><![CDATA[ productBaseID=#productbaseid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="contentcatename"><![CDATA[ contentCateName=#contentcatename:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="description"><![CDATA[ description=#description:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="pid"><![CDATA[ pID=#pid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="path"><![CDATA[ path=#path:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="disorder"><![CDATA[ disOrder=#disorder:INTEGER# ]]></isNotNull>
+
+    </dynamic>
+  </sql>
+    
+  <!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="ContentcateResult" parameterClass="java.lang.Long"> 
+     select 
+         contentCateID,
+    productBaseID,
+    contentCateName,
+    shopID,
+    description,
+    pID,
+    path,
+    disOrder 
+     from contentcate 
+     where contentCateID = #value#
+  </select>
+  
+  <!-- ###################### selectByPKStr ########################## -->
+  <select id="selectByPKStr" resultMap="ContentcateResult" parameterClass="java.lang.String"> 
+     select 
+         contentCateID,
+    productBaseID,
+    contentCateName,
+    shopID,
+    description,
+    pID,
+    path,
+    disOrder 
+     from contentcate 
+     where contentCateID in($value$) 
+  </select>
+  
+  <!-- ###################### selNameByID ########################## -->
+  <select id="selNameByID" resultClass="java.lang.String" parameterClass="java.lang.Long"> 
+     select  contentCateName  from contentcate 
+     where contentCateID = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="ContentcateResult" parameterClass="netTest.prodcont.dto.ContentcateQuery"> 
+     select 
+         contentCateID,
+    productBaseID,
+    contentCateName,
+    shopID,
+    description,
+    pID,
+    path,
+    disOrder
+     from contentcate
+    <include refid="Contentcate.where_Clause"/>  
+    <![CDATA[ order by IF(ISNULL(disOrder),1,0),disOrder  ]]> 
+  </select>
+  
+  <!-- ###################### selectAllCateByProd ########################## -->
+  <select id="selectAllCateByProd" resultMap="ContentcateResult" parameterClass="java.lang.Long"> 
+     select  contentCateID, productBaseID, contentCateName,
+    		 shopID, description,pID, path, disOrder 
+     from contentcate 
+     where productBaseID = #value# order by disOrder
+  </select>
+  
+  <!-- ###################### qryChildNodes ########################## -->
+  <select id="qryChildNodes" resultMap="ContentcateResultEx" parameterClass="netTest.prodcont.dto.ContentcateQuery"> 
+     select  a.contentCateID,a.productBaseID,a.contentCateName,a.shopID,a.description,
+             a.pID,a.path,a.disOrder,(select count(*) from contentcate b where b.pID=a.contentCateID) as childnum 
+     from contentcate a where a.pID=#pid:BIGINT# and a.productBaseID=#productbaseid:BIGINT# order by disOrder 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.prodcont.vo.Contentcate"> 
+     insert into contentcate
+     (     contentCateID,
+    productBaseID,
+    contentCateName,
+    shopID,
+    description,
+    pID,
+    path,
+    disOrder ) 
+    values 
+     (     #contentcateid:BIGINT#, 
+    #productbaseid:BIGINT#, 
+    #contentcatename:VARCHAR#, 
+    #shopid:BIGINT#, 
+    #description:VARCHAR#, 
+    #pid:BIGINT#, 
+    #path:VARCHAR#, 
+    #disorder:INTEGER# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="contentcateid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.prodcont.vo.Contentcate"> 
+     update contentcate
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="productbaseid"><![CDATA[ productBaseID=#productbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="contentcatename"><![CDATA[ contentCateName=#contentcatename:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="description"><![CDATA[ description=#description:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="pid"><![CDATA[ pID=#pid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="path"><![CDATA[ path=#path:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="disorder"><![CDATA[ disOrder=#disorder:INTEGER# ]]></isNotNull>
+    </dynamic> where contentCateID = #contentcateid:BIGINT#
+  </update>
+  
+  <!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from contentcate where contentCateID = #value#
+  </delete>
+  
+  <!-- ###################### deleteByProd ########################## -->
+  <delete id="deleteByProd" parameterClass="java.lang.Long"> 
+     delete from contentcate where productBaseID = #value#
+  </delete>
+  
+  <!-- ###################### deleteByPkPath ########################## -->
+  <delete id="deleteByPkPath" parameterClass="java.lang.String"> 
+     delete from contentcate where path like CONCAT('%',#value:VARCHAR#,'%') 
+  </delete>
+  
+ <!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.prodcont.dto.ContentcateQuery"> 
+     select count(*) from contentcate
+     <include refid="Contentcate.where_Clause"/>  
+  </select>
+  
+  <!-- ###################### getCateNotExistInLearncontent ########################## -->
+  <select id="getCateNotExistInLearncontent" resultMap="ContentcateResult" parameterClass="java.lang.Long"> 
+     select a.contentCateID, a.productBaseID, a.contentCateName, a.shopID, 
+     		a.description, a.pID, a.path, a.disOrder 
+            from contentcate a where a.productBaseID=#productbaseid:BIGINT#  
+         and not exists(select 1 from learncontent b where a.contentCateID=b.contentCateID 
+                    and b.productBaseID=#productbaseid:BIGINT# and b.status=1);
+  </select>
+  
+  <!-- ###################### getLearnCountInCate ########################## -->
+  <select id="getLearnCountInCate" resultClass="java.lang.Integer" parameterClass="netTest.prodcont.dto.ContentcateQuery"> 
+     select count(1) from learncontent where productBaseID=#productbaseid:BIGINT#
+                                         and contentCateID=#contentcateid:BIGINT#;
+  </select>
+    
+</sqlMap>

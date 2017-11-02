@@ -1,0 +1,127 @@
+.listPage{
+
+}
+
+#functionLineDiv{
+	background-color: #DCEAFC;
+}
+
+#functionButtonDiv{
+
+}
+
+#functionButtonDiv ul{
+
+}
+
+#functionButtonDiv li{
+
+}
+
+#help{
+
+}
+
+#searchDiv{
+
+}
+
+#pageNumLineDiv{
+
+}
+
+#displayMessDiv{
+    color:#FF0000;
+    background-color:#EEEEEE;
+}
+
+#DataTableDiv{
+
+}
+
+.dashLine{
+
+}
+
+.listDataTable {
+   background-color:#FFFFFF;
+   border-collapse: separate; 
+}
+
+.listDataTable tbody tr:HOVER{
+	background-color:#FFFFCC;
+}
+
+.listDataTable td{
+   padding-left:2px;
+   padding-right:2px;
+   padding-top: 8px;
+   padding-bottom: 8px;
+   empty-cells:show;
+   border-bottom: dashed 1px #cccccc;
+}
+
+/*** 列表信息链接的样式 ***/
+.listDataTable a {
+
+}
+/*** 列表信息链接中鼠标Over的样式 ***/
+.listDataTable a:hover {
+   
+}
+
+.listDataTableHead {
+   background-color:#AACEF2;
+   font-weight: bold;
+}
+
+.listDataTableHead td{
+   padding-top: 8px;
+   padding-bottom: 8px;
+   margin-bottom: 20px;
+}
+
+#complexSearchDiv{
+	background-color: #DCEAFC;
+}
+
+/*** 奇数行信息：定义“列表信息表格”table中的奇数行信息的tr ***/
+.oddRow {
+   width: 100%;
+   color:#000000;
+   background-color: #ffffff;
+   height:20px;
+}
+/*** 偶数行信息：定义“列表信息表格”table中的偶数行信息的tr ***/
+.evenRow {
+   width: 100%;
+   color:#000000;
+   text-align:left;
+   background-color: #ECF5FF;
+   height:20px;
+}
+.clickedRow {
+   width: 100%;
+   color:#000000;
+   text-align:left;
+   background-color: #FFFFF4;
+   height:20px;
+}
+
+.readonly{
+	background-color: #efefef;
+}
+
+.pageNumberNormal{
+   padding: 3px; margin: 3px; border: solid 1px #51A6BB;
+}
+
+.pageNumberPress{
+   padding: 3px; margin: 3px;text-decoration: none; 
+   font-weight: bold;
+}
+
+.bigButton{
+	height: 30px;
+	font-size: large;
+}

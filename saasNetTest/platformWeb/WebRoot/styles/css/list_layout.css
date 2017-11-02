@@ -1,0 +1,155 @@
+
+.{
+    margin:0px;
+}
+
+.listPage{
+    width:100%;
+}
+
+.listDataTable{
+    width: 100%;
+   	border:0px;
+	cellpadding:0px;
+	cellspacing:0px;
+	text-align:left;
+    align:middle;
+}
+
+
+.listDataTableHead {
+   width: 100%;
+}
+.listDataTableHead td{
+   white-space:nowrap;
+}
+
+#firstLineDiv{
+	margin:2px;
+	padding:2px;
+	clear:both;   	
+}
+
+#searchDiv{
+	float:right;
+    text-align:right;
+}
+
+#help{
+    float:right;
+    margin:0,2px;
+}
+
+#toUrl{
+    float:right;
+    margin:0,2px;
+}
+
+#complexSearchDiv{
+    display:none;	
+    clear:both;
+    margin:2px;
+    width:100%;
+	text-align: right;
+}
+
+.complexSearchTable{
+	margin-right: 25px;
+}
+
+.bottomFunDiv{
+	background-color: #DCEAFC;
+    clear:both;
+    height:28px;
+	margin:2px;
+    text-align:center;
+}
+
+.bottomFunDiv ul{
+	margin:2px;
+	padding:2px;
+}
+
+.bottomFunDiv ul li{
+    display: inline;
+	list-style-type: none;
+}
+
+#functionLineDiv{
+    clear:both;
+    height:28px;
+	margin:2px;
+	padding:2px;
+	padding-bottom: 0px;
+	padding-top: 0px
+	border:1px solid #CCCCCC;
+}
+
+#functionButtonDiv{
+    float:left;
+    clear:left;
+}
+
+#functionButtonDiv ul{
+	margin:2px;
+	padding:2px;
+}
+
+#functionButtonDiv li{
+    display: inline;
+	list-style-type: none;
+}
+
+#pageNumLineDiv{
+	float:right;
+	clear:right;
+    text-align:right;
+}
+
+#errorDisplayDiv{
+	text-align:center;    
+	padding:1px;
+}
+
+#DataTableDiv{
+	float:left;
+	clear:both;
+    vertical-align:top;
+    width: 100%;
+}
+
+.dashLine{
+   margin:4px auto;
+   border-top:1px dashed #000000;
+}
+
+.titleBar{
+    text-align:center;
+	font-size:1.5em;
+	background-color:#F5FBFE;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#buttomDiv{
+	clear: both;
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	text-align: center;
+	margin-top:20px;
+}
+
+.navlistBar{
+   width:100%;
+   height:27px;
+   background-color:#F5FBFE;
+   padding-top:7px;
+   vertical-align:top;
+   font-size: 11pt;
+}
+
+.navlistBar a{
+   text-decoration: none;
+}
+

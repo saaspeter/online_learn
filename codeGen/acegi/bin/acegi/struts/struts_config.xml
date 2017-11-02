@@ -1,0 +1,310 @@
+<form-bean name="resourcesForm" type="acegiWeb.form.ResourcesForm" />
+<form-bean name="rolesForm" type="acegiWeb.form.RolesForm" />
+<form-bean name="usersForm" type="acegiWeb.form.UsersForm" />
+<form-bean name="role_rescForm" type="acegiWeb.form.Role_rescForm" />
+<form-bean name="user_roleForm" type="acegiWeb.form.User_roleForm" />
+<form-bean name="custorderForm" type="acegiWeb.form.CustorderForm" />
+<form-bean name="rolesvalueForm" type="acegiWeb.form.RolesvalueForm" />
+<form-bean name="menusForm" type="acegiWeb.form.MenusForm" />
+<form-bean name="resourcesvalueForm" type="acegiWeb.form.ResourcesvalueForm" />
+<form-bean name="menusvalueForm" type="acegiWeb.form.MenusvalueForm" />
+<form-bean name="resclinkForm" type="acegiWeb.form.ResclinkForm" />
+
+
+      
+    <!-- resources begin -->
+    <action parameter="listResources" path="/{[#folder#]}/listResources" name="resourcesForm" type="acegiWeb.action.ResourcesAction">
+       <forward name="list" path="/{[#folder#]}/resources_list.jsp"></forward>
+    </action>
+    
+    <action parameter="saveResources" path="/{[#folder#]}/saveResources" name="resourcesForm" type="acegiWeb.action.ResourcesAction">
+       <forward name="list" path="/{[#folder#]}/resources_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editResources" path="/{[#folder#]}/editResources" name="resourcesForm" type="acegiWeb.action.ResourcesAction">
+       <forward name="addEditPage" path="/{[#folder#]}/resources_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewResources" path="/{[#folder#]}/viewResources" name="resourcesForm" type="acegiWeb.action.ResourcesAction">
+        <forward name="viewPage" path="/{[#folder#]}/resources_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addResources" path="/{[#folder#]}/addresources" name="resourcesForm" type="acegiWeb.action.ResourcesAction">
+       <forward name="addEditPage" path="/{[#folder#]}/resources_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteResources" path="/{[#folder#]}/deleteresources" name="resourcesForm" type="acegiWeb.action.ResourcesAction">
+       <forward name="list" path="/{[#folder#]}/resources_list.jsp"></forward>
+    </action>
+    <!-- resources end -->
+
+      
+    <!-- roles begin -->
+    <action parameter="listRoles" path="/{[#folder#]}/listRoles" name="rolesForm" type="acegiWeb.action.RolesAction">
+       <forward name="list" path="/{[#folder#]}/roles_list.jsp"></forward>
+    </action>
+    
+    <action parameter="saveRoles" path="/{[#folder#]}/saveRoles" name="rolesForm" type="acegiWeb.action.RolesAction">
+       <forward name="list" path="/{[#folder#]}/roles_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editRoles" path="/{[#folder#]}/editRoles" name="rolesForm" type="acegiWeb.action.RolesAction">
+       <forward name="addEditPage" path="/{[#folder#]}/roles_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewRoles" path="/{[#folder#]}/viewRoles" name="rolesForm" type="acegiWeb.action.RolesAction">
+        <forward name="viewPage" path="/{[#folder#]}/roles_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addRoles" path="/{[#folder#]}/addroles" name="rolesForm" type="acegiWeb.action.RolesAction">
+       <forward name="addEditPage" path="/{[#folder#]}/roles_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteRoles" path="/{[#folder#]}/deleteroles" name="rolesForm" type="acegiWeb.action.RolesAction">
+       <forward name="list" path="/{[#folder#]}/roles_list.jsp"></forward>
+    </action>
+    <!-- roles end -->
+
+      
+    <!-- users begin -->
+    <action parameter="listUsers" path="/{[#folder#]}/listUsers" name="usersForm" type="acegiWeb.action.UsersAction">
+       <forward name="list" path="/{[#folder#]}/users_list.jsp"></forward>
+    </action>
+    
+    <action parameter="saveUsers" path="/{[#folder#]}/saveUsers" name="usersForm" type="acegiWeb.action.UsersAction">
+       <forward name="list" path="/{[#folder#]}/users_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editUsers" path="/{[#folder#]}/editUsers" name="usersForm" type="acegiWeb.action.UsersAction">
+       <forward name="addEditPage" path="/{[#folder#]}/users_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewUsers" path="/{[#folder#]}/viewUsers" name="usersForm" type="acegiWeb.action.UsersAction">
+        <forward name="viewPage" path="/{[#folder#]}/users_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addUsers" path="/{[#folder#]}/addusers" name="usersForm" type="acegiWeb.action.UsersAction">
+       <forward name="addEditPage" path="/{[#folder#]}/users_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteUsers" path="/{[#folder#]}/deleteusers" name="usersForm" type="acegiWeb.action.UsersAction">
+       <forward name="list" path="/{[#folder#]}/users_list.jsp"></forward>
+    </action>
+    <!-- users end -->
+
+      
+    <!-- role_resc begin -->
+    <action parameter="listRole_resc" path="/{[#folder#]}/listRole_resc" name="role_rescForm" type="acegiWeb.action.Role_rescAction">
+       <forward name="list" path="/{[#folder#]}/role_resc_list.jsp"></forward>
+    </action>
+    
+    <action parameter="saveRole_resc" path="/{[#folder#]}/saveRole_resc" name="role_rescForm" type="acegiWeb.action.Role_rescAction">
+       <forward name="list" path="/{[#folder#]}/role_resc_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editRole_resc" path="/{[#folder#]}/editRole_resc" name="role_rescForm" type="acegiWeb.action.Role_rescAction">
+       <forward name="addEditPage" path="/{[#folder#]}/role_resc_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewRole_resc" path="/{[#folder#]}/viewRole_resc" name="role_rescForm" type="acegiWeb.action.Role_rescAction">
+        <forward name="viewPage" path="/{[#folder#]}/role_resc_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addRole_resc" path="/{[#folder#]}/addrole_resc" name="role_rescForm" type="acegiWeb.action.Role_rescAction">
+       <forward name="addEditPage" path="/{[#folder#]}/role_resc_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteRole_resc" path="/{[#folder#]}/deleterole_resc" name="role_rescForm" type="acegiWeb.action.Role_rescAction">
+       <forward name="list" path="/{[#folder#]}/role_resc_list.jsp"></forward>
+    </action>
+    <!-- role_resc end -->
+
+      
+    <!-- user_role begin -->
+    <action parameter="listUser_role" path="/{[#folder#]}/listUser_role" name="user_roleForm" type="acegiWeb.action.User_roleAction">
+       <forward name="list" path="/{[#folder#]}/user_role_list.jsp"></forward>
+    </action>
+    
+    <action parameter="saveUser_role" path="/{[#folder#]}/saveUser_role" name="user_roleForm" type="acegiWeb.action.User_roleAction">
+       <forward name="list" path="/{[#folder#]}/user_role_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editUser_role" path="/{[#folder#]}/editUser_role" name="user_roleForm" type="acegiWeb.action.User_roleAction">
+       <forward name="addEditPage" path="/{[#folder#]}/user_role_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewUser_role" path="/{[#folder#]}/viewUser_role" name="user_roleForm" type="acegiWeb.action.User_roleAction">
+        <forward name="viewPage" path="/{[#folder#]}/user_role_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addUser_role" path="/{[#folder#]}/adduser_role" name="user_roleForm" type="acegiWeb.action.User_roleAction">
+       <forward name="addEditPage" path="/{[#folder#]}/user_role_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteUser_role" path="/{[#folder#]}/deleteuser_role" name="user_roleForm" type="acegiWeb.action.User_roleAction">
+       <forward name="list" path="/{[#folder#]}/user_role_list.jsp"></forward>
+    </action>
+    <!-- user_role end -->
+
+      
+    <!-- custorder begin -->
+    <action parameter="listCustorder" path="/{[#folder#]}/listCustorder" name="custorderForm" type="acegiWeb.action.CustorderAction">
+       <forward name="list" path="/{[#folder#]}/custorder_list.jsp"></forward>
+    </action>
+    
+    <action parameter="saveCustorder" path="/{[#folder#]}/saveCustorder" name="custorderForm" type="acegiWeb.action.CustorderAction">
+       <forward name="list" path="/{[#folder#]}/custorder_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editCustorder" path="/{[#folder#]}/editCustorder" name="custorderForm" type="acegiWeb.action.CustorderAction">
+       <forward name="addEditPage" path="/{[#folder#]}/custorder_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewCustorder" path="/{[#folder#]}/viewCustorder" name="custorderForm" type="acegiWeb.action.CustorderAction">
+        <forward name="viewPage" path="/{[#folder#]}/custorder_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addCustorder" path="/{[#folder#]}/addcustorder" name="custorderForm" type="acegiWeb.action.CustorderAction">
+       <forward name="addEditPage" path="/{[#folder#]}/custorder_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteCustorder" path="/{[#folder#]}/deletecustorder" name="custorderForm" type="acegiWeb.action.CustorderAction">
+       <forward name="list" path="/{[#folder#]}/custorder_list.jsp"></forward>
+    </action>
+    <!-- custorder end -->
+
+      
+    <!-- rolesvalue begin -->
+    <action parameter="listRolesvalue" path="/{[#folder#]}/listRolesvalue" name="rolesvalueForm" type="acegiWeb.action.RolesvalueAction">
+       <forward name="list" path="/{[#folder#]}/rolesvalue_list.jsp"></forward>
+    </action>
+    
+    <action parameter="saveRolesvalue" path="/{[#folder#]}/saveRolesvalue" name="rolesvalueForm" type="acegiWeb.action.RolesvalueAction">
+       <forward name="list" path="/{[#folder#]}/rolesvalue_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editRolesvalue" path="/{[#folder#]}/editRolesvalue" name="rolesvalueForm" type="acegiWeb.action.RolesvalueAction">
+       <forward name="addEditPage" path="/{[#folder#]}/rolesvalue_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewRolesvalue" path="/{[#folder#]}/viewRolesvalue" name="rolesvalueForm" type="acegiWeb.action.RolesvalueAction">
+        <forward name="viewPage" path="/{[#folder#]}/rolesvalue_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addRolesvalue" path="/{[#folder#]}/addrolesvalue" name="rolesvalueForm" type="acegiWeb.action.RolesvalueAction">
+       <forward name="addEditPage" path="/{[#folder#]}/rolesvalue_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteRolesvalue" path="/{[#folder#]}/deleterolesvalue" name="rolesvalueForm" type="acegiWeb.action.RolesvalueAction">
+       <forward name="list" path="/{[#folder#]}/rolesvalue_list.jsp"></forward>
+    </action>
+    <!-- rolesvalue end -->
+
+      
+    <!-- menus begin -->
+    <action parameter="listMenus" path="/{[#folder#]}/listMenus" name="menusForm" type="acegiWeb.action.MenusAction">
+       <forward name="list" path="/{[#folder#]}/menus_list.jsp"></forward>
+    </action>
+    
+    <action parameter="saveMenus" path="/{[#folder#]}/saveMenus" name="menusForm" type="acegiWeb.action.MenusAction">
+       <forward name="list" path="/{[#folder#]}/menus_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editMenus" path="/{[#folder#]}/editMenus" name="menusForm" type="acegiWeb.action.MenusAction">
+       <forward name="addEditPage" path="/{[#folder#]}/menus_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewMenus" path="/{[#folder#]}/viewMenus" name="menusForm" type="acegiWeb.action.MenusAction">
+        <forward name="viewPage" path="/{[#folder#]}/menus_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addMenus" path="/{[#folder#]}/addmenus" name="menusForm" type="acegiWeb.action.MenusAction">
+       <forward name="addEditPage" path="/{[#folder#]}/menus_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteMenus" path="/{[#folder#]}/deletemenus" name="menusForm" type="acegiWeb.action.MenusAction">
+       <forward name="list" path="/{[#folder#]}/menus_list.jsp"></forward>
+    </action>
+    <!-- menus end -->
+
+      
+    <!-- resourcesvalue begin -->
+    <action parameter="listResourcesvalue" path="/{[#folder#]}/listResourcesvalue" name="resourcesvalueForm" type="acegiWeb.action.ResourcesvalueAction">
+       <forward name="list" path="/{[#folder#]}/resourcesvalue_list.jsp"></forward>
+    </action>
+    
+    <action parameter="saveResourcesvalue" path="/{[#folder#]}/saveResourcesvalue" name="resourcesvalueForm" type="acegiWeb.action.ResourcesvalueAction">
+       <forward name="list" path="/{[#folder#]}/resourcesvalue_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editResourcesvalue" path="/{[#folder#]}/editResourcesvalue" name="resourcesvalueForm" type="acegiWeb.action.ResourcesvalueAction">
+       <forward name="addEditPage" path="/{[#folder#]}/resourcesvalue_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewResourcesvalue" path="/{[#folder#]}/viewResourcesvalue" name="resourcesvalueForm" type="acegiWeb.action.ResourcesvalueAction">
+        <forward name="viewPage" path="/{[#folder#]}/resourcesvalue_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addResourcesvalue" path="/{[#folder#]}/addresourcesvalue" name="resourcesvalueForm" type="acegiWeb.action.ResourcesvalueAction">
+       <forward name="addEditPage" path="/{[#folder#]}/resourcesvalue_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteResourcesvalue" path="/{[#folder#]}/deleteresourcesvalue" name="resourcesvalueForm" type="acegiWeb.action.ResourcesvalueAction">
+       <forward name="list" path="/{[#folder#]}/resourcesvalue_list.jsp"></forward>
+    </action>
+    <!-- resourcesvalue end -->
+
+      
+    <!-- menusvalue begin -->
+    <action parameter="listMenusvalue" path="/{[#folder#]}/listMenusvalue" name="menusvalueForm" type="acegiWeb.action.MenusvalueAction">
+       <forward name="list" path="/{[#folder#]}/menusvalue_list.jsp"></forward>
+    </action>
+    
+    <action parameter="saveMenusvalue" path="/{[#folder#]}/saveMenusvalue" name="menusvalueForm" type="acegiWeb.action.MenusvalueAction">
+       <forward name="list" path="/{[#folder#]}/menusvalue_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editMenusvalue" path="/{[#folder#]}/editMenusvalue" name="menusvalueForm" type="acegiWeb.action.MenusvalueAction">
+       <forward name="addEditPage" path="/{[#folder#]}/menusvalue_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewMenusvalue" path="/{[#folder#]}/viewMenusvalue" name="menusvalueForm" type="acegiWeb.action.MenusvalueAction">
+        <forward name="viewPage" path="/{[#folder#]}/menusvalue_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addMenusvalue" path="/{[#folder#]}/addmenusvalue" name="menusvalueForm" type="acegiWeb.action.MenusvalueAction">
+       <forward name="addEditPage" path="/{[#folder#]}/menusvalue_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteMenusvalue" path="/{[#folder#]}/deletemenusvalue" name="menusvalueForm" type="acegiWeb.action.MenusvalueAction">
+       <forward name="list" path="/{[#folder#]}/menusvalue_list.jsp"></forward>
+    </action>
+    <!-- menusvalue end -->
+
+      
+    <!-- resclink begin -->
+    <action parameter="listResclink" path="/{[#folder#]}/listResclink" name="resclinkForm" type="acegiWeb.action.ResclinkAction">
+       <forward name="list" path="/{[#folder#]}/resclink_list.jsp"></forward>
+    </action>
+    
+    <action parameter="saveResclink" path="/{[#folder#]}/saveResclink" name="resclinkForm" type="acegiWeb.action.ResclinkAction">
+       <forward name="list" path="/{[#folder#]}/resclink_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editResclink" path="/{[#folder#]}/editResclink" name="resclinkForm" type="acegiWeb.action.ResclinkAction">
+       <forward name="addEditPage" path="/{[#folder#]}/resclink_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewResclink" path="/{[#folder#]}/viewResclink" name="resclinkForm" type="acegiWeb.action.ResclinkAction">
+        <forward name="viewPage" path="/{[#folder#]}/resclink_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addResclink" path="/{[#folder#]}/addresclink" name="resclinkForm" type="acegiWeb.action.ResclinkAction">
+       <forward name="addEditPage" path="/{[#folder#]}/resclink_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteResclink" path="/{[#folder#]}/deleteresclink" name="resclinkForm" type="acegiWeb.action.ResclinkAction">
+       <forward name="list" path="/{[#folder#]}/resclink_list.jsp"></forward>
+    </action>
+    <!-- resclink end -->
+

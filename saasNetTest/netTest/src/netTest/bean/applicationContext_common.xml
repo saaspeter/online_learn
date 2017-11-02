@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+  "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+  
+    <bean id="userLoginSessionLogic" class="netTest.common.logic.impl.UserLoginSessionLogicImpl">
+    </bean>  
+  
+    <!-- time schedule tasks -->
+    <bean id="sysScheduleTask" class="commonTool.jobTask.SystemJobTask">
+        <property name="jobList">
+            <list>
+	            <bean class="netTest.jobTask.UserProductJob" >
+	                <property name="userproductLogic" ref="userproductLogic"/>
+	            </bean>
+	            <bean class="netTest.jobTask.CleanDataJob" >
+	                <property name="learncontentLogic" ref="learncontentLogic"/>
+	                <property name="shoppostLogic" ref="shoppostLogic"/>
+	                <property name="testuserLogic" ref="testuserLogic"/>
+	                <property name="infonewsLogic" ref="infonewsLogic"/>
+	            </bean>
+	            <!-- here this job should be run in another time, need to do -->
+	            <bean class="netTest.jobTask.SocialNewsReadJob" />
+            </list>
+        </property>
+    </bean>
+  
+    <bean id="sysScheduleTaskDelegate" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+	    <property name="targetObject" ref="sysScheduleTask"/>
+	    <property name="targetMethod" value="execute"/>
+	    <property name="concurrent" value="false"/>
+    </bean>
+  
+    <bean id="sysScheduleTaskCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="sysScheduleTaskDelegate"/>
+        <!-- [秒] [分] [小时] [日] [月] [周] [年], GMT time, beijing time: AM 1:00 -->
+        <property name="cronExpression" value="0 00 17 * * ?"/>
+	</bean>
+	
+	<bean class= "org.springframework.scheduling.quartz.SchedulerFactoryBean">
+	    <property name="triggers">
+	       <list>
+              <ref bean="sysScheduleTaskCronTrigger"/>
+	       </list>
+	    </property>
+	</bean>
+
+</beans>

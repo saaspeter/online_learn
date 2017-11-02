@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources/>
+  <form-beans>
+	<form-bean name="deptinfoForm" type="netTestWeb.orguser.form.DeptinfoForm" />
+	<form-bean name="orgbaserelForm" type="netTestWeb.orguser.form.OrgbaserelForm" />
+	<form-bean name="orgbaseForm" type="netTestWeb.orguser.form.OrgbaseForm" />
+	<form-bean name="orglevelForm" type="netTestWeb.orguser.form.OrglevelForm" />
+	<form-bean name="orguserForm" type="netTestWeb.orguser.form.OrguserForm" />
+  </form-beans>
+
+  <global-exceptions>
+      <exception key="commonWeb.java.commonaction.errors.noLogin" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoLoginException" path="/login_forward.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.editPage.noSuchRecord" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoSuchRecordException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.resubmit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.ResubmitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.DaoException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="org.springframework.dao.DataAccessException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.Unauthorized" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoRightException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.LogicErr" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.LogicException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.InvalidVisit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.InvalideVisitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.SystemError" handler="commonWeb.base.StrutsExceptionHandler" type="java.lang.Throwable" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+  </global-exceptions>
+  
+  <global-forwards>
+      <forward name="errorPage" path="/pubs/errorPage.jsp" ></forward>
+      <forward name="messagePage" path="/pubs/message.jsp" ></forward>
+      <forward name="treeXml" path="/pubs/treeXml.jsp" ></forward>
+      <forward name="forwardToUrl" path="/pubs/forwardToUrl.jsp" ></forward>
+      <forward name="toUrl" path="/pubs/toUrl.jsp" ></forward>
+  </global-forwards>
+  
+  <action-mappings>
+             
+    <!-- DeptinfoAction start -->    
+    <action parameter="listdeptinfo" path="/org/listdeptinfo" name="deptinfoForm" type="netTestWeb.orguser.action.DeptinfoAction" scope="request">
+       <forward name="list" path="/org/deptinfo_list.jsp"></forward>
+    </action>
+    
+    <action parameter="adddeptinfo" path="/org/adddeptinfo" name="deptinfoForm" type="netTestWeb.orguser.action.DeptinfoAction" scope="request">
+       <forward name="addPage" path="/org/deptinfo_add.jsp"></forward>
+    </action>
+    
+    <action parameter="editdeptinfo" path="/org/editdeptinfo" name="deptinfoForm" type="netTestWeb.orguser.action.DeptinfoAction" scope="request">
+       <forward name="editPage" path="/org/deptinfo_edit.jsp"></forward>
+       <forward name="viewPage" path="/org/deptinfo_view.jsp"></forward>
+    </action>
+    
+    <action parameter="viewdeptinfo" path="/org/viewdeptinfo" name="deptinfoForm" type="netTestWeb.orguser.action.DeptinfoAction" scope="request">
+       <forward name="viewPage" path="/org/deptinfo_view.jsp"></forward>
+    </action>
+    
+    <action parameter="savedeptinfo" path="/org/savedeptinfo" name="deptinfoForm" type="netTestWeb.orguser.action.DeptinfoAction" scope="request">
+       <forward name="viewPage" path="/org/deptinfo_view.jsp"></forward>
+    </action>
+    
+    <action parameter="deldeptinfo" path="/org/deldeptinfo" name="deptinfoForm" type="netTestWeb.orguser.action.DeptinfoAction" scope="request">
+       
+    </action>
+
+    <!-- DeptinfoAction end -->
+
+    <!-- OrguserAction start --> 
+    <action parameter="listorguser" path="/orguser/listorguser" name="orguserForm" type="netTestWeb.orguser.action.OrguserAction" scope="request">
+       <forward name="deptuserlist" path="/orguser/deptuser_list.jsp"></forward>
+    </action>
+    
+    <action parameter="selectorguser" path="/orguser/selectorguser" name="orguserForm" type="netTestWeb.orguser.action.OrguserAction" scope="request">
+       <forward name="mulSelUsr" path="/orguser/mulSelUsr_list.jsp"></forward>
+    </action>
+    
+    <action parameter="savedeptuser" path="/orguser/savedeptuser" name="orguserForm" type="netTestWeb.orguser.action.OrguserAction" scope="request">
+
+    </action>
+    
+    <action parameter="editdeptuserPage" path="/orguser/editdeptuserPage" name="orguserForm" type="netTestWeb.orguser.action.OrguserAction" scope="request">
+       <forward name="editdeptuserPage" path="/orguser/deptuser_edit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewdeptuser" path="/orguser/viewdeptuser" name="orguserForm" type="netTestWeb.orguser.action.OrguserAction" scope="request">
+       <forward name="viewdeptuserPage" path="/orguser/deptuser_view.jsp"></forward>
+    </action>
+    
+    <action parameter="adddeptuserPage" path="/orguser/adddeptuserPage" name="orguserForm" type="netTestWeb.orguser.action.OrguserAction" scope="request">
+       <forward name="adddeptuserPage" path="/orguser/deptuser_add.jsp"></forward>
+    </action>
+    
+    <action parameter="delUserDept" path="/orguser/delUserDept" name="orguserForm" type="netTestWeb.orguser.action.OrguserAction" scope="request">
+       
+    </action>
+    
+    <action parameter="transferorguser" path="/orguser/transferorguser" name="orguserForm" type="netTestWeb.orguser.action.OrguserAction" scope="request">
+       
+    </action>
+    
+    <action parameter="putuserintodept" path="/orguser/putuserintodept" name="orguserForm" type="netTestWeb.orguser.action.OrguserAction" scope="request">
+    </action>
+    
+    <action parameter="toimportorguser" path="/orguser/toimportorguser" name="orguserForm" type="netTestWeb.orguser.action.OrguserAction" scope="request">
+        <forward name="importpage" path="/orguser/deptuser_import.jsp"></forward>
+    </action>
+    
+    <action parameter="importorguser" path="/orguser/importorguser" name="orguserForm" type="netTestWeb.orguser.action.OrguserAction" scope="request">
+        <forward name="importResultPage" path="/orguser/orguserImportResultPage.jsp"></forward>
+    </action>
+    <!-- OrguserAction start --> 
+    
+    <!-- OrgbaseAction start --> 
+    <action parameter="magorgmain" path="/org/magorgmain" name="orgbaseForm" type="netTestWeb.orguser.action.OrgbaseAction" scope="request">
+       <forward name="orgAndUserMain" path="/org/orgAndUserMain.jsp"></forward>
+    </action>
+    
+    <action parameter="magorgusermain" path="/org/magorgusermain" name="orgbaseForm" type="netTestWeb.orguser.action.OrgbaseAction" scope="request">
+       <forward name="orgAndUserMain" path="/org/orgAndUserMain.jsp"></forward>
+    </action>
+       
+    <action parameter="selectorgusermain" path="/org/selectorgusermain" name="orgbaseForm" type="netTestWeb.orguser.action.OrgbaseAction" scope="request">
+       <forward name="selectUserMain" path="/orguser/selectOrguserMain.jsp"></forward>
+    </action>
+    
+    <action parameter="geneorgtreexml" path="/org/geneorgtreexml" name="orgbaseForm" type="netTestWeb.orguser.action.OrgbaseAction" scope="request">
+    </action>
+    
+    <action parameter="selectorgtree" path="/org/selectorgtree" name="orgbaseForm" type="netTestWeb.orguser.action.OrgbaseAction" scope="request">
+       <forward name="selectTree" path="/org/selectOrg_tree.jsp"></forward>
+    </action>
+    
+    <action parameter="orgtreemag" path="/org/orgtreemag" name="orgbaseForm" type="netTestWeb.orguser.action.OrgbaseAction" scope="request">
+       <forward name="toTree" path="/org/org_tree.jsp"></forward>
+    </action>   
+    <!-- OrgbaseAction end -->
+
+  </action-mappings>
+
+  <message-resources parameter="netTestWeb.resource.PagetextResources" />
+  <message-resources key="BizKey" parameter="netTestWeb.resource.BizMessResources" />
+</struts-config>
+

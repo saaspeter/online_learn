@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Paperquestype">
+<!-- ###################### paperquestypeResult ########################## -->
+  <resultMap id="PaperquestypeResult" class="netTest.paper.vo.Paperquestype">
+    <result column="patternID" property="patternid" jdbcType="BIGINT"/>
+    <result column="paperID" property="paperid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="quesTypeID" property="questypeid" jdbcType="BIGINT"/>
+    <result column="quesType" property="questype" jdbcType="INTEGER"/>
+    <result column="quesTypeName" property="questypename" jdbcType="VARCHAR"/>
+    <result column="quesTypeNote" property="questypenote" jdbcType="VARCHAR"/>
+    <result column="patternQuesNum" property="patternquesnum" jdbcType="INTEGER"/>
+    <result column="quesScore" property="quesscore" jdbcType="REAL"/>
+    <result column="patternScore" property="patternscore" jdbcType="REAL"/>
+    <result column="pageSize" property="pagesize" jdbcType="INTEGER"/>
+    <result column="disOrder" property="disorder" jdbcType="INTEGER"/>
+
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="patternid"><![CDATA[ patternID=#patternid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="paperid"><![CDATA[ paperID=#paperid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="questypeid"><![CDATA[ quesTypeID=#questypeid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="questype"><![CDATA[ quesType=#questype:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="questypename"><![CDATA[ quesTypeName=#questypename:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="questypenote"><![CDATA[ quesTypeNote=#questypenote:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="patternquesnum"><![CDATA[ patternQuesNum=#patternquesnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="and" property="quesscore"><![CDATA[ quesScore=#quesscore:REAL# ]]></isNotNull>
+      <isNotNull prepend="and" property="patternscore"><![CDATA[ patternScore=#patternscore:REAL# ]]></isNotNull>
+      <isNotNull prepend="and" property="disorder"><![CDATA[ disOrder=#disorder:INTEGER# ]]></isNotNull>
+
+    </dynamic>
+  </sql>
+    
+  <!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="PaperquestypeResult" parameterClass="java.lang.Long"> 
+     select  patternID,paperID,quesTypeID,quesType,shopID,quesTypeName,quesTypeNote,
+             patternQuesNum,quesScore,patternScore,pageSize,disOrder 
+     from paperquestype 
+     where patternID = #value# 
+  </select>
+  
+  <!-- ###################### getMaxQuestypeid ########################## -->
+  <select id="getMaxQuestypeid" resultClass="java.lang.Long" parameterClass="netTest.paper.dto.PaperquestypeQuery"> 
+     select  max(quesTypeID) from paperquestype 
+     where shopID=#shopid:BIGINT# and paperID = #paperid:BIGINT# 
+  </select>
+    
+<!-- ###################### selectByLogicPK ########################## -->
+  <select id="selectByLogicPK" resultMap="PaperquestypeResult" parameterClass="netTest.paper.dto.PaperquestypeQuery"> 
+     select  patternID,paperID,quesTypeID,quesType,shopID,quesTypeName,quesTypeNote,
+             patternQuesNum,quesScore,patternScore,pageSize,disOrder 
+     from paperquestype 
+     where paperID = #paperid:BIGINT# 
+     and shopID=#shopid:BIGINT# and quesTypeID=#questypeid:BIGINT# 
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="PaperquestypeResult" parameterClass="netTest.paper.dto.PaperquestypeQuery"> 
+     select  patternID,paperID,quesTypeID,quesType,shopID,quesTypeName,
+             quesTypeNote,patternQuesNum,quesScore,patternScore,pageSize,disOrder
+     from paperquestype
+    <include refid="Paperquestype.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+  <!-- ###################### qryByPaperid ########################## -->
+  <select id="qryByPaperid" resultMap="PaperquestypeResult" parameterClass="java.lang.Long"> 
+     select  patternID,paperID,quesTypeID,quesType,shopID,quesTypeName,quesTypeNote,
+    	     patternQuesNum,quesScore,patternScore,pageSize,disOrder
+     from paperquestype where paperID = #value:BIGINT# 
+     order by IF(ISNULL(disorder),1,0),disorder 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.paper.vo.Paperquestype"> 
+     insert into paperquestype
+     ( patternID,paperID,
+     quesTypeID, 
+    quesType,
+    shopID,
+    quesTypeName,quesTypeNote,
+    patternQuesNum,
+    quesScore,
+    patternScore,pageSize 
+    <isNotNull property="disorder"> ,disOrder </isNotNull>
+     ) 
+    values 
+     ( #patternid:BIGINT#,#paperid:BIGINT#, 
+    #questypeid:BIGINT#,
+    #questype:INTEGER#, 
+    #shopid:BIGINT#, 
+    #questypename:VARCHAR#, 
+    #questypenote:VARCHAR#, 
+    #patternquesnum:INTEGER#, 
+    #quesscore:REAL#, 
+    #patternscore:REAL#, #pagesize:INTEGER# 
+    <isNotNull property="disorder"> ,#disorder:INTEGER# </isNotNull>
+     )
+    <selectKey resultClass="java.lang.Long" keyProperty="patternid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.paper.vo.Paperquestype"> 
+     update paperquestype
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="questypeid"><![CDATA[ quesTypeID=#questypeid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="questype"><![CDATA[ quesType=#questype:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="questypename"><![CDATA[ quesTypeName=#questypename:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="questypenote"><![CDATA[ quesTypeNote=#questypenote:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="patternquesnum"><![CDATA[ patternQuesNum=#patternquesnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="quesscore"><![CDATA[ quesScore=#quesscore:REAL# ]]></isNotNull>
+      <isNotNull prepend="," property="patternscore"><![CDATA[ patternScore=#patternscore:REAL# ]]></isNotNull>
+      <isNotNull prepend="," property="pagesize"><![CDATA[ pageSize=#pagesize:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="disorder"><![CDATA[ disOrder=#disorder:INTEGER# ]]></isNotNull>
+    </dynamic> where patternID = #patternid:BIGINT# 
+  </update>
+  
+  <!-- ###################### updatePatternscore1 ########################## -->
+  <update id="updatePatternscore1" parameterClass="netTest.paper.vo.Paperquestype"> 
+     update paperquestype set patternScore=#patternscore:REAL# 
+     where paperID = #paperid:BIGINT# and quesTypeID = #questypeid:BIGINT# 
+     and shopID = #shopid:BIGINT# 
+  </update>
+  
+  <!-- ###################### updatePatternscore2 ########################## -->
+  <update id="updatePatternscore2" parameterClass="netTest.paper.vo.Paperquestype"> 
+     update paperquestype set patternScore = patternScore+#patternscore:REAL# 
+     where paperID = #paperid:BIGINT# and quesTypeID = #questypeid:BIGINT# 
+     and shopID = #shopid:BIGINT# 
+  </update>
+  
+  <!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from paperquestype where patternID = #value#
+  </delete>
+  
+  <!-- ###################### deleteByLogicPK ########################## -->
+  <delete id="deleteByLogicPK" parameterClass="netTest.paper.vo.Paperquestype"> 
+     delete from paperquestype where paperID = #paperid:BIGINT#
+     and shopID = #shopid:BIGINT# and quesTypeID = #questypeid:BIGINT#
+  </delete>
+  
+  <!-- ###################### deleteByPaper ########################## -->
+  <delete id="deleteByPaper" parameterClass="java.lang.Long"> 
+     delete from paperquestype where paperID = #value#
+  </delete>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.paper.dto.PaperquestypeQuery"> 
+     select count(*) from paperquestype
+     <include refid="Paperquestype.where_Clause"/>  
+  </select>
+    
+</sqlMap>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources/>
+  <form-beans>
+	  <form-bean name="exerciseForm" type="netTestWeb.exercise.form.ExerciseForm" />
+      <form-bean name="exerquestypeForm" type="netTestWeb.exercise.form.ExerquestypeForm" />
+      <form-bean name="exerquesForm" type="netTestWeb.exercise.form.ExerquesForm" />
+      <form-bean name="exerExamForm" type="netTestWeb.exercise.form.ExerExamForm" />
+      <form-bean name="exeruserForm" type="netTestWeb.exercise.form.ExeruserForm" />
+      
+  </form-beans>
+
+  <global-exceptions>
+      <exception key="commonWeb.java.commonaction.errors.noLogin" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoLoginException" path="/login_forward.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.editPage.noSuchRecord" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoSuchRecordException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.resubmit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.ResubmitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.DaoException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="org.springframework.dao.DataAccessException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.Unauthorized" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoRightException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.LogicErr" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.LogicException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.InvalidVisit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.InvalideVisitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.SystemError" handler="commonWeb.base.StrutsExceptionHandler" type="java.lang.Throwable" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+  </global-exceptions>
+  
+  <global-forwards>
+      <forward name="errorPage" path="/pubs/errorPage.jsp" ></forward>
+      <forward name="messagePage" path="/pubs/message.jsp" ></forward>
+      <forward name="treeXml" path="/pubs/treeXml.jsp" ></forward>
+      <forward name="forwardToUrl" path="/pubs/forwardToUrl.jsp" ></forward>
+      <forward name="toUrl" path="/pubs/toUrl.jsp" ></forward>
+  </global-forwards>
+  
+  <action-mappings>
+  
+	    <!-- exercise begin -->
+	    <action parameter="toAddExerPage" path="/exercise/toAddExerPage" name="exerciseForm" type="netTestWeb.exercise.action.ExerciseAction" scope="request">
+	       <forward name="addExerPage1" path="/exercise/exercise_add1.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="addExercise" path="/exercise/addExercise" name="exerciseForm" type="netTestWeb.exercise.action.ExerciseAction" scope="request">
+	       <forward name="editExerPage" path="/exercise/exercise_edit.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="editExercise" path="/exercise/editExercise" name="exerciseForm" type="netTestWeb.exercise.action.ExerciseAction" scope="request">
+	       <forward name="editExerPage" path="/exercise/exercise_edit.jsp"></forward>
+	    </action>
+	        
+	    <action parameter="delExercise" path="/exercise/delExercise" name="exerciseForm" type="netTestWeb.exercise.action.ExerciseAction" scope="request">
+	       
+	    </action>
+	    <!-- exercise end -->
+	    
+	    <!-- exerquestype begin -->
+	    <action parameter="addExerquestype" path="/exercise/addExerquestype" name="exerquestypeForm" type="netTestWeb.exercise.action.ExerquestypeAction" scope="request">
+	       <forward name="addEditPage" path="/exercise/exerquespattern_edit.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="editExerquestype" path="/exercise/editExerquestype" name="exerquestypeForm" type="netTestWeb.exercise.action.ExerquestypeAction" scope="request">
+	       <forward name="addEditPage" path="/exercise/exerquespattern_edit.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="saveExerquestype" path="/exercise/saveExerquestype" name="exerquestypeForm" type="netTestWeb.exercise.action.ExerquestypeAction" scope="request">
+	       <forward name="addEditPage" path="/exercise/exerquespattern_edit.jsp"></forward>
+	    </action>    
+	    <action parameter="deleteExerquestype" path="/exercise/deleteExerquestype" name="exerquestypeForm" type="netTestWeb.exercise.action.ExerquestypeAction" scope="request">
+	       <forward name="addEditPage" path="/exercise/exerquespattern_edit.jsp"></forward>
+	    </action>  
+        <!-- exerquestype end -->
+        
+        <!-- exerques begin -->
+        <action parameter="addExerQues" path="/exercise/addExerQues" name="exerquesForm" type="netTestWeb.exercise.action.ExerquesAction" scope="request">
+	    </action>
+        
+        <action parameter="changeQues" path="/exercise/changeQues" name="exerquesForm" type="netTestWeb.exercise.action.ExerquesAction" scope="request">
+	    </action>
+	    
+	    <action parameter="deleteExerques" path="/exercise/deleteExerques" name="exerquesForm" type="netTestWeb.exercise.action.ExerquesAction" scope="request">
+	       
+	    </action>
+	    <!-- exerques end -->	
+	    
+	    <!-- do exercise begin -->
+        <action parameter="beforeDoExercise" path="/exercise/beforeDoExercise" name="exerExamForm" type="netTestWeb.exercise.action.ExerExamAction" scope="request">
+	        <forward name="viewPage" path="/exercise/exer_examhall.jsp"></forward>
+	    </action>
+        
+        <action parameter="preEnterExercise" path="/exercise/preEnterExercise" name="exerExamForm" type="netTestWeb.exercise.action.ExerExamAction" scope="request">
+	        <forward name="examPage" path="/exercise/exam_exercise.jsp"></forward>
+        </action>
+        
+	    <action parameter="enterExercise" path="/exercise/enterExercise" name="exerExamForm" type="netTestWeb.exercise.action.ExerExamAction" scope="request">
+	        <forward name="examPage" path="/exercise/exam_exercise.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="preExamQuesShift" path="/exercise/preExamQuesShift" name="exerExamForm" type="netTestWeb.exercise.action.ExerExamAction" scope="request">
+	        <forward name="examPage" path="/exercise/exam_exercise.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="examQuesShift" path="/exercise/examQuesShift" name="exerExamForm" type="netTestWeb.exercise.action.ExerExamAction" scope="request">
+	        <forward name="examPage" path="/exercise/exam_exercise.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="preCheckQues" path="/exercise/preCheckQues" name="exerExamForm" type="netTestWeb.exercise.action.ExerExamAction" scope="request">
+	        <forward name="examPage" path="/exercise/exam_exercise.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="checkQues" path="/exercise/checkQues" name="exerExamForm" type="netTestWeb.exercise.action.ExerExamAction" scope="request">
+	        <forward name="examPage" path="/exercise/exam_exercise.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="submitExercise" path="/exercise/submitExercise" name="exerExamForm" type="netTestWeb.exercise.action.ExerExamAction" scope="request">
+	        <forward name="resultPage" path="/exercise/exer_finish.jsp"></forward>
+	    </action>
+	    <!-- do exercise end -->	
+	    	    
+	    <action parameter="listExeruser" path="/exercise/listExeruser" name="exeruserForm" type="netTestWeb.exercise.action.ExeruserAction" scope="request">
+           <forward name="list" path="/exercise/exeruser_list.jsp"></forward>
+	    </action>
+	    <!-- exercise user action end -->
+
+  </action-mappings>
+
+  <message-resources parameter="netTestWeb.resource.PagetextResources" />
+  <message-resources key="BizKey" parameter="netTestWeb.resource.BizMessResources" />
+</struts-config>
+

@@ -1,0 +1,946 @@
+0033:controls.html:0102A:1:14=49F08996:16=47d21313:<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="spellerStyle.css" />
+		<script type="text/javascript" src="controlWindow.js"></script>
+		<script type="text/javascript">
+var spellerObject;
+var controlWindowObj;
+
+if( parent.opener ) {
+	spellerObject = parent.opener.speller;
+}
+
+function ignore_word() {
+	if( spellerObject ) {
+		spellerObject.ignoreWord();
+	}
+}
+
+function ignore_all() {
+	if( spellerObject ) {
+		spellerObject.ignoreAll();
+	}
+}
+
+function replace_word() {
+	if( spellerObject ) {
+		spellerObject.replaceWord();
+	}
+}
+
+function replace_all() {
+	if( spellerObject ) {
+		spellerObject.replaceAll();
+	}
+}
+
+function end_spell() {
+	if( spellerObject ) {
+		spellerObject.terminateSpell();
+	}
+}
+
+function undo() {
+	if( spellerObject ) {
+		spellerObject.undo();
+	}
+}
+
+function suggText() {
+	if( controlWindowObj ) {
+		controlWindowObj.setSuggestedText();
+	}
+}
+
+var FCKLang = window.parent.parent.FCKLang ;	// by FredCK
+
+function init_spell() {
+	// By FredCK (fckLang attributes have been added to the HTML source of this page)
+	window.parent.parent.OnSpellerControlsLoad( this ) ;
+
+	var controlForm = document.spellcheck;
+
+	// create a new controlWindow object
+ 	controlWindowObj = new controlWindow( controlForm );
+
+	// call the init_spell() function in the parent frameset
+	if( parent.frames.length ) {
+		parent.init_spell( controlWindowObj );
+	} else {
+		alert( 'This page was loaded outside of a frameset. It might not display properly' );
+	}
+}
+
+</script>
+	</head>
+	<body class="controlWindowBody" onLoad="init_spell();" style="OVERFLOW: hidden" scroll="no">	<!-- by FredCK -->
+		<form name="spellcheck">
+			<table border="0" cellpadding="0" cellspacing="0" border="0" align="center">
+				<tr>
+					<td colspan="3" class="normalLabel"><span fckLang="DlgSpellNotInDic">Not in dictionary:</span></td>
+				</tr>
+				<tr>
+					<td colspan="3"><input class="readonlyInput" type="text" name="misword" readonly /></td>
+				</tr>
+				<tr>
+					<td colspan="3" height="5"></td>
+				</tr>
+				<tr>
+					<td class="normalLabel"><span fckLang="DlgSpellChangeTo">Change to:</span></td>
+				</tr>
+				<tr valign="top">
+					<td>
+						<table border="0" cellpadding="0" cellspacing="0" border="0">
+							<tr>
+								<td class="normalLabel">
+									<input class="textDefault" type="text" name="txtsugg" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<select class="suggSlct" name="sugg" size="7" onChange="suggText();" onDblClick="replace_word();">
+										<option></option>
+									</select>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td>&nbsp;&nbsp;</td>
+					<td>
+						<table border="0" cellpadding="0" cellspacing="0" border="0">
+							<tr>
+								<td>
+									<input class="buttonDefault" type="button" fckLang="DlgSpellBtnIgnore" value="Ignore" onClick="ignore_word();">
+								</td>
+								<td>&nbsp;&nbsp;</td>
+								<td>
+									<input class="buttonDefault" type="button" fckLang="DlgSpellBtnIgnoreAll" value="Ignore All" onClick="ignore_all();">
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3" height="5"></td>
+							</tr>
+							<tr>
+								<td>
+									<input class="buttonDefault" type="button" fckLang="DlgSpellBtnReplace" value="Replace" onClick="replace_word();">
+								</td>
+								<td>&nbsp;&nbsp;</td>
+								<td>
+									<input class="buttonDefault" type="button" fckLang="DlgSpellBtnReplaceAll" value="Replace All" onClick="replace_all();">
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3" height="5"></td>
+							</tr>
+							<tr>
+								<td>
+									<input class="buttonDefault" type="button" name="btnUndo" fckLang="DlgSpellBtnUndo" value="Undo" onClick="undo();"
+										disabled>
+								</td>
+								<td>&nbsp;&nbsp;</td>
+								<td>
+									<!-- by FredCK
+									<input class="buttonDefault" type="button" value="Close" onClick="end_spell();">
+									-->
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>
+0035:controlWindow.js:0901:1:14=49F08996:16=47d21313:﻿////////////////////////////////////////////////////
+// controlWindow object
+////////////////////////////////////////////////////
+function controlWindow( controlForm ) {
+	// private properties
+	this._form = controlForm;
+
+	// public properties
+	this.windowType = "controlWindow";
+//	this.noSuggestionSelection = "- No suggestions -";	// by FredCK
+	this.noSuggestionSelection = FCKLang.DlgSpellNoSuggestions ;
+	// set up the properties for elements of the given control form
+	this.suggestionList  = this._form.sugg;
+	this.evaluatedText   = this._form.misword;
+	this.replacementText = this._form.txtsugg;
+	this.undoButton      = this._form.btnUndo;
+
+	// public methods
+	this.addSuggestion = addSuggestion;
+	this.clearSuggestions = clearSuggestions;
+	this.selectDefaultSuggestion = selectDefaultSuggestion;
+	this.resetForm = resetForm;
+	this.setSuggestedText = setSuggestedText;
+	this.enableUndo = enableUndo;
+	this.disableUndo = disableUndo;
+}
+
+function resetForm() {
+	if( this._form ) {
+		this._form.reset();
+	}
+}
+
+function setSuggestedText() {
+	var slct = this.suggestionList;
+	var txt = this.replacementText;
+	var str = "";
+	if( (slct.options[0].text) && slct.options[0].text != this.noSuggestionSelection ) {
+		str = slct.options[slct.selectedIndex].text;
+	}
+	txt.value = str;
+}
+
+function selectDefaultSuggestion() {
+	var slct = this.suggestionList;
+	var txt = this.replacementText;
+	if( slct.options.length == 0 ) {
+		this.addSuggestion( this.noSuggestionSelection );
+	} else {
+		slct.options[0].selected = true;
+	}
+	this.setSuggestedText();
+}
+
+function addSuggestion( sugg_text ) {
+	var slct = this.suggestionList;
+	if( sugg_text ) {
+		var i = slct.options.length;
+		var newOption = new Option( sugg_text, 'sugg_text'+i );
+		slct.options[i] = newOption;
+	 }
+}
+
+function clearSuggestions() {
+	var slct = this.suggestionList;
+	for( var j = slct.length - 1; j > -1; j-- ) {
+		if( slct.options[j] ) {
+			slct.options[j] = null;
+		}
+	}
+}
+
+function enableUndo() {
+	if( this.undoButton ) {
+		if( this.undoButton.disabled == true ) {
+			this.undoButton.disabled = false;
+		}
+	}
+}
+
+function disableUndo() {
+	if( this.undoButton ) {
+		if( this.undoButton.disabled == false ) {
+			this.undoButton.disabled = true;
+		}
+	}
+}
+0038:server-scripts:000000000:2:14=48041e4b:16=47d21313:0036:spellchecker.cfm:015A2:1:14=7C526E00:16=47d21313:<cfsetting enablecfoutputonly="true">
+<!---
+This code uses a CF User Defined Function and should work in CF version 5.0
+and up without alteration.
+
+Also if you are hosting your site at an ISP, you will have to check with them
+to see if the use of <CFEXECUTE> is allowed. In most cases ISP will not allow
+the use of that tag for security reasons. Clients would be able to access each
+others files in certain cases.
+--->
+
+<!--- The following variables values must reflect your installation. --->
+<cfset aspell_dir	  = "C:\Program Files\Aspell\bin">
+<cfset lang         = "en_US">
+<cfset aspell_opts  = "-a --lang=#lang# --encoding=utf-8 -H --rem-sgml-check=alt">
+<cfset tempfile_in  = GetTempFile(GetTempDirectory(), "spell_")>
+<cfset tempfile_out = GetTempFile(GetTempDirectory(), "spell_")>
+<cfset spellercss   = "../spellerStyle.css">
+<cfset word_win_src = "../wordWindow.js">
+
+<cfset form.checktext = form["textinputs[]"]>
+
+<!--- make no difference between URL and FORM scopes --->
+<cfparam name="url.checktext"  default="">
+<cfparam name="form.checktext" default="#url.checktext#">
+
+<!--- Takes care of those pesky smart quotes from MS apps, replaces them with regular quotes --->
+<cfset submitted_text = ReplaceList(form.checktext,"%u201C,%u201D","%22,%22")>
+
+<!--- submitted_text now is ready for processing --->
+
+<!--- use carat on each line to escape possible aspell commands --->
+<cfset text = "">
+<cfset CRLF = Chr(13) & Chr(10)>
+
+<cfloop list="#submitted_text#" index="field" delimiters=",">
+	<cfset text = text & "%"  & CRLF
+                      & "^A" & CRLF
+                      & "!"  & CRLF>
+	<!--- Strip all tags for the text. (by FredCK - #339 / #681) --->
+	<cfset field = REReplace(URLDecode(field), "<[^>]+>", " ", "all")>
+	<cfloop list="#field#" index="line" delimiters="#CRLF#">
+		<cfset text = ListAppend(text, "^" & Trim(JSStringFormat(line)), CRLF)>
+	</cfloop>
+</cfloop>
+
+<!--- create temp file from the submitted text, this will be passed to aspell to be check for misspelled words --->
+<cffile action="write" file="#tempfile_in#" output="#text#" charset="utf-8">
+
+<!--- execute aspell in an UTF-8 console and redirect output to a file. UTF-8 encoding is lost if done differently --->
+<cfexecute name="cmd.exe" arguments='/c type "#tempfile_in#" | "#aspell_dir#\aspell.exe" #aspell_opts# > "#tempfile_out#"' timeout="100"/>
+
+<!--- read output file for further processing --->
+<cffile action="read" file="#tempfile_out#" variable="food" charset="utf-8">
+
+<!--- remove temp files --->
+<cffile action="delete" file="#tempfile_in#">
+<cffile action="delete" file="#tempfile_out#">
+
+<cfset texts = StructNew()>
+<cfset texts.textinputs = "">
+<cfset texts.words      = "">
+<cfset texts.abort      = "">
+
+<!--- Generate Text Inputs --->
+<cfset i = 0>
+<cfloop list="#submitted_text#" index="textinput">
+  <cfset texts.textinputs = ListAppend(texts.textinputs, 'textinputs[#i#] = decodeURIComponent("#textinput#");', CRLF)>
+  <cfset i = i + 1>
+</cfloop>
+
+<!--- Generate Words Lists --->
+<cfset word_cnt  = 0>
+<cfset input_cnt = -1>
+<cfloop list="#food#" index="aspell_line" delimiters="#CRLF#">
+    <cfset leftChar = Left(aspell_line, 1)>
+	<cfif leftChar eq "*">
+			<cfset input_cnt   = input_cnt + 1>
+			<cfset word_cnt    = 0>
+			<cfset texts.words = ListAppend(texts.words, "words[#input_cnt#] = [];", CRLF)>
+			<cfset texts.words = ListAppend(texts.words, "suggs[#input_cnt#] = [];", CRLF)>
+    <cfelse>
+        <cfif leftChar eq "&" or leftChar eq "##">
+			<!--- word that misspelled --->
+			<cfset bad_word    = Trim(ListGetAt(aspell_line, 2, " "))>
+			<cfset bad_word    = Replace(bad_word, "'", "\'", "ALL")>
+			<!--- sugestions --->
+			<cfset sug_list    = Trim(ListRest(aspell_line, ":"))>
+			<cfset sug_list    = ListQualify(Replace(sug_list, "'", "\'", "ALL"), "'")>
+			<!--- javascript --->
+			<cfset texts.words = ListAppend(texts.words, "words[#input_cnt#][#word_cnt#] = '#bad_word#';", CRLF)>
+			<cfset texts.words = ListAppend(texts.words, "suggs[#input_cnt#][#word_cnt#] = [#sug_list#];", CRLF)>
+			<cfset word_cnt    = word_cnt + 1>
+		</cfif>
+     </cfif>
+</cfloop>
+
+<cfif texts.words eq "">
+  <cfset texts.abort = "alert('Spell check complete.\n\nNo misspellings found.'); top.window.close();">
+</cfif>
+
+<cfcontent type="text/html; charset=utf-8">
+
+<cfoutput><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="#spellercss#" />
+<script language="javascript" src="#word_win_src#"></script>
+<script language="javascript">
+var suggs      = new Array();
+var words      = new Array();
+var textinputs = new Array();
+var error;
+
+#texts.textinputs##CRLF#
+#texts.words#
+#texts.abort#
+
+var wordWindowObj = new wordWindow();
+wordWindowObj.originalSpellings = words;
+wordWindowObj.suggestions = suggs;
+wordWindowObj.textInputs = textinputs;
+
+function init_spell() {
+	// check if any error occured during server-side processing
+	if( error ) {
+		alert( error );
+	} else {
+		// call the init_spell() function in the parent frameset
+		if (parent.frames.length) {
+			parent.init_spell( wordWindowObj );
+		} else {
+			alert('This page was loaded outside of a frameset. It might not display properly');
+		}
+	}
+}
+</script>
+
+</head>
+<body onLoad="init_spell();">
+
+<script type="text/javascript">
+wordWindowObj.writeBody();
+</script>
+
+</body>
+</html></cfoutput>
+<cfsetting enablecfoutputonly="false">
+0036:spellchecker.php:016DE:1:14=7C526E00:16=47d21313:<?php
+header('Content-type: text/html; charset=utf-8');
+
+// The following variables values must reflect your installation needs.
+
+$aspell_prog	= '"C:\Program Files\Aspell\bin\aspell.exe"';	// by FredCK (for Windows)
+//$aspell_prog	= 'aspell';										// by FredCK (for Linux)
+
+$lang			= 'en_US';
+$aspell_opts	= "-a --lang=$lang --encoding=utf-8 -H --rem-sgml-check=alt";		// by FredCK
+
+$tempfiledir	= "./";
+
+$spellercss		= '../spellerStyle.css';						// by FredCK
+$word_win_src	= '../wordWindow.js';							// by FredCK
+
+$textinputs		= $_POST['textinputs']; # array
+$input_separator = "A";
+
+# set the JavaScript variable to the submitted text.
+# textinputs is an array, each element corresponding to the (url-encoded)
+# value of the text control submitted for spell-checking
+function print_textinputs_var() {
+	global $textinputs;
+	foreach( $textinputs as $key=>$val ) {
+		# $val = str_replace( "'", "%27", $val );
+		echo "textinputs[$key] = decodeURIComponent(\"" . $val . "\");\n";
+	}
+}
+
+# make declarations for the text input index
+function print_textindex_decl( $text_input_idx ) {
+	echo "words[$text_input_idx] = [];\n";
+	echo "suggs[$text_input_idx] = [];\n";
+}
+
+# set an element of the JavaScript 'words' array to a misspelled word
+function print_words_elem( $word, $index, $text_input_idx ) {
+	echo "words[$text_input_idx][$index] = '" . escape_quote( $word ) . "';\n";
+}
+
+
+# set an element of the JavaScript 'suggs' array to a list of suggestions
+function print_suggs_elem( $suggs, $index, $text_input_idx ) {
+	echo "suggs[$text_input_idx][$index] = [";
+	foreach( $suggs as $key=>$val ) {
+		if( $val ) {
+			echo "'" . escape_quote( $val ) . "'";
+			if ( $key+1 < count( $suggs )) {
+				echo ", ";
+			}
+		}
+	}
+	echo "];\n";
+}
+
+# escape single quote
+function escape_quote( $str ) {
+	return preg_replace ( "/'/", "\\'", $str );
+}
+
+
+# handle a server-side error.
+function error_handler( $err ) {
+	echo "error = '" . preg_replace( "/['\\\\]/", "\\\\$0", $err ) . "';\n";
+}
+
+## get the list of misspelled words. Put the results in the javascript words array
+## for each misspelled word, get suggestions and put in the javascript suggs array
+function print_checker_results() {
+
+	global $aspell_prog;
+	global $aspell_opts;
+	global $tempfiledir;
+	global $textinputs;
+	global $input_separator;
+	$aspell_err = "";
+	# create temp file
+	$tempfile = tempnam( $tempfiledir, 'aspell_data_' );
+
+	# open temp file, add the submitted text.
+	if( $fh = fopen( $tempfile, 'w' )) {
+		for( $i = 0; $i < count( $textinputs ); $i++ ) {
+			$text = urldecode( $textinputs[$i] );
+
+			// Strip all tags for the text. (by FredCK - #339 / #681)
+			$text = preg_replace( "/<[^>]+>/", " ", $text ) ;
+
+			$lines = explode( "\n", $text );
+			fwrite ( $fh, "%\n" ); # exit terse mode
+			fwrite ( $fh, "^$input_separator\n" );
+			fwrite ( $fh, "!\n" ); # enter terse mode
+			foreach( $lines as $key=>$value ) {
+				# use carat on each line to escape possible aspell commands
+				fwrite( $fh, "^$value\n" );
+			}
+		}
+		fclose( $fh );
+
+		# exec aspell command - redirect STDERR to STDOUT
+		$cmd = "$aspell_prog $aspell_opts < $tempfile 2>&1";
+		if( $aspellret = shell_exec( $cmd )) {
+			$linesout = explode( "\n", $aspellret );
+			$index = 0;
+			$text_input_index = -1;
+			# parse each line of aspell return
+			foreach( $linesout as $key=>$val ) {
+				$chardesc = substr( $val, 0, 1 );
+				# if '&', then not in dictionary but has suggestions
+				# if '#', then not in dictionary and no suggestions
+				# if '*', then it is a delimiter between text inputs
+				# if '@' then version info
+				if( $chardesc == '&' || $chardesc == '#' ) {
+					$line = explode( " ", $val, 5 );
+					print_words_elem( $line[1], $index, $text_input_index );
+					if( isset( $line[4] )) {
+						$suggs = explode( ", ", $line[4] );
+					} else {
+						$suggs = array();
+					}
+					print_suggs_elem( $suggs, $index, $text_input_index );
+					$index++;
+				} elseif( $chardesc == '*' ) {
+					$text_input_index++;
+					print_textindex_decl( $text_input_index );
+					$index = 0;
+				} elseif( $chardesc != '@' && $chardesc != "" ) {
+					# assume this is error output
+					$aspell_err .= $val;
+				}
+			}
+			if( $aspell_err ) {
+				$aspell_err = "Error executing `$cmd`\\n$aspell_err";
+				error_handler( $aspell_err );
+			}
+		} else {
+			error_handler( "System error: Aspell program execution failed (`$cmd`)" );
+		}
+	} else {
+		error_handler( "System error: Could not open file '$tempfile' for writing" );
+	}
+
+	# close temp file, delete file
+	unlink( $tempfile );
+}
+
+
+?>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="<?php echo $spellercss ?>" />
+<script language="javascript" src="<?php echo $word_win_src ?>"></script>
+<script language="javascript">
+var suggs = new Array();
+var words = new Array();
+var textinputs = new Array();
+var error;
+<?php
+
+print_textinputs_var();
+
+print_checker_results();
+
+?>
+
+var wordWindowObj = new wordWindow();
+wordWindowObj.originalSpellings = words;
+wordWindowObj.suggestions = suggs;
+wordWindowObj.textInputs = textinputs;
+
+function init_spell() {
+	// check if any error occured during server-side processing
+	if( error ) {
+		alert( error );
+	} else {
+		// call the init_spell() function in the parent frameset
+		if (parent.frames.length) {
+			parent.init_spell( wordWindowObj );
+		} else {
+			alert('This page was loaded outside of a frameset. It might not display properly');
+		}
+	}
+}
+
+
+
+</script>
+
+</head>
+<!-- <body onLoad="init_spell();">		by FredCK -->
+<body onLoad="init_spell();" bgcolor="#ffffff">
+
+<script type="text/javascript">
+wordWindowObj.writeBody();
+</script>
+
+</body>
+</html>
+0035:spellchecker.pl:0133F:1:14=7C526E00:16=47d21313:#!/usr/bin/perl
+
+use CGI qw/ :standard /;
+use File::Temp qw/ tempfile tempdir /;
+
+# my $spellercss = '/speller/spellerStyle.css';					# by FredCK
+my $spellercss = '../spellerStyle.css';							# by FredCK
+# my $wordWindowSrc = '/speller/wordWindow.js';					# by FredCK
+my $wordWindowSrc = '../wordWindow.js';							# by FredCK
+my @textinputs = param( 'textinputs[]' ); # array
+# my $aspell_cmd = 'aspell';									# by FredCK (for Linux)
+my $aspell_cmd = '"C:\Program Files\Aspell\bin\aspell.exe"';	# by FredCK (for Windows)
+my $lang = 'en_US';
+# my $aspell_opts = "-a --lang=$lang --encoding=utf-8";			# by FredCK
+my $aspell_opts = "-a --lang=$lang --encoding=utf-8 -H --rem-sgml-check=alt";		# by FredCK
+my $input_separator = "A";
+
+# set the 'wordtext' JavaScript variable to the submitted text.
+sub printTextVar {
+	for( my $i = 0; $i <= $#textinputs; $i++ ) {
+	        print "textinputs[$i] = decodeURIComponent('" . escapeQuote( $textinputs[$i] ) . "')\n";
+	}
+}
+
+sub printTextIdxDecl {
+	my $idx = shift;
+	print "words[$idx] = [];\n";
+	print "suggs[$idx] = [];\n";
+}
+
+sub printWordsElem {
+	my( $textIdx, $wordIdx, $word ) = @_;
+	print "words[$textIdx][$wordIdx] = '" . escapeQuote( $word ) . "';\n";
+}
+
+sub printSuggsElem {
+	my( $textIdx, $wordIdx, @suggs ) = @_;
+	print "suggs[$textIdx][$wordIdx] = [";
+	for my $i ( 0..$#suggs ) {
+		print "'" . escapeQuote( $suggs[$i] ) . "'";
+		if( $i < $#suggs ) {
+			print ", ";
+		}
+	}
+	print "];\n";
+}
+
+sub printCheckerResults {
+	my $textInputIdx = -1;
+	my $wordIdx = 0;
+	my $unhandledText;
+	# create temp file
+	my $dir = tempdir( CLEANUP => 1 );
+	my( $fh, $tmpfilename ) = tempfile( DIR => $dir );
+
+	# temp file was created properly?
+
+	# open temp file, add the submitted text.
+	for( my $i = 0; $i <= $#textinputs; $i++ ) {
+		$text = url_decode( $textinputs[$i] );
+		# Strip all tags for the text. (by FredCK - #339 / #681)
+		$text =~ s/<[^>]+>/ /g;
+		@lines = split( /\n/, $text );
+		print $fh "\%\n"; # exit terse mode
+		print $fh "^$input_separator\n";
+		print $fh "!\n";  # enter terse mode
+		for my $line ( @lines ) {
+			# use carat on each line to escape possible aspell commands
+			print $fh "^$line\n";
+		}
+
+	}
+	# exec aspell command
+	my $cmd = "$aspell_cmd $aspell_opts < $tmpfilename 2>&1";
+	open ASPELL, "$cmd |" or handleError( "Could not execute `$cmd`\\n$!" ) and return;
+	# parse each line of aspell return
+	for my $ret ( <ASPELL> ) {
+		chomp( $ret );
+		# if '&', then not in dictionary but has suggestions
+		# if '#', then not in dictionary and no suggestions
+		# if '*', then it is a delimiter between text inputs
+		if( $ret =~ /^\*/ ) {
+			$textInputIdx++;
+			printTextIdxDecl( $textInputIdx );
+			$wordIdx = 0;
+
+		} elsif( $ret =~ /^(&|#)/ ) {
+			my @tokens = split( " ", $ret, 5 );
+			printWordsElem( $textInputIdx, $wordIdx, $tokens[1] );
+			my @suggs = ();
+			if( $tokens[4] ) {
+				@suggs = split( ", ", $tokens[4] );
+			}
+			printSuggsElem( $textInputIdx, $wordIdx, @suggs );
+			$wordIdx++;
+		} else {
+			$unhandledText .= $ret;
+		}
+	}
+	close ASPELL or handleError( "Error executing `$cmd`\\n$unhandledText" ) and return;
+}
+
+sub escapeQuote {
+	my $str = shift;
+	$str =~ s/'/\\'/g;
+	return $str;
+}
+
+sub handleError {
+	my $err = shift;
+	print "error = '" . escapeQuote( $err ) . "';\n";
+}
+
+sub url_decode {
+	local $_ = @_ ? shift : $_;
+	defined or return;
+	# change + signs to spaces
+	tr/+/ /;
+	# change hex escapes to the proper characters
+	s/%([a-fA-F0-9]{2})/pack "H2", $1/eg;
+	return $_;
+}
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# Display HTML
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+print <<EOF;
+Content-type: text/html; charset=utf-8
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="$spellercss"/>
+<script src="$wordWindowSrc"></script>
+<script type="text/javascript">
+var suggs = new Array();
+var words = new Array();
+var textinputs = new Array();
+var error;
+EOF
+
+printTextVar();
+
+printCheckerResults();
+
+print <<EOF;
+var wordWindowObj = new wordWindow();
+wordWindowObj.originalSpellings = words;
+wordWindowObj.suggestions = suggs;
+wordWindowObj.textInputs = textinputs;
+
+
+function init_spell() {
+	// check if any error occured during server-side processing
+	if( error ) {
+		alert( error );
+	} else {
+		// call the init_spell() function in the parent frameset
+		if (parent.frames.length) {
+			parent.init_spell( wordWindowObj );
+		} else {
+			error = "This page was loaded outside of a frameset. ";
+			error += "It might not display properly";
+			alert( error );
+		}
+	}
+}
+
+</script>
+
+</head>
+<body onLoad="init_spell();">
+
+<script type="text/javascript">
+wordWindowObj.writeBody();
+</script>
+
+</body>
+</html>
+EOF
+0023:.:0:3:14=48041e4b:16=47d21313:0036:spellchecker.html:08FC:1:14=49F08996:16=47d21313:
+<script>
+
+var wordWindow = null;
+var controlWindow = null;
+
+function init_spell( spellerWindow ) {
+
+	if( spellerWindow ) {
+		if( spellerWindow.windowType == "wordWindow" ) {
+			wordWindow = spellerWindow;
+		} else if ( spellerWindow.windowType == "controlWindow" ) {
+			controlWindow = spellerWindow;
+		}
+	}
+
+	if( controlWindow && wordWindow ) {
+		// populate the speller object and start it off!
+		var speller = opener.speller;
+		wordWindow.speller = speller;
+		speller.startCheck( wordWindow, controlWindow );
+	}
+}
+
+// encodeForPost
+function encodeForPost( str ) {
+	var s = new String( str );
+	s = encodeURIComponent( s );
+	// additionally encode single quotes to evade any PHP
+	// magic_quotes_gpc setting (it inserts escape characters and
+	// therefore skews the btye positions of misspelled words)
+	return s.replace( /\'/g, '%27' );
+}
+
+// post the text area data to the script that populates the speller
+function postWords() {
+	var bodyDoc = window.frames[0].document;
+	bodyDoc.open();
+	bodyDoc.write('<html>');
+	bodyDoc.write('<meta http-equiv="Content-Type" content="text/html; charset=utf-8">');
+	bodyDoc.write('<link rel="stylesheet" type="text/css" href="spellerStyle.css"/>');
+	if (opener) {
+		var speller = opener.speller;
+		bodyDoc.write('<body class="normalText" onLoad="document.forms[0].submit();">');
+		bodyDoc.write('<p>' + window.parent.FCKLang.DlgSpellProgress + '<\/p>');		// by FredCK
+		bodyDoc.write('<form action="'+speller.spellCheckScript+'" method="post">');
+		for( var i = 0; i < speller.textInputs.length; i++ ) {
+			bodyDoc.write('<input type="hidden" name="textinputs[]" value="'+encodeForPost(speller.textInputs[i].value)+'">');
+		}
+		bodyDoc.write('<\/form>');
+		bodyDoc.write('<\/body>');
+	} else {
+		bodyDoc.write('<body class="normalText">');
+		bodyDoc.write('<p><b>This page cannot be displayed<\/b><\/p><p>The window was not opened from another window.<\/p>');
+		bodyDoc.write('<\/body>');
+	}
+	bodyDoc.write('<\/html>');
+	bodyDoc.close();
+}
+</script>
+
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+<title>Speller Pages</title>
+</head>
+<frameset rows="*,201" onLoad="postWords();">
+<frame src="blank.html">
+<frame src="controls.html">
+</frameset>
+</html>
+0035:spellChecker.js:03908:1:14=49F08996:16=47d21313:﻿////////////////////////////////////////////////////
+// spellChecker.js
+//
+// spellChecker object
+//
+// This file is sourced on web pages that have a textarea object to evaluate
+// for spelling. It includes the implementation for the spellCheckObject.
+//
+////////////////////////////////////////////////////
+
+
+// constructor
+function spellChecker( textObject ) {
+
+	// public properties - configurable
+//	this.popUpUrl = '/speller/spellchecker.html';							// by FredCK
+	this.popUpUrl = 'fck_spellerpages/spellerpages/spellchecker.html';		// by FredCK
+	this.popUpName = 'spellchecker';
+//	this.popUpProps = "menu=no,width=440,height=350,top=70,left=120,resizable=yes,status=yes";	// by FredCK
+	this.popUpProps = null ;																	// by FredCK
+//	this.spellCheckScript = '/speller/server-scripts/spellchecker.php';		// by FredCK
+	//this.spellCheckScript = '/cgi-bin/spellchecker.pl';
+
+	// values used to keep track of what happened to a word
+	this.replWordFlag = "R";	// single replace
+	this.ignrWordFlag = "I";	// single ignore
+	this.replAllFlag = "RA";	// replace all occurances
+	this.ignrAllFlag = "IA";	// ignore all occurances
+	this.fromReplAll = "~RA";	// an occurance of a "replace all" word
+	this.fromIgnrAll = "~IA";	// an occurance of a "ignore all" word
+	// properties set at run time
+	this.wordFlags = new Array();
+	this.currentTextIndex = 0;
+	this.currentWordIndex = 0;
+	this.spellCheckerWin = null;
+	this.controlWin = null;
+	this.wordWin = null;
+	this.textArea = textObject;	// deprecated
+	this.textInputs = arguments;
+
+	// private methods
+	this._spellcheck = _spellcheck;
+	this._getSuggestions = _getSuggestions;
+	this._setAsIgnored = _setAsIgnored;
+	this._getTotalReplaced = _getTotalReplaced;
+	this._setWordText = _setWordText;
+	this._getFormInputs = _getFormInputs;
+
+	// public methods
+	this.openChecker = openChecker;
+	this.startCheck = startCheck;
+	this.checkTextBoxes = checkTextBoxes;
+	this.checkTextAreas = checkTextAreas;
+	this.spellCheckAll = spellCheckAll;
+	this.ignoreWord = ignoreWord;
+	this.ignoreAll = ignoreAll;
+	this.replaceWord = replaceWord;
+	this.replaceAll = replaceAll;
+	this.terminateSpell = terminateSpell;
+	this.undo = undo;
+
+	// set the current window's "speller" property to the instance of this class.
+	// this object can now be referenced by child windows/frames.
+	window.speller = this;
+}
+
+// call this method to check all text boxes (and only text boxes) in the HTML document
+function checkTextBoxes() {
+	this.textInputs = this._getFormInputs( "^text$" );
+	this.openChecker();
+}
+
+// call this method to check all textareas (and only textareas ) in the HTML document
+function checkTextAreas() {
+	this.textInputs = this._getFormInputs( "^textarea$" );
+	this.openChecker();
+}
+
+// call this method to check all text boxes and textareas in the HTML document
+function spellCheckAll() {
+	this.textInputs = this._getFormInputs( "^text(area)?$" );
+	this.openChecker();
+}
+
+// call this method to check text boxe(s) and/or textarea(s) that were passed in to the
+// object's constructor or to the textInputs property
+function openChecker() {
+	this.spellCheckerWin = window.open( this.popUpUrl, this.popUpName, this.popUpProps );
+	if( !this.spellCheckerWin.opener ) {
+		this.spellCheckerWin.opener = window;
+	}
+}
+
+function startCheck( wordWindowObj, controlWindowObj ) {
+
+	// set properties from args
+	this.wordWin = wordWindowObj;
+	this.controlWin = controlWindowObj;
+
+	// reset properties
+	this.wordWin.resetForm();
+	this.controlWin.resetForm();
+	this.currentTextIndex = 0;
+	this.currentWordIndex = 0;
+	// initialize the flags to an array - one element for each text input
+	this.wordFlags = new Array( this.wordWin.textInputs.length );
+	// each element will be an array that keeps track of each

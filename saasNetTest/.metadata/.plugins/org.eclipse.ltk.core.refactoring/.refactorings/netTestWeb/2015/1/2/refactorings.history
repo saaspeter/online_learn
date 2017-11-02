@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;testinfo_examhall.jsp&apos; to &apos;testinfo_examhall.jsp&apos;&#x0D;&#x0A;- Original project: &apos;netTestWeb&apos;&#x0D;&#x0A;- Destination element: &apos;testinfo_examhall.jsp&apos;&#x0D;&#x0A;- Original element: &apos;testinfo_examhall.jsp&apos;" description="Copy file" element1="WebRoot/exam/testinfo_examhall.jsp" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1420817420027" target="/netTestWeb/WebRoot/exam/testinfo_examhall.jsp" units="0" version="1.0"/>
+</session>

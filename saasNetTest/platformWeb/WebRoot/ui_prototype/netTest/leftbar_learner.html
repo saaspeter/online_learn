@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>左侧功能栏</title>
+<script type="text/javascript">
+<!--
+function goUrl(mainUrl){
+   window.top.mainFrame.document.URL=mainUrl;
+}
+function wdks_show(){
+   var status = document.getElementById("wdks").style.display;
+   if(status=="none"){
+      document.getElementById("wdks").style.display="block";
+   }else if(status=="block"){
+      document.getElementById("wdks").style.display="none";
+   }else {
+      document.getElementById("wdks").style.display="block";
+   }    
+}
+
+function xxtd_show(){
+   var status = document.getElementById("xxtd").style.display;
+   if(status=="none"){
+      document.getElementById("xxtd").style.display="block";
+   }else if(status=="block"){
+      document.getElementById("xxtd").style.display="none";
+   }else {
+      document.getElementById("xxtd").style.display="block";
+   }    
+}
+-->
+</script>
+<style type="text/css">
+<!--
+#leftbar{
+    width:98%;
+	border: 1px solid #dddddd;
+	margin-bottom: 1px;
+}
+#leftbar ul {
+	margin: 3px;
+	padding: 3px;
+	display: block;
+}
+#leftbar li {
+	display: inline;
+}
+#leftbar li a {
+	display: block;
+	margin-bottom: 10px;
+	background-color: #FFCC99;
+}
+#wdks {
+    display:none;
+}
+#wdks li {
+	display: inline;
+}
+#wdks li a {
+	display: block;
+	margin-bottom: 10px;
+	background-color: #CCCC99;
+}
+#xxtd {
+    display:none;
+}
+#xxtd li {
+	display: inline;
+}
+#xxtd li a {
+	display: block;
+	margin-bottom: 10px;
+	background-color: #CCCC99;
+}
+body,div{
+margin:0px;
+padding:1px;
+}
+-->
+</style>
+</head>
+
+<body>
+
+<div id="leftbar">
+<ul>
+   <li>功能栏</li>
+   <li><a href="#" onclick="goUrl('xxt.html');return false;">信息台</a></li>
+   <li><a href="#" onclick="wdks_show();return false;">+我的考试</a></li>
+   <div id="wdks">
+   <ul>
+      <li><a href="#" onclick="return false;">参加考试</a></li>
+	  <li><a href="#" onclick="return false;">考试列表</a></li>
+      <li><a href="#" onclick="return false;">考试结果</a></li>
+   </ul>
+   </div>
+   <li><a href="#" onclick="return false;">模拟考试</a></li>
+   <li><a href="#" onclick="xxtd_show();return false;">+学习天地</a></li>
+   <div id="xxtd">
+   <ul>
+      <li><a href="#" onclick="return false;">我的作业</a></li>
+	  <li><a href="#" onclick="return false;">作业列表</a></li>
+      <li><a href="#" onclick="return false;">再现学习</a></li>
+   </ul>
+   </div>
+   <li><a href="#" onclick="return false;">个人信息</a></li>
+</ul>
+</div>
+
+</body>
+</html>

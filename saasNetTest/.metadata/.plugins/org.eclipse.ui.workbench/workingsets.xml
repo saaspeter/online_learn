@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1416932239932_2" label="web" name="web">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/netTestWeb" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1398482752384_0" label="Window Working Set" name="Aggregate for window 1398482752384"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1400597199472_1" label="Window Working Set" name="Aggregate for window 1400597199472"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1428758183648_3" label="Window Working Set" name="Aggregate for window 1428758183648"/>
+</workingSetManager>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/learncont/listLearncontent.do" location="50,1050" dimension="331,104" />
+  <StrutsActivity path="/learncont/selfLearncontent.do" location="950,1950" dimension="320,104" />
+  <StrutsActivity path="/learncont/listtryprodcont.do" location="1850,1950" dimension="320,104" />
+  <StrutsActivity path="/learncont/saveLearncontent.do" location="1250,1050" dimension="320,104" />
+  <StrutsActivity path="/learncont/editLearncontent.do" location="1850,1050" dimension="320,104" />
+  <StrutsActivity path="/learncont/viewLearncontent.do" location="50,1250" dimension="320,104" />
+  <StrutsActivity path="/learncont/addLearncontent.do" location="1250,1250" dimension="320,104" />
+  <StrutsActivity path="/learncont/deleteLearncontent.do" location="50,1850" dimension="320,104" />
+  <StrutsActivity path="errorPage;6" location="1581,2786" dimension="161,87" />
+  <StrutsActivity path="messagePage;6" location="1787,2786" dimension="154,87" />
+  <StrutsActivity path="treeXml;6" location="1986,2786" dimension="147,87" />
+  <StrutsActivity path="forwardToUrl;6" location="1356,2786" dimension="180,87" />
+  <StrutsActivity path="toUrl;6" location="2178,2786" dimension="131,87" />
+  <StrutsActivity path="/learncont/learncontent_list.jsp" location="1850,1250" dimension="209,53" />
+  <StrutsActivity path="/learncont/learncontent_list2.jsp" location="1250,1650" dimension="216,53" />
+  <StrutsActivity path="/learncont/learncontent_trylist.jsp" location="1550,1650" dimension="224,53" />
+  <StrutsActivity path="/learncont/learncontent_addEditFile.jsp" location="650,1650" dimension="257,53" />
+  <StrutsActivity path="/learncont/learncontent_addEditHtml.jsp" location="50,1650" dimension="265,53" />
+  <StrutsActivity path="/learncont/learncontent_viewFile.jsp" location="1850,150" dimension="237,53" />
+  <StrutsActivity path="/learncont/learncontent_viewHtml.jsp" location="1550,150" dimension="245,53" />
+  <StrutsActivity path="/pubs/errorPage.jsp" location="1586,2973" dimension="150,53" />
+  <StrutsActivity path="/pubs/message.jsp" location="1792,2973" dimension="143,53" />
+  <StrutsActivity path="/pubs/treeXml.jsp" location="1991,2973" dimension="136,53" />
+  <StrutsActivity path="/pubs/forwardToUrl.jsp" location="1361,2973" dimension="169,53" />
+  <StrutsActivity path="/pubs/toUrl.jsp" location="2183,2973" dimension="120,53" />
+  <StrutsActivity path="/learncont/learncontent_editHtml.jsp" location="50,1450" dimension="242,53" />
+  <StrutsActivity path="/learncont/learncontent_editFile.jsp" location="2150,1450" dimension="234,53" />
+  <StrutsActivity path="/learncont/learncontent_addFile.jsp" location="2150,1250" dimension="235,53" />
+  <StrutsActivity path="/learncont/learncontent_addHtml.jsp" location="2150,750" dimension="243,53" />
+  <StrutsActivity path="/learncont/learncontent_addEdit.jsp" location="650,1350" dimension="238,53" />
+  <StrutsActivity path="/wareques/questypeshop_list.jsp" location="486,1480" dimension="221,53" />
+  <StrutsActivity path="/wareques/questypeshop_addEdit.jsp" location="1443,2084" dimension="250,53" />
+  <StrutsActivity path="/prodcont/contentcate_list.jsp" location="469,2084" dimension="204,53" />
+  <StrutsActivity path="/prodcont/contentcate_addEdit.jsp" location="1030,2386" dimension="233,53" />
+  <StrutsActivity path="/prodcont/contentcate_view.jsp" location="2220,2688" dimension="213,53" />
+  <StrutsActivity path="/prodcont/contentcate_tree.jsp" location="51,2990" dimension="211,53" />
+  <StrutsActivity path="/wareques/warerelopen_list.jsp" location="690,1178" dimension="212,53" />
+  <StrutsActivity path="/wareques/warerelopen_edit.jsp" location="1122,2688" dimension="218,53" />
+  <StrutsActivity path="/wareques/warerelopen_add.jsp" location="1490,2688" dimension="219,53" />
+  <StrutsActivity path="/wareques/ware_list1.jsp" location="1526,1782" dimension="174,53" />
+  <StrutsActivity path="/wareques/ware_sele1.jsp" location="1217,1782" dimension="181,53" />
+  <StrutsActivity path="/wareques/ware_list2.jsp" location="1904,1782" dimension="174,53" />
+  <StrutsActivity path="/wareques/ware_sele2.jsp" location="2207,1782" dimension="181,53" />
+  <StrutsActivity path="/wareques/ware_addEdit.jsp" location="230,2688" dimension="196,53" />
+  <StrutsActivity path="/wareques/ware_view.jsp" location="761,2990" dimension="176,53" />
+  <StrutsActivity path="/wareques/ware_list.jsp" location="1088,2990" dimension="167,53" />
+  <StrutsActivity path="/wareques/quesdifficult_list.jsp" location="1727,1480" dimension="209,53" />
+  <StrutsActivity path="/wareques/quesdifft_sel.jsp" location="1238,1480" dimension="190,53" />
+  <StrutsActivity path="/wareques/quesdifficult_addEdit.jsp" location="250,2386" dimension="238,53" />
+  <StrutsActivity path="/wareques/quesdifficult_view.jsp" location="1856,2688" dimension="218,53" />
+  <StrutsActivity path="/wareques/wareques_sel.jsp" location="0,524" dimension="195,53" />
+  <StrutsActivity path="/wareques/wareques1_list.jsp" location="300,524" dimension="202,53" />
+  <StrutsActivity path="/wareques/wareques2_list.jsp" location="411,2990" dimension="202,53" />
+  <StrutsActivity path="/wareques/wareques_list.jsp" location="1814,2386" dimension="195,53" />
+  <StrutsActivity path="/wareques/wareques_cailiao.jsp" location="602,524" dimension="216,53" />
+  <StrutsActivity path="/wareques/wareques_xuanze.jsp" location="1943,524" dimension="219,53" />
+  <StrutsActivity path="/wareques/wareques_yuedulijie.jsp" location="918,524" dimension="233,53" />
+  <StrutsActivity path="/wareques/wareques_wenda.jsp" location="2262,524" dimension="217,53" />
+  <StrutsActivity path="/wareques/wareques_panduan.jsp" location="2579,524" dimension="230,53" />
+  <StrutsActivity path="/wareques/wareques_wanxingtiankong.jsp" location="1251,524" dimension="277,53" />
+  <StrutsActivity path="/wareques/wareques_tiankong.jsp" location="2909,524" dimension="230,53" />
+  <StrutsActivity path="/wareques/wareques_peidui.jsp" location="1628,524" dimension="215,53" />
+  <StrutsActivity path="/wareques/wareques_wanxingtiankong_view.jsp" location="0,876" dimension="307,53" />
+  <StrutsActivity path="/wareques/wareques_wenda_view.jsp" location="407,876" dimension="247,53" />
+  <StrutsActivity path="/wareques/wareques_panduan_view.jsp" location="754,876" dimension="260,53" />
+  <StrutsActivity path="/wareques/wareques_xuanze_view.jsp" location="1114,876" dimension="249,53" />
+  <StrutsActivity path="/wareques/wareques_yuedulijie_view.jsp" location="1463,876" dimension="263,53" />
+  <StrutsActivity path="/wareques/wareques_tiankong_view.jsp" location="1826,876" dimension="260,53" />
+  <StrutsActivity path="/wareques/wareques_cailiao_view.jsp" location="2186,876" dimension="246,53" />
+  <StrutsActivity path="/wareques/wareques_peidui_view.jsp" location="2532,876" dimension="245,53" />
+  <StrutsActivity path="/wareques/questionitem_list.jsp" location="479,1782" dimension="214,53" />
+  <StrutsActivity path="/wareques/questionitem_addEdit.jsp" location="2246,2084" dimension="243,53" />
+  <StrutsActivity path="/wareques/questionitem_view.jsp" location="751,2688" dimension="223,53" />
+  <StrutsActivity path="/learncont/questypeshop_list.jsp" location="650,1050" dimension="219,53" />
+  <StrutsActivity path="/learncont/questypeshop_addEdit.jsp" location="950,1050" dimension="248,53" />
+  <StrutsActivity path="/learncont/learncontent_view.jsp" location="950,1350" dimension="218,53" />
+  <StrutsTransition id="toUrl;6,null,/pubs/toUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2243,2873" />
+      <AbsolutePoint location="2243,2973" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="errorPage;6,null,/pubs/errorPage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1661,2873" />
+      <AbsolutePoint location="1661,2973" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/learncont/viewLearncontent.do,viewPage_file,/learncont/learncontent_viewFile.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="210,1302" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/learncont/editLearncontent.do,editPage_html,/learncont/learncontent_addEditHtml.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2074,1154" />
+      <AbsolutePoint location="2074,1578" />
+      <AbsolutePoint location="182,1578" />
+      <AbsolutePoint location="182,1650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/learncont/editLearncontent.do,editPage_file,/learncont/learncontent_addEditFile.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2104,1154" />
+      <AbsolutePoint location="2104,1608" />
+      <AbsolutePoint location="778,1608" />
+      <AbsolutePoint location="778,1650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/learncont/addLearncontent.do,addPage_file,/learncont/learncontent_addEditFile.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1410,1302" />
+      <AbsolutePoint location="778,1676" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="messagePage;6,null,/pubs/message.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1864,2873" />
+      <AbsolutePoint location="1864,2973" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="forwardToUrl;6,null,/pubs/forwardToUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1446,2873" />
+      <AbsolutePoint location="1446,2973" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/learncont/viewLearncontent.do,viewPage_html,/learncont/learncontent_viewHtml.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="210,1302" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/learncont/selfLearncontent.do,list2,/learncont/learncontent_list2.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1110,2002" />
+      <AbsolutePoint location="1358,1676" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="treeXml;6,null,/pubs/treeXml.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2059,2873" />
+      <AbsolutePoint location="2059,2973" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/learncont/listLearncontent.do,list,/learncont/learncontent_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="381,1088" />
+      <AbsolutePoint location="561,1088" />
+      <AbsolutePoint location="561,1429" />
+      <AbsolutePoint location="1954,1429" />
+      <AbsolutePoint location="1954,1303" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/learncont/saveLearncontent.do,list,/learncont/learncontent_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1410,1154" />
+      <AbsolutePoint location="1410,1193" />
+      <AbsolutePoint location="1954,1193" />
+      <AbsolutePoint location="1954,1250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/learncont/listtryprodcont.do,list,/learncont/learncontent_trylist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2010,2002" />
+      <AbsolutePoint location="1662,1676" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/learncont/deleteLearncontent.do,list,/learncont/learncontent_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="210,1902" />
+      <AbsolutePoint location="1954,1276" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/learncont/addLearncontent.do,addPage_html,/learncont/learncontent_addEditHtml.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1250,1302" />
+      <AbsolutePoint location="452,1302" />
+      <AbsolutePoint location="452,1676" />
+      <AbsolutePoint location="315,1676" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

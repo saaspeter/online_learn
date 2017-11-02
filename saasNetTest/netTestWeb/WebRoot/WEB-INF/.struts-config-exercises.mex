@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="errorPage;6" location="1167,1812" dimension="161,87" />
+  <StrutsActivity path="messagePage;6" location="1373,1812" dimension="154,87" />
+  <StrutsActivity path="treeXml;6" location="1572,1812" dimension="147,87" />
+  <StrutsActivity path="forwardToUrl;6" location="942,1812" dimension="180,87" />
+  <StrutsActivity path="toUrl;6" location="1764,1812" dimension="131,87" />
+  <StrutsActivity path="/exercises/exerciers_list.jsp" location="2150,1250" dimension="188,53" />
+  <StrutsActivity path="/exercises/exam_exercises.jsp" location="650,650" dimension="204,53" />
+  <StrutsActivity path="/pubs/errorPage.jsp" location="1172,1999" dimension="150,53" />
+  <StrutsActivity path="/pubs/message.jsp" location="1378,1999" dimension="143,53" />
+  <StrutsActivity path="/pubs/treeXml.jsp" location="1577,1999" dimension="136,53" />
+  <StrutsActivity path="/pubs/forwardToUrl.jsp" location="947,1999" dimension="169,53" />
+  <StrutsActivity path="/pubs/toUrl.jsp" location="1769,1999" dimension="120,53" />
+  <StrutsActivity path="/exam/exam_paper.jsp" location="429,808" dimension="164,53" />
+  <StrutsActivity path="/exam/examResult_paper.jsp" location="431,506" dimension="199,53" />
+  <StrutsActivity path="/exam/userendtesttip.jsp" location="0,506" dimension="176,53" />
+  <StrutsActivity path="/exam/testchecker_list.jsp" location="446,204" dimension="180,53" />
+  <StrutsActivity path="/exam/testchecker_addEdit.jsp" location="236,1412" dimension="209,53" />
+  <StrutsActivity path="/exam/testchecker_view.jsp" location="51,1714" dimension="189,53" />
+  <StrutsActivity path="/exam/testinfo_monitor.jsp" location="1483,808" dimension="187,53" />
+  <StrutsActivity path="/exam/testdept_result.jsp" location="1055,1714" dimension="178,53" />
+  <StrutsActivity path="/exam/testinfo_list.jsp" location="1481,1110" dimension="157,53" />
+  <StrutsActivity path="/exam/testinfoResult_list.jsp" location="354,2016" dimension="192,53" />
+  <StrutsActivity path="/exam/testinfo_addEdit.jsp" location="1679,1412" dimension="186,53" />
+  <StrutsActivity path="/exam/testinfo_view.jsp" location="680,2016" dimension="166,53" />
+  <StrutsActivity path="/exam/testuser_list.jsp" location="426,1110" dimension="160,53" />
+  <StrutsActivity path="/exam/myTestinfo_list.jsp" location="1373,1714" dimension="177,53" />
+  <StrutsActivity path="/exam/myTestresult_list.jsp" location="1684,1714" dimension="187,53" />
+  <StrutsActivity path="/exam/testinfo_examhall.jsp" location="39,2016" dimension="192,53" />
+  <StrutsActivity path="/exam/checktest_list.jsp" location="397,1714" dimension="168,53" />
+  <StrutsActivity path="/exam/checkpaper_main.jsp" location="720,1714" dimension="194,53" />
+  <StrutsActivity path="/exam/checkpaper_ques.jsp" location="971,1412" dimension="194,53" />
+  <StrutsActivity path="/exercises/exam_paper.jsp" location="2150,1050" dimension="186,53" />
+  <StrutsActivity path="/exam/exam_exercises.jsp" location="1250,650" dimension="182,53" />
+  <StrutsActivity path="/exercise/listExercise.do" location="50,750" dimension="297,104" />
+  <StrutsActivity path="/exercise/exerciers_list.jsp" location="950,750" dimension="182,53" />
+  <StrutsTransition id="/exercises/listExercise.do,listExercises,/exercises/exerciers_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="198,954" />
+      <AbsolutePoint location="198,1276" />
+      <AbsolutePoint location="2150,1276" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exercises/doExerciseShift.do,doExercise,/exercises/exam_exercises.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="324,688" />
+      <AbsolutePoint location="650,688" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="toUrl;6,null,/pubs/toUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1829,1899" />
+      <AbsolutePoint location="1829,1999" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="errorPage;6,null,/pubs/errorPage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1247,1899" />
+      <AbsolutePoint location="1247,1999" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exercises/listExercise.do,listExer,/exercises/exerciers_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="198,954" />
+      <AbsolutePoint location="198,1276" />
+      <AbsolutePoint location="2150,1276" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exercises/listExercises.do,listExercises,/exercises/exerciers_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2353,954" />
+      <AbsolutePoint location="2353,1276" />
+      <AbsolutePoint location="2338,1276" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exercises/listExerOpen.do,doExercise,/exercises/exam_exercises.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1550,602" />
+      <AbsolutePoint location="752,602" />
+      <AbsolutePoint location="752,650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exercises/doExercise.do,doExercise,/exercises/exam_exercises.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1550,602" />
+      <AbsolutePoint location="752,602" />
+      <AbsolutePoint location="752,650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exercise/listExercise.do,listExer,/exercise/exerciers_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="347,788" />
+      <AbsolutePoint location="950,788" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="treeXml;6,null,/pubs/treeXml.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1645,1899" />
+      <AbsolutePoint location="1645,1999" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="forwardToUrl;6,null,/pubs/forwardToUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1032,1899" />
+      <AbsolutePoint location="1032,1999" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="messagePage;6,null,/pubs/message.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1450,1899" />
+      <AbsolutePoint location="1450,1999" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

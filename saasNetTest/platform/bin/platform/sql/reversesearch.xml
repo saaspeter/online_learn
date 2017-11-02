@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Reversesearch">
+<!-- ###################### reversesearchResult ########################## -->
+  <resultMap id="ReversesearchResult" class="platform.vo.Reversesearch">
+    <result column="searchText" property="searchtext" jdbcType="VARCHAR"/>
+    <result column="entityID" property="entityid" jdbcType="BIGINT"/>
+    <result column="entityType" property="entitytype" jdbcType="VARCHAR"/>
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP"/>
+
+  </resultMap>
+   
+<!-- ###################### selectByText ########################## -->
+  <select id="selectByText" resultMap="ReversesearchResult" parameterClass="platform.vo.Reversesearch"> 
+     select  searchText, entityID, entityType, createTime
+     from reversesearch
+     where entityType=#entitytype:VARCHAR#
+     and searchText like CONCAT('%',#searchtext:VARCHAR#,'%')
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="platform.vo.Reversesearch"> 
+     insert into reversesearch
+     (     searchText,
+    entityID,
+    entityType,
+    createTime ) 
+    values 
+     (     #searchtext:VARCHAR#, 
+    #entityid:BIGINT#, 
+    #entitytype:VARCHAR#, 
+    #createtime:TIMESTAMP# )
+  </insert>
+  
+<!-- ###################### deleteByText ########################## -->
+  <delete id="deleteByText" parameterClass="platform.vo.Reversesearch"> 
+     delete from reversesearch 
+     where entityType=#entitytype:VARCHAR#
+     and searchText = #searchtext:VARCHAR#
+  </delete>
+  
+<!-- ###################### deleteByEntity ########################## -->
+  <delete id="deleteByEntity" parameterClass="platform.vo.Reversesearch"> 
+     delete from reversesearch 
+     where entityType=#entitytype:VARCHAR#
+     and entityID=#entityid:BIGINT#
+  </delete>
+    
+</sqlMap>

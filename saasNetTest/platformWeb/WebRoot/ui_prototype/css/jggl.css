@@ -1,0 +1,1118 @@
+
+IFRAME {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL {
+	LIST-STYLE-TYPE: none
+}
+
+.bold {
+	FONT-WEIGHT: bold
+}
+.red {
+	COLOR: #ff0000
+}
+.green {
+	COLOR: #25960a
+}
+.rules {
+	CLEAR: both
+}
+UL#header {
+	BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_header.gif) repeat-x 0px 0px; FLOAT: left; WIDTH: 760px; HEIGHT: 67px
+}
+UL#header LI.title {
+	FLOAT: left; WIDTH: 330px; HEIGHT: 67px
+}
+UL#header LI.title H1 {
+	BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/logo_koolearn.gif) no-repeat 100% 100%; FLOAT: left; WIDTH: 111px; HEIGHT: 60px
+}
+UL#header LI.title H1 A {
+	DISPLAY: block; MARGIN: 5px 0px 0px auto; WIDTH: 101px; HEIGHT: 55px
+}
+UL#header LI.title H2 {
+	BACKGROUND: url(http://images.koolearn.com/www/user/classroom/2006_0701/title_h2_header.gif) no-repeat 100% 100%; FLOAT: left; WIDTH: 126px; HEIGHT: 60px
+}
+UL#header LI.title H3 {
+	BACKGROUND: url(http://images.koolearn.com/www/user/classroom/2006_0701/title_h3_header.gif) no-repeat 100% 100%; FLOAT: left; WIDTH: 88px; HEIGHT: 60px
+}
+UL#header LI.content {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 0px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0828/bg_content_header.gif) no-repeat 100% 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 13px 0px 0px; WIDTH: 414px; PADDING-TOP: 0px; HEIGHT: 23px; TEXT-ALIGN: left
+}
+UL#header LI.content UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0828/bg_content_ul_header.gif) #e5e5e5 no-repeat 0px 0px; FLOAT: right; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: hidden; PADDING-TOP: 0px; HEIGHT: 23px
+}
+UL#header LI.content UL LI {
+	PADDING-RIGHT: 9px; PADDING-LEFT: 9px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 5px 0px 0px -1px; OVERFLOW: hidden; BORDER-LEFT: #9b9b9b 1px solid; LINE-HEIGHT: 14px; PADDING-TOP: 0px; HEIGHT: 13px
+}
+UL#header LI.content UL LI A {
+	TEXT-DECORATION: none
+}
+UL#header LI.content UL LI A:hover {
+	TEXT-DECORATION: underline
+}
+#MainTabNav {
+	BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0828/bg_maintabnav.gif) #91c7e3 repeat-x 0px 0px; FLOAT: left; WIDTH: 760px; HEIGHT: 70px; TEXT-ALIGN: left
+}
+UL#MainTabNavTitle {
+	MARGIN: 0px auto; OVERFLOW: hidden; WIDTH: 680px; LINE-HEIGHT: 39px; HEIGHT: 35px
+}
+UL#MainTabNavTitle LI {
+	BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0828/bg_unselected_li_maintabnav.gif) #e3f2db no-repeat 0px 0px; FLOAT: left; MARGIN: 0px -1px 0px 0px
+}
+UL#MainTabNavTitle LI H2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 16px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0828/bg_unselected_h2_maintabnav.gif) no-repeat 100% 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #000000; PADDING-TOP: 0px
+}
+UL#MainTabNavTitle LI.selected {
+	BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0828/bg_selected_li_maintabnav.gif) #91c7e3 no-repeat 0px 0px; MARGIN: 0px
+}
+UL#MainTabNavTitle LI.selected H2 {
+	FONT-SIZE: 18px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0828/bg_selected_h2_maintabnav.gif) no-repeat 100% 0px; FONT-FAMILY: 黑体
+}
+UL#MainTabNavTitle LI H2 A {
+	PADDING-RIGHT: 34px; DISPLAY: block; PADDING-LEFT: 34px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+UL#MainTabNavTitle LI H2 A:hover {
+	TEXT-DECORATION: underline
+}
+UL#MainTabNavTitle LI.selected H2 A {
+	PADDING-RIGHT: 34px; PADDING-LEFT: 34px; PADDING-BOTTOM: 0px; CURSOR: default; COLOR: #000000; PADDING-TOP: 0px
+}
+UL#MainTabNavTitle LI.selected H2 A:hover {
+	TEXT-DECORATION: none
+}
+UL.maintabnavlist {
+	CLEAR: both; FONT-SIZE: 14px; COLOR: #ffffff; LINE-HEIGHT: 18px; HEIGHT: 35px
+}
+UL.maintabnavlist LI {
+	BORDER-RIGHT: #ffffff 1px solid; PADDING-RIGHT: 16px; PADDING-LEFT: 16px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 8px 0px 0px; OVERFLOW: hidden; PADDING-TOP: 0px; HEIGHT: 16px
+}
+UL.maintabnavlist LI.selected {
+	FONT-SIZE: 16px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0828/dot_mainnavlist_01.gif) no-repeat 7px 4px; FONT-FAMILY: 黑体
+}
+UL.maintabnavlist LI A {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+UL.maintabnavlist LI A:hover {
+	COLOR: #ffffff; TEXT-DECORATION: underline
+}
+UL.maintabnavlist LI.selected A {
+	TEXT-DECORATION: none
+}
+UL#mycourselist {
+	MARGIN: 0px 0px 0px 74px
+}
+UL#myaccountlist {
+	MARGIN: 0px 0px 0px 337px
+}
+UL#myexamlist {
+	MARGIN: 0px 0px 0px 206px
+}
+UL#myinfolist {
+	MARGIN: 0px 0px 0px 453px
+}
+UL#myorderlist {
+	MARGIN: 0px 0px 0px 560px
+}
+UL#myorderlist LI.title {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px
+}
+#content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 50px; WIDTH: 760px; PADDING-TOP: 0px; TEXT-ALIGN: left
+}
+#content TABLE {
+	CLEAR: both; BORDER-TOP: #e5e5e5 1px solid; BACKGROUND: #ffffff; MARGIN: 0px auto; WIDTH: 100%; LINE-HEIGHT: 14px; BORDER-COLLAPSE: collapse
+}
+#content TABLE TH {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 8px; PADDING-BOTTOM: 6px; COLOR: #575757; PADDING-TOP: 8px; BORDER-BOTTOM: #e5e5e5 1px solid
+}
+#content TABLE TD {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 8px; PADDING-BOTTOM: 6px; COLOR: #575757; PADDING-TOP: 8px; BORDER-BOTTOM: #e5e5e5 1px solid
+}
+#content TABLE TH {
+	BACKGROUND: #f4f4f4; WHITE-SPACE: nowrap
+}
+#content TABLE TD {
+	BORDER-RIGHT: #e5e5e5 1px solid
+}
+#content TABLE A {
+	COLOR: #249708
+}
+#content TABLE TD.last {
+	BORDER-RIGHT: #ffffff 0px solid
+}
+.btnstyle1 {
+	BORDER-RIGHT: #b2b2b2 1px solid; PADDING-RIGHT: 6px; BORDER-TOP: #b2b2b2 1px solid; PADDING-LEFT: 6px; FONT-SIZE: 12px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_btn_01.gif) #ffffff repeat-x 0px 0px; PADDING-BOTTOM: 0px; OVERFLOW: hidden; BORDER-LEFT: #b2b2b2 1px solid; CURSOR: pointer; LINE-HEIGHT: 18px; PADDING-TOP: 0px; BORDER-BOTTOM: #b2b2b2 1px solid; HEIGHT: 19px
+}
+.btnstyle2 {
+	BORDER-RIGHT: #b2b2b2 1px solid; PADDING-RIGHT: 6px; BORDER-TOP: #b2b2b2 1px solid; PADDING-LEFT: 6px; FONT-SIZE: 12px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_btn_01.gif) #ffffff repeat-x 0px 0px; PADDING-BOTTOM: 0px; OVERFLOW: hidden; BORDER-LEFT: #b2b2b2 1px solid; CURSOR: pointer; LINE-HEIGHT: 18px; PADDING-TOP: 0px; BORDER-BOTTOM: #b2b2b2 1px solid; HEIGHT: 19px
+}
+P.btnarea {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px; TEXT-ALIGN: center
+}
+P.btnarea2 {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 30px; TEXT-ALIGN: center
+}
+P.btnarea2 .btnstyle1 {
+	BORDER-RIGHT: #a2d683 1px solid; BORDER-TOP: #a2d683 1px solid; BACKGROUND: #f5fff1; BORDER-LEFT: #a2d683 1px solid; COLOR: #209707; BORDER-BOTTOM: #a2d683 1px solid; FONT-FAMILY: 黑体
+}
+P.btnarea2 .btnstyle2 {
+	BORDER-RIGHT: #a2d683 1px solid; BORDER-TOP: #a2d683 1px solid; BACKGROUND: #f5fff1; BORDER-LEFT: #a2d683 1px solid; COLOR: #209707; BORDER-BOTTOM: #a2d683 1px solid; FONT-FAMILY: 黑体
+}
+P.btnarea2 .btnstyle1 {
+	FONT-SIZE: 26px; LINE-HEIGHT: 40px; HEIGHT: 40px
+}
+P.btnarea2 .btnstyle2 {
+	FONT-SIZE: 18px; LINE-HEIGHT: 30px; HEIGHT: 30px
+}
+P.btnarea2 A {
+	COLOR: #209707
+}
+UL.pagename {
+	CLEAR: both; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_pagename.jpg) no-repeat 0px -8px; FLOAT: left; WIDTH: 760px; HEIGHT: 90px
+}
+UL.pagename LI.title {
+	CLEAR: both; FLOAT: left; COLOR: #3371aa
+}
+UL.pagename LI.title H2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 46px; FONT-WEIGHT: normal; FONT-SIZE: 28px; PADDING-BOTTOM: 0px; PADDING-TOP: 16px; FONT-FAMILY: 黑体
+}
+UL.pagename LI.content {
+	FONT-SIZE: 16px; MARGIN: 0px; COLOR: #7b7b79; HEIGHT: 90px
+}
+UL.pagename LI.content P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 10px; PADDING-BOTTOM: 0px; PADDING-TOP: 27px
+}
+UL#mycourse LI.content {
+	
+}
+UL#myexam LI.content {
+	
+}
+UL#myaccount LI.content {
+	
+}
+UL#myinfo LI.content {
+	
+}
+UL#myorder LI.content {
+	
+}
+#leftcontent {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: hidden; WIDTH: 227px; PADDING-TOP: 0px
+}
+UL#CourseTree {
+	CLEAR: both; BACKGROUND: url(bg_coursetree.gif) repeat-y 0px 0px; FLOAT: left; MARGIN: 0px 0px 0px 5px; WIDTH: 211px; TEXT-ALIGN: left
+}
+UL#myitem {
+	CLEAR: both; BACKGROUND: url(bg_coursetree.gif) repeat-y 0px 0px; FLOAT: left; MARGIN: 0px 0px 0px 5px; WIDTH: 211px; TEXT-ALIGN: left
+}
+UL#CourseTree LI.title {
+	CLEAR: both; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_title_coursetree.gif) #5794c1 no-repeat 0px 0px; FLOAT: left; WIDTH: 211px
+}
+UL#myitem LI.title {
+	CLEAR: both; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_title_coursetree.gif) #5794c1 no-repeat 0px 0px; FLOAT: left; WIDTH: 211px
+}
+UL#CourseTree LI.title H2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 16px; FONT-SIZE: 14px; PADDING-BOTTOM: 5px; COLOR: #ffffff; PADDING-TOP: 6px
+}
+UL#myitem LI.title H2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 16px; FONT-SIZE: 14px; PADDING-BOTTOM: 5px; COLOR: #ffffff; PADDING-TOP: 6px
+}
+UL#CourseTree LI.content {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(bg_content_coursetree.gif) no-repeat 0px 100%; FLOAT: left; PADDING-BOTTOM: 40px; WIDTH: 211px; PADDING-TOP: 0px
+}
+UL#myitem LI.content {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(bg_content_coursetree.gif) no-repeat 0px 100%; FLOAT: left; PADDING-BOTTOM: 40px; WIDTH: 211px; PADDING-TOP: 0px
+}
+UL#CourseTree LI.content UL.treestyle {
+	MARGIN: 0px 8px 0px 16px; LINE-HEIGHT: 20px
+}
+UL#CourseTree LI.content UL.treestyle LI.title {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px
+}
+UL#CourseTree LI.content UL.treestyle LI.content {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: none transparent scroll repeat 0% 0%; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px
+}
+UL#CourseTree LI.content UL.treestyle LI.title {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 12px
+}
+UL#CourseTree LI.content UL.treestyle LI.title H3 {
+	FONT-SIZE: 13px; CURSOR: pointer; COLOR: #3071ab
+}
+UL#CourseTree LI.content .collapsed UL.treestyle LI.title H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 16px; BACKGROUND: url(dot_collapsed.gif) no-repeat 0px 3px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+UL#CourseTree LI.content .expanded UL.treestyle LI.title H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 16px; BACKGROUND: url(dot_expanded.gif) no-repeat 0px 3px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+UL#CourseTree LI.content UL.treestyle LI.content UL.treestyle {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 15px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_ul_coursetree.gif) repeat-y 0px 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0px 5px; PADDING-TOP: 0px
+}
+UL#CourseTree LI.content UL.treestyle LI.content UL.treestyle H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 8px; FONT-WEIGHT: normal; FONT-SIZE: 12px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/dot_h3_coursetree.gif) no-repeat 0px 8px; PADDING-BOTTOM: 0px; WIDTH: 90%; COLOR: #3071ab; PADDING-TOP: 0px
+}
+UL#CourseTree LI.content .collapsed UL.treestyle LI.content UL.treestyle LI.title {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL#CourseTree LI.content .expanded UL.treestyle LI.content UL.treestyle LI.title {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL#CourseTree LI.content .collapsed UL.treestyle LI.content UL.treestyle LI.title H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 16px; BACKGROUND: url(dot_collapsed.gif) no-repeat 0px 3px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL#CourseTree LI.content .expanded UL.treestyle LI.content .expanded UL.treestyle LI.title H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 16px; BACKGROUND: url(dot_expanded.gif) no-repeat 0px 3px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL#CourseTree LI.content .expanded UL.treestyle LI.content .collapsed UL.treestyle LI.title H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 16px; BACKGROUND: url(dot_collapsed.gif) no-repeat 0px 3px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL#CourseTree LI.content UL.treestyle LI.content UL.treestyle LI.selected H3 {
+	FONT-WEIGHT: bold
+}
+UL#CourseTree LI.content UL.treestyle A {
+	COLOR: #3071ab
+}
+UL#CourseTree LI.content UL.treestyle LI.content UL.treestyle LI.content UL.treestyle H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 8px; FONT-WEIGHT: normal; FONT-SIZE: 12px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/dot_h3_coursetree.gif) no-repeat 0px 8px; PADDING-BOTTOM: 0px; WIDTH: 90%; COLOR: #3071ab; PADDING-TOP: 0px
+}
+UL#CourseTree LI.content UL.treestyle LI.content UL.treestyle LI.content UL.treestyle LI.selected H3 {
+	FONT-WEIGHT: bold
+}
+UL#CourseTree LI.content UL.treestyle A {
+	COLOR: #3071ab
+}
+UL.panel {
+	BACKGROUND: #d1e7f5; FLOAT: left; MARGIN: 0px 0px 10px 5px; WIDTH: 211px
+}
+UL.panel LI.title {
+	BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_title_panel.gif) no-repeat 0px 0px; FLOAT: left; OVERFLOW: hidden; WIDTH: 211px; HEIGHT: 4px
+}
+UL.panel LI.content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_content_panel.gif) no-repeat 0px 100%; FLOAT: left; PADDING-BOTTOM: 10px; WIDTH: 211px; PADDING-TOP: 0px
+}
+UL.panel LI.content P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 20px; PADDING-BOTTOM: 40px; COLOR: #125ca3; PADDING-TOP: 20px; TEXT-ALIGN: left
+}
+UL.panel LI.content P.edit {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 12px 0px 0px; PADDING-TOP: 0px; TEXT-ALIGN: right
+}
+UL.panel LI.content P.edit A {
+	COLOR: #5a95c1; TEXT-DECORATION: none
+}
+UL.panel LI.content UL {
+	FONT-SIZE: 14px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_content_ul_panel.gif) repeat-y 6px 0px; FLOAT: left; MARGIN: 0px 0px 0px 3px; WIDTH: 205px; COLOR: #125da1; LINE-HEIGHT: 27px
+}
+UL.panel LI.content UL LI {
+	MARGIN: 0px 0px 9px; HEIGHT: 27px
+}
+UL.panel LI.content UL LI.selected {
+	FONT-WEIGHT: bold; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_content_li_panel.gif) #ffffff no-repeat 0px 0px
+}
+UL.panel LI.content UL LI A {
+	COLOR: #0f5ca0; TEXT-DECORATION: none
+}
+UL.panel LI.content P.edit A:hover {
+	TEXT-DECORATION: underline
+}
+UL.panel LI.content UL LI A:hover {
+	TEXT-DECORATION: underline
+}
+UL#myitem LI.content P.note A:hover {
+	TEXT-DECORATION: underline
+}
+UL#myitem LI.content UL LI A:hover {
+	TEXT-DECORATION: underline
+}
+UL.panel LI.content INPUT {
+	BORDER-RIGHT: #ffffff 0px solid; BORDER-TOP: #ffffff 0px solid; BORDER-LEFT: #ffffff 0px solid; COLOR: #135ba3; BORDER-BOTTOM: #ffffff 0px solid
+}
+UL.panel LI.content .btnstyle3 {
+	BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_btn_process_03.gif) #ffffff no-repeat 0px 0px; MARGIN: 0px 0px 0px 50px; WIDTH: 74px; LINE-HEIGHT: 23px; HEIGHT: 23px
+}
+UL.panel LI.content .btnstyle4 {
+	BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_btn_process_04.gif) #ffffff no-repeat 0px 0px; WIDTH: 44px; LINE-HEIGHT: 23px; HEIGHT: 23px
+}
+UL#myitem LI.content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 10px; PADDING-TOP: 0px
+}
+UL#myitem LI.content P.note {
+	Z-INDEX: 2; MARGIN: -22px 12px 0px 0px; POSITION: relative; TEXT-ALIGN: right
+}
+UL#myitem LI.content P.note A {
+	COLOR: #d4e7f5; TEXT-DECORATION: none
+}
+UL#myitem LI.content UL {
+	MARGIN: 10px 10px 0px 20px; COLOR: #838383; LINE-HEIGHT: 20px
+}
+UL#myitem LI.content UL LI.columnmore {
+	TEXT-ALIGN: right
+}
+UL#myitem LI.content UL LI A {
+	COLOR: #125da0; TEXT-DECORATION: none
+}
+UL.process {
+	BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_process.gif) #ffffff repeat-y 0px 0px; FLOAT: left; MARGIN: 0px 0px -4px 5px; WIDTH: 211px
+}
+UL.process LI.title {
+	BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_title_process.gif) no-repeat 0px 0px; FLOAT: left; WIDTH: 211px; TEXT-ALIGN: left
+}
+UL.process LI.title H2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 18px; FONT-WEIGHT: normal; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; PADDING-TOP: 12px
+}
+UL.process LI.content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_content_process.gif) no-repeat 0px 100%; FLOAT: left; PADDING-BOTTOM: 24px; WIDTH: 211px; PADDING-TOP: 14px; TEXT-ALIGN: center
+}
+UL.process LI.content INPUT {
+	BORDER-RIGHT: #ffffff 0px solid; BORDER-TOP: #ffffff 0px solid; MARGIN: 0px 0px 6px; BORDER-LEFT: #ffffff 0px solid; COLOR: #716f72; BORDER-BOTTOM: #ffffff 0px solid
+}
+UL.process LI.content .btnstyle1 {
+	CLEAR: both; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_btn_process_01.gif) #c9f0c4 no-repeat 0px 0px; WIDTH: 126px; LINE-HEIGHT: 22px; HEIGHT: 22px
+}
+UL.process LI.content .btnstyle2 {
+	BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_btn_process_02.gif) #c9f0c4 no-repeat 0px 0px; WIDTH: 61px; LINE-HEIGHT: 22px; HEIGHT: 22px
+}
+#rightcontent {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; Z-INDEX: 2; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 526px; PADDING-TOP: 0px; POSITION: relative
+}
+UL.classify {
+	CLEAR: both; MARGIN: 0px 0px 10px; WIDTH: 510px
+}
+UL.classify LI.title {
+	BORDER-RIGHT: #dddddd 1px solid; BORDER-TOP: #dddddd 1px solid; BACKGROUND: #ecfaeb; OVERFLOW: hidden; BORDER-LEFT: #dddddd 1px solid; WIDTH: 510px; CURSOR: pointer; LINE-HEIGHT: 23px; BORDER-BOTTOM: #dddddd 1px solid; HEIGHT: 22px
+}
+UL.classify LI.title H2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 24px; FONT-SIZE: 12px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px auto 0px 0px; PADDING-TOP: 0px
+}
+DIV.collapsed UL.classify LI.title {
+	BACKGROUND: #f8f8f8
+}
+DIV.collapsed UL.classify LI.title H2 {
+	BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/open_02.gif) no-repeat 14px 6px
+}
+DIV.expanded UL.classify LI.title H2 {
+	BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/close_02.gif) no-repeat 10px 8px
+}
+UL.classify LI.content {
+	PADDING-RIGHT: 4px; PADDING-LEFT: 14px; PADDING-BOTTOM: 0px; WIDTH: 492px; LINE-HEIGHT: 20px; PADDING-TOP: 10px; POSITION: relative; TEXT-ALIGN: left
+}
+UL.classify LI.content UL {
+	LINE-HEIGHT: 23px; POSITION: relative
+}
+UL.classify LI.content P {
+	LINE-HEIGHT: 23px; POSITION: relative
+}
+UL.classify LI.content UL LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 8px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/dot_ul_classify.gif) no-repeat 0px 10px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+UL.classify LI.content UL LI A {
+	COLOR: #135ca1; TEXT-DECORATION: none
+}
+UL.classify LI.content UL LI A:hover {
+	COLOR: #ff5500; TEXT-DECORATION: underline
+}
+DIV.pageview1 {
+	RIGHT: 10px; POSITION: absolute; TOP: -24px
+}
+DIV.pageview2 {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 0px; BACKGROUND: #f4f4f4; PADDING-BOTTOM: 0px; MARGIN: 10px 0px 0px; PADDING-TOP: 0px; TEXT-ALIGN: right
+}
+DIV.pageview1 A {
+	COLOR: #135ca1
+}
+DIV.pageview2 A {
+	COLOR: #135ca1
+}
+UL.shoppingcart {
+	BORDER-RIGHT: #c8c8c8 1px solid; BORDER-TOP: #c8c8c8 1px solid; Z-INDEX: 2; FILTER: alpha(opacity=90); BORDER-LEFT: #c8c8c8 1px solid; WIDTH: 170px; BORDER-BOTTOM: #c8c8c8 1px solid; POSITION: absolute; TEXT-ALIGN: left; moz-opacity: 0.9
+}
+UL.shoppingcart LI.title {
+	CLEAR: both; BACKGROUND: #8f8f8f; FLOAT: left; WIDTH: 170px; CURSOR: move; COLOR: #ffffff; LINE-HEIGHT: 20px; HEIGHT: 20px
+}
+UL.shoppingcart LI.title H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 10px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+UL.shoppingcart LI.content {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: #ffffff; FLOAT: left; PADDING-BOTTOM: 10px; WIDTH: 170px; COLOR: #000000; LINE-HEIGHT: 18px; PADDING-TOP: 10px
+}
+UL.shoppingcart LI.content P {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+UL.shoppingcart LI.content P.viewcart {
+	BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_btn_viewcart.gif) no-repeat 90% 0px; TEXT-ALIGN: right
+}
+UL.shoppingcart LI.content P.viewcart A {
+	DISPLAY: block; MARGIN: 0px 0px 0px auto; OVERFLOW: hidden; WIDTH: 94px; TEXT-INDENT: 12px; HEIGHT: 18px; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+UL.courseexhibit {
+	BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_courseexhibit.gif) repeat-y 0px 0px; OVERFLOW: hidden; WIDTH: 526px; TEXT-ALIGN: left
+}
+UL.courseexhibit LI.title {
+	CLEAR: both; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_title_courseexhibit.gif) no-repeat 0px 0px; FLOAT: left; WIDTH: 526px; HEIGHT: 21px
+}
+UL.courseexhibit LI.content {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_content_courseexhibit.gif) no-repeat 0px 100%; FLOAT: left; PADDING-BOTTOM: 24px; WIDTH: 526px; PADDING-TOP: 0px; TEXT-ALIGN: center
+}
+UL.courseexhibit LI.content H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 20px; FONT-SIZE: 14px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_tip_courseexhibit.gif) no-repeat 95% 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; HEIGHT: 67px; TEXT-ALIGN: left
+}
+UL.courseexhibit LI.content P {
+	LINE-HEIGHT: 20px; TEXT-ALIGN: left
+}
+UL.courseexhibit LI.content P.welcome {
+	CLEAR: both; FLOAT: left; MARGIN: 0px 0px 0px 15px; WIDTH: 230px
+}
+UL.courseexhibit LI.content P.guide {
+	CLEAR: both; FLOAT: left; MARGIN: 0px 0px 0px 15px; WIDTH: 230px
+}
+UL.courseexhibit LI.content P.guide {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(http://images.koolearn.com/www/user/classroom/2006_0701/inset_guide_courseexhibit.gif) no-repeat 50% 100%; PADDING-BOTTOM: 120px; PADDING-TOP: 10px
+}
+UL.courseexhibit LI.content P.plugin {
+	PADDING-RIGHT: 40px; PADDING-LEFT: 0px; BACKGROUND: url(http://images.koolearn.com/www/user/classroom/2006_0701/inset_plugin_courseexhibit.gif) no-repeat 100% 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0px 20px; WIDTH: 160px; PADDING-TOP: 0px
+}
+UL.courseexhibit LI.content P.plugin A {
+	COLOR: #249708
+}
+UL.courseexhibit LI.content P.plugin IMG.plugin {
+	BORDER-TOP-WIDTH: 0px; DISPLAY: block; BORDER-LEFT-WIDTH: 0px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/btn_plugin_01.gif) no-repeat 0px 0px; BORDER-BOTTOM-WIDTH: 0px; MARGIN: 20px auto; WIDTH: 102px; HEIGHT: 29px; BORDER-RIGHT-WIDTH: 0px
+}
+UL.courseexhibit LI.content P.tip {
+	CLEAR: both; FLOAT: left; MARGIN: -40px 0px 0px 10px
+}
+#content UL.courseexhibit LI.content TABLE {
+	MARGIN: 0px auto; WIDTH: 92%; TEXT-ALIGN: left
+}
+#content UL.courseexhibit LI.content TABLE TD.buy {
+	BORDER-RIGHT: #ffffff 0px solid; PADDING-RIGHT: 4px; PADDING-LEFT: 4px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/btn_buy_01.gif) no-repeat 50% 50%; PADDING-BOTTOM: 6px; PADDING-TOP: 8px; TEXT-ALIGN: center
+}
+#content UL.courseexhibit LI.content TABLE TD.buy A {
+	DISPLAY: block; MARGIN: 0px auto; OVERFLOW: hidden; WIDTH: 57px; COLOR: #3f6c28; TEXT-INDENT: 16px; LINE-HEIGHT: 18px; HEIGHT: 18px; TEXT-DECORATION: none
+}
+#content UL.tabcontent LI.content TABLE TD.test {
+	BORDER-RIGHT: #ffffff 0px solid; PADDING-RIGHT: 4px; PADDING-LEFT: 4px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_btn_test.gif) no-repeat 50% 50%; PADDING-BOTTOM: 6px; PADDING-TOP: 8px; TEXT-ALIGN: center
+}
+#content UL.tabcontent LI.content TABLE TD.test A {
+	DISPLAY: block; MARGIN: 0px auto; OVERFLOW: hidden; WIDTH: 57px; COLOR: #3f6c28; TEXT-INDENT: 24px; LINE-HEIGHT: 18px; HEIGHT: 18px; TEXT-DECORATION: none
+}
+UL.tabcontent {
+	CLEAR: both; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0828/bg_title_tabcontent.gif) repeat-x 0px 0px; FLOAT: left; MARGIN: -30px 0px 0px; WIDTH: 760px; TEXT-ALIGN: center
+}
+DIV.tabcontent {
+	CLEAR: both; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0828/bg_title_tabcontent.gif) repeat-x 0px 0px; FLOAT: left; MARGIN: -30px 0px 0px; WIDTH: 760px; TEXT-ALIGN: center
+}
+UL.tabcontent LI.title {
+	CLEAR: both; Z-INDEX: 2; MARGIN: 0px auto; WIDTH: 690px; POSITION: relative; HEIGHT: 38px
+}
+DIV.tabcontent DIV.title {
+	CLEAR: both; Z-INDEX: 2; MARGIN: 0px auto; WIDTH: 690px; POSITION: relative; HEIGHT: 38px
+}
+UL.tabcontent LI.title H3 {
+	FONT-WEIGHT: normal; FONT-SIZE: 14px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0828/bg_unselected_h3_tabcontent.gif) no-repeat 0px 0px; FLOAT: left; MARGIN: 0px; OVERFLOW: hidden; LINE-HEIGHT: 39px; HEIGHT: 38px; TEXT-ALIGN: center
+}
+DIV.tabcontent DIV.title H3 {
+	FONT-WEIGHT: normal; FONT-SIZE: 14px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0828/bg_unselected_h3_tabcontent.gif) no-repeat 0px 0px; FLOAT: left; MARGIN: 0px; OVERFLOW: hidden; LINE-HEIGHT: 39px; HEIGHT: 38px; TEXT-ALIGN: center
+}
+UL.tabcontent LI.title H3.selected {
+	FONT-SIZE: 16px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0828/bg_selected_h3_tabcontent.gif) #ffffff no-repeat 0px 0px; FONT-FAMILY: 黑体
+}
+DIV.tabcontent DIV.title H3.selected {
+	FONT-SIZE: 16px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0828/bg_selected_h3_tabcontent.gif) #ffffff no-repeat 0px 0px; FONT-FAMILY: 黑体
+}
+UL.tabcontent LI.title H3 A {
+	PADDING-RIGHT: 24px; DISPLAY: block; PADDING-LEFT: 24px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0828/bg_unselected_a_tabcontent.gif) no-repeat 100% 0px; PADDING-BOTTOM: 0px; CURSOR: pointer; COLOR: #000000; PADDING-TOP: 0px; TEXT-ALIGN: center
+}
+DIV.tabcontent DIV.title H3 A {
+	PADDING-RIGHT: 24px; DISPLAY: block; PADDING-LEFT: 24px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0828/bg_unselected_a_tabcontent.gif) no-repeat 100% 0px; PADDING-BOTTOM: 0px; CURSOR: pointer; COLOR: #000000; PADDING-TOP: 0px; TEXT-ALIGN: center
+}
+UL.tabcontent LI.title H3 A:hover {
+	COLOR: #ff5500
+}
+DIV.tabcontent DIV.title H3 A:hover {
+	COLOR: #ff5500
+}
+UL.tabcontent LI.title H3.selected A {
+	BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0828/bg_selected_a_tabcontent.gif) no-repeat 100% 0px; CURSOR: default; COLOR: #000100; TEXT-DECORATION: none
+}
+DIV.tabcontent DIV.title H3.selected A {
+	BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0828/bg_selected_a_tabcontent.gif) no-repeat 100% 0px; CURSOR: default; COLOR: #000100; TEXT-DECORATION: none
+}
+UL.tabcontent LI.title H3.selected A:hover {
+	COLOR: #000100; TEXT-DECORATION: none
+}
+DIV.tabcontent DIV.title H3.selected A:hover {
+	COLOR: #000100; TEXT-DECORATION: none
+}
+UL.tabcontent LI.title P.search {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 50px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 10px; TEXT-ALIGN: left
+}
+DIV.tabcontent DIV.title P.search {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 50px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 10px; TEXT-ALIGN: left
+}
+UL.tabcontent LI.content {
+	CLEAR: both; PADDING-RIGHT: 40px; PADDING-LEFT: 40px; Z-INDEX: 1; FLOAT: left; PADDING-BOTTOM: 20px; MARGIN: -4px 0px 0px; WIDTH: 680px; COLOR: #575757; PADDING-TOP: 20px; POSITION: relative; TEXT-ALIGN: left
+}
+DIV.tabcontent DIV.content {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 20px; MARGIN: -4px 0px 0px; WIDTH: 760px; COLOR: #575757; PADDING-TOP: 20px; POSITION: relative
+}
+UL.tabcontent LI.content DIV.resourcearea {
+	MARGIN: 10px 0px 6px; BORDER-BOTTOM: #ececec 1px dashed
+}
+UL.tabcontent LI.content DIV.resourcearea UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; LIST-STYLE-POSITION: inside; PADDING-BOTTOM: 6px; LINE-HEIGHT: 18px; PADDING-TOP: 6px; LIST-STYLE-TYPE: disc; HEIGHT: 30px
+}
+UL.tabcontent LI.content P {
+	LINE-HEIGHT: 20px
+}
+DIV.tabcontent DIV.content P {
+	LINE-HEIGHT: 20px
+}
+UL.tabcontent LI.content P.plugin {
+	
+}
+UL.tabcontent LI.content P.plugin A {
+	COLOR: #249708
+}
+UL.tabcontent LI.content P.plugin IMG.plugin {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/btn_plugin_02.gif) no-repeat 0px 0px; BORDER-BOTTOM-WIDTH: 0px; VERTICAL-ALIGN: middle; WIDTH: 84px; HEIGHT: 25px; BORDER-RIGHT-WIDTH: 0px
+}
+UL.tabcontent LI.content H3 {
+	BORDER-RIGHT: #ffffff 0px solid; BORDER-TOP: #ffffff 0px solid; FONT-SIZE: 14px; BACKGROUND: none transparent scroll repeat 0% 0%; MARGIN: 20px 0px 0px; BORDER-LEFT: #ffffff 0px solid; COLOR: #585858; LINE-HEIGHT: 24px; BORDER-BOTTOM: #ffffff 0px solid
+}
+UL.tabcontent LI.content HR {
+	MARGIN: 0px auto; WIDTH: 95%; COLOR: #dcdcdc; HEIGHT: 1px; TEXT-ALIGN: center
+}
+#content UL.tabcontent LI.content TABLE TD.listen {
+	BORDER-RIGHT: #ffffff 0px solid; PADDING-RIGHT: 4px; PADDING-LEFT: 4px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_btn_listen.gif) no-repeat 50% 50%; PADDING-BOTTOM: 6px; WIDTH: 70px; PADDING-TOP: 8px
+}
+#content UL.tabcontent LI.content TABLE TD.listen A {
+	DISPLAY: block; MARGIN: 0px auto; OVERFLOW: hidden; WIDTH: 57px; COLOR: #3f6c28; TEXT-INDENT: 24px; LINE-HEIGHT: 18px; HEIGHT: 18px; TEXT-DECORATION: none
+}
+#content UL.tabcontent LI.content TABLE TD.open {
+	BORDER-RIGHT: #ffffff 0px solid; PADDING-RIGHT: 4px; PADDING-LEFT: 4px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/btn_listen_02.gif) no-repeat 50% 50%; PADDING-BOTTOM: 6px; PADDING-TOP: 8px
+}
+#content UL.tabcontent LI.content TABLE TD.open A {
+	DISPLAY: block; MARGIN: 0px auto; WIDTH: 78px; COLOR: #3f6c28; TEXT-INDENT: 24px; LINE-HEIGHT: 18px; HEIGHT: 18px; TEXT-DECORATION: none
+}
+#content UL.tabcontent LI.content TABLE TD.continue {
+	BORDER-RIGHT: #ffffff 0px solid; PADDING-RIGHT: 4px; PADDING-LEFT: 4px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/btn_listen_03.gif) no-repeat 50% 50%; PADDING-BOTTOM: 6px; PADDING-TOP: 8px
+}
+#content UL.tabcontent LI.content TABLE TD.continue A {
+	DISPLAY: block; MARGIN: 0px auto; WIDTH: 78px; COLOR: #3f6c28; TEXT-INDENT: 24px; LINE-HEIGHT: 18px; HEIGHT: 18px; TEXT-DECORATION: none
+}
+#content UL.courseexhibit LI.content TABLE TD.select {
+	BORDER-RIGHT: #ffffff 0px solid; PADDING-RIGHT: 4px; PADDING-LEFT: 4px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/btn_select.gif) no-repeat 50% 50%; PADDING-BOTTOM: 6px; WIDTH: 70px; PADDING-TOP: 8px; TEXT-ALIGN: center
+}
+#content UL.courseexhibit LI.content TABLE TD.select A {
+	DISPLAY: block; MARGIN: 0px auto; OVERFLOW: hidden; WIDTH: 57px; COLOR: #000000; TEXT-INDENT: 17px; LINE-HEIGHT: 18px; HEIGHT: 18px; TEXT-DECORATION: none
+}
+UL#adarea {
+	BORDER-RIGHT: #dbdbdb 1px solid; BORDER-TOP: #dbdbdb 1px solid; FLOAT: right; MARGIN: -5px 0px -25px; BORDER-LEFT: #dbdbdb 1px solid; WIDTH: 310px; BORDER-BOTTOM: #dbdbdb 1px solid
+}
+UL#adarea LI.title {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: #defcda; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 310px; LINE-HEIGHT: 22px; PADDING-TOP: 0px; HEIGHT: 22px
+}
+UL#adarea LI.title H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 10px; FONT-WEIGHT: bold; FONT-SIZE: 14px; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #406d28; PADDING-TOP: 0px; HEIGHT: auto
+}
+UL#adarea LI.title H3 SPAN {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL#adarea LI.content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 8px; MARGIN: 0px; WIDTH: 310px; PADDING-TOP: 8px
+}
+UL#adarea LI.content P {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 0px; LINE-HEIGHT: 18px; PADDING-TOP: 0px
+}
+UL#adarea LI.content P.enter {
+	CLEAR: both; FONT-SIZE: 14px; MARGIN: -16px 0px 0px; TEXT-ALIGN: right
+}
+UL#adarea LI.content P.enter A {
+	COLOR: #3f6c27
+}
+UL.box1 {
+	CLEAR: both; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_box1.gif) repeat-y 0px 0px; MARGIN: 0px auto; OVERFLOW: hidden; WIDTH: 465px
+}
+UL.box1 LI.title {
+	CLEAR: both; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_title_box1.gif) no-repeat 0px 0px; FLOAT: left; MARGIN: 0px 0px -20px; WIDTH: 465px
+}
+UL.box1 LI.content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_content_box1.gif) no-repeat 0px 100%; FLOAT: left; PADDING-BOTTOM: 30px; MARGIN: 0px; OVERFLOW: hidden; WIDTH: 465px; PADDING-TOP: 0px; POSITION: relative
+}
+UL#suspend LI.content P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 12px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL#suspend LI.content H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 12px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL#suspend LI.content H3 {
+	MARGIN: 14px 0px 0px 60px; OVERFLOW: hidden; HEIGHT: 20px
+}
+UL#suspend LI.content P {
+	MARGIN: 14px 0px 0px; WIDTH: 200px; LINE-HEIGHT: 24px
+}
+UL#suspend LI.content P.tip {
+	PADDING-RIGHT: 30px; PADDING-LEFT: 120px; BACKGROUND: url(http://images.koolearn.com/www/user/classroom/2006_0701/inset_suspend.gif) no-repeat 10px 0px; PADDING-BOTTOM: 0px; MARGIN: 20px 0px -30px; WIDTH: 315px; LINE-HEIGHT: 18px; PADDING-TOP: 0px; HEIGHT: 88px
+}
+UL#suspend LI.content P.btnarea {
+	CLEAR: both; FLOAT: left; WIDTH: 100%; TEXT-ALIGN: center
+}
+UL#suspend LI.content P.btnarea INPUT {
+	HEIGHT: 20px
+}
+UL#suspend LI.content P.help {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 18px; Z-INDEX: 2; RIGHT: 0px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/icon_help.gif) no-repeat 0px 50%; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 60px; PADDING-TOP: 0px; POSITION: absolute; TOP: 0px
+}
+UL#suspend LI.content P.help A {
+	COLOR: #249507
+}
+UL.recordlist {
+	WIDTH: 100%
+}
+UL.orderlist {
+	WIDTH: 100%
+}
+UL.recordlist LI.title {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px
+}
+UL.recordlist LI.content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px
+}
+UL.orderlist LI.title {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px
+}
+UL.orderlist LI.content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px
+}
+UL.recordlist LI.title H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; LINE-HEIGHT: 20px; PADDING-TOP: 0px; HEIGHT: 20px
+}
+UL.orderlist LI.title H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; LINE-HEIGHT: 20px; PADDING-TOP: 0px; HEIGHT: 20px
+}
+UL.recordlist LI.content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: -8px 0px 0px; PADDING-TOP: 0px; POSITION: relative
+}
+UL.orderlist LI.content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: -8px 0px 0px; PADDING-TOP: 0px; POSITION: relative
+}
+UL.recordlist LI.content P.viewall {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 10px; LINE-HEIGHT: 20px; PADDING-TOP: 10px; TEXT-ALIGN: right
+}
+UL.recordlist LI.content P.viewall A {
+	BORDER-RIGHT: #b2b2b2 1px solid; PADDING-RIGHT: 6px; BORDER-TOP: #b2b2b2 1px solid; DISPLAY: block; PADDING-LEFT: 6px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_btn_01.gif) #ffffff repeat-x 0px 0px; PADDING-BOTTOM: 0px; OVERFLOW: hidden; BORDER-LEFT: #b2b2b2 1px solid; WIDTH: 80px; LINE-HEIGHT: 20px; PADDING-TOP: 0px; BORDER-BOTTOM: #b2b2b2 1px solid; HEIGHT: 19px; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+UL.orderlist LI.content P.help {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 18px; Z-INDEX: 2; RIGHT: 0px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/icon_help.gif) no-repeat 0px 50%; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 60px; PADDING-TOP: 0px; POSITION: absolute; TOP: -18px
+}
+UL.orderlist LI.content P.help A {
+	COLOR: #249507
+}
+UL.tabcontent LI.content P.totalamount {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 14px; BACKGROUND: url(http://images.koolearn.com/www/user/classroom/2006_0701/inset_totalamount.gif) no-repeat 28% 35%; PADDING-BOTTOM: 20px; MARGIN: 0px auto; WIDTH: 100%; LINE-HEIGHT: 42px; PADDING-TOP: 10px; BORDER-BOTTOM: #d2d2d2 1px solid; TEXT-ALIGN: center
+}
+UL.tabcontent LI.content P.intro {
+	RIGHT: 40px; POSITION: absolute; TOP: 120px
+}
+UL.tabcontent LI.content P.intro A {
+	COLOR: #249507
+}
+UL.inpouring {
+	CLEAR: both; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_inpouring.gif) repeat-y 0px 0px; MARGIN: 0px auto; OVERFLOW: hidden; WIDTH: 634px
+}
+UL.inpouring LI.title {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; Z-INDEX: 1; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_title_inpouring.gif) no-repeat 0px 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 634px; PADDING-TOP: 0px; POSITION: relative; HEIGHT: 20px
+}
+UL.inpouring LI.content {
+	BORDER-RIGHT: #ffffff 0px solid; PADDING-RIGHT: 0px; BORDER-TOP: #ffffff 0px solid; PADDING-LEFT: 0px; Z-INDEX: 2; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_content_inpouring.gif) no-repeat 0px 100%; FLOAT: left; PADDING-BOTTOM: 10px; MARGIN: -18px 0px 0px; OVERFLOW: hidden; BORDER-LEFT: #ffffff 0px solid; WIDTH: 634px; PADDING-TOP: 0px; BORDER-BOTTOM: #ffffff 0px solid; POSITION: relative
+}
+UL.inpouring LI.content H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL.inpouring LI.content H4 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL.inpouring LI.content .box1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_box_inpouring.gif) #f5fff1 no-repeat 0px 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 16px 0px 0px 7px; WIDTH: 417px; PADDING-TOP: 0px; HEIGHT: 89px
+}
+UL.inpouring LI.content .box2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 16px 0px 0px 7px; WIDTH: 417px; PADDING-TOP: 0px; HEIGHT: 89px
+}
+UL.inpouring LI.content .box1 H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 16px; FONT-SIZE: 14px; FLOAT: left; PADDING-BOTTOM: 0px; PADDING-TOP: 30px
+}
+UL.inpouring LI.content .box1 P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 16px; FONT-SIZE: 14px; FLOAT: left; PADDING-BOTTOM: 0px; PADDING-TOP: 30px
+}
+UL.inpouring LI.content .box1 H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 26px; PADDING-BOTTOM: 0px; PADDING-TOP: 30px
+}
+UL.inpouring LI.content .box1 .btnstyle1 {
+	BORDER-RIGHT: #ffffff 0px solid; BORDER-TOP: #ffffff 0px solid; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/btn_buy_02.gif) no-repeat 0px 0px; BORDER-LEFT: #ffffff 0px solid; WIDTH: 74px; TEXT-INDENT: 16px; LINE-HEIGHT: 23px; BORDER-BOTTOM: #ffffff 0px solid; HEIGHT: 23px
+}
+UL.inpouring LI.content .intro1 {
+	CLEAR: left; PADDING-RIGHT: 40px; PADDING-LEFT: 80px; BACKGROUND: url(http://images.koolearn.com/www/user/classroom/2006_0701/inset_intro_inpouring_01.gif) no-repeat 0px 20%; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 10px 0px 0px 7px; WIDTH: 297px; LINE-HEIGHT: 20px; PADDING-TOP: 0px; HEIGHT: 69px
+}
+UL.inpouring LI.content .intro2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 15px; Z-INDEX: 2; RIGHT: 3px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_intro_inpouring.gif) no-repeat 0px 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 170px; LINE-HEIGHT: 18px; PADDING-TOP: 0px; POSITION: absolute; TOP: 0px
+}
+UL.inpouring LI.content .intro2 H4 {
+	MARGIN: 12px 0px 0px
+}
+UL.inpouring LI.content .intro2 P {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; LINE-HEIGHT: 18px; PADDING-TOP: 0px
+}
+UL.inpouring LI.content .intro {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 15px; Z-INDEX: 2; RIGHT: 3px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_intro_inpouring.gif) no-repeat 0px 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 170px; LINE-HEIGHT: 18px; PADDING-TOP: 0px; POSITION: absolute; TOP: 0px
+}
+UL.inpouring LI.content .intro P {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 0px; BACKGROUND: url(http://images.koolearn.com/www/user/classroom/2006_0701/inset_intro_inpouring_02.gif) no-repeat 100% 100%; PADDING-BOTTOM: 125px; MARGIN: 0px; PADDING-TOP: 10px
+}
+UL.inpouring LI.content UL {
+	WIDTH: 100%; LINE-HEIGHT: 20px
+}
+UL.inpouring LI.content UL LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 8px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/dot_h3_coursetree.gif) no-repeat 0px 6px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL#cards LI.content .box1 H3 {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 12px; FONT-WEIGHT: normal; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 8px
+}
+UL#cards LI.content .box2 H3 {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 12px; FONT-WEIGHT: normal; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 8px
+}
+UL#cards LI.content .box1 H3 SPAN {
+	FONT-WEIGHT: bold
+}
+UL#cards LI.content .box2 H3 SPAN {
+	FONT-WEIGHT: bold
+}
+UL#cards LI.content .box1 H4 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; LINE-HEIGHT: 24px; PADDING-TOP: 0px
+}
+UL#cards LI.content .box1 P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; LINE-HEIGHT: 24px; PADDING-TOP: 0px
+}
+UL#cards LI.content .box2 H4 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; LINE-HEIGHT: 24px; PADDING-TOP: 0px
+}
+UL#cards LI.content .box2 P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; LINE-HEIGHT: 24px; PADDING-TOP: 0px
+}
+UL#cards LI.content .box1 H4 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 12px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+UL#cards LI.content .box2 H4 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 12px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+UL#cards LI.content .box1 .inputstyle1 {
+	WIDTH: 100px
+}
+UL#cards LI.content .box2 .inputstyle1 {
+	WIDTH: 100px
+}
+UL#cards LI.content .box1 .inputstyle2 {
+	WIDTH: 40px
+}
+UL#cards LI.content .box2 .inputstyle2 {
+	WIDTH: 40px
+}
+UL#cards LI.content .box1 IMG {
+	VERTICAL-ALIGN: middle
+}
+UL#cards LI.content .box2 IMG {
+	VERTICAL-ALIGN: middle
+}
+UL#cards LI.content .box1 .btnarea {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 4px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+UL#cards LI.content .box2 .btnarea {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 4px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+UL#cards LI.content .box1 .btnstyle1 {
+	BORDER-RIGHT: #b2b2b2 1px solid; PADDING-RIGHT: 6px; BORDER-TOP: #b2b2b2 1px solid; PADDING-LEFT: 6px; FONT-SIZE: 12px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_btn_01.gif) #ffffff repeat-x 0px 0px; PADDING-BOTTOM: 0px; OVERFLOW: hidden; BORDER-LEFT: #b2b2b2 1px solid; WIDTH: 40px; TEXT-INDENT: 0px; LINE-HEIGHT: 18px; PADDING-TOP: 0px; BORDER-BOTTOM: #b2b2b2 1px solid; HEIGHT: 20px
+}
+UL#cards LI.content .box2 .btnstyle1 {
+	BORDER-RIGHT: #b2b2b2 1px solid; PADDING-RIGHT: 6px; BORDER-TOP: #b2b2b2 1px solid; PADDING-LEFT: 6px; FONT-SIZE: 12px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_btn_01.gif) #ffffff repeat-x 0px 0px; PADDING-BOTTOM: 0px; OVERFLOW: hidden; BORDER-LEFT: #b2b2b2 1px solid; WIDTH: 40px; TEXT-INDENT: 0px; LINE-HEIGHT: 18px; PADDING-TOP: 0px; BORDER-BOTTOM: #b2b2b2 1px solid; HEIGHT: 20px
+}
+UL#cards LI.content DIV.rules {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: hidden; WIDTH: 100%; LINE-HEIGHT: 0; PADDING-TOP: 0px; HEIGHT: 0px
+}
+UL#savecoupon {
+	CLEAR: both
+}
+UL#givecoupon {
+	CLEAR: both
+}
+UL#modifypwd {
+	CLEAR: both
+}
+UL#aboutexam {
+	CLEAR: both
+}
+UL#savecoupon LI.content P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 12px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; LINE-HEIGHT: 20px; PADDING-TOP: 0px
+}
+UL#savecoupon LI.content H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 12px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; LINE-HEIGHT: 20px; PADDING-TOP: 0px
+}
+UL#givecoupon LI.content P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 12px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; LINE-HEIGHT: 20px; PADDING-TOP: 0px
+}
+UL#givecoupon LI.content H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 12px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; LINE-HEIGHT: 20px; PADDING-TOP: 0px
+}
+UL#modifypwd LI.content P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 12px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; LINE-HEIGHT: 20px; PADDING-TOP: 0px
+}
+UL#modifypwd LI.content H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 12px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; LINE-HEIGHT: 20px; PADDING-TOP: 0px
+}
+UL#aboutexam LI.content H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 12px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; LINE-HEIGHT: 20px; PADDING-TOP: 0px
+}
+UL#aboutexam LI.content P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 12px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; LINE-HEIGHT: 20px; PADDING-TOP: 0px
+}
+UL#savecoupon LI.title H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 200px; FONT-SIZE: 12px; BACKGROUND: url(http://images.koolearn.com/www/user/classroom/2006_0701/inset_savecoupon.gif) no-repeat 50px 10px; PADDING-BOTTOM: 0px; LINE-HEIGHT: 40px; PADDING-TOP: 0px; HEIGHT: 144px
+}
+UL#givecoupon LI.title H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 200px; FONT-SIZE: 12px; BACKGROUND: url(http://images.koolearn.com/www/user/classroom/2006_0701/inset_savecoupon.gif) no-repeat 50px 10px; PADDING-BOTTOM: 0px; LINE-HEIGHT: 40px; PADDING-TOP: 0px; HEIGHT: 144px
+}
+UL#modifypwd LI.title H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 200px; FONT-SIZE: 12px; BACKGROUND: url(http://images.koolearn.com/www/user/classroom/2006_0701/inset_savecoupon.gif) no-repeat 50px 10px; PADDING-BOTTOM: 0px; LINE-HEIGHT: 40px; PADDING-TOP: 0px; HEIGHT: 144px
+}
+UL#aboutexam LI.title H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 200px; FONT-SIZE: 12px; BACKGROUND: url(http://images.koolearn.com/www/user/classroom/2006_0701/inset_savecoupon.gif) no-repeat 50px 10px; PADDING-BOTTOM: 0px; LINE-HEIGHT: 40px; PADDING-TOP: 0px; HEIGHT: 144px
+}
+UL#modifypwd LI.title H3 {
+	BACKGROUND: url(http://images.koolearn.com/www/user/classroom/2006_0701/inset_modifypwd.gif) no-repeat 30px 40px
+}
+UL#aboutexam LI.title H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 110px; FONT-WEIGHT: bold; BACKGROUND: url(http://images.koolearn.com/www/user/classroom/2006_0701/inset_aboutexam.gif) no-repeat 30px 0px; PADDING-BOTTOM: 0px; LINE-HEIGHT: 20px; PADDING-TOP: 0px; HEIGHT: 64px
+}
+UL#modifypwd LI.content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 200px; Z-INDEX: 10; PADDING-BOTTOM: 30px; MARGIN: -130px 0px 0px; WIDTH: 265px; PADDING-TOP: 30px; POSITION: relative
+}
+UL#aboutexam LI.content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 200px; Z-INDEX: 10; PADDING-BOTTOM: 30px; MARGIN: -130px 0px 0px; WIDTH: 265px; PADDING-TOP: 30px; POSITION: relative
+}
+UL#savecoupon LI.content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 200px; Z-INDEX: 10; PADDING-BOTTOM: 30px; MARGIN: -130px 0px 0px; PADDING-TOP: 30px; POSITION: relative
+}
+UL#givecoupon LI.content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 200px; Z-INDEX: 10; PADDING-BOTTOM: 30px; MARGIN: -130px 0px 0px; PADDING-TOP: 30px; POSITION: relative
+}
+UL#modifypwd LI.content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 150px; PADDING-BOTTOM: 30px; WIDTH: 315px; PADDING-TOP: 30px
+}
+UL#aboutexam LI.content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 150px; PADDING-BOTTOM: 30px; WIDTH: 315px; PADDING-TOP: 30px
+}
+UL#modifypwd LI.content {
+	WIDTH: 515px
+}
+UL#aboutexam LI.content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 110px; PADDING-BOTTOM: 20px; MARGIN: -50px 0px 0px; WIDTH: 355px; PADDING-TOP: 30px
+}
+UL#savecoupon LI.content H3 {
+	CLEAR: left; MARGIN: 14px 0px 0px; WIDTH: 40px
+}
+UL#givecoupon LI.content H3 {
+	CLEAR: left; MARGIN: 14px 0px 0px; WIDTH: 40px
+}
+UL#modifypwd LI.content H3 {
+	CLEAR: left; MARGIN: 14px 0px 0px; WIDTH: 40px
+}
+UL#aboutexam LI.content H3 {
+	CLEAR: left; MARGIN: 14px 0px 0px; WIDTH: 40px
+}
+UL#modifypwd LI.content H3 {
+	WIDTH: 90px; TEXT-ALIGN: right
+}
+UL#aboutexam LI.content H3 {
+	WIDTH: 190px; TEXT-ALIGN: right
+}
+UL#aboutexam LI.content UL {
+	COLOR: #239608; LINE-HEIGHT: 24px
+}
+UL#aboutexam LI.content UL LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 8px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/dot_maintabnav.gif) no-repeat 0px 50%; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 150px; PADDING-TOP: 0px
+}
+UL#savecoupon LI.content P {
+	MARGIN: 14px 0px 0px; WIDTH: 200px; LINE-HEIGHT: 24px
+}
+UL#givecoupon LI.content P {
+	MARGIN: 14px 0px 0px; WIDTH: 200px; LINE-HEIGHT: 24px
+}
+UL#modifypwd LI.content P {
+	MARGIN: 14px 0px 0px; WIDTH: 200px; LINE-HEIGHT: 24px
+}
+UL#savecoupon LI.content P.btnarea {
+	CLEAR: both; TEXT-ALIGN: center
+}
+UL#givecoupon LI.content P.btnarea {
+	CLEAR: both; TEXT-ALIGN: center
+}
+UL#modifypwd LI.content P.btnarea {
+	CLEAR: both; TEXT-ALIGN: center
+}
+UL#modifypwd LI.content P.btnarea {
+	WIDTH: 300px
+}
+UL#savecoupon LI.content P.btnarea INPUT {
+	HEIGHT: 20px
+}
+UL#givecoupon LI.content P.btnarea INPUT {
+	HEIGHT: 20px
+}
+UL#modifypwd LI.content P.btnarea INPUT {
+	HEIGHT: 20px
+}
+UL#savecoupon LI.content P.help {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 18px; Z-INDEX: 2; RIGHT: 0px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/icon_help.gif) no-repeat 0px 50%; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 60px; PADDING-TOP: 0px; POSITION: absolute; TOP: 0px
+}
+UL#givecoupon LI.content P.help {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 18px; Z-INDEX: 2; RIGHT: 0px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/icon_help.gif) no-repeat 0px 50%; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 60px; PADDING-TOP: 0px; POSITION: absolute; TOP: 0px
+}
+UL#modifypwd LI.content P.help {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 18px; Z-INDEX: 2; RIGHT: 0px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/icon_help.gif) no-repeat 0px 50%; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 60px; PADDING-TOP: 0px; POSITION: absolute; TOP: 0px
+}
+UL#modifypwd LI.content P.help {
+	TOP: 16px
+}
+UL#savecoupon LI.content P.help A {
+	COLOR: #249507
+}
+UL#givecoupon LI.content P.help A {
+	COLOR: #249507
+}
+UL#modifypwd LI.content P.help A {
+	COLOR: #249507
+}
+UL#aboutexam LI.content UL LI A {
+	COLOR: #249507
+}
+UL#couponlist {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL#couponlist LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL#couponlist LI.title {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 100%; PADDING-TOP: 0px
+}
+UL#couponlist LI.title H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL#personallist {
+	CLEAR: both; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_inpouring.gif) repeat-y 0px 0px; MARGIN: 0px auto; OVERFLOW: hidden; WIDTH: 634px
+}
+UL#personallist LI.title {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; Z-INDEX: 1; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_title_inpouring.gif) no-repeat 0px 0px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 634px; PADDING-TOP: 0px; POSITION: relative; HEIGHT: 20px
+}
+UL#personallist LI.content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; Z-INDEX: 2; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: -17px 0px 0px; OVERFLOW: hidden; WIDTH: 634px; PADDING-TOP: 0px; POSITION: relative; TEXT-ALIGN: left
+}
+UL#personallist LI.content H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL#personallist LI.content H4 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL#personallist LI.content DIV.rules {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: #c6c6c6; PADDING-BOTTOM: 0px; MARGIN: 0px 3px 0px 4px; OVERFLOW: hidden; LINE-HEIGHT: 1px; PADDING-TOP: 0px; HEIGHT: 1px
+}
+UL#personallist LI.content H3 {
+	Z-INDEX: 2; FLOAT: left; POSITION: relative
+}
+UL#personallist LI.content P {
+	Z-INDEX: 2; FLOAT: left; POSITION: relative
+}
+UL#personallist LI.content H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 210px; PADDING-TOP: 20px; TEXT-ALIGN: right
+}
+UL#personallist LI.content P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 10px; PADDING-BOTTOM: 12px; MARGIN: 0px; BORDER-LEFT: #b8b8b8 1px solid; WIDTH: 410px; COLOR: #858587; LINE-HEIGHT: 20px; PADDING-TOP: 14px
+}
+UL#personallist LI.content P.btnarea {
+	CLEAR: both; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: none; PADDING-BOTTOM: 10px; MARGIN: 0px auto; BORDER-LEFT: #ffffff 0px solid; WIDTH: 526px; PADDING-TOP: 10px; TEXT-ALIGN: center
+}
+UL#personallist LI.content P.btnarea INPUT {
+	MARGIN: 0px 50px 0px 0px; LINE-HEIGHT: 22px; HEIGHT: 23px
+}
+UL#personallist LI.content H4 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 30px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/bg_content_inpouring.gif) #ffffff no-repeat 0px 0px; PADDING-BOTTOM: 0px; WIDTH: 604px; COLOR: #868686; LINE-HEIGHT: 20px; PADDING-TOP: 20px
+}
+UL#personallist LI.content UL {
+	BACKGROUND: #ffffff; WIDTH: 634px; COLOR: #868686; LINE-HEIGHT: 20px
+}
+UL#personallist LI.content UL LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 8px; BACKGROUND: url(http://images.koolearn.com/www/user/common/2006_0701/dot_h3_coursetree.gif) no-repeat 0px 6px; PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0px 40px; PADDING-TOP: 0px
+}
+UL#payway LI.content {
+	PADDING-RIGHT: 20px; PADDING-LEFT: 20px; PADDING-BOTTOM: 20px; MARGIN: 0px; WIDTH: 590px; PADDING-TOP: 0px
+}
+UL#payway LI.content H3 {
+	FONT-SIZE: 13px
+}
+UL#confirmorder LI.content {
+	PADDING-RIGHT: 20px; PADDING-LEFT: 20px; PADDING-BOTTOM: 20px; MARGIN: 0px; WIDTH: 594px; LINE-HEIGHT: 20px; PADDING-TOP: 0px
+}
+UL#confirmorder LI.content H3 {
+	FONT-SIZE: 13px
+}
+UL#confirmorder LI.content .rules {
+	CLEAR: both; BACKGROUND: #dcdcdc; MARGIN: 10px auto; OVERFLOW: hidden; WIDTH: 100%; LINE-HEIGHT: 1px; HEIGHT: 1px; TEXT-ALIGN: center
+}
+.orderno {
+	FONT-WEIGHT: normal; FONT-SIZE: 24px; VERTICAL-ALIGN: middle; COLOR: #209707; LINE-HEIGHT: 30px; FONT-FAMILY: Tahoma
+}
+#msg {
+	BORDER-TOP: #249708 2px solid; FONT-SIZE: 13px; BACKGROUND: #ffffff; FILTER: Alpha(Opacity=100); LEFT: 0px; VISIBILITY: hidden; WIDTH: 100%; COLOR: #000000; LINE-HEIGHT: 20px; BORDER-BOTTOM: #249708 2px solid; POSITION: absolute; TOP: 0px; moz-opacity: 1
+}
+#msg A {
+	COLOR: #249708
+}
+#msg DIV {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 90px; BACKGROUND: url(http://images.koolearn.com/www/popup/2006_0707/bg_content_popup.gif) no-repeat 20px 10px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px; TEXT-ALIGN: left
+}
+#msg H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 16px; PADDING-BOTTOM: 8px; PADDING-TOP: 0px; TEXT-ALIGN: center
+}
+#toggler {
+	BORDER-TOP-WIDTH: 0px; BORDER-RIGHT: #249708 2px solid; PADDING-RIGHT: 4px; DISPLAY: none; PADDING-LEFT: 4px; Z-INDEX: 4; RIGHT: 10px; BACKGROUND: #ffffff; FILTER: Alpha(Opacity=80); PADDING-BOTTOM: 2px; BORDER-LEFT: #249708 2px solid; CURSOR: pointer; COLOR: #249708; PADDING-TOP: 2px; BORDER-BOTTOM: #249708 2px solid; POSITION: absolute; TOP: 0px; TEXT-ALIGN: center; moz-opacity: 0.8
+}
+#close {
+	BORDER-TOP-WIDTH: 0px; BORDER-RIGHT: #249708 2px solid; PADDING-RIGHT: 4px; PADDING-LEFT: 4px; Z-INDEX: 4; RIGHT: 10px; BACKGROUND: #ffffff; FILTER: Alpha(Opacity=80); PADDING-BOTTOM: 2px; BORDER-LEFT: #249708 2px solid; CURSOR: pointer; COLOR: #249708; PADDING-TOP: 2px; BORDER-BOTTOM: #249708 2px solid; POSITION: absolute; TOP: 0px; TEXT-ALIGN: center; moz-opacity: 0.8
+}
+UL#footer {
+	CLEAR: both; WIDTH: 760px
+}
+UL#footer LI.content {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 10px; WIDTH: 760px; PADDING-TOP: 10px; TEXT-ALIGN: center
+}
+UL#header LI.title SPAN {
+	DISPLAY: none; VISIBILITY: hidden; OVERFLOW: hidden; POSITION: absolute
+}
+UL#CourseTree LI.content .collapsed UL.treestyle LI.content {
+	DISPLAY: none; VISIBILITY: hidden; OVERFLOW: hidden; POSITION: absolute
+}
+UL.panel LI.title H2 {
+	DISPLAY: none; VISIBILITY: hidden; OVERFLOW: hidden; POSITION: absolute
+}
+UL.courseexhibit LI.title H3 {
+	DISPLAY: none; VISIBILITY: hidden; OVERFLOW: hidden; POSITION: absolute
+}
+UL#suspend LI.title H3 {
+	DISPLAY: none; VISIBILITY: hidden; OVERFLOW: hidden; POSITION: absolute
+}
+UL.inpouring LI.title H3 {
+	DISPLAY: none; VISIBILITY: hidden; OVERFLOW: hidden; POSITION: absolute
+}
+UL#modifypwd LI.title H3 SPAN {
+	DISPLAY: none; VISIBILITY: hidden; OVERFLOW: hidden; POSITION: absolute
+}
+DIV.collapsed LI.content {
+	DISPLAY: none; VISIBILITY: hidden; OVERFLOW: hidden; POSITION: absolute
+}

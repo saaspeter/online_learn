@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Quesdifficult">
+<!-- ###################### quesdifficultResult ########################## -->
+  <resultMap id="QuesdifficultResult" class="netTest.wareques.vo.Quesdifficult">
+    <result column="difficultID" property="difficultid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="difficultName" property="difficultname" jdbcType="VARCHAR"/>
+    <result column="difficultvalue" property="difficultvalue" jdbcType="REAL"/>
+    <result column="status" property="status" jdbcType="SMALLINT"/>
+
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="difficultid"><![CDATA[ difficultID=#difficultid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="difficultname"><![CDATA[ difficultName=#difficultname:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="difficultvalue"><![CDATA[ difficultvalue=#difficultvalue:REAL# ]]></isNotNull>
+      <isNotNull prepend="and" property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+
+    </dynamic>
+  </sql>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="QuesdifficultResult" parameterClass="java.lang.Long"> 
+     select 
+         difficultID,
+    shopID,
+    difficultName,
+    difficultvalue,
+    status 
+     from quesdifficult 
+     where difficultID = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="QuesdifficultResult" parameterClass="netTest.wareques.dto.QuesdifficultQuery"> 
+     select 
+         difficultID,
+    shopID,
+    difficultName,
+    difficultvalue,
+    status
+     from quesdifficult
+    <include refid="Quesdifficult.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.wareques.vo.Quesdifficult"> 
+     insert into quesdifficult
+     (     difficultID,
+    shopID,
+    difficultName,
+    difficultvalue,
+    status ) 
+    values 
+     (     #difficultid:BIGINT#, 
+    #shopid:BIGINT#, 
+    #difficultname:VARCHAR#, 
+    #difficultvalue:REAL#, 
+    #status:SMALLINT# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="difficultid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.wareques.vo.Quesdifficult"> 
+     update quesdifficult
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="difficultname"><![CDATA[ difficultName=#difficultname:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="difficultvalue"><![CDATA[ difficultvalue=#difficultvalue:REAL# ]]></isNotNull>
+      <isNotNull prepend="," property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+
+    </dynamic> where difficultID = #difficultid:BIGINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from quesdifficult where difficultID = #value#
+  </delete>
+  
+<!-- ###################### deleteByVO ########################## -->
+  <delete id="deleteByVO" parameterClass="netTest.wareques.dto.QuesdifficultQuery"> 
+     delete from quesdifficult
+     <include refid="Quesdifficult.where_Clause"/> 
+  </delete>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.wareques.dto.QuesdifficultQuery"> 
+     select count(*) from quesdifficult
+     <include refid="Quesdifficult.where_Clause"/>  
+  </select>
+    
+</sqlMap>

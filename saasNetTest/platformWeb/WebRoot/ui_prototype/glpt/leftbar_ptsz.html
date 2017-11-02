@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>左侧功能栏</title>
+<script type="text/javascript">
+<!--
+function goRightUrl(mainUrl){
+   window.top.mainFrame.document.URL=mainUrl;
+}
+
+function show(id){
+   var status = document.getElementById(id).style.display;
+   if(status=="none"){
+      document.getElementById(id).style.display="block";
+   }else if(status=="block"){
+      document.getElementById(id).style.display="none";
+   }else {
+      document.getElementById(id).style.display="block";
+   }
+      
+}
+-->
+</script>
+<style type="text/css">
+<!--
+li {
+  display: inline;
+}
+a{
+  display:block;
+  font-size:16px;
+
+}
+#leftbar{
+    width:98%;
+	border: 1px solid #dddddd;
+	margin-bottom: 1px;
+}
+#leftbar ul {
+	overflow: auto;
+	margin:7px;
+}
+#leftbar li {
+	display: inline;
+}
+#leftbar li a {
+	display: block;
+	margin-bottom: 10px;
+	background-color: #FFCC99;
+}
+#rybd {
+    display:none;
+}
+#rybd li {
+	display: inline;
+	margin-left: 6px;
+}
+#rybd li a {
+	display: block;
+	margin-bottom: 10px;
+	background-color: #CCCC99;
+}
+-->
+</style>
+</head>
+
+<body>
+
+<div id="leftbar">
+<ul>
+   <li><a href="#" onclick="goRightUrl('/platform/i18n/i18n.do?method=list');return false;">语言设置</a></li>
+   <li><a href="#" onclick="goRightUrl('/platform/productcategory/productcategory_main.jsp');return false;">商品目录设置</a></li>
+   <li><a href="#" onclick="goRightUrl('jmys.html');return false;" title="管理各国货币和L币之间的对应关系">L货币管理</a></li>
+   <li><a href="#" onclick="goRightUrl('sdjj.html');return false;" title="">注册信息设置</a></li>
+   <li><a href="#" onclick="goRightUrl('gggl.html');return false;">商店免费试用设置</a></li>
+   <li><a href="#" onclick="goRightUrl('spgl.html');return false;">个人免费使用设置</a></li>
+   <li><a href="#" onclick="goRightUrl('gnpz.html');return false;">商店模板管理</a></li>
+   <li><a href="#" onclick="show('sfsz');return false;">+收费设置</a></li>
+   <div id="sfsz">
+   <ul>
+      <li><a href="#" onclick="goRightUrl('sqry_list.html');return false;">设置每月结算日</a></li>
+	  <li><a href="#" onclick="goRightUrl('xzry_list.html');return false;">功能费用管理</a></li>
+   </ul>
+   </div>
+   <li><a href="#" onclick="goRightUrl('qxfp.html');return false;">论坛设置</a></li>
+   
+</ul>
+</div>
+
+</body>
+</html>

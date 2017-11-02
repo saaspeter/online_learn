@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Resourcesvalue">
+<!-- ###################### resourcesvalueResult ########################## -->
+  <resultMap id="ResourcesvalueResult" class="commonWeb.security.vo.Resourcesvalue">
+    <result column="rescValueID" property="rescvalueid" jdbcType="BIGINT"/>
+    <result column="id" property="id" jdbcType="BIGINT"/>
+    <result column="localeID" property="localeid" jdbcType="BIGINT"/>
+    <result column="name" property="name" jdbcType="VARCHAR"/>
+    <result column="descn" property="descn" jdbcType="VARCHAR"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="rescvalueid"><![CDATA[ rescValueID=#rescvalueid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="id"><![CDATA[ id=#id:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="localeid"><![CDATA[ localeID=#localeid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="name"><![CDATA[ name=#name:VARCHAR# ]]></isNotEmpty>
+
+    </dynamic>
+  </sql>
+  
+<!-- ###################### selectAll ########################## -->
+  <select id="selectAll" resultMap="ResourcesvalueResult"> 
+     select rescValueID,id,localeID,name,descn 
+     from resourcesvalue
+  </select>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="ResourcesvalueResult" parameterClass="java.lang.Long"> 
+     select rescValueID,id,localeID,name,descn 
+     from resourcesvalue 
+     where rescValueID = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="ResourcesvalueResult" parameterClass="commonWeb.security.dto.ResourcesvalueQuery"> 
+     select rescValueID,id,localeID,name,descn 
+     from resourcesvalue
+    <include refid="Resourcesvalue.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="commonWeb.security.vo.Resourcesvalue"> 
+     insert into resourcesvalue
+     ( rescValueID,id,localeID,name,descn ) 
+    values 
+     ( #rescvalueid:BIGINT#,#id:BIGINT#,#localeid:BIGINT#, 
+       #name:VARCHAR#,#descn:VARCHAR# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="rescvalueid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="commonWeb.security.vo.Resourcesvalue"> 
+     update resourcesvalue
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="id"><![CDATA[ id=#id:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="localeid"><![CDATA[ localeID=#localeid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="name"><![CDATA[ name=#name:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="descn"><![CDATA[ descn=#descn:VARCHAR# ]]></isNotNull>
+    </dynamic> where rescValueID = #rescvalueid:BIGINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from resourcesvalue where rescValueID = #value#
+  </delete>
+  
+  <!-- ###################### deleteByFK ########################## -->
+  <delete id="deleteByFK" parameterClass="java.lang.Long"> 
+     delete from resourcesvalue where id = #value#
+  </delete>
+  
+    <!-- ###################### delByMenuValueID ########################## -->
+  <delete id="delByMenuValueID" parameterClass="java.lang.Long"> 
+     delete from resourcesvalue where id = (select id from menusvalue where menuValueID = #value#) 
+  </delete>
+  
+<!-- ###################### deleteByVO ########################## -->
+  <delete id="deleteByVO" parameterClass="commonWeb.security.dto.ResourcesvalueQuery"> 
+     delete from resourcesvalue
+     <include refid="Resourcesvalue.where_Clause"/> 
+  </delete>
+  
+<!-- ###################### selectAllCount ########################## -->
+  <select id="selectAllCount" resultClass="java.lang.Integer"> 
+     select count(*) from resourcesvalue
+  </select>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="commonWeb.security.dto.ResourcesvalueQuery"> 
+     select count(*) from resourcesvalue
+     <include refid="Resourcesvalue.where_Clause"/>  
+  </select>
+    
+</sqlMap>

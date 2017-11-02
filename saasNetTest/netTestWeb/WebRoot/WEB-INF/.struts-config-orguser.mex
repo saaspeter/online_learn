@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/org/listdeptinfo.do" location="1550,1050" dimension="287,104" />
+  <StrutsActivity path="/org/adddeptinfo.do" location="1550,1250" dimension="287,104" />
+  <StrutsActivity path="/org/editdeptinfo.do" location="50,1350" dimension="287,104" />
+  <StrutsActivity path="/org/viewdeptinfo.do" location="650,1350" dimension="287,104" />
+  <StrutsActivity path="/org/savedeptinfo.do" location="2150,1350" dimension="287,104" />
+  <StrutsActivity path="/org/deldeptinfo.do" location="50,1750" dimension="287,104" />
+  <StrutsActivity path="/orguser/listorguser.do" location="50,150" dimension="285,104" />
+  <StrutsActivity path="/orguser/selectorguser.do" location="650,150" dimension="285,104" />
+  <StrutsActivity path="/orguser/savedeptuser.do" location="1250,150" dimension="285,104" />
+  <StrutsActivity path="/orguser/editdeptuserPage.do" location="1850,150" dimension="285,104" />
+  <StrutsActivity path="/orguser/viewdeptuser.do" location="2450,150" dimension="285,104" />
+  <StrutsActivity path="/orguser/adddeptuserPage.do" location="2450,350" dimension="285,104" />
+  <StrutsActivity path="/orguser/delUserDept.do" location="350,550" dimension="285,104" />
+  <StrutsActivity path="/orguser/transferorguser.do" location="2150,550" dimension="285,104" />
+  <StrutsActivity path="/orguser/putuserintodept.do" location="950,1750" dimension="285,104" />
+  <StrutsActivity path="/org/magorgmain.do" location="1550,650" dimension="288,104" />
+  <StrutsActivity path="/org/magorgusermain.do" location="1250,1950" dimension="288,104" />
+  <StrutsActivity path="/org/selectorgusermain.do" location="2450,850" dimension="288,104" />
+  <StrutsActivity path="/org/geneorgtreexml.do" location="50,1950" dimension="288,104" />
+  <StrutsActivity path="/org/selectorgtree.do" location="2450,1050" dimension="288,104" />
+  <StrutsActivity path="/org/orgtreemag.do" location="1850,1950" dimension="288,104" />
+  <StrutsActivity path="errorPage;6" location="223,2483" dimension="160,72" />
+  <StrutsActivity path="messagePage;6" location="428,2483" dimension="148,72" />
+  <StrutsActivity path="treeXml;6" location="621,2483" dimension="148,72" />
+  <StrutsActivity path="forwardToUrl;6" location="0,2483" dimension="178,72" />
+  <StrutsActivity path="toUrl;6" location="814,2483" dimension="136,72" />
+  <StrutsActivity path="/org/deptinfo_list.jsp" location="840,352" dimension="172,48" />
+  <StrutsActivity path="/org/deptinfo_add.jsp" location="1112,352" dimension="166,48" />
+  <StrutsActivity path="/org/deptinfo_view.jsp" location="0,352" dimension="172,48" />
+  <StrutsActivity path="/org/deptinfo_edit.jsp" location="272,352" dimension="172,48" />
+  <StrutsActivity path="/orguser/deptuser_list.jsp" location="1208,1559" dimension="196,48" />
+  <StrutsActivity path="/orguser/mulSelUsr_list.jsp" location="313,1559" dimension="202,48" />
+  <StrutsActivity path="/orguser/deptuser_edit.jsp" location="50,550" dimension="196,48" />
+  <StrutsActivity path="/orguser/deptuser_view.jsp" location="911,1559" dimension="196,48" />
+  <StrutsActivity path="/orguser/deptuser_add.jsp" location="1550,550" dimension="190,48" />
+  <StrutsActivity path="/org/orgAndUserMain.jsp" location="278,777" dimension="178,48" />
+  <StrutsActivity path="/orguser/selectOrguserMain.jsp" location="1850,450" dimension="218,53" />
+  <StrutsActivity path="/org/selectOrg_tree.jsp" location="0,777" dimension="178,48" />
+  <StrutsActivity path="/org/org_tree.jsp" location="556,777" dimension="142,48" />
+  <StrutsActivity path="/pubs/errorPage.jsp" location="226,2655" dimension="154,48" />
+  <StrutsActivity path="/pubs/message.jsp" location="431,2655" dimension="142,48" />
+  <StrutsActivity path="/pubs/treeXml.jsp" location="624,2655" dimension="142,48" />
+  <StrutsActivity path="/pubs/forwardToUrl.jsp" location="3,2655" dimension="172,48" />
+  <StrutsActivity path="/pubs/toUrl.jsp" location="817,2655" dimension="130,48" />
+  <StrutsActivity path="/userAdmin/login_forward.jsp" location="1850,850" dimension="204,53" />
+  <StrutsActivity path="/platform/sysAdmin/sysAdmin_index.jsp" location="650,1050" dimension="263,53" />
+  <StrutsActivity path="/platform/user/activeUserRegister.jsp" location="2150,750" dimension="250,53" />
+  <StrutsActivity path="/login.jsp" location="1138,870" dimension="100,48" />
+  <StrutsActivity path="/org/setDefaultOrgPage.jsp" location="544,352" dimension="196,48" />
+  <StrutsActivity path="/org/orgbase_list.jsp" location="798,777" dimension="166,48" />
+  <StrutsActivity path="/org/orgbase_addEdit.jsp" location="535,445" dimension="184,48" />
+  <StrutsActivity path="/org/orglevel_view.jsp" location="0,2390" dimension="172,48" />
+  <StrutsActivity path="/org/orglevel_addEdit.jsp" location="272,2390" dimension="190,48" />
+  <StrutsActivity path="/org/orglevel_list.jsp" location="562,2390" dimension="172,48" />
+  <StrutsActivity path="/org/deptinfo_addEdit.jsp" location="689,0" dimension="190,48" />
+  <StrutsActivity path="/orguser/selectUserMain.jsp" location="1064,777" dimension="202,48" />
+  <StrutsActivity path="/userAdmin/userAdmin_index.jsp" location="2150,350" dimension="222,53" />
+  <StrutsActivity path="/default.jsp" location="1132,1202" dimension="112,48" />
+  <StrutsActivity path="/orguser/shopuser_list.jsp" location="950,550" dimension="183,53" />
+  <StrutsActivity path="/orguser/sel_shopuser.jsp" location="1250,550" dimension="183,53" />
+  <StrutsActivity path="/org/toGroup.jsp" location="1378,352" dimension="136,48" />
+  <StrutsActivity path="/org/groupinfo_list.jsp" location="556,1202" dimension="178,48" />
+  <StrutsActivity path="/org/groupinfo_edit.jsp" location="278,1202" dimension="178,48" />
+  <StrutsActivity path="/org/groupinfo_view.jsp" location="0,1202" dimension="178,48" />
+  <StrutsActivity path="/org/groupinfo_add.jsp" location="834,1202" dimension="172,48" />
+  <StrutsActivity path="/org/groupinfo_addEdit.jsp" location="408,870" dimension="196,48" />
+  <StrutsActivity path="/orguser/groupuser_list.jsp" location="1504,1559" dimension="202,48" />
+  <StrutsActivity path="/orguser/operator_list.jsp" location="1806,1559" dimension="196,48" />
+  <StrutsActivity path="/orguser/operator_add.jsp" location="2102,1559" dimension="190,48" />
+  <StrutsActivity path="/orguser/operator_view.jsp" location="615,1559" dimension="196,48" />
+  <StrutsActivity path="/orguser/operator_edit.jsp" location="2392,1559" dimension="196,48" />
+  <StrutsActivity path="/orguser/selOperator_list.jsp" location="50,650" dimension="199,53" />
+  <StrutsActivity path="/orguser/operorg_list.jsp" location="1366,2113" dimension="190,48" />
+  <StrutsActivity path="/orguser/operorg_addEdit.jsp" location="957,2390" dimension="208,48" />
+  <StrutsActivity path="/orguser/operorg_view.jsp" location="1758,2390" dimension="190,48" />
+  <StrutsActivity path="/orguser/operproduct_list.jsp" location="651,1836" dimension="214,48" />
+  <StrutsActivity path="/orguser/operproduct_add.jsp" location="1436,2390" dimension="208,48" />
+  <StrutsActivity path="/orguser/deptuserprod_list.jsp" location="50,950" dimension="220,48" />
+  <StrutsActivity path="/toDefault.jsp" location="1850,350" dimension="124,48" />
+  <StrutsActivity path="/orguser/deptuser_addEdit.jsp" location="0,1559" dimension="214,48" />
+  <StrutsActivity path="/{[#folder#]}/productgroup_view.jsp" location="0,2113" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/productgroup_addEdit.jsp" location="350,2113" dimension="268,48" />
+  <StrutsActivity path="/{[#folder#]}/productgroup_list.jsp" location="718,2113" dimension="250,48" />
+  <StrutsActivity path="/userprodshop/shopuser_list.jsp" location="2150,950" dimension="220,53" />
+  <StrutsActivity path="/userprodshop/sel_shopuser.jsp" location="50,1050" dimension="220,53" />
+  <StrutsActivity path="/login_forward.jsp" location="1550,850" dimension="137,53" />
+  <StrutsActivity path="/product/allproduct_list.jsp" location="2150,1150" dimension="188,53" />
+  <StrutsActivity path="/user/activeUserRegister.jsp" location="350,1050" dimension="195,53" />
+  <StrutsTransition id="/org/savedeptinfo.do,viewPage,/org/deptinfo_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2150,1402" />
+      <AbsolutePoint location="1478,1402" />
+      <AbsolutePoint location="1478,518" />
+      <AbsolutePoint location="86,518" />
+      <AbsolutePoint location="86,400" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="toUrl;6,null,/pubs/toUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="882,2555" />
+      <AbsolutePoint location="882,2655" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="errorPage;6,null,/pubs/errorPage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="303,2555" />
+      <AbsolutePoint location="303,2655" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/org/editdeptinfo.do,viewPage,/org/deptinfo_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,1402" />
+      <AbsolutePoint location="-75,1402" />
+      <AbsolutePoint location="-75,376" />
+      <AbsolutePoint location="0,376" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="messagePage;6,null,/pubs/message.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="502,2555" />
+      <AbsolutePoint location="502,2655" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/org/adddeptinfo.do,addPage,/org/deptinfo_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1550,1310" />
+      <AbsolutePoint location="1340,1310" />
+      <AbsolutePoint location="1340,618" />
+      <AbsolutePoint location="1195,618" />
+      <AbsolutePoint location="1195,400" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/org/orgtreemag.do,toTree,/org/org_tree.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2017,1950" />
+      <AbsolutePoint location="2017,1169" />
+      <AbsolutePoint location="627,1169" />
+      <AbsolutePoint location="627,825" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/org/editdeptinfo.do,editPage,/org/deptinfo_edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,1432" />
+      <AbsolutePoint location="-135,1432" />
+      <AbsolutePoint location="-135,460" />
+      <AbsolutePoint location="365,460" />
+      <AbsolutePoint location="365,400" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/orguser/adddeptuserPage.do,adddeptuserPage,/orguser/deptuser_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2450,418" />
+      <AbsolutePoint location="1645,418" />
+      <AbsolutePoint location="1645,550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="forwardToUrl;6,null,/pubs/forwardToUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="89,2555" />
+      <AbsolutePoint location="89,2655" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/org/magorgusermain.do,orgAndUserMain,/org/orgAndUserMain.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1419,1950" />
+      <AbsolutePoint location="1419,965" />
+      <AbsolutePoint location="367,965" />
+      <AbsolutePoint location="367,825" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/org/viewdeptinfo.do,viewPage,/org/deptinfo_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="783,1350" />
+      <AbsolutePoint location="783,299" />
+      <AbsolutePoint location="86,299" />
+      <AbsolutePoint location="86,352" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/org/selectorgusermain.do,selectUserMain,/orguser/selectOrguserMain.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2594,850" />
+      <AbsolutePoint location="2594,476" />
+      <AbsolutePoint location="2068,476" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/orguser/listorguser.do,deptuserlist,/orguser/deptuser_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,202" />
+      <AbsolutePoint location="-15,202" />
+      <AbsolutePoint location="-15,1499" />
+      <AbsolutePoint location="1312,1499" />
+      <AbsolutePoint location="1312,1559" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="treeXml;6,null,/pubs/treeXml.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="695,2555" />
+      <AbsolutePoint location="695,2655" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/org/magorgmain.do,orgAndUserMain,/org/orgAndUserMain.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1550,688" />
+      <AbsolutePoint location="367,688" />
+      <AbsolutePoint location="367,777" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/org/listdeptinfo.do,list,/org/deptinfo_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1550,1087" />
+      <AbsolutePoint location="1370,1087" />
+      <AbsolutePoint location="1370,718" />
+      <AbsolutePoint location="926,718" />
+      <AbsolutePoint location="926,400" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/orguser/viewdeptuser.do,viewdeptuserPage,/orguser/deptuser_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2735,202" />
+      <AbsolutePoint location="2813,202" />
+      <AbsolutePoint location="2813,1529" />
+      <AbsolutePoint location="991,1529" />
+      <AbsolutePoint location="991,1559" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/orguser/editdeptuserPage.do,editdeptuserPage,/orguser/deptuser_edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1992,254" />
+      <AbsolutePoint location="1992,329" />
+      <AbsolutePoint location="187,329" />
+      <AbsolutePoint location="187,550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/orguser/selectorguser.do,mulSelUsr,/orguser/mulSelUsr_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="783,254" />
+      <AbsolutePoint location="783,269" />
+      <AbsolutePoint location="-105,269" />
+      <AbsolutePoint location="-105,1310" />
+      <AbsolutePoint location="414,1310" />
+      <AbsolutePoint location="414,1559" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/org/selectorgtree.do,selectTree,/org/selectOrg_tree.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2450,1102" />
+      <AbsolutePoint location="1895,1102" />
+      <AbsolutePoint location="1895,933" />
+      <AbsolutePoint location="89,933" />
+      <AbsolutePoint location="89,825" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+  "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+  <!-- ========================= RESOURCE DEFINITIONS ========================= -->
+  <bean id="propertyConfigurer_base" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+     <property name="location">
+        <value>classpath:commonTool/bean/datasource-demo.properties</value>
+     </property>
+  </bean>
+
+  <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <property name="driverClassName">
+		<value>com.mysql.jdbc.Driver</value>
+    </property>
+	<property name="url">
+		<value>${database.url}</value>
+	</property>
+	<property name="username">
+		<value>${database.user}</value>
+	</property>
+	<property name="password">
+		<value>${database.password}</value>
+	</property>
+  </bean>
+
+  
+  <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource">
+      <ref local="dataSource"/>
+    </property>
+  </bean>
+
+  <!-- ========================= RESOURCE DEFINITIONS ========================= -->
+  
+  <bean id="sqlMapClient_CommonService" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+    <property name="configLocation">
+      <value>classpath:commonWeb/security/bean/iBatis-config.xml</value>
+    </property>
+  </bean>
+  <!-- ========================= DAO DEFINITIONS: IBATIS IMPLEMENTATIONS ========================= -->
+
+  <!-- ========================= Class Resources: CONFIGURE ========================= -->
+  <bean id="resourcesDaoTarget" class="commonWeb.security.dao.impl.ResourcesDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref local="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref local="sqlMapClient_CommonService"/>
+    </property>
+  </bean>
+
+  <bean id="resourcesDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref local="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="resourcesDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+  
+  <!-- ========================= Class Resourcesvalue: CONFIGURE ========================= -->
+  <bean id="resourcesvalueDaoTarget" class="commonWeb.security.dao.impl.ResourcesvalueDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref local="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref local="sqlMapClient_CommonService"/>
+    </property>
+  </bean>
+
+  <bean id="resourcesvalueDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref local="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="resourcesvalueDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+  <!-- ========================= Class Roles: CONFIGURE ========================= -->
+  <bean id="rolesDaoTarget" class="commonWeb.security.dao.impl.RolesDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref local="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref local="sqlMapClient_CommonService"/>
+    </property>
+  </bean>
+
+  <bean id="rolesDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref local="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="rolesDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+
+  <!-- ========================= Class RoleResc: CONFIGURE ========================= -->
+  <bean id="roleRescDaoTarget" class="commonWeb.security.dao.impl.RoleRescDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref local="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref local="sqlMapClient_CommonService"/>
+    </property>
+  </bean>
+
+  <bean id="roleRescDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref local="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="roleRescDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+  <!-- ========================= Class UserRole: CONFIGURE ========================= -->
+  <bean id="userRoleDaoTarget" class="commonWeb.security.dao.impl.UserRoleDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref local="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref local="sqlMapClient_CommonService"/>
+    </property>
+  </bean>
+
+  <bean id="userRoleDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref local="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="userRoleDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+  
+    <!-- ========================= Class superUsers: CONFIGURE ========================= -->
+  <bean id="SuperuserDaoTarget" class="commonWeb.security.dao.impl.SuperuserDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref local="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref local="sqlMapClient_CommonService"/>
+    </property>
+  </bean>
+
+  <bean id="superuserDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref local="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="SuperuserDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+</beans>

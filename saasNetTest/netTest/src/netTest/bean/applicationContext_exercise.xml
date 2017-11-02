@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+  "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+      <!-- ========================= RESOURCE DEFINITIONS ========================= -->
+  
+	  <!-- ========================= Class Exercise: CONFIGURE ========================= -->
+	  <bean id="exerciseDaoTarget" class="netTest.exercise.dao.impl.ExerciseDaoImpl" singleton="true">
+	      <property name="dataSource">
+	         <ref bean="dataSource"/>
+	      </property>
+	      <property name="sqlMapClient">
+	         <ref bean="sqlMapClient_netTest"/>
+	      </property>
+	  </bean>
+	
+	  <bean id="exerciseDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	    <property name="transactionManager">
+	      <ref bean="transactionManager"/>
+	    </property>
+	    <property name="target">
+	      <ref local="exerciseDaoTarget"/>
+	    </property>
+	    <property name="transactionAttributes">
+	      <props>
+	        <prop key="*">PROPAGATION_REQUIRED</prop>
+	      </props>
+	    </property>
+	  </bean>
+	
+	  <!-- ========================= Class Exerquestype: CONFIGURE ========================= -->
+	  <bean id="exerquestypeDaoTarget" class="netTest.exercise.dao.impl.ExerquestypeDaoImpl" singleton="true">
+	    <property name="dataSource">
+	      <ref bean="dataSource"/>
+	    </property>
+	    <property name="sqlMapClient">
+	      <ref bean="sqlMapClient_netTest"/>
+	    </property>
+	  </bean>
+	
+	  <bean id="exerquestypeDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	    <property name="transactionManager">
+	      <ref bean="transactionManager"/>
+	    </property>
+	    <property name="target">
+	      <ref local="exerquestypeDaoTarget"/>
+	    </property>
+	    <property name="transactionAttributes">
+	      <props>
+	        <prop key="*">PROPAGATION_REQUIRED</prop>
+	      </props>
+	    </property>
+	  </bean>
+	
+	  <!-- ========================= Class Exerques: CONFIGURE ========================= -->
+	  <bean id="exerquesDaoTarget" class="netTest.exercise.dao.impl.ExerquesDaoImpl" singleton="true">
+	    <property name="dataSource">
+	      <ref bean="dataSource"/>
+	    </property>
+	    <property name="sqlMapClient">
+	      <ref bean="sqlMapClient_netTest"/>
+	    </property>
+	  </bean>
+	
+	  <bean id="exerquesDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	    <property name="transactionManager">
+	      <ref bean="transactionManager"/>
+	    </property>
+	    <property name="target">
+	      <ref local="exerquesDaoTarget"/>
+	    </property>
+	    <property name="transactionAttributes">
+	      <props>
+	        <prop key="*">PROPAGATION_REQUIRED</prop>
+	      </props>
+	    </property>
+	  </bean>
+	
+	  <!-- ========================= Class Exeruser: CONFIGURE ========================= -->
+	  <bean id="exeruserDaoTarget" class="netTest.exercise.dao.impl.ExeruserDaoImpl" singleton="true">
+	    <property name="dataSource">
+	      <ref bean="dataSource"/>
+	    </property>
+	    <property name="sqlMapClient">
+	      <ref bean="sqlMapClient_netTest"/>
+	    </property>
+	  </bean>
+	
+	  <bean id="exeruserDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	    <property name="transactionManager">
+	      <ref bean="transactionManager"/>
+	    </property>
+	    <property name="target">
+	      <ref local="exeruserDaoTarget"/>
+	    </property>
+	    <property name="transactionAttributes">
+	      <props>
+	        <prop key="*">PROPAGATION_REQUIRED</prop>
+	      </props>
+	    </property>
+	  </bean>
+	
+	  <!-- ========================= Class Userexeranswer: CONFIGURE ========================= -->
+	  <bean id="userexeranswerDaoTarget" class="netTest.exercise.dao.impl.UserexeranswerDaoImpl" singleton="true">
+	    <property name="dataSource">
+	      <ref bean="dataSource"/>
+	    </property>
+	    <property name="sqlMapClient">
+	      <ref bean="sqlMapClient_netTest"/>
+	    </property>
+	  </bean>
+	
+	  <bean id="userexeranswerDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	    <property name="transactionManager">
+	      <ref bean="transactionManager"/>
+	    </property>
+	    <property name="target">
+	      <ref local="userexeranswerDaoTarget"/>
+	    </property>
+	    <property name="transactionAttributes">
+	      <props>
+	        <prop key="*">PROPAGATION_REQUIRED</prop>
+	      </props>
+	    </property>
+	  </bean>
+	  
+	  <!-- ========================= Class exeruserLogic: CONFIGURE ========================= -->
+	  <bean id="exeruserLogicTarget" class="netTest.exercise.logic.impl.ExeruserLogicImpl" singleton="true">
+	     <property name="exeruserDao">
+	        <ref bean="exeruserDaoTarget"/>
+	     </property>
+	     <property name="answerDao">
+	        <ref bean="userexeranswerDaoTarget"/>
+	     </property>
+	     <property name="exerciseDao">
+	        <ref bean="exerciseDaoTarget"/>
+	     </property>
+	  </bean>
+	
+	  <bean id="exeruserLogic" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	    <property name="transactionManager">
+	      <ref bean="transactionManager"/>
+	    </property>
+	    <property name="target">
+	      <ref local="exeruserLogicTarget"/>
+	    </property>
+	    <property name="transactionAttributes">
+	      <props>
+	        <prop key="*">PROPAGATION_REQUIRED</prop>
+	      </props>
+	    </property>
+	  </bean>
+	  
+	  <!-- ========================= Class ExerquesLogic: CONFIGURE ========================= -->
+	  <bean id="exerquesLogicTarget" class="netTest.exercise.logic.impl.ExerquesLogicImpl" singleton="true">
+	    <property name="exerDao">
+	      <ref bean="exerciseDaoTarget"/>
+	    </property>
+	    <property name="quesDao">
+	      <ref bean="exerquesDaoTarget"/>
+	    </property>
+	  </bean>
+	
+	  <bean id="exerquesLogic" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	    <property name="transactionManager">
+	      <ref bean="transactionManager"/>
+	    </property>
+	    <property name="target">
+	      <ref local="exerquesLogicTarget"/>
+	    </property>
+	    <property name="transactionAttributes">
+	      <props>
+	        <prop key="*">PROPAGATION_REQUIRED</prop>
+	      </props>
+	    </property>
+	  </bean>
+	
+	  <!-- ========================= Class ExerciseLogic: CONFIGURE ========================= -->
+	  <bean id="exerciseLogicTarget" class="netTest.exercise.logic.impl.ExerciseLogicImpl" singleton="true">
+	    <property name="exerDao">
+	      <ref bean="exerciseDaoTarget"/>
+	    </property>
+	    <property name="exerquestypeDao">
+	      <ref bean="exerquestypeDaoTarget"/>
+	    </property>
+	    <property name="exerquesDao">
+	      <ref bean="exerquesDaoTarget"/>
+	    </property>
+	    <property name="exeruserDao">
+	      <ref bean="exeruserDaoTarget"/>
+	    </property>
+	    <property name="useranwerDao">
+	      <ref bean="userexeranswerDaoTarget"/>
+	    </property>
+	    <property name="quesanswerDao">
+	      <ref bean="quesanswerDao"/>
+	    </property>
+	    <property name="quesLogic">
+	      <ref bean="exerquesLogicTarget"/>
+	    </property>
+	  </bean>
+	
+	  <bean id="exerciseLogic" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	    <property name="transactionManager">
+	      <ref bean="transactionManager"/>
+	    </property>
+	    <property name="target">
+	      <ref local="exerciseLogicTarget"/>
+	    </property>
+	    <property name="transactionAttributes">
+	      <props>
+	        <prop key="*">PROPAGATION_REQUIRED</prop>
+	      </props>
+	    </property>
+	  </bean>
+	  
+	  <!-- ========================= Class ExerciseLogic: CONFIGURE ========================= -->
+	  <bean id="exerquestypeLogicTarget" class="netTest.exercise.logic.impl.ExerquestypeLogicImpl" singleton="true">
+	    <property name="quesDao">
+	      <ref bean="exerquesDaoTarget"/>
+	    </property>
+	    <property name="dao">
+	      <ref bean="exerquestypeDaoTarget"/>
+	    </property>
+	  </bean>
+	
+	  <bean id="exerquestypeLogic" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	    <property name="transactionManager">
+	      <ref bean="transactionManager"/>
+	    </property>
+	    <property name="target">
+	      <ref local="exerquestypeLogicTarget"/>
+	    </property>
+	    <property name="transactionAttributes">
+	      <props>
+	        <prop key="*">PROPAGATION_REQUIRED</prop>
+	      </props>
+	    </property>
+	  </bean>
+
+</beans>

@@ -1,0 +1,26 @@
+      
+    <!-- {[#beanName#]} begin -->
+    <action parameter="list{[#className#]}" path="/{[#folder#]}/list{[#className#]}" name="{[#beanName#]}Form" type="{[#ProjectWeb#]}.action.{[#className#]}Action" scope="request">
+       <forward name="list" path="/{[#folder#]}/{[#beanName#]}_list.jsp"></forward>
+    </action>
+    
+    <action parameter="save{[#className#]}" path="/{[#folder#]}/save{[#className#]}" name="{[#beanName#]}Form" type="{[#ProjectWeb#]}.action.{[#className#]}Action" scope="request">
+       <forward name="list" path="/{[#folder#]}/{[#beanName#]}_list.jsp"></forward>
+    </action>
+    
+    <action parameter="edit{[#className#]}" path="/{[#folder#]}/edit{[#className#]}" name="{[#beanName#]}Form" type="{[#ProjectWeb#]}.action.{[#className#]}Action" scope="request">
+       <forward name="addEditPage" path="/{[#folder#]}/{[#beanName#]}_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="view{[#className#]}" path="/{[#folder#]}/view{[#className#]}" name="{[#beanName#]}Form" type="{[#ProjectWeb#]}.action.{[#className#]}Action" scope="request">
+        <forward name="viewPage" path="/{[#folder#]}/{[#beanName#]}_view.jsp"></forward>
+    </action>
+    
+    <action parameter="add{[#className#]}" path="/{[#folder#]}/add{[#className#]}" name="{[#beanName#]}Form" type="{[#ProjectWeb#]}.action.{[#className#]}Action" scope="request">
+       <forward name="addEditPage" path="/{[#folder#]}/{[#beanName#]}_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="delete{[#className#]}" path="/{[#folder#]}/delete{[#className#]}" name="{[#beanName#]}Form" type="{[#ProjectWeb#]}.action.{[#className#]}Action" scope="request">
+       <forward name="list" path="/{[#folder#]}/{[#beanName#]}_list.jsp"></forward>
+    </action>
+    <!-- {[#beanName#]} end -->

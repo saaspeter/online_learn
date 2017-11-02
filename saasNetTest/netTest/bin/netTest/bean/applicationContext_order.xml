@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+  "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- ========================= RESOURCE DEFINITIONS ========================= -->
+
+	  <!-- ========================= Class Custorder: CONFIGURE ========================= -->
+	  <bean id="custorderDaoTarget" class="netTest.order.dao.impl.CustorderDaoImpl" singleton="true">
+	    <property name="dataSource">
+	      <ref bean="dataSource"/>
+	    </property>
+	    <property name="sqlMapClient">
+	      <ref bean="sqlMapClient_netTest"/>
+	    </property>
+	  </bean>
+	
+	  <bean id="custorderDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	    <property name="transactionManager">
+	      <ref bean="transactionManager"/>
+	    </property>
+	    <property name="target">
+	      <ref local="custorderDaoTarget"/>
+	    </property>
+	    <property name="transactionAttributes">
+	      <props>
+	        <prop key="*">PROPAGATION_REQUIRED</prop>
+	      </props>
+	    </property>
+	  </bean>
+
+	  <!-- ========================= Class Order product: CONFIGURE ========================= -->
+	  <bean id="orderproductDaoTarget" class="netTest.order.dao.impl.OrderproductDaoImpl" singleton="true">
+	    <property name="dataSource">
+	      <ref bean="dataSource"/>
+	    </property>
+	    <property name="sqlMapClient">
+	      <ref bean="sqlMapClient_netTest"/>
+	    </property>
+	  </bean>
+	
+	  <bean id="orderproductDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	    <property name="transactionManager">
+	      <ref bean="transactionManager"/>
+	    </property>
+	    <property name="target">
+	      <ref local="orderproductDaoTarget"/>
+	    </property>
+	    <property name="transactionAttributes">
+	      <props>
+	        <prop key="*">PROPAGATION_REQUIRED</prop>
+	      </props>
+	    </property>
+	  </bean>
+	  
+	  <!-- ========================= Class OrderLogic: CONFIGURE ========================= -->
+	  <bean id="orderLogicTarget" class="netTest.order.logic.impl.OrderLogicImpl" singleton="true">
+	    <property name="orderDao">
+	      <ref local="custorderDao"/>
+	    </property>
+	    <property name="orderprodDao">
+	      <ref local="orderproductDao"/>
+	    </property>
+	    <property name="buylogDao">
+	      <ref bean="userprodbuylogDao"/>
+	    </property>
+	    <property name="orderprodLogic">
+	      <ref local="orderproductLogic"/>
+	    </property>
+	    <property name="statusloglogic">
+	      <ref bean="userprodstatuslogLogic"/>
+	    </property>
+	  </bean>
+	
+	  <bean id="orderLogic" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	    <property name="transactionManager">
+	      <ref bean="transactionManager"/>
+	    </property>
+	    <property name="target">
+	      <ref local="orderLogicTarget"/>
+	    </property>
+	    <property name="transactionAttributes">
+	      <props>
+	        <prop key="*">PROPAGATION_REQUIRED</prop>
+	      </props>
+	    </property>
+	  </bean>
+	  
+	  <!-- ========================= Class orderproductLogic: CONFIGURE ========================= -->
+	  <bean id="orderproductLogicTarget" class="netTest.order.logic.impl.OrderproductLogicImpl" singleton="true">
+	    <property name="orderDao">
+	      <ref local="custorderDao"/>
+	    </property>
+	    <property name="orderprodDao">
+	      <ref local="orderproductDao"/>
+	    </property>
+	    <property name="usrproDao">
+	      <ref bean="userproductDao"/>
+	    </property>
+	    <property name="usrprologic">
+	      <ref bean="userproductLogic"/>
+	    </property>
+	    <property name="statusloglogic">
+	      <ref bean="userprodstatuslogLogic"/>
+	    </property>
+	  </bean>
+	
+	  <bean id="orderproductLogic" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	    <property name="transactionManager">
+	      <ref bean="transactionManager"/>
+	    </property>
+	    <property name="target">
+	      <ref local="orderproductLogicTarget"/>
+	    </property>
+	    <property name="transactionAttributes">
+	      <props>
+	        <prop key="*">PROPAGATION_REQUIRED</prop>
+	      </props>
+	    </property>
+	  </bean>
+
+</beans>

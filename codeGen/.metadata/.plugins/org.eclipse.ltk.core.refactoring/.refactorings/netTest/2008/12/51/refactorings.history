@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<session version="1.0">
+<refactoring comment="Rename package 'netTest.prodcont.vo' to 'netTest.wareques.vo'&#13;&#10;- Original element: 'netTest/src/netTest.prodcont.vo'&#13;&#10;- Renamed element: 'netTest/src/netTest.wareques.vo'&#13;&#10;- Update references to refactored element&#13;&#10;- Update textual occurrences in comments and strings" description="Rename package 'netTest.prodcont.vo'" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;netTest.prodcont.vo" name="netTest.wareques.vo" qualified="false" references="true" stamp="1229431996812" textual="false" version="1.0"/>
+</session>

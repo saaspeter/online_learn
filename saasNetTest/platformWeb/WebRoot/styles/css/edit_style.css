@@ -1,0 +1,85 @@
+.readonly{
+	background-color: #efefef;
+}
+
+.listPage{
+
+}
+
+.fieldLabel{
+
+}
+
+.field{
+
+}
+
+#functionLineDiv{
+	background-color: #DCEAFC;
+}
+
+#functionBarTopDiv{
+
+}
+
+#functionBarTopDiv ul{
+
+}
+
+#functionBarTopDiv li{
+
+}
+
+#toUrl{
+
+}
+
+#help{
+
+}
+
+#fieldsTitleDiv{
+   background-color: #DCEAFC;
+}
+
+#displayMessDiv{
+    color:#FF0000;
+    background-color:#EEEEEE;
+}
+
+#fieldDisDiv{
+
+}
+
+#fieldDisDiv ul{
+
+}
+
+#fieldDisDiv li{
+
+}
+
+#functionBarButtomDiv{
+
+}
+
+#functionBarButtomDiv ul{
+
+}
+
+#functionBarButtomDiv li{
+
+}
+
+.titleBar{
+    text-align:center;
+	font-size:2em;
+	background-color:#F5FBFE;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.bigButton{
+	height: 30px;
+	font-size: large;
+}

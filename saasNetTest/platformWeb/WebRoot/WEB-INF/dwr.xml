@@ -1,0 +1,26 @@
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 1.0//EN"
+    "http://www.getahead.ltd.uk/dwr/dwr10.dtd">
+
+<dwr>
+  <allow>
+    <create creator="new" javascript="customer">
+      <param name="class" value="platform.logicImpl.BaseuserLogicImpl"/>
+      <include method="isExists"/> 
+    </create>
+       
+
+    
+    <create creator="spring" javascript="countryregion">
+       <param name="beanName" value="countryregionLogic"/>
+       <param name="location" value="classpath:commonTool/bean/sysInitial.xml"/>
+       <include method="getDisplayArr"/> 
+    </create>
+    
+    <create creator="spring" javascript="shopcheck">
+       <param name="beanName" value="shopLogic"/>
+       <include method="checkDepulicateShop"/> 
+    </create>
+  </allow>
+</dwr>
+

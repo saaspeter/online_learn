@@ -1,0 +1,7 @@
+NetTest作如下修改，而platform维持不变
+1.  dialog/fck_image.html作了修改。
+2.  fck_image.js作了修改，屏蔽了39到43行。
+
+
+--------------------- CKEditor --------------------
+

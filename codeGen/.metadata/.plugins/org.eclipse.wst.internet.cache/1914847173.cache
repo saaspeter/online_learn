@@ -1,0 +1,861 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML><HEAD><TITLE>抱歉，您输入的网页目前无法访问，可能是网络、网站或其他故障</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gbk">
+
+<META content="MSHTML 6.00.6000.16825" name=GENERATOR>
+<style type="text/css">
+<!--
+body {margin:0 auto; text-align:center}
+html { text-align:center; margin-left:auto; margin-right:auto;}
+.STYLE1 {
+	font-size: 14px;
+	color: #076bb9;
+	font-weight: bold;
+}
+-->
+</style>
+</HEAD>
+<BODY style="BACKGROUND: #3c7faf;" onLoad="MM_preloadImages('images/1_d.gif')">
+<SCRIPT src="images/jquery.min.js" type=text/javascript>
+</SCRIPT>
+
+<SCRIPT src="images/iqsou_sg.js" type=text/javascript>
+
+</SCRIPT>
+
+<SCRIPT src="images/stat.js" type=text/javascript>
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+trackWebsite("12", "http://icc.qonc.com");
+    </SCRIPT>
+
+<SCRIPT type=text/JavaScript>
+<!--
+    function MM_findObj(n, d) { //v4.01
+    var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+    if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+    for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+    if(!x && d.getElementById) x=d.getElementById(n); return x;
+    }
+
+    function MM_nbGroup(event, grpName) { //v6.0
+    var i,img,nbArr,args=MM_nbGroup.arguments;
+    if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+    } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+      nbArr[nbArr.length] = img;
+    }
+    } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+    } else if (event == "down") {
+    nbArr = document[grpName];
+    if (nbArr)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+      nbArr[nbArr.length] = img;
+    } }
+    }
+
+    function MM_preloadImages() { //v3.0
+    var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+    }
+
+    function MM_swapImgRestore() { //v3.0
+    var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+    }
+
+    function MM_swapImage() { //v3.0
+    var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+    if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+    }
+    //-->
+    </SCRIPT>
+ 
+<STYLE type=text/css>
+H1 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H2 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H4 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H5 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H6 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+OL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+DL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+DT {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+DD {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+TABLE {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+TH {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+TD {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+INPUT {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+SELECT {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+OPTION {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+BUTTON {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+UL LI {
+	LIST-STYLE-TYPE: none
+}
+.prototip {
+	PADDING-RIGHT: 3px; FONT-SIZE: 12px; BACKGROUND: url(images/hint.gif) no-repeat; FLOAT: left; WIDTH: 138px; LETTER-SPACING: 1px; HEIGHT: 50px; TEXT-ALIGN: center
+}
+.red {
+	COLOR: red
+}
+.module {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 0px; PADDING-TOP: 10px
+}
+.clearfloat {
+	CLEAR: both; FONT-SIZE: 1px; LINE-HEIGHT: 0; HEIGHT: 0px
+}
+.notice-news {
+	FLOAT: right; OVERFLOW: hidden; WIDTH: 300px
+}
+.notice-news .notice {
+	PADDING-TOP: 5px; HEIGHT: 50px
+}
+.notice-news .notice UL {
+	FONT-SIZE: 12px; COLOR: #069; TEXT-ALIGN: left
+}
+.notice-news .notice UL LI {
+	LIST-STYLE-POSITION: inside; PADDING-BOTTOM: 2px; LIST-STYLE-TYPE: square
+}
+.search-input {
+	BORDER-RIGHT: #afc2cb 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #afc2cb 1px solid; PADDING-LEFT: 5px; BACKGROUND: url(images/iqsou/repeat.gif) #fff no-repeat 0px -690px; PADDING-BOTTOM: 4px; BORDER-LEFT: #afc2cb 1px solid; PADDING-TOP: 4px; BORDER-BOTTOM: #afc2cb 1px solid
+}
+.tab current {
+	BACKGROUND: url(images/iqsou/brick.gif) no-repeat -780px 0px
+}
+.tab {
+	FONT-SIZE: 14px; MARGIN-BOTTOM: 10px; WIDTH: 470px; LINE-HEIGHT: 22px; BORDER-BOTTOM: #197ce2 2px solid; HEIGHT: 22px
+}
+.tab LI {
+	FLOAT: left; MARGIN-LEFT: 23px; CURSOR: pointer; COLOR: #069; LINE-HEIGHT: 24px; HEIGHT: 24px
+}
+.tab .current {
+	FONT-WEIGHT: 700; BACKGROUND: url(images/iqsou/brick.gif) no-repeat -780px 0px
+}
+.tab .current SPAN {
+	PADDING-RIGHT: 10px; DISPLAY: block; PADDING-LEFT: 5px; BACKGROUND: url(images/iqsou/brick.gif) no-repeat 100% 0px; PADDING-BOTTOM: 0px; MARGIN-LEFT: 5px; PADDING-TOP: 0px
+}
+.hotkey {
+	PADDING-TOP: 5px
+}
+.hotkey LI {
+	DISPLAY: inline; WIDTH: 30px; COLOR: red; LINE-HEIGHT: 22px
+}
+.help {
+	FLOAT: left; PADDING-TOP: 5px; TEXT-ALIGN: left
+}
+.help UL LI {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; PADDING-BOTTOM: 1px; PADDING-TOP: 1px
+}
+.hot {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 12px; PADDING-BOTTOM: 10px; COLOR: #069; PADDING-TOP: 10px; TEXT-ALIGN: left
+}
+.hot-main {
+	HEIGHT: 215px
+}
+.hot-title {
+	BORDER-RIGHT: #88afdb 1px solid; BORDER-TOP: #88afdb 1px solid; BACKGROUND: url(images/iqsou/icon/info.png) #e9f2fa no-repeat 0px 50%; BORDER-LEFT: #88afdb 1px solid; LINE-HEIGHT: 24px; BORDER-BOTTOM: #88afdb 1px solid; HEIGHT: 24px
+}
+.hot-title H3 {
+	FONT-SIZE: 14px; MARGIN-LEFT: 30px; VERTICAL-ALIGN: middle
+}
+.hot-main > LI {
+	FLOAT: left
+}
+.hot-main-right {
+	WIDTH: 100px
+}
+.box .title {
+	BACKGROUND: url(images/iqsou/bar/boxA.jpg) #fff no-repeat; HEIGHT: 30px
+}
+.box .title SPAN {
+	DISPLAY: block; FONT-SIZE: 13px; BACKGROUND: url(images/iqsou/bar/boxA.jpg) #fff repeat-x 100% 0px; MARGIN-LEFT: 35px; COLOR: #069; LINE-HEIGHT: 30px; HEIGHT: 30px; TEXT-ALIGN: left
+}
+.box .content UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+.box .bottom {
+	BACKGROUND: url(images/iqsou/bar/boxA.jpg) #fff no-repeat 0px 100%; HEIGHT: 5px
+}
+.box .bottom SPAN {
+	DISPLAY: block; BACKGROUND: url(images/iqsou/bar/boxA.jpg) #fff repeat-x 100% 100%; MARGIN-LEFT: 45px; HEIGHT: 5px
+}
+.boxB .top {
+	BACKGROUND: url(images/iqsou/bar/boxB.jpg) #fff no-repeat; HEIGHT: 4px
+}
+.boxB .top SPAN {
+	DISPLAY: block; BACKGROUND: url(images/iqsou/bar/boxB.jpg) #fff repeat-x 100% 0px; MARGIN-LEFT: 45px; HEIGHT: 4px
+}
+.boxB .bottom {
+	BACKGROUND: url(images/iqsou/bar/boxB.jpg) #fff no-repeat 0px 100%; HEIGHT: 5px
+}
+.boxB .bottom SPAN {
+	DISPLAY: block; BACKGROUND: url(images/iqsou/bar/boxB.jpg) #fff repeat-x 100% 100%; MARGIN-LEFT: 45px; HEIGHT: 5px
+}
+.boxC {
+	BORDER-RIGHT: #b7c3d3 1px solid; BORDER-TOP: #b7c3d3 1px solid; BORDER-LEFT: #b7c3d3 1px solid; BORDER-BOTTOM: #b7c3d3 1px solid; TEXT-ALIGN: center
+}
+.boxC H3 {
+	PADDING-LEFT: 5px; FONT-SIZE: 14px; BACKGROUND: url(images/iqsou/brickCate.gif) repeat-x 0px -490px; MARGIN: 1px; COLOR: #5b9cdf; LINE-HEIGHT: 28px; HEIGHT: 28px
+}
+.boxC UL {
+	TEXT-ALIGN: left
+}
+.boxC DIV {
+	PADDING-LEFT: 5px; BACKGROUND: #ffd; MARGIN: 1px; COLOR: #5b9cdf; LINE-HEIGHT: 28px; HEIGHT: 28px
+}
+A.domain-link {
+	FONT-SIZE: 14px; COLOR: red; TEXT-DECORATION: underline
+}
+.boxC UL LI {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 25px; FONT-SIZE: 12px; PADDING-BOTTOM: 4px; MARGIN: 0px 0px 3px; COLOR: #666; PADDING-TOP: 4px
+}
+.notice-holder {
+	BORDER-RIGHT: #e1e1e1 2px solid; BORDER-BOTTOM: #e1e1e1 2px solid
+}
+.notice {
+	BORDER-RIGHT: #cfcfcf 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #cfcfcf 1px solid; PADDING-LEFT: 10px; BACKGROUND: #feffcf 0px 0px; PADDING-BOTTOM: 10px; BORDER-LEFT: #cfcfcf 1px solid; PADDING-TOP: 10px; BORDER-BOTTOM: #cfcfcf 1px solid
+}
+#insertberf A {
+	FONT-SIZE: 12px; COLOR: red; TEXT-DECORATION: underline
+}
+.btn-hot-top {
+	BACKGROUND: url(images/iqsou/btn/btn_hot.gif) #fff no-repeat; WIDTH: 130px; HEIGHT: 35px
+}
+.btn-hot-bottom {
+	BACKGROUND: url(images/iqsou/btn/rmgjz_bk_bg03.gif) #fff no-repeat; WIDTH: 130px; HEIGHT: 35px
+}
+.btn-hot-left-bg {
+	BACKGROUND: url(images/iqsou/btn/rmgjz_bk_bg01.gif) #fff repeat-y; WIDTH: 13px
+}
+.btn-hot-right-bg {
+	BACKGROUND: url(images/iqsou/btn/rmgjz_bk_bg02.gif) #fff repeat-y; WIDTH: 11px
+}
+.btn-hot {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; CURSOR: pointer; HEIGHT: 28px; BORDER-RIGHT-WIDTH: 0px
+}
+.btn-hot LI {
+	DISPLAY: inline; FLOAT: left; HEIGHT: 28px
+}
+.life-ul LI {
+	DISPLAY: inline
+}
+A {
+	FONT-SIZE: 12px; COLOR: #069; TEXT-DECORATION: none
+}
+.notice-news .notice A {
+	FONT-SIZE: 12px; COLOR: #069; TEXT-DECORATION: none
+}
+.hot-main-left {
+	WIDTH: 300px
+}
+.hot-main-middle {
+	WIDTH: 300px
+}
+.box .content {
+	BORDER-RIGHT: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid
+}
+.boxB .content {
+	BORDER-RIGHT: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid
+}
+
+#toolbar {
+	MARGIN: 0px auto
+}
+#container {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: #fff; PADDING-BOTTOM: 0px; MARGIN: 0px auto; PADDING-TOP: 0px
+}
+#header {
+	MIN-WIDTH: 940px; BACKGROUND: url(images/iqsou/bg.gif) repeat-x 0px 0px; HEIGHT: 90px
+}
+#logo {
+	FLOAT: left; WIDTH: 200px; HEIGHT: 80px
+}
+#logo UL {
+	PADDING-TOP: 10px
+}
+#logo UL LI {
+	DISPLAY: inline
+}
+#searchbar {
+	FLOAT: left; MARGIN-LEFT: 30px; HEIGHT: 80px
+}
+#weather {
+	RIGHT: -50px; BACKGROUND: url(images/iqsou/icon/weather/Yahoo_Weather_011.png) no-repeat 100% 50%; FLOAT: left; OVERFLOW: hidden; WIDTH: 200px; POSITION: relative; TOP: -15px; HEIGHT: 100px
+}
+#weather UL {
+	MARGIN-TOP: 35px; MARGIN-RIGHT: 135px
+}
+#reason {
+	DISPLAY: none
+}
+#domain-hint {
+	MARGIN: 0px auto; WIDTH: 920px
+}
+#sidebar {
+	PADDING-LEFT: 10px; BACKGROUND: #fff; FLOAT: left; WIDTH: 140px; PADDING-TOP: 10px
+}
+#sidebarmenu LI {
+	LINE-HEIGHT: 28px
+}
+#sidebarmenu LI DIV {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 106px; CURSOR: pointer; HEIGHT: 28px; BORDER-RIGHT-WIDTH: 0px
+}
+#mainContent {
+	MARGIN: 0px 0px 0px 140px; HEIGHT: 550px
+}
+#footer {
+	MARGIN-TOP: 10px; BACKGROUND: url(images/iqsou/footer-bg.gif) #fff repeat-x; HEIGHT: 50px
+}
+.lifetips_img {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 25px; FONT-SIZE: 14px; PADDING-BOTTOM: 0px; OVERFLOW: hidden; LINE-HEIGHT: 28px; PADDING-TOP: 0px; BACKGROUND-REPEAT: no-repeat
+}
+</STYLE>
+
+<DIV style="BACKGROUND: #fff; MARGIN: 0px auto; WIDTH: 970px">
+<DIV id=container style="WIDTH: 960px">
+<DIV class=module id=header 
+style="BORDER-TOP: #b7c3d3 1px dashed; HEIGHT: 80px">
+  <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="47%" rowspan="2"><img src="images/lo.JPG" width="448" height="80"></td>
+      <td width="53%" align="left" bgcolor="#F7FBFF"><span class="STYLE1">&nbsp;我们建议您使用以下搜索</span></td>
+    </tr>
+    <tr>
+      <td><!-- Search Google -->
+<center>
+<form method="get" action="http://www.google.com.hk/search" target="_top">
+<table bgcolor="#ffffff">
+<tr><td nowrap="nowrap" valign="top" align="left" height="32">
+<a href="http://www.google.com/">
+<img src="http://www.google.com/logos/Logo_25wht.gif" border="0" alt="Google" align="middle"></img></a>
+<label for="sbi" style="display: none">输入您的搜索字词</label>
+<input type="text" name="q" size="31" maxlength="255" value="" id="sbi"></input>
+<label for="sbb" style="display: none">提交搜索表单</label>
+<input type="submit" name="sa" value="搜索" id="sbb"></input>
+<input type="hidden" name="client" value="pub-6973081492941148"></input>
+<input type="hidden" name="forid" value="1"></input>
+<input type="hidden" name="prog" value="aff"></input>
+<input type="hidden" name="channel" value="7796605002"></input>
+<input type="hidden" name="ie" value="GB2312"></input>
+<input type="hidden" name="oe" value="GB2312"></input>
+<input type="hidden" name="hl" value="zh-CN"></input>
+</td></tr></table>
+</form>
+</center>
+<!-- Search Google --></td>
+    </tr>
+  </table>
+</DIV>
+
+<DIV>
+<STYLE>#label {
+	BACKGROUND: #eff3fb
+}
+#label LI.current {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; BACKGROUND: url(images/title_bg.gif) no-repeat 0px -380px; WIDTH: 154px
+}
+#label LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; BACKGROUND: url(images/title_bg.gif) no-repeat 0px -423px; FLOAT: left; PADDING-BOTTOM: 0px; MARGIN: 0px; WIDTH: 153px; CURSOR: pointer; LINE-HEIGHT: 28px; PADDING-TOP: 0px; HEIGHT: 26px; TEXT-ALIGN: center
+}
+#label LI.last {
+	WIDTH: 38px
+}
+</STYLE>
+
+<DIV 
+style="BORDER-RIGHT: #b7c3d3 1px solid; BORDER-TOP: #b7c3d3 0px solid; MARGIN-TOP: 2px; BORDER-LEFT: #b7c3d3 1px solid; BORDER-BOTTOM: #b7c3d3 0px solid; HEIGHT: 28px">
+<DIV 
+style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: #eff3fb; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px">
+<UL id=label>
+  <LI class=current id=hot-word>热门关键词 </LI>
+  <LI id=hot-movie>男装 </LI>
+  <LI id=hot-music>女装 </LI>
+  <LI id=hot-game>运动 </LI>
+  <LI id=hot-video>数码 </LI>
+  <LI id=hot-pic>手机 </LI>
+  <LI class=last id=hot-more>更多 </LI></UL></DIV></DIV>
+<DIV id=hot-content 
+style="CLEAR: both; BORDER-RIGHT: #b7c3d3 1px solid; BORDER-TOP: #b7c3d3 0px solid; BORDER-LEFT: #b7c3d3 1px solid; BORDER-BOTTOM: #b7c3d3 1px solid"></DIV><!--相关搜索-->
+<DIV id=hot-related-word-content style="DISPLAY: none">
+<DIV class=down id=relatedSearch 
+style="PADDING-RIGHT: 10px; DISPLAY: block; PADDING-LEFT: 1px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px">
+<DIV class=boxC 
+style="BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BORDER-RIGHT-WIDTH: 0px">
+<UL class=hotkey id=hotkey2></UL></DIV></DIV></DIV><!--热门关键词-->
+<DIV id=hot-word-content style="DISPLAY: none">
+<TABLE style="WIDTH: 100%; TEXT-ALIGN: left">
+  <TBODY>
+  <TR>
+    <TD width=20>&nbsp;</TD>
+    <TD width="14%" height=28><A style="FONT-SIZE: 14px" 
+      href="http://www.taobao.com/go/act/mmbd/pd011.php?pid=mm_11691863_2326752_9007263" 
+      target=_blank>淘宝热卖</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://www.taobao.com/go/act/other/p4p15_1.php?refpid=mm_11691863_2326752_9007263" target=_blank>冬季时尚男装</A> 
+    </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=女式大衣&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>冬季女装</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px; COLOR: black" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=时尚包包&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>时尚包包</A> 
+    </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=羽绒服&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>羽绒服</A> 
+    </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://www.taobao.com/go/act/mmbd/jr04.php?pid=mm_11691863_2326752_9007263" 
+      target=_blank>圣诞礼物</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=雪地靴&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>雪地靴</A> 
+    </TD></TR>
+  <TR>
+    <TD width=20>&nbsp;</TD>
+    <TD height=28><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=皮夹克&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>皮夹克</A> </TD>
+    <TD><A style="FONT-SIZE: 14px" 
+      href="http://remai.manyi.taobao.com/site.php?m=tao&a=ispecial&spid=3345&pid=mm_11691863_2326752_9007263" target=_blank>淘宝秒杀</A> 
+    </TD>
+    <TD><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=牛仔裤&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>牛仔裤</A> </TD>
+    <TD><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=冬外套&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>冬外套</A> </TD>
+    <TD><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=围巾&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>围巾</A></TD>
+    <TD><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=运动服&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>运动服</A> </TD>
+    <TD><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=风衣&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>风衣</A> 
+  </TD></TR></TBODY></TABLE></DIV><!--男装-->
+<DIV id=hot-movie-content style="DISPLAY: none">
+<TABLE style="WIDTH: 100%; TEXT-ALIGN: left">
+  <TBODY>
+  <TR>
+    <TD width=20>&nbsp;</TD>
+    <TD width="14%" height=28><A style="FONT-SIZE: 14px" 
+      href="http://www.taobao.com/go/act/mmbd/pd033.php?pid=mm_11691863_2326752_9007263" target=_blank>男装热卖</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=男款皮衣&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>皮衣</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=休闲西服&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>休闲西服</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=男士外套&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>男士外套</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=休闲裤&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>休闲裤</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=衬衣&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>衬衣</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=风衣&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>风衣</A> 
+    </TD></TR>
+  <TR>
+    <TD width=20>&nbsp;</TD>
+    <TD height=28><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=皮鞋&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>皮鞋</A> </TD>
+    <TD><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=手表&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>手表</A> </TD>
+    <TD><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=男包&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>男包</A> </TD>
+    <TD><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=钱包&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>钱包</A> 
+    </TD>
+    <TD><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=皮带&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>皮带</A> </TD>
+    <TD><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=围巾&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>围巾</A> </TD>
+    <TD><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=ZIPPO&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>ZIPPO</A> 
+  </TD></TR></TBODY></TABLE></DIV><!--女士-->
+<DIV id=hot-music-content style="DISPLAY: none">
+<TABLE style="WIDTH: 100%; TEXT-ALIGN: left">
+  <TBODY>
+  <TR>
+    <TD width=20>&nbsp;</TD>
+    <TD width="14%" height=28><A style="FONT-SIZE: 14px" 
+      href="http://www.taobao.com/go/act/mmbd/pd02.php?pid=mm_11691863_2326752_9007263" 
+      target=_blank>女装热卖</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=女式羽绒服&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>女式羽绒服</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=雪地靴&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos="  target=_blank>雪地靴</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=女式毛衣&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>毛衣</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=皮草&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>皮草</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=女式风衣&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>风衣</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=女式卫衣&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>卫衣</A> </TD></TR>
+  <TR>
+    <TD width=20>&nbsp;</TD>
+    <TD height=28><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=女鞋&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>女鞋</A> </TD>
+    <TD><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=女包&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>女包</A> </TD>
+    <TD><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=香奈儿&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>香奈儿</A> </TD>
+    <TD><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=面膜&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>面膜</A> </TD>
+    <TD><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=CUCCI&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>CUCCI</A> </TD>
+    <TD><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=眼霜&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>眼霜</A> 
+    </TD>
+    <TD><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=达芙妮&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>达芙妮</A> </TD></TR></TBODY></TABLE></DIV><!--运动-->
+<DIV id=hot-game-content style="DISPLAY: none">
+<TABLE style="WIDTH: 100%; TEXT-ALIGN: left">
+  <TBODY>
+  <TR>
+    <TD width=20>&nbsp;</TD>
+    <TD width="14%" height=28><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=匡威&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>匡威</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=耐克&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>耐克</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=李宁&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>李宁</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=阿迪达斯&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>阿迪达斯</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=安踏&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>安踏</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=kappa&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>kappa</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=冲锋衣&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>冲锋衣</A> </TD></TR>
+  <TR>
+    <TD width=20>&nbsp;</TD>
+    <TD height=28><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=登山鞋&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>登山鞋</A> </TD>
+    <TD><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=运动服&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>运动服</A> 
+    </TD>
+    <TD><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=板鞋&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>板鞋</A> </TD>
+    <TD><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=帆布鞋&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>帆布鞋</A> </TD>
+    <TD><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=户外&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>户外用品</A> </TD>
+    <TD><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=篮球鞋&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>篮球鞋</A> </TD>
+    <TD><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=足球鞋&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>足球鞋</A> 
+  </TD></TR></TBODY></TABLE></DIV><!--数码-->
+<DIV id=hot-video-content style="DISPLAY: none">
+<TABLE style="WIDTH: 100%; TEXT-ALIGN: left">
+  <TBODY>
+  <TR>
+    <TD width=20>&nbsp;</TD>
+    <TD width="14%" height=28><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=IPAD&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>IPAD</A> 
+    </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=电子书&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>电子书</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=MP5&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>MP5</A></TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=IPOD&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>IPOD</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=笔记本&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>笔记本</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=Itouch&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>Itouch</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=数码相机&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>数码相机</A></TD></TR>
+  <TR>
+    <TD width=20>&nbsp;</TD>
+    <TD height=28><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=摄像机&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>摄像机</A> </TD>
+    <TD><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=液晶电视&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>液晶电视</A> </TD>
+    <TD><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=苹果&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>苹果</A> </TD>
+    <TD><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=上网本&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>上网本</A> </TD>
+    <TD><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=移动硬盘&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>移动硬盘</A> </TD>
+    <TD><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=耳机&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>耳机</A> </TD>
+    <TD><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=无线网卡&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>无线网卡</A> 
+  </TD></TR></TBODY></TABLE></DIV><!--手机-->
+<DIV id=hot-pic-content style="DISPLAY: none">
+<TABLE style="WIDTH: 100%; TEXT-ALIGN: left">
+  <TBODY>
+  <TR>
+    <TD width=20>&nbsp;</TD>
+    <TD width="14%" height=28><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=天翼3G手机&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>3G手机</A> 
+    </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=摩托罗拉&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>摩托罗拉</A> 
+    </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=三星&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>三星</A> 
+    </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=酷派&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>酷派</A> 
+    </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=HTC&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>HTC</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=乐PHONE&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>乐PHONE</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=智能手机&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>智能手机</A> 
+    </TD></TR>
+  <TR>
+    <TD width=20>&nbsp;</TD>
+    <TD height=28><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=http://search8.taobao.com/browse/search_easy.htm?keyword=I909&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>三星I909</A> 
+    </TD>
+    <TD><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=xt800&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>摩托XT800</A> </TD>
+    <TD><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=HTC T9199&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>HTC T9199</A> </TD>
+    <TD><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=华为C8500&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>华为C8500</A> </TD>
+    <TD><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=中兴N600&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>中兴N600</A> </TD>
+    <TD><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=xt301&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>摩托xt301</A> </TD>
+    <TD><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=W899&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>三星W899</A> 
+  </TD></TR></TBODY></TABLE></DIV><!--更多-->
+<DIV id=hot-more-content style="DISPLAY: none">
+<TABLE style="WIDTH: 100%; TEXT-ALIGN: left">
+  <TBODY>
+  <TR>
+    <TD width=20>&nbsp;</TD>
+    <TD width="14%" height=28><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=圣诞礼物&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>圣诞礼物</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=游戏点卡&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>游戏点卡</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=汽车用品&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>汽车用品</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=宠物用品&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>宠物用品</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=零食&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>零食</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=护肤品&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>护肤品</A> </TD>
+    <TD width="14%"><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=日用品&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>日用品</A> </TD></TR>
+  <TR>
+    <TD width=20>&nbsp;</TD>
+    <TD height=28><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=新款女鞋&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>新款女鞋</A> </TD>
+    <TD><A style="FONT-SIZE: 14px" href="http://search8.taobao.com/browse/search_easy.htm?keyword=3C配件&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>3C配件</A> </TD>
+    <TD><A style="FONT-SIZE: 14px" href="http://search8.taobao.com/browse/search_easy.htm?keyword=电脑包&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>电脑包</A> </TD>
+    <TD><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=兔斯基&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>兔斯基</A> </TD>
+    <TD><A style="FONT-SIZE: 14px" href="http://search8.taobao.com/browse/search_easy.htm?keyword=玩具&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>玩具</A> </TD>
+    <TD><A style="FONT-SIZE: 14px" href="http://search8.taobao.com/browse/search_easy.htm?keyword=芭比娃娃&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" 
+      target=_blank>芭比娃娃</A> </TD>
+    <TD><A style="FONT-SIZE: 14px; COLOR: red" 
+      href="http://search8.taobao.com/browse/search_easy.htm?keyword=香水&posid=1&isinner=1&refpid=mm_11691863_2326752_9007263&refpos=" target=_blank>香水</A> 
+  </TD></TR></TBODY></TABLE>
+ 
+  
+  
+  
+  </DIV>
+<SCRIPT>
+$("#label li").mouseover(
+	function(){
+		var content_id = this.id + "-content";
+		$("#label li").removeClass("current");
+		$(this).addClass("current");
+		$("#hot-content").html($("#" + content_id).html());
+	}
+);
+function listKeywords(){
+    if(keywords.length < 1){
+		$('#relatedSearch').remove();
+	}else{
+		for(var x= 0; x < keywords.length; x++){
+		 $('#hotkey2').append('<li><a style="font-size:14px" href="http://www.google.com.hk/search?&client=pub-6973081492941148&channel=7796605002&forid=1&prog=aff&ie=gb2312&oe=gb2312&hl=zh-CN&source=sdo_cts_html&q='+keywords[x].keyword+'">'+keywords[x].keyword+'</a></li>');
+		}
+		$('#hotkey2 li:first-child a').css('color','red');
+	}
+}
+$("#hot-content").html($("#hot-word-content").html());</SCRIPT>
+</DIV>
+
+<DIV id=hotkey_main 
+style="BORDER-RIGHT: #b7c3d3 1px solid; BORDER-TOP: #b7c3d3 0px solid; MARGIN-BOTTOM: 0px; BORDER-LEFT: #b7c3d3 1px solid; BORDER-BOTTOM: #b7c3d3 1px solid"></DIV>
+
+<SCRIPT type=text/javascript>
+var keywords = [{"id":"1","keyword":"\u65c5\u6e38"},{"id":"2","keyword":"\u4ea4\u53cb"},{"id":"3","keyword":"\u6e38\u620f"},{"id":"4","keyword":"\u996d\u5e97"},{"id":"5","keyword":"\u9910\u996e"},{"id":"6","keyword":"\u4e70\u623f"},{"id":"7","keyword":"\u6c7d\u8f66"},{"id":"8","keyword":"\u5bb6\u5177"},{"id":"9","keyword":"\u533b\u9662"},{"id":"10","keyword":"\u82f1\u8bed\u57f9\u8bad"},{"id":"11","keyword":"\u7535\u8111\u57f9\u8bad"},{"id":"12","keyword":"\u9152\u5e97"},{"id":"13","keyword":"\u673a\u7968"},{"id":"14","keyword":"\u8d2d\u7269"},{"id":"15","keyword":"\u5546\u673a"},{"id":"16","keyword":"\u6c42\u804c"},{"id":"18","keyword":"\u97f3\u4e50"},{"id":"19","keyword":"\u7535\u5f71"},{"id":"20","keyword":"\u65b0\u95fb"}];
+
+        //
+        function showTopKeywords(keywords){
+        var randomnumber;
+        var haskey = [];
+        var keylen = 0;
+        keywords.sort(function() {return 0.5 - Math.random()});
+        while(keylen<10){
+        randomnumber=Math.floor(Math.random()*20);
+        while(haskey[randomnumber]){
+        randomnumber=Math.floor(Math.random()*20);
+        }
+        haskey[randomnumber] = keywords[randomnumber];
+        keylen +=1;
+        }
+
+        for(var x= 0; x < haskey.length; x++){
+        if(haskey[x]){
+        $('#hotkey_main').append('<a target="_blank" href="http://www.ibaigu.com/searchad.asp?num=10&d='+haskey[x].id+'&q='+haskey[x].keyword+'" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('+"'Image"+haskey[x].id+"','','images/"+haskey[x].id+"_o.gif',1)"+'"><img src="images/'+haskey[x].id+'_d.gif" alt="我要'+haskey[x].keyword+'" name="Image'+haskey[x].id+'" width="90" height="150" border="0" id="Image'+haskey[x].id+'" /><\/a>');
+        }
+        }
+        }
+        showTopKeywords(keywords);
+
+        $(document).ready(
+        function(){ 
+        $('#wanle').click();
+        $('#tab li').each(function(){
+        $(this).click(function(){
+        changeTab(this);
+        });
+        });
+        whyClick();
+        $('.lt_button').click(showLifeTipFrame);
+        }
+        );
+
+        function showLifeTipFrame(){
+        if($('#liftip_frame').attr('src') != $(this).attr('href')){
+
+        //$('#liftip_div > .BoxC').css('height',$(this).attr('w')+'px');
+        $('#liftip_frame').css('height',$(this).attr('w')+'px');
+        //alert($(this).attr('w'));
+        $('#liftip_div').slideDown('slow');
+        $('#liftip_frame').attr('src',$(this).attr('href'));
+
+        }  
+        return false;
+        }
+        //loadingHotwords();
+        //loadingWeather();
+
+        </SCRIPT>
+</DIV></DIV>
+
+
+
+ <div style="text-align:center; width:100%">
+ <div style="width:970px; text-align:left;margin:0 auto;">
+ <TABLE cellSpacing=0 cellPadding=0 width=970 align=center bgColor=#ffffff border=0 height=1000>
+<tr><td><iframe src="http://www.ibaigu.com/google.html" width="970" height="2000" frameborder="0" scrolling="no"></iframe></td></tr>
+  </table> </div>
+  </div>
+
+</div>
+<div style="display:none">
+<!--AH-CNZZ-->
+<script src="http://s62.cnzz.com/stat.php?id=1470390&web_id=1470390" language="JavaScript" charset="gb2312"></script>
+
+<!--XF-CNZZ-->
+<script src="http://s62.cnzz.com/stat.php?id=1474069&web_id=1474069" language="JavaScript" charset="gb2312"></script>
+<script src="http://s94.cnzz.com/stat.php?id=1541512&web_id=1541512" language="JavaScript" charset="gb2312"></script>
+<script type="text/javascript" src="http://js.tongji.linezing.com/817302/tongji.js"></script>
+</div>
+	
+</div>
+
+</BODY></HTML>

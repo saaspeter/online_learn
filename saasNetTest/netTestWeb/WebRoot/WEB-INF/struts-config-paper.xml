@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources/>
+  <form-beans>
+	  <form-bean name="paperForm" type="netTestWeb.paper.form.PaperForm" />
+	  <form-bean name="paperquestypeForm" type="netTestWeb.paper.form.PaperquestypeForm" />
+	  <form-bean name="paperpatternratioForm" type="netTestWeb.paper.form.PaperpatternratioForm" />
+  </form-beans>
+
+  <global-exceptions>
+      <exception key="commonWeb.java.commonaction.errors.noLogin" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoLoginException" path="/login_forward.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.editPage.noSuchRecord" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoSuchRecordException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.resubmit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.ResubmitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.DaoException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="org.springframework.dao.DataAccessException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.Unauthorized" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoRightException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.LogicErr" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.LogicException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.InvalidVisit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.InvalideVisitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.SystemError" handler="commonWeb.base.StrutsExceptionHandler" type="java.lang.Throwable" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+  </global-exceptions>
+  
+  <global-forwards>
+      <forward name="errorPage" path="/pubs/errorPage.jsp" ></forward>
+      <forward name="messagePage" path="/pubs/message.jsp" ></forward>
+      <forward name="treeXml" path="/pubs/treeXml.jsp" ></forward>
+      <forward name="forwardToUrl" path="/pubs/forwardToUrl.jsp" ></forward>
+      <forward name="toUrl" path="/pubs/toUrl.jsp" ></forward>
+  </global-forwards>
+  
+  <action-mappings>
+  
+	    <!-- paper begin -->
+	    <action parameter="listPaper" path="/paper/listPaper" name="paperForm" type="netTestWeb.paper.action.PaperAction" scope="request">
+	       <forward name="list" path="/paper/paper_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="selectPaper" path="/paper/selectPaper" name="paperForm" type="netTestWeb.paper.action.PaperAction" scope="request">
+	       <forward name="selectPaper" path="/paper/selPaper_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="savePaper" path="/paper/savePaper" name="paperForm" type="netTestWeb.paper.action.PaperAction" scope="request">
+	       <forward name="list" path="/paper/paper_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="editPaper" path="/paper/editPaper" name="paperForm" type="netTestWeb.paper.action.PaperAction" scope="request">
+	       <forward name="viewPage" path="/paper/paper_view.jsp"></forward>
+	       <forward name="editPaper" path="/paper/paper_edit.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="viewPaper" path="/paper/viewPaper" name="paperForm" type="netTestWeb.paper.action.PaperAction" scope="request">
+	        <forward name="viewPage" path="/paper/paper_view.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="addPaper1" path="/paper/addPaper1" name="paperForm" type="netTestWeb.paper.action.PaperAction" scope="request">
+	       <forward name="addPaper1" path="/paper/paper_add1.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="genePaper" path="/paper/genePaper" name="paperForm" type="netTestWeb.paper.action.PaperAction" scope="request">
+	       <forward name="genePaper" path="/paper/paper_edit.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="deletePaper" path="/paper/deletePaper" name="paperForm" type="netTestWeb.paper.action.PaperAction" scope="request">
+	       <forward name="list" path="/paper/paper_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="importpaperfilepage" path="/paper/importpaperfilepage" name="paperForm" type="netTestWeb.paper.action.PaperAction" scope="request">
+	       <forward name="importpage" path="/paper/paperques_imporpage.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="importpaperfile" path="/paper/importpaperfile" name="paperForm" type="netTestWeb.paper.action.PaperAction" scope="request">
+	       <forward name="importResultPage" path="/paper/paperImportResultPage.jsp"></forward>
+	    </action>
+	    <!-- paper end -->   
+	    
+	    <!-- paperquestype begin -->
+	    <action parameter="addpaperquespatt" path="/paper/addpaperquespatt" name="paperquestypeForm" type="netTestWeb.paper.action.PaperquestypeAction" scope="request">
+	       <forward name="addEditPage" path="/paper/paperquespattern_edit.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="editpaperquespatt" path="/paper/editpaperquespatt" name="paperquestypeForm" type="netTestWeb.paper.action.PaperquestypeAction" scope="request">
+	       <forward name="addEditPage" path="/paper/paperquespattern_edit.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="savepaperquespatt" path="/paper/savepaperquespatt" name="paperquestypeForm" type="netTestWeb.paper.action.PaperquestypeAction" scope="request">
+	       <forward name="addEditPage" path="/paper/paperquespattern_edit.jsp"></forward>
+	    </action>    
+	    <action parameter="delpaperquespatt" path="/paper/delpaperquespatt" name="paperquestypeForm" type="netTestWeb.paper.action.PaperquestypeAction" scope="request">
+	       <forward name="addEditPage" path="/paper/paperquespattern_edit.jsp"></forward>
+	    </action>  
+        <!-- paperquestype end -->
+
+  </action-mappings>
+
+  <message-resources parameter="netTestWeb.resource.PagetextResources" />
+  <message-resources key="BizKey" parameter="netTestWeb.resource.BizMessResources" />
+</struts-config>
+

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+	<classPathEntry
+		location="C:\tools\RD\mysql\mysql-connector-java-3.1.12\mysql-connector-java-3.1.12-bin.jar" />
+
+	<context id="DB2Tables" targetRuntime="MyBatis3">
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/joybeacon" userId="joybeacon"
+			password="joybeacon">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!--以下三个标签主要解析targetPackage和targetProject。其它的具体参看mybatis-generator -->
+		<!--targetPackage，是生成文件所在的包路径 -->
+		<!--targetProject，是相对于本xml配置文件的相对路径，是targetPackage包路径的父级目录。 -->
+
+		<javaModelGenerator targetPackage="com.joybeacon.model"
+			targetProject="joybeacon">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="com.joybeacon.sql"
+			targetProject="joybeacon">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.joybeacon.sql" targetProject="joybeacon">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<table tableName="shop" schema="">
+		</table>
+
+	</context>
+
+</generatorConfiguration> 

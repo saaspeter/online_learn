@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<session version="1.0">
+<refactoring comment="Rename type 'platform.vo.SysproductcateKey' to 'Sysproductcate'&#13;&#10;- Original element: 'platform.vo.SysproductcateKey'&#13;&#10;- Renamed element: 'platform.vo.Sysproductcate'&#13;&#10;- Update references to refactored element&#13;&#10;- Update textual occurrences in comments and strings" description="Rename type 'SysproductcateKey'" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;platform.vo{SysproductcateKey.java[SysproductcateKey" matchStrategy="1" name="Sysproductcate" qualified="false" references="true" similarDeclarations="false" stamp="1224076215984" textual="false" version="1.0"/>
+</session>

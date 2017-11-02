@@ -1,0 +1,8 @@
+<Context path="/netTest" docBase="C:/servers/tomcat-7.0.42-demo/wtpwebapps/netTestWeb" antiJARLocking="true">
+   
+    <Resource name="jdbc/saasNetTest" auth="Container" type="javax.sql.DataSource"
+               maxActive="100" maxIdle="30" maxWait="10000"
+               username="peter" password="peter" driverClassName="com.mysql.jdbc.Driver"
+               url="jdbc:mysql://localhost:3306/saasNetTest_old"/>
+   
+</Context>

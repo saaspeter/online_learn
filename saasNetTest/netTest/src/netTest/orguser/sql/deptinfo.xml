@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Deptinfo">
+<!-- ###################### deptinfoResult ########################## -->
+  <resultMap id="DeptinfoResult" class="netTest.orguser.vo.Deptinfo">
+    <result column="orgBaseID" property="orgbaseid" jdbcType="BIGINT"/>
+    <result column="deptChildNum" property="deptchildnum" jdbcType="INTEGER"/>
+    <result column="isSetForNew" property="issetfornew" jdbcType="SMALLINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="orgName" property="orgname" jdbcType="VARCHAR"/>
+    <result column="orgNameSim" property="orgnamesim" jdbcType="VARCHAR"/>
+    <result column="createOrg" property="createorg" jdbcType="BIGINT"/>
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP"/>
+    <result column="pID" property="pid" jdbcType="BIGINT"/>
+    <result column="orgLevel" property="orglevel" jdbcType="INTEGER"/>
+    <result column="path" property="path" jdbcType="VARCHAR"/>
+    <result column="orgDesc" property="orgdesc" jdbcType="VARCHAR"/>
+    <result column="orgStatus" property="orgstatus" jdbcType="SMALLINT"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="orgbaseid"><![CDATA[ orgBaseID=#orgbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="deptchildnum"><![CDATA[ deptChildNum=#deptchildnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="issetfornew"><![CDATA[ isSetForNew=#issetfornew:SMALLINT# ]]></isNotNull>
+    </dynamic>
+  </sql>
+  
+  <!-- ###################### where_Clause_select ########################## -->
+  <sql id="where_Clause_select"> 
+    <dynamic prepend="where DeptInfo.orgBaseID=OrgBase.orgBaseID and"> 
+      <isNotNull prepend="and" property="orgbaseid"><![CDATA[ DeptInfo.orgBaseID=#orgbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="deptchildnum"><![CDATA[ DeptInfo.deptChildNum=#deptchildnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="and" property="issetfornew"><![CDATA[ DeptInfo.isSetForNew=#issetfornew:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="orglevel"><![CDATA[ OrgBase.orgLevel=#orglevel:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ OrgBase.shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="orgname"><![CDATA[ OrgBase.orgName=#orgname:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="orgnamesim"><![CDATA[ OrgBase.orgNameSim=#orgnamesim:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="createorg"><![CDATA[ OrgBase.createOrg=#createorg:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="createtime"><![CDATA[ OrgBase.createTime=#createtime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="and" property="pid"><![CDATA[ OrgBase.pID=#pid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="path"><![CDATA[ OrgBase.path=#path:VARCHAR# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="orgdesc"><![CDATA[ OrgBase.orgDesc=#orgdesc:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="orgstatus"><![CDATA[ OrgBase.orgStatus=#orgstatus:SMALLINT# ]]></isNotNull>
+    </dynamic>
+  </sql>
+  
+<!-- ###################### selectAll ########################## -->
+  <select id="selectAll" resultMap="DeptinfoResult"> 
+     select 
+         DeptInfo.orgBaseID,
+    DeptInfo.deptChildNum,
+    DeptInfo.isSetForNew,
+    OrgBase.shopID,
+    OrgBase.orgName,
+    OrgBase.orgNameSim,
+    OrgBase.createOrg,
+    OrgBase.createTime,
+    OrgBase.pID,
+    OrgBase.orgLevel,
+    OrgBase.path,
+    OrgBase.orgDesc,
+    OrgBase.orgStatus  
+     from deptinfo,orgbase
+     where DeptInfo.orgBaseID=OrgBase.orgBaseID
+  </select>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="DeptinfoResult" parameterClass="java.lang.Long"> 
+     select 
+         DeptInfo.orgBaseID,
+    DeptInfo.deptChildNum,
+    DeptInfo.isSetForNew,
+    OrgBase.shopID,
+    OrgBase.orgName,
+    OrgBase.orgNameSim,
+    OrgBase.createOrg,
+    OrgBase.createTime,
+    OrgBase.pID,
+    OrgBase.orgLevel,
+    OrgBase.path,
+    OrgBase.orgDesc,
+    OrgBase.orgStatus  
+     from deptinfo,orgbase 
+     where DeptInfo.orgBaseID=OrgBase.orgBaseID
+     and DeptInfo.orgBaseID = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="DeptinfoResult" parameterClass="netTest.orguser.dto.DeptinfoQuery"> 
+     select 
+         DeptInfo.orgBaseID,
+    DeptInfo.deptChildNum,
+    DeptInfo.isSetForNew,
+    OrgBase.shopID,
+    OrgBase.orgName,
+    OrgBase.orgNameSim,
+    OrgBase.createOrg,
+    OrgBase.createTime,
+    OrgBase.pID,
+    OrgBase.orgLevel,
+    OrgBase.path,
+    OrgBase.orgDesc,
+    OrgBase.orgStatus  
+     from deptinfo,orgbase 
+    <include refid="Deptinfo.where_Clause_select"/>  
+    <isNotNull property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotNull> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.orguser.vo.Deptinfo"> 
+     insert into deptinfo
+     ( orgBaseID,
+    deptChildNum,
+    shopID,
+    isSetForNew ) 
+    values 
+     ( #orgbaseid:BIGINT#, 
+    #deptchildnum:INTEGER#,
+    #shopid:BIGINT#,
+    #issetfornew:SMALLINT# )
+  </insert>
+  
+  <!-- ============================= insertRel =================================== -->
+  <insert id="insertRel" parameterClass="netTest.orguser.vo.Deptinfo">
+      insert into 
+		OrgBaseRel(shopID,parentID,childID) 
+		 select shopID,parentID,#orgbaseid:BIGINT# from OrgBaseRel where childID=#pid:BIGINT#
+		  union select #shopid:BIGINT#,#orgbaseid:BIGINT#,#orgbaseid:BIGINT# from dual
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.orguser.vo.Deptinfo"> 
+     update deptinfo
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="deptchildnum"><![CDATA[ deptChildNum=#deptchildnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="issetfornew"><![CDATA[ isSetForNew=#issetfornew:BIGINT# ]]></isNotNull>
+    </dynamic> where orgBaseID = #orgbaseid:BIGINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from deptinfo where exists 
+      (select * from OrgBaseRel where parentID=#value# and deptinfo.orgBaseID=OrgBaseRel.childID)
+  </delete>
+  
+  <!-- ============================= deleteRel =================================== -->
+  <insert id="deleteRel" parameterClass="java.lang.Long">
+	  delete from OrgBaseRel where exists (select childID from (select * from OrgBaseRel) b where (b.parentID=#value# or b.childID=#value#) and OrgBaseRel.childID=b.childID) 
+  </insert>
+  
+<!-- ###################### deleteByVO ########################## -->
+  <delete id="deleteByVO" parameterClass="netTest.orguser.dto.DeptinfoQuery"> 
+     delete from deptinfo
+     <include refid="Deptinfo.where_Clause"/> 
+  </delete>
+  
+<!-- ###################### selectAllCount ########################## -->
+  <select id="selectAllCount" resultClass="java.lang.Integer"> 
+     select count(*) from deptinfo
+  </select>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.orguser.dto.DeptinfoQuery"> 
+     select count(*) from deptinfo,orgbase
+     <include refid="Deptinfo.where_Clause_select"/>  
+     <isNotNull property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotNull> 
+  </select>
+    
+</sqlMap>

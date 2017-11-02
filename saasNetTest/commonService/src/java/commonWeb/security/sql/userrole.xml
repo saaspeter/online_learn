@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="UserRole">
+<!-- ###################### UserRoleResult ########################## -->
+  <resultMap id="UserRoleResult" class="commonWeb.security.vo.UserRole">
+    <result column="role_id" property="roleid" jdbcType="BIGINT"/>
+    <result column="user_id" property="userid" jdbcType="BIGINT"/>
+    <result column="shopID"  property="shopid" jdbcType="BIGINT"/>
+    <result column="usetype" property="usetype" jdbcType="SMALLINT"/>
+    <result column="syscode" property="syscode" jdbcType="VARCHAR"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="roleid"><![CDATA[ role_id=#roleid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="userid"><![CDATA[ user_id=#userid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="usetype"><![CDATA[ usetype=#usetype:SMALLINT# ]]></isNotNull>
+	  <isNotEmpty prepend="and" property="syscode"><![CDATA[ syscode=#syscode:VARCHAR# ]]></isNotEmpty>
+    </dynamic>
+  </sql>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="UserRoleResult" parameterClass="commonWeb.security.vo.UserRole"> 
+     select role_id,use_id,shopID,usetype,syscode  
+     from user_role 
+     where role_id=#roleid:BIGINT# and user_id=#userid:BIGINT# and shopID=#shopid:BIGINT#
+           and syscode=#syscode:VARCHAR#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="UserRoleResult" parameterClass="commonWeb.security.dto.UserRoleQuery"> 
+     select role_id,use_id,shopID,usetype,syscode  
+     from user_role
+    <include refid="UserRole.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+  <!-- ###################### selectByUserShop ########################## -->
+  <select id="selectByUserShop" resultClass="java.lang.Long" parameterClass="commonWeb.security.dto.UserRoleQuery"> 
+     select role_id from user_role 
+     where user_id=#userid:BIGINT# and shopID=#shopid:BIGINT#
+                          and syscode=#syscode:VARCHAR#
+  </select>
+  
+  <!-- ###################### selectUserRole ########################## -->
+  <select id="selectUserRole" resultClass="java.lang.Long" parameterClass="commonWeb.security.dto.UserRoleQuery"> 
+     select role_id from user_role
+      where user_id=#userid:BIGINT# and syscode=#syscode:VARCHAR#
+      <dynamic>
+          <isNotNull prepend="and" property="shopid">
+             shopID = #shopid:BIGINT# 
+          </isNotNull>
+      </dynamic>
+  </select>
+  
+  <!-- ###################### selectUserByShopRole ########################## -->
+  <select id="selectUserByShopRole" resultClass="java.lang.Long" parameterClass="commonWeb.security.dto.UserRoleQuery"> 
+     select user_id from user_role 
+     where shopID=#shopid:BIGINT# 
+        <isNotEmpty prepend="and" property="roleidstr"> role_id in ($roleidstr$) </isNotEmpty> 
+        <isNotEmpty prepend="and" property="syscode"> syscode=#syscode:VARCHAR# </isNotEmpty>
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="commonWeb.security.vo.UserRole"> 
+     insert into user_role
+     (role_id,user_id,shopID,usetype,syscode) 
+    values 
+     (#roleid:BIGINT#,#userid:BIGINT#,#shopid:BIGINT#,#usetype:SMALLINT#,#syscode:VARCHAR#)
+  </insert>
+   
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="commonWeb.security.vo.UserRole"> 
+     delete from user_role where role_id=#roleid:BIGINT# and user_id=#userid:BIGINT#  
+            and shopID=#shopid:BIGINT# and syscode=#syscode:VARCHAR#
+  </delete>
+  
+  <!-- ###################### deleteUserRoleInShop ########################## -->
+  <delete id="deleteUserRoleInShop" parameterClass="commonWeb.security.vo.UserRole"> 
+     delete from user_role where user_id=#userid:BIGINT# 
+            and shopID=#shopid:BIGINT# and syscode=#syscode:VARCHAR#
+  </delete>
+  
+<!-- ###################### selectAllCount ########################## -->
+  <select id="selectAllCount" resultClass="java.lang.Integer"> 
+     select count(*) from user_role
+  </select>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="commonWeb.security.dto.UserRoleQuery"> 
+     select count(*) from user_role
+     <include refid="UserRole.where_Clause"/>  
+  </select>
+  
+  <!-- ###################### selectUserUnderRole ########################## -->
+  <select id="selectUserUnderRole" resultClass="java.lang.Long" parameterClass="java.lang.Long"> 
+     select user_id from user_role where role_id = #value# 
+  </select>
+    
+</sqlMap>

@@ -1,0 +1,1300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/tologin.do" location="3350,2450" dimension="226,84" />
+  <StrutsActivity path="/login.do" location="3950,2250" dimension="256,84" />
+  <StrutsActivity path="/subsysMag/listSubsys.do" location="5450,3650" dimension="250,84" />
+  <StrutsActivity path="/basicset/sysconst.do" location="5150,2350" dimension="244,84" />
+  <StrutsActivity path="/basicset/sysconstval.do" location="5150,2850" dimension="262,84" />
+  <StrutsActivity path="/basicset/sysconstitem.do" location="2150,3250" dimension="268,84" />
+  <StrutsActivity path="/basicset/sysconstitemval.do" location="3350,3350" dimension="286,84" />
+  <StrutsActivity path="/sysadmin/sysfunctionitem.do" location="1550,2450" dimension="250,104" />
+  <StrutsActivity path="/shop/shopfunc.do" location="950,3250" dimension="244,84" />
+  <StrutsActivity path="/shop/listshopvalue.do" location="2750,2550" dimension="322,104" />
+  <StrutsActivity path="/shop/editshopdescript.do" location="4850,2650" dimension="256,104" />
+  <StrutsActivity path="/shop/viewshopdescript.do" location="50,3150" dimension="256,104" />
+  <StrutsActivity path="/shop/saveshopdescript.do" location="1850,3850" dimension="256,104" />
+  <StrutsActivity path="/shop/addshopvaluepage.do" location="3050,3950" dimension="256,104" />
+  <StrutsActivity path="/shop/addshopvalue.do" location="6350,3750" dimension="256,104" />
+  <StrutsActivity path="/shop/deleteShopValue.do" location="5450,3850" dimension="256,104" />
+  <StrutsActivity path="/productcategory/productcategory.do" location="2150,450" dimension="286,84" />
+  <StrutsActivity path="/productcategory/listProductcategoryvalue.do" location="5450,50" dimension="316,84" />
+  <StrutsActivity path="/productcategory/saveProductcategoryvalue.do" location="50,150" dimension="316,84" />
+  <StrutsActivity path="/productcategory/editProductcategoryvalue.do" location="5750,250" dimension="316,84" />
+  <StrutsActivity path="/productcategory/viewProductcategoryvalue.do" location="1250,450" dimension="316,84" />
+  <StrutsActivity path="/productcategory/addProductcategoryvalue.do" location="5150,450" dimension="316,84" />
+  <StrutsActivity path="/productcategory/deleteProductcategoryvalue.do" location="5750,450" dimension="316,84" />
+  <StrutsActivity path="/productcategory/listSysproductcate.do" location="5750,1950" dimension="280,84" />
+  <StrutsActivity path="/productcategory/saveSysproductcate.do" location="5750,2150" dimension="280,84" />
+  <StrutsActivity path="/productcategory/deleteSysproductcate.do" location="5750,3650" dimension="280,84" />
+  <StrutsActivity path="/i18n/i18n.do" location="3350,1350" dimension="220,84" />
+  <StrutsActivity path="/customers/baseuser.do" location="1850,3450" dimension="262,84" />
+  <StrutsActivity path="/usershop/delshopuser.do" location="6050,2750" dimension="252,104" />
+  <StrutsActivity path="/usershop/updatenickname.do" location="6050,2950" dimension="252,104" />
+  <StrutsActivity path="/customers/listuser.do" location="3050,3750" dimension="223,104" />
+  <StrutsActivity path="/customers/registeruser.do" location="6350,3150" dimension="223,104" />
+  <StrutsActivity path="/customers/saveuser.do" location="5750,2850" dimension="223,104" />
+  <StrutsActivity path="/customers/edituser.do" location="4250,2550" dimension="223,104" />
+  <StrutsActivity path="/customers/viewuser.do" location="1250,3250" dimension="223,104" />
+  <StrutsActivity path="/customers/adduser.do" location="2750,3450" dimension="223,104" />
+  <StrutsActivity path="/customers/deleteuser.do" location="6050,2350" dimension="223,104" />
+  <StrutsActivity path="/customers/updatepassword.do" location="1250,250" dimension="223,104" />
+  <StrutsActivity path="/basicset/sysparam.do" location="3050,2750" dimension="244,84" />
+  <StrutsActivity path="/news/addNewscategory.do" location="1550,4250" dimension="279,104" />
+  <StrutsActivity path="/news/editNewscategory.do" location="4550,4250" dimension="279,104" />
+  <StrutsActivity path="/news/saveNewscategory.do" location="5150,4250" dimension="279,104" />
+  <StrutsActivity path="/news/saveNewscategoryValue.do" location="5750,4250" dimension="279,104" />
+  <StrutsActivity path="/news/updateNewsCate.do" location="2150,4350" dimension="279,104" />
+  <StrutsActivity path="/news/deleteNewscategory.do" location="2750,4350" dimension="279,104" />
+  <StrutsActivity path="/news/deleteNewscategoryValue.do" location="3350,4350" dimension="279,104" />
+  <StrutsActivity path="/index/listInfonews.do" location="2450,4150" dimension="248,104" />
+  <StrutsActivity path="/index/searchNews.do" location="4550,4450" dimension="248,104" />
+  <StrutsActivity path="/index/saveInfonews.do" location="3350,4150" dimension="248,104" />
+  <StrutsActivity path="/index/editInfonews.do" location="3650,4150" dimension="248,104" />
+  <StrutsActivity path="/index/viewInfonews.do" location="650,4250" dimension="248,104" />
+  <StrutsActivity path="/index/addInfonews.do" location="950,4250" dimension="248,104" />
+  <StrutsActivity path="/index/deleteInfonews.do" location="1250,4250" dimension="248,104" />
+  <StrutsActivity path="/productcategory/listHotcategory.do" location="5450,4450" dimension="268,104" />
+  <StrutsActivity path="/productcategory/magHotcategory.do" location="6050,4450" dimension="268,104" />
+  <StrutsActivity path="/productcategory/saveHotcategory.do" location="3350,4550" dimension="268,104" />
+  <StrutsActivity path="/productcategory/delHotcategory.do" location="6050,650" dimension="268,104" />
+  <StrutsActivity path="errorPage;6" location="350,350" dimension="106,72" />
+  <StrutsActivity path="messagePage;6" location="50,450" dimension="160,72" />
+  <StrutsActivity path="treeXml;6" location="1850,2150" dimension="148,72" />
+  <StrutsActivity path="forwardToUrl;6" location="4850,3650" dimension="136,72" />
+  <StrutsActivity path="toUrl;6" location="4850,2450" dimension="148,72" />
+  <StrutsActivity path="/login.jsp" location="3950,1450" dimension="100,48" />
+  <StrutsActivity path="/tenantAdmin/tenantAdmin_index.jsp" location="50,2450" dimension="244,48" />
+  <StrutsActivity path="/userAdmin/userAdmin_index.jsp" location="2750,350" dimension="220,48" />
+  <StrutsActivity path="/subsysMag/subSystem_list.jsp" location="5150,250" dimension="214,48" />
+  <StrutsActivity path="/sysAdmin/basicSet/sysconst_list.jsp" location="650,2950" dimension="256,48" />
+  <StrutsActivity path="/sysAdmin/basicSet/sysconst_edit.jsp" location="5150,1850" dimension="256,48" />
+  <StrutsActivity path="/sysAdmin/basicSet/sysconst_add.jsp" location="5150,2550" dimension="250,48" />
+  <StrutsActivity path="/sysAdmin/basicSet/sysconst_addEdit.jsp" location="3650,1350" dimension="274,48" />
+  <StrutsActivity path="/sysAdmin/basicSet/sysconstval_addEdit.jsp" location="5150,2050" dimension="292,48" />
+  <StrutsActivity path="/sysAdmin/basicSet/sysconstval_list.jsp" location="5150,2150" dimension="274,48" />
+  <StrutsActivity path="/sysAdmin/basicSet/sysconstval_view.jsp" location="5150,1950" dimension="274,48" />
+  <StrutsActivity path="/sysAdmin/basicSet/sysconstitem_list.jsp" location="2750,3250" dimension="280,48" />
+  <StrutsActivity path="/sysAdmin/basicSet/sysconstitem_edit.jsp" location="5150,350" dimension="280,48" />
+  <StrutsActivity path="/sysAdmin/basicSet/sysconstitem_add.jsp" location="3950,3350" dimension="274,48" />
+  <StrutsActivity path="/sysAdmin/basicSet/sysconstitem_addEdit.jsp" location="5150,2250" dimension="298,48" />
+  <StrutsActivity path="/sysAdmin/basicSet/sysconstitemval_addEdit.jsp" location="3950,3250" dimension="316,48" />
+  <StrutsActivity path="/sysAdmin/basicSet/sysconstitemval_list.jsp" location="2750,3350" dimension="298,48" />
+  <StrutsActivity path="/sysAdmin/basicSet/sysconstitemval_view.jsp" location="3350,3250" dimension="298,48" />
+  <StrutsActivity path="/sysAdmin/sysfunctionitem_list.jsp" location="5450,3250" dimension="227,53" />
+  <StrutsActivity path="/sysAdmin/sysfunctionitem_edit.jsp" location="3650,3550" dimension="233,53" />
+  <StrutsActivity path="/sysAdmin/sysfunctionitem_view.jsp" location="4250,3950" dimension="236,53" />
+  <StrutsActivity path="/shop/shopfunc_list.jsp" location="2750,2950" dimension="178,48" />
+  <StrutsActivity path="/shop/shopfunc_edit.jsp" location="4850,1750" dimension="178,48" />
+  <StrutsActivity path="/shop/shopfunc_view.jsp" location="2450,2950" dimension="178,48" />
+  <StrutsActivity path="/shop/shopfunc_add.jsp" location="4850,1650" dimension="172,48" />
+  <StrutsActivity path="/shop/shopfunc_addEdit.jsp" location="2150,2950" dimension="196,48" />
+  <StrutsActivity path="/shop/shopvalue_list.jsp" location="3350,2950" dimension="184,48" />
+  <StrutsActivity path="/shop/shopvalue_addEdit.jsp" location="3050,2950" dimension="202,48" />
+  <StrutsActivity path="/shop/shopvalue_view.jsp" location="3050,550" dimension="184,48" />
+  <StrutsActivity path="/productcategory/productcategory_list.jsp" location="950,1450" dimension="286,48" />
+  <StrutsActivity path="/productcategory/prodcate_select_tree.jsp" location="3650,550" dimension="278,53" />
+  <StrutsActivity path="/productcategory/productcategory_edit.jsp" location="950,2250" dimension="286,48" />
+  <StrutsActivity path="/productcategory/productcategory_view.jsp" location="1550,1450" dimension="286,48" />
+  <StrutsActivity path="/productcategory/productcategory_add.jsp" location="2150,2250" dimension="280,48" />
+  <StrutsActivity path="/productcategory/productcategory_addEdit.jsp" location="350,1450" dimension="304,48" />
+  <StrutsActivity path="/productcategory/productcategoryvalue_list.jsp" location="5750,1050" dimension="316,48" />
+  <StrutsActivity path="/productcategory/productcategoryvalue_addEdit.jsp" location="5750,1150" dimension="334,48" />
+  <StrutsActivity path="/productcategory/productcategoryvalue_view.jsp" location="5750,1250" dimension="316,48" />
+  <StrutsActivity path="/productcategory/sysproductcate_list.jsp" location="650,3750" dimension="280,48" />
+  <StrutsActivity path="/i18n/i18n_addEdit.jsp" location="3350,1250" dimension="172,48" />
+  <StrutsActivity path="/i18n/i18n_list.jsp" location="3350,1550" dimension="154,48" />
+  <StrutsActivity path="/i18n/i18n_view.jsp" location="950,2750" dimension="154,48" />
+  <StrutsActivity path="/customers/custstatus_change.jsp" location="4550,850" dimension="232,48" />
+  <StrutsActivity path="/customers/baseuser_addEdit.jsp" location="5150,3650" dimension="226,48" />
+  <StrutsActivity path="/userprodshop/shopuser_list.jsp" location="650,4050" dimension="220,53" />
+  <StrutsActivity path="/customers/user_list.jsp" location="2750,2450" dimension="184,48" />
+  <StrutsActivity path="/customers/user_register_complete.jsp" location="6350,2350" dimension="256,53" />
+  <StrutsActivity path="/customers/user_add.jsp" location="6050,4050" dimension="175,53" />
+  <StrutsActivity path="/customers/user_edit.jsp" location="5750,4050" dimension="174,53" />
+  <StrutsActivity path="/customers/user_view.jsp" location="3050,2450" dimension="184,48" />
+  <StrutsActivity path="/sysAdmin/basicSet/sysparam_addEdit.jsp" location="1550,3250" dimension="274,48" />
+  <StrutsActivity path="/sysAdmin/basicSet/sysparam_list.jsp" location="4850,3050" dimension="256,48" />
+  <StrutsActivity path="/sysAdmin/basicSet/sysparam_view.jsp" location="4850,1050" dimension="256,48" />
+  <StrutsActivity path="/basicset/sysparam_addEdit.jsp" location="2150,3050" dimension="220,48" />
+  <StrutsActivity path="/news/newscate_add.jsp" location="4250,4350" dimension="172,53" />
+  <StrutsActivity path="/news/newscate_edit.jsp" location="50,4450" dimension="171,53" />
+  <StrutsActivity path="/index/infor_cate.jsp" location="3050,4150" dimension="149,53" />
+  <StrutsActivity path="/news/infonews_addEdit.jsp" location="350,4450" dimension="192,53" />
+  <StrutsActivity path="/news/infonews_view.jsp" location="650,4450" dimension="172,53" />
+  <StrutsActivity path="/productcategory/hotcategory_list.jsp" location="4250,850" dimension="250,53" />
+  <StrutsActivity path="/productcategory/hotcategory_mag.jsp" location="2150,4550" dimension="260,53" />
+  <StrutsActivity path="/pubs/errorPage.jsp" location="950,150" dimension="154,48" />
+  <StrutsActivity path="/pubs/message.jsp" location="650,450" dimension="142,48" />
+  <StrutsActivity path="/pubs/treeXml.jsp" location="650,2250" dimension="142,48" />
+  <StrutsActivity path="/pubs/forwardToUrl.jsp" location="5150,1250" dimension="172,48" />
+  <StrutsActivity path="/pubs/toUrl.jsp" location="4550,1050" dimension="130,48" />
+  <StrutsActivity path="/account/baseaccount_addEdit.jsp" location="1850,3050" dimension="232,48" />
+  <StrutsActivity path="/account/baseaccount_list.jsp" location="4850,350" dimension="214,48" />
+  <StrutsActivity path="/account/baseaccount_view.jsp" location="3650,350" dimension="214,48" />
+  <StrutsActivity path="/customers/tenant_list.jsp" location="3350,2250" dimension="196,48" />
+  <StrutsActivity path="/customers/tenant_add.jsp" location="5450,650" dimension="186,53" />
+  <StrutsActivity path="/customers/tenant_edit.jsp" location="4550,650" dimension="185,53" />
+  <StrutsActivity path="/customers/tenant_view.jsp" location="3650,2250" dimension="196,48" />
+  <StrutsActivity path="/customers/tenant_register_complete.jsp" location="6350,3350" dimension="267,53" />
+  <StrutsActivity path="/shop/shopapp_edit.jsp" location="5150,3450" dimension="172,48" />
+  <StrutsActivity path="/shop/shopapp_view.jsp" location="50,3550" dimension="172,48" />
+  <StrutsActivity path="/shop/shopapp_edit2.jsp" location="1550,3550" dimension="178,48" />
+  <StrutsActivity path="/shop/shopapp_listapp.jsp" location="5150,1150" dimension="190,48" />
+  <StrutsActivity path="/shop/shopapp_listmyapp.jsp" location="5750,2350" dimension="204,53" />
+  <StrutsActivity path="/shop/shopapp_list.jsp" location="4850,3450" dimension="172,48" />
+  <StrutsActivity path="/shop/shopapp_batchApp.jsp" location="350,3550" dimension="196,48" />
+  <StrutsActivity path="/shop/shopapp_listall2.jsp" location="1250,3550" dimension="196,48" />
+  <StrutsActivity path="/shop/shopapp_listall.jsp" location="4550,1150" dimension="190,48" />
+  <StrutsActivity path="/product/product_list.jsp" location="5750,3150" dimension="175,53" />
+  <StrutsActivity path="/shop/shopproduct_show.jsp" location="6050,3150" dimension="201,53" />
+  <StrutsActivity path="/product/product_edit.jsp" location="5750,3350" dimension="181,53" />
+  <StrutsActivity path="/product/product_view.jsp" location="6050,3350" dimension="184,53" />
+  <StrutsActivity path="/product/product_detail_buy.jsp" location="2450,3750" dimension="217,53" />
+  <StrutsActivity path="/product/product_add.jsp" location="2750,3750" dimension="182,53" />
+  <StrutsActivity path="/shop/shopprodcate_addEdit.jsp" location="4850,2250" dimension="220,48" />
+  <StrutsActivity path="/shop/shopprodcate_list.jsp" location="1250,3050" dimension="202,48" />
+  <StrutsActivity path="/shop/shopprodcate_view.jsp" location="1550,3050" dimension="202,48" />
+  <StrutsActivity path="/customers/user_addEdit.jsp" location="2450,2450" dimension="202,48" />
+  <StrutsActivity path="/product/producttest_list.jsp" location="350,550" dimension="214,48" />
+  <StrutsActivity path="/product/producttest_edit.jsp" location="4250,1550" dimension="214,48" />
+  <StrutsActivity path="/product/producttest_view.jsp" location="350,650" dimension="214,48" />
+  <StrutsActivity path="/shop/shopproduct_test_show.jsp" location="3350,450" dimension="227,53" />
+  <StrutsActivity path="/product/producttest_add.jsp" location="4250,1650" dimension="208,48" />
+  <StrutsActivity path="/product/producttest_detail_buy.jsp" location="1850,550" dimension="238,53" />
+  <StrutsActivity path="/product/producttest_addEdit.jsp" location="50,2550" dimension="232,48" />
+  <StrutsActivity path="/product/productdoc_list.jsp" location="4250,350" dimension="208,48" />
+  <StrutsActivity path="/product/productdoc_edit.jsp" location="2150,350" dimension="208,48" />
+  <StrutsActivity path="/product/productdoc_view.jsp" location="3950,450" dimension="208,48" />
+  <StrutsActivity path="/product/productdoc_add.jsp" location="4250,2150" dimension="202,48" />
+  <StrutsActivity path="/product/productdoc_addEdit.jsp" location="3950,2450" dimension="226,48" />
+  <StrutsActivity path="/product/productlevel_addEdit.jsp" location="4250,2450" dimension="238,48" />
+  <StrutsActivity path="/product/productlevel_list.jsp" location="4250,450" dimension="220,48" />
+  <StrutsActivity path="/product/productlevel_view.jsp" location="2750,550" dimension="220,48" />
+  <StrutsActivity path="/userprodshop/sel_shopuser.jsp" location="50,650" dimension="220,53" />
+  <StrutsActivity path="/userprodshop/myUserproductList.jsp" location="6050,2550" dimension="254,53" />
+  <StrutsActivity path="/userprodshop/userproduct_list.jsp" location="1250,850" dimension="237,53" />
+  <StrutsActivity path="/product/allproduct_list.jsp" location="5750,2550" dimension="188,53" />
+  <StrutsActivity path="/shopping/searchproduct_list.jsp" location="4250,3550" dimension="222,53" />
+  <StrutsActivity path="/shopping/shopping_cart.jsp" location="5450,3450" dimension="202,48" />
+  <StrutsActivity path="/order/custorder_list.jsp" location="1550,3650" dimension="190,48" />
+  <StrutsActivity path="/order/cust_custorder_list.jsp" location="5150,750" dimension="200,53" />
+  <StrutsActivity path="/order/custorder_view.jsp" location="1850,3650" dimension="190,48" />
+  <StrutsActivity path="/order/custorder_createTipPage.jsp" location="350,850" dimension="239,53" />
+  <StrutsActivity path="/order/confirmCustorder.jsp" location="50,850" dimension="197,53" />
+  <StrutsActivity path="/order/orderproduct_list.jsp" location="3950,750" dimension="195,53" />
+  <StrutsActivity path="/userprodshop/userproduct_view.jsp" location="1550,850" dimension="246,53" />
+  <StrutsActivity path="/productcategory/hotcategory_listMag.jsp" location="2750,4550" dimension="277,53" />
+  <StrutsActivity path="/shop/shop_edit.jsp" location="3950,1550" dimension="154,48" />
+  <StrutsActivity path="/shop/shop_list2.jsp" location="650,3550" dimension="160,48" />
+  <StrutsActivity path="/shop/shop_forword.jsp" location="5750,650" dimension="172,53" />
+  <StrutsActivity path="/shop/shop_view.jsp" location="2150,650" dimension="154,48" />
+  <StrutsActivity path="/shop/shop_add.jsp" location="3650,1550" dimension="148,48" />
+  <StrutsActivity path="/shop/shopstatus_change.jsp" location="3350,650" dimension="202,48" />
+  <StrutsActivity path="/shop/shop_list1.jsp" location="950,3550" dimension="160,48" />
+  <StrutsActivity path="/index/infonews_addEdit.jsp" location="4250,4150" dimension="194,53" />
+  <StrutsActivity path="/index/infonews_view.jsp" location="350,4250" dimension="174,53" />
+  <StrutsActivity path="/productcategory/prodcate_select_single.jsp" location="5450,3050" dimension="298,48" />
+  <StrutsActivity path="/productcategory/prodcate_select_muti.jsp" location="5450,2750" dimension="286,48" />
+  <StrutsActivity path="/customers/tenant_addEdit.jsp" location="3650,1050" dimension="214,48" />
+  <StrutsActivity path="/userprodshop/myUserproduct_list.jsp" location="1850,4050" dimension="256,53" />
+  <StrutsActivity path="/usershop/usershop_addEdit.jsp" location="4850,1950" dimension="220,48" />
+  <StrutsActivity path="/usershop/shopuser_list.jsp" location="3650,850" dimension="202,48" />
+  <StrutsActivity path="/usershop/usershop_view.jsp" location="4550,2550" dimension="202,48" />
+  <StrutsActivity path="/sysAdmin/functions_list.jsp" location="650,550" dimension="208,48" />
+  <StrutsActivity path="/sysAdmin/functions_edit.jsp" location="3350,350" dimension="208,48" />
+  <StrutsActivity path="/sysAdmin/functions_view.jsp" location="3050,350" dimension="208,48" />
+  <StrutsActivity path="/sysAdmin/functions_add.jsp" location="950,550" dimension="202,48" />
+  <StrutsActivity path="/sysAdmin/functions_addEdit.jsp" location="3350,2850" dimension="226,48" />
+  <StrutsActivity path="/order/my_custorder_list.jsp" location="2750,750" dimension="194,53" />
+  <StrutsActivity path="/order/shop_custorder_list.jsp" location="4850,750" dimension="206,53" />
+  <StrutsActivity path="/order/orderitem_addEdit.jsp" location="3050,3650" dimension="208,48" />
+  <StrutsActivity path="/order/custorder_edit.jsp" location="2150,3650" dimension="190,48" />
+  <StrutsActivity path="/order/custorder_shopping_edit.jsp" location="2450,3650" dimension="244,48" />
+  <StrutsActivity path="/shopping/shopping_discript.jsp" location="4550,3650" dimension="226,48" />
+  <StrutsActivity path="/order/custorder_addEdit.jsp" location="3950,3550" dimension="208,48" />
+  <StrutsActivity path="/order/custorder_list2.jsp" location="4850,1150" dimension="196,48" />
+  <StrutsActivity path="/shopping/cateproduct_list2.jsp" location="5450,1050" dimension="226,48" />
+  <StrutsActivity path="/shopping/cateproduct_list3.jsp" location="4850,1250" dimension="226,48" />
+  <StrutsActivity path="/shopping/cateproduct_list.jsp" location="5450,2450" dimension="220,48" />
+  <StrutsActivity path="/order/confirmAppItems.jsp" location="4850,1350" dimension="196,48" />
+  <StrutsActivity path="/order/orderitem_view.jsp" location="2750,3650" dimension="190,48" />
+  <StrutsActivity path="/order/orderitemlist_forshop.jsp" location="5450,1250" dimension="232,48" />
+  <StrutsActivity path="/order/confirmSubmitOrderprods.jsp" location="2450,2050" dimension="249,53" />
+  <StrutsActivity path="/order/payResult.jsp" location="4550,1350" dimension="160,48" />
+  <StrutsActivity path="/order/orderproduct_addEdit.jsp" location="2150,2050" dimension="224,53" />
+  <StrutsActivity path="/order/confirmPayItems.jsp" location="4250,1350" dimension="196,48" />
+  <StrutsActivity path="/order/orderitem_list.jsp" location="3350,3650" dimension="190,48" />
+  <StrutsActivity path="/{[#folder#]}/costrecord_addEdit.jsp" location="350,3050" dimension="256,48" />
+  <StrutsActivity path="/{[#folder#]}/costrecord_list.jsp" location="950,3050" dimension="238,48" />
+  <StrutsActivity path="/{[#folder#]}/costrecord_view.jsp" location="50,3050" dimension="238,48" />
+  <StrutsActivity path="/{[#folder#]}/tencosrecdet_addEdit.jsp" location="4550,3150" dimension="268,48" />
+  <StrutsActivity path="/{[#folder#]}/tencosrecdet_list.jsp" location="650,3250" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/tencosrecdet_view.jsp" location="4250,3150" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/usrcosrecdet_addEdit.jsp" location="2750,450" dimension="268,48" />
+  <StrutsActivity path="/{[#folder#]}/usrcosrecdet_list.jsp" location="4550,450" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/usrcosrecdet_view.jsp" location="4550,350" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/productdocref_addEdit.jsp" location="1850,2350" dimension="274,48" />
+  <StrutsActivity path="/{[#folder#]}/productdocref_list.jsp" location="2450,2350" dimension="256,48" />
+  <StrutsActivity path="/{[#folder#]}/productdocref_view.jsp" location="3050,2350" dimension="256,48" />
+  <StrutsActivity path="/{[#folder#]}/goodshop_addEdit.jsp" location="2750,1550" dimension="244,48" />
+  <StrutsActivity path="/{[#folder#]}/goodshop_list.jsp" location="3050,1550" dimension="226,48" />
+  <StrutsActivity path="/{[#folder#]}/goodshop_view.jsp" location="50,1650" dimension="226,48" />
+  <StrutsActivity path="/{[#folder#]}/shopconfig_addEdit.jsp" location="650,950" dimension="256,48" />
+  <StrutsActivity path="/{[#folder#]}/shopconfig_list.jsp" location="50,1050" dimension="238,48" />
+  <StrutsActivity path="/{[#folder#]}/shopconfig_view.jsp" location="350,1050" dimension="238,48" />
+  <StrutsActivity path="/{[#folder#]}/metadatalabel1_addEdit.jsp" location="50,1850" dimension="280,48" />
+  <StrutsActivity path="/{[#folder#]}/metadatalabel1_list.jsp" location="650,1850" dimension="262,48" />
+  <StrutsActivity path="/{[#folder#]}/metadatalabel1_view.jsp" location="1250,1850" dimension="262,48" />
+  <StrutsActivity path="/{[#folder#]}/metadata1_addEdit.jsp" location="2450,1750" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/metadata1_list.jsp" location="2750,1750" dimension="232,48" />
+  <StrutsActivity path="/{[#folder#]}/metadata1_view.jsp" location="3050,1750" dimension="232,48" />
+  <StrutsActivity path="/{[#folder#]}/freetryset_addEdit.jsp" location="350,2550" dimension="256,48" />
+  <StrutsActivity path="/{[#folder#]}/freetryset_list.jsp" location="950,2550" dimension="238,48" />
+  <StrutsActivity path="/{[#folder#]}/freetryset_view.jsp" location="1250,2550" dimension="238,48" />
+  <StrutsActivity path="/{[#folder#]}/newsvalue_addEdit.jsp" location="650,1750" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/newsvalue_list.jsp" location="950,1750" dimension="232,48" />
+  <StrutsActivity path="/{[#folder#]}/newsvalue_view.jsp" location="1250,1750" dimension="232,48" />
+  <StrutsActivity path="/{[#folder#]}/news_addEdit.jsp" location="50,1250" dimension="220,48" />
+  <StrutsActivity path="/{[#folder#]}/news_list.jsp" location="350,1250" dimension="202,48" />
+  <StrutsActivity path="/{[#folder#]}/news_view.jsp" location="650,1250" dimension="202,48" />
+  <StrutsActivity path="/{[#folder#]}/baseconst_addEdit.jsp" location="1850,2650" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/baseconst_list.jsp" location="2150,2650" dimension="232,48" />
+  <StrutsActivity path="/{[#folder#]}/baseconst_view.jsp" location="2450,2650" dimension="232,48" />
+  <StrutsActivity path="/{[#folder#]}/extdata1_addEdit.jsp" location="1850,1850" dimension="244,48" />
+  <StrutsActivity path="/{[#folder#]}/extdata1_list.jsp" location="2150,1850" dimension="226,48" />
+  <StrutsActivity path="/{[#folder#]}/extdata1_view.jsp" location="2450,1850" dimension="226,48" />
+  <StrutsActivity path="/{[#folder#]}/moneyvalue_addEdit.jsp" location="650,1150" dimension="256,48" />
+  <StrutsActivity path="/{[#folder#]}/moneyvalue_list.jsp" location="1250,1150" dimension="238,48" />
+  <StrutsActivity path="/{[#folder#]}/moneyvalue_view.jsp" location="1550,1150" dimension="238,48" />
+  <StrutsActivity path="/{[#folder#]}/rechargerecord_addEdit.jsp" location="1850,1150" dimension="280,48" />
+  <StrutsActivity path="/{[#folder#]}/rechargerecord_list.jsp" location="2450,1150" dimension="262,48" />
+  <StrutsActivity path="/{[#folder#]}/rechargerecord_view.jsp" location="3050,1150" dimension="262,48" />
+  <StrutsActivity path="/{[#folder#]}/userproductdoc_addEdit.jsp" location="3950,2750" dimension="280,48" />
+  <StrutsActivity path="/{[#folder#]}/userproductdoc_list.jsp" location="50,2850" dimension="262,48" />
+  <StrutsActivity path="/{[#folder#]}/userproductdoc_view.jsp" location="650,2850" dimension="262,48" />
+  <StrutsActivity path="/{[#folder#]}/userproducttest_addEdit.jsp" location="1250,2850" dimension="286,48" />
+  <StrutsActivity path="/{[#folder#]}/userproducttest_list.jsp" location="1850,2850" dimension="268,48" />
+  <StrutsActivity path="/{[#folder#]}/userproducttest_view.jsp" location="2450,2850" dimension="268,48" />
+  <StrutsActivity path="/{[#folder#]}/baseconstvalue_addEdit.jsp" location="50,2650" dimension="280,48" />
+  <StrutsActivity path="/{[#folder#]}/baseconstvalue_list.jsp" location="650,2650" dimension="262,48" />
+  <StrutsActivity path="/{[#folder#]}/baseconstvalue_view.jsp" location="1250,2650" dimension="262,48" />
+  <StrutsActivity path="/productcategory/productcategoryrl_addEdit.jsp" location="1250,2150" dimension="316,48" />
+  <StrutsActivity path="/productcategory/productcategoryrl_list.jsp" location="2750,2150" dimension="298,48" />
+  <StrutsActivity path="/productcategory/productcategoryrl_view.jsp" location="50,2250" dimension="298,48" />
+  <StrutsActivity path="/shop/shop_index.jsp" location="2450,650" dimension="160,48" />
+  <StrutsActivity path="/productcategory/sysproductcate_addEdit.jsp" location="1250,3750" dimension="298,48" />
+  <StrutsActivity path="/customers/basiccommon_addEdit.jsp" location="1550,3450" dimension="244,48" />
+  <StrutsActivity path="/order/orderitemlist_appshop.jsp" location="5450,1150" dimension="232,48" />
+  <StrutsActivity path="/{[#folder#]}/viewproductcategory_view.jsp" location="650,1950" dimension="292,48" />
+  <StrutsActivity path="/{[#folder#]}/viewproductcategory_addEdit.jsp" location="2750,1850" dimension="310,48" />
+  <StrutsActivity path="/{[#folder#]}/viewproductcategory_list.jsp" location="50,1950" dimension="292,48" />
+  <StrutsActivity path="/{[#folder#]}/viewnews_view.jsp" location="3050,1950" dimension="226,48" />
+  <StrutsActivity path="/{[#folder#]}/viewnews_addEdit.jsp" location="2450,1950" dimension="244,48" />
+  <StrutsActivity path="/{[#folder#]}/viewnews_list.jsp" location="2750,1950" dimension="226,48" />
+  <StrutsActivity path="/{[#folder#]}/viewextdata1_view.jsp" location="1850,2050" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/viewextdata1_addEdit.jsp" location="950,2050" dimension="268,48" />
+  <StrutsActivity path="/{[#folder#]}/viewextdata1_list.jsp" location="1550,2050" dimension="250,48" />
+  <StrutsActivity path="/productcategory/prodcate_select.jsp" location="4550,550" dimension="256,48" />
+  <StrutsActivity path="/shop/shop_list.jsp" location="1250,650" dimension="154,48" />
+  <StrutsActivity path="/{[#folder#]}/basiccommon_view.jsp" location="50,1450" dimension="244,48" />
+  <StrutsActivity path="/{[#folder#]}/basiccommon_addEdit.jsp" location="2450,1350" dimension="262,48" />
+  <StrutsActivity path="/{[#folder#]}/basiccommon_list.jsp" location="3050,1350" dimension="244,48" />
+  <StrutsActivity path="/sysAdmin/basicSet/sysconstitem_view.jsp" location="5150,3150" dimension="280,48" />
+  <StrutsActivity path="/sysAdmin/basicSet/sysconst_view.jsp" location="4250,1250" dimension="256,48" />
+  <StrutsActivity path="/basicset/sysconst_addEdit.jsp" location="2450,2550" dimension="220,48" />
+  <StrutsActivity path="/{[#folder#]}/baseaccount_view.jsp" location="4550,2250" dimension="244,48" />
+  <StrutsActivity path="/{[#folder#]}/baseaccount_addEdit.jsp" location="4550,2350" dimension="262,48" />
+  <StrutsActivity path="/{[#folder#]}/baseaccount_list.jsp" location="4550,2450" dimension="244,48" />
+  <StrutsActivity path="/{[#folder#]}/usershop_view.jsp" location="2150,1350" dimension="226,48" />
+  <StrutsActivity path="/{[#folder#]}/usershop_addEdit.jsp" location="1550,1350" dimension="244,48" />
+  <StrutsActivity path="/{[#folder#]}/usershop_list.jsp" location="1850,1350" dimension="226,48" />
+  <StrutsActivity path="/{[#folder#]}/productvalue_view.jsp" location="2150,1650" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/productvalue_addEdit.jsp" location="1250,1650" dimension="268,48" />
+  <StrutsActivity path="/{[#folder#]}/productvalue_list.jsp" location="1850,1650" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/productbase_view.jsp" location="1550,2250" dimension="244,48" />
+  <StrutsActivity path="/{[#folder#]}/productbase_addEdit.jsp" location="3350,2150" dimension="262,48" />
+  <StrutsActivity path="/{[#folder#]}/productbase_list.jsp" location="3950,2150" dimension="244,48" />
+  <StrutsActivity path="/{[#folder#]}/viewusershop_view.jsp" location="3350,2650" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/viewusershop_addEdit.jsp" location="350,2750" dimension="268,48" />
+  <StrutsActivity path="/{[#folder#]}/viewusershop_list.jsp" location="1250,2750" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/shopfunc_view.jsp" location="4550,1750" dimension="226,48" />
+  <StrutsActivity path="/{[#folder#]}/shopfunc_addEdit.jsp" location="4550,1850" dimension="244,48" />
+  <StrutsActivity path="/{[#folder#]}/shopfunc_list.jsp" location="4550,1950" dimension="226,48" />
+  <StrutsActivity path="/{[#folder#]}/viewshop_view.jsp" location="650,2050" dimension="226,48" />
+  <StrutsActivity path="/{[#folder#]}/viewshop_addEdit.jsp" location="50,2050" dimension="244,48" />
+  <StrutsActivity path="/{[#folder#]}/viewshop_list.jsp" location="350,2050" dimension="226,48" />
+  <StrutsActivity path="/{[#folder#]}/funcproduct_view.jsp" location="2750,2750" dimension="244,48" />
+  <StrutsActivity path="/{[#folder#]}/funcproduct_addEdit.jsp" location="1250,2950" dimension="262,48" />
+  <StrutsActivity path="/{[#folder#]}/funcproduct_list.jsp" location="1850,2950" dimension="244,48" />
+  <StrutsActivity path="/{[#folder#]}/functioncharge_view.jsp" location="1850,1050" dimension="262,48" />
+  <StrutsActivity path="/{[#folder#]}/functioncharge_addEdit.jsp" location="650,1050" dimension="280,48" />
+  <StrutsActivity path="/{[#folder#]}/functioncharge_list.jsp" location="1250,1050" dimension="262,48" />
+  <StrutsActivity path="/{[#folder#]}/chargeset_view.jsp" location="50,2750" dimension="232,48" />
+  <StrutsActivity path="/{[#folder#]}/chargeset_addEdit.jsp" location="3650,2650" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/chargeset_list.jsp" location="3950,2650" dimension="232,48" />
+  <StrutsActivity path="/{[#folder#]}/usercostrecord_view.jsp" location="2150,1550" dimension="262,48" />
+  <StrutsActivity path="/{[#folder#]}/usercostrecord_addEdit.jsp" location="950,1550" dimension="280,48" />
+  <StrutsActivity path="/{[#folder#]}/usercostrecord_list.jsp" location="1550,1550" dimension="262,48" />
+  <StrutsActivity path="/customers/tenantcostrecord_view.jsp" location="2750,2250" dimension="256,48" />
+  <StrutsActivity path="/customers/tenantcostrecord_addEdit.jsp" location="3950,1750" dimension="274,48" />
+  <StrutsActivity path="/customers/tenantcostrecord_list.jsp" location="3950,2050" dimension="256,48" />
+  <StrutsActivity path="/{[#folder#]}/sysconst_view.jsp" location="4250,1150" dimension="226,48" />
+  <StrutsActivity path="/{[#folder#]}/sysconst_addEdit.jsp" location="3650,1650" dimension="244,48" />
+  <StrutsActivity path="/{[#folder#]}/sysconst_list.jsp" location="3950,1650" dimension="226,48" />
+  <StrutsActivity path="/{[#folder#]}/systemconstant_view.jsp" location="3650,2850" dimension="262,48" />
+  <StrutsActivity path="/{[#folder#]}/systemconstant_addEdit.jsp" location="4250,2850" dimension="280,48" />
+  <StrutsActivity path="/{[#folder#]}/systemconstant_list.jsp" location="50,2950" dimension="262,48" />
+  <StrutsActivity path="/shop/shop_addEdit.jsp" location="3650,2450" dimension="172,48" />
+  <StrutsActivity path="/{[#folder#]}/shopvalue_view.jsp" location="2150,1750" dimension="232,48" />
+  <StrutsActivity path="/{[#folder#]}/shopvalue_addEdit.jsp" location="1550,1750" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/shopvalue_list.jsp" location="1850,1750" dimension="232,48" />
+  <StrutsActivity path="/{[#folder#]}/viewuserproductdoc_view.jsp" location="1850,3150" dimension="286,48" />
+  <StrutsActivity path="/{[#folder#]}/viewuserproductdoc_addEdit.jsp" location="650,3150" dimension="304,48" />
+  <StrutsActivity path="/{[#folder#]}/viewuserproductdoc_list.jsp" location="1250,3150" dimension="286,48" />
+  <StrutsActivity path="/{[#folder#]}/viewuserproducttest_view.jsp" location="3650,3150" dimension="292,48" />
+  <StrutsActivity path="/{[#folder#]}/viewuserproducttest_addEdit.jsp" location="2450,3150" dimension="310,48" />
+  <StrutsActivity path="/{[#folder#]}/viewuserproducttest_list.jsp" location="3050,3150" dimension="292,48" />
+  <StrutsActivity path="/{[#folder#]}/productlevel_addEdit.jsp" location="2150,1450" dimension="268,48" />
+  <StrutsActivity path="/{[#folder#]}/productlevel_list.jsp" location="2750,1450" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/productlevel_view.jsp" location="3050,1450" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/productdoc_addEdit.jsp" location="3950,1850" dimension="256,48" />
+  <StrutsActivity path="/{[#folder#]}/productdoc_list.jsp" location="3350,1950" dimension="238,48" />
+  <StrutsActivity path="/{[#folder#]}/productdoc_view.jsp" location="3650,1950" dimension="238,48" />
+  <StrutsActivity path="/{[#folder#]}/producttest_addEdit.jsp" location="3950,1950" dimension="262,48" />
+  <StrutsActivity path="/{[#folder#]}/producttest_list.jsp" location="3350,2050" dimension="244,48" />
+  <StrutsActivity path="/{[#folder#]}/producttest_view.jsp" location="3650,2050" dimension="244,48" />
+  <StrutsActivity path="/{[#folder#]}/viewproduct_addEdit.jsp" location="1250,1950" dimension="262,48" />
+  <StrutsActivity path="/{[#folder#]}/viewproduct_list.jsp" location="1850,1950" dimension="244,48" />
+  <StrutsActivity path="/{[#folder#]}/viewproduct_view.jsp" location="2150,1950" dimension="244,48" />
+  <StrutsActivity path="/{[#folder#]}/shop_addEdit.jsp" location="950,1250" dimension="220,48" />
+  <StrutsActivity path="/{[#folder#]}/shop_list.jsp" location="1250,1250" dimension="202,48" />
+  <StrutsActivity path="/{[#folder#]}/shop_view.jsp" location="1550,1250" dimension="202,48" />
+  <StrutsActivity path="/{[#folder#]}/viewbaseconst_addEdit.jsp" location="2450,3050" dimension="274,48" />
+  <StrutsActivity path="/{[#folder#]}/viewbaseconst_list.jsp" location="3050,3050" dimension="256,48" />
+  <StrutsActivity path="/{[#folder#]}/viewbaseconst_view.jsp" location="3650,3050" dimension="256,48" />
+  <StrutsActivity path="/{[#folder#]}/user_addEdit.jsp" location="50,1550" dimension="220,48" />
+  <StrutsActivity path="/{[#folder#]}/user_list.jsp" location="350,1550" dimension="202,48" />
+  <StrutsActivity path="/{[#folder#]}/user_view.jsp" location="650,1550" dimension="202,48" />
+  <StrutsActivity path="/{[#folder#]}/tenantcostrecord_addEdit.jsp" location="2450,1050" dimension="292,48" />
+  <StrutsActivity path="/{[#folder#]}/tenantcostrecord_list.jsp" location="3050,1050" dimension="274,48" />
+  <StrutsActivity path="/{[#folder#]}/tenantcostrecord_view.jsp" location="50,1150" dimension="274,48" />
+  <StrutsActivity path="/{[#folder#]}/tenant_addEdit.jsp" location="1850,1250" dimension="232,48" />
+  <StrutsActivity path="/{[#folder#]}/tenant_list.jsp" location="2150,1250" dimension="214,48" />
+  <StrutsActivity path="/{[#folder#]}/tenant_view.jsp" location="2450,1250" dimension="214,48" />
+  <StrutsActivity path="/{[#folder#]}/viewtenant_addEdit.jsp" location="350,2350" dimension="256,48" />
+  <StrutsActivity path="/{[#folder#]}/viewtenant_list.jsp" location="950,2350" dimension="238,48" />
+  <StrutsActivity path="/{[#folder#]}/viewtenant_view.jsp" location="1250,2350" dimension="238,48" />
+  <StrutsActivity path="/{[#folder#]}/viewuser_addEdit.jsp" location="1550,2350" dimension="244,48" />
+  <StrutsActivity path="/{[#folder#]}/viewuser_list.jsp" location="350,2450" dimension="226,48" />
+  <StrutsActivity path="/{[#folder#]}/viewuser_view.jsp" location="650,2450" dimension="226,48" />
+  <StrutsActivity path="/{[#folder#]}/productcategoryvalue_addEdit.jsp" location="2450,1650" dimension="316,48" />
+  <StrutsActivity path="/{[#folder#]}/productcategoryvalue_list.jsp" location="3050,1650" dimension="298,48" />
+  <StrutsActivity path="/{[#folder#]}/productcategoryvalue_view.jsp" location="50,1750" dimension="298,48" />
+  <StrutsActivity path="/{[#folder#]}/product_addEdit.jsp" location="2750,1250" dimension="238,48" />
+  <StrutsActivity path="/{[#folder#]}/product_list.jsp" location="3050,1250" dimension="220,48" />
+  <StrutsActivity path="/{[#folder#]}/product_view.jsp" location="50,1350" dimension="220,48" />
+  <StrutsActivity path="/{[#folder#]}/userproduct_addEdit.jsp" location="350,1350" dimension="262,48" />
+  <StrutsActivity path="/{[#folder#]}/userproduct_list.jsp" location="950,1350" dimension="244,48" />
+  <StrutsActivity path="/{[#folder#]}/userproduct_view.jsp" location="1250,1350" dimension="244,48" />
+  <StrutsActivity path="/{[#folder#]}/i18n_addEdit.jsp" location="350,1650" dimension="220,48" />
+  <StrutsActivity path="/{[#folder#]}/i18n_list.jsp" location="650,1650" dimension="202,48" />
+  <StrutsActivity path="/{[#folder#]}/i18n_view.jsp" location="950,1650" dimension="202,48" />
+  <StrutsActivity path="/product/category_addEdit.jsp" location="650,150" dimension="214,48" />
+  <StrutsActivity path="/product/category_list.jsp" location="50,350" dimension="196,48" />
+  <StrutsActivity path="/product/category_view.jsp" location="950,450" dimension="196,48" />
+  <StrutsActivity path="/product/category_newEdit.jsp" location="650,50" dimension="214,48" />
+  <StrutsActivity path="/xtsz/xtsz_deptTree.jsp" location="650,250" dimension="178,48" />
+  <StrutsActivity path="/product/xtsz_deptTree.jsp" location="950,250" dimension="196,48" />
+  <StrutsActivity path="/pubpage/exceptionpage.jsp" location="650,350" dimension="196,48" />
+  <StrutsActivity path="/pubs/.jsp" location="950,350" dimension="100,48" />
+  <StrutsActivity path="/{[#folder#]}/productcategoryrl_addEdit.jsp" location="2750,2050" dimension="298,48" />
+  <StrutsActivity path="/{[#folder#]}/productcategoryrl_list.jsp" location="50,2150" dimension="280,48" />
+  <StrutsActivity path="/{[#folder#]}/productcategoryrl_view.jsp" location="650,2150" dimension="280,48" />
+  <StrutsActivity path="/productdoc_addEdit.jsp" location="3650,1450" dimension="178,48" />
+  <StrutsActivity path="/roductdoc_list.jsp" location="50,2350" dimension="154,48" />
+  <StrutsActivity path="/tenantAdmin/roductdoc_list.jsp" location="3650,2350" dimension="226,48" />
+  <StrutsActivity path="/homepage_main.jsp" location="950,2450" dimension="148,48" />
+  <StrutsActivity path="/tester/homepage_test.jsp" location="1250,2450" dimension="190,48" />
+  <StrutsActivity path="/basicset/sysconst_view.jsp" location="3650,2550" dimension="202,48" />
+  <StrutsActivity path="/basicset/sysconst_list.jsp" location="3950,2550" dimension="202,48" />
+  <StrutsActivity path="/sysAdmin/basicset/sysconst_list.jsp" location="1550,2750" dimension="256,48" />
+  <StrutsActivity path="/sysAdmin/basicset/sysconst_view.jsp" location="2150,2750" dimension="256,48" />
+  <StrutsActivity path="/sysAdmin/basicset/sysconst_addEdit.jsp" location="3350,2750" dimension="274,48" />
+  <StrutsActivity path="/{[#folder#]}/functions_view.jsp" location="1850,2450" dimension="232,48" />
+  <StrutsActivity path="/{[#folder#]}/functions_addEdit.jsp" location="1850,2550" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/functions_list.jsp" location="4550,2750" dimension="232,48" />
+  <StrutsActivity path="/l.jsp" location="4850,1850" dimension="76,48" />
+  <StrutsActivity path="/usershop/usershop_list.jsp" location="4550,2650" dimension="202,48" />
+  <StrutsActivity path="/{[#folder#]}/shopprodcate_view.jsp" location="4850,2850" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/shopprodcate_addEdit.jsp" location="3650,2950" dimension="268,48" />
+  <StrutsActivity path="/{[#folder#]}/shopprodcate_list.jsp" location="4850,2950" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/sysconstval_view.jsp" location="4550,3250" dimension="244,48" />
+  <StrutsActivity path="/{[#folder#]}/sysconstval_addEdit.jsp" location="4850,3250" dimension="262,48" />
+  <StrutsActivity path="/{[#folder#]}/sysconstval_list.jsp" location="50,3350" dimension="244,48" />
+  <StrutsActivity path="/{[#folder#]}/sysconstitem_view.jsp" location="350,3350" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/sysconstitem_addEdit.jsp" location="1550,3350" dimension="268,48" />
+  <StrutsActivity path="/{[#folder#]}/sysconstitem_list.jsp" location="4550,3350" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/sysconstitemval_view.jsp" location="4850,3350" dimension="268,48" />
+  <StrutsActivity path="/{[#folder#]}/sysconstitemval_addEdit.jsp" location="50,3450" dimension="286,48" />
+  <StrutsActivity path="/{[#folder#]}/sysconstitemval_list.jsp" location="650,3450" dimension="268,48" />
+  <StrutsActivity path="/sysAdmin/basicet/sysconst_list.jsp" location="650,3350" dimension="250,48" />
+  <StrutsActivity path="/customer/basiccommon_addEdit.jsp" location="1250,3450" dimension="238,48" />
+  <StrutsActivity path="/customers/basiccommon_list.jsp" location="2450,3450" dimension="226,48" />
+  <StrutsActivity path="/{[#folder#]}/shopapp_view.jsp" location="3050,3450" dimension="220,48" />
+  <StrutsActivity path="/{[#folder#]}/shopapp_addEdit.jsp" location="3950,3450" dimension="238,48" />
+  <StrutsActivity path="/{[#folder#]}/shopapp_list.jsp" location="4250,3450" dimension="220,48" />
+  <StrutsActivity path="/shop/shopapp_addEdit.jsp" location="4550,3450" dimension="190,48" />
+  <StrutsActivity path="/shopping/producttest_addEdit.jsp" location="2450,3550" dimension="238,48" />
+  <StrutsActivity path="/shopping/cateProduct_addEdit.jsp" location="3050,3550" dimension="238,48" />
+  <StrutsActivity path="/shopping/cateProduct_list.jsp" location="3350,3550" dimension="220,48" />
+  <StrutsActivity path="/shopping/producttest_list.jsp" location="5450,2350" dimension="220,48" />
+  <StrutsActivity path="/{[#folder#]}/custorder_view.jsp" location="4550,3550" dimension="232,48" />
+  <StrutsActivity path="/{[#folder#]}/custorder_addEdit.jsp" location="4850,3550" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/custorder_list.jsp" location="5150,3550" dimension="232,48" />
+  <StrutsActivity path="/{[#folder#]}/orderaddr_view.jsp" location="5450,3550" dimension="232,48" />
+  <StrutsActivity path="/{[#folder#]}/orderaddr_addEdit.jsp" location="50,3650" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/orderaddr_list.jsp" location="350,3650" dimension="232,48" />
+  <StrutsActivity path="/{[#folder#]}/orderitem_view.jsp" location="650,3650" dimension="232,48" />
+  <StrutsActivity path="/{[#folder#]}/orderitem_addEdit.jsp" location="950,3650" dimension="250,48" />
+  <StrutsActivity path="/{[#folder#]}/orderitem_list.jsp" location="1250,3650" dimension="232,48" />
+  <StrutsActivity path="/shopping/custorder_view.jsp" location="3950,3650" dimension="208,48" />
+  <StrutsActivity path="/securityManage/resources_list.jsp" location="50,3750" dimension="244,48" />
+  <StrutsActivity path="/subsysMag/resources_list.jsp" location="350,3750" dimension="214,48" />
+  <StrutsActivity path="/productcategory/sysproductcate_view.jsp" location="1850,3750" dimension="280,48" />
+  <StrutsActivity path="/product/shopproduct_test_show.jsp" location="4250,2950" dimension="244,53" />
+  <StrutsActivity path="/exam/exam_paper.jsp" location="4550,2950" dimension="164,53" />
+  <StrutsActivity path="/product/cateproduct_list.jsp" location="5450,2550" dimension="199,53" />
+  <StrutsActivity path="/shopping/allproduct_list.jsp" location="4250,3750" dimension="197,53" />
+  <StrutsActivity path="/order/custorder_createSuccessfulPage.jsp" location="2450,3950" dimension="280,53" />
+  <StrutsActivity path="/userprodshop/custorder_list.jsp" location="1550,4050" dimension="222,53" />
+  <StrutsActivity path="/index/sysproductcate_list.jsp" location="2750,4150" dimension="202,53" />
+  <StrutsActivity path="/index/sinfonews_addEdit.jsp" location="3950,4150" dimension="200,53" />
+  <StrutsActivity path="/index/infonews_view" location="50,4250" dimension="154,53" />
+  <StrutsActivity path="/news/infor_cate.jsp" location="3950,4350" dimension="147,53" />
+  <StrutsActivity path="/i/infor_cate.jsp" location="950,4450" dimension="121,53" />
+  <StrutsActivity path="/n/infor_cate.jsp" location="650,4250" dimension="125,53" />
+  <StrutsActivity path="//infonews_addEdit.jsp" location="1250,4450" dimension="163,53" />
+  <StrutsActivity path="/n/infonews_view.jsp" location="1850,4450" dimension="150,53" />
+  <StrutsActivity path="/n/infonews_addEdit.jsp" location="1550,4450" dimension="170,53" />
+  <StrutsActivity path="" location="1250,3850" dimension="32,53" />
+  <StrutsActivity path="shopapp_edit.jsp" location="1550,3850" dimension="131,53" />
+  <StrutsTransition id="/sysadmin/sysfunctionitem.do,list,/sysAdmin/sysfunctionitem_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1653,2450" />
+      <AbsolutePoint location="1653,2436" />
+      <AbsolutePoint location="2417,2436" />
+      <AbsolutePoint location="2417,3105" />
+      <AbsolutePoint location="5125,3105" />
+      <AbsolutePoint location="5125,3276" />
+      <AbsolutePoint location="5450,3276" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/shopfunc_addEdit.jsp,null,/shop/shopfunc.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2248,2950" />
+      <AbsolutePoint location="2248,2804" />
+      <AbsolutePoint location="1220,2804" />
+      <AbsolutePoint location="1220,3275" />
+      <AbsolutePoint location="1194,3275" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/productcategory/productcategory.do,selectTree,/productcategory/prodcate_select_tree.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2436,518" />
+      <AbsolutePoint location="3789,518" />
+      <AbsolutePoint location="3789,550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/index/editInfonews.do,addEditPage,/news/infonews_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3774,4254" />
+      <AbsolutePoint location="3774,4260" />
+      <AbsolutePoint location="1904,4260" />
+      <AbsolutePoint location="1904,4433" />
+      <AbsolutePoint location="446,4433" />
+      <AbsolutePoint location="446,4450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/basicset/sysconstval.do,list,/sysAdmin/basicSet/sysconstval_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5303,2850" />
+      <AbsolutePoint location="5303,2699" />
+      <AbsolutePoint location="5703,2699" />
+      <AbsolutePoint location="5703,2174" />
+      <AbsolutePoint location="5424,2174" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customers/edituser.do,editPage,/customers/user_edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4473,2618" />
+      <AbsolutePoint location="5210,2618" />
+      <AbsolutePoint location="5210,2721" />
+      <AbsolutePoint location="5988,2721" />
+      <AbsolutePoint location="5988,3418" />
+      <AbsolutePoint location="5115,3418" />
+      <AbsolutePoint location="5115,4069" />
+      <AbsolutePoint location="5750,4069" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/basicset/sysconst.do,editPage,/sysAdmin/basicSet/sysconst_edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5150,2392" />
+      <AbsolutePoint location="5124,2392" />
+      <AbsolutePoint location="5124,1874" />
+      <AbsolutePoint location="5150,1874" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/productcategory/addProductcategoryvalue.do,addEditPage,/productcategory/productcategoryvalue_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/productcategory/productcategory_addEdit.jsp,null,/productcategory/productcategory.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="627,1450" />
+      <AbsolutePoint location="627,229" />
+      <AbsolutePoint location="2360,229" />
+      <AbsolutePoint location="2360,450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/productcategory/viewProductcategoryvalue.do,viewPage,/productcategory/productcategoryvalue_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/productcategory/deleteProductcategoryvalue.do,list,/productcategory/productcategoryvalue_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/basicset/sysconst.do,list,/sysAdmin/basicSet/sysconst_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5272,2350" />
+      <AbsolutePoint location="5272,2347" />
+      <AbsolutePoint location="3320,2347" />
+      <AbsolutePoint location="3320,2727" />
+      <AbsolutePoint location="1118,2727" />
+      <AbsolutePoint location="1118,2974" />
+      <AbsolutePoint location="906,2974" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/productcategory/productcategory.do,editPage,/productcategory/productcategory_edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2432,534" />
+      <AbsolutePoint location="2432,1507" />
+      <AbsolutePoint location="1233,1507" />
+      <AbsolutePoint location="1233,2250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="messagePage;6,null,/pubs/message.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="210,483" />
+      <AbsolutePoint location="650,483" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/i18n/i18n.do,addEditPage,/i18n/i18n_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3460,1350" />
+      <AbsolutePoint location="3460,1298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/addshopvalue.do,list,/shop/shopvalue_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6350,3777" />
+      <AbsolutePoint location="6039,3777" />
+      <AbsolutePoint location="6039,3137" />
+      <AbsolutePoint location="5843,3137" />
+      <AbsolutePoint location="5843,3006" />
+      <AbsolutePoint location="3489,3006" />
+      <AbsolutePoint location="3489,2998" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/productcategory/productcategory.do,list,/productcategory/productcategory_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2293,450" />
+      <AbsolutePoint location="2293,413" />
+      <AbsolutePoint location="1209,413" />
+      <AbsolutePoint location="1209,1450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/basicset/sysconstitem.do,list,/sysAdmin/basicSet/sysconstitem_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2418,3283" />
+      <AbsolutePoint location="2750,3283" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="toUrl;6,null,/pubs/toUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4924,2450" />
+      <AbsolutePoint location="4924,2320" />
+      <AbsolutePoint location="5545,2320" />
+      <AbsolutePoint location="5545,1712" />
+      <AbsolutePoint location="4758,1712" />
+      <AbsolutePoint location="4758,1074" />
+      <AbsolutePoint location="4680,1074" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/index/viewInfonews.do,viewPage,/news/infonews_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="774,4354" />
+      <AbsolutePoint location="774,4450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customers/user_add.jsp,null,/customers/saveuser.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6225,4076" />
+      <AbsolutePoint location="6654,4076" />
+      <AbsolutePoint location="6654,2902" />
+      <AbsolutePoint location="5973,2902" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/productcategory/saveHotcategory.do,listMag,/productcategory/hotcategory_mag.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3350,4618" />
+      <AbsolutePoint location="2325,4618" />
+      <AbsolutePoint location="2325,4603" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysAdmin/basicSet/sysconstval_addEdit.jsp,null,/basicset/sysconstval.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5442,2065" />
+      <AbsolutePoint location="5465,2065" />
+      <AbsolutePoint location="5465,1865" />
+      <AbsolutePoint location="6045,1865" />
+      <AbsolutePoint location="6045,3113" />
+      <AbsolutePoint location="5281,3113" />
+      <AbsolutePoint location="5281,2934" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysadmin/sysfunctionitem.do,viewPage,/sysAdmin/sysfunctionitem_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1800,2480" />
+      <AbsolutePoint location="1841,2480" />
+      <AbsolutePoint location="1841,3981" />
+      <AbsolutePoint location="2248,3981" />
+      <AbsolutePoint location="2248,3869" />
+      <AbsolutePoint location="4368,3869" />
+      <AbsolutePoint location="4368,3950" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/basicset/sysconstitemval.do,list,/sysAdmin/basicSet/sysconstitemval_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3350,3383" />
+      <AbsolutePoint location="3048,3383" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/viewshopdescript.do,viewPage,/shop/shopvalue_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,3202" />
+      <AbsolutePoint location="-55,3202" />
+      <AbsolutePoint location="-55,1013" />
+      <AbsolutePoint location="3112,1013" />
+      <AbsolutePoint location="3112,598" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customers/listuser.do,list,/customers/user_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3050,3840" />
+      <AbsolutePoint location="2737,3840" />
+      <AbsolutePoint location="2737,3219" />
+      <AbsolutePoint location="3015,3219" />
+      <AbsolutePoint location="3015,2681" />
+      <AbsolutePoint location="2689,2681" />
+      <AbsolutePoint location="2689,2452" />
+      <AbsolutePoint location="2750,2452" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/productcategory/listProductcategoryvalue.do,list,/productcategory/productcategoryvalue_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/basicset/sysparam.do,list,/sysAdmin/basicSet/sysparam_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3294,2818" />
+      <AbsolutePoint location="5103,2818" />
+      <AbsolutePoint location="5103,3050" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customers/user_add.jsp,null,/customers/registeruser.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6125,4050" />
+      <AbsolutePoint location="6125,3899" />
+      <AbsolutePoint location="6266,3899" />
+      <AbsolutePoint location="6266,3188" />
+      <AbsolutePoint location="6350,3188" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/index/searchNews.do,list,/index/infor_cate.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4550,4487" />
+      <AbsolutePoint location="3154,4487" />
+      <AbsolutePoint location="3154,4203" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysAdmin/basicSet/sysconst_addEdit.jsp,null,/basicset/sysconst.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3803,1350" />
+      <AbsolutePoint location="3803,1305" />
+      <AbsolutePoint location="5747,1305" />
+      <AbsolutePoint location="5747,2405" />
+      <AbsolutePoint location="5394,2405" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customers/viewuser.do,viewPage,/customers/user_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1473,3337" />
+      <AbsolutePoint location="3041,3337" />
+      <AbsolutePoint location="3041,2675" />
+      <AbsolutePoint location="3142,2675" />
+      <AbsolutePoint location="3142,2498" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/i18n/i18n.do,list,/i18n/i18n_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3443,1434" />
+      <AbsolutePoint location="3443,1550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/basicset/sysconstval.do,viewPage,/sysAdmin/basicSet/sysconstval_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5281,2850" />
+      <AbsolutePoint location="5281,2618" />
+      <AbsolutePoint location="5988,2618" />
+      <AbsolutePoint location="5988,2273" />
+      <AbsolutePoint location="5605,2273" />
+      <AbsolutePoint location="5605,1974" />
+      <AbsolutePoint location="5424,1974" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/saveshopdescript.do,list,/shop/shopvalue_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2106,3902" />
+      <AbsolutePoint location="3345,3902" />
+      <AbsolutePoint location="3345,3476" />
+      <AbsolutePoint location="3303,3476" />
+      <AbsolutePoint location="3303,3242" />
+      <AbsolutePoint location="3424,3242" />
+      <AbsolutePoint location="3424,2998" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/productcategory/listSysproductcate.do,list,/productcategory/sysproductcate_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5750,2016" />
+      <AbsolutePoint location="3068,2016" />
+      <AbsolutePoint location="3068,2118" />
+      <AbsolutePoint location="633,2118" />
+      <AbsolutePoint location="633,3776" />
+      <AbsolutePoint location="650,3776" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/productcategory/listHotcategory.do,list,/productcategory/hotcategory_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5584,4554" />
+      <AbsolutePoint location="5584,4604" />
+      <AbsolutePoint location="6740,4604" />
+      <AbsolutePoint location="6740,900" />
+      <AbsolutePoint location="4500,900" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/shopfunc.do,editPage,/shop/shopfunc_edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1072,3334" />
+      <AbsolutePoint location="1072,3371" />
+      <AbsolutePoint location="1540,3371" />
+      <AbsolutePoint location="1540,2243" />
+      <AbsolutePoint location="6147,2243" />
+      <AbsolutePoint location="6147,1774" />
+      <AbsolutePoint location="5028,1774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/productcategory/editProductcategoryvalue.do,addEditPage,/productcategory/productcategoryvalue_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customers/adduser.do,addPage,/customers/user_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2967,3554" />
+      <AbsolutePoint location="2967,3713" />
+      <AbsolutePoint location="4656,3713" />
+      <AbsolutePoint location="4656,4165" />
+      <AbsolutePoint location="6137,4165" />
+      <AbsolutePoint location="6137,4103" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysadmin/sysfunctionitem.do,editPage,/sysAdmin/sysfunctionitem_edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1800,2542" />
+      <AbsolutePoint location="1831,2542" />
+      <AbsolutePoint location="1831,4104" />
+      <AbsolutePoint location="3605,4104" />
+      <AbsolutePoint location="3605,3576" />
+      <AbsolutePoint location="3650,3576" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/listshopvalue.do,list,/shop/shopvalue_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3072,2600" />
+      <AbsolutePoint location="3297,2600" />
+      <AbsolutePoint location="3297,2974" />
+      <AbsolutePoint location="3350,2974" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/shopfunc.do,viewPage,/shop/shopfunc_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1072,3250" />
+      <AbsolutePoint location="1072,3235" />
+      <AbsolutePoint location="2395,3235" />
+      <AbsolutePoint location="2395,2960" />
+      <AbsolutePoint location="2450,2960" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysAdmin/basicSet/sysconstitem_addEdit.jsp,null,/basicset/sysconstitem.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5432,2298" />
+      <AbsolutePoint location="5432,3300" />
+      <AbsolutePoint location="2418,3300" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/tologin.do,login,/login.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3467,2534" />
+      <AbsolutePoint location="3467,2541" />
+      <AbsolutePoint location="5099,2541" />
+      <AbsolutePoint location="5099,1452" />
+      <AbsolutePoint location="4050,1452" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="forwardToUrl;6,null,/pubs/forwardToUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4918,3722" />
+      <AbsolutePoint location="4918,3965" />
+      <AbsolutePoint location="6349,3965" />
+      <AbsolutePoint location="6349,1365" />
+      <AbsolutePoint location="5241,1365" />
+      <AbsolutePoint location="5241,1298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/index/listInfonews.do,list,/index/infor_cate.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2698,4229" />
+      <AbsolutePoint location="3124,4229" />
+      <AbsolutePoint location="3124,4203" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customers/deleteuser.do,list,/customers/user_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6177,2350" />
+      <AbsolutePoint location="6177,1613" />
+      <AbsolutePoint location="2871,1613" />
+      <AbsolutePoint location="2871,1738" />
+      <AbsolutePoint location="2739,1738" />
+      <AbsolutePoint location="2739,2474" />
+      <AbsolutePoint location="2750,2474" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/editshopdescript.do,addEditPage,/shop/shopvalue_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4978,2754" />
+      <AbsolutePoint location="4978,2840" />
+      <AbsolutePoint location="3151,2840" />
+      <AbsolutePoint location="3151,2950" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/productcategory/saveProductcategoryvalue.do,list,/productcategory/productcategoryvalue_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/index/addInfonews.do,addEditPage,/news/infonews_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1086,4354" />
+      <AbsolutePoint location="1086,4547" />
+      <AbsolutePoint location="476,4547" />
+      <AbsolutePoint location="476,4503" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/news/saveNewscategory.do,editPage,/news/newscate_edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5289,4354" />
+      <AbsolutePoint location="5289,4380" />
+      <AbsolutePoint location="4466,4380" />
+      <AbsolutePoint location="4466,4300" />
+      <AbsolutePoint location="2040,4300" />
+      <AbsolutePoint location="2040,4400" />
+      <AbsolutePoint location="135,4400" />
+      <AbsolutePoint location="135,4450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/index/saveInfonews.do,list,/index/infor_cate.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3350,4188" />
+      <AbsolutePoint location="3199,4188" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/news/editNewscategory.do,editPage,/news/newscate_edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4813,4354" />
+      <AbsolutePoint location="4813,4699" />
+      <AbsolutePoint location="135,4699" />
+      <AbsolutePoint location="135,4503" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/basicset/sysparam.do,addEditPage,/sysAdmin/basicSet/sysparam_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3172,2834" />
+      <AbsolutePoint location="3172,2916" />
+      <AbsolutePoint location="1767,2916" />
+      <AbsolutePoint location="1767,3250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/usershop/delshopuser.do,list,/userprodshop/shopuser_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6302,2802" />
+      <AbsolutePoint location="6707,2802" />
+      <AbsolutePoint location="6707,4134" />
+      <AbsolutePoint location="760,4134" />
+      <AbsolutePoint location="760,4103" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/i18n/i18n.do,viewPage,/i18n/i18n_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3350,1421" />
+      <AbsolutePoint location="2582,1421" />
+      <AbsolutePoint location="2582,1570" />
+      <AbsolutePoint location="2433,1570" />
+      <AbsolutePoint location="2433,1842" />
+      <AbsolutePoint location="2110,1842" />
+      <AbsolutePoint location="2110,2347" />
+      <AbsolutePoint location="1208,2347" />
+      <AbsolutePoint location="1208,2774" />
+      <AbsolutePoint location="1104,2774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customers/baseuser.do,statusChangePage,/customers/custstatus_change.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2112,3482" />
+      <AbsolutePoint location="2349,3482" />
+      <AbsolutePoint location="2349,4069" />
+      <AbsolutePoint location="4495,4069" />
+      <AbsolutePoint location="4495,3246" />
+      <AbsolutePoint location="4240,3246" />
+      <AbsolutePoint location="4240,2679" />
+      <AbsolutePoint location="4515,2679" />
+      <AbsolutePoint location="4515,1813" />
+      <AbsolutePoint location="4779,1813" />
+      <AbsolutePoint location="4779,898" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/basicset/sysconstitemval.do,viewPage,/sysAdmin/basicSet/sysconstitemval_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3493,3350" />
+      <AbsolutePoint location="3493,3298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/shopfunc.do,addPage,/shop/shopfunc_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1190,3250" />
+      <AbsolutePoint location="1190,2405" />
+      <AbsolutePoint location="3023,2405" />
+      <AbsolutePoint location="3023,2272" />
+      <AbsolutePoint location="3108,2272" />
+      <AbsolutePoint location="3108,2112" />
+      <AbsolutePoint location="4299,2112" />
+      <AbsolutePoint location="4299,1738" />
+      <AbsolutePoint location="4936,1738" />
+      <AbsolutePoint location="4936,1698" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/productcategory/deleteSysproductcate.do,list,/productcategory/sysproductcate_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5890,3650" />
+      <AbsolutePoint location="5890,3618" />
+      <AbsolutePoint location="897,3618" />
+      <AbsolutePoint location="897,3750" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/basicset/sysparam.do,viewPage,/sysAdmin/basicSet/sysparam_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3172,2750" />
+      <AbsolutePoint location="3172,2571" />
+      <AbsolutePoint location="3591,2571" />
+      <AbsolutePoint location="3591,2439" />
+      <AbsolutePoint location="4479,2439" />
+      <AbsolutePoint location="4479,1413" />
+      <AbsolutePoint location="4821,1413" />
+      <AbsolutePoint location="4821,1074" />
+      <AbsolutePoint location="4850,1074" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/shopfunc.do,list,/shop/shopfunc_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1194,3292" />
+      <AbsolutePoint location="1242,3292" />
+      <AbsolutePoint location="1242,2825" />
+      <AbsolutePoint location="2839,2825" />
+      <AbsolutePoint location="2839,2950" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/productcategory/productcategory.do,addPage,/productcategory/productcategory_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2432,534" />
+      <AbsolutePoint location="2432,2274" />
+      <AbsolutePoint location="2430,2274" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,userAdmin,/userAdmin/userAdmin_index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3950,2279" />
+      <AbsolutePoint location="3907,2279" />
+      <AbsolutePoint location="3907,1930" />
+      <AbsolutePoint location="5431,1930" />
+      <AbsolutePoint location="5431,571" />
+      <AbsolutePoint location="5085,571" />
+      <AbsolutePoint location="5085,41" />
+      <AbsolutePoint location="2991,41" />
+      <AbsolutePoint location="2991,374" />
+      <AbsolutePoint location="2970,374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/basicset/sysconstval.do,addEditPage,/sysAdmin/basicSet/sysconstval_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5150,2916" />
+      <AbsolutePoint location="4847,2916" />
+      <AbsolutePoint location="4847,2074" />
+      <AbsolutePoint location="5150,2074" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/productcategory/magHotcategory.do,listMag,/productcategory/hotcategory_mag.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6184,4554" />
+      <AbsolutePoint location="6184,4729" />
+      <AbsolutePoint location="2250,4729" />
+      <AbsolutePoint location="2250,4603" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.jsp,null,/tologin.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4050,1474" />
+      <AbsolutePoint location="4821,1474" />
+      <AbsolutePoint location="4821,2513" />
+      <AbsolutePoint location="3576,2513" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/addshopvaluepage.do,addEditPage,/shop/shopvalue_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3306,4000" />
+      <AbsolutePoint location="4049,4000" />
+      <AbsolutePoint location="4049,4112" />
+      <AbsolutePoint location="4536,4112" />
+      <AbsolutePoint location="4536,3376" />
+      <AbsolutePoint location="4365,3376" />
+      <AbsolutePoint location="4365,3212" />
+      <AbsolutePoint location="4120,3212" />
+      <AbsolutePoint location="4120,3047" />
+      <AbsolutePoint location="3133,3047" />
+      <AbsolutePoint location="3133,2998" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysAdmin/sysfunctionitem_edit.jsp,null,/sysadmin/sysfunctionitem.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3766,3550" />
+      <AbsolutePoint location="3766,3207" />
+      <AbsolutePoint location="3998,3207" />
+      <AbsolutePoint location="3998,2916" />
+      <AbsolutePoint location="3220,2916" />
+      <AbsolutePoint location="3220,2879" />
+      <AbsolutePoint location="2739,2879" />
+      <AbsolutePoint location="2739,2625" />
+      <AbsolutePoint location="1675,2625" />
+      <AbsolutePoint location="1675,2554" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customers/saveuser.do,editPage,/customers/user_edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5946,2954" />
+      <AbsolutePoint location="5946,3465" />
+      <AbsolutePoint location="6125,3465" />
+      <AbsolutePoint location="6125,3795" />
+      <AbsolutePoint location="5837,3795" />
+      <AbsolutePoint location="5837,4050" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customers/baseuser_addEdit.jsp,null,/customers/baseuser.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5150,3674" />
+      <AbsolutePoint location="5031,3674" />
+      <AbsolutePoint location="5031,3932" />
+      <AbsolutePoint location="2709,3932" />
+      <AbsolutePoint location="2709,3513" />
+      <AbsolutePoint location="2112,3513" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysAdmin/basicSet/sysconstitemval_addEdit.jsp,null,/basicset/sysconstitemval.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3950,3270" />
+      <AbsolutePoint location="3869,3270" />
+      <AbsolutePoint location="3869,3383" />
+      <AbsolutePoint location="3636,3383" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/basicset/sysconstitem.do,addPage,/sysAdmin/basicSet/sysconstitem_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2418,3317" />
+      <AbsolutePoint location="4087,3317" />
+      <AbsolutePoint location="4087,3350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.jsp,null,/login.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="4000,1450" />
+      <AbsolutePoint location="4000,970" />
+      <AbsolutePoint location="3635,970" />
+      <AbsolutePoint location="3635,1771" />
+      <AbsolutePoint location="3316,1771" />
+      <AbsolutePoint location="3316,2305" />
+      <AbsolutePoint location="3950,2305" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/productcategory/productcategory.do,viewPage,/productcategory/productcategory_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2150,527" />
+      <AbsolutePoint location="1833,527" />
+      <AbsolutePoint location="1833,1450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="treeXml;6,null,/pubs/treeXml.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1850,2213" />
+      <AbsolutePoint location="721,2213" />
+      <AbsolutePoint location="721,2250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/basicset/sysconstitemval.do,addEditPage,/sysAdmin/basicSet/sysconstitemval_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3636,3365" />
+      <AbsolutePoint location="3785,3365" />
+      <AbsolutePoint location="3785,3252" />
+      <AbsolutePoint location="3950,3252" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/shop/deleteShopValue.do,list,/shop/shopvalue_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5450,3902" />
+      <AbsolutePoint location="4231,3902" />
+      <AbsolutePoint location="4231,3410" />
+      <AbsolutePoint location="3699,3410" />
+      <AbsolutePoint location="3699,3244" />
+      <AbsolutePoint location="3442,3244" />
+      <AbsolutePoint location="3442,2998" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/news/addNewscategory.do,addPage,/news/newscate_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1829,4329" />
+      <AbsolutePoint location="4347,4329" />
+      <AbsolutePoint location="4347,4350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/basicset/sysparam_addEdit.jsp,null,/basicset/sysparam.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2361,3050" />
+      <AbsolutePoint location="2361,2804" />
+      <AbsolutePoint location="3050,2804" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="errorPage;6,null,/pubs/errorPage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="403,350" />
+      <AbsolutePoint location="403,117" />
+      <AbsolutePoint location="1027,117" />
+      <AbsolutePoint location="1027,150" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/productcategory/saveSysproductcate.do,list,/productcategory/sysproductcate_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5750,2200" />
+      <AbsolutePoint location="3341,2200" />
+      <AbsolutePoint location="3341,2940" />
+      <AbsolutePoint location="612,2940" />
+      <AbsolutePoint location="612,3793" />
+      <AbsolutePoint location="650,3793" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customers/saveuser.do,list,/customers/user_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5861,2850" />
+      <AbsolutePoint location="5861,2671" />
+      <AbsolutePoint location="6713,2671" />
+      <AbsolutePoint location="6713,1219" />
+      <AbsolutePoint location="3601,1219" />
+      <AbsolutePoint location="3601,1936" />
+      <AbsolutePoint location="2713,1936" />
+      <AbsolutePoint location="2713,2496" />
+      <AbsolutePoint location="2750,2496" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/basicset/sysconst.do,addPage,/sysAdmin/basicSet/sysconst_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5272,2434" />
+      <AbsolutePoint location="5272,2550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,tenantAdmin,/tenantAdmin/tenantAdmin_index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3950,2330" />
+      <AbsolutePoint location="206,2330" />
+      <AbsolutePoint location="206,2450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/productcategory/delHotcategory.do,listMag,/productcategory/hotcategory_mag.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6318,702" />
+      <AbsolutePoint location="6618,702" />
+      <AbsolutePoint location="6618,4669" />
+      <AbsolutePoint location="2280,4669" />
+      <AbsolutePoint location="2280,4603" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/customers/registeruser.do,registerCompletePage,/customers/user_register_complete.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="6461,3150" />
+      <AbsolutePoint location="6461,2403" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/basicset/sysconstitem.do,editPage,/sysAdmin/basicSet/sysconstitem_edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2284,3250" />
+      <AbsolutePoint location="2284,3112" />
+      <AbsolutePoint location="29,3112" />
+      <AbsolutePoint location="29,140" />
+      <AbsolutePoint location="5366,140" />
+      <AbsolutePoint location="5366,350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/subsysMag/listSubsys.do,listSubsys,/subsysMag/subSystem_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="5700,3692" />
+      <AbsolutePoint location="5730,3692" />
+      <AbsolutePoint location="5730,3138" />
+      <AbsolutePoint location="944,3138" />
+      <AbsolutePoint location="944,21" />
+      <AbsolutePoint location="5257,21" />
+      <AbsolutePoint location="5257,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/i18n/i18n_addEdit.jsp,null,/i18n/i18n.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3464,1298" />
+      <AbsolutePoint location="3464,1350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

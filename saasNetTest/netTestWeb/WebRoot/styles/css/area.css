@@ -1,0 +1,44 @@
+
+#addr{
+position:absolute;
+z-index:3;
+width:300px;
+border:1px solid #993300;
+font-size:12px;
+background-color:#FFFFFF;
+}
+#addr span{
+display:block;
+width:300px;
+height:31px;
+background:url(addrbg.gif) no-repeat left top;
+line-height:31px;
+text-indent:30px;
+}
+#addr span a{
+padding-left:35px;
+color:#990000;
+cursor:pointer;
+}
+#addr ul{
+display:block;
+list-style:none;
+margin:0px;
+padding:0px;
+}
+#addr ul li{
+cursor:pointer;
+text-align:center;
+width:50px;
+height:25px;
+line-height:25px;
+float:left;
+}
+.addrSelet{
+border:none;
+width:120px;
+height:20px;
+background-image:url(addrSelect.gif);
+text-align:left;
+text-indent:3px;
+}

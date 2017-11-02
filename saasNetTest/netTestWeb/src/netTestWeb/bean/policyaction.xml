@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<policyAction>
+
+    <update-ware>
+       <or>
+	       <roleOr>
+	          ROLE_ShopProductAdmin,ROLE_ShopAdmin,ROLE_ShopCreator
+	       </roleOr>
+	       <and>
+	           <roleOr>ROLE_learnAdmin</roleOr>
+	           <eq>
+	              <senv>userid</senv>
+	              <property>creatorid</property>
+	           </eq>
+	       </and>
+       </or>
+    </update-ware>
+    
+    <shop-viewshopeditpage>
+       <or>
+           <empty>
+              <requestparam>queryVO.shopid</requestparam>
+           </empty>
+           <and>
+	           <notEmpty>
+	              <requestparam>queryVO.shopid</requestparam>
+	           </notEmpty>
+	           <call class="netTestWeb.security.PolicyCheckUserShop">
+				   <param name="sessShopid">
+				      <senv>shopid</senv>
+				   </param>
+				   <param name="objectID">
+				      <requestparam>queryVO.shopid</requestparam>
+				   </param>
+				   <param name="objectType">
+					  <value>shop</value>
+				   </param>
+			   </call>
+	       </and>
+       </or>
+    </shop-viewshopeditpage>
+    
+    <wareques-editWare>
+        <call class="netTestWeb.security.PolicyCheckUserShop">
+		   <param name="sessShopid">
+		      <senv>shopid</senv>
+		   </param>
+		   <param name="objectID">
+		      <requestparam>queryVO.wareid</requestparam>
+		   </param>
+		   <param name="objectType">
+			  <value>ware</value>
+		   </param>
+		</call>
+    </wareques-editWare>
+    
+    <wareques-deleteWare>
+        <call class="netTestWeb.security.PolicyCheckUserShop">
+		   <param name="sessShopid">
+		      <senv>shopid</senv>
+		   </param>
+		   <param name="objectID">
+		      <requestparam>vo.wareid</requestparam>
+		   </param>
+		   <param name="objectType">
+			  <value>ware</value>
+		   </param>
+		</call>
+    </wareques-deleteWare>
+
+</policyAction>

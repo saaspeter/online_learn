@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Productlog">
+<!-- ###################### ProductlogResult ########################## -->
+  <resultMap id="ProductlogResult" class="netTest.product.vo.Productlog">
+    <result column="productID" property="productid" jdbcType="BIGINT"/>
+    <result column="productName" property="productname" jdbcType="VARCHAR"/>
+    <result column="logType" property="logtype" jdbcType="SMALLINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="bfStatus" property="bfstatus" jdbcType="SMALLINT"/>
+    <result column="afStatus" property="afstatus" jdbcType="SMALLINT"/>
+    <result column="creatorID" property="creatorid" jdbcType="BIGINT"/>
+    <result column="logDate" property="logdate" jdbcType="TIMESTAMP"/>
+    <result column="note" property="note" jdbcType="VARCHAR"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="productid"><![CDATA[ productID=#productid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="logtype"><![CDATA[ logType=#logtype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="bfstatus"><![CDATA[ bfStatus=#bfstatus:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="afstatus"><![CDATA[ afStatus=#afstatus:SMALLINT# ]]></isNotNull> 
+    </dynamic>
+  </sql>
+    
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="ProductlogResult" parameterClass="netTest.product.vo.Productlog"> 
+     select  productID, productName, logType,
+             shopID, bfStatus, afStatus, creatorID, logDate, note 
+     from ProductLog 
+     <include refid="Productbase.where_Clause"/>  
+     <isNotNull property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotNull>
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.product.vo.Productlog"> 
+     insert into ProductLog
+     ( productID, productName, logType, shopID, bfStatus, afStatus, creatorID, logDate, note ) 
+     values 
+     ( #productid:BIGINT#, #productname:VARCHAR#, #logtype:SMALLINT#,  
+       #shopid:BIGINT#, #bfstatus:SMALLINT#, #afstatus:SMALLINT#, #creatorid:BIGINT#, #logdate:TIMESTAMP#, #note:VARCHAR# )
+  </insert>
+  
+<!-- ###################### deleteByProd ########################## -->
+  <delete id="deleteByProd" parameterClass="java.lang.Long"> 
+     delete from ProductLog where productID = #value#
+  </delete>
+
+    
+</sqlMap>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig
+PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+  <settings 
+     useStatementNamespaces="true"
+     enhancementEnabled="true"
+     lazyLoadingEnabled="true"
+  />
+  
+  <sqlMap resource="platform/sql/productcategoryvalue.xml"/>
+  <sqlMap resource="platform/sql/productcategory.xml"/>
+  <sqlMap resource="platform/sql/sysproductcate.xml"/>
+  <sqlMap resource="platform/sql/shop.xml"/>
+  <sqlMap resource="platform/sql/shopvalue.xml"/>
+  <sqlMap resource="platform/sql/shopstyleconfig.xml"/>
+  <sqlMap resource="platform/sql/rechargerecord.xml"/>
+  <sqlMap resource="platform/sql/usershop.xml"/>
+  <sqlMap resource="platform/sql/user.xml"/>
+  <sqlMap resource="platform/sql/sysfunctionitem.xml"/>
+  <sqlMap resource="platform/sql/shopfunc.xml"/>
+  <sqlMap resource="platform/sql/usrcosrecdet.xml"/>
+  <sqlMap resource="platform/sql/baseaccount.xml"/>
+  <sqlMap resource="platform/sql/costrecord.xml"/>
+  <sqlMap resource="platform/sql/usercontactinfo.xml"/>
+  <sqlMap resource="platform/sql/custinfoex.xml"/>
+  <sqlMap resource="platform/sql/custstatus.xml"/>
+  <sqlMap resource="platform/sql/useraccountsetting.xml"/>
+  <sqlMap resource="platform/sql/shopcosrecdet.xml"/>
+  <sqlMap resource="platform/sql/shopstatuslog.xml"/>
+  <sqlMap resource="platform/sql/shopapp.xml"/>
+  <sqlMap resource="platform/shop/sql/shoppost.xml"/>
+  <sqlMap resource="platform/shop/sql/shopcontactinfo.xml"/>
+  <sqlMap resource="platform/shop/sql/shopdescarticle.xml"/>
+  <sqlMap resource="platform/sql/newscategory.xml"/>
+  <sqlMap resource="platform/social/sql/socialnewssource.xml"/>
+  <sqlMap resource="platform/sql/infonews.xml"/>
+  <sqlMap resource="platform/sql/hotcategory.xml"/>
+  <sqlMap resource="platform/social/sql/comments.xml"/>
+  <sqlMap resource="platform/social/sql/usecomment.xml"/>
+  <sqlMap resource="platform/social/sql/leavemessage.xml"/>
+  <sqlMap resource="platform/social/sql/socialoathtoken.xml"/>
+  <sqlMap resource="platform/sql/reversesearch.xml"/>
+  <sqlMap resource="platform/shop/sql/shoplicense.xml"/>
+  <sqlMap resource="platform/shop/sql/shopext.xml"/>
+  <sqlMap resource="platform/mail/sql/emailtemplate.xml"/>
+  <sqlMap resource="platform/user/sql/accountvalidatetask.xml"/>
+  <sqlMap resource="platform/user/sql/useractivity.xml"/>
+  <sqlMap resource="platform/shop/sql/prodcateshop.xml"/>
+</sqlMapConfig>

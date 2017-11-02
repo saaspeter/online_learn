@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;abatorConfig_platform.xml&apos; to &apos;netTest&apos;&#x0D;&#x0A;- Original project: &apos;platform&apos;&#x0D;&#x0A;- Destination element: &apos;netTest&apos;&#x0D;&#x0A;- Original element: &apos;abatorConfig_platform.xml&apos;" description="Copy file" destination="=netTest" element1="abatorConfig_platform.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1405180971815" units="0" version="1.0"/>
+</session>

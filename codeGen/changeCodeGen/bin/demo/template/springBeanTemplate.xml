@@ -1,0 +1,23 @@
+  <!-- ========================= Class {[#className#]}: CONFIGURE ========================= -->
+  <bean id="{[#beanName#]}Target" class="{[#PackageDaoImpl#]}.{[#className#]}DaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref bean="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref bean="sqlMapClient"/>
+    </property>
+  </bean>
+
+  <bean id="{[#beanName#]}" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="{[#beanName#]}Target"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>

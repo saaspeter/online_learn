@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Shopext">
+  <!-- ###################### shoplicenseResult ########################## -->
+  <resultMap id="ShopextResult" class="platform.shop.vo.Shopext">
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="authenIDType" property="authenidtype" jdbcType="SMALLINT"/>
+    <result column="authenIdNo" property="authenidno" jdbcType="VARCHAR"/>
+    <result column="authenImage" property="authenimage" jdbcType="VARCHAR"/>
+    <result column="applyChargeType" property="applychargetype" jdbcType="SMALLINT"/>
+    <result column="applyUserID" property="applyuserid" jdbcType="BIGINT"/>
+    <result column="approveUserID" property="approveuserid" jdbcType="BIGINT"/>
+    <result column="authenStatus" property="authenstatus" jdbcType="SMALLINT"/>
+    <result column="authenDesc" property="authendesc" jdbcType="VARCHAR"/>
+    <result column="authenDate" property="authendate" jdbcType="TIMESTAMP"/>
+    <result column="chargeDate" property="chargedate" jdbcType="TIMESTAMP"/>
+    <result column="payInfo" property="payinfo" jdbcType="VARCHAR"/>
+  </resultMap>
+  
+  
+  <!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="ShopextResult" parameterClass="platform.shop.vo.Shopext"> 
+     select  shopID, authenIDType, authenIdNo, authenImage, applyChargeType, 
+     applyUserID, approveUserID, authenStatus, authenDesc, authenDate, chargeDate, payInfo 
+     from ShopExt 
+     <dynamic prepend="where"> 
+        <isNotNull prepend="and" property="applychargetype"><![CDATA[ applyChargeType=#applychargetype:SMALLINT# ]]></isNotNull>
+        <isNotNull prepend="and" property="authenstatus"><![CDATA[ authenStatus=#authenstatus:SMALLINT# ]]></isNotNull>
+        <isNotEmpty prepend="and" property="shopcode"><![CDATA[ 
+              exists (
+                 select 1 from shop where ShopExt.shopID=Shop.shopID and
+                          shopCode like CONCAT('%',#shopcode:VARCHAR#,'%') 
+              )
+           ]]></isNotEmpty>
+    </dynamic>
+  </select>
+  
+    
+  <!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="ShopextResult" parameterClass="java.lang.Long"> 
+     select  shopID, authenIDType, authenIdNo, authenImage, applyChargeType, 
+     applyUserID, approveUserID, authenStatus, authenDesc, authenDate, chargeDate, payInfo 
+     from ShopExt 
+     where shopID=#shopid:BIGINT#
+  </select>
+  
+  <!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="platform.shop.vo.Shopext"> 
+     insert into ShopExt
+     ( shopID,
+    authenIDType,
+    authenIdNo,
+    authenImage, applyChargeType, applyUserID, approveUserID, authenStatus,
+    authenDesc, authenDate, chargeDate, payInfo) 
+    values 
+     ( #shopid:BIGINT#, 
+    #authenidtype:SMALLINT#, 
+    #authenidno:VARCHAR#, 
+    #authenimage:VARCHAR#, #applychargetype:SMALLINT#, #applyuserid:BIGINT#, #approveuserid:BIGINT#, #authenstatus:SMALLINT#, 
+    #authendesc:VARCHAR#, #authendate:TIMESTAMP#, #chargedate:TIMESTAMP#, #payinfo:VARCHAR# )
+  </insert>
+  
+  <!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="platform.shop.vo.Shopext"> 
+     update ShopExt 
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="authenidtype"><![CDATA[ authenIDType=#authenidtype:SMALLINT# ]]></isNotNull>
+      <isNotEmpty prepend="," property="authenidno"><![CDATA[ authenIdNo=#authenidno:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="," property="authenimage"><![CDATA[ authenImage=#authenimage:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="," property="applychargetype"><![CDATA[ applyChargeType=#applychargetype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="applyuserid"><![CDATA[ applyUserID=#applyuserid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="approveuserid"><![CDATA[ approveUserID=#approveuserid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="authenstatus"><![CDATA[ authenStatus=#authenstatus:SMALLINT# ]]></isNotNull>
+      <isNotEmpty prepend="," property="authendesc"><![CDATA[ authenDesc=#authendesc:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="," property="authendate"><![CDATA[ authenDate=#authendate:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="chargedate"><![CDATA[ chargeDate=#chargedate:TIMESTAMP# ]]></isNotNull>
+      <isNotEmpty prepend="," property="payinfo"><![CDATA[ payInfo=#payinfo:VARCHAR# ]]></isNotEmpty>
+    </dynamic> 
+     where shopID=#shopid:BIGINT# 
+  </update>
+  
+  <!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from ShopExt where shopID=#shopid:BIGINT# 
+  </delete>
+  
+  <!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="platform.shop.vo.Shopext"> 
+     select  count(1) from ShopExt 
+     <dynamic prepend="where"> 
+        <isNotNull prepend="and" property="applychargetype"><![CDATA[ applyChargeType=#applychargetype:SMALLINT# ]]></isNotNull>
+        <isNotNull prepend="and" property="authenstatus"><![CDATA[ authenStatus=#authenstatus:SMALLINT# ]]></isNotNull>
+        <isNotEmpty prepend="and" property="shopcode"><![CDATA[ 
+              exists (
+                 select 1 from shop where ShopExt.shopID=Shop.shopID and
+                          shopCode like CONCAT('%',#shopcode:VARCHAR#,'%') 
+              )
+           ]]></isNotEmpty>
+     </dynamic>
+  </select>
+    
+</sqlMap>

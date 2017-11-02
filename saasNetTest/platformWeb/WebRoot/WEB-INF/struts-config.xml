@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="loginForm" type="platformWeb.form.LoginForm" />
+    <form-bean name="subsysmanageForm" type="platformWeb.systemset.form.SubsysmanageForm" />
+	<form-bean name="sysproductcateForm" type="platformWeb.category.form.SysproductcateForm" />
+	<form-bean name="productcategoryvalueForm" type="platformWeb.category.form.ProductcategoryvalueForm" />
+	<form-bean name="productcategoryForm" type="platformWeb.category.form.ProductcategoryForm" />
+	<form-bean name="shopvalueForm" type="platformWeb.shop.form.ShopvalueForm" />
+	<form-bean name="i18nForm" type="platformWeb.systemset.form.I18nForm" />
+	<form-bean name="sysparamForm" type="platformWeb.systemset.form.SysparamForm" />
+	<form-bean name="baseuserForm" type="platformWeb.user.form.BaseuserForm" />
+	<form-bean name="usershopForm" type="platformWeb.user.form.UsershopForm" />
+	<form-bean name="userForm" type="platformWeb.user.form.UserForm" />
+    <form-bean name="sysfunctionitemForm" type="platformWeb.systemset.form.SysfunctionitemForm" />
+	<form-bean name="shopfuncForm" type="platformWeb.shop.form.ShopfuncForm" />
+	<form-bean name="sysconstForm" type="platformWeb.systemset.form.SysconstForm" />
+    <form-bean name="sysconstvalForm" type="platformWeb.systemset.form.SysconstvalForm" />
+	<form-bean name="sysconstitemForm" type="platformWeb.systemset.form.SysconstitemForm" />
+	<form-bean name="sysconstitemvalForm" type="platformWeb.systemset.form.SysconstitemvalForm" />
+    <form-bean name="newscategoryForm" type="platformWeb.news.form.NewscategoryForm" />
+    <form-bean name="infonewsForm" type="platformWeb.news.form.InfonewsForm" />
+    <form-bean name="hotcategoryForm" type="platformWeb.category.form.HotcategoryForm" />
+  </form-beans>
+
+  <global-exceptions>
+      <exception key="commonWeb.java.commonaction.errors.noLogin" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoLoginException" path="/login.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.editPage.noSuchRecord" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoSuchRecordException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.resubmit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.ResubmitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.DaoException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="org.springframework.dao.DataAccessException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.noRight" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoRightException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.LogicErr" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.LogicException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+  </global-exceptions>
+  
+  <global-forwards>
+      <forward name="errorPage" path="/pubs/errorPage.jsp" ></forward>
+      <forward name="messagePage" path="/pubs/message.jsp" ></forward>
+      <forward name="treeXml" path="/pubs/treeXml.jsp" ></forward>
+      <forward name="forwardToUrl" path="/pubs/forwardToUrl.jsp" ></forward>
+      <forward name="toUrl" path="/pubs/toUrl.jsp" ></forward>
+  </global-forwards>
+  
+  <action-mappings >
+
+    <action name="loginForm" path="/tologin" type="platformWeb.action.ToLoginAction" validate="true" scope="request" input="/login.jsp">
+      <forward name="login" path="/login.jsp"></forward>
+    </action>
+
+    <action name="loginForm" path="/login" type="platformWeb.action.LoginAction" validate="true" scope="request" input="/login.jsp">
+      <forward name="tenantAdmin" path="/tenantAdmin/tenantAdmin_index.jsp"></forward>
+      <forward name="userAdmin" path="/userAdmin/userAdmin_index.jsp"></forward>
+    </action>
+    
+    <!-- Subsysmanage begin -->
+    <action parameter="listSubsys" path="/subsysMag/listSubsys" name="subsysmanageForm" type="platformWeb.systemset.action.SubsysmanageAction" scope="request">
+      <forward name="listSubsys" path="/subsysMag/subSystem_list.jsp"></forward>
+    </action>
+    <!-- Subsysmanage end -->
+    
+    <action
+      attribute="sysconstForm" input="/sysAdmin/basicSet/sysconst_addEdit.jsp"
+      name="sysconstForm" path="/basicset/sysconst" scope="request"
+      type="platformWeb.systemset.action.SysconstAction" parameter="method" validate="true">
+      <forward name="list" path="/sysAdmin/basicSet/sysconst_list.jsp"></forward>
+      <forward name="addPage" path="/sysAdmin/basicSet/sysconst_add.jsp"></forward>
+      <forward name="editPage" path="/sysAdmin/basicSet/sysconst_edit.jsp"></forward>
+    </action>
+
+      
+    <action
+      attribute="sysconstvalForm" input="/sysAdmin/basicSet/sysconstval_addEdit.jsp"
+      name="sysconstvalForm" path="/basicset/sysconstval" scope="request"
+      type="platformWeb.systemset.action.SysconstvalAction" parameter="method" validate="true">
+      <forward name="list" path="/sysAdmin/basicSet/sysconstval_list.jsp"></forward>
+      <forward name="addEditPage" path="/sysAdmin/basicSet/sysconstval_addEdit.jsp"></forward>
+      <forward name="viewPage" path="/sysAdmin/basicSet/sysconstval_view.jsp"></forward>
+    </action>
+
+      
+    <action
+      attribute="sysconstitemForm" input="/sysAdmin/basicSet/sysconstitem_addEdit.jsp"
+      name="sysconstitemForm" path="/basicset/sysconstitem" scope="request"
+      type="platformWeb.systemset.action.SysconstitemAction" parameter="method" validate="true">
+      <forward name="list" path="/sysAdmin/basicSet/sysconstitem_list.jsp"></forward>
+      <forward name="addPage" path="/sysAdmin/basicSet/sysconstitem_add.jsp"></forward>
+      <forward name="editPage" path="/sysAdmin/basicSet/sysconstitem_edit.jsp"></forward>
+    </action>
+      
+    <action
+      attribute="sysconstitemvalForm" input="/sysAdmin/basicSet/sysconstitemval_addEdit.jsp"
+      name="sysconstitemvalForm" path="/basicset/sysconstitemval" scope="request"
+      type="platformWeb.systemset.action.SysconstitemvalAction" parameter="method" validate="true">
+      <forward name="list" path="/sysAdmin/basicSet/sysconstitemval_list.jsp"></forward>
+      <forward name="addEditPage" path="/sysAdmin/basicSet/sysconstitemval_addEdit.jsp"></forward>
+      <forward name="viewPage" path="/sysAdmin/basicSet/sysconstitemval_view.jsp"></forward>
+    </action>
+ 
+    <action
+      attribute="sysfunctionitemForm" input="/sysAdmin/sysfunctionitem_edit.jsp"
+      name="sysfunctionitemForm" path="/sysadmin/sysfunctionitem" scope="request"
+      type="platformWeb.systemset.action.SysfunctionitemAction" parameter="method" validate="true">
+      <forward name="list" path="/sysAdmin/sysfunctionitem_list.jsp"></forward>
+      <forward name="editPage" path="/sysAdmin/sysfunctionitem_edit.jsp"></forward>
+      <forward name="viewPage" path="/sysAdmin/sysfunctionitem_view.jsp"></forward>
+    </action>
+    
+    <action
+      attribute="shopfuncForm" input="/shop/shopfunc_addEdit.jsp"
+      name="shopfuncForm" path="/shop/shopfunc" scope="request"
+      type="platformWeb.shop.action.ShopfuncAction" parameter="method" validate="true">
+              
+      <forward name="list" path="/shop/shopfunc_list.jsp"></forward>
+      <forward name="addPage" path="/shop/shopfunc_add.jsp"></forward>
+      <forward name="editPage" path="/shop/shopfunc_edit.jsp"></forward>
+      <forward name="viewPage" path="/shop/shopfunc_view.jsp"></forward>
+    </action>
+
+    <!-- shopvalueAction begin -->
+    <action parameter="listshopvalue" path="/shop/listshopvalue" name="shopvalueForm" type="platformWeb.shop.action.ShopvalueAction" scope="request">
+       <forward name="list" path="/shop/shopvalue_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editshopdescript" path="/shop/editshopdescript" name="shopvalueForm" type="platformWeb.shop.action.ShopvalueAction" scope="request">
+       <forward name="addEditPage" path="/shop/shopvalue_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewshopdescript" path="/shop/viewshopdescript" name="shopvalueForm" type="platformWeb.shop.action.ShopvalueAction" scope="request">
+       <forward name="viewPage" path="/shop/shopvalue_view.jsp"></forward>
+    </action>
+    
+    <action parameter="saveshopdescript" path="/shop/saveshopdescript" name="shopvalueForm" type="platformWeb.shop.action.ShopvalueAction" scope="request">
+       <forward name="list" path="/shop/shopvalue_list.jsp"></forward>
+    </action>
+    
+    <action parameter="addshopvaluepage" path="/shop/addshopvaluepage" name="shopvalueForm" type="platformWeb.shop.action.ShopvalueAction" scope="request">
+       <forward name="addEditPage" path="/shop/shopvalue_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="addshopvalue" path="/shop/addshopvalue" name="shopvalueForm" type="platformWeb.shop.action.ShopvalueAction" scope="request">
+       <forward name="list" path="/shop/shopvalue_list.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteShopValue" path="/shop/deleteShopValue" name="shopvalueForm" type="platformWeb.shop.action.ShopvalueAction" scope="request">
+       <forward name="list" path="/shop/shopvalue_list.jsp"></forward>
+    </action>
+    <!-- shopvalueAction end -->
+      
+    <!-- InfonewsAction end -->
+    
+    <action
+      attribute="productcategoryForm" input="/productcategory/productcategory_addEdit.jsp"
+      name="productcategoryForm" path="/productcategory/productcategory" scope="request"
+      type="platformWeb.category.action.ProductcategoryAction" parameter="method" validate="true">
+              
+      <forward name="list" path="/productcategory/productcategory_list.jsp"></forward>
+      <forward name="addPage" path="/productcategory/productcategory_add.jsp"></forward>
+      <forward name="editPage" path="/productcategory/productcategory_edit.jsp"></forward>
+      <forward name="viewPage" path="/productcategory/productcategory_view.jsp"></forward>
+      <forward name="selectTree" path="/productcategory/prodcate_select_tree.jsp"></forward>
+    </action>
+    
+    <!-- productcategoryvalue begin -->
+    <action parameter="listProductcategoryvalue" path="/productcategory/listProductcategoryvalue" name="productcategoryvalueForm" type="platformWeb.category.action.ProductcategoryvalueAction" scope="request">
+       <forward name="list" path="/productcategory/productcategoryvalue_list.jsp"></forward>
+    </action>
+    
+    <action parameter="saveProductcategoryvalue" path="/productcategory/saveProductcategoryvalue" name="productcategoryvalueForm" type="platformWeb.category.action.ProductcategoryvalueAction" scope="request">
+       <forward name="list" path="/productcategory/productcategoryvalue_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editProductcategoryvalue" path="/productcategory/editProductcategoryvalue" name="productcategoryvalueForm" type="platformWeb.category.action.ProductcategoryvalueAction" scope="request">
+       <forward name="addEditPage" path="/productcategory/productcategoryvalue_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewProductcategoryvalue" path="/productcategory/viewProductcategoryvalue" name="productcategoryvalueForm" type="platformWeb.category.action.ProductcategoryvalueAction" scope="request">
+        <forward name="viewPage" path="/productcategory/productcategoryvalue_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addProductcategoryvalue" path="/productcategory/addProductcategoryvalue" name="productcategoryvalueForm" type="platformWeb.category.action.ProductcategoryvalueAction" scope="request">
+       <forward name="addEditPage" path="/productcategory/productcategoryvalue_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteProductcategoryvalue" path="/productcategory/deleteProductcategoryvalue" name="productcategoryvalueForm" type="platformWeb.category.action.ProductcategoryvalueAction" scope="request">
+       <forward name="list" path="/productcategory/productcategoryvalue_list.jsp"></forward>
+    </action>
+    <!-- productcategoryvalue end -->
+
+    <!-- sysproductcate begin -->
+    <action parameter="listSysproductcate" path="/productcategory/listSysproductcate" name="sysproductcateForm" type="platformWeb.category.action.SysproductcateAction" scope="request">
+       <forward name="list" path="/productcategory/sysproductcate_list.jsp"></forward>
+    </action>
+    
+    <action parameter="saveSysproductcate" path="/productcategory/saveSysproductcate" name="sysproductcateForm" type="platformWeb.category.action.SysproductcateAction" scope="request">
+       <forward name="list" path="/productcategory/sysproductcate_list.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteSysproductcate" path="/productcategory/deleteSysproductcate" name="sysproductcateForm" type="platformWeb.category.action.SysproductcateAction" scope="request">
+       <forward name="list" path="/productcategory/sysproductcate_list.jsp"></forward>
+    </action>
+    <!-- sysproductcate end -->
+                       
+    <action
+      attribute="i18nForm" input="/i18n/i18n_addEdit.jsp"
+      name="i18nForm" path="/i18n/i18n" scope="request"
+      type="platformWeb.systemset.action.I18nAction" parameter="method" validate="true">
+              
+      <forward name="list" path="/i18n/i18n_list.jsp"></forward>
+      <forward name="addEditPage" path="/i18n/i18n_addEdit.jsp"></forward>
+      <forward name="viewPage" path="/i18n/i18n_view.jsp"></forward>
+    </action>
+
+    <action
+      attribute="baseuserForm" input="/customers/baseuser_addEdit.jsp"
+      name="baseuserForm" path="/customers/baseuser" scope="request"
+      type="platformWeb.user.action.BaseuserAction" parameter="method" validate="true">
+              
+      <forward name="statusChangePage" path="/customers/custstatus_change.jsp"></forward>
+    </action>
+    
+    <!-- UsershopAction start -->
+        
+    <action parameter="delshopuser" path="/usershop/delshopuser" name="usershopForm" type="platformWeb.user.action.UsershopAction" scope="request">
+       <forward name="list" path="/userprodshop/shopuser_list.jsp"></forward>
+    </action>
+    
+    <action parameter="updatenickname" path="/usershop/updatenickname" name="usershopForm" type="platformWeb.user.action.UsershopAction" scope="request">
+    </action>
+    <!-- UsershopAction end -->
+    
+    <!-- user action start -->
+    <action parameter="listuser" path="/customers/listuser" name="userForm" type="platformWeb.user.action.UserAction" scope="request">
+       <forward name="list" path="/customers/user_list.jsp"></forward>
+    </action>
+    
+    <action parameter="registeruser" path="/customers/registeruser" name="userForm" input="/customers/user_add.jsp" type="platformWeb.user.action.UserAction" scope="request">
+       <forward name="registerCompletePage" path="/customers/user_register_complete.jsp"></forward>
+    </action>
+    
+    <action parameter="saveuser" path="/customers/saveuser" name="userForm" input="/customers/user_add.jsp" type="platformWeb.user.action.UserAction" scope="request">
+       <forward name="list" path="/customers/user_list.jsp"></forward>
+       <forward name="editPage" path="/customers/user_edit.jsp"></forward>
+    </action>
+    
+    <action parameter="edituser" path="/customers/edituser" name="userForm" type="platformWeb.user.action.UserAction" scope="request">
+       <forward name="editPage" path="/customers/user_edit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewuser" path="/customers/viewuser" name="userForm" type="platformWeb.user.action.UserAction" scope="request">
+       <forward name="viewPage" path="/customers/user_view.jsp"></forward>
+    </action>
+    
+    <action parameter="adduser" path="/customers/adduser" name="userForm" type="platformWeb.user.action.UserAction" scope="request">
+       <forward name="addPage" path="/customers/user_add.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteuser" path="/customers/deleteuser" name="userForm" type="platformWeb.user.action.UserAction" scope="request">
+       <forward name="list" path="/customers/user_list.jsp"></forward>
+    </action>
+    
+    <action parameter="updatepassword" path="/customers/updatepassword" name="userForm" type="platformWeb.user.action.UserAction" scope="request">
+       
+    </action>
+    
+    <!-- 
+    <action parameter="listTenant" path="/customers/listTenant" name="tenantForm" type="platformWeb.action.TenantAction" scope="request">
+       <forward name="list" path="/customers/tenant_list.jsp"></forward>
+    </action>
+    
+    <action parameter="addTenant" path="/customers/addTenant" name="tenantForm" type="platformWeb.action.TenantAction" scope="request">
+       <forward name="addPage" path="/customers/tenant_add.jsp"></forward>
+    </action>
+    
+    <action parameter="editTenant" path="/customers/editTenant" name="tenantForm" type="platformWeb.action.TenantAction" scope="request">
+       <forward name="editPage" path="/customers/tenant_edit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewTenant" path="/customers/viewTenant" name="tenantForm" type="platformWeb.action.TenantAction" scope="request">
+       <forward name="viewPage" path="/customers/tenant_view.jsp"></forward>
+    </action>
+    
+    <action parameter="registerTenant" path="/customers/registerTenant" name="tenantForm" input="/customers/tenant_add.jsp" type="platformWeb.action.TenantAction" scope="request">
+       <forward name="registerCompletePage" path="/customers/tenant_register_complete.jsp"></forward>
+    </action>
+    
+    <action parameter="saveTenant" path="/customers/saveTenant" name="tenantForm" type="platformWeb.action.TenantAction" scope="request">
+       <forward name="editPage" path="/customers/tenant_edit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteTenant" path="/customers/deleteTenant" name="tenantForm" type="platformWeb.action.TenantAction" scope="request">
+       <forward name="list" path="/customers/tenant_list.jsp"></forward>
+    </action>
+     -->
+     
+    <!-- user action end -->
+    <action
+      attribute="sysparamForm" input="/basicset/sysparam_addEdit.jsp"
+      name="sysparamForm" path="/basicset/sysparam" scope="request"
+      type="platformWeb.systemset.action.SysparamAction" parameter="method" validate="true">
+      <forward name="list" path="/sysAdmin/basicSet/sysparam_list.jsp"></forward>
+      <forward name="addEditPage" path="/sysAdmin/basicSet/sysparam_addEdit.jsp"></forward>
+      <forward name="viewPage" path="/sysAdmin/basicSet/sysparam_view.jsp"></forward>
+    </action>
+    
+
+    <!-- NewscategoryAction begin -->
+    <action parameter="addNewscategory" path="/news/addNewscategory" name="newscategoryForm" type="platformWeb.news.action.NewscategoryAction" scope="request">
+       <forward name="addPage" path="/news/newscate_add.jsp"></forward>
+    </action>
+    
+    <action parameter="editNewscategory" path="/news/editNewscategory" name="newscategoryForm" type="platformWeb.news.action.NewscategoryAction" scope="request">
+       <forward name="editPage" path="/news/newscate_edit.jsp"></forward>
+    </action>
+    
+    <action parameter="saveNewscategory" path="/news/saveNewscategory" name="newscategoryForm" type="platformWeb.news.action.NewscategoryAction" scope="request">
+       <forward name="editPage" path="/news/newscate_edit.jsp"></forward>
+    </action>
+    
+    <action parameter="saveNewscategoryValue" path="/news/saveNewscategoryValue" name="newscategoryForm" type="platformWeb.news.action.NewscategoryAction" scope="request">
+    </action>
+    
+    <action parameter="updateNewsCate" path="/news/updateNewsCate" name="newscategoryForm" type="platformWeb.news.action.NewscategoryAction" scope="request">
+    </action>
+    
+    <action parameter="deleteNewscategory" path="/news/deleteNewscategory" name="newscategoryForm" type="platformWeb.news.action.NewscategoryAction" scope="request">
+    </action>
+    
+    <action parameter="deleteNewscategoryValue" path="/news/deleteNewscategoryValue" name="newscategoryForm" type="platformWeb.news.action.NewscategoryAction" scope="request">
+    </action>
+    <!-- NewscategoryAction end -->
+    
+    <!-- InfonewsAction begin -->
+    <action parameter="listInfonews" path="/index/listInfonews" name="infonewsForm" type="platformWeb.news.action.InfonewsAction" scope="request">
+       <forward name="list" path="/index/infor_cate.jsp"></forward>
+    </action>
+    
+    <action parameter="searchNews" path="/index/searchNews" name="infonewsForm" type="platformWeb.news.action.InfonewsAction" scope="request">
+       <forward name="list" path="/index/infor_cate.jsp"></forward>
+    </action>
+    
+    <action parameter="saveInfonews" path="/index/saveInfonews" name="infonewsForm" type="platformWeb.news.action.InfonewsAction" scope="request">
+       <forward name="list" path="/index/infor_cate.jsp"></forward>
+    </action>
+    
+    <action parameter="editInfonews" path="/index/editInfonews" name="infonewsForm" type="platformWeb.news.action.InfonewsAction" scope="request">
+       <forward name="addEditPage" path="/news/infonews_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewInfonews" path="/index/viewInfonews" name="infonewsForm" type="platformWeb.news.action.InfonewsAction" scope="request">
+       <forward name="viewPage" path="/news/infonews_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addInfonews" path="/index/addInfonews" name="infonewsForm" type="platformWeb.news.action.InfonewsAction" scope="request">
+       <forward name="addEditPage" path="/news/infonews_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteInfonews" path="/index/deleteInfonews" name="infonewsForm" type="platformWeb.news.action.InfonewsAction" scope="request">
+       
+    </action>
+    
+    <!-- HotcategoryAction begin -->
+    <action parameter="listHotcategory" path="/productcategory/listHotcategory" name="hotcategoryForm" type="platformWeb.category.action.HotcategoryAction" scope="request">
+       <forward name="list" path="/productcategory/hotcategory_list.jsp"></forward>
+    </action>
+    
+    <action parameter="magHotcategory" path="/productcategory/magHotcategory" name="hotcategoryForm" type="platformWeb.category.action.HotcategoryAction" scope="request">
+       <forward name="listMag" path="/productcategory/hotcategory_mag.jsp"></forward>
+    </action>
+    
+    <action parameter="saveHotcategory" path="/productcategory/saveHotcategory" name="hotcategoryForm" type="platformWeb.category.action.HotcategoryAction" scope="request">
+       <forward name="listMag" path="/productcategory/hotcategory_mag.jsp"></forward>
+    </action>
+    
+    <action parameter="delHotcategory" path="/productcategory/delHotcategory" name="hotcategoryForm" type="platformWeb.category.action.HotcategoryAction" scope="request">
+       <forward name="listMag" path="/productcategory/hotcategory_mag.jsp"></forward>
+    </action>
+    <!-- HotcategoryAction end -->
+    
+  </action-mappings>
+
+  <message-resources parameter="platformWeb.resource.ApplicationResources" />
+  <message-resources key="BizKey" parameter="platformWeb.resource.CommonResources" />
+    
+</struts-config>
+

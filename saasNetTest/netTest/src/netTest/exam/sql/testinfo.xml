@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Testinfo">
+<!-- ###################### testinfoResult ########################## -->
+  <resultMap id="TestinfoResult" class="netTest.exam.vo.Testinfo">
+    <result column="testID" property="testid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="testName" property="testname" jdbcType="VARCHAR"/>
+    <result column="paperID" property="paperid" jdbcType="BIGINT"/>
+    <result column="isDynamicPaper" property="isdynamicpaper" jdbcType="SMALLINT"/>
+    <result column="paperVersion" property="paperversion" jdbcType="INTEGER"/>
+    <result column="paperTime" property="papertime" jdbcType="INTEGER"/>
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP"/>
+    <result column="testStartDate" property="teststartdate" jdbcType="TIMESTAMP"/>
+    <result column="testEndDate" property="testenddate" jdbcType="TIMESTAMP"/>
+    <result column="productBaseID" property="productbaseid" jdbcType="BIGINT"/>
+    <result column="testStatus" property="teststatus" jdbcType="SMALLINT"/>
+    <result column="createOrgID" property="createorgid" jdbcType="BIGINT"/>
+    <result column="createOrgName" property="createorgname" jdbcType="VARCHAR"/>
+    <result column="productName" property="productname" jdbcType="VARCHAR"/>
+    <result column="updateTime" property="updatetime" jdbcType="TIMESTAMP"/>
+    <result column="openType" property="opentype" jdbcType="SMALLINT"/>
+    <result column="viewResultType" property="viewresulttype" jdbcType="SMALLINT"/>
+  </resultMap>
+      
+  <resultMap class="netTest.exam.vo.Testinfo" id="TestinfoResultEx" extends="Testinfo.TestinfoResult">
+      <result column="paperName" property="papername" jdbcType="VARCHAR"/>
+      <result column="testAveScore" property="testavescore" jdbcType="REAL"/>
+      <result column="testQuaPer" property="testquaper" jdbcType="REAL"/>
+      <result column="testCanStop" property="testcanstop" jdbcType="SMALLINT"/>
+      <result column="canstopTime" property="canstoptime" jdbcType="INTEGER"/>
+      <result column="createUserID" property="createuserid" jdbcType="BIGINT"/>
+      <result column="createLoginname" property="createloginname" jdbcType="VARCHAR"/>
+      <result column="createUserName" property="createusername" jdbcType="VARCHAR"/>
+      <result column="testNotes" property="testnotes" jdbcType="VARCHAR"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="testid"><![CDATA[ testID=#testid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="testname"><![CDATA[ testName=#testname:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="paperid"><![CDATA[ paperID=#paperid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="isdynamicpaper"><![CDATA[ isDynamicPaper=#isdynamicpaper:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="paperversion"><![CDATA[ paperVersion=#paperversion:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="and" property="createtime"><![CDATA[ createTime=#createtime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="and" property="teststartdate"><![CDATA[ testStartDate >= #teststartdate:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="and" property="testenddate"><![CDATA[ testEndDate <= #testenddate:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="and" property="productbaseid"><![CDATA[ productBaseID=#productbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="teststatus"><![CDATA[ testStatus=#teststatus:SMALLINT# ]]></isNotNull>
+      <isNull property="teststatus">
+          <isNotEmpty prepend="and" property="teststatusquerystring">
+              <![CDATA[ testStatus in ($teststatusquerystring$) ]]>
+          </isNotEmpty>
+      </isNull>
+      <isNotNull prepend="and" property="opentype"><![CDATA[ openType=#opentype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="viewresulttype"><![CDATA[ viewResultType=#viewresulttype:SMALLINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="prodidStr"><![CDATA[ productBaseID in($prodidStr$) ]]></isNotEmpty> 
+      <isNull prepend="and" property="userid">
+          <![CDATA[ 
+             exists(select 1 from testchecker where testinfo.testID=testchecker.testID 
+                    and testchecker.userID=#userid:BIGINT#)
+           ]]>
+      </isNull>     
+      <isNotNull prepend="and" property="orgbaseid" >
+           <isEqual property="qrytesttype" compareValue="1">
+               <![CDATA[ createOrgID=#orgbaseid:BIGINT# ]]>
+           </isEqual>
+           <isEqual property="qrytesttype" compareValue="2">
+               <![CDATA[    
+                         exists(select 1 from OrgBase where testinfo.shopID=OrgBase.shopID 
+                                and testinfo.createOrgID = OrgBase.orgBaseID and OrgBase.orgBaseID!=#orgbaseid:BIGINT#
+                                and find_in_set(#orgbaseid:BIGINT#, OrgBase.path)>0) 
+               ]]>
+           </isEqual>
+      </isNotNull>      
+    </dynamic>
+  </sql>
+    
+  <!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="TestinfoResultEx" parameterClass="java.lang.Long"> 
+     select 
+         a.testID,a.shopID,a.testName,a.paperID,a.isDynamicPaper,a.paperVersion,a.paperTime,
+    a.createTime,a.testStartDate,a.testEndDate,a.productBaseID,a.testStatus,
+    a.createOrgID,a.createOrgName,a.productName,a.updateTime,a.openType, a.viewResultType,
+    b.testavescore,b.testquaper,b.testcanstop,b.canstoptime,b.createuserid,
+    b.createloginname,b.createusername,b.paperName,b.testnotes
+     from testinfo a, TestInfoProp b
+     where a.testID=b.testID and a.testID = #value#
+  </select>
+   
+  <!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="TestinfoResult" parameterClass="netTest.exam.dto.TestinfoQuery"> 
+     select  testID,shopID,testName,paperID,isDynamicPaper,paperVersion,paperTime,
+         createTime,testStartDate,testEndDate,productBaseID,testStatus,
+         createOrgID,createOrgName,productName,updateTime,openType,viewResultType 
+     from testinfo
+    <include refid="Testinfo.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+  <!-- ###################### selectUpcomingByProduct ###################### -->
+  <select id="selectUpcomingByProduct" resultMap="TestinfoResult" parameterClass="java.lang.Long"> 
+     select  testID,shopID,testName,paperID,isDynamicPaper,paperVersion,paperTime,
+         createTime,testStartDate,testEndDate,productBaseID,testStatus,
+         createOrgID,createOrgName,productName,updateTime,openType,viewResultType 
+     from testinfo
+     where productBaseID = #value# and testStatus in(1, 3)
+  </select>
+  
+  <!-- ###################### listTestByProdCate ########################## -->
+  <select id="listTestByProdCate" resultMap="TestinfoResult" parameterClass="netTest.exam.dto.TestinfoQuery"> 
+     select 
+         a.testID,a.shopID,a.testName,a.paperID,a.isDynamicPaper,a.paperVersion,a.paperTime,
+    a.createTime,a.testStartDate,a.testEndDate,a.productBaseID,a.testStatus,
+    a.createOrgID,a.createOrgName,a.productName,a.updateTime,a.openType, a.viewResultType 
+    from testinfo a, ProductBase b 
+     where a.productBaseID=b.productBaseID   
+     <dynamic>
+        <isNotNull prepend="and" property="categoryid">
+            <isEqual property="isIncludeChild" compareValue="1" ><![CDATA[ b.categoryID=#categoryid:BIGINT# ]]></isEqual>
+            <isEqual property="isIncludeChild" compareValue="2" >
+                <![CDATA[
+                    exists (
+                       select 1 from ProductCategory z where b.categoryID=z.categoryID 
+                            and find_in_set(#categoryid:BIGINT#, z.path)>0 
+                    ) 
+                ]]>
+            </isEqual>
+        </isNotNull>
+        <isNotNull prepend="and" property="teststatus">
+           a.testStatus=#teststatus:SMALLINT# 
+        </isNotNull>
+        <isNotEmpty prepend="and" property="teststatusquerystring">
+           a.testStatus in ($teststatusquerystring$)
+        </isNotEmpty>
+        <isNotNull prepend="and" property="opentype">
+           a.openType=#opentype:BIGINT# 
+        </isNotNull>
+        <isNotEmpty prepend="and" property="testname">
+           a.testName like CONCAT('%',#testname:VARCHAR#,'%')
+        </isNotEmpty>
+        <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty>
+     </dynamic>
+  </select>
+  
+  <!-- ###################### qryTestCollide1 ########################## -->
+  <select id="qryTestCollide1" resultMap="TestinfoResult" parameterClass="netTest.exam.dto.TestinfoQuery"> 
+     
+     select testID,null as shopID,testName,null as paperID,null as isDynamicPaper,null as paperVersion,null as paperTime,
+         null as createTime,testStartDate,testEndDate,null as productBaseID,null as testStatus,
+         null as createOrgID,null as createOrgName,null as productName,null as updateTime,openType, null as viewResultType 
+     from testinfo where testStatus in(1,3) and shopID=#shopid:BIGINT# 
+         <isNotNull prepend="and" property="testid"><![CDATA[ testID!=#testid:BIGINT# ]]></isNotNull>
+         <![CDATA[
+         and ( (testEndDate >= #teststartdate:TIMESTAMP# and testEndDate <= #testenddate:TIMESTAMP#) or  
+		 (testStartDate >= #teststartdate:TIMESTAMP# and testStartDate <= #testenddate:TIMESTAMP#) or  
+		 (testStartDate <= #teststartdate:TIMESTAMP# and testStartDate >= #testenddate:TIMESTAMP#) )
+		 ]]>
+		 and exists( select 1 from testDept where testinfo.testID=testDept.testID and 
+                                   testDept.orgBaseID=#orgbaseid:BIGINT# ) 
+		 
+  </select>
+    
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.exam.vo.Testinfo"> 
+     insert into testinfo
+     (     testID,
+    shopID,
+    testName,
+    paperID,
+    isDynamicPaper,
+    paperVersion,
+    paperTime,
+    createTime,
+    testStartDate,
+    testEndDate,
+    productBaseID,
+    testStatus,
+    createOrgID,
+    createOrgName,
+    productName,
+    updateTime, openType, viewResultType ) 
+    values 
+     (     #testid:BIGINT#, 
+    #shopid:BIGINT#, 
+    #testname:VARCHAR#, 
+    #paperid:BIGINT#, 
+    #isdynamicpaper:SMALLINT#, 
+    #paperversion:INTEGER#, 
+    #papertime:INTEGER#,
+    #createtime:TIMESTAMP#, 
+    #teststartdate:TIMESTAMP#, 
+    #testenddate:TIMESTAMP#, 
+    #productbaseid:BIGINT#, 
+    #teststatus:SMALLINT#, 
+    #createorgid:BIGINT#, 
+    #createorgname:VARCHAR#, 
+    #productname:VARCHAR#, 
+    #updatetime:TIMESTAMP#, #opentype:SMALLINT#, #viewresulttype:SMALLINT# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="testid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### insertTestinfoprop ########################## -->
+  <insert id="insertTestinfoprop" parameterClass="netTest.exam.vo.Testinfo"> 
+     insert into testinfoprop
+     (testID,shopID,testAveScore,testQuaPer,testCanStop,
+      canstopTime,createUserID,createLoginname,createUserName,
+      paperName,testNotes ) 
+    values 
+     (#testid:BIGINT#,#shopid:BIGINT#,#testavescore:REAL#, 
+      #testquaper:REAL#,#testcanstop:SMALLINT#,#canstoptime:INTEGER#, 
+      #createuserid:BIGINT#,#createloginname:VARCHAR#,#createusername:VARCHAR#, 
+      #papername:VARCHAR#,#testnotes:VARCHAR# )
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.exam.vo.Testinfo"> 
+     update testinfo
+    <dynamic prepend="set"> 
+      <isNotEmpty prepend="," property="testname"><![CDATA[ testName=#testname:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="," property="paperid"><![CDATA[ paperID=#paperid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="isdynamicpaper"><![CDATA[ isDynamicPaper=#isdynamicpaper:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="paperversion"><![CDATA[ paperVersion=#paperversion:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="papertime"><![CDATA[ paperTime=#papertime:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="createtime"><![CDATA[ createTime=#createtime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="teststartdate"><![CDATA[ testStartDate=#teststartdate:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="testenddate"><![CDATA[ testEndDate=#testenddate:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="teststatus"><![CDATA[ testStatus=#teststatus:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="createorgid"><![CDATA[ createOrgID=#createorgid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="," property="createorgname"><![CDATA[ createOrgName=#createorgname:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="," property="productname"><![CDATA[ productName=#productname:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="," property="updatetime"><![CDATA[ updateTime=#updatetime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="opentype"><![CDATA[ openType=#opentype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="viewresulttype"><![CDATA[ viewResultType=#viewresulttype:SMALLINT# ]]></isNotNull>
+    </dynamic> where testID = #testid:BIGINT#
+  </update>
+  
+  <!-- ###################### updateTestinfopropByPk ########################## -->
+  <update id="updateTestinfopropByPk" parameterClass="netTest.exam.vo.Testinfo"> 
+     update testinfoprop
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="testavescore"><![CDATA[ testAveScore=#testavescore:REAL# ]]></isNotNull>
+      <isNotNull prepend="," property="testquaper"><![CDATA[ testQuaPer=#testquaper:REAL# ]]></isNotNull>
+      <isNotNull prepend="," property="testcanstop"><![CDATA[ testCanStop=#testcanstop:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="canstoptime"><![CDATA[ canstopTime=#canstoptime:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="createuserid"><![CDATA[ createUserID=#createuserid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="," property="createloginname"><![CDATA[ createLoginname=#createloginname:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="," property="createusername"><![CDATA[ createUserName=#createusername:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="," property="papername"><![CDATA[ paperName=#papername:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="," property="testnotes"><![CDATA[ testNotes=#testnotes:VARCHAR# ]]></isNotEmpty>
+    </dynamic> where testID = #testid:BIGINT#
+  </update>
+  
+  <!-- ###################### updTeststatus ########################## -->
+  <update id="updTeststatus" parameterClass="netTest.exam.vo.Testinfo"> 
+     update testinfo set testStatus=#teststatus:SMALLINT#, updateTime=#updatetime:TIMESTAMP# where testID = #testid:BIGINT#  
+  </update>
+  
+  <!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from testinfo where testID = #value#
+  </delete>
+  
+  <!-- ###################### delTestinfopropByPK ########################## -->
+  <delete id="delTestinfopropByPK" parameterClass="java.lang.Long"> 
+     delete from testinfoprop where testID = #value#
+  </delete>
+  
+  <!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.exam.dto.TestinfoQuery"> 
+     select count(*) from testinfo
+     <include refid="Testinfo.where_Clause"/>  
+  </select>
+  
+  <!-- ###################### countTestinfoNumber ########################## -->
+  <select id="countTestinfoNumber" resultClass="java.lang.Integer" parameterClass="netTest.exam.dto.TestinfoQuery"> 
+     select count(*) from testinfo where productBaseID = #productbaseid:BIGINT#
+     <dynamic> 
+        <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+        <isNotNull prepend="and" property="teststatus"><![CDATA[ testStatus=#teststatus:SMALLINT# ]]></isNotNull>
+     </dynamic>
+  </select>
+  
+  <!-- ###################### listTestByProdCateCount ########################## -->
+  <select id="listTestByProdCateCount" resultClass="java.lang.Integer" parameterClass="netTest.exam.dto.TestinfoQuery"> 
+     select  count(*)  
+    from testinfo a, ProductBase b 
+     where a.productBaseID=b.productBaseID   
+     <dynamic>
+        <isNotNull prepend="and" property="categoryid">
+            <isEqual property="isIncludeChild" compareValue="1" ><![CDATA[ b.categoryID=#categoryid:BIGINT# ]]></isEqual>
+            <isEqual property="isIncludeChild" compareValue="2" >
+                <![CDATA[
+                    exists (
+                       select 1 from ProductCategory z where b.categoryID=z.categoryID 
+                            and find_in_set(#categoryid:BIGINT#, z.path)>0 
+                    ) 
+                ]]>
+            </isEqual>
+        </isNotNull>
+        <isNotNull prepend="and" property="teststatus">
+           a.testStatus=#teststatus:SMALLINT# 
+        </isNotNull>
+        <isNotEmpty prepend="and" property="teststatusquerystring">
+           a.testStatus in ($teststatusquerystring$)
+        </isNotEmpty>
+        <isNotNull prepend="and" property="opentype">
+           a.openType=#opentype:BIGINT# 
+        </isNotNull>
+        <isNotEmpty prepend="and" property="testname">
+           a.testName like CONCAT('%',#testname:VARCHAR#,'%')
+        </isNotEmpty>
+        <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty>
+     </dynamic>
+  </select>
+    
+</sqlMap>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="netTestWeb">
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/test_src"/>
+        <wb-resource deploy-path="/" source-path="/WebRoot" tag="defaultRootSource"/>
+        <dependent-module archiveName="commonService.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/commonService/commonService">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="platform.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/platform/platform">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="netTest.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/netTest/netTest">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commonTool.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/commonTool/commonTool">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/netTestWeb/WebRoot/WEB-INF/classes"/>
+        <property name="context-root" value="netTest"/>
+    </wb-module>
+</project-modules>

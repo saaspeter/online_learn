@@ -1,0 +1,10 @@
+<Context path="/netTest" docBase="../wtpwebapps/netTestWeb" antiJARLocking="true">
+   
+    <Resource name="jdbc/saasNetTest" auth="Container" type="javax.sql.DataSource"
+              initialSize="10" maxActive="100" maxIdle="30" maxWait="10000"
+              username="peter" password="peter" driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/saasNetTest_old"
+              validationQuery="SELECT 1" testOnBorrow="true"
+    />
+   
+</Context>

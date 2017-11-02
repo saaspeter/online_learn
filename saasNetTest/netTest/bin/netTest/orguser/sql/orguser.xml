@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Orguser">
+<!-- ###################### OrguserResult ########################## -->
+  <resultMap id="OrguserResult" class="netTest.orguser.vo.Orguser">
+    <result column="orgUserID" property="orguserid" jdbcType="BIGINT"/>
+    <result column="userID" property="userid" jdbcType="BIGINT"/>
+    <result column="orgBaseID" property="orgbaseid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="orgpath" property="orgpath" jdbcType="VARCHAR"/>
+  </resultMap>
+
+<!-- ###################### OrguserResultEx ########################## -->
+  <resultMap id="OrguserResultEx" class="netTest.orguser.vo.Orguser" extends="Orguser.OrguserResult">
+    <result column="email" property="email" jdbcType="VARCHAR"/>
+    <result column="userShopID" property="usershopid" jdbcType="BIGINT"/>
+    <result column="nickName" property="nickname" jdbcType="VARCHAR"/>
+    <result column="userShopType" property="usershoptype" jdbcType="SMALLINT"/>
+    <result column="joinDate" property="joindate" jdbcType="TIMESTAMP"/>
+    <result column="areaInProduct" property="areainproduct" jdbcType="SMALLINT"/>
+    <result column="userShopStatus" property="usershopstatus" jdbcType="SMALLINT"/>
+    <result column="displayname" property="displayname" jdbcType="VARCHAR"/>
+    <result column="loginname" property="loginname" jdbcType="VARCHAR"/>
+    <result column="status" property="status" jdbcType="SMALLINT"/>
+    <result column="gender" property="gender" jdbcType="SMALLINT"/>
+    <result column="localeID" property="localeid" jdbcType="BIGINT"/>
+    <result column="timezone" property="timezone" jdbcType="VARCHAR"/>
+  </resultMap>
+  
+  <!-- ###################### OrguserResultEx3 ########################## -->
+  <resultMap id="OrguserResultEx3" class="netTest.orguser.vo.Orguser" extends="Orguser.OrguserResult">
+    <result column="orgName" property="orgname" jdbcType="VARCHAR"/>
+    <result column="userShopID" property="usershopid" jdbcType="BIGINT"/>
+    <result column="nickName" property="nickname" jdbcType="VARCHAR"/>
+    <result column="userShopType" property="usershoptype" jdbcType="SMALLINT"/>
+    <result column="joinDate" property="joindate" jdbcType="TIMESTAMP"/>
+    <result column="areaInProduct" property="areainproduct" jdbcType="SMALLINT"/>
+    <result column="userShopStatus" property="usershopstatus" jdbcType="SMALLINT"/>
+    <result column="displayname" property="displayname" jdbcType="VARCHAR"/>
+    <result column="loginname" property="loginname" jdbcType="VARCHAR"/>
+    <result column="status" property="status" jdbcType="SMALLINT"/>
+    <result column="stageStatus" property="stagestatus" jdbcType="SMALLINT"/>
+    <result column="localeID" property="localeid" jdbcType="BIGINT"/>
+  </resultMap>
+  
+  <!-- ###################### OrguserResultEx2 ########################## -->
+  <resultMap id="OrguserResultEx2" class="netTest.orguser.vo.Orguser" extends="Orguser.OrguserResult">
+    <result column="orgName" property="orgname" jdbcType="VARCHAR"/>
+  </resultMap>
+      
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="orguserid"><![CDATA[ orgUserID=#orguserid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="userid"><![CDATA[ userID=#userid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="orgbaseid"><![CDATA[ orgBaseID=#orgbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      
+    </dynamic>
+  </sql>
+  
+  <!-- ###################### where_Clause_Ex ########################## -->
+  <sql id="where_Clause_Ex"> 
+    <dynamic> 
+      <isNotNull prepend="and" property="userid"><![CDATA[ a.userID=#userid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ a.shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="nickname"><![CDATA[ b.nickName like CONCAT('%',#nickname:VARCHAR#,'%') ]]></isNotEmpty>
+      <isNotNull prepend="and" property="usershoptype"><![CDATA[ b.userShopType=#usershoptype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="joinway"><![CDATA[ b.joinWay=#joinway:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="areainproduct"><![CDATA[ b.areaInProduct=#areainproduct:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="usershopstatus"><![CDATA[ b.userShopStatus=#usershopstatus:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="orgbaseid">
+         <isEqual property="isIncludeChild" compareValue="2">
+            <![CDATA[ exists (select OrgBaseRel.childID from OrgBaseRel where a.orgBaseID=OrgBaseRel.childID and OrgBaseRel.parentID=#orgbaseid:BIGINT#) ]]>
+         </isEqual>
+         <isNotEqual property="isIncludeChild" compareValue="2">
+            <![CDATA[ a.orgBaseID=#orgbaseid:BIGINT# ]]>
+         </isNotEqual>
+      </isNotNull>
+    </dynamic>
+  </sql>
+  
+    
+<!-- ###################### selectByPK_orig ########################## -->
+  <select id="selectByPK_orig" resultMap="OrguserResult" parameterClass="java.lang.Long"> 
+     select 
+         orgUserID,userID,orgBaseID,shopID,orgpath  
+     from orguser 
+     where orgUserID = #value#
+  </select>
+  
+  <!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="OrguserResultEx" parameterClass="java.lang.Long"> 
+     select a.orgUserID,a.userID,a.orgBaseID,a.shopID,a.orgpath,
+       b.userShopID,b.nickName,b.userShopType,b.joinDate,b.areaInProduct,b.userShopStatus,
+       c.displayname,c.loginname,c.email,c.gender,c.localeID,c.timezone,c.status 
+     from orguser a,UserShop b,User c
+     where a.userID=b.userID and a.shopID=b.shopID and a.userID=c.userID
+           and a.orgUserID = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="OrguserResult" parameterClass="netTest.orguser.dto.OrguserQuery"> 
+     select orgUserID,userID,orgBaseID,shopID,orgpath 
+     from orguser
+    <include refid="Orguser.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+  
+  <!-- ###################### selectOrgForUser ########################## -->
+  <select id="selectOrgForUser" resultMap="OrguserResultEx2" parameterClass="netTest.orguser.dto.OrguserQuery"> 
+     select a.orgUserID,a.userID,a.orgBaseID,a.shopID,a.orgpath,b.orgName  
+     from orguser a, OrgBase b  
+     where a.orgBaseID = b.orgBaseID   
+     and a.userID=#userid:BIGINT# and a.shopID=#shopid:BIGINT# 
+  </select>
+  
+  <!-- ###################### selectUserByVO ########################## -->
+  <select id="selectUserByVO" resultMap="OrguserResultEx3" parameterClass="netTest.orguser.dto.OrguserQuery"> 
+     select a.orgUserID,a.userID,a.orgBaseID,a.shopID,a.orgpath,
+       b.userShopID,b.nickName,b.userShopType,b.joinDate,b.areaInProduct,b.userShopStatus,
+       d.displayname,d.loginname,d.localeID,d.status,d.stageStatus,e.orgName   
+     from orguser a,UserShop b,User d,OrgBase e  
+     where a.orgBaseID=e.orgBaseID and a.userID=b.userID and e.shopID=b.shopID
+       and a.userID=d.userID  
+    <include refid="Orguser.where_Clause_Ex"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.orguser.vo.Orguser"> 
+     insert into orguser
+     ( orgUserID,
+    userID,
+    orgBaseID,
+    shopID,
+    orgpath ) 
+    values 
+     ( #orguserid:BIGINT#, 
+    #userid:BIGINT#, 
+    #orgbaseid:BIGINT#, 
+    #shopid:BIGINT#,
+    #orgpath:VARCHAR# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="orguserid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+    
+  <!-- ###################### updateOrg ########################## -->
+  <update id="updateOrg" parameterClass="netTest.orguser.dto.OrguserQuery"> 
+     update orguser set orgBaseID=#neworgbaseid:BIGINT#, orgpath=#orgpath:VARCHAR# 
+     where userID = #userid:BIGINT# and orgBaseID=#orgbaseid:BIGINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from orguser where orgUserID = #value#
+  </delete>
+  
+  <!-- ###################### delOrguser ########################## -->
+  <delete id="delOrguser" parameterClass="netTest.orguser.vo.Orguser"> 
+     delete from orguser where userID=#userid:BIGINT# and shopID=#shopid:BIGINT# 
+  </delete>
+    
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.orguser.dto.OrguserQuery"> 
+     select count(*) from orguser
+     <include refid="Orguser.where_Clause"/>  
+  </select>
+  
+  <!-- ###################### selectUserByVOCount ########################## -->
+  <select id="selectUserByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.orguser.dto.OrguserQuery"> 
+     select count(*)    
+     from orguser a,UserShop b,User d,OrgBase e  
+     where a.orgBaseID=e.orgBaseID and a.userID=b.userID and e.shopID=b.shopID
+       and a.userID=d.userID 
+     <include refid="Orguser.where_Clause_Ex"/>
+  </select>
+    
+</sqlMap>

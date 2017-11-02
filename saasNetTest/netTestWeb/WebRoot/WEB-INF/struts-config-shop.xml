@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+  <data-sources />
+  
+  <form-beans>
+     <form-bean name="shopForm" type="netTestWeb.platform.shop.form.ShopForm" />
+     <form-bean name="shoppostForm" type="netTestWeb.platform.shop.form.ShoppostForm" />
+     <form-bean name="shopappForm" type="netTestWeb.platform.shop.form.ShopappForm" />
+     <form-bean name="shopcontactinfoForm" type="netTestWeb.platform.shop.form.ShopcontactinfoForm" />
+     <form-bean name="shopvalueForm" type="netTestWeb.platform.shop.form.ShopvalueForm" />
+     <form-bean name="shopstatuslogForm" type="netTestWeb.platform.shop.form.ShopstatuslogForm" />
+     <form-bean name="shopdescarticleForm" type="netTestWeb.platform.shop.form.ShopdescarticleForm" />
+     <form-bean name="shopstyleconfigForm" type="netTestWeb.platform.shop.form.ShopstyleconfigForm" />
+  </form-beans>
+  
+  <global-exceptions>
+      <exception key="commonWeb.java.commonaction.errors.noLogin" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoLoginException" path="/login_forward.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.editPage.noSuchRecord" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoSuchRecordException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.resubmit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.ResubmitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.DaoException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="org.springframework.dao.DataAccessException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.Unauthorized" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoRightException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.LogicErr" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.LogicException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.InvalidVisit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.InvalideVisitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.UserNoAccessShop" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.LogicException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.SystemError" handler="commonWeb.base.StrutsExceptionHandler" type="java.lang.Throwable" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+  </global-exceptions>
+  
+  <global-forwards>
+     <forward name="errorPage" path="/pubs/errorPage.jsp" ></forward>
+     <forward name="failure" path="/pubs/404.jsp" ></forward>
+     <forward name="messagePage" path="/pubs/message.jsp" ></forward>
+     <forward name="messageClosePage" path="/pubs/messageClose.jsp" ></forward>
+     <forward name="treeXml" path="/pubs/treeXml.jsp" ></forward>
+     <forward name="toUrl" path="/pubs/toUrl.jsp" ></forward>
+	 <forward name="inprogress" path="/pubs/inprogress.jsp"/>
+	 <forward name="leftMenu" path="/pubs/leftMenu.jsp"/>
+	 <forward name="topMenu" path="/pubs/topMenu.jsp"/>
+	 <forward name="emptyPage" path="/pubs/emptypage.jsp"/>
+  </global-forwards>
+    
+  <action-mappings>
+      
+    <!-- ShopAction begin -->
+    <action parameter="toshop" path="/shop/toshop" name="shopForm" type="netTestWeb.platform.shop.action.ShopAction" scope="request">
+       <forward name="default" path="/shop/shop_index.jsp"></forward>
+    </action>
+    
+    <action parameter="myOwnShops" path="/shop/myOwnShops" name="shopForm" type="netTestWeb.platform.shop.action.ShopAction" scope="request">
+       <forward name="useropenshoplist" path="/shop/useropenshoplist.jsp"></forward>
+    </action>
+    
+    <action parameter="updatesaveshop" path="/shop/updatesaveshop" name="shopForm" type="netTestWeb.platform.shop.action.ShopAction" scope="request">
+    </action>
+    
+    <action parameter="adminsaveshop" path="/shop/adminsaveshop" name="shopForm" type="netTestWeb.platform.shop.action.ShopAction" scope="request">
+    </action>
+    
+    <action parameter="editshoppage" path="/shop/editshoppage" name="shopForm" type="netTestWeb.platform.shop.action.ShopAction" scope="request">
+       <forward name="editPage" path="/platform/shop/shop_edit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewshoppage" path="/shop/viewshoppage" name="shopForm" type="netTestWeb.platform.shop.action.ShopAction" scope="request">
+       <forward name="viewPage" path="/platform/shop/shop_view.jsp"></forward>
+    </action>
+    
+    <action parameter="viewshopeditpage" path="/shop/viewshopeditpage" name="shopForm" type="netTestWeb.platform.shop.action.ShopAction" scope="request">
+       <forward name="viewEditPage" path="/platform/shop/shop_viewedit.jsp"></forward>
+    </action>
+    
+    <action parameter="listshop" path="/shop/listshop" name="shopForm" type="netTestWeb.platform.shop.action.ShopAction" scope="request">
+       <forward name="list1" path="/platform/shop/shop_list1.jsp"></forward>
+    </action>
+    
+    <action parameter="listShopIndex" path="/shop/listShopIndex" name="shopForm" type="netTestWeb.platform.shop.action.ShopAction" scope="request">
+       <forward name="shoplistIndex" path="/platform/shop/shoplist_index.jsp"></forward>
+    </action>
+    
+    <action parameter="shopStatusChangePage" path="/shop/shopStatusChangePage" name="shopForm" type="netTestWeb.platform.shop.action.ShopAction" scope="request">
+       <forward name="statusChangePage" path="/platform/shop/shopstatus_change.jsp"></forward>
+    </action>
+    
+    <action parameter="saveShopStatus" path="/shop/saveShopStatus" name="shopForm" type="netTestWeb.platform.shop.action.ShopAction" scope="request">
+    </action>
+    
+    <action parameter="deleteShop" path="/shop/deleteShop" name="shopForm" type="netTestWeb.platform.shop.action.ShopAction" scope="request">
+    </action>
+    
+    <action parameter="shopmagmessage" path="/shop/shopmagmessage" name="shopForm" type="netTestWeb.platform.shop.action.ShopAction" scope="request">
+       <forward name="shopmagmesspage" path="/shop/shopmag_mess.jsp"></forward>
+    </action>
+    
+    <action parameter="listapplyshopauthen" path="/shop/listapplyshopauthen" name="shopForm" type="netTestWeb.platform.shop.action.ShopAction" scope="request">
+       <forward name="listpage" path="/platform/shop/shopauthen_list.jsp"></forward>
+    </action>
+    
+    <action parameter="applyshopauthen" path="/shop/applyshopauthen" name="shopForm" type="netTestWeb.platform.shop.action.ShopAction" scope="request">
+       <forward name="editpage" path="/platform/shop/shopauthen_edit.jsp"></forward>
+    </action>
+    
+    <action parameter="saveapplyshopauthen" path="/shop/saveapplyshopauthen" name="shopForm" type="netTestWeb.platform.shop.action.ShopAction" scope="request">
+       
+    </action>
+    
+    <action parameter="approveshopauthen" path="/shop/approveshopauthen" name="shopForm" type="netTestWeb.platform.shop.action.ShopAction" scope="request">
+    </action>
+    <!-- ShopAction end -->
+    
+    <!-- shopappAction start -->
+    <action parameter="listmyshopapp" path="/shop/listmyshopapp" name="shopappForm" type="netTestWeb.platform.shop.action.ShopappAction" scope="request">
+       <forward name="listmyapp" path="/platform/shop/shopapp_listmyapp.jsp"></forward>
+    </action>
+    
+    <action parameter="listshopapp" path="/shop/listshopapp" name="shopappForm" type="netTestWeb.platform.shop.action.ShopappAction" scope="request">
+       <forward name="listapp" path="/platform/shop/shopapp_listapp.jsp"></forward>
+    </action>
+    
+    <action parameter="applyNewShop" path="/shop/applyNewShop" name="shopappForm" type="netTestWeb.platform.shop.action.ShopappAction" scope="request">
+       <forward name="addpage" path="/platform/shop/shop_add.jsp"></forward>
+       <forward name="limittippage" path="/platform/shop/shop_add.jsp"></forward>
+    </action>
+    
+    <action parameter="saveApplyNewShop" path="/shop/saveApplyNewShop" name="shopappForm" type="netTestWeb.platform.shop.action.ShopappAction" scope="request">
+    </action>
+    
+    <!-- 
+    <action parameter="approveshopappbatch" path="/shop/approveshopappbatch" name="shopappForm" type="netTestWeb.platform.shop.action.ShopappAction" scope="request">
+    </action>
+     -->
+    
+    <action parameter="approveshopapp" path="/shop/approveshopapp" name="shopappForm" type="netTestWeb.platform.shop.action.ShopappAction" scope="request">
+       
+    </action>
+    
+    <action parameter="editshopappPage" path="/shop/editshopappPage" name="shopappForm" type="netTestWeb.platform.shop.action.ShopappAction" scope="request">
+       <forward name="approvepage" path="/platform/shop/shopapp_approve.jsp"></forward>
+       <forward name="viewpage" path="/platform/shop/shopapp_view.jsp"></forward>
+    </action>
+    
+    <action parameter="viewshopappPage" path="/shop/viewshopappPage" name="shopappForm" type="netTestWeb.platform.shop.action.ShopappAction" scope="request">
+       <forward name="viewpage" path="/platform/shop/shopapp_view.jsp"></forward>
+    </action>
+    
+    <action parameter="delshopapp" path="/shop/delshopapp" name="shopappForm" type="netTestWeb.platform.shop.action.ShopappAction" scope="request">
+    </action>
+    <!-- shopappAction end -->
+    
+    <!-- shoppost begin -->
+    <action parameter="listShoppost" path="/shop/listShoppost" name="shoppostForm" type="netTestWeb.platform.shop.action.ShoppostAction" scope="request">
+       <forward name="list" path="/platform/shop/shoppost_list.jsp"></forward>
+    </action>
+    
+    <action parameter="shoppostviewlist" path="/shop/shoppostviewlist" name="shoppostForm" type="netTestWeb.platform.shop.action.ShoppostAction" scope="request">
+       <forward name="listview" path="/platform/shop/shoppost_viewlist.jsp"></forward>
+    </action>
+    
+    <action parameter="saveShoppost" path="/shop/saveShoppost" name="shoppostForm" type="netTestWeb.platform.shop.action.ShoppostAction" scope="request">
+       <forward name="list" path="/platform/shop/shoppost_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editShoppost" path="/shop/editShoppost" name="shoppostForm" type="netTestWeb.platform.shop.action.ShoppostAction" scope="request">
+       <forward name="addEditPage" path="/platform/shop/shoppost_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewShoppost" path="/shop/viewShoppost" name="shoppostForm" type="netTestWeb.platform.shop.action.ShoppostAction" scope="request">
+        <forward name="viewPage" path="/platform/shop/shoppost_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addShoppost" path="/shop/addShoppost" name="shoppostForm" type="netTestWeb.platform.shop.action.ShoppostAction" scope="request">
+       <forward name="addEditPage" path="/platform/shop/shoppost_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteShoppost" path="/shop/deleteShoppost" name="shoppostForm" type="netTestWeb.platform.shop.action.ShoppostAction" scope="request">
+       <forward name="list" path="/platform/shop/shoppost_list.jsp"></forward>
+    </action>
+    <!-- shoppost end -->
+    
+    <!-- shopcontactinfoAction start -->
+    <action parameter="listshopcontactpublic" path="/shop/listshopcontactpublic" name="shopcontactinfoForm" type="netTestWeb.platform.shop.action.ShopcontactinfoAction" scope="request">
+       <forward name="list" path="/platform/shop/shopcontact_publiclist.jsp"></forward>
+    </action>
+    
+    <action parameter="listshopcontact" path="/shop/listshopcontact" name="shopcontactinfoForm" type="netTestWeb.platform.shop.action.ShopcontactinfoAction" scope="request">
+       <forward name="listCanEdit" path="/platform/shop/shopcontact_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editshopcontact" path="/shop/editshopcontact" name="shopcontactinfoForm" type="netTestWeb.platform.shop.action.ShopcontactinfoAction" scope="request">
+       <forward name="addEditPage" path="/platform/shop/shopcontact_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="saveshopcontact" path="/shop/saveshopcontact" name="shopcontactinfoForm" type="netTestWeb.platform.shop.action.ShopcontactinfoAction" scope="request">
+       <forward name="listCanEdit" path="/platform/shop/shopcontact_list.jsp"></forward>
+    </action>
+    
+    <action parameter="viewshopcontact" path="/shop/viewshopcontact" name="shopcontactinfoForm" type="netTestWeb.platform.shop.action.ShopcontactinfoAction" scope="request">
+       <forward name="viewPage" path="/platform/shop/shopcontact_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addshopcontact" path="/shop/addshopcontact" name="shopcontactinfoForm" type="netTestWeb.platform.shop.action.ShopcontactinfoAction" scope="request">
+       <forward name="addEditPage" path="/platform/shop/shopcontact_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="delshopcontact" path="/shop/delshopcontact" name="shopcontactinfoForm" type="netTestWeb.platform.shop.action.ShopcontactinfoAction" scope="request">
+       <forward name="list" path="/platform/shop/shopcontact_list.jsp"></forward>
+    </action>
+    <!-- shopcontactinfoAction end -->
+    
+    <!-- shopvalueAction begin -->
+    <action parameter="editshopdescript" path="/shop/editshopdescript" name="shopvalueForm" type="netTestWeb.platform.shop.action.ShopvalueAction" scope="request">
+       <forward name="addEditPage" path="/platform/shop/shopdesc_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewshopintroduce" path="/shop/viewshopintroduce" name="shopvalueForm" type="netTestWeb.platform.shop.action.ShopvalueAction" scope="request">
+       <forward name="viewPage" path="/platform/shop/shopintroduce_view.jsp"></forward>
+    </action>
+    
+    <action parameter="viewshopdescedit" path="/shop/viewshopdescedit" name="shopvalueForm" type="netTestWeb.platform.shop.action.ShopvalueAction" scope="request">
+       <forward name="viewPageCanEdit" path="/platform/shop/shopdesc_viewedit.jsp"></forward>
+    </action>
+    
+    <action parameter="saveshopdescript" path="/shop/saveshopdescript" name="shopvalueForm" type="netTestWeb.platform.shop.action.ShopvalueAction" scope="request">
+       <forward name="viewPage" path="/platform/shop/shopdesc_viewedit.jsp"></forward>
+    </action>
+    
+    <!-- 
+    <action parameter="listshopvalue" path="/shop/listshopvalue" name="shopvalueForm" type="netTestWeb.platform.shop.action.ShopvalueAction" scope="request">
+       <forward name="list" path="/platform/shop/shopvalue_list.jsp"></forward>
+    </action>
+     -->
+    
+    <action parameter="addshopvaluepage" path="/shop/addshopvaluepage" name="shopvalueForm" type="netTestWeb.platform.shop.action.ShopvalueAction" scope="request">
+       <forward name="addEditPage" path="/platform/shop/shopvalue_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="addshopvalue" path="/shop/addshopvalue" name="shopvalueForm" type="netTestWeb.platform.shop.action.ShopvalueAction" scope="request">
+       <forward name="list" path="/platform/shop/shopvalue_list.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteShopValue" path="/shop/deleteShopValue" name="shopvalueForm" type="netTestWeb.platform.shop.action.ShopvalueAction" scope="request">
+       <forward name="list" path="/platform/shop/shopvalue_list.jsp"></forward>
+    </action>
+    <!-- shopvalueAction end -->
+    
+    <action parameter="listshopstatus" path="/shop/listshopstatus" name="shopstatuslogForm" type="netTestWeb.platform.shop.action.ShopstatuslogAction" scope="request">
+       <forward name="list" path="/platform/shop/shopstatuslog_list.jsp"></forward>
+    </action>
+    
+    <!-- shopdescarticle begin -->
+    <action parameter="saveshopdescarticle" path="/shop/saveshopdescarticle" name="shopdescarticleForm" type="netTestWeb.platform.shop.action.ShopdescarticleAction" scope="request">
+       <forward name="viewPageCanEdit" path="/platform/shop/shopdescarticle_viewedit.jsp"></forward>
+    </action>
+    
+    <action parameter="editshopdescarticle" path="/shop/editshopdescarticle" name="shopdescarticleForm" type="netTestWeb.platform.shop.action.ShopdescarticleAction" scope="request">
+       <forward name="addEditPage" path="/platform/shop/shopdescarticle_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewshopdescarticle" path="/shop/viewshopdescarticle" name="shopdescarticleForm" type="netTestWeb.platform.shop.action.ShopdescarticleAction" scope="request">
+        <forward name="viewPage" path="/platform/shop/shopdescarticle_view.jsp"></forward>
+    </action>
+    
+    <action parameter="viewshopdescarticleedit" path="/shop/viewshopdescarticleedit" name="shopdescarticleForm" type="netTestWeb.platform.shop.action.ShopdescarticleAction" scope="request">
+        <forward name="viewPageCanEdit" path="/platform/shop/shopdescarticle_viewedit.jsp"></forward>
+        <forward name="emptypageedit" path="/platform/shop/shopdescarticle_emptypage.jsp"></forward>
+    </action>
+    
+    <action parameter="addshopdescarticle" path="/shop/addshopdescarticle" name="shopdescarticleForm" type="netTestWeb.platform.shop.action.ShopdescarticleAction" scope="request">
+       <forward name="addEditPage" path="/platform/shop/shopdescarticle_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteshopdescarticle" path="/shop/deleteshopdescarticle" name="shopdescarticleForm" type="netTestWeb.platform.shop.action.ShopdescarticleAction" scope="request">
+       <forward name="emptypageedit" path="/platform/shop/shopdescarticle_emptypage.jsp"></forward>
+    </action>
+    <!-- shopdescarticle end -->
+    
+    <!-- ShopstyleconfigAction start -->
+    <action parameter="saveshopstyle" path="/shop/saveshopstyle" name="shopstyleconfigForm" type="netTestWeb.platform.shop.action.ShopstyleconfigAction" scope="request">
+       <forward name="viewedit" path="/platform/shop/shopstyle_viewedit.jsp"></forward>
+    </action>
+    
+    <action parameter="editshopstyle" path="/shop/editshopstyle" name="shopstyleconfigForm" type="netTestWeb.platform.shop.action.ShopstyleconfigAction" scope="request">
+       <forward name="viewedit" path="/platform/shop/shopstyle_viewedit.jsp"></forward>
+    </action>
+    <!-- ShopstyleconfigAction end -->
+       
+  </action-mappings>
+  
+  <message-resources parameter="netTestWeb.resource.PagetextResources" />
+  <message-resources key="BizKey" parameter="netTestWeb.resource.BizMessResources" />
+  <message-resources key="platformKey" parameter="netTestWeb.platform.resource.BizMessResources" />
+    
+</struts-config>

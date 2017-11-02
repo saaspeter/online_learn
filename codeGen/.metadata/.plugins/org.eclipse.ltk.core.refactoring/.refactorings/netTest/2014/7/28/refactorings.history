@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;abatorConfig_platform.xml&apos; to &apos;joybeacon&apos;&#x0D;&#x0A;- Original project: &apos;netTest&apos;&#x0D;&#x0A;- Destination element: &apos;joybeacon&apos;&#x0D;&#x0A;- Original element: &apos;abatorConfig_platform.xml&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move file" destination="=joybeacon" element1="abatorConfig_platform.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1405180979256" units="0" version="1.0"/>
+</session>

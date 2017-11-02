@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/pub/leftMenu.do" location="1250,1150" dimension="268,84" />
+  <StrutsActivity path="/pub/topMenu.do" location="2150,50" dimension="268,84" />
+  <StrutsActivity path="/securityManage/listUsers.do" location="882,1108" dimension="208,84" />
+  <StrutsActivity path="/securityManage/listUsersForRoleAdd.do" location="881,1385" dimension="256,84" />
+  <StrutsActivity path="/securityManage/viewUserPage.do" location="1238,831" dimension="214,84" />
+  <StrutsActivity path="/securityManage/listResources.do" location="954,0" dimension="232,84" />
+  <StrutsActivity path="/securityManage/saveResource.do" location="1286,0" dimension="232,84" />
+  <StrutsActivity path="/securityManage/editResourcePage.do" location="1,0" dimension="238,84" />
+  <StrutsActivity path="/securityManage/viewResourcePage.do" location="339,0" dimension="238,84" />
+  <StrutsActivity path="/securityManage/addResourcePage.do" location="677,0" dimension="232,84" />
+  <StrutsActivity path="/securityManage/deleteResource.do" location="1618,0" dimension="232,84" />
+  <StrutsActivity path="/securityManage/toRescfoldTreePage.do" location="950,150" dimension="262,104" />
+  <StrutsActivity path="/securityManage/toRescfoldTreeXml.do" location="650,2050" dimension="255,104" />
+  <StrutsActivity path="/securityManage/listRoles.do" location="0,1385" dimension="208,84" />
+  <StrutsActivity path="/securityManage/listRolesForUserAdd.do" location="1206,1385" dimension="256,84" />
+  <StrutsActivity path="/securityManage/listRolesSingleSel.do" location="1850,150" dimension="250,84" />
+  <StrutsActivity path="/securityManage/saveRole.do" location="308,1385" dimension="208,84" />
+  <StrutsActivity path="/securityManage/editRolePage.do" location="1,1108" dimension="214,84" />
+  <StrutsActivity path="/securityManage/viewRolePage.do" location="315,1108" dimension="214,84" />
+  <StrutsActivity path="/securityManage/addRolePage.do" location="629,1108" dimension="208,84" />
+  <StrutsActivity path="/securityManage/deleteRole.do" location="616,1385" dimension="208,84" />
+  <StrutsActivity path="/securityManage/listRoleResc.do" location="0,554" dimension="226,84" />
+  <StrutsActivity path="/securityManage/saveRoleResc.do" location="326,554" dimension="226,84" />
+  <StrutsActivity path="/securityManage/deleteRoleResc.do" location="652,554" dimension="226,84" />
+  <StrutsActivity path="/securityManage/showThisMenu.do" location="2450,1250" dimension="231,104" />
+  <StrutsActivity path="/securityManage/listUserRole.do" location="923,554" dimension="226,84" />
+  <StrutsActivity path="/securityManage/listRoleUser.do" location="0,831" dimension="226,84" />
+  <StrutsActivity path="/securityManage/saveUserRole.do" location="1249,554" dimension="226,84" />
+  <StrutsActivity path="/securityManage/saveRoleUser.do" location="326,831" dimension="226,84" />
+  <StrutsActivity path="/securityManage/deleteRoleUser.do" location="652,831" dimension="226,84" />
+  <StrutsActivity path="/securityManage/deleteUserRole.do" location="1575,554" dimension="226,84" />
+  <StrutsActivity path="/securityManage/listRescsForRoleAdd.do" location="1528,1385" dimension="256,84" />
+  <StrutsActivity path="/securityManage/listRolesvalue.do" location="3050,850" dimension="238,84" />
+  <StrutsActivity path="/securityManage/saveRolesvalue.do" location="2750,950" dimension="238,84" />
+  <StrutsActivity path="/securityManage/editRolesvalue.do" location="1850,1050" dimension="238,84" />
+  <StrutsActivity path="/securityManage/viewRolesvalue.do" location="3050,1050" dimension="238,84" />
+  <StrutsActivity path="/securityManage/addrolesvalue.do" location="2750,1150" dimension="238,84" />
+  <StrutsActivity path="/securityManage/deleterolesvalue.do" location="2150,1250" dimension="238,84" />
+  <StrutsActivity path="/securityManage/listResourcesvalue.do" location="3050,1250" dimension="262,84" />
+  <StrutsActivity path="/securityManage/saveResourcesvalue.do" location="2750,1450" dimension="262,84" />
+  <StrutsActivity path="/securityManage/editResourcesvalue.do" location="2750,1650" dimension="262,84" />
+  <StrutsActivity path="/securityManage/viewResourcesvalue.do" location="2150,1750" dimension="262,84" />
+  <StrutsActivity path="/securityManage/addResourcesvalue.do" location="2750,1850" dimension="280,84" />
+  <StrutsActivity path="/securityManage/deleteResourcesvalue.do" location="1550,1950" dimension="280,84" />
+  <StrutsActivity path="/securityManage/listMenusvalue.do" location="2150,1950" dimension="238,84" />
+  <StrutsActivity path="/securityManage/saveMenusvalue.do" location="2450,1950" dimension="238,84" />
+  <StrutsActivity path="/securityManage/editMenusvalue.do" location="50,2050" dimension="238,84" />
+  <StrutsActivity path="/securityManage/viewMenusvalue.do" location="350,2050" dimension="238,84" />
+  <StrutsActivity path="/securityManage/addMenusvalue.do" location="2450,450" dimension="256,84" />
+  <StrutsActivity path="/securityManage/deleteMenusvalue.do" location="950,2350" dimension="256,84" />
+  <StrutsActivity path="errorPage;6" location="1018,1662" dimension="160,72" />
+  <StrutsActivity path="failure;6" location="1609,1662" dimension="142,72" />
+  <StrutsActivity path="messagePage;6" location="1223,1662" dimension="148,72" />
+  <StrutsActivity path="messageClosePage;6" location="795,1662" dimension="178,72" />
+  <StrutsActivity path="treeXml;6" location="1416,1662" dimension="148,72" />
+  <StrutsActivity path="toUrl;6" location="1796,1662" dimension="136,72" />
+  <StrutsActivity path="inprogress;6" location="566,1662" dimension="184,72" />
+  <StrutsActivity path="leftMenu;6" location="2150,1050" dimension="166,72" />
+  <StrutsActivity path="topMenu;6" location="2450,1050" dimension="148,72" />
+  <StrutsActivity path="/securityManage/baseUser_list.jsp" location="2150,550" dimension="238,48" />
+  <StrutsActivity path="/securityManage/usersForRoleAdd_list.jsp" location="869,1569" dimension="280,48" />
+  <StrutsActivity path="/securityManage/users_view.jsp" location="922,1015" dimension="220,48" />
+  <StrutsActivity path="/securityManage/users_addEdit.jsp" location="1280,1015" dimension="238,48" />
+  <StrutsActivity path="/securityManage/resources_list.jsp" location="1280,184" dimension="244,48" />
+  <StrutsActivity path="/securityManage/resources_view.jsp" location="0,184" dimension="244,48" />
+  <StrutsActivity path="/securityManage/resources_addEdit.jsp" location="387,184" dimension="262,48" />
+  <StrutsActivity path="/securityManage/rescfold_tree.jsp" location="2450,650" dimension="229,53" />
+  <StrutsActivity path="/securityManage/roles_list.jsp" location="302,1569" dimension="220,48" />
+  <StrutsActivity path="/securityManage/roles_list_mulSel.jsp" location="1850,950" dimension="262,48" />
+  <StrutsActivity path="/securityManage/roles_list_singleSel.jsp" location="650,1250" dimension="280,48" />
+  <StrutsActivity path="/securityManage/roles_view.jsp" location="0,1292" dimension="220,48" />
+  <StrutsActivity path="/securityManage/roles_addEdit.jsp" location="357,1292" dimension="238,48" />
+  <StrutsActivity path="/securityManage/roleResc_list.jsp" location="320,738" dimension="238,48" />
+  <StrutsActivity path="/securityManage/userRole_list.jsp" location="1243,738" dimension="238,48" />
+  <StrutsActivity path="/securityManage/roleUser_list.jsp" location="320,1015" dimension="238,48" />
+  <StrutsActivity path="/securityManage/rescForRoleAdd_list.jsp" location="1519,1569" dimension="274,48" />
+  <StrutsActivity path="/securityManage/rolesvalue_list.jsp" location="1250,2050" dimension="250,48" />
+  <StrutsActivity path="/securityManage/rolesvalue_addEdit.jsp" location="2750,2050" dimension="268,48" />
+  <StrutsActivity path="/securityManage/rolesvalue_view.jsp" location="3050,2150" dimension="250,48" />
+  <StrutsActivity path="/securityManage/resourcesvalue_list.jsp" location="1250,2250" dimension="274,48" />
+  <StrutsActivity path="/securityManage/resourcesvalue_addEdit.jsp" location="1850,2250" dimension="292,48" />
+  <StrutsActivity path="/securityManage/resourcesvalue_view.jsp" location="2450,2250" dimension="274,48" />
+  <StrutsActivity path="/securityManage/menusvalue_list.jsp" location="3050,2250" dimension="250,48" />
+  <StrutsActivity path="/securityManage/menusvalue_addEdit.jsp" location="50,2350" dimension="268,48" />
+  <StrutsActivity path="/securityManage/menusvalue_view.jsp" location="650,2350" dimension="250,48" />
+  <StrutsActivity path="/pubs/errorPage.jsp" location="1021,1834" dimension="154,48" />
+  <StrutsActivity path="/pubs/404.jsp" location="2450,950" dimension="118,48" />
+  <StrutsActivity path="/pubs/message.jsp" location="1226,1834" dimension="142,48" />
+  <StrutsActivity path="/pubs/messageClose.jsp" location="798,1834" dimension="172,48" />
+  <StrutsActivity path="/pubs/treeXml.jsp" location="1419,1834" dimension="142,48" />
+  <StrutsActivity path="/pubs/toUrl.jsp" location="1799,1834" dimension="130,48" />
+  <StrutsActivity path="/pubs/inprogress.jsp" location="2150,650" dimension="160,48" />
+  <StrutsActivity path="/pubs/leftMenu.jsp" location="1550,850" dimension="148,48" />
+  <StrutsActivity path="/pubs/topMenu.jsp" location="1850,850" dimension="142,48" />
+  <StrutsActivity path="/securityManage/rescForSingel_list.jsp" location="0,1846" dimension="268,48" />
+  <StrutsActivity path="/securityManage/rolesForUserAdd_list.jsp" location="1194,1569" dimension="280,48" />
+  <StrutsActivity path="/dynamicMenu.jsp" location="349,1846" dimension="136,48" />
+  <StrutsActivity path="/order/ordertest_list.jsp" location="353,461" dimension="190,48" />
+  <StrutsActivity path="/order/ordertest_view.jsp" location="951,461" dimension="190,48" />
+  <StrutsActivity path="/order/ordertest_addEdit.jsp" location="1343,461" dimension="208,48" />
+  <StrutsActivity path="/commons/404.jsp" location="1612,1834" dimension="136,48" />
+  <StrutsActivity path="/commons/inprogress.jsp" location="569,1834" dimension="178,48" />
+  <StrutsActivity path="/securityManage/users_list.jsp" location="1184,1292" dimension="220,48" />
+  <StrutsActivity path="/platform/baseUser_list.jsp" location="1550,1350" dimension="202,48" />
+  <StrutsActivity path="/platform/usersForRoleAdd_list.jsp" location="1850,1350" dimension="244,48" />
+  <StrutsActivity path="/platform/users_view.jsp" location="50,1450" dimension="184,48" />
+  <StrutsActivity path="/platform/users_addEdit.jsp" location="350,1450" dimension="202,48" />
+  <StrutsActivity path="/platform/resources_list.jsp" location="950,1450" dimension="208,48" />
+  <StrutsActivity path="/platform/rescForSingel_list.jsp" location="1250,1450" dimension="232,48" />
+  <StrutsActivity path="/platform/rescForRoleAdd_list.jsp" location="1550,1450" dimension="238,48" />
+  <StrutsActivity path="/platform/resources_view.jsp" location="1850,1450" dimension="208,48" />
+  <StrutsActivity path="/platform/resources_addEdit.jsp" location="2150,1450" dimension="226,48" />
+  <StrutsActivity path="/platform/roles_list.jsp" location="2450,1450" dimension="184,48" />
+  <StrutsActivity path="/platform/rolesForUserAdd_list.jsp" location="1850,1550" dimension="244,48" />
+  <StrutsActivity path="/platform/roles_view.jsp" location="2150,1550" dimension="184,48" />
+  <StrutsActivity path="/platform/roles_addEdit.jsp" location="2450,1550" dimension="202,48" />
+  <StrutsActivity path="/platform/roleResc_list.jsp" location="50,1650" dimension="202,48" />
+  <StrutsActivity path="/platform/userRole_list.jsp" location="2150,1650" dimension="202,48" />
+  <StrutsActivity path="/platform/roleUser_list.jsp" location="2450,1650" dimension="202,48" />
+  <StrutsActivity path="/{[#folder#]}/rolesvalue_list.jsp" location="350,1950" dimension="238,48" />
+  <StrutsActivity path="/{[#folder#]}/rolesvalue_addEdit.jsp" location="650,1950" dimension="256,48" />
+  <StrutsActivity path="/{[#folder#]}/rolesvalue_view.jsp" location="1250,1950" dimension="238,48" />
+  <StrutsActivity path="/{[#folder#]}/resourcesvalue_list.jsp" location="1250,2150" dimension="262,48" />
+  <StrutsActivity path="/{[#folder#]}/resourcesvalue_addEdit.jsp" location="1850,2150" dimension="280,48" />
+  <StrutsActivity path="/{[#folder#]}/resourcesvalue_view.jsp" location="2450,2150" dimension="262,48" />
+  <StrutsActivity path="/{[#folder#]}/menusvalue_list.jsp" location="50,2250" dimension="238,48" />
+  <StrutsActivity path="/{[#folder#]}/menusvalue_addEdit.jsp" location="350,2250" dimension="256,48" />
+  <StrutsActivity path="/{[#folder#]}/menusvalue_view.jsp" location="950,2250" dimension="238,48" />
+  <StrutsTransition id="/securityManage/editRolesvalue.do,addEditPage,/securityManage/rolesvalue_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1850,1092" />
+      <AbsolutePoint location="-75,1092" />
+      <AbsolutePoint location="-75,2473" />
+      <AbsolutePoint location="2884,2473" />
+      <AbsolutePoint location="2884,2098" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/listResourcesvalue.do,list,/securityManage/resourcesvalue_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3312,1292" />
+      <AbsolutePoint location="3417,1292" />
+      <AbsolutePoint location="3417,2213" />
+      <AbsolutePoint location="1387,2213" />
+      <AbsolutePoint location="1387,2250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/editMenusvalue.do,addEditPage,/securityManage/menusvalue_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="288,2092" />
+      <AbsolutePoint location="317,2092" />
+      <AbsolutePoint location="317,2350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="messageClosePage;6,null,/pubs/messageClose.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="884,1734" />
+      <AbsolutePoint location="884,1834" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/deleterolesvalue.do,list,/securityManage/rolesvalue_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2150,1277" />
+      <AbsolutePoint location="2109,1277" />
+      <AbsolutePoint location="2109,1795" />
+      <AbsolutePoint location="1209,1795" />
+      <AbsolutePoint location="1209,2074" />
+      <AbsolutePoint location="1250,2074" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/addRolePage.do,addEditPage,/securityManage/roles_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="635,1192" />
+      <AbsolutePoint location="635,1316" />
+      <AbsolutePoint location="595,1316" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/listRolesSingleSel.do,listRolesSingleSel,/securityManage/roles_list_singleSel.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1975,234" />
+      <AbsolutePoint location="1975,359" />
+      <AbsolutePoint location="-150,359" />
+      <AbsolutePoint location="-150,1274" />
+      <AbsolutePoint location="650,1274" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/viewResourcePage.do,viewPage,/securityManage/resources_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="372,84" />
+      <AbsolutePoint location="372,208" />
+      <AbsolutePoint location="244,208" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/addResourcesvalue.do,addEditPage,/securityManage/resourcesvalue_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3030,1892" />
+      <AbsolutePoint location="3537,1892" />
+      <AbsolutePoint location="3537,2623" />
+      <AbsolutePoint location="1996,2623" />
+      <AbsolutePoint location="1996,2298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/editResourcesvalue.do,addEditPage,/securityManage/resourcesvalue_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3012,1692" />
+      <AbsolutePoint location="3447,1692" />
+      <AbsolutePoint location="3447,2503" />
+      <AbsolutePoint location="2026,2503" />
+      <AbsolutePoint location="2026,2298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/toRescfoldTreePage.do,rescTree,/securityManage/rescfold_tree.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1203,254" />
+      <AbsolutePoint location="1203,718" />
+      <AbsolutePoint location="2553,718" />
+      <AbsolutePoint location="2553,703" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/deleteRole.do,list,/securityManage/roles_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="720,1469" />
+      <AbsolutePoint location="720,1593" />
+      <AbsolutePoint location="522,1593" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/deleteResourcesvalue.do,list,/securityManage/resourcesvalue_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1690,2034" />
+      <AbsolutePoint location="1690,2274" />
+      <AbsolutePoint location="1524,2274" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/listRolesForUserAdd.do,listRolesForUserAdd,/securityManage/roles_list_mulSel.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1206,1427" />
+      <AbsolutePoint location="1173,1427" />
+      <AbsolutePoint location="1173,974" />
+      <AbsolutePoint location="1850,974" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="errorPage;6,null,/pubs/errorPage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1098,1734" />
+      <AbsolutePoint location="1098,1834" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/listMenusvalue.do,list,/securityManage/menusvalue_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2269,2034" />
+      <AbsolutePoint location="2269,2365" />
+      <AbsolutePoint location="3145,2365" />
+      <AbsolutePoint location="3145,2298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/listRescsForRoleAdd.do,listRescsForRoleAdd,/securityManage/rescForRoleAdd_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1535,1469" />
+      <AbsolutePoint location="1535,1569" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/viewMenusvalue.do,viewPage,/securityManage/menusvalue_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="469,2134" />
+      <AbsolutePoint location="469,2165" />
+      <AbsolutePoint location="775,2165" />
+      <AbsolutePoint location="775,2350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/viewResourcesvalue.do,viewPage,/securityManage/resourcesvalue_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2403,1834" />
+      <AbsolutePoint location="2403,2274" />
+      <AbsolutePoint location="2450,2274" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="topMenu;6,null,/pubs/topMenu.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2450,1086" />
+      <AbsolutePoint location="2361,1086" />
+      <AbsolutePoint location="2361,883" />
+      <AbsolutePoint location="1992,883" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="leftMenu;6,null,/pubs/leftMenu.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2233,1050" />
+      <AbsolutePoint location="2233,801" />
+      <AbsolutePoint location="1624,801" />
+      <AbsolutePoint location="1624,850" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/listRoleUser.do,listRoleUser,/securityManage/roleUser_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="113,915" />
+      <AbsolutePoint location="113,1039" />
+      <AbsolutePoint location="320,1039" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="treeXml;6,null,/pubs/treeXml.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1490,1734" />
+      <AbsolutePoint location="1490,1834" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/viewUserPage.do,addEditPage,/securityManage/users_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1345,915" />
+      <AbsolutePoint location="1345,1015" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/listResources.do,list,/securityManage/resources_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1186,42" />
+      <AbsolutePoint location="1264,42" />
+      <AbsolutePoint location="1264,208" />
+      <AbsolutePoint location="1280,208" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/viewResourcePage.do,addEditPage,/securityManage/resources_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="548,84" />
+      <AbsolutePoint location="548,184" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/showThisMenu.do,listRoleResc,/securityManage/roleResc_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2565,1302" />
+      <AbsolutePoint location="439,762" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/listUsers.do,list,/securityManage/baseUser_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1090,1135" />
+      <AbsolutePoint location="1816,1135" />
+      <AbsolutePoint location="1816,574" />
+      <AbsolutePoint location="2150,574" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/saveResourcesvalue.do,list,/securityManage/resourcesvalue_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3012,1492" />
+      <AbsolutePoint location="3357,1492" />
+      <AbsolutePoint location="3357,2413" />
+      <AbsolutePoint location="1387,2413" />
+      <AbsolutePoint location="1387,2298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/editResourcePage.do,addEditPage,/securityManage/resources_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="150,84" />
+      <AbsolutePoint location="150,129" />
+      <AbsolutePoint location="518,129" />
+      <AbsolutePoint location="518,184" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="toUrl;6,null,/pubs/toUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1864,1734" />
+      <AbsolutePoint location="1864,1834" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/editRolePage.do,viewPage,/securityManage/roles_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="108,1192" />
+      <AbsolutePoint location="108,1292" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/deleteRoleUser.do,listRoleUser,/securityManage/roleUser_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="765,915" />
+      <AbsolutePoint location="765,1039" />
+      <AbsolutePoint location="558,1039" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/listUsersForRoleAdd.do,listUsersForRoleAdd,/securityManage/usersForRoleAdd_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="935,1469" />
+      <AbsolutePoint location="935,1569" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/saveUserRole.do,listUserRole,/securityManage/userRole_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1362,638" />
+      <AbsolutePoint location="1362,738" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="messagePage;6,null,/pubs/message.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1297,1734" />
+      <AbsolutePoint location="1297,1834" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/saveRole.do,list,/securityManage/roles_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="335,1469" />
+      <AbsolutePoint location="335,1569" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/saveRoleUser.do,listRoleUser,/securityManage/roleUser_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="439,915" />
+      <AbsolutePoint location="439,1015" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/saveResource.do,list,/securityManage/resources_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1402,84" />
+      <AbsolutePoint location="1402,184" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/deleteUserRole.do,listUserRole,/securityManage/userRole_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1683,638" />
+      <AbsolutePoint location="1683,762" />
+      <AbsolutePoint location="1481,762" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/deleteRoleResc.do,listRoleResc,/securityManage/roleResc_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="765,638" />
+      <AbsolutePoint location="765,762" />
+      <AbsolutePoint location="558,762" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/listRoles.do,list,/securityManage/roles_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="35,1469" />
+      <AbsolutePoint location="35,1593" />
+      <AbsolutePoint location="302,1593" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/deleteMenusvalue.do,list,/securityManage/menusvalue_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1078,2434" />
+      <AbsolutePoint location="1078,2713" />
+      <AbsolutePoint location="3205,2713" />
+      <AbsolutePoint location="3205,2298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="inprogress;6,null,/pubs/inprogress.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="566,1698" />
+      <AbsolutePoint location="283,1698" />
+      <AbsolutePoint location="283,674" />
+      <AbsolutePoint location="2150,674" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/saveRoleResc.do,listRoleResc,/securityManage/roleResc_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="439,638" />
+      <AbsolutePoint location="439,738" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/saveMenusvalue.do,list,/securityManage/menusvalue_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2688,1992" />
+      <AbsolutePoint location="3627,1992" />
+      <AbsolutePoint location="3627,2274" />
+      <AbsolutePoint location="3300,2274" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="failure;6,null,/pubs/404.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1680,1662" />
+      <AbsolutePoint location="1680,1632" />
+      <AbsolutePoint location="2727,1632" />
+      <AbsolutePoint location="2727,974" />
+      <AbsolutePoint location="2568,974" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/deleteResource.do,list,/securityManage/resources_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1734,84" />
+      <AbsolutePoint location="1734,208" />
+      <AbsolutePoint location="1524,208" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/saveRolesvalue.do,list,/securityManage/rolesvalue_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2988,992" />
+      <AbsolutePoint location="3387,992" />
+      <AbsolutePoint location="3387,2113" />
+      <AbsolutePoint location="1375,2113" />
+      <AbsolutePoint location="1375,2098" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/editResourcePage.do,viewPage,/securityManage/resources_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="120,84" />
+      <AbsolutePoint location="120,184" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/listRoleResc.do,listRoleResc,/securityManage/roleResc_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="113,638" />
+      <AbsolutePoint location="113,762" />
+      <AbsolutePoint location="320,762" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/editRolePage.do,addEditPage,/securityManage/roles_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="138,1192" />
+      <AbsolutePoint location="138,1237" />
+      <AbsolutePoint location="476,1237" />
+      <AbsolutePoint location="476,1292" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/viewRolePage.do,addEditPage,/securityManage/roles_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="506,1192" />
+      <AbsolutePoint location="506,1292" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/addResourcePage.do,addEditPage,/securityManage/resources_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="793,84" />
+      <AbsolutePoint location="793,208" />
+      <AbsolutePoint location="649,208" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/addrolesvalue.do,addEditPage,/securityManage/rolesvalue_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2988,1192" />
+      <AbsolutePoint location="3033,1192" />
+      <AbsolutePoint location="3033,2074" />
+      <AbsolutePoint location="3018,2074" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/listUserRole.do,listUserRole,/securityManage/userRole_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1036,638" />
+      <AbsolutePoint location="1036,762" />
+      <AbsolutePoint location="1243,762" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/addMenusvalue.do,addEditPage,/securityManage/menusvalue_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2450,524" />
+      <AbsolutePoint location="-45,524" />
+      <AbsolutePoint location="-45,2374" />
+      <AbsolutePoint location="50,2374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/viewRolePage.do,viewPage,/securityManage/roles_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="342,1192" />
+      <AbsolutePoint location="342,1316" />
+      <AbsolutePoint location="220,1316" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/listRolesvalue.do,list,/securityManage/rolesvalue_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3050,883" />
+      <AbsolutePoint location="2433,883" />
+      <AbsolutePoint location="2433,2074" />
+      <AbsolutePoint location="1500,2074" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/viewUserPage.do,viewPage,/securityManage/users_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1238,873" />
+      <AbsolutePoint location="1036,873" />
+      <AbsolutePoint location="1036,1015" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/securityManage/viewRolesvalue.do,viewPage,/securityManage/rolesvalue_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3288,1092" />
+      <AbsolutePoint location="3327,1092" />
+      <AbsolutePoint location="3327,2174" />
+      <AbsolutePoint location="3300,2174" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

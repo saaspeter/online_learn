@@ -1,0 +1,90 @@
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN" "http://getahead.org/dwr//dwr20.dtd">
+<dwr>
+  <allow>
+    <convert converter="bean" match="netTest.product.vo.Productbase"></convert>
+    <convert converter="bean" match="netTest.orguser.vo.Orguser"></convert>
+    <convert converter="bean" match="platform.vo.ShopMini"></convert>
+    
+    <convert match="commonTool.exception.LogicException" converter="exception">
+       <param name="include" value="message"/>
+    </convert>
+    
+    <create creator="spring" javascript="customer">
+       <param name="beanName" value="baseuserLogic"/>
+       <param name="location" value="classpath:platform/bean/applicationContext_all.xml"/>
+       <include method="isExistsLoginname"/> 
+       <include method="isExistsEmail"/> 
+    </create>
+    
+    <create creator="spring" javascript="usershop">
+       <param name="beanName" value="usershopLogic"/>
+       <param name="location" value="classpath:platform/bean/applicationContext_all.xml"/>
+       <include method="isExists"/> 
+    </create>
+    
+    <create creator="spring" javascript="userproduct">
+       <param name="beanName" value="userproductLogic"/>
+       <include method="checkUserProdLink"/> 
+       <include method="getNonUserProduct"/> 
+    </create>
+
+    <create creator="spring" javascript="orgbase">
+       <param name="beanName" value="orgLogic"/>
+       <include method="getTopOrgStr"/> 
+    </create>
+    
+    <create creator="spring" javascript="orguserLogic">
+       <param name="beanName" value="orguserLogic"/>
+       <include method="selectOrgForUser"/> 
+    </create>
+    
+    <create creator="spring" javascript="ware">
+       <param name="beanName" value="wareLogic"/>
+       <include method="checkIsRef"/> 
+    </create>
+    
+    <create creator="spring" javascript="testinfoLogic">
+       <param name="beanName" value="testinfoLogic"/>
+       <include method="qryTestCollideAddTest"/> 
+       <include method="qryTestCollideForDept"/>
+    </create>
+
+    <create creator="spring" javascript="testdept">
+       <param name="beanName" value="testdeptLogic"/>
+       <include method="qrytestusernum"/> 
+    </create>
+    
+    <create creator="spring" javascript="testuserLogic">
+       <param name="beanName" value="testuserLogic"/>
+       <include method="qryTestCollideUser"/> 
+    </create>
+    
+    <create creator="spring" javascript="goodproduct">
+       <param name="beanName" value="goodproductDao"/>
+       <include method="selectByPK"/> 
+    </create>
+    
+    <create creator="spring" javascript="orderproduct">
+       <param name="beanName" value="orderproductLogic"/>
+       <include method="getOrderproductNames"/> 
+    </create>
+    
+    <create creator="spring" javascript="countryregion">
+       <param name="beanName" value="countryregionLogic"/>
+       <param name="location" value="classpath:commonTool/bean/sysInitial.xml"/>
+       <include method="getDisplayArr"/> 
+    </create>
+    
+    <create creator="spring" javascript="prodcateshop">
+       <param name="beanName" value="prodcateshopLogic"/>
+       <include method="getShopCategoryNames"/> 
+    </create>
+    
+    <create creator="spring" javascript="shopcheck">
+       <param name="beanName" value="shopLogic"/>
+       <include method="checkDepulicateShop"/>
+       <include method="getShopMini"/>
+    </create>
+  </allow>
+</dwr>
+

@@ -1,0 +1,194 @@
+
+.{
+    
+}
+
+body{
+   margin:0px;
+   overflow-x:auto;overflow-y:auto;
+}
+
+#mainContent{
+   width: 100%;
+   min-height: 500px;
+}
+
+.listPage{
+    text-align: center;
+}
+
+.listDataTable{
+    width: 100%;
+	cellpadding:0px;
+	text-align:left;
+    align:middle;
+}
+
+#firstLineDiv{
+	margin:7px;
+	padding:2px;
+	clear:both;
+	overflow: auto;
+}
+
+#searchDiv{
+	float:right;
+    text-align:right;
+    margin-right: 10px;
+}
+
+#help{
+    float:right;
+    margin:0,2px;
+}
+
+#toUrl{
+    float:right;
+    margin:0,2px;
+}
+
+#complexSearchDiv{
+    display:none;	
+    clear:both;
+    margin:2px;
+    width:100%;
+	text-align: right
+}
+
+.complexSearchTable{
+	margin-left: 50px;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+
+.complexSearchTable td{
+	padding-left:1em;
+}
+
+.bottomFunDiv{
+	background-color: #DCEAFC;
+    clear:both;
+    height:28px;
+	margin:2px;
+    text-align:center;
+    border:1px solid #CCCCCC;
+}
+
+.bottomFunDiv ul{
+	margin:2px;
+	padding:2px;
+}
+
+.bottomFunDiv ul li{
+    display: inline;
+	list-style-type: none;
+}
+
+#functionLineDiv{
+    clear:both;
+    height:2em;
+	margin:2px;
+	padding:2px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	border:1px solid #CCCCCC;
+}
+
+#functionButtonDiv{
+    float:left;
+    clear:left;
+}
+
+#functionButtonDiv ul{
+	margin:0px;
+	padding:0px;
+}
+
+#functionButtonDiv li{
+    display: inline;
+	list-style-type: none;
+}
+
+.functionButtonDiv{
+	background-color: #DCEAFC;
+	clear:both;
+	width: 100%;
+    height:auto;
+}
+
+.functionButtonDiv ul{
+	margin:0px;
+	padding:0px;
+}
+
+#pageNumLineDiv{
+	float:right;
+	clear:right;
+    text-align:right;
+    min-width: 420px;
+}
+
+#errorDisplayDiv{
+	text-align:center;    
+	padding:1px;
+}
+
+#DataTableDiv{
+	float:left;
+	clear:both;
+    vertical-align:top;
+    width: 100%;
+}
+
+.dashLine{
+   margin:4px auto;
+   border-top:1px dashed #000000;
+}
+
+
+
+#centerContent {
+    width:1000px;
+    left: 50%;
+	position:relative;
+	clear: both;
+	margin-left: -500px;
+}
+
+.centerstyle{
+    width:1000px;
+    left: 50%;
+	position:relative;
+	clear: both;
+	margin-left: -500px;
+}
+
+#buttomDiv{
+	clear: both;
+	height:15px;
+}
+
+/** this is for bootstrap col-md-8 style, add this to center content **/
+.center-block {
+    float: none;
+}
+
+.navlistBar{
+   width:99%;
+   font-size: 1.2em;
+   background-color:#F5FBFE;
+   margin:2px;
+   padding:7px 5px 7px 15px;
+   vertical-align:top;
+   text-align: left;
+   clear: both;
+}
+
+.navlistBar a{
+   margin-left: 10px;
+}
+
+.userInput {
+   width: 300px;
+   font-size: 20px;	
+}

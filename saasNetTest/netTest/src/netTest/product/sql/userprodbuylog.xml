@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Userprodbuylog">
+<!-- ###################### userprodbuylogResult ########################## -->
+  <resultMap id="UserprodbuylogResult" class="netTest.product.vo.Userprodbuylog">
+    <result column="orderID" property="orderid" jdbcType="BIGINT"/>
+    <result column="userProductID" property="userproductid" jdbcType="BIGINT"/>
+    <result column="userID" property="userid" jdbcType="BIGINT"/>
+    <result column="productBaseID" property="productbaseid" jdbcType="BIGINT"/>
+    <result column="productName" property="productname" jdbcType="VARCHAR"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="action" property="action" jdbcType="SMALLINT"/>
+    <result column="happenDate" property="happendate" jdbcType="TIMESTAMP"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="orderid"><![CDATA[ orderID=#orderid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="userproductid"><![CDATA[ userProductID=#userproductid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="userid"><![CDATA[ userID=#userid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="productbaseid"><![CDATA[ productBaseID=#productbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="action"><![CDATA[ action=#action:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="happendate"><![CDATA[ happenDate=#happendate:TIMESTAMP# ]]></isNotNull>
+    </dynamic>
+  </sql>
+  
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="UserprodbuylogResult" parameterClass="netTest.product.dto.UserprodbuylogQuery"> 
+     select 
+         orderID,
+    userProductID,
+    userID,
+    productBaseID, productName,
+    shopID,
+    action,
+    happenDate
+     from userprodbuylog
+    <include refid="Userprodbuylog.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.product.vo.Userprodbuylog"> 
+     insert into userprodbuylog
+     ( orderID,
+    userProductID,
+    userID,
+    productBaseID, productName,
+    shopID,
+    action,
+    happenDate ) 
+    values 
+     ( #orderid:BIGINT#, 
+    #userproductid:BIGINT#, 
+    #userid:BIGINT#, 
+    #productbaseid:BIGINT#, #productname:VARCHAR#,
+    #shopid:BIGINT#, 
+    #action:SMALLINT#, 
+    #happendate:TIMESTAMP# )
+  </insert>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.product.dto.UserprodbuylogQuery"> 
+     select count(*) from userprodbuylog
+     <include refid="Userprodbuylog.where_Clause"/>  
+  </select>
+    
+</sqlMap>

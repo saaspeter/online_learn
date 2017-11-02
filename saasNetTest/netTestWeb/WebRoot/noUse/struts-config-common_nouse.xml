@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<!-- 
+   this file currently is useless, currently use struts-config-platform.xml and struts-config-userservice.xml
+ -->
+<struts-config>
+  <data-sources/>
+  <form-beans>
+    <!-- 
+	<form-bean name="prodUseForm" type="netTestWeb.common.form.ProdUseForm" />
+	 -->
+	<form-bean name="sysconstForm" type="netTestWeb.sysMag.form.SysconstForm" />
+    <form-bean name="sysconstvalForm" type="netTestWeb.sysMag.form.SysconstvalForm" />
+	<form-bean name="sysconstitemForm" type="netTestWeb.sysMag.form.SysconstitemForm" />
+	<form-bean name="sysconstitemvalForm" type="netTestWeb.sysMag.form.SysconstitemvalForm" />
+	<form-bean name="noUseForm" type="netTestWeb.base.BaseForm" />
+  </form-beans>
+
+  <global-exceptions>
+      <exception key="commonWeb.java.commonaction.errors.noLogin" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoLoginException" path="/login.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.editPage.noSuchRecord" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoSuchRecordException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.resubmit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.ResubmitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.DaoException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="org.springframework.dao.DataAccessException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.Unauthorized" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoRightException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.InvalidVisit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.InvalideVisitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+  </global-exceptions>
+  
+  <global-forwards>
+      <forward name="errorPage" path="/pubs/errorPage.jsp" ></forward>
+      <forward name="messagePage" path="/pubs/message.jsp" ></forward>
+      <forward name="treeXml" path="/pubs/treeXml.jsp" ></forward>
+      <forward name="forwardToUrl" path="/pubs/forwardToUrl.jsp" ></forward>
+      <forward name="toUrl" path="/pubs/toUrl.jsp" ></forward>
+  </global-forwards>
+  
+  <action-mappings>
+  
+ 
+    <action
+      attribute="sysconstForm" input="/sysMag/sysconst_addEdit.jsp"
+      name="sysconstForm" path="/sysMag/sysconst" scope="request"
+      type="netTestWeb.sysMag.action.SysconstAction" parameter="method" validate="true">
+      <forward name="list" path="/sysMag/sysconst_list.jsp"></forward>
+      <forward name="addPage" path="/sysMag/sysconst_add.jsp"></forward>
+      <forward name="editPage" path="/sysMag/sysconst_edit.jsp"></forward>
+    </action>
+      
+    <action
+      attribute="sysconstvalForm" input="/sysMag/sysconstval_addEdit.jsp"
+      name="sysconstvalForm" path="/sysMag/sysconstval" scope="request"
+      type="netTestWeb.sysMag.action.SysconstvalAction" parameter="method" validate="true">
+      <forward name="list" path="/sysMag/sysconstval_list.jsp"></forward>
+      <forward name="addEditPage" path="/sysMag/sysconstval_addEdit.jsp"></forward>
+      <forward name="viewPage" path="/sysMag/sysconstval_view.jsp"></forward>
+    </action>
+      
+    <action
+      attribute="sysconstitemForm" input="/sysMag/sysconstitem_addEdit.jsp"
+      name="sysconstitemForm" path="/sysMag/sysconstitem" scope="request"
+      type="netTestWeb.sysMag.action.SysconstitemAction" parameter="method" validate="true">
+      <forward name="list" path="/sysMag/sysconstitem_list.jsp"></forward>
+      <forward name="addPage" path="/sysMag/sysconstitem_add.jsp"></forward>
+      <forward name="editPage" path="/sysMag/sysconstitem_edit.jsp"></forward>
+    </action>
+      
+    <action
+      attribute="sysconstitemvalForm" input="/sysMag/sysconstitemval_addEdit.jsp"
+      name="sysconstitemvalForm" path="/sysMag/sysconstitemval" scope="request"
+      type="netTestWeb.sysMag.action.SysconstitemvalAction" parameter="method" validate="true">
+      <forward name="list" path="/sysMag/sysconstitemval_list.jsp"></forward>
+      <forward name="addEditPage" path="/sysMag/sysconstitemval_addEdit.jsp"></forward>
+      <forward name="viewPage" path="/sysMag/sysconstitemval_view.jsp"></forward>
+    </action>
+    
+    <!-- user's shop list -->
+    <action parameter="listshopforuser" path="/usercontext/listshopforuser" name="noUseForm" type="netTestWeb.common.action.SessUserShopProductAction" scope="request">
+       <forward name="shoplist" path="/bizCommon/selShop.jsp"></forward>
+    </action>
+    
+    <!-- user's product list -->
+    <action parameter="listCanuseprod" path="/usercontext/listCanuseprod" name="noUseForm" type="netTestWeb.common.action.SessUserShopProductAction" scope="request">
+       <forward name="prodlist" path="/bizCommon/selProduct.jsp"></forward>
+    </action>
+
+    
+  </action-mappings>
+
+  <message-resources parameter="netTestWeb.resource.PagetextResources" />
+  <message-resources key="BizKey" parameter="netTestWeb.resource.LogicMessResources" />
+</struts-config>
+

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Coursepost">
+<!-- ###################### CoursepostResult ########################## -->
+  <resultMap id="CoursepostResult" class="netTest.product.vo.Coursepost">
+    <result column="id" property="id" jdbcType="BIGINT"/>
+    <result column="productBaseID" property="productbaseid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="caption" property="caption" jdbcType="VARCHAR"/>
+    <result column="creator" property="creator" jdbcType="BIGINT"/>
+    <result column="refObjectType" property="refobjecttype" jdbcType="VARCHAR"/>
+    <result column="refObjectID" property="refobjectid" jdbcType="BIGINT"/>
+    <result column="generateType" property="generatetype" jdbcType="SMALLINT"/>
+    <result column="openUrl" property="openurl" jdbcType="VARCHAR"/>
+    <result column="orderNo" property="orderno" jdbcType="INTEGER"/>
+    <result column="content" property="content" jdbcType="LONGVARCHAR"/>
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP"/>
+    <result column="updateTime" property="updatetime" jdbcType="TIMESTAMP"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="productbaseid"><![CDATA[ productBaseID=#productbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="createtime"><![CDATA[ createTime=#createtime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="and" property="creator"><![CDATA[ creator=#creator:BIGINT# ]]></isNotNull>
+    </dynamic>
+  </sql>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="CoursepostResult" parameterClass="java.lang.Long"> 
+     select id, productBaseID, shopID, caption, creator, refObjectType, refObjectID, 
+            generateType, openUrl, orderNo, createTime, updateTime, content   
+     from CoursePost 
+     where id = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="CoursepostResult" parameterClass="netTest.product.vo.Coursepost"> 
+     select  id, productBaseID, shopID, caption, creator, refObjectType, refObjectID, 
+             generateType, openUrl, orderNo, createTime, updateTime, content 
+     from CoursePost
+     <include refid="Coursepost.where_Clause"/>  
+     order by createTime desc
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.product.vo.Coursepost"> 
+     insert into CoursePost
+     ( id, productBaseID, shopID, caption, creator, refObjectType, refObjectID, 
+       generateType, openUrl, orderNo, content, createTime, updateTime ) 
+    values 
+     ( #id:BIGINT#, #productbaseid:BIGINT#, #shopid:BIGINT#, #caption:VARCHAR#,
+       #creator:BIGINT#, #refobjecttype:VARCHAR#, #refobjectid:BIGINT#, 
+       #generatetype:SMALLINT#, #openurl:VARCHAR#, #orderno:INTEGER#, #content:VARCHAR#,
+       #createtime:TIMESTAMP#, #updatetime:TIMESTAMP# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="id" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.product.vo.Coursepost"> 
+     update CoursePost
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="caption"><![CDATA[ caption=#caption:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="creator"><![CDATA[ creator=#creator:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="openurl"><![CDATA[ openUrl=#openurl:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="content"><![CDATA[ content=#content:VARCHAR# ]]></isNotNull>
+    </dynamic> where id = #id:BIGINT#
+  </update>
+  
+  <!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from CoursePost where id = #value#
+  </delete>
+  
+  <!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.product.vo.Coursepost"> 
+     select count(*) from CoursePost
+     <include refid="Coursepost.where_Clause"/>  
+  </select>
+    
+</sqlMap>

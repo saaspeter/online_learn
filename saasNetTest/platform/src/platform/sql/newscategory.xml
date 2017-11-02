@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Newscategory">
+<!-- ###################### newscategoryBaseResult ########################## -->
+  <resultMap id="newscategoryBaseResult" class="platform.vo.Newscategory">
+    <result column="id" property="id" jdbcType="BIGINT"/>
+    <result column="categoryID" property="categoryid" jdbcType="BIGINT"/>
+    <result column="type" property="type" jdbcType="SMALLINT"/>
+    <result column="orderNo" property="orderno" jdbcType="INTEGER"/>
+  </resultMap>
+
+<!-- ###################### newscategoryResult ########################## -->
+  <resultMap id="NewscategoryResult" class="platform.vo.Newscategory">
+    <result column="id" property="id" jdbcType="BIGINT"/>
+    <result column="categoryID" property="categoryid" jdbcType="BIGINT"/>
+    <result column="type" property="type" jdbcType="SMALLINT"/>
+    <result column="orderNo" property="orderno" jdbcType="INTEGER"/>
+     <result column="valueID" property="valueid" jdbcType="BIGINT"/>
+    <result column="localeID" property="localeid" jdbcType="BIGINT"/>
+    <result column="name" property="name" jdbcType="VARCHAR"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic> 
+      <isNotNull prepend="and" property="id"><![CDATA[ a.id=#id:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="categoryid"><![CDATA[ a.categoryID=#categoryid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="type"><![CDATA[ a.type=#type:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="valueid"><![CDATA[ b.valueID=#valueid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="localeid"><![CDATA[ b.localeID=#localeid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="name"><![CDATA[ b.name=#name:VARCHAR# ]]></isNotEmpty>
+    </dynamic>
+  </sql>
+    
+  <!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="newscategoryBaseResult" parameterClass="java.lang.Long"> 
+     select id, categoryID, type, orderNo
+     from NewsCategory where id=#value:BIGINT#
+  </select>
+    
+<!-- ###################### selectByLogicPK ########################## -->
+  <select id="selectByLogicPK" resultMap="NewscategoryResult" parameterClass="platform.vo.Newscategory"> 
+     select a.id, a.categoryID, a.type, a.orderNo, b.valueID, b.localeID, b.name
+     from NewsCategory a, NewsCategoryValue b
+     where a.id = b.newsCategoryID and a.id=#id:BIGINT# and b.localeID=#localeid:BIGINT#
+  </select>
+  
+  <!-- ###################### selectByValuePK ########################## -->
+  <select id="selectByValuePK" resultMap="NewscategoryResult" parameterClass="java.lang.Long"> 
+     select a.id, a.categoryID, a.type, a.orderNo, b.valueID, b.localeID, b.name
+     from NewsCategory a, NewsCategoryValue b
+     where a.id = b.newsCategoryID and b.valueID=#value:BIGINT#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="NewscategoryResult" parameterClass="platform.vo.Newscategory"> 
+     select a.id, a.categoryID, a.type, a.orderNo, b.valueID, b.localeID, b.name
+     from NewsCategory a, NewsCategoryValue b
+     where a.id = b.newsCategoryID
+    <include refid="Newscategory.where_Clause"/>  
+    order by a.orderNo 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="platform.vo.Newscategory"> 
+     insert into NewsCategory
+     (id, categoryID, type, orderNo ) 
+    values 
+     (#id:BIGINT#, #categoryid:BIGINT#, #type:SMALLINT#, #orderno:INTEGER# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="id" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+  <!-- ###################### insertNewsCategoryValue ########################## -->
+  <insert id="insertNewsCategoryValue" parameterClass="platform.vo.Newscategory"> 
+     insert into NewsCategoryValue
+     ( valueID, newsCategoryID, localeID, name ) 
+    values 
+     ( #valueid:BIGINT#, #id:BIGINT#, #localeid:BIGINT#, 
+       #name:VARCHAR# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="valueid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="platform.vo.Newscategory"> 
+     update NewsCategory
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="type"><![CDATA[ type=#type:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="orderno"><![CDATA[ orderNo=#orderno:INTEGER# ]]></isNotNull>
+    </dynamic> where id = #id:BIGINT#
+  </update>
+  
+  <!-- ###################### updateNewsCategoryValueByPK ########################## -->
+  <update id="updateNewsCategoryValueByPK" parameterClass="platform.vo.Newscategory"> 
+     update NewsCategoryValue 
+     <dynamic prepend="set"> 
+        <isNotNull prepend="," property="localeid"><![CDATA[ localeID=#localeid:BIGINT# ]]></isNotNull>
+        <isNotNull prepend="," property="name"><![CDATA[ name=#name:VARCHAR# ]]></isNotNull>
+     </dynamic> where valueID = #valueid:BIGINT#
+  </update>
+    
+  <!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from NewsCategory where id = #value#
+  </delete>
+  
+  <!-- ###################### deleteValueByNewsCategoryID ########################## -->
+  <delete id="deleteValueByNewsCategoryID" parameterClass="java.lang.Long"> 
+     delete from NewsCategoryValue where newsCategoryID = #value#
+  </delete>
+  
+  <!-- ###################### delValueByPK ########################## -->
+  <delete id="delValueByPK" parameterClass="java.lang.Long"> 
+     delete from NewsCategoryValue where valueID=#value# 
+  </delete>
+    
+    <!-- ###################### countArticle ########################## -->
+  <select id="countArticle" resultClass="java.lang.Integer" parameterClass="java.lang.Long"> 
+     select count(*) from InfoNews a 
+     where  exists (select 1 from NewsCategory b where a.refID=b.id and b.id=#value:BIGINT#)
+  </select>
+    
+</sqlMap>

@@ -1,0 +1,156 @@
+.{
+   margin:0px;
+}
+
+.editPage{
+    width:100%;
+    text-align: center;
+}
+
+.centerstyle{
+    width:1000px;
+    left: 50%;
+	position:relative;
+	clear: both;
+	margin-left: -500px;
+}
+
+.fieldLabel{
+	float:left;
+	clear:left;
+	width:38%;
+	padding-right: 15px;
+	text-align:right;
+    margin:2px;
+}
+
+.field{
+    float:left;
+    align:left;
+    text-align:left;
+    margin:2px;
+}
+
+.fieldDesc{
+    float:left;	
+    clear:right;
+}
+
+#functionLineDiv{
+    height:28px;
+	margin:2px;
+	padding:2px;
+	border:1px solid #CCCCCC;
+}
+
+#functionBarTopDiv{
+    float:left;
+}
+
+#functionBarTopDiv ul{
+	margin:2px;
+	padding:2px;
+}
+
+#functionBarTopDiv li{
+    display: inline;
+	list-style-type: none;
+}
+
+#toUrl{
+    margin:2px;
+    float:right;
+}
+
+#help{
+    margin:2px;
+    float:right;
+}
+
+#fieldsTitleDiv{
+	height:28px;
+	margin-top:10px;
+	margin:2px;
+	padding:2px;
+    text-align:center;
+}
+
+.fieldsTitleDiv{
+	background-color: #DCEAFC;
+	font-size:25px; text-align: center;
+	padding-top:10px; padding-bottom:10px;
+	margin-top:10px; margin-bottom:10px;
+}
+
+#displayMessDiv{
+	text-align:center;    
+	padding:1px;
+}
+
+#fieldDisDiv{
+    margin-top: 25px;
+}
+
+#fieldDisDiv ul{
+	padding:2px;
+}
+
+#fieldDisDiv li{
+    display: inline;
+    clear:both;
+	margin-top:7px;
+	list-style-type: none;
+}
+
+#functionBarButtomDiv{
+	margin-top:30px;
+    text-align:center;
+    clear:both;
+}
+
+#functionBarButtomDiv ul{
+	margin:2px;
+	padding:2px;
+}
+
+#functionBarButtomDiv li{
+	margin:15px;
+    display: inline;
+	list-style-type: none;
+}
+
+.formTable {  
+	border:1px solid;
+	margin-top:20px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 4px;
+	padding-right: 4px;
+	text-align:left;
+	width:100%;
+}
+
+.formTable td{
+	border:1px solid;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 5px;
+}
+
+.captionDiv{
+	background-color: #DCEAFC;
+    clear:both;
+    height:28px;
+	margin:2px;
+    text-align:center;
+    border:1px solid #CCCCCC;
+}
+
+.tableHead {
+   width: 100%;
+   background-color:#AACEF2;
+   font-weight: bold;
+}
+.tableHead td{
+   white-space:nowrap;
+}

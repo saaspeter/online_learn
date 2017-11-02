@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources/>
+  <form-beans>
+      <form-bean name="contentcateForm" type="netTestWeb.prodcont.form.ContentcateForm" />
+      <form-bean name="wareForm" type="netTestWeb.wareques.form.WareForm" />
+      <form-bean name="quesdifficultForm" type="netTestWeb.wareques.form.QuesdifficultForm" />
+      <form-bean name="warequesForm" type="netTestWeb.wareques.form.WarequesForm" />
+	  <form-bean name="questypeshopForm" type="netTestWeb.wareques.form.QuestypeshopForm" />
+  </form-beans>
+
+  <global-exceptions>
+      <exception key="commonWeb.java.commonaction.errors.noLogin" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoLoginException" path="/login_forward.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.editPage.noSuchRecord" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoSuchRecordException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.resubmit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.ResubmitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.DaoException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="org.springframework.dao.DataAccessException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.Unauthorized" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoRightException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.LogicErr" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.LogicException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.InvalidVisit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.InvalideVisitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>  
+      <exception key="commonWeb.java.commonaction.errors.SystemError" handler="commonWeb.base.StrutsExceptionHandler" type="java.lang.Throwable" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+  </global-exceptions>
+  
+  <global-forwards>
+      <forward name="errorPage" path="/pubs/errorPage.jsp" ></forward>
+      <forward name="messagePage" path="/pubs/message.jsp" ></forward>
+      <forward name="treeXml" path="/pubs/treeXml.jsp" ></forward>
+      <forward name="forwardToUrl" path="/pubs/forwardToUrl.jsp" ></forward>
+      <forward name="toUrl" path="/pubs/toUrl.jsp" ></forward>
+  </global-forwards>
+  
+  <action-mappings>
+  
+        <!-- questypeshop begin // temp don't have this function 
+	    <action parameter="listQuestypeshop" path="/wareques/listQuestypeshop" name="questypeshopForm" type="netTestWeb.wareques.action.QuestypeshopAction" scope="request">
+	       <forward name="list" path="/wareques/questypeshop_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="saveQuestypeshop" path="/wareques/saveQuestypeshop" name="questypeshopForm" type="netTestWeb.wareques.action.QuestypeshopAction" scope="request">
+	       <forward name="list" path="/wareques/questypeshop_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="editQuestypeshop" path="/wareques/editQuestypeshop" name="questypeshopForm" type="netTestWeb.wareques.action.QuestypeshopAction" scope="request">
+	       <forward name="addEditPage" path="/wareques/questypeshop_addEdit.jsp"></forward>
+	    </action>
+	        
+	    <action parameter="addQuestypeshop" path="/wareques/addQuestypeshop" name="questypeshopForm" type="netTestWeb.wareques.action.QuestypeshopAction" scope="request">
+	       <forward name="addEditPage" path="/wareques/questypeshop_addEdit.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="deleteQuestypeshop" path="/wareques/deleteQuestypeshop" name="questypeshopForm" type="netTestWeb.wareques.action.QuestypeshopAction" scope="request">
+	       <forward name="list" path="/wareques/questypeshop_list.jsp"></forward>
+	    </action> -->
+	    <!-- questypeshop end -->
+  
+	    <!-- contentcate begin -->
+	    <action parameter="listContentcatemag" path="/prodcont/listContentcatemag" name="contentcateForm" type="netTestWeb.prodcont.action.ContentcateAction" scope="request">
+	       <forward name="list" path="/prodcont/contentcate_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="listContentcatesel" path="/prodcont/listContentcatesel" name="contentcateForm" type="netTestWeb.prodcont.action.ContentcateAction" scope="request">
+	       <forward name="list" path="/prodcont/contentcate_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="saveContentcate" path="/prodcont/saveContentcate" name="contentcateForm" type="netTestWeb.prodcont.action.ContentcateAction" scope="request">
+	       <forward name="list" path="/prodcont/contentcate_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="editContentcate" path="/prodcont/editContentcate" name="contentcateForm" type="netTestWeb.prodcont.action.ContentcateAction" scope="request">
+	       <forward name="addEditPage" path="/prodcont/contentcate_addEdit.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="addContentcate" path="/prodcont/addContentcate" name="contentcateForm" type="netTestWeb.prodcont.action.ContentcateAction" scope="request">
+	       <forward name="addEditPage" path="/prodcont/contentcate_addEdit.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="deleteContentcate" path="/prodcont/deleteContentcate" name="contentcateForm" type="netTestWeb.prodcont.action.ContentcateAction" scope="request">
+	       <forward name="list" path="/prodcont/contentcate_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="toContcateTree" path="/prodcont/toContcateTree" name="contentcateForm" type="netTestWeb.prodcont.action.ContentcateAction" scope="request">
+	       <forward name="contcateTree" path="/prodcont/contentcate_tree.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="selectContcateTree" path="/prodcont/selectContcateTree" name="contentcateForm" type="netTestWeb.prodcont.action.ContentcateAction" scope="request">
+	       <forward name="selectTree" path="/prodcont/selContentcate_tree.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="genecontcatetree" path="/prodcont/genecontcatetree" name="contentcateForm" type="netTestWeb.prodcont.action.ContentcateAction" scope="request">
+	    </action>
+	    
+	    <action parameter="onlyviewprodcate" path="/prodcont/onlyviewprodcate" name="contentcateForm" type="netTestWeb.prodcont.action.ContentcateAction" scope="request">
+	       <forward name="view" path="/prodcont/contentcate_viewlearn.jsp"></forward>
+	    </action>
+	    <!-- contentcate end -->
+	    
+	    <!-- ware begin -->
+	    <action parameter="listWare1" path="/wareques/listWare1" name="wareForm" type="netTestWeb.wareques.action.WareAction" scope="request" validate="false">
+	       <forward name="list_oper" path="/wareques/ware_list1.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="listWareSelect" path="/wareques/listWareSelect" name="wareForm" type="netTestWeb.wareques.action.WareAction" scope="request" validate="false">
+	       <forward name="sel_oper" path="/wareques/ware_sele1.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="saveWare" path="/wareques/saveWare" name="wareForm" input="/wareques/ware_addEdit.jsp" type="netTestWeb.wareques.action.WareAction" scope="request" validate="true">
+	       <forward name="list_oper" path="/wareques/ware_list1.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="editWare" path="/wareques/editWare" name="wareForm" type="netTestWeb.wareques.action.WareAction" scope="request" validate="false">
+	       <forward name="addEditPage" path="/wareques/ware_addEdit.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="viewWare" path="/wareques/viewWare" name="wareForm" type="netTestWeb.wareques.action.WareAction" scope="request" validate="false">
+	        <forward name="viewPage" path="/wareques/ware_view.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="addWare" path="/wareques/addWare" name="wareForm" type="netTestWeb.wareques.action.WareAction" scope="request" validate="false">
+	       <forward name="addEditPage" path="/wareques/ware_addEdit.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="deleteWare" path="/wareques/deleteWare" name="wareForm" type="netTestWeb.wareques.action.WareAction" scope="request" validate="false">
+	       <forward name="list" path="/wareques/ware_list.jsp"></forward>
+	    </action>
+	    <!-- ware end -->
+	    
+	    <!-- quesdifficult begin -->
+	    <!-- 
+	    <action parameter="listQuesdifficult" path="/wareques/listQuesdifficult" name="quesdifficultForm" type="netTestWeb.wareques.action.QuesdifficultAction" scope="request">
+	       <forward name="list" path="/wareques/quesdifficult_list.jsp"></forward>
+	       <forward name="select" path="/wareques/quesdifft_sel.jsp"></forward>
+	       
+	    </action>
+	    
+	    <action parameter="saveQuesdifficult" path="/wareques/saveQuesdifficult" name="quesdifficultForm" type="netTestWeb.wareques.action.QuesdifficultAction" scope="request">
+	       <forward name="list" path="/wareques/quesdifficult_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="editQuesdifficult" path="/wareques/editQuesdifficult" name="quesdifficultForm" type="netTestWeb.wareques.action.QuesdifficultAction" scope="request">
+	       <forward name="addEditPage" path="/wareques/quesdifficult_addEdit.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="viewQuesdifficult" path="/wareques/viewQuesdifficult" name="quesdifficultForm" type="netTestWeb.wareques.action.QuesdifficultAction" scope="request">
+	        <forward name="viewPage" path="/wareques/quesdifficult_view.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="addQuesdifficult" path="/wareques/addQuesdifficult" name="quesdifficultForm" type="netTestWeb.wareques.action.QuesdifficultAction" scope="request">
+	       <forward name="addEditPage" path="/wareques/quesdifficult_addEdit.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="deleteQuesdifficult" path="/wareques/deleteQuesdifficult" name="quesdifficultForm" type="netTestWeb.wareques.action.QuesdifficultAction" scope="request">
+	       <forward name="list" path="/wareques/quesdifficult_list.jsp"></forward>
+	    </action>
+	     -->
+	    <!-- quesdifficult end -->
+	    
+	    <!-- wareques begin -->
+	    <action parameter="listWareques1" path="/wareques/listWareques1" name="warequesForm" type="netTestWeb.wareques.action.WarequesAction" scope="request">
+	       <forward name="list_oper" path="/wareques/wareques1_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="selWareques" path="/wareques/selWareques" name="warequesForm" type="netTestWeb.wareques.action.WarequesAction" scope="request">
+	       <forward name="selwareques" path="/wareques/wareques_sel.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="saveWareques" path="/wareques/saveWareques" name="warequesForm" type="netTestWeb.wareques.action.WarequesAction" scope="request">
+	       <forward name="list" path="/wareques/wareques1_list.jsp"></forward>
+		   <forward name="ques_danxuan" path="/wareques/wareques_xuanze.jsp"></forward>
+	       <forward name="ques_duoxuan" path="/wareques/wareques_xuanze.jsp"></forward>
+	       <forward name="ques_cailiao" path="/wareques/wareques_cailiao.jsp"></forward>
+	       <forward name="ques_panduan" path="/wareques/wareques_panduan.jsp"></forward>
+	       <forward name="ques_peidui" path="/wareques/wareques_peidui.jsp"></forward>
+	       <forward name="ques_tiankong" path="/wareques/wareques_tiankong.jsp"></forward>
+	       <forward name="ques_wanxingtiankong" path="/wareques/wareques_wanxingtiankong.jsp"></forward>
+	       <forward name="ques_wenda" path="/wareques/wareques_wenda.jsp"></forward>
+	       <forward name="ques_yuedulijie" path="/wareques/wareques_yuedulijie.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="importwarequespage" path="/wareques/importwarequespage" name="warequesForm" type="netTestWeb.wareques.action.WarequesAction" scope="request">
+	       <forward name="importpage" path="/wareques/question_imporpage.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="importwareques" path="/wareques/importwareques" name="warequesForm" type="netTestWeb.wareques.action.WarequesAction" scope="request">
+	       <forward name="importResultPage" path="/wareques/quesImportResultPage.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="editWareques" path="/wareques/editWareques" name="warequesForm" type="netTestWeb.wareques.action.WarequesAction" scope="request">
+	       <forward name="ques_danxuan" path="/wareques/wareques_xuanze.jsp"></forward>
+	       <forward name="ques_duoxuan" path="/wareques/wareques_xuanze.jsp"></forward>
+	       <forward name="ques_panduan" path="/wareques/wareques_panduan.jsp"></forward>
+	       <forward name="ques_tiankong" path="/wareques/wareques_tiankong.jsp"></forward>
+	       <forward name="ques_wanxingtiankong" path="/wareques/wareques_wanxingtiankong.jsp"></forward>
+	       <forward name="ques_wenda" path="/wareques/wareques_wenda.jsp"></forward>
+	       <forward name="ques_yuedulijie" path="/wareques/wareques_yuedulijie.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="viewWareques" path="/wareques/viewWareques" name="warequesForm" type="netTestWeb.wareques.action.WarequesAction" scope="request">
+	       <forward name="view_ques_xuanze" path="/wareques/wareques_xuanze_view.jsp"></forward>
+	       <forward name="view_ques_cailiao" path="/wareques/wareques_cailiao_view.jsp"></forward>
+	       <forward name="view_ques_panduan" path="/wareques/wareques_panduan_view.jsp"></forward>
+	       <forward name="view_ques_peidui" path="/wareques/wareques_peidui_view.jsp"></forward>
+	       <forward name="view_ques_tiankong" path="/wareques/wareques_tiankong_view.jsp"></forward>
+	       <forward name="view_ques_wanxingtiankong" path="/wareques/wareques_wanxingtiankong_view.jsp"></forward>
+	       <forward name="view_ques_wenda" path="/wareques/wareques_wenda_view.jsp"></forward>
+	       <forward name="view_ques_yuedulijie" path="/wareques/wareques_yuedulijie_view.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="addWarequesPage" path="/wareques/addWarequesPage" name="warequesForm" type="netTestWeb.wareques.action.WarequesAction" scope="request">
+	       <forward name="ques_danxuan" path="/wareques/wareques_xuanze.jsp"></forward>
+	       <forward name="ques_duoxuan" path="/wareques/wareques_xuanze.jsp"></forward>
+	       <forward name="ques_cailiao" path="/wareques/wareques_cailiao.jsp"></forward>
+	       <forward name="ques_panduan" path="/wareques/wareques_panduan.jsp"></forward>
+	       <forward name="ques_peidui" path="/wareques/wareques_peidui.jsp"></forward>
+	       <forward name="ques_tiankong" path="/wareques/wareques_tiankong.jsp"></forward>
+	       <forward name="ques_wanxingtiankong" path="/wareques/wareques_wanxingtiankong.jsp"></forward>
+	       <forward name="ques_wenda" path="/wareques/wareques_wenda.jsp"></forward>
+	       <forward name="ques_yuedulijie" path="/wareques/wareques_yuedulijie.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="editSubques" path="/wareques/editSubques" name="warequesForm" type="netTestWeb.wareques.action.WarequesAction" scope="request">
+	       <forward name="ques_cailiao" path="/wareques/wareques_cailiao.jsp"></forward>
+	       <forward name="ques_peidui" path="/wareques/wareques_peidui.jsp"></forward>
+	       <forward name="ques_wanxingtiankong" path="/wareques/wareques_wanxingtiankong.jsp"></forward>
+	       <forward name="ques_yuedulijie" path="/wareques/wareques_yuedulijie.jsp"></forward>
+	       <forward name="list_oper" path="/wareques/wareques1_list.jsp"></forward>
+	    </action>
+	    
+	    <action parameter="deleteWareques" path="/wareques/deleteWareques" name="warequesForm" type="netTestWeb.wareques.action.WarequesAction" scope="request">
+	       <forward name="list" path="/wareques/wareques_list.jsp"></forward>
+	    </action>
+	    <!-- wareques end -->
+	    
+  </action-mappings>
+
+  <message-resources parameter="netTestWeb.resource.PagetextResources" />
+  <message-resources key="BizKey" parameter="netTestWeb.resource.BizMessResources" />
+</struts-config>
+

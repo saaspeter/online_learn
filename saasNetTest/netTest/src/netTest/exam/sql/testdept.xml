@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Testdept">
+<!-- ###################### testdeptResult ########################## -->
+  <resultMap id="TestdeptResult" class="netTest.exam.vo.Testdept">
+    <result column="testDeptID" property="testdeptid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="testID" property="testid" jdbcType="BIGINT"/>
+    <result column="orgBaseID" property="orgbaseid" jdbcType="BIGINT"/>
+    <result column="orgName" property="orgname" jdbcType="VARCHAR"/>
+    <result column="qualifyNum" property="qualifynum" jdbcType="INTEGER"/>
+    <result column="selfQulifyNum" property="selfqulifynum" jdbcType="INTEGER"/>
+    <result column="aveScore" property="avescore" jdbcType="REAL"/>
+    <result column="selfAveScore" property="selfavescore" jdbcType="REAL"/>
+    <result column="examerNum" property="examernum" jdbcType="INTEGER"/>
+    <result column="selfExamerNum" property="selfexamernum" jdbcType="INTEGER"/>
+    <result column="examingNum" property="examingnum" jdbcType="INTEGER"/>
+    <result column="selfExamingNum" property="selfexamingnum" jdbcType="INTEGER"/>
+    <result column="endExamNum" property="endexamnum" jdbcType="INTEGER"/>
+    <result column="selfEndExamNum" property="selfendexamnum" jdbcType="INTEGER"/>
+    <result column="type" property="type" jdbcType="SMALLINT"/>
+	<result column="orgLevel" property="orglevel" jdbcType="INTEGER"/>
+	<result column="deptPath" property="deptpath" jdbcType="VARCHAR"/>
+  </resultMap>
+  
+  <!-- ###################### TestdeptResultForAvescore ########################## -->
+  <resultMap id="TestdeptResultForAvescore" class="netTest.exam.vo.Testdept">
+    <result column="orgBaseID" property="orgbaseid" jdbcType="BIGINT"/>
+    <result column="aveScore" property="avescore" jdbcType="REAL"/>
+    <result column="qualifyNum" property="qualifynum" jdbcType="INTEGER"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="testID" property="testid" jdbcType="BIGINT"/>    
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="testdeptid"><![CDATA[ testDeptID=#testdeptid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="testid"><![CDATA[ testID=#testid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="orgbaseid"><![CDATA[ orgBaseID=#orgbaseid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="orgname"><![CDATA[ orgName=#orgname:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="avescore"><![CDATA[ aveScore=#avescore:REAL# ]]></isNotNull>
+      <isNotNull prepend="and" property="selfavescore"><![CDATA[ selfAveScore=#selfavescore:REAL# ]]></isNotNull>
+      <isNotNull prepend="and" property="type"><![CDATA[ type=#type:SMALLINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="deptpath"><![CDATA[ deptPath=#deptpath:VARCHAR# ]]></isNotEmpty>
+    </dynamic>
+  </sql>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="TestdeptResult" parameterClass="java.lang.Long"> 
+     select 
+         testDeptID,
+    shopID,
+    testID,
+    orgBaseID,
+    orgName,
+    qualifyNum,
+    selfQulifyNum,
+    aveScore,
+    selfAveScore,
+    examerNum,
+    selfExamerNum,
+    examingNum,
+    selfExamingNum,
+    endExamNum,
+    selfEndExamNum,
+    type,orgLevel,deptPath  
+     from testdept 
+     where testDeptID = #value#
+  </select>
+  
+  <!-- ###################### selSatTestDept ########################## -->
+  <select id="selSatTestDept" resultMap="TestdeptResult" parameterClass="netTest.exam.dto.TestdeptQuery"> 
+     select 
+         testDeptID, shopID, testID, orgBaseID, orgName, qualifyNum,
+    selfQulifyNum, aveScore, selfAveScore, examerNum, selfExamerNum,
+    examingNum, selfExamingNum, endExamNum, selfEndExamNum, type, orgLevel, deptPath  
+     from testdept 
+     where testID=#testid:BIGINT# and type=#type:SMALLINT# 
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="TestdeptResult" parameterClass="netTest.exam.dto.TestdeptQuery"> 
+     select 
+         testDeptID,
+    shopID,
+    testID,
+    orgBaseID,
+    orgName,
+    qualifyNum,
+    selfQulifyNum,
+    aveScore,
+    selfAveScore,
+    examerNum,
+    selfExamerNum,
+    examingNum,
+    selfExamingNum,
+    endExamNum,
+    selfEndExamNum,
+    type,orgLevel,deptPath  
+     from testdept
+    <include refid="Testdept.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+  <!-- ###################### satDeptAvescore ########################## -->
+  <select id="satDeptAvescore" resultMap="TestdeptResultForAvescore" parameterClass="netTest.exam.dto.TestdeptQuery"> 
+     select avg(totalscore) aveScore,sum(isQualify) qualifyNum,shopID,testID,null orgBaseID from testuser 
+     where testID=#testid:BIGINT# and shopID=#shopid:BIGINT#
+  </select>
+  
+  <!-- ###################### qryJoinTestdepts ########################## -->
+  <select id="qryJoinTestdepts" resultClass="java.lang.Long" parameterClass="netTest.exam.dto.TestdeptQuery"> 
+     select orgBaseID from testdept where 
+     testID=#testid:BIGINT# and shopID=#shopid:BIGINT# 
+    <isNotEmpty prepend="and" property="deptIdstr">
+        orgBaseID in($deptIdstr$) 
+    </isNotEmpty> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.exam.vo.Testdept"> 
+     insert into testdept
+     ( testDeptID,
+    shopID,
+    testID,
+    orgBaseID,
+    orgName,
+    qualifyNum,
+    selfQulifyNum,
+    aveScore,
+    selfAveScore,
+    examerNum,
+    selfExamerNum,
+    examingNum,
+    selfExamingNum,
+    endExamNum,
+    selfEndExamNum,
+    type,orgLevel,deptPath ) 
+    values 
+     ( #testdeptid:BIGINT#, 
+    #shopid:BIGINT#, 
+    #testid:BIGINT#, 
+    #orgbaseid:BIGINT#, 
+    #orgname:VARCHAR#, 
+    #qualifynum:INTEGER#, 
+    #selfqulifynum:INTEGER#, 
+    #avescore:REAL#, 
+    #selfavescore:REAL#, 
+    #examernum:INTEGER#, 
+    #selfexamernum:INTEGER#, 
+    #examingnum:INTEGER#, 
+    #selfexamingnum:INTEGER#, 
+    #endexamnum:INTEGER#, 
+    #selfendexamnum:INTEGER#, 
+    #type:SMALLINT#,#orglevel:INTEGER#,#deptpath:VARCHAR# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="testdeptid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+  <!-- ###################### insert2 ########################## -->
+  <insert id="insert2" parameterClass="netTest.exam.vo.Testdept"> 
+     insert into testdept
+     ( testDeptID,shopID,testID,orgBaseID,orgName,qualifyNum,
+       selfQulifyNum,aveScore,selfAveScore,examerNum,selfExamerNum,
+       examingNum,selfExamingNum,endExamNum,selfEndExamNum,type,orgLevel,deptPath ) 
+    select  #testdeptid:BIGINT#,#shopid:BIGINT#,#testid:BIGINT#,#orgbaseid:BIGINT#, 
+      orgName,#qualifynum:INTEGER#,#selfqulifynum:INTEGER#,#avescore:REAL#, 
+      #selfavescore:REAL#,#examernum:INTEGER#,#selfexamernum:INTEGER#, 
+      #examingnum:INTEGER#,#selfexamingnum:INTEGER#,#endexamnum:INTEGER#, 
+      #selfendexamnum:INTEGER#,#type:SMALLINT#,orgLevel,path   
+    from orgbase where orgBaseID = #orgbaseid:BIGINT# 
+	 <selectKey resultClass="java.lang.Long" keyProperty="testdeptid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.exam.vo.Testdept"> 
+     update testdept
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="testid"><![CDATA[ testID=#testid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="orgbaseid"><![CDATA[ orgBaseID=#orgbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="orgname"><![CDATA[ orgName=#orgname:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="qualifynum"><![CDATA[ qualifyNum=#qualifynum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="selfqulifynum"><![CDATA[ selfQulifyNum=#selfqulifynum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="avescore"><![CDATA[ aveScore=#avescore:REAL# ]]></isNotNull>
+      <isNotNull prepend="," property="selfavescore"><![CDATA[ selfAveScore=#selfavescore:REAL# ]]></isNotNull>
+      <isNotNull prepend="," property="examernum"><![CDATA[ examerNum=#examernum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="selfexamernum"><![CDATA[ selfExamerNum=#selfexamernum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="examingnum"><![CDATA[ examingNum=#examingnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="selfexamingnum"><![CDATA[ selfExamingNum=#selfexamingnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="endexamnum"><![CDATA[ endExamNum=#endexamnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="selfendexamnum"><![CDATA[ selfEndExamNum=#selfendexamnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="type"><![CDATA[ type=#type:SMALLINT# ]]></isNotNull>
+	  <isNotNull prepend="," property="orglevel"><![CDATA[ orgLevel=#orglevel:INTEGER# ]]></isNotNull>
+	  <isNotEmpty prepend="," property="deptpath"><![CDATA[ deptPath=#deptpath:VARCHAR# ]]></isNotEmpty>
+    </dynamic> where testDeptID = #testdeptid:BIGINT#
+  </update>
+  
+  <!-- ###################### updateByLogicPK ########################## -->
+  <update id="updateByLogicPK" parameterClass="netTest.exam.vo.Testdept"> 
+     update testdept  
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="orgname"><![CDATA[ orgName=#orgname:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="qualifynum"><![CDATA[ qualifyNum=#qualifynum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="selfqulifynum"><![CDATA[ selfQulifyNum=#selfqulifynum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="avescore"><![CDATA[ aveScore=#avescore:REAL# ]]></isNotNull>
+      <isNotNull prepend="," property="selfavescore"><![CDATA[ selfAveScore=#selfavescore:REAL# ]]></isNotNull>
+      <isNotNull prepend="," property="examernum"><![CDATA[ examerNum=#examernum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="selfexamernum"><![CDATA[ selfExamerNum=#selfexamernum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="examingnum"><![CDATA[ examingNum=#examingnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="selfexamingnum"><![CDATA[ selfExamingNum=#selfexamingnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="endexamnum"><![CDATA[ endExamNum=#endexamnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="selfendexamnum"><![CDATA[ selfEndExamNum=#selfendexamnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="type"><![CDATA[ type=#type:SMALLINT# ]]></isNotNull>
+	  <isNotNull prepend="," property="orglevel"><![CDATA[ orgLevel=#orglevel:INTEGER# ]]></isNotNull>
+	  <isNotEmpty prepend="," property="deptpath"><![CDATA[ deptPath=#deptpath:VARCHAR# ]]></isNotEmpty>
+    </dynamic> where shopID=#shopid:BIGINT# and testID=#testid:BIGINT# and orgBaseID=#orgbaseid:BIGINT# 
+  </update>
+  
+  <!-- ###################### updExamNumSat ########################## -->
+  <update id="updExamNumSat" parameterClass="netTest.exam.vo.Testdept"> 
+     update testdept
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="examernum"><![CDATA[ examerNum=examerNum+#examernum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="selfexamernum"><![CDATA[ selfExamerNum=selfExamerNum+#selfexamernum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="examingnum"><![CDATA[ examingNum=examingNum+#examingnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="selfexamingnum"><![CDATA[ selfExamingNum=selfExamingNum+#selfexamingnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="endexamnum"><![CDATA[ endExamNum=endExamNum+#endexamnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="selfendexamnum"><![CDATA[ selfEndExamNum=selfEndExamNum+#selfendexamnum:INTEGER# ]]></isNotNull>
+    </dynamic> where type=1 and testID=#testid:BIGINT# and shopID=#shopid:BIGINT# 
+  </update>
+  
+  <!-- ###################### updExamNumByLogicPk ########################## -->
+  <update id="updExamNumByLogicPk" parameterClass="netTest.exam.vo.Testdept"> 
+     update testdept
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="examernum"><![CDATA[ examerNum=examerNum+#examernum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="selfexamernum"><![CDATA[ selfExamerNum=selfExamerNum+#selfexamernum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="examingnum"><![CDATA[ examingNum=examingNum+#examingnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="selfexamingnum"><![CDATA[ selfExamingNum=selfExamingNum+#selfexamingnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="endexamnum"><![CDATA[ endExamNum=endExamNum+#endexamnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="selfendexamnum"><![CDATA[ selfEndExamNum=selfEndExamNum+#selfendexamnum:INTEGER# ]]></isNotNull>
+    </dynamic> where testID=#testid:BIGINT# and shopID=#shopid:BIGINT# and orgBaseID=#orgbaseid:BIGINT#
+  </update>
+  
+  <!-- ###################### updAvescoreByLogicPk ########################## -->
+  <update id="updAvescoreByLogicPk" parameterClass="netTest.exam.vo.Testdept"> 
+     update testdept set aveScore=#avescore:REAL#, qualifyNum=#qualifynum:INTEGER#   
+      where testID=#testid:BIGINT# and shopID=#shopid:BIGINT#
+  </update>
+  
+  <!-- ###################### updNullDeptInfo ########################## -->
+  <update id="updNullDeptInfo" parameterClass="netTest.exam.vo.Testdept"> 
+     update testdept set aveScore=0, qualifyNum=0  
+      where testID=#testid:BIGINT# and shopID=#shopid:BIGINT# and (aveScore is null or qualifyNum is null)
+  </update>
+  
+  <!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from testdept where testDeptID = #value#
+  </delete>
+  
+  <!-- ###################### deleteByTest ########################## -->
+  <delete id="deleteByTest" parameterClass="netTest.exam.vo.Testdept"> 
+     delete from testdept where shopID=#shopid:BIGINT#
+     and testID=#testid:BIGINT# 
+  </delete>
+  
+  <!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.exam.dto.TestdeptQuery"> 
+     select count(*) from testdept
+     <include refid="Testdept.where_Clause"/>  
+  </select>
+  
+    
+</sqlMap>

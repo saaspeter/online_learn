@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/notice/myCourseLearnNotice.do" location="0,1059" dimension="264,104" />
+  <StrutsActivity path="/usercontext/listshopforuser.do" location="862,757" dimension="370,104" />
+  <StrutsActivity path="/usercontext/listCanuseprod.do" location="1277,757" dimension="370,104" />
+  <StrutsActivity path="errorPage;6" location="534,1059" dimension="161,87" />
+  <StrutsActivity path="messagePage;6" location="740,1059" dimension="154,87" />
+  <StrutsActivity path="treeXml;6" location="939,1059" dimension="147,87" />
+  <StrutsActivity path="forwardToUrl;6" location="309,1059" dimension="180,87" />
+  <StrutsActivity path="toUrl;6" location="1131,1059" dimension="131,87" />
+  <StrutsActivity path="/sysMag/sysconst_list.jsp" location="864,357" dimension="177,53" />
+  <StrutsActivity path="/sysMag/sysconst_edit.jsp" location="1141,357" dimension="183,53" />
+  <StrutsActivity path="/sysMag/sysconst_add.jsp" location="1424,357" dimension="184,53" />
+  <StrutsActivity path="/sysMag/sysconst_addEdit.jsp" location="1129,0" dimension="206,53" />
+  <StrutsActivity path="/sysMag/sysconstval_addEdit.jsp" location="0,961" dimension="222,53" />
+  <StrutsActivity path="/sysMag/sysconstval_list.jsp" location="322,961" dimension="193,53" />
+  <StrutsActivity path="/sysMag/sysconstval_view.jsp" location="615,961" dimension="202,53" />
+  <StrutsActivity path="/sysMag/sysconstitem_list.jsp" location="0,357" dimension="202,53" />
+  <StrutsActivity path="/sysMag/sysconstitem_edit.jsp" location="302,357" dimension="208,53" />
+  <StrutsActivity path="/sysMag/sysconstitem_add.jsp" location="610,357" dimension="209,53" />
+  <StrutsActivity path="/sysMag/sysconstitem_addEdit.jsp" location="290,0" dimension="231,53" />
+  <StrutsActivity path="/sysMag/sysconstitemval_addEdit.jsp" location="0,659" dimension="247,53" />
+  <StrutsActivity path="/sysMag/sysconstitemval_list.jsp" location="347,659" dimension="218,53" />
+  <StrutsActivity path="/sysMag/sysconstitemval_view.jsp" location="665,659" dimension="227,53" />
+  <StrutsActivity path="/notice/enterInfo_product.jsp" location="31,1263" dimension="201,53" />
+  <StrutsActivity path="/bizCommon/selShop.jsp" location="958,961" dimension="178,53" />
+  <StrutsActivity path="/bizCommon/selProduct.jsp" location="1365,961" dimension="193,53" />
+  <StrutsActivity path="/pubs/errorPage.jsp" location="539,1246" dimension="150,53" />
+  <StrutsActivity path="/pubs/message.jsp" location="745,1246" dimension="143,53" />
+  <StrutsActivity path="/pubs/treeXml.jsp" location="944,1246" dimension="136,53" />
+  <StrutsActivity path="/pubs/forwardToUrl.jsp" location="314,1246" dimension="169,53" />
+  <StrutsActivity path="/pubs/toUrl.jsp" location="1136,1246" dimension="120,53" />
+  <StrutsTransition id="/usercontext/listshopforuser.do,shoplist,/bizCommon/selShop.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1047,861" />
+      <AbsolutePoint location="1047,961" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysMag/sysconstval.do,viewPage,/sysMag/sysconstval_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="405,861" />
+      <AbsolutePoint location="405,896" />
+      <AbsolutePoint location="716,896" />
+      <AbsolutePoint location="716,961" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="treeXml;6,null,/pubs/treeXml.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1012,1146" />
+      <AbsolutePoint location="1012,1246" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysMag/sysconstitem.do,editPage,/sysMag/sysconstitem_edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="406,257" />
+      <AbsolutePoint location="406,357" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysMag/sysconstitemval.do,addEditPage,/sysMag/sysconstitemval_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="198,559" />
+      <AbsolutePoint location="198,594" />
+      <AbsolutePoint location="61,594" />
+      <AbsolutePoint location="61,659" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysMag/sysconstitemval.do,list,/sysMag/sysconstitemval_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="361,559" />
+      <AbsolutePoint location="361,624" />
+      <AbsolutePoint location="456,624" />
+      <AbsolutePoint location="456,659" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysMag/sysconstitem.do,addPage,/sysMag/sysconstitem_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="509,257" />
+      <AbsolutePoint location="509,307" />
+      <AbsolutePoint location="714,307" />
+      <AbsolutePoint location="714,357" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="messagePage;6,null,/pubs/message.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="817,1146" />
+      <AbsolutePoint location="817,1246" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/notice/myCourseLearnNotice.do,noticePage,/notice/enterInfo_product.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="132,1163" />
+      <AbsolutePoint location="132,1263" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysMag/sysconst.do,addPage,/sysMag/sysconst_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1327,257" />
+      <AbsolutePoint location="1327,307" />
+      <AbsolutePoint location="1516,307" />
+      <AbsolutePoint location="1516,357" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysMag/sysconstval_addEdit.jsp,null,/sysMag/sysconstval.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="166,961" />
+      <AbsolutePoint location="166,926" />
+      <AbsolutePoint location="254,926" />
+      <AbsolutePoint location="254,861" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="toUrl;6,null,/pubs/toUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1196,1146" />
+      <AbsolutePoint location="1196,1246" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="errorPage;6,null,/pubs/errorPage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="614,1146" />
+      <AbsolutePoint location="614,1246" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysMag/sysconstitem.do,list,/sysMag/sysconstitem_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="302,257" />
+      <AbsolutePoint location="302,307" />
+      <AbsolutePoint location="101,307" />
+      <AbsolutePoint location="101,357" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysMag/sysconstitemval_addEdit.jsp,null,/sysMag/sysconstitemval.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="185,659" />
+      <AbsolutePoint location="185,624" />
+      <AbsolutePoint location="279,624" />
+      <AbsolutePoint location="279,559" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysMag/sysconstitemval.do,viewPage,/sysMag/sysconstitemval_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="443,559" />
+      <AbsolutePoint location="443,594" />
+      <AbsolutePoint location="778,594" />
+      <AbsolutePoint location="778,659" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysMag/sysconstval.do,list,/sysMag/sysconstval_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="330,861" />
+      <AbsolutePoint location="330,926" />
+      <AbsolutePoint location="418,926" />
+      <AbsolutePoint location="418,961" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysMag/sysconst_addEdit.jsp,null,/sysMag/sysconst.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1232,53" />
+      <AbsolutePoint location="1232,153" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysMag/sysconstval.do,addEditPage,/sysMag/sysconstval_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="179,861" />
+      <AbsolutePoint location="179,896" />
+      <AbsolutePoint location="55,896" />
+      <AbsolutePoint location="55,961" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysMag/sysconst.do,list,/sysMag/sysconst_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1137,257" />
+      <AbsolutePoint location="1137,307" />
+      <AbsolutePoint location="952,307" />
+      <AbsolutePoint location="952,357" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="forwardToUrl;6,null,/pubs/forwardToUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="399,1146" />
+      <AbsolutePoint location="399,1246" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/usercontext/listCanuseprod.do,prodlist,/bizCommon/selProduct.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1462,861" />
+      <AbsolutePoint location="1462,961" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysMag/sysconst.do,editPage,/sysMag/sysconst_edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1232,257" />
+      <AbsolutePoint location="1232,357" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sysMag/sysconstitem_addEdit.jsp,null,/sysMag/sysconstitem.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="406,53" />
+      <AbsolutePoint location="406,153" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

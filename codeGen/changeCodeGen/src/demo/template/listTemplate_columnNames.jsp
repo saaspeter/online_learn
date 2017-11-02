@@ -1,0 +1,1 @@
+        <td><bean:message key="{[#Project#]}.page.{[#folder#]}.{[#jspName#]}.{[#property#]}"/></td>

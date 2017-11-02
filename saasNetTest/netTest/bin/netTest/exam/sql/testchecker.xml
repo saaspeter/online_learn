@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Testchecker">
+<!-- ###################### testcheckerResult ########################## -->
+  <resultMap id="TestcheckerResult" class="netTest.exam.vo.Testchecker">
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="testID" property="testid" jdbcType="BIGINT"/>
+    <result column="userID" property="userid" jdbcType="BIGINT"/>
+    <result column="checkQuesNum" property="checkquesnum" jdbcType="INTEGER"/>
+    <result column="isExamCreator" property="isexamcreator" jdbcType="SMALLINT"/>
+  </resultMap>
+    
+<!-- ###################### ChecktestListResult ########################## -->
+  <resultMap id="ChecktestListResult" class="netTest.exam.vo.Testchecker">
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="testID" property="testid" jdbcType="BIGINT"/>
+    <result column="userID" property="userid" jdbcType="BIGINT"/>
+    <result column="checkQuesNum" property="checkquesnum" jdbcType="INTEGER"/>
+    <result column="isExamCreator" property="isexamcreator" jdbcType="SMALLINT"/>
+    <result column="testName" property="testname" jdbcType="VARCHAR"/>
+    <result column="paperID" property="paperid" jdbcType="BIGINT"/>
+    <result column="isDynamicPaper" property="isdynamicpaper" jdbcType="SMALLINT"/>
+    <result column="paperVersion" property="paperversion" jdbcType="INTEGER"/>
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP"/>
+    <result column="testStartDate" property="teststartdate" jdbcType="TIMESTAMP"/>
+    <result column="testEndDate" property="testenddate" jdbcType="TIMESTAMP"/>
+    <result column="productBaseID" property="productbaseid" jdbcType="BIGINT"/>
+    <result column="testStatus" property="teststatus" jdbcType="SMALLINT"/>
+    <result column="productName" property="productname" jdbcType="VARCHAR"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="testid"><![CDATA[ testID=#testid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="userid"><![CDATA[ userID=#userid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="checkquesnum"><![CDATA[ checkQuesNum=#checkquesnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="and" property="isexamcreator"><![CDATA[ isExamCreator=#isexamcreator:SMALLINT# ]]></isNotNull>
+	</dynamic>
+  </sql>
+  
+<!-- ###################### where_Clause_ex ########################## -->
+  <sql id="where_Clause_ex"> 
+    <dynamic> 
+      <isNotNull prepend="and" property="shopid"><![CDATA[ a.shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="testid"><![CDATA[ a.testID=#testid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="userid"><![CDATA[ a.userID=#userid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="isexamcreator"><![CDATA[ a.isExamCreator=#isexamcreator:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="productbaseid"><![CDATA[ b.productBaseID=#productbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="teststatus"><![CDATA[ b.testStatus=#teststatus:SMALLINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="teststatusStr"><![CDATA[ b.testStatus in ($teststatusStr$) ]]></isNotEmpty>
+	</dynamic>
+  </sql>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="TestcheckerResult" parameterClass="java.lang.Long"> 
+     select  shopID,testID,userID,checkQuesNum,isExamCreator 
+     from testchecker 
+     where testID = #value#
+  </select>
+  
+  <!-- ###################### selectByLogicPK ########################## -->
+  <select id="selectByLogicPK" resultMap="TestcheckerResult" parameterClass="netTest.exam.vo.Testchecker"> 
+     select  shopID,testID,userID,checkQuesNum,isExamCreator 
+     from testchecker 
+     where testID = #testid:BIGINT# and userID=#userid:BIGINT#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="TestcheckerResult" parameterClass="netTest.exam.dto.TestcheckerQuery"> 
+     select shopID,testID,userID,checkQuesNum,isExamCreator  
+     from testchecker
+    <include refid="Testchecker.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+  <!-- ###################### qryCheckTestByVO ########################## -->
+  <select id="qryCheckTestByVO" resultMap="ChecktestListResult" parameterClass="netTest.exam.dto.TestcheckerQuery"> 
+     select  a.testID,a.shopID,a.userID,a.checkQuesNum,a.isExamCreator,b.testName,b.paperID,
+         b.isDynamicPaper,b.paperVersion,b.createTime,b.testStartDate,b.testEndDate,b.productBaseID,
+         b.testStatus,b.productName 
+     from testchecker a,testinfo b where a.testid = b.testid 
+    <include refid="Testchecker.where_Clause_ex"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+  
+  <!-- ###################### qryJoinTestcheckers ########################## -->
+  <select id="qryJoinTestcheckers" resultClass="java.lang.Long" parameterClass="netTest.exam.dto.TestcheckerQuery"> 
+     select userID from testchecker
+     where shopID=#shopid:BIGINT# and testID=#testid:BIGINT# 
+     and userID in ($userIdStr$)
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.exam.vo.Testchecker"> 
+     insert into testchecker
+     ( shopID,testID,userID,checkQuesNum,isExamCreator ) 
+    values 
+     ( #shopid:BIGINT#,#testid:BIGINT#,#userid:BIGINT#,#checkquesnum:INTEGER#,#isexamcreator:SMALLINT# )
+  </insert>
+    
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.exam.vo.Testchecker"> 
+     update testchecker
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="checkquesnum"><![CDATA[ checkQuesNum=#checkquesnum:INTEGER# ]]></isNotNull>
+    </dynamic> where testID = #testid:BIGINT# and userID = #userid:BIGINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="netTest.exam.vo.Testchecker"> 
+     delete from testchecker where testID = #testid:BIGINT# and userID=#userid:BIGINT#
+  </delete>
+  
+  <!-- ###################### deleteByTest ########################## -->
+  <delete id="deleteByTest" parameterClass="netTest.exam.vo.Testchecker"> 
+     delete from testchecker where testID = #testid:BIGINT# and shopID=#shopid:BIGINT#
+  </delete>
+  
+  <!-- ###################### deleteCheckers ########################## -->
+  <delete id="deleteCheckers" parameterClass="netTest.exam.dto.TestcheckerQuery"> 
+     delete from testchecker where testID = #testid:BIGINT# and userID in($userIdStr$)
+     and shopID=#shopid:BIGINT# 
+  </delete>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.exam.dto.TestcheckerQuery"> 
+     select count(*) from testchecker
+     <include refid="Testchecker.where_Clause"/>  
+  </select>
+    
+</sqlMap>

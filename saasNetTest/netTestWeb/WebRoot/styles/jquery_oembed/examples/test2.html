@@ -1,0 +1,29 @@
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../jquery.oembed.js"></script>
+<link rel="stylesheet" type="text/css" href="../jquery.oembed.css"> 
+
+
+<script>
+  var option = {
+    maxHeight: 500,
+    maxWidth: 700
+  };
+
+ $(document).ready(function () {
+	 
+	   $("a.embed").oembed('http://www.youtube.com/watch?v=8mwKq7_JlS8',option);
+		
+ });
+ 
+</script>
+</head>
+<body>
+<hr/>
+<div id="out">
+    <a href="http://www.youtube.com/watch?v=8mwKq7_JlS8" class="embed"></a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Paper">
+<!-- ###################### paperResult ########################## -->
+  <resultMap id="PaperResult" class="netTest.paper.vo.Paper">
+    <result column="paperID" property="paperid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="paperNO" property="paperno" jdbcType="VARCHAR"/>
+    <result column="paperName" property="papername" jdbcType="VARCHAR"/>
+    <result column="creatorID" property="creatorid" jdbcType="BIGINT"/>
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP"/>
+    <result column="orgBaseID" property="orgbaseid" jdbcType="BIGINT"/>
+    <result column="paperTotalScore" property="papertotalscore" jdbcType="REAL"/>
+    <result column="paperTime" property="papertime" jdbcType="INTEGER"/>
+    <result column="paperQuaScore" property="paperquascore" jdbcType="REAL"/>
+    <result column="productBaseID" property="productbaseid" jdbcType="BIGINT"/>
+    <result column="contentCateID" property="contentcateid" jdbcType="BIGINT"/>
+    <result column="paperType" property="papertype" jdbcType="SMALLINT"/>
+    <result column="geneType" property="genetype" jdbcType="SMALLINT"/>
+    <result column="phase" property="phase" jdbcType="SMALLINT"/>
+    <result column="wareIdStr" property="wareidstr" jdbcType="VARCHAR"/>
+    <result column="status" property="status" jdbcType="SMALLINT"/>
+    <result column="modiTime" property="moditime" jdbcType="TIMESTAMP"/>
+    <result column="version" property="version" jdbcType="INTEGER"/>
+    <result column="orgName" property="orgname" jdbcType="VARCHAR"/>
+    <result column="productName" property="productname" jdbcType="VARCHAR"/>
+    <result column="paperQuaPer" property="paperquaper" jdbcType="REAL"/>
+    <result column="paperAverScore" property="paperaverscore" jdbcType="REAL"/>
+    <result column="paperUseNum" property="paperusenum" jdbcType="INTEGER"/>
+  </resultMap>
+  
+  <resultMap id="PaperResultEx" class="netTest.paper.vo.Paper" extends="PaperResult">
+    <result column="paperDesc" property="paperdesc" jdbcType="VARCHAR"/>
+    <result column="warenameStr" property="warenamestr" jdbcType="VARCHAR"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="and"> 
+      <isNotNull prepend="and" property="paperid"><![CDATA[ a.paperID=#paperid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ a.shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="paperno"><![CDATA[ a.paperNO=#paperno:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="papername"><![CDATA[ a.paperName like CONCAT('%',#papername:VARCHAR#,'%') ]]></isNotEmpty>
+      <isNotNull prepend="and" property="creatorid"><![CDATA[ a.creatorID=#creatorid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="createtime"><![CDATA[ a.createTime=#createtime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="and" property="orgbaseid"><![CDATA[ a.orgBaseID=#orgbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="papertotalscore"><![CDATA[ a.paperTotalScore=#papertotalscore:REAL# ]]></isNotNull>
+      <isNotNull prepend="and" property="papertime"><![CDATA[ a.paperTime=#papertime:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="and" property="paperquascore"><![CDATA[ a.paperQuaScore=#paperquascore:REAL# ]]></isNotNull>
+      <isNotNull prepend="and" property="productbaseid"><![CDATA[ a.productBaseID=#productbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="contentcateid"><![CDATA[ a.contentCateID=#contentcateid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="papertype"><![CDATA[ a.paperType=#papertype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="genetype"><![CDATA[ a.geneType=#genetype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="phase"><![CDATA[ a.phase=#phase:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="wareidstr"><![CDATA[ a.wareIdStr in($wareidstr$) ]]></isNotNull>
+      <isNotNull prepend="and" property="status"><![CDATA[ a.status=#status:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="moditime"><![CDATA[ a.modiTime=#moditime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="and" property="version"><![CDATA[ a.version=#version:INTEGER# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="prodidStr"><![CDATA[ a.productBaseID in($prodidStr$) ]]></isNotEmpty>
+    </dynamic>
+  </sql>
+    
+  <!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="PaperResultEx" parameterClass="java.lang.Long"> 
+     select  a.paperID,a.shopID,a.paperNO,a.paperName,a.creatorID,a.createTime,
+             a.orgBaseID,a.paperTotalScore,a.paperTime,a.paperQuaScore,a.productBaseID,a.contentCateID,
+             a.paperType,a.geneType,a.phase,a.wareIdStr,a.status,a.modiTime,a.version,
+             b.orgName,b.productName,b.paperQuaPer,b.paperAverScore,b.paperUseNum,b.paperDesc,b.warenameStr   
+     from paper a,PaperProp b 
+     where  a.paperID=b.paperID and a.paperID = #paperid:BIGINT#
+  </select>
+  
+  <!-- ###################### selectInContainer ########################## -->
+  <select id="selectInContainer" resultClass="java.lang.Long" parameterClass="java.lang.Long"> 
+     select  orgBaseID   
+     from paper where paperID = #value:BIGINT#
+  </select>
+  
+  <!-- ###################### selectByPK_plain ########################## -->
+  <select id="selectByPK_plain" resultMap="PaperResult" parameterClass="java.lang.Long"> 
+     select  paperID,shopID,paperNO,paperName,creatorID,createTime,
+             orgBaseID,paperTotalScore,paperTime,paperQuaScore,productBaseID,contentCateID,
+             paperType,geneType,phase,wareIdStr,status,modiTime,version,'' as orgName,
+             '' as productName,null as paperQuaPer,null as paperAverScore,null as paperUseNum     
+     from paper 
+     where  paperID = #paperid:BIGINT# 
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="PaperResult" parameterClass="netTest.paper.dto.PaperQuery"> 
+     select  a.paperID,a.shopID,a.paperNO,a.paperName,a.creatorID,a.createTime,
+             a.orgBaseID,a.paperTotalScore,a.paperTime,a.paperQuaScore,a.productBaseID,a.contentCateID,
+             a.paperType,a.geneType,a.phase,a.wareIdStr,a.status,a.modiTime,a.version,
+             b.orgName,b.productName,b.paperQuaPer,b.paperAverScore,b.paperUseNum   
+     from paper a,PaperProp b 
+     where a.paperID=b.paperID 
+    <include refid="Paper.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.paper.vo.Paper"> 
+     insert into paper
+      (paperID,shopID,paperNO,paperName,creatorID,createTime,
+       orgBaseID,paperTotalScore,paperTime,paperQuaScore,productBaseID,contentCateID,
+       paperType,geneType,phase,wareIdStr,status,modiTime,version ) 
+     values 
+      (#paperid:BIGINT#,#shopid:BIGINT#,#paperno:VARCHAR#, 
+       #papername:VARCHAR#,#creatorid:BIGINT#,#createtime:TIMESTAMP#, 
+       #orgbaseid:BIGINT#,#papertotalscore:REAL#,#papertime:INTEGER#, 
+       #paperquascore:REAL#,#productbaseid:BIGINT#,#contentcateid:BIGINT#,#papertype:SMALLINT#, 
+       #genetype:SMALLINT#,#phase:SMALLINT#,#wareidstr:VARCHAR#,
+       #status:SMALLINT#,#moditime:TIMESTAMP#,#version:INTEGER# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="paperid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.paper.vo.Paper"> 
+     update paper
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="paperno"><![CDATA[ paperNO=#paperno:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="papername"><![CDATA[ paperName=#papername:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="creatorid"><![CDATA[ creatorID=#creatorid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="createtime"><![CDATA[ createTime=#createtime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="orgbaseid"><![CDATA[ orgBaseID=#orgbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="papertotalscore"><![CDATA[ paperTotalScore=#papertotalscore:REAL# ]]></isNotNull>
+      <isNotNull prepend="," property="papertime"><![CDATA[ paperTime=#papertime:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="paperquascore"><![CDATA[ paperQuaScore=#paperquascore:REAL# ]]></isNotNull>
+      <isNotNull prepend="," property="productbaseid"><![CDATA[ productBaseID=#productbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="contentcateid"><![CDATA[ contentCateID=#contentcateid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="papertype"><![CDATA[ paperType=#papertype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="genetype"><![CDATA[ geneType=#genetype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="phase"><![CDATA[ phase=#phase:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="wareidstr"><![CDATA[ wareIdStr=#wareidstr:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="moditime"><![CDATA[ modiTime=#moditime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="version"><![CDATA[ version=#version:INTEGER# ]]></isNotNull>
+    </dynamic> where paperID = #paperid:BIGINT#
+  </update>
+  
+    <!-- ###################### updateModInfo ########################## -->
+  <update id="updateModInfo" parameterClass="netTest.paper.vo.Paper"> 
+     update paper set modiTime=#moditime:TIMESTAMP#,version = version+1 
+     where paperID = #paperid:BIGINT# and shopID=#shopid:BIGINT# 
+  </update>
+  
+  <!-- ###################### updateTotalscore1 ########################## -->
+  <update id="updateTotalscore1" parameterClass="netTest.paper.vo.Paper"> 
+     update paper set paperTotalScore = #papertotalscore:REAL#,version = version+1 
+     <dynamic prepend=","> 
+        <isNotNull prepend="," property="moditime"><![CDATA[ modiTime=#moditime:TIMESTAMP# ]]></isNotNull>
+     </dynamic>
+     where paperID = #paperid:BIGINT# and shopID=#shopid:BIGINT# 
+  </update>
+  
+  <!-- ###################### updateTotalscore2 ########################## -->
+  <update id="updateTotalscore2" parameterClass="netTest.paper.vo.Paper"> 
+     update paper set paperTotalScore = paperTotalScore+#papertotalscore:REAL#,version = version+1  
+     <dynamic prepend=","> 
+        <isNotNull prepend="," property="moditime"><![CDATA[ modiTime=#moditime:TIMESTAMP# ]]></isNotNull>
+     </dynamic>
+     where paperID = #paperid:BIGINT# and shopID=#shopid:BIGINT# 
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from paper where paperID = #value#
+  </delete>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.paper.dto.PaperQuery"> 
+     select count(*) from paper a,PaperProp b 
+     where a.paperID=b.paperID  
+     <include refid="Paper.where_Clause"/>  
+  </select>
+  
+  <parameterMap id="insertPaperQuesParam" class="java.util.Map" >
+     <parameter property="paperid" jdbcType="BIGINT" javaType="java.lang.Long" mode="IN"/>
+  </parameterMap>
+  <procedure id="P_InsertPaperQues" parameterMap="insertPaperQuesParam" >
+     {call P_SelPaperQues(?)}
+  </procedure>
+    
+</sqlMap>

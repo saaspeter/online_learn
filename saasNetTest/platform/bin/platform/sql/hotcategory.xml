@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Hotcategory">
+<!-- ###################### hotcategoryResult ########################## -->
+  <resultMap id="HotcategoryResult" class="platform.vo.Hotcategory">
+    <result column="categoryID" property="categoryid" jdbcType="BIGINT"/>
+    <result column="localeID" property="localeid" jdbcType="BIGINT"/>
+    <result column="syscode" property="syscode" jdbcType="CHAR"/>
+    <result column="pID" property="pid" jdbcType="BIGINT"/>
+    <result column="categoryName" property="categoryname" jdbcType="VARCHAR"/>
+    <result column="disorder" property="disorder" jdbcType="INTEGER"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="categoryid"><![CDATA[ categoryID=#categoryid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="localeid"><![CDATA[ localeID=#localeid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="pid"><![CDATA[ pID=#pid:BIGINT# ]]></isNotNull>
+	  <isNotNull prepend="and" property="syscode"><![CDATA[ syscode=#syscode:CHAR# ]]></isNotNull>
+    </dynamic>
+  </sql>
+    
+<!-- ###################### selectByLocale ########################## -->
+  <select id="selectByLocale" resultMap="HotcategoryResult" parameterClass="platform.vo.Hotcategory"> 
+     select   a.categoryID, a.localeID, a.syscode, a.pID, a.disorder, b.categoryName 
+     from hotcategory a, ProductCategoryValue b 
+     where a.categoryID = b.categoryID and a.localeID = b.localeID 
+           and a.localeID = #localeid:BIGINT# and a.syscode=#syscode:CHAR# 
+           <dynamic> 
+		      <isNotNull prepend="and" property="categorystatus"><![CDATA[ 
+		         exists(select 1 from ProductCategory c where c.categoryID=a.categoryID
+		                and c.status=#categorystatus:SMALLINT#) ]]>
+		      </isNotNull>
+		   </dynamic>
+		   order by a.disorder
+  </select>
+   
+   <!-- ###################### exists ########################## -->
+  <select id="exists" resultMap="HotcategoryResult" parameterClass="platform.vo.Hotcategory"> 
+     select   categoryID, localeID, syscode, pID, null as categoryName  from  hotcategory  
+     where categoryID = #categoryid:BIGINT# 
+           and syscode=#syscode:CHAR# 
+           <dynamic> 
+		      <isNotNull prepend="and" property="localeid"><![CDATA[ 
+		         localeID = #localeid:BIGINT#  ]]>
+		      </isNotNull>
+		   </dynamic>
+  </select>
+    
+  <!-- ###################### existsChild ########################## -->
+  <select id="existsChild" resultClass="java.lang.Integer" parameterClass="platform.vo.Hotcategory"> 
+     select  count(*)  from  hotcategory  
+     where syscode=#syscode:CHAR# and pID = #categoryid:BIGINT# 
+  </select>
+   
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="platform.vo.Hotcategory"> 
+     insert into hotcategory
+     ( categoryID, localeID, syscode, pID, disorder ) 
+    values 
+     ( #categoryid:BIGINT#, #localeid:BIGINT#, 
+       #syscode:CHAR#, #pid:BIGINT#, #disorder:INTEGER# )
+  </insert>
+  
+  <!-- ###################### insertAllLocale ########################## -->
+  <insert id="insertAllLocale" parameterClass="platform.vo.Hotcategory"> 
+     insert into hotcategory
+     ( categoryID, localeID, syscode, pID, disorder ) 
+     select #categoryid:BIGINT#, localeID, #syscode:CHAR#, #pid:BIGINT#, #disorder:INTEGER#
+         from I18n where isSet = 1 
+  </insert>
+ 
+  <!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="platform.vo.Hotcategory"> 
+     delete from hotcategory where categoryID = #categoryid:BIGINT# 
+        and localeID = #localeid:BIGINT# and syscode = #syscode:CHAR#
+  </delete>
+  
+  <!-- ###################### delCategoryAllLocale ########################## -->
+  <delete id="delCategoryAllLocale" parameterClass="platform.vo.Hotcategory"> 
+     delete from hotcategory where categoryID = #categoryid:BIGINT# 
+        and syscode = #syscode:CHAR# 
+  </delete>
+    
+</sqlMap>

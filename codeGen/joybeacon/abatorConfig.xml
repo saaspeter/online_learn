@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE abatorConfiguration PUBLIC "-//Apache Software Foundation//DTD Abator for iBATIS Configuration 1.0//EN"
+  "http://ibatis.apache.org/dtd/abator-config_1_0.dtd">
+
+<abatorConfiguration>
+   <abatorContext>    <!-- TODO: Add Database Connection Information -->
+	   <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+	        connectionURL="jdbc:mysql://localhost:3306/joybeacon?autoReconnect=true"
+	        userId="joybeacon"
+	        password="joybeacon">
+	       <classPathEntry location="C:\tools\RD\mysql\mysql-connector-java-3.1.12\mysql-connector-java-3.1.12-bin.jar" />
+	   </jdbcConnection>
+	
+	   <javaModelGenerator targetPackage="com.joybeacon.model" targetProject="joybeacon" />
+	   <sqlMapGenerator targetPackage="com.joybeacon.sql" targetProject="joybeacon" />
+	   <!-- 
+	   <daoGenerator type="Spring" targetPackage="netTest.dao" targetProject="netTest" />
+        -->
+	    
+	   <table tableName="shop"></table>
+	   <table tableName="beacon"></table>
+	   <table tableName="city"></table>
+	   <table tableName="infopage"></table>
+	       
+   </abatorContext>
+</abatorConfiguration>

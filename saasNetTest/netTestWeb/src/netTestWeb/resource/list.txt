@@ -1,0 +1,1220 @@
+        <td><bean:message key="netTest.page.{[#folder#]}.ProductgroupAction.orgid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ProductgroupAction.productid"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.GroupuserAction.groupid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.GroupuserAction.userid"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.GroupinfoAction.relationproduct"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.GroupinfoAction.grouppid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.GroupinfoAction.groupdesc"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DeptinfoAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DeptinfoAction.deptname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DeptinfoAction.createorg"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DeptinfoAction.createtime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DeptinfoAction.deptfather"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DeptinfoAction.deptlevel"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DeptinfoAction.deptlevelname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DeptinfoAction.deptlevelvalue"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DeptinfoAction.deptchildnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DeptinfoAction.deptdesc"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DeptinfoAction.depttype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DeptinfoAction.deptstatus"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PersoninfoAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PersoninfoAction.deptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PersoninfoAction.accountdept"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PersoninfoAction.passdept"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PersoninfoAction.persontype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PersoninfoAction.personnotes"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DeptlevelshowAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DeptlevelshowAction.deptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DeptlevelshowAction.lowdeptid"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.paperno"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.papername"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.papercreatetime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.deptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.deptname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.papertotalscore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.papertime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.paperqualscore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.paperqualper"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.paperaverscore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.paperusenum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.issingleproduct"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.productid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.productname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.paperaim"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.productlevelid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.productlevelname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.paperreftimes"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.dynamicpaper"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.type"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.isopen"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.deletetime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.visible"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperAction.paperdesc"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperwareAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperwareAction.paperid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperwareAction.wareid"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperquesAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperquesAction.paperid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperquesAction.paperquesorder"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperquesAction.paperquesscore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperquesAction.warequesid"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperlevelshowAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperlevelshowAction.deptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperlevelshowAction.paperid"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperpatternAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperpatternAction.paperid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperpatternAction.questype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperpatternAction.questypename"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperpatternAction.quesdiff"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperpatternAction.quesdiffname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperpatternAction.quespointid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperpatternAction.quespoinname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperpatternAction.num"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperpatternAction.patternscore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperpatternAction.quesscore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PaperpatternAction.ratio"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuespointAction.productid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuespointAction.quespointname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuespointAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuespointAction.visible"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionAction.questype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionAction.questypename"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionAction.quesoptnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionAction.questime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionAction.queschecktype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionAction.productid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionAction.productname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionAction.difficultid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionAction.difficultname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionAction.quespointid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionAction.quespointname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionAction.description"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionAction.file"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionAction.filetype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionAction.objquesanswer"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionAction.iswholeques"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionAction.haschildques"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionAction.pid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionAction.deletetime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionAction.visible"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionAction.question"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionAction.subquesanswer"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuesdifficultAction.productid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuesdifficultAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuesdifficultAction.difficultname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuesdifficultAction.difficultvalue"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuesdifficultAction.visible"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionitemAction.quesid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionitemAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionitemAction.quesitemflag"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionitemAction.file"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionitemAction.filetype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.QuestionitemAction.quesitemcontent"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WarequesAction.wareid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WarequesAction.warename"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WarequesAction.productlevelid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WarequesAction.productlevelname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WarequesAction.quesusenum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WarequesAction.quesreftimes"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WarequesAction.quesrightper"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WareAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WareAction.warename"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WareAction.waretime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WareAction.productid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WareAction.productname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WareAction.warequesnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WareAction.deptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WareAction.deptname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WareAction.warereftimes"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WareAction.isopen"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WareAction.deletetime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WareAction.visible"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WareAction.role"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WareAction.waredesc"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WarelevelshowAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WarelevelshowAction.deptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.WarelevelshowAction.wareid"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestinfoAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestinfoAction.testname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestinfoAction.createdeptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestinfoAction.createdeptname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestinfoAction.productid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestinfoAction.productname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestinfoAction.teststartdate"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestinfoAction.testenddate"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestinfoAction.testavescore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestinfoAction.testqualper"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestinfoAction.teststatus"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestinfoAction.testcanstop"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestinfoAction.testisleveled"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestinfoAction.isdynamicpaper"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestinfoAction.testcheckmode"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestinfoAction.testtype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestinfoAction.testpid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestinfoAction.testaim"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestinfoAction.deletetime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestinfoAction.visible"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestinfoAction.testnotes"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpaperAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpaperAction.testid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpaperAction.testname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpaperAction.paperid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpaperAction.papername"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpaperAction.testtime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpaperAction.productlevelid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpaperAction.productlevelname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpaperAction.dynamicpaper"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestdeptAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestdeptAction.testid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestdeptAction.testname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestdeptAction.deptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestdeptAction.deptname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestdeptAction.testdeptpersonset"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestdeptAction.testdeptqualper"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestdeptAction.testdeptavescore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestdeptAction.testdeptpersonnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestdeptAction.testdeptselfpersonnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestdeptAction.testdepttestingnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestdeptAction.testdeptendnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestdeptAction.testdeptselfendnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestdeptAction.testdeptstatus"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestdeptAction.deletetime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestdeptAction.visible"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PersonanswerAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PersonanswerAction.testpersonid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PersonanswerAction.testid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PersonanswerAction.testname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PersonanswerAction.userid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PersonanswerAction.paperid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PersonanswerAction.deptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PersonanswerAction.deptname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PersonanswerAction.quesid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PersonanswerAction.exobjquesanswer"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PersonanswerAction.answerscore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PersonanswerAction.examinestatus"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PersonanswerAction.quesorder"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.PersonanswerAction.exsubquesanswer"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpersonAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpersonAction.testdeptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpersonAction.userid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpersonAction.personname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpersonAction.deptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpersonAction.deptname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpersonAction.productlevel"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpersonAction.productlevelname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpersonAction.testid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpersonAction.testname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpersonAction.testpaperid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpersonAction.paperid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpersonAction.papername"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpersonAction.testpersonstarttime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpersonAction.testpersonusetime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpersonAction.testpersonendtime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpersonAction.objectscore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpersonAction.totalscore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpersonAction.isqualify"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpersonAction.testpersonstatus"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpersonAction.deletetime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpersonAction.visible"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.TestpersonAction.testpersonnotes"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DepttestscoreAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DepttestscoreAction.testid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DepttestscoreAction.testdeptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DepttestscoreAction.testpaperid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DepttestscoreAction.paperid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DepttestscoreAction.papername"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DepttestscoreAction.testdeptpersonnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DepttestscoreAction.testdeptavescore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DepttestscoreAction.testquapersonnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DepttestscoreAction.testqualper"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DepttestscoreAction.testdeptselfpersonnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DepttestscoreAction.testdeptselfavescore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DepttestscoreAction.testquaselfpersonnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DepttestscoreAction.testselfqualper"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DepttestscoreAction.iscontainedlevel"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DepttestscoreAction.scoreno"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DepttestscoreAction.deletetime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.DepttestscoreAction.visible"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.Metadata2Action.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.Metadata2Action.tablename"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.Metadata2Action.extlabel"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.Metadata2Action.extdatatype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.Metadata2Action.localeid"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.Metadatalabel2Action.metadataid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.Metadatalabel2Action.localeid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.Metadatalabel2Action.extlabel"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.Extdata2Action.metadataid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.Extdata2Action.recordid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.Extdata2Action.value"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.Viewextdata2Action.metadataid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.Viewextdata2Action.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.Viewextdata2Action.tablename"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.Viewextdata2Action.extdatatype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.Viewextdata2Action.metadatalabelid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.Viewextdata2Action.extlabel"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.Viewextdata2Action.extdataid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.Viewextdata2Action.recordid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.Viewextdata2Action.value"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.Viewextdata2Action.localeid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.Viewextdata2Action.language"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.Viewextdata2Action.country"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdeptlevelAction.deptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdeptlevelAction.lowdeptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdeptlevelAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdeptlevelAction.deptname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdeptlevelAction.createorg"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdeptlevelAction.createtime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdeptlevelAction.deptfather"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdeptlevelAction.deptlevel"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdeptlevelAction.deptlevelname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdeptlevelAction.deptlevelvalue"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdeptlevelAction.deptchildnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdeptlevelAction.deptdesc"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdeptlevelAction.depttype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdeptlevelAction.deptstatus"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.userid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.deptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.accountdept"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.passdept"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.persontype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.personnotes"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.gender"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.age"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.creator"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.personstatus"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.name"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.account"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.nickname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.pass"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.tipquestion"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.tipanswer"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.country"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.language"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.lcoinremain"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.email"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.cellphone"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.usertype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.basiccommondesc"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.deptname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.createorg"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.createtime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.deptfather"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.deptlevel"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.deptlevelname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.deptlevelvalue"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.deptchildnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.deptdesc"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.depttype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.deptstatus"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.userproductid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.productlevelid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.productid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.lcoincost"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.startdate"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.enddate"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.isformal"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.isfree"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.productlevelname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersoninfoAction.productlevelvalue"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.deptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.paperid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.paperno"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.papername"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.papercreatetime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.createdeptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.createdeptname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.papertotalscore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.papertime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.paperqualscore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.paperqualper"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.paperaverscore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.paperusenum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.issingleproduct"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.productid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.productname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.paperaim"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.productlevelid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.productlevelname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.paperreftimes"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.dynamicpaper"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.type"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.isopen"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.deletetime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.visible"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperlevelshowAction.paperdesc"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.quesid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.questype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.questypename"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.quesoptnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.questime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.queschecktype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.productid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.productname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.difficultid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.difficultname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.quespointid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.quespointname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.description"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.file"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.filetype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.objquesanswer"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.iswholeques"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.haschildques"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.pid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.deletetime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.visible"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.paperid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.paperquesorder"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.paperquesscore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.warequesid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.question"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpaperquesAction.subquesanswer"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.quesid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.questype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.questypename"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.quesoptnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.questime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.queschecktype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.productid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.productname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.difficultid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.difficultname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.quespointid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.quespointname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.description"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.file"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.filetype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.objquesanswer"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.iswholeques"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.haschildques"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.pid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.deletetime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.visible"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.wareid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.warename"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.productlevelid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.productlevelname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.quesusenum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.quesreftimes"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.quesrightper"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.question"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarequesAction.subquesanswer"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarelevelshowAction.deptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarelevelshowAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarelevelshowAction.wareid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarelevelshowAction.warename"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarelevelshowAction.waretime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarelevelshowAction.productid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarelevelshowAction.productname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarelevelshowAction.warequesnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarelevelshowAction.createdeptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarelevelshowAction.createdeptname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarelevelshowAction.warereftimes"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarelevelshowAction.isopen"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarelevelshowAction.visible"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarelevelshowAction.deletetime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarelevelshowAction.role"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewwarelevelshowAction.waredesc"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.testdeptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.testid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.deptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.deptname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.testdeptpersonset"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.testdeptstatus"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.testdeptqualper"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.testdeptavescore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.testdeptpersonnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.testdeptselfpersonnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.testdepttestingnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.deletetime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.visible"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.testdeptendnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.testdeptselfendnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.testname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.createdeptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.createdeptname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.productid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.productname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.teststartdate"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.testenddate"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.testavescore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.testqualper"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.teststatus"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.testcanstop"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.testisleveled"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.isdynamicpaper"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.testcheckmode"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.testtype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.testpid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.testaim"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestdeptAction.testnotes"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.testpersonid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.testdeptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.testpersonstarttime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.testpersonusetime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.testpersonendtime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.objectscore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.totalscore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.isqualify"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.testpersonstatus"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.deletetime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.visible"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.testpersonnotes"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.userid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.deptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.accountdept"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.passdept"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.persontype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.gender"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.age"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.personstatus"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.personname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.account"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.country"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.language"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.email"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.cellphone"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.deptname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.depttype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.deptstatus"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.personlevelid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.personlevelname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.productlevelvalue"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.testid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.testname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.createdeptname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.productid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.productname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.teststartdate"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.testenddate"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.testavescore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.testqualper"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.teststatus"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.testisleveled"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.isdynamicpaper"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.testtype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.testpid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.testaim"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.testpaperid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.paperid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.papername"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.testtime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.paperlevelid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.paperlevelname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewtestpersonAction.testnotes"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.paperid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.paperquesorder"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.paperquesscore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.warequesid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.questype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.questypename"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.quesoptnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.questime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.queschecktype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.difficultid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.difficultname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.productid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.productname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.quespointid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.quespointname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.file"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.filetype"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.objquesanswer"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.iswholeques"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.haschildques"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.pid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.personanswerid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.testpersonid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.testid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.testname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.userid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.deptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.deptname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.exobjquesanswer"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.answerscore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.examinestatus"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.quesorder"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.question"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.subquesanswer"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewpersonanswerAction.exsubquesanswer"/></td>
+
+
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.testdeptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.shopid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.testid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.testname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.deptid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.deptname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.testdeptstatus"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.testpaperid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.paperid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.papername"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.productlevelid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.productlevelname"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.dynamicpaper"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.depttestscoreid"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.testdeptpersonnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.testdeptavescore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.testqualper"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.testdeptselfpersonnum"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.testdeptselfavescore"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.testselfqualper"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.iscontainedlevel"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.scoreno"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.deletetime"/></td>
+
+        <td><bean:message key="netTest.page.{[#folder#]}.ViewdepttestscoreAction.visible"/></td>
+
+
+

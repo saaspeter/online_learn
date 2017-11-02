@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"  
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:p="http://www.springframework.org/schema/p"  
+       xmlns:cache="http://www.springframework.org/schema/cache"  
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd  
+                           http://www.springframework.org/schema/cache 
+                           http://www.springframework.org/schema/cache/spring-cache-3.1.xsd">
+    
+    <!-- 启用缓存注解功能，这个是必须的，否则注解不会生效，另外，该注解一定要声明在spring主配置文件中才会生效 -->         
+    <cache:annotation-driven cache-manager="cacheManagerGlobal"/>
+    
+	<!-- ========================= RESOURCE DEFINITIONS ========================= -->
+    <!-- this location should be in each project -->
+	<bean id="sysparamConstant_netTest" class="netTest.bean.SysparamConstantNettest">
+		<property name="location">
+			<value>/web/conf/sysParam.properties</value>
+		</property>
+		<property name="sysparamDao">
+			<ref bean="sysparamDao" />
+		</property>
+	</bean>
+
+	<bean id="sqlMapClient_netTest" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation">
+			<value>classpath:netTest/bean/iBatis-config.xml</value>
+		</property>
+	</bean>
+	
+	<bean id="cacheSynchronizer" class="commonTool.cache.CacheSynchronizer">
+		<property name="cacheManager">
+			<ref bean="cacheManagerGlobal" />
+		</property>
+	</bean>
+	
+	<bean id="cacheManagerGlobal" class="org.springframework.cache.support.CompositeCacheManager">
+	    <property name="cacheManagers">
+	        <array>
+	            <ref bean="cacheManager_security" />
+	            <ref bean="cacheManager_netTest" />
+	            <ref bean="cacheManager_platform" />
+	        </array>
+	    </property>
+	</bean>
+	
+	<!-- cacheManager工厂类，指定ehcache.xml的位置 -->   
+	<bean id="cacheManagerFactory_netTest" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean"   
+    	  p:configLocation="classpath:netTest/bean/ehcache.xml" />   
+  
+	<!-- 声明cacheManager -->  
+	<bean id="cacheManager_netTest" class="org.springframework.cache.ehcache.EhCacheCacheManager"   
+    	  p:cacheManager-ref="cacheManagerFactory_netTest" /> 	
+    <!-- end -->
+    
+</beans>

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/social/listprodcommentsuser.do" location="650,1950" dimension="295,104" />
+  <StrutsActivity path="/social/listprodcommentsmag.do" location="1250,1950" dimension="295,104" />
+  <StrutsActivity path="/social/listComments.do" location="50,50" dimension="295,104" />
+  <StrutsActivity path="/social/saveComments.do" location="650,50" dimension="295,104" />
+  <StrutsActivity path="/social/replycomments.do" location="1550,250" dimension="295,104" />
+  <StrutsActivity path="/social/editComments.do" location="1250,50" dimension="295,104" />
+  <StrutsActivity path="/social/addComments.do" location="1250,450" dimension="178,104" />
+  <StrutsActivity path="/social/deleteComments.do" location="1250,950" dimension="295,104" />
+  <StrutsActivity path="/social/getSingleComment.do" location="950,550" dimension="196,104" />
+  <StrutsActivity path="/social/listleavemess.do" location="950,1350" dimension="318,104" />
+  <StrutsActivity path="/social/addleavemess.do" location="1550,650" dimension="318,104" />
+  <StrutsActivity path="/social/saveleavemess.do" location="50,1550" dimension="318,104" />
+  <StrutsActivity path="/social/getsingleleavemess.do" location="1550,1350" dimension="318,104" />
+  <StrutsActivity path="/social/replysysleavemess.do" location="650,1550" dimension="318,104" />
+  <StrutsActivity path="/social/delshopleavemess.do" location="650,750" dimension="295,104" />
+  <StrutsActivity path="/social/delsysleavemess.do" location="1250,1550" dimension="295,104" />
+  <StrutsActivity path="/social/replyshopleavemess.do" location="50,1750" dimension="318,104" />
+  <StrutsActivity path="/social/delprodleavemess.do" location="350,950" dimension="309,104" />
+  <StrutsActivity path="/social/replyprodleavemess.do" location="950,250" dimension="309,104" />
+  <StrutsActivity path="/oath/goselectfile.do" location="1850,1550" dimension="285,104" />
+  <StrutsActivity path="errorPage;6" location="534,302" dimension="161,87" />
+  <StrutsActivity path="messagePage;6" location="740,302" dimension="154,87" />
+  <StrutsActivity path="treeXml;6" location="0,604" dimension="147,87" />
+  <StrutsActivity path="forwardToUrl;6" location="309,302" dimension="180,87" />
+  <StrutsActivity path="toUrl;6" location="192,604" dimension="131,87" />
+  <StrutsActivity path="/social/prodCommentsUser_list.jsp" location="1850,850" dimension="234,53" />
+  <StrutsActivity path="/social/prodCommentsMag_list.jsp" location="1850,1050" dimension="234,53" />
+  <StrutsActivity path="/social/comments_list.jsp" location="350,1350" dimension="176,53" />
+  <StrutsActivity path="/social/comments_addEdit.jsp" location="650,1350" dimension="205,53" />
+  <StrutsActivity path="/social/productComments_addEdit.jsp" location="1250,1150" dimension="253,53" />
+  <StrutsActivity path="/social/leavemessage_shoplist.jsp" location="50,1950" dimension="227,53" />
+  <StrutsActivity path="/social/leavemessage_syslist.jsp" location="350,1950" dimension="216,53" />
+  <StrutsActivity path="/social/leavemessage_prodlist.jsp" location="1550,450" dimension="227,53" />
+  <StrutsActivity path="/social/leavemessage_edit.jsp" location="1550,1750" dimension="204,53" />
+  <StrutsActivity path="" location="350,1150" dimension="32,53" />
+  <StrutsActivity path="/social/selectfile_skydriver.jsp" location="1850,450" dimension="203,53" />
+  <StrutsActivity path="/pubs/errorPage.jsp" location="539,489" dimension="150,53" />
+  <StrutsActivity path="/pubs/message.jsp" location="745,489" dimension="143,53" />
+  <StrutsActivity path="/pubs/treeXml.jsp" location="5,791" dimension="136,53" />
+  <StrutsActivity path="/pubs/forwardToUrl.jsp" location="314,489" dimension="169,53" />
+  <StrutsActivity path="/pubs/toUrl.jsp" location="197,791" dimension="120,53" />
+  <StrutsActivity path="/social/productComments_list.jsp" location="50,1150" dimension="224,53" />
+  <StrutsActivity path="/shop/shop_commentsedit.jsp" location="950,950" dimension="207,53" />
+  <StrutsActivity path="/shop/shop_commentslist.jsp" location="50,950" dimension="201,53" />
+  <StrutsActivity path="/social/leavemessage_list.jsp" location="650,1750" dimension="198,53" />
+  <StrutsActivity path="/social/leavemessage_addEdit.jsp" location="950,1750" dimension="227,53" />
+  <StrutsActivity path="/social/comments_view.jsp" location="1250,750" dimension="185,53" />
+  <StrutsActivity path="/notice/enterInfo_product.jsp" location="31,506" dimension="201,53" />
+  <StrutsActivity path="/bizCommon/selShop.jsp" location="96,204" dimension="178,53" />
+  <StrutsActivity path="/bizCommon/selProduct.jsp" location="503,204" dimension="193,53" />
+  <StrutsActivity path="/shop/comments_list.jsp" location="650,1150" dimension="172,53" />
+  <StrutsActivity path="/shop/comments_addEdit.jsp" location="950,1150" dimension="201,53" />
+  <StrutsActivity path="/shop/comments_view.jsp" location="50,1350" dimension="181,53" />
+  <StrutsActivity path="/social/leavemessage_shopedit.jsp" location="1250,1750" dimension="233,53" />
+  <StrutsActivity path="selectfile_dropbox.jsp" location="1850,1750" dimension="158,53" />
+  <StrutsActivity path="selectfile_google.jsp" location="1850,1950" dimension="149,53" />
+  <StrutsActivity path="/social/selectfile_google.jsp" />
+  <StrutsActivity path="/social/selectfile_dropbox.jsp" />
+  <StrutsTransition id="/oath/goselectfile.do,selectfilepage_dropbox,selectfile_dropbox.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1992,1654" />
+      <AbsolutePoint location="1992,1750" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/social/listleavemess.do,listsystem,/social/leavemessage_syslist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,1418" />
+      <AbsolutePoint location="458,1418" />
+      <AbsolutePoint location="458,1950" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/social/addComments.do,addPage_product,/social/productComments_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1250,504" />
+      <AbsolutePoint location="1226,504" />
+      <AbsolutePoint location="1226,1176" />
+      <AbsolutePoint location="1250,1176" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="toUrl;6,null,/pubs/toUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="257,691" />
+      <AbsolutePoint location="257,791" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/oath/goselectfile.do,selectfilepage_dropbox,,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1992,1550" />
+      <AbsolutePoint location="1992,1278" />
+      <AbsolutePoint location="368,1278" />
+      <AbsolutePoint location="368,1203" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/oath/goselectfile.do,selectfilepage_google,selectfile_google.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2023,1654" />
+      <AbsolutePoint location="2023,1976" />
+      <AbsolutePoint location="1999,1976" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/oath/goselectfile.do,selectfilepage_google,,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1992,1602" />
+      <AbsolutePoint location="366,1176" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="messagePage;6,null,/pubs/message.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="817,389" />
+      <AbsolutePoint location="817,489" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/oath/goselectfile.do,selectfilepage_google,/social/selectfile_google.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1992,1602" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/social/replycomments.do,result,/social/comments_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1845,302" />
+      <AbsolutePoint location="2123,302" />
+      <AbsolutePoint location="2123,1129" />
+      <AbsolutePoint location="468,1129" />
+      <AbsolutePoint location="468,1350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/social/editComments.do,addEditPage,/social/comments_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1450,154" />
+      <AbsolutePoint location="1450,899" />
+      <AbsolutePoint location="847,899" />
+      <AbsolutePoint location="847,1350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="forwardToUrl;6,null,/pubs/forwardToUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="399,389" />
+      <AbsolutePoint location="399,489" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/social/listprodcommentsuser.do,listproduct_user,/social/prodCommentsUser_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,2018" />
+      <AbsolutePoint location="-150,2018" />
+      <AbsolutePoint location="-150,869" />
+      <AbsolutePoint location="1850,869" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/social/listleavemess.do,listshop,/social/leavemessage_shoplist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1192,1454" />
+      <AbsolutePoint location="1192,2078" />
+      <AbsolutePoint location="163,2078" />
+      <AbsolutePoint location="163,2003" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/social/listprodcommentsmag.do,listproduct_mag,/social/prodCommentsMag_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1545,2018" />
+      <AbsolutePoint location="2303,2018" />
+      <AbsolutePoint location="2303,1076" />
+      <AbsolutePoint location="2084,1076" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/social/saveComments.do,result,/social/comments_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="909,154" />
+      <AbsolutePoint location="909,706" />
+      <AbsolutePoint location="338,706" />
+      <AbsolutePoint location="338,1376" />
+      <AbsolutePoint location="350,1376" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/oath/goselectfile.do,selectfilepage_skydrive,/social/selectfile_skydriver.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2135,1602" />
+      <AbsolutePoint location="2423,1602" />
+      <AbsolutePoint location="2423,599" />
+      <AbsolutePoint location="1951,599" />
+      <AbsolutePoint location="1951,503" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/oath/goselectfile.do,selectfilepage_dropbox,/social/selectfile_dropbox.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1992,1602" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/social/listleavemess.do,listprod,/social/leavemessage_prodlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1109,1350" />
+      <AbsolutePoint location="1109,1308" />
+      <AbsolutePoint location="2153,1308" />
+      <AbsolutePoint location="2153,476" />
+      <AbsolutePoint location="1777,476" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/social/addComments.do,addEditPage,/social/comments_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1250,474" />
+      <AbsolutePoint location="1196,474" />
+      <AbsolutePoint location="1196,1218" />
+      <AbsolutePoint location="752,1218" />
+      <AbsolutePoint location="752,1350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="errorPage;6,null,/pubs/errorPage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="614,389" />
+      <AbsolutePoint location="614,489" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/social/deleteComments.do,list,/social/comments_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1397,1054" />
+      <AbsolutePoint location="1397,1069" />
+      <AbsolutePoint location="438,1069" />
+      <AbsolutePoint location="438,1350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/social/editComments.do,editPage_product,/social/productComments_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1545,102" />
+      <AbsolutePoint location="2213,102" />
+      <AbsolutePoint location="2213,1176" />
+      <AbsolutePoint location="1503,1176" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="treeXml;6,null,/pubs/treeXml.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="73,691" />
+      <AbsolutePoint location="73,791" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/social/listComments.do,list,/social/comments_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,132" />
+      <AbsolutePoint location="-45,132" />
+      <AbsolutePoint location="-45,1248" />
+      <AbsolutePoint location="408,1248" />
+      <AbsolutePoint location="408,1350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/social/addleavemess.do,addEditPage,/social/leavemessage_edit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1868,702" />
+      <AbsolutePoint location="2513,702" />
+      <AbsolutePoint location="2513,1499" />
+      <AbsolutePoint location="1652,1499" />
+      <AbsolutePoint location="1652,1750" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

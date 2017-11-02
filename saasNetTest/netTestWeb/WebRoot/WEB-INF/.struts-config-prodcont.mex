@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/prodcont/listContentcate.do" location="60,210" dimension="310,84" />
+  <StrutsActivity path="/prodcont/saveContentcate.do" location="840,210" dimension="310,84" />
+  <StrutsActivity path="/prodcont/editContentcate.do" location="1080,360" dimension="310,84" />
+  <StrutsActivity path="/prodcont/viewContentcate.do" location="1785,255" dimension="310,84" />
+  <StrutsActivity path="/prodcont/addContentcate.do" location="1485,360" dimension="310,84" />
+  <StrutsActivity path="/prodcont/deleteContentcate.do" location="450,210" dimension="310,84" />
+  <StrutsActivity path="/prodcont/geneTree.do" location="1250,750" dimension="310,84" />
+  <StrutsActivity path="errorPage;6" location="1458,2483" dimension="160,72" />
+  <StrutsActivity path="messagePage;6" location="1663,2483" dimension="148,72" />
+  <StrutsActivity path="treeXml;6" location="0,2760" dimension="148,72" />
+  <StrutsActivity path="forwardToUrl;6" location="1235,2483" dimension="178,72" />
+  <StrutsActivity path="toUrl;6" location="193,2760" dimension="136,72" />
+  <StrutsActivity path="/prodcont/contentcate_list.jsp" location="495,570" dimension="220,48" />
+  <StrutsActivity path="/prodcont/contentcate_addEdit.jsp" location="1320,570" dimension="238,48" />
+  <StrutsActivity path="/prodcont/contentcate_view.jsp" location="1850,550" dimension="220,48" />
+  <StrutsActivity path="/pubs/errorPage.jsp" location="1461,2655" dimension="154,48" />
+  <StrutsActivity path="/pubs/message.jsp" location="1666,2655" dimension="142,48" />
+  <StrutsActivity path="/pubs/treeXml.jsp" location="3,2932" dimension="142,48" />
+  <StrutsActivity path="/pubs/forwardToUrl.jsp" location="1238,2655" dimension="172,48" />
+  <StrutsActivity path="/pubs/toUrl.jsp" location="196,2932" dimension="130,48" />
+  <StrutsActivity path="/default.jsp" location="1132,1202" dimension="112,48" />
+  <StrutsActivity path="/org/groupinfo_view.jsp" location="0,1202" dimension="178,48" />
+  <StrutsActivity path="/org/groupinfo_edit.jsp" location="278,1202" dimension="178,48" />
+  <StrutsActivity path="/org/groupinfo_list.jsp" location="556,1202" dimension="178,48" />
+  <StrutsActivity path="/org/groupinfo_add.jsp" location="834,1202" dimension="172,48" />
+  <StrutsActivity path="/orguser/deptuser_edit.jsp" location="0,1559" dimension="196,48" />
+  <StrutsActivity path="/orguser/mulSelUsr_list.jsp" location="296,1559" dimension="202,48" />
+  <StrutsActivity path="/orguser/operator_view.jsp" location="598,1559" dimension="196,48" />
+  <StrutsActivity path="/orguser/deptuser_view.jsp" location="894,1559" dimension="196,48" />
+  <StrutsActivity path="/orguser/deptuser_list.jsp" location="1190,1559" dimension="196,48" />
+  <StrutsActivity path="/orguser/deptuser_add.jsp" location="1486,1559" dimension="190,48" />
+  <StrutsActivity path="/orguser/groupuser_list.jsp" location="1776,1559" dimension="202,48" />
+  <StrutsActivity path="/orguser/operator_list.jsp" location="2078,1559" dimension="196,48" />
+  <StrutsActivity path="/orguser/operator_add.jsp" location="2374,1559" dimension="190,48" />
+  <StrutsActivity path="/orguser/operator_edit.jsp" location="2664,1559" dimension="196,48" />
+  <StrutsActivity path="/org/orglevel_view.jsp" location="941,2390" dimension="172,48" />
+  <StrutsActivity path="/org/orglevel_addEdit.jsp" location="1213,2390" dimension="190,48" />
+  <StrutsActivity path="/org/orglevel_list.jsp" location="1503,2390" dimension="172,48" />
+  <StrutsActivity path="/orguser/operorg_list.jsp" location="353,2390" dimension="190,48" />
+  <StrutsActivity path="/orguser/operorg_addEdit.jsp" location="178,2667" dimension="208,48" />
+  <StrutsActivity path="/orguser/operorg_view.jsp" location="979,2667" dimension="190,48" />
+  <StrutsActivity path="/orguser/operproduct_list.jsp" location="651,2113" dimension="214,48" />
+  <StrutsActivity path="/orguser/operproduct_add.jsp" location="657,2667" dimension="208,48" />
+  <StrutsActivity path="/orguser/deptuserprod_list.jsp" location="660,1836" dimension="220,48" />
+  <StrutsActivity path="/orguser/contentcate_list.jsp" location="650,1350" dimension="214,48" />
+  <StrutsActivity path="/orguser/contentcate_addEdit.jsp" location="950,1350" dimension="232,48" />
+  <StrutsActivity path="/orguser/contentcate_view.jsp" location="1250,1350" dimension="214,48" />
+  <StrutsActivity path="/prodcont/contentcate_main.jsp" location="1850,650" dimension="220,48" />
+  <StrutsActivity path="/prodcont/contentcate_tree.jsp" location="50,750" dimension="220,48" />
+  <StrutsActivity path="/prodcont/toContcateTree.do" location="350,750" dimension="310,84" />
+  <StrutsTransition id="/prodcont/toContcateTree.do,contcateTree,/prodcont/contentcate_tree.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="505,792" />
+      <AbsolutePoint location="160,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/prodcont/toContentMain.do,contentMain,/prodcont/contentcate_tree.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="205,850" />
+      <AbsolutePoint location="205,798" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/prodcont/editContentcate.do,addEditPage,/prodcont/contentcate_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1335,444" />
+      <AbsolutePoint location="1335,570" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="toUrl;6,null,/pubs/toUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="261,2832" />
+      <AbsolutePoint location="261,2932" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="errorPage;6,null,/pubs/errorPage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1538,2555" />
+      <AbsolutePoint location="1538,2655" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/prodcont/toContentMain.do,contentMain,/prodcont/contentcate_main.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="215,850" />
+      <AbsolutePoint location="215,674" />
+      <AbsolutePoint location="1850,674" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/prodcont/toContentMain.do,contentMain,/prodcont/contentcate_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="360,892" />
+      <AbsolutePoint location="605,892" />
+      <AbsolutePoint location="605,618" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="messagePage;6,null,/pubs/message.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1737,2555" />
+      <AbsolutePoint location="1737,2655" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/prodcont/toContcateTree.do,toContcateTree,/prodcont/contentcate_tree.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="350,783" />
+      <AbsolutePoint location="270,783" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/prodcont/toContcateTree.do,contentMain,/prodcont/contentcate_tree.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="350,783" />
+      <AbsolutePoint location="270,783" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/prodcont/listContentcate.do,list,/prodcont/contentcate_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="215,294" />
+      <AbsolutePoint location="215,594" />
+      <AbsolutePoint location="495,594" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/prodcont/viewContentcate.do,viewPage,/prodcont/contentcate_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1940,339" />
+      <AbsolutePoint location="1940,550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="forwardToUrl;6,null,/pubs/forwardToUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1324,2555" />
+      <AbsolutePoint location="1324,2655" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/prodcont/saveContentcate.do,list,/prodcont/contentcate_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="991,294" />
+      <AbsolutePoint location="991,583" />
+      <AbsolutePoint location="715,583" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/prodcont/deleteContentcate.do,list,/prodcont/contentcate_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="605,294" />
+      <AbsolutePoint location="605,570" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="treeXml;6,null,/pubs/treeXml.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="74,2832" />
+      <AbsolutePoint location="74,2932" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/prodcont/toContentMain.do,list,/prodcont/contentcate_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="360,892" />
+      <AbsolutePoint location="605,892" />
+      <AbsolutePoint location="605,618" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/prodcont/addContentcate.do,addEditPage,/prodcont/contentcate_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1543,444" />
+      <AbsolutePoint location="1543,570" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

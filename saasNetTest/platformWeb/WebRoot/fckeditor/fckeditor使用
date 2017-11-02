@@ -1,0 +1,46 @@
+fckeditor使用小集锦：
+
+<textarea name="content" rows="10" cols="80" style="width: 100%; height: 200px"> </textarea> 
+
+<script language="JavaScript" type="text/javascript"> 
+//var sBasePath = document.location.href.substring(0,document.location.href.lastIndexOf('_samples')) ; 
+//alert(sBasePath); 
+var oFCKeditor = new FCKeditor('content') ; 
+oFCKeditor.BasePath = 'fckeditor/' ; 
+oFCKeditor.Height = 400 ; 
+oFCKeditor.Width = 560; 
+oFCKeditor.ReplaceTextarea() ; 
+//获取编辑器中HTML内容 
+function getEditorHTMLContents(EditorName) 
+{ 
+    var oEditor = FCKeditorAPI.GetInstance(EditorName); 
+    return(oEditor.GetXHTML(true)); 
+} 
+//获取编辑器中文字内容（在博客发布时获取无html代码摘要使用） 
+function getEditorTextContents(EditorName) 
+{ 
+    var oEditor = FCKeditorAPI.GetInstance(EditorName); 
+    return(oEditor.EditorDocument.body.innerText); 
+} 
+//设置编辑器中内容 
+function SetEditorContents(EditorName, ContentStr) 
+{ 
+    var oEditor = FCKeditorAPI.GetInstance(EditorName) ; 
+    oEditor.SetHTML(ContentStr) ; 
+} 
+//插入内容到 FCK 编辑器 
+function InsertEditorContents(EditorName, ContentStr) 
+{ 
+    var oEditor = FCKeditorAPI.GetInstance(EditorName) ; 
+    oEditor.InsertHtml(ContentStr) ; 
+} 
+//清空 FCK 编辑器的内容 
+function claerFCK() 
+{ 
+    SetEditorContents('content','') 
+} 
+
+fname='c:\1.jpg' //图片地址 
+//插入图片 
+InsertEditorContents('content',' <p align=center> <img src='+fname+' width=550 height=450> </p>') 
+</script> 

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+  "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+  <!-- ========================= RESOURCE DEFINITIONS ========================= -->
+  <!--
+  <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+    <property name="jndiName" value="java:comp/env/jdbc/netTest"/>
+  </bean>
+  -->
+   
+  <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" destroy-method="close">
+    <property name="driverClassName">
+		<value>com.mysql.jdbc.Driver</value>
+    </property>
+	<property name="url">
+		<value>jdbc:mysql://localhost:3306/saasNetTest</value>
+	</property>
+	<property name="username">
+		<value>peter</value>
+	</property>
+	<property name="password">
+		<value>peter</value>
+	</property>
+  </bean>
+  
+   
+  <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource">
+      <ref local="dataSource"/>
+    </property>
+  </bean>
+  <bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+    <property name="configLocation">
+      <value>/platform/bean/iBatis-config.xml</value>
+    </property>
+  </bean>
+  <!-- ========================= DAO DEFINITIONS: IBATIS IMPLEMENTATIONS ========================= -->
+
+  <!-- ========================= Class Resources: CONFIGURE ========================= -->
+  <bean id="resourcesDaoTarget" class="acegi.daoImpl.ResourcesDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref local="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref local="sqlMapClient"/>
+    </property>
+  </bean>
+
+  <bean id="resourcesDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref local="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="resourcesDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+  <!-- ========================= Class Roles: CONFIGURE ========================= -->
+  <bean id="rolesDaoTarget" class="acegi.daoImpl.RolesDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref local="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref local="sqlMapClient"/>
+    </property>
+  </bean>
+
+  <bean id="rolesDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref local="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="rolesDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+  <!-- ========================= Class Users: CONFIGURE ========================= -->
+  <bean id="usersDaoTarget" class="acegi.daoImpl.UsersDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref local="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref local="sqlMapClient"/>
+    </property>
+  </bean>
+
+  <bean id="usersDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref local="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="usersDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+  <!-- ========================= Class Role_resc: CONFIGURE ========================= -->
+  <bean id="role_rescDaoTarget" class="acegi.daoImpl.Role_rescDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref local="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref local="sqlMapClient"/>
+    </property>
+  </bean>
+
+  <bean id="role_rescDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref local="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="role_rescDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+  <!-- ========================= Class User_role: CONFIGURE ========================= -->
+  <bean id="user_roleDaoTarget" class="acegi.daoImpl.User_roleDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref local="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref local="sqlMapClient"/>
+    </property>
+  </bean>
+
+  <bean id="user_roleDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref local="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="user_roleDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+  <!-- ========================= Class Custorder: CONFIGURE ========================= -->
+  <bean id="custorderDaoTarget" class="acegi.daoImpl.CustorderDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref local="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref local="sqlMapClient"/>
+    </property>
+  </bean>
+
+  <bean id="custorderDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref local="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="custorderDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+  <!-- ========================= Class Rolesvalue: CONFIGURE ========================= -->
+  <bean id="rolesvalueDaoTarget" class="acegi.daoImpl.RolesvalueDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref local="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref local="sqlMapClient"/>
+    </property>
+  </bean>
+
+  <bean id="rolesvalueDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref local="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="rolesvalueDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+  <!-- ========================= Class Menus: CONFIGURE ========================= -->
+  <bean id="menusDaoTarget" class="acegi.daoImpl.MenusDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref local="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref local="sqlMapClient"/>
+    </property>
+  </bean>
+
+  <bean id="menusDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref local="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="menusDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+  <!-- ========================= Class Resourcesvalue: CONFIGURE ========================= -->
+  <bean id="resourcesvalueDaoTarget" class="acegi.daoImpl.ResourcesvalueDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref local="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref local="sqlMapClient"/>
+    </property>
+  </bean>
+
+  <bean id="resourcesvalueDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref local="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="resourcesvalueDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+  <!-- ========================= Class Menusvalue: CONFIGURE ========================= -->
+  <bean id="menusvalueDaoTarget" class="acegi.daoImpl.MenusvalueDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref local="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref local="sqlMapClient"/>
+    </property>
+  </bean>
+
+  <bean id="menusvalueDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref local="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="menusvalueDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+  <!-- ========================= Class Resclink: CONFIGURE ========================= -->
+  <bean id="resclinkDaoTarget" class="acegi.daoImpl.ResclinkDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref local="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref local="sqlMapClient"/>
+    </property>
+  </bean>
+
+  <bean id="resclinkDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref local="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="resclinkDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+
+
+</beans>

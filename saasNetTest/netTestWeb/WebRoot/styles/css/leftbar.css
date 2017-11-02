@@ -1,0 +1,52 @@
+
+* {
+    margin:0 auto;
+    padding:0;
+}
+li {
+    display: inline;
+}
+a{
+    display:block;
+    font-size:16px;
+}
+
+#leftbar ul {
+	background-color:transparent;
+	border-width:0px;
+	border-style:solid;
+	border-color:#aaaaaa;
+}
+
+#leftbar li a {
+	padding:5px 2px 5px 10px;
+	color:#000000;
+	font-size:13px;
+	text-decoration:none;
+	border-width:1px 0px;
+	border-style:solid;
+	border-color:#ffffff;
+}
+
+.menu a{
+	background-color:#AAD5FF;
+}
+
+.menu a:hover	
+{	
+    background-color:#51A6FB;
+}
+
+.subMenu{
+    display:block;
+    padding-left:5px;
+}
+
+.subMenu li a {
+    background-color: #eefeff;
+}
+
+.subMenu li a:hover	
+{	
+    background-color:#51A6FB;
+}

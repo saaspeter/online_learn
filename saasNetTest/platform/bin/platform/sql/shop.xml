@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Shop">
+
+<!-- ###################### ShopResult_origin ########################## -->
+  <resultMap id="ShopResult_origin" class="platform.vo.Shop">
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="localeID" property="localeid" jdbcType="BIGINT"/>
+    <result column="shopName" property="shopname" jdbcType="VARCHAR"/>
+    <result column="shopCode" property="shopcode" jdbcType="VARCHAR"/>
+    <result column="userID" property="userid" jdbcType="BIGINT"/>
+    <result column="openType" property="opentype" jdbcType="SMALLINT"/>
+    <result column="regisDate" property="regisdate" jdbcType="TIMESTAMP"/>
+    <result column="userNum" property="usernum" jdbcType="INTEGER"/>
+    <result column="userNumScale" property="usernumscale" jdbcType="VARCHAR"/>
+    <result column="bizArea" property="bizarea" jdbcType="INTEGER"/>
+    <result column="ownerType" property="ownertype" jdbcType="SMALLINT"/>
+    <result column="chargeType" property="chargetype" jdbcType="SMALLINT"/>
+    <result column="isAuthen" property="isauthen" jdbcType="SMALLINT"/>
+    <result column="shopStatus" property="shopstatus" jdbcType="SMALLINT"/>
+  </resultMap>
+
+<!-- ###################### ShopResult ########################## -->
+  <resultMap id="ShopResult" class="platform.vo.Shop">
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="userID" property="userid" jdbcType="BIGINT"/>
+    <result column="localeID" property="localeid" jdbcType="BIGINT"/>
+    <result column="shopName" property="shopname" jdbcType="VARCHAR"/>
+    <result column="shopCode" property="shopcode" jdbcType="VARCHAR"/>
+    <result column="openType" property="opentype" jdbcType="SMALLINT"/>
+    <result column="regisDate" property="regisdate" jdbcType="TIMESTAMP"/>
+    <result column="userNum" property="usernum" jdbcType="INTEGER"/>
+    <result column="userNumScale" property="usernumscale" jdbcType="VARCHAR"/>
+    <result column="bizArea" property="bizarea" jdbcType="INTEGER"/>
+    <result column="ownerType" property="ownertype" jdbcType="SMALLINT"/>
+    <result column="chargeType" property="chargetype" jdbcType="SMALLINT"/>
+    <result column="isAuthen" property="isauthen" jdbcType="SMALLINT"/>
+    <result column="shopStatus" property="shopstatus" jdbcType="SMALLINT"/>
+    <result column="shopValueID" property="shopvalueid" jdbcType="BIGINT"/>
+    <result column="isDefaultSet" property="isdefaultset" jdbcType="SMALLINT"/>
+    <result column="shopDesc" property="shopdesc" jdbcType="LONGVARCHAR"/>
+  </resultMap>
+  
+  <!-- ###################### i18nResult ########################## -->
+  <resultMap id="I18nResult" class="commonTool.biz.vo.I18n">
+    <result column="localeID" property="localeid" jdbcType="BIGINT"/>
+    <result column="language" property="language" jdbcType="VARCHAR"/>
+    <result column="country" property="country" jdbcType="VARCHAR"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="and"> 
+      <isNotNull prepend="and" property="shopid"><![CDATA[ a.shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="userid"><![CDATA[ a.userID=#userid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="localeid"><![CDATA[ b.localeID=#localeid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="opentype"><![CDATA[ a.openType=#opentype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="regisdate"><![CDATA[ a.regisDate=#regisdate:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="and" property="ownertype"><![CDATA[ a.ownerType=#ownertype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="chargetype"><![CDATA[ a.chargeType=#chargetype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="isauthen"><![CDATA[ a.isAuthen=#isauthen:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopstatus"><![CDATA[ a.shopStatus=#shopstatus:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="isdefaultset"><![CDATA[ b.isDefaultSet=#isdefaultset:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="categoryid">
+         <![CDATA[
+              exists (
+                      select 1 from ProdCateShop y, ProductCategory z 
+                      where y.categoryID=z.categoryID and y.shopID = a.shopID 
+                        and find_in_set(#categoryid:BIGINT#, z.path)>0 
+              ) 
+          ]]>
+       </isNotNull>
+       <isNotEmpty prepend="and" property="regioncode">
+          <![CDATA[ 
+              exists (
+                 select 1 from ShopContactInfo x where a.shopID=x.shopID
+                 and x.regionCode=#regioncode:VARCHAR#
+              )
+          ]]>
+       </isNotEmpty>
+       <isNotEmpty prepend="and" property="searchtext">
+          <![CDATA[ 
+              exists (
+                 select 1 from ReverseSearch w where a.shopID=w.entityID
+                 and w.entityType='shop' and w.searchText like CONCAT('%',#searchtext:VARCHAR#,'%')
+              )
+          ]]>
+       </isNotEmpty>
+    </dynamic>
+  </sql>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="ShopResult" parameterClass="platform.vo.Shop"> 
+     select 
+    a.shopID,
+    a.shopCode,
+    a.userID,
+    a.openType,
+    a.regisDate,
+    a.userNum, a.userNumScale, a.bizArea, a.ownerType, a.chargeType,
+    a.isAuthen,
+    a.shopStatus,
+    b.localeID,
+    b.isDefaultSet,
+    b.shopName,
+    b.shopValueID,
+    b.shopDesc
+     from shop a,shopvalue b 
+     where a.shopID=b.shopID 
+       and a.shopID=#shopid:BIGINT#
+       and b.localeID=#localeid:BIGINT#
+  </select>
+  
+  <!-- ###################### selectByPK_origin ########################## -->
+  <select id="selectByPK_origin" resultMap="ShopResult_origin" parameterClass="java.lang.Long"> 
+     select shopID, shopCode, userID, localeID, shopName, openType, regisDate, userNum,
+            userNumScale, bizArea, ownerType, chargeType, isAuthen, shopStatus 
+     from shop  
+     where shopID=#shopid:BIGINT#
+  </select>
+  
+  <!-- ###################### selectByCode ########################## -->
+  <select id="selectByCode" resultMap="ShopResult_origin" parameterClass="java.lang.String"> 
+     select shopID, shopCode, userID, localeID, shopName, openType, regisDate, userNum,
+            userNumScale, bizArea, ownerType, chargeType, isAuthen, shopStatus
+     from shop  
+     where shopCode = #value:VARCHAR#
+  </select>
+  
+  <!-- ###################### existcheckByCode ########################## -->
+  <select id="existcheckByCode" resultClass="java.lang.Integer" parameterClass="java.lang.String"> 
+     select 1 from dual where 
+          exists (select 1 from shop where shopCode = #value:VARCHAR#)
+        or exists (select 1 from ShopApp where shopCode = #value:VARCHAR# and appStatus=4)
+  </select>
+   
+  <!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="ShopResult" parameterClass="platform.dto.ShopQuery"> 
+     select 
+    a.shopID,
+    a.userID,
+    a.shopCode,
+    a.openType,
+    a.regisDate,
+    a.userNum, a.userNumScale, a.bizArea, a.ownerType, a.chargeType,
+    a.isAuthen,
+    a.shopStatus,
+    b.localeID,
+    b.isDefaultSet,
+    b.shopName,
+    b.shopValueID,
+    null as shopDesc
+     from shop a,shopvalue b 
+      where a.shopID=b.shopID 
+    <include refid="Shop.where_Clause"/>  
+    <isNotNull property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotNull> 
+  </select>
+  
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="platform.vo.Shop"> 
+     insert into shop
+     ( shopID,
+    localeID,
+    shopName,
+    shopCode,
+    userID,
+    openType,
+    regisDate,
+    userNum, userNumScale, bizArea, ownerType, chargeType,
+    isAuthen,
+    shopStatus ) 
+    values 
+     ( #shopid:BIGINT#, 
+    #localeid:BIGINT#, 
+    #shopname:VARCHAR#,
+    #shopcode:VARCHAR#,
+    #userid:BIGINT#, 
+    #opentype:SMALLINT#, 
+    #regisdate:TIMESTAMP#, 
+    #usernum:INTEGER#, #usernumscale:VARCHAR#, #bizarea:INTEGER#, #ownertype:SMALLINT#, 
+    #chargetype:SMALLINT#,
+    #isauthen:SMALLINT#,
+    #shopstatus:SMALLINT# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="shopid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="platform.vo.Shop"> 
+     update shop
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="localeid"><![CDATA[ localeID=#localeid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="shopname"><![CDATA[ shopName=#shopname:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="shopcode"><![CDATA[ shopCode=#shopcode:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="opentype"><![CDATA[ openType=#opentype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="usernum"><![CDATA[ userNum=#usernum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="usernumscale"><![CDATA[ userNumScale=#usernumscale:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="bizarea"><![CDATA[ bizArea=#bizarea:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="ownertype"><![CDATA[ ownerType=#ownertype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="chargetype"><![CDATA[ chargeType=#chargetype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="isauthen"><![CDATA[ isAuthen=#isauthen:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="shopstatus"><![CDATA[ shopStatus=#shopstatus:SMALLINT# ]]></isNotNull>
+    </dynamic> where shopID = #shopid:BIGINT#
+  </update>
+  
+  <!-- ###################### updateStatus ########################## -->
+  <update id="updateStatus" parameterClass="platform.vo.Shop"> 
+     update shop set shopStatus=#shopstatus:SMALLINT# where shopID = #shopid:BIGINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from shop where shopID = #value#
+  </delete>
+  
+<!-- ###################### deleteByVO ########################## -->
+  <delete id="deleteByVO" parameterClass="platform.dto.ShopQuery"> 
+     delete from shop
+     <include refid="Shop.where_Clause"/> 
+  </delete>
+  
+  <!-- ###################### selectUserSetLocales ########################## -->
+  <select id="selectUserSetLocales" resultMap="I18nResult" parameterClass="java.lang.Long"> 
+     select distinct ShopValue.localeID,I18n.language,I18n.country from I18n,ShopValue,shop
+       where shop.userID=#value# and I18n.localeID = ShopValue.localeID
+             and shop.shopID = ShopValue.shopID 
+  </select>
+  
+  <!-- ###################### selectShopSetLocales ########################## -->
+  <select id="selectShopSetLocales" resultMap="I18nResult" parameterClass="java.lang.Long"> 
+     select distinct ShopValue.localeID,I18n.language,I18n.country from I18n,ShopValue,shop
+       where ShopValue.shopID=#value# and I18n.localeID = ShopValue.localeID
+  </select>
+  
+  <!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="platform.dto.ShopQuery"> 
+     select count(a.shopID) from shop a,shopvalue b 
+      where a.shopID=b.shopID 
+    <include refid="Shop.where_Clause"/>  
+  </select>
+  
+  <!-- ###################### selectCountByOwner ########################## -->
+  <select id="selectCountByOwner" resultClass="java.lang.Integer" parameterClass="java.lang.Long"> 
+     select count(shopID) from shop where userID=#value#
+  </select>
+  
+    
+</sqlMap>

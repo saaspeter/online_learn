@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test_src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/saasNetTest/tools/junit.jar"/>
+	<classpathentry kind="lib" path="/saasNetTest/tools/commons-logging-1.0.4.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/commonTool"/>
+	<classpathentry kind="lib" path="/saasNetTest/tools/ibatis-2.3.3.720.jar"/>
+	<classpathentry kind="lib" path="/saasNetTest/tools/mysql-connector-java-5.1.20-bin.jar"/>
+	<classpathentry kind="lib" path="/saasNetTest/tools/commons-beanutils-1.8.3.jar"/>
+	<classpathentry kind="lib" path="/saasNetTest/tools/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="/saasNetTest/tools/jersey-core-1.17.1.jar"/>
+	<classpathentry kind="lib" path="/saasNetTest/tools/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/saasNetTest/tools/jersey-client-1.17.1.jar" sourcepath="D:/RD/jars/jersey-archive-1.17.1/jersey-client-1.17.1-sources.jar"/>
+	<classpathentry kind="lib" path="/saasNetTest/tools/struts-1.2.7.jar"/>
+	<classpathentry kind="lib" path="/saasNetTest/tools/spring-tx-3.2.4.RELEASE.jar" sourcepath="D:/RD/spring/spring-framework-3.2.4.RELEASE-dist/spring-framework-3.2.4.RELEASE/libs/spring-tx-3.2.4.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="/saasNetTest/tools/spring-web-3.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/saasNetTest/tools/spring-aop-3.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/saasNetTest/tools/spring-context-3.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/saasNetTest/tools/spring-core-3.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/saasNetTest/tools/spring-orm-3.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/saasNetTest/tools/spring-oxm-3.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/saasNetTest/tools/spring-aspects-3.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/saasNetTest/tools/spring-beans-3.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/saasNetTest/tools/spring-jdbc-3.2.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/saasNetTest/tools/spring-jms-3.2.4.RELEASE.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="/saasNetTest/tools/mongo-java-driver-2.13.0.jar" sourcepath="C:/lib_proj/maven_repository/org/mongodb/mongo-java-driver/2.13.0/mongo-java-driver-2.13.0-sources.jar"/>
+	<classpathentry kind="lib" path="/saasNetTest/tools/morphia-0.110.jar" sourcepath="C:/lib_proj/morphia-r0.110.zip"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Prodcateshop">
+<!-- ###################### ProdcateshopResult ########################## -->
+  <resultMap id="ProdcateshopResult" class="platform.shop.vo.Prodcateshop">
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="categoryID" property="categoryid" jdbcType="BIGINT"/>
+	<result column="categoryName" property="categoryname" jdbcType="VARCHAR"/>
+	<result column="pID" property="pid" jdbcType="BIGINT"/>
+	<result column="childnum" property="childnum" jdbcType="INTEGER"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic> 
+      <isNotNull prepend="and" property="shopid"><![CDATA[ c.shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="syscode"><![CDATA[ c.syscode=#syscode:CHAR# ]]></isNotNull>
+      <isNotNull prepend="and" property="categoryid"><![CDATA[ c.categoryID=#categoryid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="localeid"><![CDATA[ b.localeID=#localeid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="pid"><![CDATA[ c.pID=#pid:BIGINT# ]]></isNotNull>
+    </dynamic>
+  </sql>
+    
+  <!-- ###################### getChildNodes ########################## -->
+  <select id="getChildNodes" resultMap="ProdcateshopResult" parameterClass="platform.shop.vo.Prodcateshop"> 
+     select #shopid:BIGINT# as shopID, a.categoryID, b.categoryName, a.pID,  
+            (select count(*) from productcategory c where c.pID=a.categoryID) as childnum 
+     from productcategory a ,ProductCategoryValue b 
+     where a.categoryID=b.categoryID and a.pID=#pid:BIGINT# 
+       and exists(
+               select 1 from prodcateshop e where 
+                          e.shopID = #shopid:BIGINT# and e.syscode=#syscode:VARCHAR#
+                          and a.categoryID = e.categoryID  
+           )
+    <dynamic> 
+      <isNotNull prepend="and" property="localeid"><![CDATA[ b.localeID=#localeid:BIGINT# ]]></isNotNull>
+    </dynamic>   
+  </select>
+  
+  <!-- ###################### existChildNode ########################## -->
+  <select id="existChildNode" resultClass="java.lang.Integer" parameterClass="platform.shop.vo.Prodcateshop"> 
+     select count(1) from prodcateshop a where a.shopID = #shopid:BIGINT# 
+              and a.syscode=#syscode:VARCHAR#
+     	      and exists(
+               			  select 1 from productcategory b where 
+                               a.categoryID = b.categoryID  
+                               and b.pID = #pid:BIGINT# 
+           				) 
+  </select>
+  
+  <!-- ###################### existsCate ########################## -->
+  <select id="existsCate" resultClass="java.lang.Integer" parameterClass="platform.shop.vo.Prodcateshop"> 
+      select 1 from prodcateshop where 
+                     shopID = #shopid:BIGINT# and syscode=#syscode:VARCHAR#
+                          and categoryID = #categoryid:BIGINT#  
+  </select>
+  
+  <!-- ###################### cateExistProd ########################## -->
+  <select id="cateExistProd" resultClass="java.lang.Integer" parameterClass="platform.shop.vo.Prodcateshop"> 
+     select 1 from prodcateshop a where a.shopID = #shopid:BIGINT# 
+              and a.syscode=#syscode:VARCHAR# and a.categoryID = #categoryid:BIGINT# 
+     	      and exists(
+               			  select 1 from ProductBase b where 
+                               a.categoryID = b.categoryID and b.shopID = #shopid:BIGINT#
+                               and b.categoryID = #categoryid:BIGINT# 
+           				) 
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="ProdcateshopResult" parameterClass="platform.shop.vo.Prodcateshop"> 
+     select  c.shopID, a.categoryID, b.categoryName, a.pID, 0 as childnum 
+     from productcategory a ,ProductCategoryValue b, prodcateshop c 
+     where a.categoryID=b.categoryID and a.categoryID=c.categoryID 
+    <include refid="Prodcateshop.where_Clause"/>  
+  </select>
+  
+  <!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="platform.shop.vo.Prodcateshop"> 
+     insert into prodcateshop
+     ( shopID, categoryID, syscode, pID ) 
+    values 
+     ( #shopid:BIGINT#, #categoryid:BIGINT#, #syscode:CHAR#, #pid:BIGINT# )
+  </insert>
+  
+  <!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="platform.shop.vo.Prodcateshop"> 
+     delete from prodcateshop where shopID = #shopid:BIGINT# 
+       and categoryID = #categoryid:BIGINT# and syscode = #syscode:CHAR# 
+  </delete>
+  
+   
+</sqlMap>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Roles">
+<!-- ###################### rolesResult ########################## -->
+  <resultMap id="RolesResult" class="commonWeb.security.vo.Roles">
+    <result column="id" property="id" jdbcType="BIGINT"/>
+    <result column="name" property="name" jdbcType="VARCHAR"/>
+    <result column="code" property="code" jdbcType="VARCHAR"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="syscode" property="syscode" jdbcType="VARCHAR"/>
+    <result column="upId" property="upId" jdbcType="BIGINT"/>
+    <result column="status" property="status" jdbcType="SMALLINT"/>
+    <result column="isDefaultSet" property="isdefaultset" jdbcType="SMALLINT"/>
+    <result column="roleLevel" property="rolelevel" jdbcType="SMALLINT"/>
+    <result column="creator" property="creator" jdbcType="BIGINT"/>
+    <result column="descn" property="descn" jdbcType="VARCHAR"/>
+  </resultMap>
+  
+  <resultMap id="RolesResultEx" class="commonWeb.security.vo.Roles" extends="RolesResult">
+    <result column="upIdCode" property="upIdCode" jdbcType="VARCHAR"/>
+    <result column="upIdName" property="upIdName" jdbcType="VARCHAR"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="id"><![CDATA[ id=#id:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="name"><![CDATA[ name=#name:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="code"><![CDATA[ code=#code:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="syscode"><![CDATA[ syscode=#syscode:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="upId"><![CDATA[ upId=#upId:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="isdefaultset"><![CDATA[ isDefaultSet=#isdefaultset:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="rolelevel"><![CDATA[ roleLevel=#rolelevel:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="rolecodeStr"><![CDATA[ code in ($rolecodeStr$) ]]></isNotNull>
+      
+    </dynamic>
+  </sql>
+  
+  <!-- ###################### where_Clause_locale ########################## -->
+  <sql id="where_Clause_locale"> 
+    <dynamic> 
+      <isNotNull prepend="and" property="id"><![CDATA[ a.id=#id:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="name"><![CDATA[ b.name=#name:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="code"><![CDATA[ b.code=#code:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ a.shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="syscode"><![CDATA[ a.syscode=#syscode:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="upId"><![CDATA[ a.upId=#upId:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="status"><![CDATA[ a.status=#status:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="isdefaultset"><![CDATA[ a.isDefaultSet=#isdefaultset:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="rolelevel"><![CDATA[ roleLevel=#rolelevel:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="creator"><![CDATA[ a.creator=#creator:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="localeid"><![CDATA[ b.localeID=#localeid:BIGINT# ]]></isNotNull>
+    </dynamic>
+  </sql>
+  
+<!-- ###################### selectAll ########################## -->
+  <select id="selectAll" resultMap="RolesResult"> 
+     select id,name,code,shopID,syscode,upId,status,isDefaultSet,roleLevel,creator,descn  
+     from roles
+  </select>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="RolesResult" parameterClass="java.lang.Long"> 
+     select id,name,code,shopID,syscode,upId,status,isDefaultSet,roleLevel,creator,descn
+     from roles where id = #value#
+  </select>
+
+  <!-- if role has upId, then use this expression
+  <select id="selectByPK" resultMap="RolesResultEx" parameterClass="java.lang.Long"> 
+     select a.id,a.name,a.code,a.shopID,a.syscode,a.upId,a.status,
+            a.isDefaultSet,a.roleLevel,a.creator,a.descn,b.code as upIdCode,b.name as upIdName   
+     from roles a left outer join roles b on a.upId = b.id
+     where a.id = #value#
+  </select>
+   -->
+  
+  <!-- ###################### selectByPK_locale ########################## -->
+  
+  <select id="selectByPK_locale" resultMap="RolesResult" parameterClass="commonWeb.security.vo.Roles"> 
+     select a.id,b.name,a.code,a.shopID,a.syscode,a.upId,a.status,a.isDefaultSet,a.roleLevel,
+            a.creator,b.descn  
+     from roles a left outer join rolesValue b on a.id = b.id 
+     where a.id = #id:BIGINT# and b.localeID = #localeid:BIGINT#
+  </select>
+  
+  <!-- if role has upId, then use this expression
+  <select id="selectByPK_locale" resultMap="RolesResultEx" parameterClass="commonWeb.security.vo.Roles"> 
+     select a.id,c.name,a.code,a.shopID,a.syscode,a.upId,a.status,a.isDefaultSet,a.roleLevel,
+            a.creator,c.descn,b.code as upIdCode,d.name as upIdName   
+     from roles a left outer join roles b on a.upId = b.id
+      left outer join rolesValue c on a.id = c.id 
+      left outer join rolesValue d on a.id = d.id 
+     where a.id = #id:BIGINT# and c.localeID = #localeid:BIGINT# and d.localeID = #localeid:BIGINT# 
+  </select>
+  -->
+  
+  <select id="selectRoleIdByCode" resultClass="java.lang.Long" parameterClass="commonWeb.security.vo.Roles"> 
+     select id from roles where code = #code:VARCHAR# and syscode=#syscode:VARCHAR#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="RolesResult" parameterClass="commonWeb.security.dto.RolesQuery"> 
+     select id,name,code,shopID,syscode,upId,status,isDefaultSet,roleLevel,creator,descn  
+     from roles
+    <include refid="Roles.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+  <!-- ###################### selectByVO_locale ########################## -->
+  <select id="selectByVO_locale" resultMap="RolesResult" parameterClass="commonWeb.security.dto.RolesQuery"> 
+     select a.id,b.name,a.code,a.shopID,a.syscode,a.upId,a.status,a.isDefaultSet,a.roleLevel,a.creator,b.descn  
+     from roles a,rolesValue b where a.id=b.id 
+    <include refid="Roles.where_Clause_locale"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select> 
+  
+  <!-- ###################### selectRolesForUserAdd ########################## -->
+  <select id="selectRolesForUserAdd" resultMap="RolesResult" parameterClass="commonWeb.security.dto.RolesQuery"> 
+     select a.id,b.name,a.code,a.shopID,a.syscode,a.upId,a.status,a.isDefaultSet,a.roleLevel,a.creator,b.descn 
+     from roles a,rolesValue b where a.id=b.id and a.syscode=#syscode:VARCHAR# 
+                and b.localeID=#localeid:BIGINT# 
+     <dynamic> 
+        <isNotNull property="rolelevel" prepend="and">
+            a.roleLevel=#rolelevel:SMALLINT#
+        </isNotNull>
+        <isNotEmpty prepend="and" property="rolecodeStr"><![CDATA[ code in ($rolecodeStr$) ]]></isNotEmpty>
+	    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+    </dynamic>
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="commonWeb.security.vo.Roles"> 
+     insert into roles
+     (id,
+      name,
+      code,
+      shopID,
+      syscode,
+      upId,
+      status,
+      isDefaultSet,roleLevel,creator,
+      descn ) 
+     values 
+     (#id:BIGINT#, 
+      #name:VARCHAR#, 
+      #code:VARCHAR#,
+      #shopid:BIGINT#, 
+      #syscode:VARCHAR#, 
+      #upId:BIGINT#,
+      #status:SMALLINT#, 
+      #isdefaultset:SMALLINT#,#rolelevel:SMALLINT#,#creator:BIGINT#, 
+      #descn:VARCHAR# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="id" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="commonWeb.security.vo.Roles"> 
+     update roles
+    <dynamic prepend="set"> 
+      <isNotEmpty prepend="," property="name"><![CDATA[ name=#name:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="," property="code"><![CDATA[ code=#name:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="," property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="upId"><![CDATA[ upId=#upId:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="creator"><![CDATA[ creator=#creator:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="," property="descn"><![CDATA[ descn=#descn:VARCHAR# ]]></isNotEmpty>
+    </dynamic> where id = #id:BIGINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from roles where id = #value#
+  </delete>
+  
+<!-- ###################### deleteByVO ########################## -->
+  <delete id="deleteByVO" parameterClass="commonWeb.security.dto.RolesQuery"> 
+     delete from roles
+     <include refid="Roles.where_Clause"/> 
+  </delete>
+  
+<!-- ###################### selectAllCount ########################## -->
+  <select id="selectAllCount" resultClass="java.lang.Integer"> 
+     select count(*) from roles
+  </select>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="commonWeb.security.dto.RolesQuery"> 
+     select count(*) from roles
+     <include refid="Roles.where_Clause"/>  
+  </select>
+
+    
+</sqlMap>

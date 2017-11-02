@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Comments">
+<!-- ###################### commentsResult ########################## -->
+  <resultMap id="CommentsResult" class="platform.social.vo.Comments">
+    <result column="commentID" property="commentid" jdbcType="BIGINT"/>
+    <result column="content" property="content" jdbcType="VARCHAR"/>
+    <result column="parent" property="parent" jdbcType="BIGINT"/>
+    <result column="creatorID" property="creatorid" jdbcType="BIGINT"/>
+    <result column="updateDate" property="updatedate" jdbcType="TIMESTAMP"/>
+    <result column="objectID" property="objectid" jdbcType="VARCHAR"/>
+    <result column="objectType" property="objecttype" jdbcType="VARCHAR"/>
+    <result column="sourceUrl" property="sourceurl" jdbcType="VARCHAR"/>
+    <result column="subClassID" property="subclassid" jdbcType="VARCHAR"/>
+    <result column="sourceType" property="sourcetype" jdbcType="VARCHAR"/>
+    <result column="policyScope" property="policyscope" jdbcType="SMALLINT"/>
+    <result column="syscode" property="syscode" jdbcType="CHAR"/>
+    <result column="subNum" property="subnum" jdbcType="INTEGER"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="commentid"><![CDATA[ commentID=#commentid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="parentcommentidStr"><![CDATA[ parent in ($parentcommentidStr$) ]]></isNotEmpty>
+      <isNotNull property="searchparent">
+         <isEqual prepend="and" property="searchparent" compareValue="1">
+            parent is null
+         </isEqual>
+      </isNotNull>
+      <isNotNull prepend="and" property="creatorid"><![CDATA[ creatorID=#creatorid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="updatedate"><![CDATA[ updateDate=#updatedate:TIMESTAMP# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="objectid"><![CDATA[ objectID=#objectid:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="objecttype"><![CDATA[ objectType=#objecttype:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="sourceurl"><![CDATA[ sourceUrl=#sourceurl:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="subclassid"><![CDATA[ subClassID=#subclassid:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="sourcetype"><![CDATA[ sourceType=#sourcetype:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="policyscope"><![CDATA[ policyScope=#policyscope:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="subnum"><![CDATA[ subNum=#subnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="and" property="objectidStr"><![CDATA[ objectID in ($objectidStr$) ]]></isNotNull>
+    </dynamic>
+  </sql>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="CommentsResult" parameterClass="java.lang.Long"> 
+     select 
+         commentID,
+    content,
+    parent,
+    creatorID,
+    updateDate,
+    objectID,
+    objectType,
+    sourceUrl,
+    subClassID,
+    sourceType,
+    policyScope,
+    syscode, subNum  
+     from comments 
+     where commentID = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="CommentsResult" parameterClass="platform.social.dto.CommentsQuery"> 
+     select 
+         commentID,
+    content,
+    parent,
+    creatorID,
+    updateDate,
+    objectID,
+    objectType,
+    sourceUrl,
+    subClassID,
+    sourceType,
+    policyScope,
+    syscode, subNum 
+     from comments
+    <include refid="Comments.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="platform.social.vo.Comments"> 
+     insert into comments
+     (     commentID,
+    content,
+    parent,
+    creatorID,
+    updateDate,
+    objectID,
+    objectType,
+    sourceUrl,
+    subClassID,
+    sourceType,
+    policyScope,
+    syscode, subNum ) 
+    values 
+     (     #commentid:BIGINT#, 
+    #content:VARCHAR#, 
+    #parent:BIGINT#, 
+    #creatorid:BIGINT#, 
+    #updatedate:TIMESTAMP#, 
+    #objectid:VARCHAR#, 
+    #objecttype:VARCHAR#, 
+    #sourceurl:VARCHAR#, 
+    #subclassid:VARCHAR#, 
+    #sourcetype:VARCHAR#, 
+    #policyscope:SMALLINT#, 
+    #syscode:CHAR#, #subnum:INTEGER# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="commentid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="platform.social.vo.Comments"> 
+     update comments
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="content"><![CDATA[ content=#content:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="updatedate"><![CDATA[ updateDate=#updatedate:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="subclassid"><![CDATA[ subClassID=#subclassid:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="sourcetype"><![CDATA[ sourceType=#sourcetype:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="policyscope"><![CDATA[ policyScope=#policyscope:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="syscode"><![CDATA[ syscode=#syscode:CHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="subnum"><![CDATA[ subNum=#subnum:INTEGER# ]]></isNotNull>
+    </dynamic> where commentID = #commentid:BIGINT#
+  </update>
+  
+  
+  <!-- ###################### updateSubNum ########################## -->
+  <update id="updateSubNum" parameterClass="platform.social.vo.Comments"> 
+     update comments set subNum = subNum + #subnum:INTEGER#
+     where commentID = #commentid:BIGINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from comments where commentID = #value#
+  </delete>
+  
+  <!-- ###################### deleteChildByPK ########################## -->
+  <delete id="deleteChildByPK" parameterClass="java.lang.Long"> 
+     delete from comments where parent = #value#
+  </delete>
+  
+  <!-- ###################### deleteByObject ########################## -->
+  <delete id="deleteByObject" parameterClass="platform.social.vo.Comments"> 
+     delete from comments where objectID=#objectid:VARCHAR# and objectType=#objecttype:VARCHAR#
+  </delete>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="platform.social.dto.CommentsQuery"> 
+     select count(*) from comments
+     <include refid="Comments.where_Clause"/>  
+  </select>
+    
+</sqlMap>

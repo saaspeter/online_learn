@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>左侧功能栏</title>
+<script type="text/javascript">
+<!--
+function goUrl(mainUrl){
+   window.top.mainFrame.document.URL=mainUrl;
+}
+function show(id){
+   var status = document.getElementById(id).style.display;
+   if(status=="none"){
+      document.getElementById(id).style.display="block";
+   }else if(status=="block"){
+      document.getElementById(id).style.display="none";
+   }else {
+      document.getElementById(id).style.display="block";
+   }
+      
+}
+-->
+</script>
+<style type="text/css">
+<!--
+li {
+  display: inline;
+}
+a{
+  display:block;
+  font-size:16px;
+
+}
+#leftbar{
+    width:98%;
+	border: 1px solid #dddddd;
+	margin-bottom: 1px;
+}
+#leftbar ul {
+	overflow: auto;
+	margin:7px;
+}
+#leftbar li {
+	display: inline;
+}
+#leftbar li a {
+	display: block;
+	margin-bottom: 10px;
+	background-color: #FFCC99;
+}
+#rybd {
+    display:none;
+}
+#rybd li {
+	display: inline;
+	margin-left: 6px;
+}
+#rybd li a {
+	display: block;
+	margin-bottom: 10px;
+	background-color: #CCCC99;
+}
+-->
+</style>
+</head>
+
+<body>
+
+<div id="leftbar">
+<ul>
+   <li><a href="#" onclick="goUrl('xxt.html');return false;">信息台</a></li>
+   <li><a href="#" onclick="show('sdgl');return false;">+商店管理</a></li>
+   <div id="sdgl">
+   <ul>
+      <li><a href="#" onclick="goUrl('sqry_list.html');return false;">商店列表</a></li>
+	  <li><a href="#" onclick="goUrl('xzry_list.html');return false;">商店费用</a></li>
+	  <li><a href="#" onclick="goUrl('txry_list.html');return false;">学员列表</a></li>
+   </ul>
+   </div>
+   <li><a href="#" onclick="goUrl('xyxx.html');return false;">租户管理</a></li>
+   <li><a href="#" onclick="goUrl('jmys.html');return false;">用户管理</a></li>
+   <li><a href="#" onclick="show('fygl');return false;">+费用管理</a></li>
+   <div id="fygl">
+   <ul>
+      <li><a href="#" onclick="goUrl('sqry_list.html');return false;">当月应缴费用</a></li>
+	  <li><a href="#" onclick="goUrl('xzry_list.html');return false;">欠费管理</a></li>
+	  <li><a href="#" onclick="goUrl('txry_list.html');return false;">缴费历史</a></li>
+   </ul>
+   </div>
+   
+</ul>
+</div>
+
+</body>
+</html>

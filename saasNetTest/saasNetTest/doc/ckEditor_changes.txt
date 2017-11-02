@@ -1,0 +1,27 @@
+使用Ckeditor4.3.1, 定制了以下plugins:
+Equation Editor ; Media (oEmbed) Plugin ; Syntaxhighlighter Interface ; Uploadcare: Add media from anywhere
+
+
+1. 在ckeditor中添加填空的按钮
+
+	1.1 在ckeditor/plugins/下添加tiankong的文件夹，在ckeditor/config.js中添加填空的plug-in
+	[ 'Tiankong' ] 即可
+	
+	1.2  修改自己的config.js 
+	
+	    config.toolbar_tiankong =
+		   [
+		     [ 'Tiankong' ]
+	       ];
+	
+	    config.extraPlugins = 'tiankong';
+	
+	   该按钮会把选中的文字改变成这样
+	   <span name="spantiankong" style="border-bottom-color:blue; border-bottom-style:solid; border-bottom-width:2px">测试下划线</span>
+
+2. 默认的ckeditor，每次编辑后保存，下次再编辑保存的时候，文章中的<br>或<p>就又新增了一行，导致越编辑空行越多
+        新增以下配置:  CKEDITOR.on('instanceReady', function (ev)
+
+3. 新增了widget: image2, 在plugin目录下. 版本是:image2_4.3.5 , url: http://ckeditor.com/addon/image2
+        同时在ckeditor\lang目录中的zh_cn.js和所有en.js中新增 "alignNone":"None"
+        修改了config.js, 添加这个组件 config.extraPlugins = 'image2,tiankong';

@@ -1,0 +1,58 @@
+<form-bean name="shopopenactivitymemberForm" type="netTestWeb.form.ShopopenactivitymemberForm" />
+<form-bean name="shopopenactivityForm" type="netTestWeb.form.ShopopenactivityForm" />
+
+
+      
+    <!-- shopopenactivitymember begin -->
+    <action parameter="listShopopenactivitymember" path="/product/listShopopenactivitymember" name="shopopenactivitymemberForm" type="netTestWeb.action.ShopopenactivitymemberAction" scope="request">
+       <forward name="list" path="/product/shopopenactivitymember_list.jsp"></forward>
+    </action>
+    
+    <action parameter="saveShopopenactivitymember" path="/product/saveShopopenactivitymember" name="shopopenactivitymemberForm" type="netTestWeb.action.ShopopenactivitymemberAction" scope="request">
+       <forward name="list" path="/product/shopopenactivitymember_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editShopopenactivitymember" path="/product/editShopopenactivitymember" name="shopopenactivitymemberForm" type="netTestWeb.action.ShopopenactivitymemberAction" scope="request">
+       <forward name="addEditPage" path="/product/shopopenactivitymember_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewShopopenactivitymember" path="/product/viewShopopenactivitymember" name="shopopenactivitymemberForm" type="netTestWeb.action.ShopopenactivitymemberAction" scope="request">
+        <forward name="viewPage" path="/product/shopopenactivitymember_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addShopopenactivitymember" path="/product/addShopopenactivitymember" name="shopopenactivitymemberForm" type="netTestWeb.action.ShopopenactivitymemberAction" scope="request">
+       <forward name="addEditPage" path="/product/shopopenactivitymember_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteShopopenactivitymember" path="/product/deleteShopopenactivitymember" name="shopopenactivitymemberForm" type="netTestWeb.action.ShopopenactivitymemberAction" scope="request">
+       <forward name="list" path="/product/shopopenactivitymember_list.jsp"></forward>
+    </action>
+    <!-- shopopenactivitymember end -->
+
+      
+    <!-- shopopenactivity begin -->
+    <action parameter="listShopopenactivity" path="/product/listShopopenactivity" name="shopopenactivityForm" type="netTestWeb.action.ShopopenactivityAction" scope="request">
+       <forward name="list" path="/product/shopopenactivity_list.jsp"></forward>
+    </action>
+    
+    <action parameter="saveShopopenactivity" path="/product/saveShopopenactivity" name="shopopenactivityForm" type="netTestWeb.action.ShopopenactivityAction" scope="request">
+       <forward name="list" path="/product/shopopenactivity_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editShopopenactivity" path="/product/editShopopenactivity" name="shopopenactivityForm" type="netTestWeb.action.ShopopenactivityAction" scope="request">
+       <forward name="addEditPage" path="/product/shopopenactivity_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewShopopenactivity" path="/product/viewShopopenactivity" name="shopopenactivityForm" type="netTestWeb.action.ShopopenactivityAction" scope="request">
+        <forward name="viewPage" path="/product/shopopenactivity_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addShopopenactivity" path="/product/addShopopenactivity" name="shopopenactivityForm" type="netTestWeb.action.ShopopenactivityAction" scope="request">
+       <forward name="addEditPage" path="/product/shopopenactivity_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteShopopenactivity" path="/product/deleteShopopenactivity" name="shopopenactivityForm" type="netTestWeb.action.ShopopenactivityAction" scope="request">
+       <forward name="list" path="/product/shopopenactivity_list.jsp"></forward>
+    </action>
+    <!-- shopopenactivity end -->
+

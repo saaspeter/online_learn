@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Orglevel">
+<!-- ###################### orglevelResult ########################## -->
+  <resultMap id="OrglevelResult" class="netTest.orguser.vo.Orglevel">
+    <result column="orgLevelID" property="orglevelid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="orgLevelName" property="orglevelname" jdbcType="VARCHAR"/>
+    <result column="orgLevelValue" property="orglevelvalue" jdbcType="INTEGER"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="orglevelid"><![CDATA[ orgLevelID=#orglevelid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="orglevelname"><![CDATA[ orgLevelName=#orglevelname:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="orglevelvalue"><![CDATA[ orgLevelValue=#orglevelvalue:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+    </dynamic>
+  </sql>
+  
+<!-- ###################### selectAll ########################## -->
+  <select id="selectAll" resultMap="OrglevelResult"> 
+     select 
+         orgLevelID,
+         shopID,
+    orgLevelName,
+    orgLevelValue 
+     from orglevel
+  </select>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="OrglevelResult" parameterClass="java.lang.Long"> 
+     select 
+         orgLevelID,
+         shopID,
+    orgLevelName,
+    orgLevelValue 
+     from orglevel 
+     where orgLevelID = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="OrglevelResult" parameterClass="netTest.orguser.dto.OrglevelQuery"> 
+     select 
+         orgLevelID,
+         shopID,
+    orgLevelName,
+    orgLevelValue
+     from orglevel
+    <include refid="Orglevel.where_Clause"/>  
+    <isNotNull property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotNull> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.orguser.vo.Orglevel"> 
+     insert into orglevel
+     (     orgLevelID,
+     shopID,
+    orgLevelName,
+    orgLevelValue ) 
+    values 
+     (     #orglevelid:BIGINT#, 
+     #shopid:BIGINT#,
+    #orglevelname:VARCHAR#, 
+    #orglevelvalue:INTEGER# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="orglevelid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.orguser.vo.Orglevel"> 
+     update orglevel
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="orglevelname"><![CDATA[ orgLevelName=#orglevelname:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="orglevelvalue"><![CDATA[ orgLevelValue=#orglevelvalue:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+    </dynamic> where orgLevelID = #orglevelid:BIGINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from orglevel where orgLevelID = #value#
+  </delete>
+  
+<!-- ###################### deleteByVO ########################## -->
+  <delete id="deleteByVO" parameterClass="netTest.orguser.dto.OrglevelQuery"> 
+     delete from orglevel
+     <include refid="Orglevel.where_Clause"/> 
+  </delete>
+  
+<!-- ###################### selectAllCount ########################## -->
+  <select id="selectAllCount" resultClass="java.lang.Integer"> 
+     select count(*) from orglevel
+  </select>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.orguser.dto.OrglevelQuery"> 
+     select count(*) from orglevel
+     <include refid="Orglevel.where_Clause"/>  
+     <isNotNull property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotNull> 
+  </select>
+    
+</sqlMap>

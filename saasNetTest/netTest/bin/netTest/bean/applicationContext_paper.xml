@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+  "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+  <!-- ========================= RESOURCE DEFINITIONS ========================= -->
+    
+  <!-- ========================= DAO DEFINITIONS: IBATIS IMPLEMENTATIONS ========================= -->
+
+  <!-- ========================= Class Paper: CONFIGURE ========================= -->
+  <bean id="paperDaoTarget" class="netTest.paper.dao.impl.PaperDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref bean="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref bean="sqlMapClient_netTest"/>
+    </property>
+  </bean>
+
+  <bean id="paperDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="paperDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+  <!-- ========================= Class Paperprop: CONFIGURE ========================= -->
+  <bean id="paperpropDaoTarget" class="netTest.paper.dao.impl.PaperpropDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref bean="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref bean="sqlMapClient_netTest"/>
+    </property>
+  </bean>
+
+  <bean id="paperpropDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="paperpropDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+  <!-- ========================= Class Paperquestype: CONFIGURE ========================= -->
+  <bean id="paperquestypeDaoTarget" class="netTest.paper.dao.impl.PaperquestypeDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref bean="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref bean="sqlMapClient_netTest"/>
+    </property>
+  </bean>
+
+  <bean id="paperquestypeDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="paperquestypeDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+  <!-- ========================= Class Paperpatternratio: CONFIGURE ========================= -->
+  <bean id="paperpatternratioDaoTarget" class="netTest.paper.dao.impl.PaperpatternratioDaoImpl" singleton="true">
+    <property name="dataSource">
+      <ref bean="dataSource"/>
+    </property>
+    <property name="sqlMapClient">
+      <ref bean="sqlMapClient_netTest"/>
+    </property>
+  </bean>
+
+  <bean id="paperpatternratioDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="paperpatternratioDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+  <!-- ========================= Class Paperques: CONFIGURE ========================= -->
+  <bean id="paperquesDaoTarget" class="netTest.paper.dao.impl.PaperquesDaoImpl" singleton="true">
+     <property name="dataSource">
+        <ref bean="dataSource"/>
+     </property>
+     <property name="sqlMapClient">
+        <ref bean="sqlMapClient_netTest"/>
+     </property>
+     <property name="questionDao">
+        <ref bean="questionDao"/>
+     </property>
+  </bean>
+
+  <bean id="paperquesDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="paperquesDaoTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+  
+  <!-- ========================= Class paperLogic: CONFIGURE ========================= -->
+  <bean id="paperLogicTarget" class="netTest.paper.logic.impl.PaperLogicImpl" singleton="true">
+    <property name="dao">
+      <ref local="paperDao"/>
+    </property>
+    <property name="typeDao">
+      <ref local="paperquestypeDao"/>
+    </property>
+    <property name="ratioDao">
+      <ref local="paperpatternratioDao"/>
+    </property>
+    <property name="propDao">
+      <ref local="paperpropDao"/>
+    </property>
+    <property name="wareDao">
+      <ref bean="wareDao"/>
+    </property>
+    <property name="paperquesLogic">
+      <ref local="paperquesLogicTarget"/>
+    </property>
+  </bean>
+
+  <bean id="paperLogic" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="paperLogicTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+  
+  <!-- ========================= Class PaperquesLogic: CONFIGURE ========================= -->
+  <bean id="paperquesLogicTarget" class="netTest.paper.logic.impl.PaperquesLogicImpl" singleton="true">
+     <property name="paperDao">
+        <ref local="paperDao"/>
+     </property>
+     <property name="paperquesDao">
+        <ref local="paperquesDao"/>
+     </property>
+     <property name="typeDao">
+        <ref local="paperquestypeDao"/>
+     </property>
+     <property name="questionDao">
+        <ref bean="questionDao"/>
+     </property>
+  </bean>
+
+  <bean id="paperquesLogic" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager"/>
+    </property>
+    <property name="target">
+      <ref local="paperquesLogicTarget"/>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+  <bean id="paperquestypeLogic" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+        <ref bean="transactionManager"/>
+    </property>
+    <property name="target">
+        <bean class="netTest.paper.logic.impl.PaperquestypeLogicImpl" singleton="true">
+            <property name="dao">
+		       <ref local="paperquestypeDaoTarget"/>
+		    </property>
+		    <property name="quesDao">
+		       <ref local="paperquesDaoTarget"/>
+		    </property>
+		    <property name="ratioDao">
+		       <ref local="paperpatternratioDaoTarget"/>
+		    </property> 
+		    <property name="paperDao">
+		       <ref local="paperDaoTarget"/>
+		    </property>
+        </bean>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+</beans>

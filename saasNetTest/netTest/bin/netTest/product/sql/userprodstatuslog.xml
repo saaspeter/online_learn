@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Userprodstatuslog">
+<!-- ###################### userprodstatuslogResult ########################## -->
+  <resultMap id="UserprodstatuslogResult" class="netTest.product.vo.Userprodstatuslog">
+    <result column="logID" property="logid" jdbcType="BIGINT"/>
+    <result column="userProductID" property="userproductid" jdbcType="BIGINT"/>
+    <result column="afStatus" property="afstatus" jdbcType="SMALLINT"/>
+    <result column="afStatusRank" property="afstatusrank" jdbcType="SMALLINT"/>
+    <result column="bfStatus" property="bfstatus" jdbcType="SMALLINT"/>
+    <result column="bfStatusRank" property="bfstatusrank" jdbcType="SMALLINT"/>
+    <result column="userID" property="userid" jdbcType="BIGINT"/>
+    <result column="productBaseID" property="productbaseid" jdbcType="BIGINT"/>
+    <result column="productName" property="productname" jdbcType="VARCHAR"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="happenDate" property="happendate" jdbcType="TIMESTAMP"/>
+    <result column="opertorID" property="opertorid" jdbcType="BIGINT"/>
+    <result column="statusDisc" property="statusdisc" jdbcType="VARCHAR"/>
+
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="afstatus"><![CDATA[ afStatus=#afstatus:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="afstatusrank"><![CDATA[ afStatusRank=#afstatusrank:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="bfstatus"><![CDATA[ bfStatus=#bfstatus:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="bfstatusrank"><![CDATA[ bfStatusRank=#bfstatusrank:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="userproductid"><![CDATA[ userProductID=#userproductid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="userid"><![CDATA[ userID=#userid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="productbaseid"><![CDATA[ productBaseID=#productbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="happendate"><![CDATA[ happenDate=#happendate:TIMESTAMP# ]]></isNotNull>
+    </dynamic>
+  </sql>
+  
+   
+   <!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="UserprodstatuslogResult" parameterClass="java.lang.Long"> 
+     select logID, userProductID,
+         afStatus,
+    afStatusRank,
+    bfStatus,
+    bfStatusRank,
+    userID,
+    productBaseID,productName,
+    shopID,
+    happenDate, opertorID, 
+    statusDisc
+     from userprodstatuslog
+    where logID = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="UserprodstatuslogResult" parameterClass="netTest.product.dto.UserprodstatuslogQuery"> 
+     select logID, userProductID,
+         afStatus,
+    afStatusRank,
+    bfStatus,
+    bfStatusRank,
+    userID,
+    productBaseID,productName,
+    shopID,
+    happenDate, opertorID, 
+    statusDisc
+     from userprodstatuslog
+    <include refid="Userprodstatuslog.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.product.vo.Userprodstatuslog"> 
+     insert into userprodstatuslog
+     (     logID, afStatus,
+    afStatusRank,
+    bfStatus,
+    bfStatusRank,
+    userProductID,
+    userID,
+    productBaseID, productName,
+    shopID,
+    happenDate, opertorID, 
+    statusDisc ) 
+    values 
+     (     #logid:BIGINT#, #afstatus:SMALLINT#, 
+    #afstatusrank:SMALLINT#, 
+    #bfstatus:SMALLINT#, 
+    #bfstatusrank:SMALLINT#, 
+    #userproductid:BIGINT#, 
+    #userid:BIGINT#, 
+    #productbaseid:BIGINT#, #productname:VARCHAR#,
+    #shopid:BIGINT#, 
+    #happendate:TIMESTAMP#, #opertorid:BIGINT#, 
+    #statusdisc:VARCHAR# )
+    <selectKey resultClass="java.lang.Long" keyProperty="logid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+    
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.product.dto.UserprodstatuslogQuery"> 
+     select count(*) from userprodstatuslog
+     <include refid="Userprodstatuslog.where_Clause"/>  
+  </select>
+    
+</sqlMap>

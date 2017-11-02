@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/exam/selfExamInit.do" location="950,550" dimension="268,84" />
+  <StrutsActivity path="/exam/testExamInit.do" location="1250,2350" dimension="274,104" />
+  <StrutsActivity path="/exam/selfExamShift.do" location="50,750" dimension="268,84" />
+  <StrutsActivity path="/exam/selfExamSubmit.do" location="50,150" dimension="274,104" />
+  <StrutsActivity path="/exam/seeExamerResult.do" location="1250,2950" dimension="274,104" />
+  <StrutsActivity path="/exam/examResultShift.do" location="950,250" dimension="274,104" />
+  <StrutsActivity path="/exam/cleanUseranswer.do" location="650,750" dimension="274,104" />
+  <StrutsActivity path="/exam/suspendTest.do" location="2150,950" dimension="268,104" />
+  <StrutsActivity path="/exam/listTestchecker.do" location="1250,750" dimension="291,104" />
+  <StrutsActivity path="/exam/saveTestchecker.do" location="1250,1150" dimension="291,104" />
+  <StrutsActivity path="/exam/deleteTestchecker.do" location="1250,1550" dimension="291,104" />
+  <StrutsActivity path="/exam/monitorTest.do" location="1550,2550" dimension="273,104" />
+  <StrutsActivity path="/product/showprodmagmess.do" location="2450,1950" dimension="268,104" />
+  <StrutsActivity path="/exam/listTestinfo.do" location="1850,750" dimension="268,104" />
+  <StrutsActivity path="/exam/listTodoTestinfo.do" location="1550,950" dimension="268,104" />
+  <StrutsActivity path="/exam/saveTestinfo.do" location="1850,1150" dimension="268,104" />
+  <StrutsActivity path="/exam/editTestinfo.do" location="1850,1350" dimension="268,104" />
+  <StrutsActivity path="/exam/viewTestinfo.do" location="1850,1550" dimension="268,104" />
+  <StrutsActivity path="/exam/addTestinfo.do" location="1850,1950" dimension="268,104" />
+  <StrutsActivity path="/exam/deleteTestinfo.do" location="350,2150" dimension="268,104" />
+  <StrutsActivity path="/exam/changeStatus.do" location="1550,1750" dimension="268,104" />
+  <StrutsActivity path="/exam/listtestuser.do" location="2450,1350" dimension="271,104" />
+  <StrutsActivity path="/exam/listTestinfouser.do" location="950,1750" dimension="271,104" />
+  <StrutsActivity path="/exam/saveTestuser.do" location="50,2350" dimension="271,104" />
+  <StrutsActivity path="/exam/deleteTestuser.do" location="50,2550" dimension="271,104" />
+  <StrutsActivity path="/exam/joinopentest.do" location="2450,1150" dimension="271,104" />
+  <StrutsActivity path="/exam/enterTestHall.do" location="650,2350" dimension="271,104" />
+  <StrutsActivity path="/exam/enteropentesthall.do" location="1550,350" dimension="271,104" />
+  <StrutsActivity path="/exam/checktestinfo.do" location="1850,2150" dimension="291,104" />
+  <StrutsActivity path="/exam/manaualCheckPaper.do" location="2150,1750" dimension="273,104" />
+  <StrutsActivity path="/exam/checkanswerPage.do" location="350,2750" dimension="291,104" />
+  <StrutsActivity path="/exam/saveCheckResult.do" location="1250,2750" dimension="291,104" />
+  <StrutsActivity path="/exam/finishcheckpaper.do" location="2450,2150" dimension="291,104" />
+  <StrutsActivity path="/index/listIndexOpenTest.do" location="2150,2950" dimension="271,104" />
+  <StrutsActivity path="errorPage;6" location="223,1108" dimension="160,72" />
+  <StrutsActivity path="messagePage;6" location="428,1108" dimension="148,72" />
+  <StrutsActivity path="treeXml;6" location="621,1108" dimension="148,72" />
+  <StrutsActivity path="forwardToUrl;6" location="0,1108" dimension="178,72" />
+  <StrutsActivity path="toUrl;6" location="814,1108" dimension="136,72" />
+  <StrutsActivity path="/exam/exam_paper.jsp" location="950,150" dimension="160,48" />
+  <StrutsActivity path="/exam/userendtesttip.jsp" location="350,1850" dimension="176,53" />
+  <StrutsActivity path="/exam/examResult_paper.jsp" location="650,550" dimension="199,53" />
+  <StrutsActivity path="/exam/testchecker_list.jsp" location="50,1650" dimension="180,53" />
+  <StrutsActivity path="/exam/testdept_result.jsp" location="950,2950" dimension="178,53" />
+  <StrutsActivity path="/exam/testinfo_monitor.jsp" location="50,2750" dimension="187,53" />
+  <StrutsActivity path="/exam/productmag_mess.jsp" location="1850,550" dimension="200,53" />
+  <StrutsActivity path="/exam/testinfo_list.jsp" location="950,2150" dimension="157,53" />
+  <StrutsActivity path="/exam/testinfo_todolist.jsp" location="650,1850" dimension="185,53" />
+  <StrutsActivity path="/exam/testinfo_addEdit.jsp" location="1250,2150" dimension="186,53" />
+  <StrutsActivity path="/exam/testinfo_view.jsp" location="1550,2150" dimension="166,53" />
+  <StrutsActivity path="/exam/testuser_list.jsp" location="650,2550" dimension="160,53" />
+  <StrutsActivity path="/exam/testresultuser_list.jsp" location="2450,1550" dimension="192,53" />
+  <StrutsActivity path="/exam/myTestinfo_list.jsp" location="1550,550" dimension="177,53" />
+  <StrutsActivity path="/exam/testinfo_examhall.jsp" location="50,1850" dimension="192,53" />
+  <StrutsActivity path="/exam/checkpaper_main.jsp" location="1850,2350" dimension="194,53" />
+  <StrutsActivity path="/exam/checkpaper_ques.jsp" location="950,2750" dimension="194,53" />
+  <StrutsActivity path="/index/opentest_list.jsp" location="2450,650" dimension="165,53" />
+  <StrutsActivity path="/pubs/errorPage.jsp" location="226,1280" dimension="154,48" />
+  <StrutsActivity path="/pubs/message.jsp" location="431,1280" dimension="142,48" />
+  <StrutsActivity path="/pubs/treeXml.jsp" location="624,1280" dimension="142,48" />
+  <StrutsActivity path="/pubs/forwardToUrl.jsp" location="3,1280" dimension="172,48" />
+  <StrutsActivity path="/pubs/toUrl.jsp" location="817,1280" dimension="130,48" />
+  <StrutsActivity path="/exam/testchecker_addEdit.jsp" location="350,1650" dimension="209,53" />
+  <StrutsActivity path="/exam/testchecker_view.jsp" location="650,1650" dimension="189,53" />
+  <StrutsActivity path="/exam/checktest_list.jsp" location="2150,2350" dimension="168,53" />
+  <StrutsActivity path="/exam/testinfoResult_list.jsp" location="50,2950" dimension="192,53" />
+  <StrutsActivity path="/exam/myTestresult_list.jsp" location="1850,2950" dimension="187,53" />
+  <StrutsActivity path="/exam/" location="50,950" dimension="73,53" />
+  <StrutsActivity path="/exam/testuser_addEdit.jsp" location="950,2550" dimension="189,53" />
+  <StrutsActivity path="/exam/testuser_view.jsp" location="1250,2550" dimension="169,53" />
+  <StrutsActivity path="/exam/testdept_list.jsp" location="1250,1950" dimension="162,53" />
+  <StrutsActivity path="/exam/testdept_addEdit.jsp" location="1550,1950" dimension="191,53" />
+  <StrutsActivity path="/exam/testdept_view.jsp" location="50,2050" dimension="171,53" />
+  <StrutsActivity path="/paper/paper_list.jsp" location="401,738" dimension="166,48" />
+  <StrutsActivity path="/paper/paper_edit.jsp" location="429,461" dimension="166,48" />
+  <StrutsActivity path="/paper/paper_addEdit.jsp" location="0,461" dimension="184,48" />
+  <StrutsActivity path="/paper/paper_add1.jsp" location="1075,1015" dimension="166,48" />
+  <StrutsActivity path="/paper/paperques_list.jsp" location="425,184" dimension="190,48" />
+  <StrutsActivity path="/paper/paperques_addEdit.jsp" location="226,1015" dimension="208,48" />
+  <StrutsActivity path="/paper/paperques_view.jsp" location="750,1015" dimension="190,48" />
+  <StrutsActivity path="/exam/paper_list.jsp" location="950,450" dimension="160,48" />
+  <StrutsActivity path="/exam/savenewtestinfo.do" />
+  <StrutsTransition id="/exam/examResultShift.do,examResultPaper,/exam/examResult_paper.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,302" />
+      <AbsolutePoint location="779,302" />
+      <AbsolutePoint location="779,550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/index/listIndexOpenTest.do,list,/index/opentest_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2421,3002" />
+      <AbsolutePoint location="2976,3002" />
+      <AbsolutePoint location="2976,676" />
+      <AbsolutePoint location="2615,676" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="toUrl;6,null,/pubs/toUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="882,1180" />
+      <AbsolutePoint location="882,1280" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/manaualCheckPaper.do,checkpaperMain,/exam/checkpaper_main.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2256,1854" />
+      <AbsolutePoint location="2256,2269" />
+      <AbsolutePoint location="1947,2269" />
+      <AbsolutePoint location="1947,2350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/listTestchecker.do,list,/exam/testchecker_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1250,802" />
+      <AbsolutePoint location="1025,802" />
+      <AbsolutePoint location="1025,1569" />
+      <AbsolutePoint location="110,1569" />
+      <AbsolutePoint location="110,1650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/saveTestuser.do,listuser,/exam/testuser_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="185,2454" />
+      <AbsolutePoint location="185,2469" />
+      <AbsolutePoint location="700,2469" />
+      <AbsolutePoint location="700,2550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="messagePage;6,null,/pubs/message.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="502,1180" />
+      <AbsolutePoint location="502,1280" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/addTestinfo.do,addEditPage,/exam/testinfo_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1850,2018" />
+      <AbsolutePoint location="1313,2018" />
+      <AbsolutePoint location="1313,2150" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/checkanswerPage.do,checkUseranswerPage,/exam/checkpaper_ques.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="641,2788" />
+      <AbsolutePoint location="950,2788" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="forwardToUrl;6,null,/pubs/forwardToUrl.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="89,1180" />
+      <AbsolutePoint location="89,1280" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/listTodoTestinfo.do,listtodo,/exam/testinfo_todolist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1550,988" />
+      <AbsolutePoint location="610,988" />
+      <AbsolutePoint location="610,1876" />
+      <AbsolutePoint location="650,1876" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/deleteTestinfo.do,list,/exam/testinfo_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="618,2188" />
+      <AbsolutePoint location="950,2188" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/saveCheckResult.do,checkUseranswerPage,/exam/checkpaper_ques.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1250,2788" />
+      <AbsolutePoint location="1144,2788" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/enteropentesthall.do,testHall,/exam/testinfo_examhall.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="146,1876" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/deleteTestuser.do,list,/exam/testuser_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="321,2588" />
+      <AbsolutePoint location="650,2588" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/savenewtestinfo.do,list,/exam/testinfo_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="1028,2176" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/listTestinfo.do,list,/exam/testinfo_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2118,802" />
+      <AbsolutePoint location="2133,802" />
+      <AbsolutePoint location="2133,1918" />
+      <AbsolutePoint location="1058,1918" />
+      <AbsolutePoint location="1058,2150" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/monitorTest.do,testdeptresult,/exam/testdept_result.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1716,2654" />
+      <AbsolutePoint location="1716,3219" />
+      <AbsolutePoint location="1039,3219" />
+      <AbsolutePoint location="1039,3003" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="errorPage;6,null,/pubs/errorPage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="303,1180" />
+      <AbsolutePoint location="303,1280" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/enterTestHall.do,testHall,/exam/testinfo_examhall.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="785,2350" />
+      <AbsolutePoint location="785,2118" />
+      <AbsolutePoint location="236,2118" />
+      <AbsolutePoint location="236,1903" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/deleteTestchecker.do,list,/exam/testchecker_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1250,1629" />
+      <AbsolutePoint location="140,1629" />
+      <AbsolutePoint location="140,1650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/seeExamerResult.do,examResultPaper,/exam/examResult_paper.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1387,2950" />
+      <AbsolutePoint location="1387,2869" />
+      <AbsolutePoint location="-300,2869" />
+      <AbsolutePoint location="-300,576" />
+      <AbsolutePoint location="650,576" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/selfExamShift.do,examPaper,/exam/exam_paper.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="199,750" />
+      <AbsolutePoint location="199,337" />
+      <AbsolutePoint location="1030,337" />
+      <AbsolutePoint location="1030,198" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/listTestinfouser.do,listTestinfouser,/exam/myTestinfo_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="995,1750" />
+      <AbsolutePoint location="995,665" />
+      <AbsolutePoint location="1638,665" />
+      <AbsolutePoint location="1638,603" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/listtestuser.do,listresultuser,/exam/testresultuser_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2585,1454" />
+      <AbsolutePoint location="2585,1550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/product/showprodmagmess.do,magproductmess,/exam/productmag_mess.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2718,2002" />
+      <AbsolutePoint location="3156,2002" />
+      <AbsolutePoint location="3156,576" />
+      <AbsolutePoint location="2050,576" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/selfExamSubmit.do,userendtesttip,/exam/userendtesttip.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,202" />
+      <AbsolutePoint location="-225,202" />
+      <AbsolutePoint location="-225,1795" />
+      <AbsolutePoint location="438,1795" />
+      <AbsolutePoint location="438,1850" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/saveTestinfo.do,list,/exam/testinfo_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1984,1254" />
+      <AbsolutePoint location="1984,1295" />
+      <AbsolutePoint location="2886,1295" />
+      <AbsolutePoint location="2886,1869" />
+      <AbsolutePoint location="1028,1869" />
+      <AbsolutePoint location="1028,2150" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/selfExamInit.do,examPaper,/exam/exam_paper.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1125,550" />
+      <AbsolutePoint location="1125,174" />
+      <AbsolutePoint location="1110,174" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/listtestuser.do,listuser,/exam/testuser_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2721,1402" />
+      <AbsolutePoint location="3066,1402" />
+      <AbsolutePoint location="3066,2529" />
+      <AbsolutePoint location="730,2529" />
+      <AbsolutePoint location="730,2550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="treeXml;6,null,/pubs/treeXml.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="695,1180" />
+      <AbsolutePoint location="695,1280" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/saveTestchecker.do,list,/exam/testchecker_list.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1250,1202" />
+      <AbsolutePoint location="-75,1202" />
+      <AbsolutePoint location="-75,1676" />
+      <AbsolutePoint location="50,1676" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/selfExamSubmit.do,examResultPaper,/exam/examResult_paper.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="324,247" />
+      <AbsolutePoint location="749,247" />
+      <AbsolutePoint location="749,550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/testExamInit.do,examPaper,/exam/exam_paper.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1524,2418" />
+      <AbsolutePoint location="2796,2418" />
+      <AbsolutePoint location="2796,247" />
+      <AbsolutePoint location="1000,247" />
+      <AbsolutePoint location="1000,198" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/viewTestinfo.do,viewPage,/exam/testinfo_view.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1984,1654" />
+      <AbsolutePoint location="1984,1718" />
+      <AbsolutePoint location="1451,1718" />
+      <AbsolutePoint location="1451,2176" />
+      <AbsolutePoint location="1550,2176" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/monitorTest.do,monitorTestPage,/exam/testinfo_monitor.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1686,2654" />
+      <AbsolutePoint location="1686,2929" />
+      <AbsolutePoint location="143,2929" />
+      <AbsolutePoint location="143,2803" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exam/editTestinfo.do,addEditPage,/exam/testinfo_addEdit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1850,1402" />
+      <AbsolutePoint location="1838,1402" />
+      <AbsolutePoint location="1838,2069" />
+      <AbsolutePoint location="1343,2069" />
+      <AbsolutePoint location="1343,2150" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

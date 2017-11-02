@@ -1,0 +1,3 @@
+jwplayer-6.6  free edition
+
+<script type="text/javascript">jwplayer.key="ABCDEFGHIJKLMOPQ";</script>

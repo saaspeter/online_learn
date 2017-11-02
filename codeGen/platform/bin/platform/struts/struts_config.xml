@@ -1,0 +1,58 @@
+<form-bean name="accountvalidatetaskForm" type="netTestWeb.form.AccountvalidatetaskForm" />
+<form-bean name="useractivityForm" type="netTestWeb.form.UseractivityForm" />
+
+
+      
+    <!-- accountvalidatetask begin -->
+    <action parameter="listAccountvalidatetask" path="/user/listAccountvalidatetask" name="accountvalidatetaskForm" type="netTestWeb.action.AccountvalidatetaskAction" scope="request">
+       <forward name="list" path="/user/accountvalidatetask_list.jsp"></forward>
+    </action>
+    
+    <action parameter="saveAccountvalidatetask" path="/user/saveAccountvalidatetask" name="accountvalidatetaskForm" type="netTestWeb.action.AccountvalidatetaskAction" scope="request">
+       <forward name="list" path="/user/accountvalidatetask_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editAccountvalidatetask" path="/user/editAccountvalidatetask" name="accountvalidatetaskForm" type="netTestWeb.action.AccountvalidatetaskAction" scope="request">
+       <forward name="addEditPage" path="/user/accountvalidatetask_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewAccountvalidatetask" path="/user/viewAccountvalidatetask" name="accountvalidatetaskForm" type="netTestWeb.action.AccountvalidatetaskAction" scope="request">
+        <forward name="viewPage" path="/user/accountvalidatetask_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addAccountvalidatetask" path="/user/addAccountvalidatetask" name="accountvalidatetaskForm" type="netTestWeb.action.AccountvalidatetaskAction" scope="request">
+       <forward name="addEditPage" path="/user/accountvalidatetask_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteAccountvalidatetask" path="/user/deleteAccountvalidatetask" name="accountvalidatetaskForm" type="netTestWeb.action.AccountvalidatetaskAction" scope="request">
+       <forward name="list" path="/user/accountvalidatetask_list.jsp"></forward>
+    </action>
+    <!-- accountvalidatetask end -->
+
+      
+    <!-- useractivity begin -->
+    <action parameter="listUseractivity" path="/user/listUseractivity" name="useractivityForm" type="netTestWeb.action.UseractivityAction" scope="request">
+       <forward name="list" path="/user/useractivity_list.jsp"></forward>
+    </action>
+    
+    <action parameter="saveUseractivity" path="/user/saveUseractivity" name="useractivityForm" type="netTestWeb.action.UseractivityAction" scope="request">
+       <forward name="list" path="/user/useractivity_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editUseractivity" path="/user/editUseractivity" name="useractivityForm" type="netTestWeb.action.UseractivityAction" scope="request">
+       <forward name="addEditPage" path="/user/useractivity_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewUseractivity" path="/user/viewUseractivity" name="useractivityForm" type="netTestWeb.action.UseractivityAction" scope="request">
+        <forward name="viewPage" path="/user/useractivity_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addUseractivity" path="/user/addUseractivity" name="useractivityForm" type="netTestWeb.action.UseractivityAction" scope="request">
+       <forward name="addEditPage" path="/user/useractivity_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteUseractivity" path="/user/deleteUseractivity" name="useractivityForm" type="netTestWeb.action.UseractivityAction" scope="request">
+       <forward name="list" path="/user/useractivity_list.jsp"></forward>
+    </action>
+    <!-- useractivity end -->
+

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Exerquestype">
+<!-- ###################### exerquestypeResult ########################## -->
+  <resultMap id="ExerquestypeResult" class="netTest.exercise.vo.Exerquestype">
+    <result column="patternID" property="patternid" jdbcType="BIGINT"/>
+    <result column="exerID" property="exerid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="quesType" property="questype" jdbcType="INTEGER"/>
+    <result column="quesTypeName" property="questypename" jdbcType="VARCHAR"/>
+    <result column="quesTypeNote" property="questypenote" jdbcType="VARCHAR"/>
+    <result column="patternQuesNum" property="patternquesnum" jdbcType="INTEGER"/>
+    <result column="quesScore" property="quesscore" jdbcType="REAL"/>
+    <result column="patternScore" property="patternscore" jdbcType="REAL"/>
+    <result column="pageSize" property="pagesize" jdbcType="INTEGER"/>
+    <result column="disOrder" property="disorder" jdbcType="INTEGER"/>
+
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="patternid"><![CDATA[ patternID=#patternid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="exerid"><![CDATA[ exerID=#exerid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="questype"><![CDATA[ quesType=#questype:INTEGER# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="questypename"><![CDATA[ quesTypeName=#questypename:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="questypenote"><![CDATA[ quesTypeNote=#questypenote:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="patternquesnum"><![CDATA[ patternQuesNum=#patternquesnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="and" property="quesscore"><![CDATA[ quesScore=#quesscore:REAL# ]]></isNotNull>
+      <isNotNull prepend="and" property="patternscore"><![CDATA[ patternScore=#patternscore:REAL# ]]></isNotNull>
+      <isNotNull prepend="and" property="pagesize"><![CDATA[ pageSize=#pagesize:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="and" property="disorder"><![CDATA[ disOrder=#disorder:INTEGER# ]]></isNotNull>
+
+    </dynamic>
+  </sql>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="ExerquestypeResult" parameterClass="java.lang.Long"> 
+     select 
+         patternID,
+    exerID,
+    shopID,
+    quesType,
+    quesTypeName,
+    quesTypeNote,
+    patternQuesNum,
+    quesScore,
+    patternScore,
+    pageSize,
+    disOrder 
+     from exerquestype 
+     where patternID = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="ExerquestypeResult" parameterClass="netTest.exercise.dto.ExerquestypeQuery"> 
+     select   patternID, exerID, shopID, quesType, quesTypeName, 
+        quesTypeNote, patternQuesNum, quesScore, patternScore, pageSize, disOrder
+     from exerquestype
+    <include refid="Exerquestype.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+    <!-- ###################### qryByExerid ########################## -->
+  <select id="qryByExerid" resultMap="ExerquestypeResult" parameterClass="java.lang.Long"> 
+     select   patternID, exerID, shopID, quesType, quesTypeName, 
+        quesTypeNote, patternQuesNum, quesScore, patternScore, pageSize, disOrder 
+     from exerquestype where exerID = #value:BIGINT# order by disOrder 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.exercise.vo.Exerquestype"> 
+     insert into exerquestype
+     (     patternID,
+    exerID,
+    shopID,
+    quesType,
+    quesTypeName,
+    quesTypeNote,
+    patternQuesNum,
+    quesScore,
+    patternScore,
+    pageSize,
+    disOrder ) 
+    values 
+     (     #patternid:BIGINT#, 
+    #exerid:BIGINT#, 
+    #shopid:BIGINT#, 
+    #questype:INTEGER#, 
+    #questypename:VARCHAR#, 
+    #questypenote:VARCHAR#, 
+    #patternquesnum:INTEGER#, 
+    #quesscore:REAL#, 
+    #patternscore:REAL#, 
+    #pagesize:INTEGER#, 
+    #disorder:INTEGER# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="patternid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.exercise.vo.Exerquestype"> 
+     update exerquestype
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="exerid"><![CDATA[ exerID=#exerid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="questype"><![CDATA[ quesType=#questype:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="questypename"><![CDATA[ quesTypeName=#questypename:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="questypenote"><![CDATA[ quesTypeNote=#questypenote:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="patternquesnum"><![CDATA[ patternQuesNum=#patternquesnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="quesscore"><![CDATA[ quesScore=#quesscore:REAL# ]]></isNotNull>
+      <isNotNull prepend="," property="patternscore"><![CDATA[ patternScore=#patternscore:REAL# ]]></isNotNull>
+      <isNotNull prepend="," property="pagesize"><![CDATA[ pageSize=#pagesize:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="disorder"><![CDATA[ disOrder=#disorder:INTEGER# ]]></isNotNull>
+
+    </dynamic> where patternID = #patternid:BIGINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from exerquestype where patternID = #value#
+  </delete>
+  
+  <!-- ###################### deleteByExer ########################## -->
+  <delete id="deleteByExer" parameterClass="java.lang.Long"> 
+     delete from exerquestype where exerID = #value#
+  </delete>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.exercise.dto.ExerquestypeQuery"> 
+     select count(*) from exerquestype
+     <include refid="Exerquestype.where_Clause"/>  
+  </select>
+    
+</sqlMap>

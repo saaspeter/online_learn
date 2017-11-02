@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Userproduct">
+<!-- ###################### userproductResult ########################## -->
+  <resultMap id="UserproductResult" class="netTest.product.vo.Userproduct">
+    <result column="userProductID" property="userproductid" jdbcType="BIGINT"/>
+    <result column="productBaseID" property="productbaseid" jdbcType="BIGINT"/>
+    <result column="userID" property="userid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="geneType" property="genetype" jdbcType="SMALLINT"/>
+    <result column="payType" property="paytype" jdbcType="SMALLINT"/>
+    <result column="cost" property="cost" jdbcType="DOUBLE"/>
+    <result column="prodUseType" property="produsetype" jdbcType="SMALLINT"/>
+    <result column="startDate" property="startdate" jdbcType="TIMESTAMP"/>
+    <result column="endDate" property="enddate" jdbcType="TIMESTAMP"/>
+    <result column="isPay" property="ispay" jdbcType="SMALLINT"/>
+    <result column="useLimitNum" property="uselimitnum" jdbcType="INTEGER"/>
+    <result column="useNum" property="usenum" jdbcType="INTEGER"/>
+    <result column="status" property="status" jdbcType="SMALLINT"/>
+    <result column="statusRank" property="statusrank" jdbcType="SMALLINT"/>
+    <result column="lastAccessTime" property="lastaccesstime" jdbcType="TIMESTAMP"/>
+  </resultMap>
+  
+  <resultMap id="UserproductResult_ex" class="netTest.product.vo.Userproduct" extends="UserproductResult">
+     <result column="categoryID" property="categoryid" jdbcType="BIGINT"/>
+     <result column="productName" property="productname" jdbcType="VARCHAR"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="productbaseid"><![CDATA[ productBaseID=#productbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="userid"><![CDATA[ userID=#userid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="categoryid"><![CDATA[ categoryID=#categoryid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="genetype"><![CDATA[ geneType=#genetype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="paytype"><![CDATA[ payType=#paytype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="produsetype"><![CDATA[ prodUseType=#produsetype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="startdate"><![CDATA[ startDate=#startdate:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="and" property="enddate"><![CDATA[ endDate=#enddate:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="and" property="ispay"><![CDATA[ isPay=#ispay:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="uselimitnum"><![CDATA[ useLimitNum=#uselimitnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="and" property="usenum"><![CDATA[ useNum=#usenum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="and" property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="statusrank"><![CDATA[ statusRank=#statusrank:SMALLINT# ]]></isNotNull>
+    </dynamic>
+  </sql>
+  
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="UserproductResult_ex" parameterClass="java.lang.Long"> 
+     select   a.userProductID, a.productBaseID, a.userID, a.shopID,
+    a.geneType, a.payType, a.cost, a.prodUseType, a.startDate,
+    a.endDate, a.isPay, a.useLimitNum, a.useNum, a.status,
+    a.statusRank, a.lastAccessTime, b.productName, b.categoryID  
+     from userproduct a, ProductBase b 
+     where a.productBaseID=b.productBaseID and a.userProductID = #value#
+  </select>
+  
+  <!-- ###################### selectByLogicPk ########################## -->
+  <select id="selectByLogicPk" resultMap="UserproductResult_ex" parameterClass="netTest.product.vo.Userproduct"> 
+     select  a.userProductID, a.productBaseID, a.userID, a.shopID,
+    		 a.geneType, a.payType, a.cost, a.prodUseType, a.startDate,
+    	     a.endDate, a.isPay, a.useLimitNum, a.useNum, a.status,
+    		 a.statusRank, a.lastAccessTime, b.productName, b.categoryID  
+     from userproduct a, ProductBase b 
+     where a.productBaseID=b.productBaseID and a.userid=#userid:BIGINT#
+           and a.productbaseid=#productbaseid:BIGINT#  
+  </select>
+  
+  <!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="UserproductResult" parameterClass="netTest.product.dto.UserproductQuery"> 
+     select userProductID,productBaseID,userID,shopID,geneType,
+            payType,cost,prodUseType,startDate,endDate,isPay,
+            useLimitNum,useNum,status,statusRank,lastAccessTime  
+     from userproduct    
+    <include refid="Userproduct.where_Clause"/>  
+    <isNotNull property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotNull> 
+  </select>
+  
+  <!-- ###################### selectAllProdUserId ########################## -->
+  <select id="selectAllProdUserId" resultClass="java.lang.Long" parameterClass="netTest.product.dto.UserproductQuery"> 
+     select userID from userproduct 
+     where productBaseID = #productbaseid:BIGINT# 
+     <dynamic> 
+        <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+        <isNotNull prepend="and" property="produsetype"><![CDATA[ prodUseType=#produsetype:SMALLINT# ]]></isNotNull>
+     </dynamic>
+  </select>
+  
+    <!-- ###################### selectUserShopidList ########################## -->
+  <select id="selectUserShopidList" resultClass="java.lang.Long" parameterClass="java.lang.Long"> 
+     select shopID from userproduct 
+     where userID = #value#
+  </select>
+  
+  <!-- ###################### selectNeedRemoveProd ########################## -->
+  <select id="selectNeedRemoveProd" resultMap="UserproductResult" parameterClass="netTest.product.dto.UserproductQuery"> 
+     select userProductID,productBaseID,userID,shopID,geneType,
+            payType,cost,prodUseType,startDate,endDate,isPay,
+            useLimitNum,useNum,status,statusRank,lastAccessTime  
+     from userproduct    
+     <![CDATA[
+     where (payType in(2,3) and endDate <= #enddate:TIMESTAMP#)
+            or (payType=7 and useLimitNum <= useNum) limit 0,500
+     ]]>  
+  </select>
+  
+  
+  <!-- ###################### notifyDueDateProduct ########################## -->
+  <insert id="notifyDueDateProduct" parameterClass="java.util.Map"> 
+     insert into UserNotification
+     ( notifyType, messCode, content, objectName, toUserID, 
+       createTime, creatorID, isRead, linkUrl, openLinkType) 
+     select #notifytype:SMALLINT#, #messcode:VARCHAR#, 
+            #content:VARCHAR#, b.productName,
+            userID, #createtime:TIMESTAMP#, #creatorid:BIGINT#,
+            #isread:SMALLINT#, 
+            CONCAT(#linkurl:VARCHAR#, a.userProductID),
+            #openlinktype:SMALLINT#
+     from userproduct a,  ProductBase b
+     <![CDATA[
+     where a.productBaseID=b.productBaseID and
+           a.payType in(2,3) and a.endDate <= #enddate:TIMESTAMP# 
+     ]]>
+  </insert>
+  
+  <!-- ###################### notifyDueNumsProduct ########################## -->
+  <insert id="notifyDueNumsProduct" parameterClass="java.util.Map"> 
+     insert into UserNotification
+     ( notifyType, messCode, content, objectName, toUserID, 
+       createTime, creatorID, isRead, linkUrl, openLinkType) 
+     select #notifytype:SMALLINT#, #messcode:VARCHAR#, 
+            #content:VARCHAR#, b.productName,
+            userID, #createtime:TIMESTAMP#, #creatorid:BIGINT#,
+            #isread:SMALLINT#, 
+            REPLACE(#linkurl:VARCHAR#, '{0}', a.userProductID),
+            #openlinktype:SMALLINT# 
+     from userproduct a,  ProductBase b
+     <![CDATA[
+     where a.productBaseID=b.productBaseID and
+           a.payType=7 and  a.useLimitNum <= a.useNum + #times:INTEGER# 
+     ]]>
+  </insert>
+  
+  <!-- ###################### selUserProds ########################## -->
+  <select id="selUserProds" resultMap="UserproductResult_ex" parameterClass="netTest.product.dto.UserproductQuery"> 
+     select a.userProductID,a.productBaseID,a.userID,a.shopID,b.categoryID,
+            a.geneType,a.payType,a.cost,a.prodUseType,a.startDate,a.endDate,
+            a.isPay,a.useLimitNum,a.useNum,a.status,a.statusRank,a.lastAccessTime,b.productName 
+     from userproduct a, ProductBase b  where a.productBaseID=b.productBaseID 
+      and a.userID=#userid:BIGINT#  
+     <dynamic> 
+      <isNotNull prepend="and" property="shopid"><![CDATA[ a.shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="status"><![CDATA[ a.status=#status:SMALLINT# ]]></isNotNull>
+    </dynamic>
+  </select>
+  
+  <!-- ###################### selMostAccessProds ########################## -->
+  <select id="selMostAccessProds" resultMap="UserproductResult_ex" parameterClass="java.lang.Long"> 
+     select a.userProductID,a.productBaseID,a.userID,a.shopID,b.categoryID,
+            a.geneType,a.payType,a.cost,a.prodUseType,a.startDate,a.endDate,
+            a.isPay,a.useLimitNum,a.useNum,a.status,a.statusRank,a.lastAccessTime,b.productName 
+     from userproduct a, ProductBase b  where a.productBaseID=b.productBaseID 
+      and a.userID=#value:BIGINT# order by lastAccessTime desc limit 0,6 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.product.vo.Userproduct"> 
+     insert into userproduct
+     ( userProductID,
+    productBaseID,
+    userID,
+    shopID,
+    geneType,
+    payType,
+    cost,
+    prodUseType,
+    startDate,
+    endDate,
+    isPay,
+    useLimitNum,
+    useNum,
+    status,
+    statusRank,lastAccessTime ) 
+    values 
+     ( #userproductid:BIGINT#, 
+    #productbaseid:BIGINT#, 
+    #userid:BIGINT#, 
+    #shopid:BIGINT#, 
+    #genetype:SMALLINT#,
+    #paytype:SMALLINT#, 
+    #cost:DOUBLE#, 
+    #produsetype:SMALLINT#, 
+    #startdate:TIMESTAMP#, 
+    #enddate:TIMESTAMP#, 
+    #ispay:SMALLINT#, 
+    #uselimitnum:INTEGER#, 
+    #usenum:INTEGER#, 
+    #status:SMALLINT#,
+    #statusrank:SMALLINT#, #lastaccesstime:TIMESTAMP# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="userproductid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+  <!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.product.vo.Userproduct"> 
+     update userproduct
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="produsetype"><![CDATA[ prodUseType=#produsetype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="enddate"><![CDATA[ endDate=#enddate:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="ispay"><![CDATA[ isPay=#ispay:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="usenum"><![CDATA[ useNum=#usenum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="statusrank"><![CDATA[ statusRank=#statusrank:SMALLINT# ]]></isNotNull> 
+    </dynamic> where userProductID = #userproductid:BIGINT#
+  </update>
+  
+  <!-- ###################### updateAccessTime ########################## -->
+  <update id="updateAccessTime" parameterClass="netTest.product.vo.Userproduct"> 
+     update userproduct set lastAccessTime=#lastaccesstime:TIMESTAMP# 
+     where userID = #userid:BIGINT# and productBaseID = #productbaseid:BIGINT# 
+  </update>
+    
+  <!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from userproduct where userProductID = #value#
+  </delete>
+  
+  <!-- ###################### deleteByLogicPk ########################## -->
+  <delete id="deleteByLogicPk" parameterClass="netTest.product.vo.Userproduct"> 
+     delete from userproduct 
+     where userid=#userid:BIGINT# and shopid=#shopid:BIGINT# and productbaseid=#productbaseid:BIGINT# 
+  </delete>
+  
+  <!-- ###################### deleteByVO ########################## -->
+  <delete id="deleteByVO" parameterClass="netTest.product.dto.UserproductQuery"> 
+     delete from userproduct
+     <include refid="Userproduct.where_Clause"/> 
+  </delete>
+  
+  <!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.product.dto.UserproductQuery"> 
+     select count(*) 
+     from userproduct 
+     <include refid="Userproduct.where_Clause"/>  
+  </select>
+  
+  <!-- ###################### selectUserCountOfProduct ########################## -->
+  <select id="selectUserCountOfProduct" resultClass="java.lang.Integer" parameterClass="java.lang.Long"> 
+     select count(*) from userproduct 
+     where productBaseID=#productbaseid:BIGINT#
+  </select>
+      
+  <!-- ###################### isExist1 ########################## -->
+  <select id="isExist1" resultClass="java.lang.Integer" parameterClass="netTest.product.dto.UserproductQuery"> 
+     select 1 from userproduct 
+      where productBaseID=#productbaseid:BIGINT# and userID=#userid:BIGINT# 
+  </select>
+    
+</sqlMap>

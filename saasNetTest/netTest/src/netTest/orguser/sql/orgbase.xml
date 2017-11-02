@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Orgbase">
+<!-- ###################### orgbaseResult ########################## -->
+  <resultMap id="OrgbaseResult" class="netTest.orguser.vo.Orgbase">
+    <result column="orgBaseID" property="orgbaseid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="orgName" property="orgname" jdbcType="VARCHAR"/>
+    <result column="orgNameSim" property="orgnamesim" jdbcType="VARCHAR"/>
+    <result column="createOrg" property="createorg" jdbcType="BIGINT"/>
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP"/>
+    <result column="pID" property="pid" jdbcType="BIGINT"/>
+    <result column="orgLevel" property="orglevel" jdbcType="INTEGER"/>
+    <result column="path" property="path" jdbcType="VARCHAR"/>
+    <result column="orgDesc" property="orgdesc" jdbcType="VARCHAR"/>
+    <result column="orgStatus" property="orgstatus" jdbcType="SMALLINT"/>
+  </resultMap>
+  
+  <!-- ###################### OrgbaseResultChildNum ########################## -->
+  <resultMap id="OrgbaseResultChildNum" class="netTest.orguser.vo.Orgbase">
+    <result column="orgBaseID" property="orgbaseid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="orgName" property="orgname" jdbcType="VARCHAR"/>
+    <result column="orgNameSim" property="orgnamesim" jdbcType="VARCHAR"/>
+    <result column="createOrg" property="createorg" jdbcType="BIGINT"/>
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP"/>
+    <result column="pID" property="pid" jdbcType="BIGINT"/>
+    <result column="orgLevel" property="orglevel" jdbcType="INTEGER"/>
+    <result column="path" property="path" jdbcType="VARCHAR"/>
+    <result column="orgDesc" property="orgdesc" jdbcType="VARCHAR"/>
+    <result column="orgStatus" property="orgstatus" jdbcType="SMALLINT"/>
+    <result column="childnum" property="childnum" jdbcType="INTEGER"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="orgbaseid"><![CDATA[ orgBaseID=#orgbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="orgname"><![CDATA[ orgName=#orgname:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="createorg"><![CDATA[ createOrg=#createorg:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="pid"><![CDATA[ pID=#pid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="path"><![CDATA[ path=#path:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="orgstatus"><![CDATA[ orgStatus=#orgstatus:SMALLINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="orgpathStr"><![CDATA[ orgBaseID in ($orgpathStr$) ]]></isNotEmpty>
+
+    </dynamic>
+  </sql>
+  
+<!-- ###################### selectAll ########################## -->
+  <select id="selectAll" resultMap="OrgbaseResult"> 
+     select 
+         orgBaseID,
+    shopID,
+    orgName,
+    orgNameSim,
+    createOrg,
+    createTime,
+    pID,
+    orgLevel,
+    path,
+    orgDesc,
+    orgStatus 
+     from orgbase
+  </select>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="OrgbaseResult" parameterClass="java.lang.Long"> 
+     select 
+         orgBaseID,
+    shopID,
+    orgName,
+    orgNameSim,
+    createOrg,
+    createTime,
+    pID,
+    orgLevel,
+    path,
+    orgDesc,
+    orgStatus 
+     from orgbase 
+     where orgBaseID = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="OrgbaseResult" parameterClass="netTest.orguser.dto.OrgbaseQuery"> 
+     select 
+         orgBaseID,
+    shopID,
+    orgName,
+    orgNameSim,
+    createOrg,
+    createTime,
+    pID,
+    orgLevel,
+    path,
+    orgDesc,
+    orgStatus
+     from orgbase
+    <include refid="Orgbase.where_Clause"/>  
+    <isNotNull property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotNull> 
+  </select>
+  
+  <!-- ###################### selectByVOChildnum ########################## -->
+  <select id="selectByVOChildnum" resultMap="OrgbaseResultChildNum" parameterClass="netTest.orguser.dto.OrgbaseQuery"> 
+     select 
+         orgBaseID,
+    shopID,
+    orgName,
+    orgNameSim,
+    createOrg,
+    createTime,
+    pID,
+    orgLevel,
+    path,
+    orgDesc,
+    orgStatus,
+    (select count(*) from OrgBaseRel where parentID=orgbase.orgBaseID and parentID!=childID) as childnum 
+     from orgbase
+    <include refid="Orgbase.where_Clause"/>  
+    <isNotNull property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotNull> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.orguser.vo.Orgbase"> 
+     insert into orgbase
+     ( orgBaseID,
+    shopID,
+    orgName,
+    orgNameSim,
+    createOrg,
+    createTime,
+    pID,
+    orgLevel,
+    path,
+    orgDesc,
+    orgStatus ) 
+    values 
+     ( #orgbaseid:BIGINT#, 
+    #shopid:BIGINT#, 
+    #orgname:VARCHAR#, 
+    #orgnamesim:VARCHAR#,
+    #createorg:BIGINT#, 
+    #createtime:TIMESTAMP#, 
+    #pid:BIGINT#, 
+    #orglevel:INTEGER#,
+    #path:VARCHAR#,
+    #orgdesc:VARCHAR#, 
+    #orgstatus:SMALLINT# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="orgbaseid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.orguser.vo.Orgbase"> 
+     update orgbase
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="orgname"><![CDATA[ orgName=#orgname:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="orgnamesim"><![CDATA[ orgNameSim=#orgnamesim:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="createorg"><![CDATA[ createOrg=#createorg:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="createtime"><![CDATA[ createTime=#createtime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="pid"><![CDATA[ pID=#pid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="orglevel"><![CDATA[ orgLevel=#orglevel:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="path"><![CDATA[ path=#path:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="orgdesc"><![CDATA[ orgDesc=#orgdesc:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="orgstatus"><![CDATA[ orgStatus=#orgstatus:SMALLINT# ]]></isNotNull>
+
+    </dynamic> where orgBaseID = #orgbaseid:BIGINT#
+  </update>
+  
+  <!-- ###################### updatePathByPK ########################## -->
+  <update id="updatePathByPK" parameterClass="netTest.orguser.vo.Orgbase"> 
+     update orgbase set path=#path:VARCHAR# where orgBaseID = #orgbaseid:BIGINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from orgbase where exists 
+      (select * from OrgBaseRel where parentID=#value# and orgbase.orgbaseid=OrgBaseRel.childID)
+  </delete>
+  
+<!-- ###################### deleteByVO ########################## -->
+  <delete id="deleteByVO" parameterClass="netTest.orguser.dto.OrgbaseQuery"> 
+     delete from orgbase
+     <include refid="Orgbase.where_Clause"/> 
+  </delete>
+  
+<!-- ###################### selectAllCount ########################## -->
+  <select id="selectAllCount" resultClass="java.lang.Integer"> 
+     select count(*) from orgbase
+  </select>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.orguser.dto.OrgbaseQuery"> 
+     select count(*) from orgbase
+     <include refid="Orgbase.where_Clause"/>  
+     <isNotNull property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotNull> 
+  </select>
+    
+</sqlMap>

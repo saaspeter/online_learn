@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="infopage" >
+
+  <resultMap id="InfopageResult" class="com.joybeacon.model.Infopage" >
+    <result column="articleID" property="articleid" jdbcType="BIGINT" />
+    <result column="shipID" property="shipid" jdbcType="BIGINT" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="beaconID" property="beaconid" jdbcType="BIGINT" />
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="updateTime" property="updatetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  
+  <sql id="Where_Clause" >
+    <dynamic prepend="where" >
+       <isNotNull prepend="and" property="articleid"><![CDATA[ articleID=#articleid:BIGINT# ]]></isNotNull>
+       <isNotNull prepend="and" property="shipid"><![CDATA[ shipID=#shipid:BIGINT# ]]></isNotNull>
+       <isNotEmpty prepend="and" property="title"><![CDATA[ title=#title:VARCHAR# ]]></isNotEmpty>
+       <isNotEmpty prepend="and" property="beaconid"><![CDATA[ beaconID=#beaconid:BIGINT# ]]></isNotEmpty>
+    </dynamic>
+  </sql>
+  
+  <select id="selectByPk" resultMap="InfopageResult" parameterClass="com.joybeacon.model.InfopageKey" >
+    select articleID, shipID, title, beaconID, createTime, updateTime, content
+    from infopage
+    where articleID = #articleid:BIGINT#
+  </select>
+  
+  <select id="selectByVO" resultMap="InfopageResult" parameterClass="com.joybeacon.model.Infopage" >
+    select articleID, shipID, title, beaconID, null as content, createTime, updateTime
+    from infopage
+    <isParameterPresent >
+      <include refid="infopage.Where_Clause" />
+      <isPropertyAvailable property="orderbyclause" >
+        order by $orderbyclause$
+      </isPropertyAvailable>
+    </isParameterPresent>
+  </select>
+  
+  <delete id="deleteByPk" parameterClass="java.lang.Long" >
+    delete from infopage
+    where articleID = #articleid:BIGINT#
+  </delete>
+  
+  <insert id="insert" parameterClass="com.joybeacon.model.Infopage" >
+    insert into infopage (articleID, shipID, title, beaconID, createTime, updateTime, content)
+    values (#articleid:BIGINT#, #shipid:BIGINT#, #title:VARCHAR#, #beaconid:BIGINT#,
+      #createtime:TIMESTAMP#, #updatetime:TIMESTAMP#, #content:LONGVARCHAR#)
+  </insert>
+  
+  <update id="updateByPk" parameterClass="com.joybeacon.model.Infopage" >
+    update infopage
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="title" >
+        title = #title:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="beaconid" >
+        beaconID = #beaconid:BIGINT#
+      </isNotNull>
+      <isNotNull prepend="," property="updatetime" >
+        updateTime = #updatetime:TIMESTAMP#
+      </isNotNull>
+      <isNotNull prepend="," property="content" >
+        content = #content:LONGVARCHAR#
+      </isNotNull>
+    </dynamic>
+    where articleID = #articleid:BIGINT#
+  </update>
+</sqlMap>

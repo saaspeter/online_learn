@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+  <data-sources />
+  
+  <form-beans>
+      <form-bean name="userForm" type="netTestWeb.platform.user.form.UserForm" />
+      <form-bean name="usershopForm" type="netTestWeb.platform.user.form.UsershopForm" />
+      <form-bean name="accountvalidatetaskForm" type="netTestWeb.platform.user.form.AccountvalidatetaskForm" />
+  </form-beans>
+  
+  <global-exceptions>
+      <exception key="commonWeb.java.commonaction.errors.noLogin" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoLoginException" path="/login_forward.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.editPage.noSuchRecord" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoSuchRecordException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.resubmit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.ResubmitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.DaoException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="org.springframework.dao.DataAccessException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.Unauthorized" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoRightException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.LogicErr" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.LogicException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.InvalidVisit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.InvalideVisitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.SystemError" handler="commonWeb.base.StrutsExceptionHandler" type="java.lang.Throwable" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+  </global-exceptions>
+  
+  <global-forwards>
+     <forward name="errorPage" path="/pubs/errorPage.jsp" ></forward>
+     <forward name="failure" path="/pubs/404.jsp" ></forward>
+     <forward name="messagePage" path="/pubs/message.jsp" ></forward>
+     <forward name="messageClosePage" path="/pubs/messageClose.jsp" ></forward>
+     <forward name="treeXml" path="/pubs/treeXml.jsp" ></forward>
+     <forward name="toUrl" path="/pubs/toUrl.jsp" ></forward>
+	 <forward name="inprogress" path="/pubs/inprogress.jsp"/>
+	 <forward name="leftMenu" path="/pubs/leftMenu.jsp"/>
+	 <forward name="topMenu" path="/pubs/topMenu.jsp"/>
+  </global-forwards>
+    
+  <action-mappings>
+    
+    <!-- user action start -->
+    <action parameter="listuser" path="/customers/listuser" name="userForm" type="netTestWeb.platform.user.action.UserAction" scope="request">
+       <forward name="list" path="/platform/user/user_list.jsp"></forward>
+    </action>
+    
+    <action parameter="registeruser" path="/customers/registeruser" name="userForm" input="/platform/user/user_add.jsp" type="netTestWeb.platform.user.action.UserAction" scope="request">
+       <forward name="registerCompletePage" path="/platform/user/user_register_complete.jsp"></forward>
+    </action>
+    
+    <action parameter="activeuserregister" path="/customers/activeuserregister" name="userForm" type="netTestWeb.platform.user.action.UserAction" scope="request">
+    </action>
+    
+    <action parameter="saveuser" path="/customers/saveuser" name="userForm" input="/platform/user/user_edit.jsp" type="netTestWeb.platform.user.action.UserAction" scope="request">
+       <forward name="viewedit" path="/customers/viewuser.do"></forward>
+    </action>
+    
+    <action parameter="edituser" path="/customers/edituser" name="userForm" type="netTestWeb.platform.user.action.UserAction" scope="request">
+       <forward name="editPage" path="/platform/user/user_edit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewuser" path="/customers/viewuser" name="userForm" type="netTestWeb.platform.user.action.UserAction" scope="request">
+       <forward name="vieweditPage" path="/platform/user/user_view.jsp"></forward>
+    </action>
+    
+    <action parameter="viewprofile" path="/customers/viewprofile" name="userForm" type="netTestWeb.platform.user.action.UserAction" scope="request">
+       <forward name="viewPage" path="/platform/user/user_profile.jsp"></forward>
+    </action>
+    
+    <action parameter="adduser" path="/customers/adduser" name="userForm" type="netTestWeb.platform.user.action.UserAction" scope="request">
+       <forward name="addPage" path="/platform/user/user_add.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteuser" path="/customers/deleteuser" name="userForm" type="netTestWeb.platform.user.action.UserAction" scope="request">
+       <forward name="list" path="/platform/user/user_list.jsp"></forward>
+    </action>
+    
+    <action parameter="updatepassword" path="/customers/updatepassword" name="userForm" type="netTestWeb.platform.user.action.UserAction" scope="request">
+    </action>
+    
+    <action parameter="statuschangepage" path="/customers/statuschangepage" name="userForm" type="netTestWeb.platform.user.action.UserAction" scope="request">
+       <forward name="statusChangePage" path="/platform/user/custstatus_change.jsp"></forward>
+    </action>
+    
+    <action parameter="savestatus" path="/customers/savestatus" name="userForm" type="netTestWeb.platform.user.action.UserAction" scope="request">
+    </action>
+    
+    <action parameter="showuseraccountsetting" path="/user/showuseraccountsetting" name="userForm" type="netTestWeb.platform.user.action.UserAction" scope="request">
+       <forward name="usersettingpage" path="/platform/user/showusersetting.jsp"></forward>
+    </action>
+    
+    <action parameter="updateuseraccountsetting" path="/user/updateuseraccountsetting" name="userForm" type="netTestWeb.platform.user.action.UserAction" scope="request">
+       <forward name="usersettingpage" path="/platform/user/showusersetting.jsp"></forward>
+    </action>
+    <!-- user action end -->
+    
+    <!-- UsershopAction start -->    
+    <action parameter="updatenickname" path="/usershop/updatenickname" name="usershopForm" type="netTestWeb.platform.user.action.UsershopAction" scope="request">
+    </action>
+    <!-- 
+    <action parameter="listmyshopuser" path="/usershop/listmyshopuser" name="usershopForm" type="netTestWeb.platform.user.action.UsershopAction" scope="request">
+       <forward name="list" path="/orguser/shopuser_list.jsp"></forward>
+    </action>
+     -->
+    <!-- UsershopAction end -->
+    
+    <!-- AccountvalidatetaskAction start -->
+    <action parameter="activenewuserpage" path="/customers/activenewuserpage" name="accountvalidatetaskForm" type="netTestWeb.platform.user.action.AccountvalidatetaskAction" scope="request">
+       <forward name="activeregisterpage" path="/platform/user/activeUserRegister.jsp"></forward>
+    </action>
+    
+    <action parameter="requestresetpassemail" path="/customers/requestresetpassemail" name="accountvalidatetaskForm" input="/platform/user/userforgetpass.jsp" type="netTestWeb.platform.user.action.AccountvalidatetaskAction" scope="request">
+    </action>
+    
+    <action parameter="toresetpassmailpage" path="/customers/toresetpassmailpage" name="accountvalidatetaskForm" type="netTestWeb.platform.user.action.AccountvalidatetaskAction" scope="request">
+       <forward name="resetpass" path="/platform/user/user_setforgetpass.jsp"></forward>
+    </action>
+    
+    <action parameter="saveresetpassmail" path="/customers/saveresetpassmail" name="accountvalidatetaskForm" type="netTestWeb.platform.user.action.AccountvalidatetaskAction" scope="request">
+    </action>
+    
+  </action-mappings>
+  
+  <message-resources parameter="netTestWeb.resource.PagetextResources" />
+  <message-resources key="BizKey" parameter="netTestWeb.resource.BizMessResources" />
+  <message-resources key="platformKey" parameter="netTestWeb.platform.resource.BizMessResources" />
+  <message-resources key="staticDocKey" parameter="netTestWeb.resource.staticDocResources" />
+    
+</struts-config>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig
+PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN"
+"http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+  <settings 
+     useStatementNamespaces="true"
+     enhancementEnabled="true"
+     lazyLoadingEnabled="true"
+  />
+  
+    <sqlMap resource="acegi/sql/resources.xml"/>
+  <sqlMap resource="acegi/sql/roles.xml"/>
+  <sqlMap resource="acegi/sql/users.xml"/>
+  <sqlMap resource="acegi/sql/role_resc.xml"/>
+  <sqlMap resource="acegi/sql/user_role.xml"/>
+  <sqlMap resource="acegi/sql/custorder.xml"/>
+  <sqlMap resource="acegi/sql/null.xml"/>
+  <sqlMap resource="acegi/sql/rolesvalue.xml"/>
+  <sqlMap resource="acegi/sql/menus.xml"/>
+  <sqlMap resource="acegi/sql/resourcesvalue.xml"/>
+  <sqlMap resource="acegi/sql/menusvalue.xml"/>
+  <sqlMap resource="acegi/sql/resclink.xml"/>
+
+  
+</sqlMapConfig>

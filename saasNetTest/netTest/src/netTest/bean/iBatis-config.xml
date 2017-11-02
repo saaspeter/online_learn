@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig  
+PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN"  
+"http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+  <settings 
+     useStatementNamespaces="true"
+     enhancementEnabled="true"
+     lazyLoadingEnabled="true"
+  />
+  
+	  <sqlMap resource="platform/sql/user.xml"/>
+	  <sqlMap resource="platform/sql/usershop.xml"/>
+      <sqlMap resource="netTest/product/sql/productbase.xml"/>
+      <sqlMap resource="netTest/product/sql/goodproduct.xml"/>
+      <sqlMap resource="netTest/product/sql/productlog.xml"/>
+      <sqlMap resource="netTest/product/sql/openactivity.xml"/>
+  	  <sqlMap resource="netTest/product/sql/openactivitymember.xml"/>
+	  <sqlMap resource="netTest/orguser/sql/deptinfo.xml"/>
+	  <sqlMap resource="netTest/orguser/sql/orgbaserel.xml"/>
+	  <sqlMap resource="netTest/orguser/sql/orgbase.xml"/>
+	  <sqlMap resource="netTest/orguser/sql/orglevel.xml"/>
+	  <sqlMap resource="netTest/orguser/sql/orguser.xml"/>
+	  <sqlMap resource="netTest/prodcont/sql/contentcate.xml"/>
+	  <sqlMap resource="netTest/wareques/sql/ware.xml"/>
+	  <sqlMap resource="netTest/wareques/sql/quesdifficult.xml"/>
+	  <sqlMap resource="netTest/wareques/sql/question.xml"/>
+      <sqlMap resource="netTest/wareques/sql/questionitem.xml"/>
+      <sqlMap resource="netTest/wareques/sql/quesanswer.xml"/>
+      <sqlMap resource="netTest/paper/sql/paper.xml"/>
+	  <sqlMap resource="netTest/paper/sql/paperprop.xml"/>
+	  <sqlMap resource="netTest/paper/sql/paperquestype.xml"/>
+	  <sqlMap resource="netTest/paper/sql/paperpatternratio.xml"/>
+	  <sqlMap resource="netTest/paper/sql/paperques.xml"/>
+      <sqlMap resource="netTest/exam/sql/testchecker.xml"/>
+	  <sqlMap resource="netTest/exam/sql/testdept.xml"/>
+	  <sqlMap resource="netTest/exam/sql/testinfo.xml"/>
+	  <sqlMap resource="netTest/exam/sql/testuser.xml"/>
+	  <sqlMap resource="netTest/exam/sql/useranswer.xml"/>
+	  <sqlMap resource="netTest/wareques/sql/questypeshop.xml"/>
+	  <sqlMap resource="netTest/learncont/sql/learncontent.xml"/>
+	  <sqlMap resource="netTest/exercise/sql/exercise.xml"/>
+	  <sqlMap resource="netTest/exercise/sql/exerques.xml"/>
+	  <sqlMap resource="netTest/exercise/sql/exerquestype.xml"/>
+	  <sqlMap resource="netTest/exercise/sql/exeruser.xml"/>
+	  <sqlMap resource="netTest/exercise/sql/userexeranswer.xml"/>
+	  <sqlMap resource="netTest/order/sql/custorder.xml"/>
+	  <sqlMap resource="netTest/order/sql/orderproduct.xml"/>
+	  <sqlMap resource="netTest/product/sql/userprodbuylog.xml"/>
+      <sqlMap resource="netTest/product/sql/userprodstatuslog.xml"/>
+	  <sqlMap resource="netTest/product/sql/userproduct.xml"/>
+	  <sqlMap resource="netTest/product/sql/learnactivity.xml"/>
+	  <sqlMap resource="netTest/product/sql/coursepost.xml"/>
+</sqlMapConfig>

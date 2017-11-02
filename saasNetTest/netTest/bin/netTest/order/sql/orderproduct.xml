@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Orderproduct">
+<!-- ###################### orderproductResult ########################## -->
+  <resultMap id="OrderproductResult" class="netTest.order.vo.Orderproduct">
+    <result column="orderID" property="orderid" jdbcType="BIGINT"/>
+    <result column="productBaseID" property="productbaseid" jdbcType="BIGINT"/>
+    <result column="orderCode" property="ordercode" jdbcType="VARCHAR"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="userID" property="userid" jdbcType="BIGINT"/>
+    <result column="productName" property="productname" jdbcType="VARCHAR"/>
+    <result column="productPrice" property="productprice" jdbcType="DOUBLE"/>
+    <result column="quantity" property="quantity" jdbcType="INTEGER"/>
+    <result column="payType" property="paytype" jdbcType="SMALLINT"/>
+    <result column="useLimitNum" property="uselimitnum" jdbcType="SMALLINT"/>
+    <result column="status" property="status" jdbcType="SMALLINT"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="orderid"><![CDATA[ orderID=#orderid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="productbaseid"><![CDATA[ productBaseID=#productbaseid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="ordercode"><![CDATA[ orderCode=#ordercode:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="userid"><![CDATA[ userID=#userid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="productname"><![CDATA[ productName=#productname:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="productprice"><![CDATA[ productPrice=#productprice:DOUBLE# ]]></isNotNull>
+      <isNotNull prepend="and" property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+    </dynamic>
+  </sql>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="OrderproductResult" parameterClass="netTest.order.vo.Orderproduct"> 
+     select orderID,
+    productBaseID,orderCode,  
+    shopID,
+    userID,
+    productName,
+    productPrice,
+    quantity,payType,useLimitNum,status   
+    from orderproduct 
+     where orderID = #orderid:BIGINT# and productBaseID=#productbaseid:BIGINT# 
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="OrderproductResult" parameterClass="netTest.order.dto.OrderproductQuery"> 
+     select 
+         orderID,
+    productBaseID,orderCode,
+    shopID,
+    userID,
+    productName,
+    productPrice,
+    quantity,payType,useLimitNum,status 
+     from orderproduct
+    <include refid="Orderproduct.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.order.vo.Orderproduct"> 
+     insert into orderproduct
+     ( orderID,
+    productBaseID,orderCode,
+    shopID,
+    userID,
+    productName,
+    productPrice,
+    quantity,payType,useLimitNum,status) 
+    values 
+     ( #orderid:BIGINT#, 
+    #productbaseid:BIGINT#, #ordercode:VARCHAR#,
+    #shopid:BIGINT#, 
+    #userid:BIGINT#,
+    #productname:VARCHAR#, 
+    #productprice:DOUBLE#, 
+    #quantity:INTEGER#,#paytype:SMALLINT#,#uselimitnum:INTEGER#,#status:SMALLINT# )
+  </insert>
+  
+  <!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.order.vo.Orderproduct"> 
+     update orderproduct
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="productname"><![CDATA[ productName=#productname:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="productprice"><![CDATA[ productPrice=#productprice:DOUBLE# ]]></isNotNull>
+      <isNotNull prepend="," property="paytype"><![CDATA[ payType=#paytype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="uselimitnum"><![CDATA[ useLimitNum=#uselimitnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+    </dynamic> where orderID = #orderid:BIGINT#
+      		     and productBaseID = #productbaseid:BIGINT#
+  </update>
+  
+  <!-- ###################### updateUnhandleStatusByOrder ########################## -->
+  <update id="updateUnhandleStatusByOrder" parameterClass="netTest.order.vo.Orderproduct"> 
+     update orderproduct set status=#status:SMALLINT# 
+     where orderID = #orderid:BIGINT# and status=1 
+  </update>
+  
+  <!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="netTest.order.vo.Orderproduct"> 
+     delete from orderproduct where orderID = #orderid:BIGINT# and productBaseID=#productbaseid:BIGINT# 
+  </delete>
+  
+  <!-- ###################### deleteByOrderid ########################## -->
+  <delete id="deleteByOrderid" parameterClass="java.lang.Long"> 
+     delete from orderproduct where orderID = #value#
+  </delete>
+  
+  <!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.order.dto.OrderproductQuery"> 
+     select count(*) from orderproduct
+     <include refid="Orderproduct.where_Clause"/>  
+  </select>
+  
+  <!-- ###################### existUnhandleOrderProd ########################## -->
+  <select id="existUnhandleOrderProd" resultClass="java.lang.Integer" parameterClass="netTest.order.vo.Orderproduct"> 
+     select count(*) from orderproduct where productBaseID=#productbaseid:BIGINT# and status=#status:SMALLINT# 
+    <dynamic>
+      <isNotNull prepend="and" property="userid"><![CDATA[ userID=#userid:BIGINT# ]]></isNotNull>
+    </dynamic>
+  </select>
+    
+</sqlMap>

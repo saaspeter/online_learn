@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+  "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+  <!-- ========================= RESOURCE DEFINITIONS ========================= -->
+  <!--
+  <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+    <property name="jndiName" value="java:comp/env/jdbc/netTest"/>
+  </bean>
+  -->
+   
+  <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" destroy-method="close">
+    <property name="driverClassName">
+		<value>com.mysql.jdbc.Driver</value>
+    </property>
+	<property name="url">
+		<value>jdbc:mysql://localhost:3306/saasNetTest</value>
+	</property>
+	<property name="username">
+		<value>peter</value>
+	</property>
+	<property name="password">
+		<value>peter</value>
+	</property>
+  </bean>
+  
+   
+  <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource">
+      <ref local="dataSource"/>
+    </property>
+  </bean>
+  <bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+    <property name="configLocation">
+      <value>/platform/bean/iBatis-config.xml</value>
+    </property>
+  </bean>
+  <!-- ========================= DAO DEFINITIONS: IBATIS IMPLEMENTATIONS ========================= -->
+
+{[#daoBeanDefine#]}
+
+</beans>

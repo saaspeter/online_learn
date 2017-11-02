@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Testuser">
+<!-- ###################### testuserResult ########################## -->
+  <resultMap id="TestuserResult" class="netTest.exam.vo.Testuser">
+    <result column="testUserID" property="testuserid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="testID" property="testid" jdbcType="BIGINT"/>
+    <result column="userID" property="userid" jdbcType="BIGINT"/>
+    <result column="orgBaseID" property="orgbaseid" jdbcType="BIGINT"/>
+    <result column="paperID" property="paperid" jdbcType="BIGINT"/>
+    <result column="startTime" property="starttime" jdbcType="TIMESTAMP"/>
+    <result column="leftTime" property="lefttime" jdbcType="INTEGER"/>
+    <result column="suspendTestTime" property="suspendtesttime" jdbcType="TIMESTAMP"/>
+    <result column="resumeTestTime" property="resumetesttime" jdbcType="TIMESTAMP"/>
+    <result column="endTime" property="endtime" jdbcType="TIMESTAMP"/>
+    <result column="objectScore" property="objectscore" jdbcType="REAL"/>
+    <result column="totalScore" property="totalscore" jdbcType="REAL"/>
+    <result column="isQualify" property="isqualify" jdbcType="SMALLINT"/>
+    <result column="status" property="status" jdbcType="SMALLINT"/>
+    <result column="orderNoDept" property="ordernodept" jdbcType="INTEGER"/>
+    <result column="orderNoAll" property="ordernoall" jdbcType="INTEGER"/>
+  </resultMap>
+  
+  <!-- ###################### testuserResultEx ########################## -->
+  <resultMap id="TestuserResultEx" class="netTest.exam.vo.Testuser" extends="Testuser.TestuserResult">
+      <result column="testStartDate" property="teststartdate" jdbcType="TIMESTAMP"/>
+      <result column="testEndDate" property="testenddate" jdbcType="TIMESTAMP"/>
+      <result column="productBaseID" property="productbaseid" jdbcType="BIGINT"/>
+      <result column="productName" property="productname" jdbcType="VARCHAR"/>
+      <result column="testStatus" property="teststatus" jdbcType="SMALLINT"/>
+      <result column="createOrgName" property="createorgname" jdbcType="VARCHAR"/>
+      <result column="testName" property="testname" jdbcType="VARCHAR"/>
+      <result column="paperVersion" property="paperversion" jdbcType="INTEGER"/>
+  </resultMap>
+  
+  <!-- ###################### testuserResultSimple ########################## -->
+  <resultMap id="testuserResultSimple" class="netTest.exam.vo.Testuser">
+      <result column="testStartDate" property="teststartdate" jdbcType="TIMESTAMP"/>
+      <result column="testEndDate" property="testenddate" jdbcType="TIMESTAMP"/>
+      <result column="testName" property="testname" jdbcType="VARCHAR"/>
+  </resultMap>
+  
+  <!-- ###################### myTestListResult ########################## -->
+  <resultMap id="myTestListResult" class="netTest.exam.vo.Testuser">
+      <result column="testID" property="testid" jdbcType="BIGINT"/>
+      <result column="testName" property="testname" jdbcType="VARCHAR"/>
+      <result column="testStartDate" property="teststartdate" jdbcType="TIMESTAMP"/>
+      <result column="testEndDate" property="testenddate" jdbcType="TIMESTAMP"/>
+      <result column="productBaseID" property="productbaseid" jdbcType="BIGINT"/>
+      <result column="testStatus" property="teststatus" jdbcType="SMALLINT"/>
+      <result column="status" property="status" jdbcType="SMALLINT"/>
+      <result column="productName" property="productname" jdbcType="VARCHAR"/>
+  </resultMap>
+  
+  <!-- ###################### sumTestuserResult1, objectscore=totalscore ########################## -->
+  <resultMap id="sumTestuserResult1" class="netTest.exam.vo.Testuser">
+    <result column="testID" property="testid" jdbcType="BIGINT"/>
+    <result column="userID" property="userid" jdbcType="BIGINT"/>
+    <result column="objectScore" property="objectscore" jdbcType="REAL"/>
+    <result column="totalScore" property="totalscore" jdbcType="REAL"/>
+  </resultMap>
+  
+  <!-- ###################### sumTestuserResult2 ########################## -->
+  <resultMap id="sumTestuserResult2" class="netTest.exam.vo.Testuser">
+    <result column="testID" property="testid" jdbcType="BIGINT"/>
+    <result column="userID" property="userid" jdbcType="BIGINT"/>
+    <result column="objectScore" property="objectscore" jdbcType="REAL"/>
+    <result column="totalScore" property="totalscore" jdbcType="REAL"/>
+  </resultMap>
+  
+  <!-- ###################### TestuserResultForOrder ########################## -->
+  <resultMap id="TestuserResultForOrder" class="netTest.exam.vo.Testuser">
+    <result column="testUserID" property="testuserid" jdbcType="BIGINT"/>
+    <result column="objectScore" property="objectscore" jdbcType="REAL"/>
+    <result column="totalScore" property="totalscore" jdbcType="REAL"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend=""> 
+      <isNotNull prepend="and" property="testuserid"><![CDATA[ a.testUserID=#testuserid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ a.shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="testid"><![CDATA[ a.testID=#testid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="userid"><![CDATA[ a.userID=#userid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="userIdstr"><![CDATA[ userID in($userIdstr$) ]]></isNotEmpty> 
+      <isNotNull prepend="and" property="orgbaseid"><![CDATA[ a.orgBaseID=#orgbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="paperid"><![CDATA[ a.paperID=#paperid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="objectscore"><![CDATA[ a.objectScore=#objectscore:REAL# ]]></isNotNull>
+      <isNotNull prepend="and" property="totalscore"><![CDATA[ a.totalScore=#totalscore:REAL# ]]></isNotNull>
+      <isNotNull prepend="and" property="isqualify"><![CDATA[ a.isQualify=#isqualify:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="status"><![CDATA[ a.status=#status:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="productbaseid"><![CDATA[ exists(select 1 from TestInfo z 
+                     where z.testID=a.testID and z.shopID=a.shopID and z.productBaseID=#productbaseid:BIGINT#) ]]></isNotNull>
+      <isNotEmpty prepend="and" property="prodidStr"><![CDATA[ exists(select 1 from TestInfo z 
+                     where z.testID=a.testID and z.shopID=a.shopID and z.productBaseID in ($prodidStr$)) ]]></isNotEmpty>
+      <isNotNull prepend="and" property="teststatus"><![CDATA[ b.testStatus=#teststatus:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="roughteststatus">
+          <isEqual property="roughteststatus" compareValue="1">
+	          (a.status in (1,3) and b.testStatus in (1,3))
+	      </isEqual>
+	      <isEqual property="roughteststatus" compareValue="2">
+	          (a.status=7 or b.testStatus > 3)
+	      </isEqual>
+      </isNotNull>
+      <isNotNull prepend="and" property="teststartdate">
+          <![CDATA[ a.testStartDate >= #teststartdate:TIMESTAMP# ]]>
+      </isNotNull>
+      <isNotNull prepend="and" property="testenddate">
+          <![CDATA[ a.testEndDate < #testenddate:TIMESTAMP# ]]>
+      </isNotNull>
+    </dynamic>
+  </sql>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="TestuserResult" parameterClass="java.lang.Long"> 
+     select 
+         testUserID,shopID,testID,userID,orgBaseID,
+         paperID,startTime,leftTime,suspendTestTime,resumeTestTime,endTime,
+         objectScore,totalScore,isQualify,status,orderNoDept,orderNoAll   
+     from testuser 
+     where testUserID = #value#
+  </select>
+  
+  <!-- ###################### selectByLogicPK ########################## -->
+  <select id="selectByLogicPK" resultMap="TestuserResult" parameterClass="netTest.exam.dto.TestuserQuery"> 
+     select 
+         testUserID,shopID,testID,userID,orgBaseID,
+         paperID,startTime,leftTime,suspendTestTime,resumeTestTime,endTime,
+         objectScore,totalScore,isQualify,status,orderNoDept,orderNoAll   
+     from testuser 
+     where testID=#testid:BIGINT# and userID=#userid:BIGINT# 
+  </select>
+   
+   <!-- ###################### selectForOrderByVO ########################## -->
+  <select id="selectForOrderByVO" resultMap="TestuserResultForOrder" parameterClass="netTest.exam.dto.TestuserQuery"> 
+     select  a.testUserID,a.objectScore,a.totalScore from testuser a  
+      <dynamic prepend="where"> 
+	      <isNotNull prepend="and" property="testid"><![CDATA[ a.testID=#testid:BIGINT# ]]></isNotNull>
+	      <isNotNull prepend="and" property="paperid"><![CDATA[ a.paperID=#paperid:BIGINT# ]]></isNotNull>
+	      <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty>
+	      <isNotNull prepend="limit" property="pagesize">
+			  <isNotNull property="startnum">
+				 <![CDATA[ #startnum:BIGINT#,#pagesize:BIGINT# ]]>
+			  </isNotNull>
+		  </isNotNull>
+      </dynamic>
+  </select>
+   
+<!-- ###################### selectByVO1 ########################## -->
+  <select id="selectByVO1" resultMap="TestuserResult" parameterClass="netTest.exam.dto.TestuserQuery"> 
+     select  a.testUserID,a.shopID,a.testID,a.userID,a.orgBaseID,
+    	a.paperID,a.startTime,a.leftTime,a.suspendTestTime,a.resumeTestTime,a.endTime,
+        a.objectScore,a.totalScore,a.isQualify,a.status,a.orderNoDept,a.orderNoAll 
+     from testuser a where 1=1 
+    <include refid="Testuser.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+    
+  <!-- ###################### selectByVO2 ########################## -->
+  <select id="selectByVO2" resultMap="TestuserResultEx" parameterClass="netTest.exam.dto.TestuserQuery"> 
+     select  a.testUserID,a.shopID,a.testID,b.testName,a.userID,a.orgBaseID,
+    	a.paperID,a.startTime,a.leftTime,a.suspendTestTime,a.resumeTestTime,a.endTime,
+        a.objectScore,a.totalScore,a.isQualify,a.status,a.orderNoDept,a.orderNoAll,b.testStartDate,
+        b.testEndDate,b.productBaseID,b.productName,b.testStatus,b.createOrgName, 
+        b.paperVersion    
+     from testuser a,TestInfo b  
+     where a.testID=b.testID 
+    <include refid="Testuser.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+  <!-- ###################### qryTestCollideUser ########################## -->
+  <select id="qryTestCollideUser" resultMap="testuserResultSimple" parameterClass="netTest.exam.dto.TestuserQuery"> 
+     
+     select  a.testName,a.testStartDate,a.testEndDate 
+         from testinfo a where a.testStatus in(1,3) 
+         and exists( select 1 from testuser c where c.testID=a.testID and c.userID=#userid:BIGINT# )
+         <![CDATA[ 
+         and exists( select 1 from testinfo b where b.testStatus in(1,3) and a.testID!=b.testID 
+             	       and ( (a.testStartDate <= b.testEndDate and b.testEndDate <= a.testEndDate) or  
+		       	         (a.testStartDate <= b.testStartDate and b.testStartDate <= a.testEndDate) or  
+		                 (b.testStartDate <= a.testStartDate and b.testStartDate >= a.testEndDate) )
+		               and exists( select 1 from testuser d where d.testID=b.testID and d.userID=#userid:BIGINT# )
+             )
+          ]]>
+		 <isNotNull prepend="and" property="shopid"><![CDATA[ a.shopID=#shopid:BIGINT# ]]></isNotNull>
+  </select>
+  
+  <!-- ###################### qryJoinTestusers ########################## -->
+  <select id="qryJoinTestusers" resultClass="java.lang.Long" parameterClass="netTest.exam.dto.TestuserQuery"> 
+     select userID from TestUser where 
+     testID=#testid:BIGINT# and shopID=#shopid:BIGINT# 
+    <isNotEmpty prepend="and" property="userIdstr">
+        userID in($userIdstr$) 
+    </isNotEmpty> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.exam.vo.Testuser"> 
+     insert into testuser
+     ( testUserID,
+    shopID,
+    testID,
+    userID,
+    orgBaseID,
+    paperID,
+    startTime,
+    leftTime,
+    suspendTestTime,
+    resumeTestTime,
+    endTime,
+    objectScore,
+    totalScore,
+    isQualify,
+    status,orderNoDept,orderNoAll ) 
+    values 
+     ( #testuserid:BIGINT#, 
+    #shopid:BIGINT#, 
+    #testid:BIGINT#, 
+    #userid:BIGINT#, 
+    #orgbaseid:BIGINT#, 
+    #paperid:BIGINT#, 
+    #starttime:TIMESTAMP#, 
+    #lefttime:INTEGER#, 
+    #suspendtesttime:TIMESTAMP#, 
+    #resumetesttime:TIMESTAMP#, 
+    #endtime:TIMESTAMP#, 
+    #objectscore:REAL#, 
+    #totalscore:REAL#, 
+    #isqualify:SMALLINT#, 
+    #status:SMALLINT#,#ordernodept:INTEGER#,#ordernoall:INTEGER# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="testuserid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.exam.vo.Testuser"> 
+     update testuser
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="orgbaseid"><![CDATA[ orgBaseID=#orgbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="paperid"><![CDATA[ paperID=#paperid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="starttime"><![CDATA[ startTime=#starttime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="lefttime"><![CDATA[ leftTime=#lefttime:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="suspendtesttime"><![CDATA[ suspendTestTime=#suspendtesttime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="resumetesttime"><![CDATA[ resumeTestTime=#resumetesttime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="endtime"><![CDATA[ endTime=#endtime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="objectscore"><![CDATA[ objectScore=#objectscore:REAL# ]]></isNotNull>
+      <isNotNull prepend="," property="totalscore"><![CDATA[ totalScore=#totalscore:REAL# ]]></isNotNull>
+      <isNotNull prepend="," property="isqualify"><![CDATA[ isQualify=#isqualify:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="ordernodept"><![CDATA[ orderNoDept=#ordernodept:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="ordernoall"><![CDATA[ orderNoAll=#ordernoall:INTEGER# ]]></isNotNull>
+    </dynamic> where testUserID = #testuserid:BIGINT#
+  </update>
+  
+  <!-- updateOrgbase: update a test select users' orgbaseID -->
+  <update id="updateOrgbase" parameterClass="netTest.exam.dto.TestuserQuery"> 
+       update testuser set orgbaseid=(select orguser.orgbaseid from orguser 
+                  where testuser.userid=orguser.userid and orguser.shopid=#shopid:BIGINT#
+						and orguser.userid in ($userIdstr$))
+	   where testuser.testid=#testid:BIGINT# and testuser.userid in($userIdstr$);
+  </update>
+  
+  <!-- ###################### updateTestOrderByPK ########################## -->
+  <update id="updateTestOrderByPK" parameterClass="netTest.exam.vo.Testuser"> 
+     update testuser 
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="ordernodept"><![CDATA[ orderNoDept=#ordernodept:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="ordernoall"><![CDATA[ orderNoAll=#ordernoall:INTEGER# ]]></isNotNull>
+    </dynamic> where testUserID = #testuserid:BIGINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from testuser where testUserID = #value#
+  </delete>
+  
+  <!-- ###################### deleteByTest ########################## -->
+  <delete id="deleteByTest" parameterClass="netTest.exam.vo.Testuser"> 
+     delete from testuser where shopID=#shopid:BIGINT#
+     and testID=#testid:BIGINT# 
+  </delete>
+  
+  
+  <!-- ###################### selectByVO1Count ########################## -->
+  <select id="selectByVO1Count" resultClass="java.lang.Integer" parameterClass="netTest.exam.dto.TestuserQuery"> 
+     select count(*) from testuser a  where 1=1  
+     <include refid="Testuser.where_Clause"/>  
+  </select>
+  
+  <!-- ###################### selectByVO2Count ########################## -->
+  <select id="selectByVO2Count" resultClass="java.lang.Integer" parameterClass="netTest.exam.dto.TestuserQuery"> 
+     select count(*) from testuser a,TestInfo b  
+     where a.testID=b.testID 
+     <include refid="Testuser.where_Clause"/>  
+  </select>
+  
+  <!-- ###################### countUsernum ########################## -->
+  <select id="countUsernum" resultClass="java.lang.Long" parameterClass="netTest.exam.dto.TestuserQuery"> 
+     select count(*) from testuser 
+      <dynamic prepend="where"> 
+	      <isNotNull prepend="and" property="testid"><![CDATA[ testID=#testid:BIGINT# ]]></isNotNull>
+	      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+	      <isNotNull prepend="and" property="paperid"><![CDATA[ paperID=#paperid:BIGINT# ]]></isNotNull>
+	      <isNotNull prepend="and" property="userid"><![CDATA[ userID=#userid:BIGINT# ]]></isNotNull>
+	      <isNotNull prepend="and" property="isqualify"><![CDATA[ isQualify=#isqualify:SMALLINT# ]]></isNotNull>
+	      <isNotEmpty prepend="and" property="statusStr"><![CDATA[ status in($statusStr$) ]]></isNotEmpty>
+      </dynamic>
+  </select>
+  
+  <!-- ###################### sumUserScore1 ########################## -->
+  <select id="sumUserScore1" resultMap="sumTestuserResult1" parameterClass="netTest.exam.dto.UseranswerQuery"> 
+     select  #testid:BIGINT# as testID, userID, sum(answerScore) as objectScore, 0 as totalScore from useranswer 
+     where testID=#testid:BIGINT# and paperID=#paperid:BIGINT# 
+     <isNotNull prepend="and" property="queschecktype"><![CDATA[ quesCheckType=#queschecktype:SMALLINT# ]]></isNotNull>
+     group by userid 
+  </select>
+  
+  <!-- ###################### sumUserScore2 ########################## -->
+  <select id="sumUserScore2" resultMap="sumTestuserResult2" parameterClass="netTest.exam.dto.UseranswerQuery"> 
+     select  #testid:BIGINT# as testID, userID, null as objectScore, sum(answerScore) as totalScore from useranswer 
+     where testID=#testid:BIGINT# and paperID=#paperid:BIGINT# 
+     <isNotNull prepend="and" property="queschecktype"><![CDATA[ quesCheckType=#queschecktype:SMALLINT# ]]></isNotNull>
+     <isNull prepend="and" property="queschecktype"><![CDATA[ (quesCheckType=2 or quesCheckType=3) ]]></isNull>
+     group by userid 
+  </select>
+  
+    <!-- ###################### updateStatusByTestinfo ########################## -->
+  <update id="updateStatusByTestinfo" parameterClass="java.util.Map"> 
+     update testuser set status=#fromstatus:SMALLINT#  
+     where testID=#testid:BIGINT# and status=#tostatus:SMALLINT#
+  </update>
+  
+  <!-- ###################### updUserScore ########################## -->
+  <update id="updUserScore" parameterClass="netTest.exam.vo.Testuser"> 
+     update testuser
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="objectscore"><![CDATA[ objectScore=#objectscore:REAL# ]]></isNotNull>
+      <isNotNull prepend="," property="totalscore"><![CDATA[ totalScore=objectScore + #totalscore:REAL# ]]></isNotNull>
+      <isNotNull prepend="," property="isqualify"><![CDATA[ isQualify=#isqualify:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="ordernodept"><![CDATA[ orderNoDept=#ordernodept:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="ordernoall"><![CDATA[ orderNoAll=#ordernoall:INTEGER# ]]></isNotNull>
+    </dynamic> where testID=#testid:BIGINT# and userID=#userid:BIGINT# 
+  </update>
+  
+    <!-- ###################### updUserQualify ########################## -->
+  <update id="updUserQualify" parameterClass="java.util.Map"> 
+     update testuser set isQualify=1 where totalscore>= #paperquascore:REAL# 
+     and testID=#testid:BIGINT# 
+  </update>
+
+    
+</sqlMap>

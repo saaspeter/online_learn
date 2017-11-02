@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>注册商店基本信息</title>
+<style >
+body{ margin:0px }
+</style>
+<script type="text/javascript">
+
+    function ParseMeasureXMLData(responseXML){
+	    var responseDoc = new ActiveXObject("MSXML.DOMDocument");
+	    responseDoc.loadXML(responseXML);
+	    var retObj = new Object();
+	    var resultType = getXMLNodeText(responseDoc,"/response/resultType");
+	    if(resultType==null||resultType=='1'){
+	    	retObj = new Object();
+	    	retObj.result = getXMLNodeText(responseDoc,"/response/result");
+	        retObj.info = getXMLNodeText(responseDoc,"/response/info");
+	    }else if(resultType=='2'){
+	    	retObj = new Array();
+	    	var resultArray = responseDoc.selectSingleNode("/response/resultArray");
+	    	if(resultArray){
+	    	   var resultChildObj = null;
+			   for(var i=0;i<resultArray.childNodes.length;i++){
+			       var resultNode = resultArray.childNodes[i];
+			       resultChildObj = new Object();
+			       resultChildObj.result = getXMLNodeText(responseDoc,"/resultNode/result");
+			       resultChildObj.info = getXMLNodeText(responseDoc,"/resultNode/info");
+			       retObj[i] = resultChildObj;
+			   }
+			}
+	    }
+	    return retObj;
+	}
+	
+	function readOne(){
+	    var obj = ParseMeasureXMLData("temp.xml");
+	    alert("result:"+obj.result+"    info:"+obj.info);
+	}
+	
+	function readtwo(){
+	    var obj = ParseMeasureXMLData("temp2.xml");
+	    for(var i=0;i<obj.length;i++){
+	       alert("i "+"result:"+obj[i].result+"    info:"+obj[i].info);
+	    }
+	    
+	}
+	
+	function scolltest(){
+	   var topscoll = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop; 
+	   
+	  if( typeof( window.pageYOffset ) == 'number' ) {
+	    //Netscape compliant
+	    topscoll = window.pageYOffset;
+	  } else if( document.body && ( document.body.scrollLeft || document.body.scrollTop ) ) {
+	    //DOM compliant
+	    topscoll = document.body.scrollTop;
+	  } else if(document.documentElement && document.documentElement.scrollTop) {
+	    //IE6 standards compliant mode
+	    topscoll = document.documentElement.scrollTop;
+	  }	   
+	   topscoll = topscoll+'px';
+	   alert(topscoll);
+	}
+
+</script>
+</head>
+
+<body>
+     <div>
+         testsss<p/>testsss<p/>testsss<p/>testsss<p/>testsss<p/>testsss<p/>testsss<p/>
+         testsss<p/>testsss<p/>testsss<p/>testsss<p/>testsss<p/>testsss<p/>testsss<p/>
+         testsss<p/>testsss<p/>testsss<p/>testsss<p/>testsss<p/>testsss<p/>testsss<p/>
+         testsss<p/>testsss<p/>testsss<p/>testsss<p/>testsss<p/>testsss<p/>testsss<p/>
+         testsss<p/>testsss<p/>testsss<p/>testsss<p/>testsss<p/>testsss<p/>testsss<p/>
+         testsss<p/>testsss<p/>testsss<p/>testsss<p/>testsss<p/>testsss<p/>testsss<p/>
+     </div>
+     <div style="width:350px;height:300px;position:absolute;left:50%;top:50%;margin-top:-150px;margin-left:-175px;border:solid #000 5px;">
+         居中的div层
+     </div>
+     <button type="button" onclick="readOne();">One</button>
+     <button type="button" onclick="readtwo();">Two</button>
+     <button type="button" onclick="scolltest();">scoll list</button>
+     
+</body>
+</html>

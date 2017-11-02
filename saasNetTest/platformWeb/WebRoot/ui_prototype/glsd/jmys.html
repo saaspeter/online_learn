@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>界面样式修改</title>
+
+<style type="text/css">
+<!--
+#content{
+    width:100%;
+	border: 1px solid #dddddd;
+	height:30em;
+}
+#lastLine{
+    width:100%;
+	margin:5px;
+	margin-left:40%;
+}
+.STYLE1 {
+	font-size: 18px;
+	font-weight: bold;
+}
+-->
+</style>
+
+</head>
+
+<body>
+<div class="STYLE1">
+选择界面样式</div>
+<div>
+  <table width="100%" border="1" cellspacing="1">
+    <tr>
+      <td align="right"><label>
+        <input type="radio" name="radiobutton" value="radiobutton" />
+      </label></td>
+      <td>蓝色盛夏</td>
+      <td><a href="blue.JPG"><img src="blue.JPG" alt="蓝色盛夏" width="500" height="200" border="0" /></a></td>
+    </tr>
+    <tr>
+      <td align="right"><input type="radio" name="radiobutton" value="radiobutton" /></td>
+      <td>橘黄黄昏</td>
+      <td><a href="yellow.JPG"><img src="yellow.JPG" alt="橘黄黄昏" width="500" height="200" border="0" /></a></td>
+    </tr>
+    <tr>
+      <td colspan="3" align="right">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="3" align="left">更换公司标识图片：
+        <label>
+        <input type="file" name="file" />
+        </label></td>
+    </tr>
+    <tr>
+      <td colspan="3" align="left">&nbsp;</td>
+    </tr>
+  </table>
+</div>
+<div id="submit">
+<span id="lastLine">
+  <label>
+  <input type="submit" name="yulan" value="预览" />
+  </label>
+  <label>
+  <input type="submit" name="Submit" value="提交" />
+  </label>
+</span>
+</div>
+</body>
+</html>

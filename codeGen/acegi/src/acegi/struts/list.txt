@@ -1,0 +1,154 @@
+        <td><bean:message key="acegi.page.{[#folder#]}.resources.name"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.resources.resType"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.resources.resString"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.resources.syscode"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.resources.upid"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.resources.ordno"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.resources.status"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.resources.descn"/></td>
+
+
+
+        <td><bean:message key="acegi.page.{[#folder#]}.roles.name"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.roles.shopid"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.roles.syscode"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.roles.upid"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.roles.status"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.roles.isdefaultset"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.roles.descn"/></td>
+
+
+
+        <td><bean:message key="acegi.page.{[#folder#]}.users.loginid"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.users.passwd"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.users.name"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.users.email"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.users.status"/></td>
+
+
+
+        <td><bean:message key="acegi.page.{[#folder#]}.role_resc.rescId"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.role_resc.roleId"/></td>
+
+
+
+        <td><bean:message key="acegi.page.{[#folder#]}.user_role.userId"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.user_role.usetype"/></td>
+
+
+
+        <td><bean:message key="acegi.page.{[#folder#]}.custorder.userid"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.custorder.ordercode"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.custorder.ordername"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.custorder.ordertype"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.custorder.ordertime"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.custorder.baseaccountid"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.custorder.reqendtime"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.custorder.fullcost"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.custorder.prepaycost"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.custorder.discount"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.custorder.prepaytime"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.custorder.fullpaytime"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.custorder.payway"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.custorder.paystatus"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.custorder.orderstatus"/></td>
+
+
+
+        <td><bean:message key="acegi.page.{[#folder#]}.rolesvalue.id"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.rolesvalue.localeid"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.rolesvalue.name"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.rolesvalue.shopid"/></td>
+
+
+
+        <td><bean:message key="acegi.page.{[#folder#]}.menus.title"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.menus.target"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.menus.onclick"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.menus.onmouseover"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.menus.onmouseout"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.menus.image"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.menus.altimage"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.menus.tooltip"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.menus.page"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.menus.width"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.menus.height"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.menus.forward"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.menus.action"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.menus.menutype"/></td>
+
+
+
+        <td><bean:message key="acegi.page.{[#folder#]}.resourcesvalue.id"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.resourcesvalue.localeid"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.resourcesvalue.name"/></td>
+
+
+
+        <td><bean:message key="acegi.page.{[#folder#]}.menusvalue.id"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.menusvalue.localeid"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.menusvalue.title"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.menusvalue.tooltip"/></td>
+
+
+
+        <td><bean:message key="acegi.page.{[#folder#]}.resclink.methodid"/></td>
+
+        <td><bean:message key="acegi.page.{[#folder#]}.resclink.back1"/></td>
+
+
+

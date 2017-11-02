@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Costrecord">
+<!-- ###################### costrecordResult ########################## -->
+  <resultMap id="CostrecordResult" class="platform.vo.Costrecord">
+    <result column="costRecordID" property="costrecordid" jdbcType="BIGINT"/>
+    <result column="baseAccountID" property="baseaccountid" jdbcType="BIGINT"/>
+    <result column="objectID" property="objectid" jdbcType="BIGINT"/>
+    <result column="accountType" property="accounttype" jdbcType="SMALLINT"/>
+    <result column="needPayTime" property="needpaytime" jdbcType="DATE"/>
+    <result column="payTime" property="paytime" jdbcType="TIMESTAMP"/>
+    <result column="totalCost" property="totalcost" jdbcType="DOUBLE"/>
+    <result column="isPay" property="ispay" jdbcType="SMALLINT"/>
+    <result column="isCurCost" property="iscurcost" jdbcType="SMALLINT"/>
+    <result column="costDisc" property="costdisc" jdbcType="VARCHAR"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="costrecordid"><![CDATA[ costRecordID=#costrecordid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="baseaccountid"><![CDATA[ baseAccountID=#baseaccountid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="objectid"><![CDATA[ objectID=#objectid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="accounttype"><![CDATA[ accountType=#accounttype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="needpaytime"><![CDATA[ needPayTime=#needpaytime:DATE# ]]></isNotNull>
+      <isNotNull prepend="and" property="paytime"><![CDATA[ payTime=#paytime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="and" property="totalcost"><![CDATA[ totalCost=#totalcost:DOUBLE# ]]></isNotNull>
+      <isNotNull prepend="and" property="ispay"><![CDATA[ isPay=#ispay:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="iscurcost"><![CDATA[ isCurCost=#iscurcost:SMALLINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="costdisc"><![CDATA[ costDisc=#costdisc:VARCHAR# ]]></isNotEmpty>
+    </dynamic>
+  </sql>
+  
+<!-- ###################### selectAll ########################## -->
+  <select id="selectAll" resultMap="CostrecordResult"> 
+     select 
+         costRecordID,
+    baseAccountID,
+    objectID,
+    accountType,
+    needPayTime,
+    payTime,
+    totalCost,
+    isPay,
+    isCurCost,
+    costDisc 
+     from costrecord
+  </select>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="CostrecordResult" parameterClass="java.lang.Long"> 
+     select 
+         costRecordID,
+    baseAccountID,
+    objectID,
+    accountType,
+    needPayTime,
+    payTime,
+    totalCost,
+    isPay,
+    isCurCost,
+    costDisc 
+     from costrecord 
+     where costRecordID = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="CostrecordResult" parameterClass="platform.dto.CostrecordQuery"> 
+     select 
+         costRecordID,
+    baseAccountID,
+    objectID,
+    accountType,
+    needPayTime,
+    payTime,
+    totalCost,
+    isPay,
+    isCurCost,
+    costDisc 
+     from costrecord
+    <include refid="Costrecord.where_Clause"/>  
+    <isNotNull property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotNull> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="platform.vo.Costrecord"> 
+    insert into costrecord
+     (     costRecordID,
+    baseAccountID,
+    objectID,
+    accountType,
+    needPayTime,
+    payTime,
+    totalCost,
+    isPay,
+    isCurCost,
+    costDisc ) 
+    values 
+     (     #costrecordid:BIGINT#, 
+    #baseaccountid:BIGINT#, 
+    #objectid:BIGINT#, 
+    #accounttype:SMALLINT#, 
+    #needpaytime:DATE#, 
+    #paytime:TIMESTAMP#, 
+    #totalcost:DOUBLE#, 
+    #ispay:SMALLINT#, 
+    #iscurcost:SMALLINT#, 
+    #costdisc:VARCHAR# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="costrecordid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="platform.vo.Costrecord"> 
+     update costrecord
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="baseaccountid"><![CDATA[ baseAccountID=#baseaccountid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="objectid"><![CDATA[ objectID=#objectid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="accounttype"><![CDATA[ accountType=#accounttype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="needpaytime"><![CDATA[ needPayTime=#needpaytime:DATE# ]]></isNotNull>
+      <isNotNull prepend="," property="paytime"><![CDATA[ payTime=#paytime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="totalcost"><![CDATA[ totalCost=#totalcost:DOUBLE# ]]></isNotNull>
+      <isNotNull prepend="," property="ispay"><![CDATA[ isPay=#ispay:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="iscurcost"><![CDATA[ isCurCost=#iscurcost:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="costdisc"><![CDATA[ costDisc=#costdisc:VARCHAR# ]]></isNotNull>
+    </dynamic> where costRecordID = #costrecordid:BIGINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from costrecord where costRecordID = #value#
+  </delete>
+  
+  <!-- ###################### delByObjectID ########################## -->
+  <delete id="delByObjectID" parameterClass="java.lang.Long"> 
+     delete from costrecord where userID = #value#
+  </delete>
+  
+  <!-- ###################### delByAccountID ########################## -->
+  <delete id="delByAccountID" parameterClass="java.lang.Long"> 
+     delete from costrecord where baseAccountID = #value#
+  </delete>
+  
+<!-- ###################### deleteByVO ########################## -->
+  <delete id="deleteByVO" parameterClass="platform.dto.CostrecordQuery"> 
+     delete from costrecord
+     <include refid="Costrecord.where_Clause"/> 
+  </delete>
+  
+<!-- ###################### selectAllCount ########################## -->
+  <select id="selectAllCount" resultClass="java.lang.Integer"> 
+     select count(*) from costrecord
+  </select>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="platform.dto.CostrecordQuery"> 
+     select count(*) from costrecord
+     <include refid="Costrecord.where_Clause"/>  
+     <isNotNull property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotNull> 
+  </select>
+    
+</sqlMap>

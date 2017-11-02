@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+  
+    <!-- Spring ApplicationContext配置文件的路径可使用通配符，多个路径用,号分隔此参数用于后面的Spring-Context loader -->
+    <context-param>
+	   <param-name>contextConfigLocation</param-name>
+	   <param-value>classpath:commonTool/bean/datasourceSetting.xml,classpath:netTest/bean/basicSetting.xml,classpath:commonTool/bean/sysInitial.xml,classpath:commonWeb/security/bean/applicationContext.xml,classpath:platform/bean/applicationContext.xml,classpath:netTest/bean/applicationContext.xml,classpath:netTestWeb/bean/applicationContext-security.xml</param-value>
+    </context-param>
+  
+    <!--
+	  - Loads the root application context of this web app at startup.
+	  - The application context is then available via 
+	  - WebApplicationContextUtils.getWebApplicationContext(servletContext).
+      -->
+    <listener>
+	   <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <!--
+      The HttpSessionEventPublisher will publish
+      HttpSessionCreatedEvent and HttpSessionDestroyedEvent
+      to the WebApplicationContext
+    -->  
+    <listener> 
+		<listener-class>org.springframework.security.ui.session.HttpSessionEventPublisher</listener-class> 
+    </listener> 
+    
+    <!-- sets locale to LocaleContextHolder from request -->
+    <listener>
+	   <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+  
+    <filter>
+       <display-name>CharsetFilter</display-name>
+	   <filter-name>CharsetFilter</filter-name>
+	   <filter-class>commonWeb.base.CharsetEncodingFilter</filter-class>
+    </filter>
+  
+    <filter-mapping>
+	   <filter-name>CharsetFilter</filter-name>
+	   <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+	   <filter-name>CharsetFilter</filter-name>
+	   <url-pattern>*.do</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+	   <filter-name>CharsetFilter</filter-name>
+	   <url-pattern>/spring_security_login</url-pattern>
+    </filter-mapping>
+  
+    <!-- spring security Filters -->
+	<filter>  
+	    <filter-name>springSecurityFilterChain</filter-name>  
+	    <filter-class>org.springframework.security.util.FilterToBeanProxy</filter-class>  
+	    <init-param>
+		   <param-name>targetClass</param-name>
+		   <param-value>
+		      org.springframework.security.util.FilterChainProxy
+		   </param-value>
+		</init-param>
+	</filter>  
+	<filter-mapping>  
+	    <filter-name>springSecurityFilterChain</filter-name>  
+	    <url-pattern>/*</url-pattern>  
+	</filter-mapping> 
+  
+  
+    <servlet>
+       <servlet-name>action</servlet-name>
+       <servlet-class>commonWeb.base.ActiveServlet</servlet-class>
+       <init-param>
+          <param-name>config</param-name>
+          <param-value>/WEB-INF/struts-config-security.xml,/WEB-INF/struts-config-userservice.xml,
+                      /WEB-INF/struts-config-orguser.xml,/WEB-INF/struts-config-wareques.xml,
+                      /WEB-INF/struts-config-paper.xml,/WEB-INF/struts-config-paperques.xml,
+                      /WEB-INF/struts-config-exam.xml,/WEB-INF/struts-config-learncont.xml,
+                      /WEB-INF/struts-config-exercise.xml,/WEB-INF/struts-config-shop.xml,
+                      /WEB-INF/struts-config-order.xml,/WEB-INF/struts-config-product.xml,
+                      /WEB-INF/struts-config-user.xml,/WEB-INF/struts-config-platform.xml,
+                      /WEB-INF/struts-config-social.xml
+          </param-value>
+       </init-param>
+       <init-param>
+         <param-name>debug</param-name>
+         <param-value>3</param-value>
+       </init-param>
+       <init-param>
+         <param-name>detail</param-name>
+         <param-value>3</param-value>
+       </init-param>
+       <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>action</servlet-name>
+       <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+  
+    <servlet>
+       <servlet-name>dwr-invoker</servlet-name>
+       <servlet-class>uk.ltd.getahead.dwr.DWRServlet</servlet-class>
+       <init-param>
+          <param-name>debug</param-name>
+          <param-value>false</param-value>
+       </init-param>
+       <init-param>      
+          <param-name>crossDomainSessionSecurity</param-name>      
+          <param-value>false</param-value>      
+       </init-param>  
+    </servlet>
+    <servlet-mapping>
+       <servlet-name>dwr-invoker</servlet-name>
+       <url-pattern>/dwr/*</url-pattern>
+    </servlet-mapping>
+  
+    <!-- get bean from web context -->
+    <!-- 
+    <servlet>                                          
+       <servlet-name>GetSpringBeanServlet</servlet-name>       
+          <servlet-class>                            
+             commonWeb.base.GetSpringBeanServlet 
+          </servlet-class>                             
+          <load-on-startup>2</load-on-startup>         
+    </servlet>                                           
+     -->
+  
+    <servlet>
+	   <servlet-name>captcha</servlet-name>
+	   <servlet-class>commonWeb.valideCode.ValidationCodeServlet</servlet-class>
+	   <load-on-startup>3</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+	   <servlet-name>captcha</servlet-name>
+	   <url-pattern>/captcha.png</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+		<servlet-name>CKEditorUploadServlet</servlet-name>
+		<servlet-class>netTestWeb.base.CKEditorUploadServlet</servlet-class>
+		<init-param>
+			<param-name>AllowedExtensionsFile</param-name>
+			<param-value></param-value>
+		</init-param>
+		<init-param>
+			<param-name>DeniedExtensionsFile</param-name>
+			<param-value>
+				html|htm|php|php2|php3|php4|php5|phtml|pwml|inc|asp|aspx|ascx|jsp|cfm|cfc|pl|bat|exe|com|dll|vbs|js|reg|cgi|htaccess|asis|ftl
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>AllowedExtensionsImage</param-name>
+			<param-value>jpg|gif|jpeg|png|bmp</param-value>
+		</init-param>
+		<init-param>
+			<param-name>DeniedExtensionsImage</param-name>
+			<param-value></param-value>
+		</init-param>
+		<init-param>
+			<param-name>AllowedExtensionsFlash</param-name>
+			<param-value>swf|fla|flv</param-value>
+		</init-param>
+		<init-param>
+			<param-name>DeniedExtensionsFlash</param-name>
+			<param-value></param-value>
+		</init-param>
+		<init-param>
+			<param-name>responseContentType</param-name>
+			<param-value>text/html</param-value>
+		</init-param>
+		<!-- max file size: 5MB -->
+		<init-param>
+			<param-name>maxFileSize</param-name>
+			<param-value>5242880</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+    <servlet-mapping>
+		<servlet-name>CKEditorUploadServlet</servlet-name>
+		<url-pattern>/ckeditor/uploader</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LogoImgUploadServlet</servlet-name>
+		<servlet-class>netTestWeb.base.LogoImgUploadServlet</servlet-class>
+		<init-param>
+			<param-name>filenameType</param-name>
+			<param-value>1</param-value>
+		</init-param>
+		<init-param>
+			<param-name>filenameSuffix</param-name>
+			<param-value>logo</param-value>
+		</init-param>
+		<init-param>
+			<param-name>DeniedExtensionsFile</param-name>
+			<param-value>
+				html|htm|php|php2|php3|php4|php5|phtml|pwml|inc|asp|aspx|ascx|jsp|cfm|cfc|pl|bat|exe|com|dll|vbs|js|reg|cgi|htaccess|asis|ftl
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>AllowedExtensionsImage</param-name>
+			<param-value>jpg|gif|jpeg|png|bmp</param-value>
+		</init-param>
+		<init-param>
+			<param-name>DeniedExtensionsImage</param-name>
+			<param-value></param-value>
+		</init-param>
+		<init-param>
+			<param-name>responseContentType</param-name>
+			<param-value>application/json</param-value>
+		</init-param>
+		<!-- max file size: 5MB -->
+		<init-param>
+			<param-name>maxFileSize</param-name>
+			<param-value>5242880</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LogoImgUploadServlet</servlet-name>
+		<url-pattern>/logoimage/uploader</url-pattern>
+	</servlet-mapping>
+	    
+    <!-- session超时定义,单位为分钟 -->
+    <session-config>
+	   <session-timeout>40</session-timeout>
+    </session-config>
+  
+    <welcome-file-list>
+       <welcome-file>index.jsp</welcome-file>
+       <welcome-file>default.jsp</welcome-file>
+       <welcome-file>tologin.do</welcome-file>
+    </welcome-file-list>
+  
+    <!-- Error Page定义 -->
+    <error-page>
+	   <error-code>500</error-code>
+	   <location>/pubs/500.jsp</location>
+    </error-page>
+    <error-page>
+	   <error-code>404</error-code>
+	   <location>/pubs/404.jsp</location>
+    </error-page>
+    <error-page>
+	   <error-code>403</error-code>
+	   <location>/pubs/403.jsp</location>
+    </error-page>
+    <error-page>
+	   <exception-type>jacax.servlet.ServletException</exception-type>
+	   <location>/pubs/errorPage.jsp</location>
+    </error-page>
+    <error-page>
+	   <exception-type>java.io.IOException</exception-type>
+	   <location>/pubs/errorPage.jsp</location>
+    </error-page>
+    <error-page>
+	   <exception-type>java.lang.Exception</exception-type>
+	   <location>/pubs/errorPage.jsp</location>
+    </error-page>
+    
+    <resource-ref>
+       <description>DB Connection</description>
+       <res-ref-name>jdbc/saasNetTest</res-ref-name>
+       <res-type>javax.sql.DataSource</res-type>
+       <res-auth>Container</res-auth>
+    </resource-ref>
+  
+</web-app>

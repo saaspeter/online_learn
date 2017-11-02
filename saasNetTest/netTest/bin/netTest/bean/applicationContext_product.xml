@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+  "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- ========================= RESOURCE DEFINITIONS ========================= -->
+
+	<!-- ========================= Class Userprodbuylog: CONFIGURE ========================= -->
+	  <bean id="userprodbuylogDaoTarget" class="netTest.product.dao.impl.UserprodbuylogDaoImpl" singleton="true">
+	    <property name="dataSource">
+	      <ref bean="dataSource"/>
+	    </property>
+	    <property name="sqlMapClient">
+	      <ref bean="sqlMapClient_netTest"/>
+	    </property>
+	  </bean>
+	
+	  <bean id="userprodbuylogDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	    <property name="transactionManager">
+	      <ref bean="transactionManager"/>
+	    </property>
+	    <property name="target">
+	      <ref local="userprodbuylogDaoTarget"/>
+	    </property>
+	    <property name="transactionAttributes">
+	      <props>
+	        <prop key="*">PROPAGATION_REQUIRED</prop>
+	      </props>
+	    </property>
+	  </bean>
+	
+	  <!-- ========================= Class Userprodstatuslog: CONFIGURE ========================= -->
+	  <bean id="userprodstatuslogDaoTarget" class="netTest.product.dao.impl.UserprodstatuslogDaoImpl" singleton="true">
+	    <property name="dataSource">
+	      <ref bean="dataSource"/>
+	    </property>
+	    <property name="sqlMapClient">
+	      <ref bean="sqlMapClient_netTest"/>
+	    </property>
+	  </bean>
+	
+	  <bean id="userprodstatuslogDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	    <property name="transactionManager">
+	      <ref bean="transactionManager"/>
+	    </property>
+	    <property name="target">
+	      <ref local="userprodstatuslogDaoTarget"/>
+	    </property>
+	    <property name="transactionAttributes">
+	      <props>
+	        <prop key="*">PROPAGATION_REQUIRED</prop>
+	      </props>
+	    </property>
+	  </bean>
+	  
+	  <!-- ======userprodstatuslogLogic: CONFIGURE ====== -->
+	  <bean id="userprodstatuslogLogicTarget" class="netTest.product.logic.impl.UserprodstatuslogLogicImpl" singleton="true">
+	    <property name="dao">
+	      <ref local="userprodstatuslogDao"/>
+	    </property>
+	  </bean>
+	  
+	  <bean id="userprodstatuslogLogic" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	    <property name="transactionManager">
+	      <ref bean="transactionManager"/>
+	    </property>
+	    <property name="target">
+	      <ref local="userprodstatuslogLogicTarget"/>
+	    </property>
+	    <property name="transactionAttributes">
+	      <props>
+	        <prop key="*">PROPAGATION_REQUIRED</prop>
+	      </props>
+	    </property>
+	  </bean>
+	  
+	 <!-- ========================= Class Userproduct: CONFIGURE ========================= -->
+	  <bean id="userproductDao" class="netTest.product.dao.impl.UserproductDaoImpl" singleton="true">
+	    <property name="dataSource">
+	      <ref bean="dataSource"/>
+	    </property>
+	    <property name="sqlMapClient">
+	      <ref bean="sqlMapClient_netTest"/>
+	    </property>
+	  </bean>
+	
+	  <bean id="userproductDaoProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	    <property name="transactionManager">
+	      <ref bean="transactionManager"/>
+	    </property>
+	    <property name="target">
+	      <ref local="userproductDao"/>
+	    </property>
+	    <property name="transactionAttributes">
+	      <props>
+	        <prop key="*">PROPAGATION_REQUIRED</prop>
+	      </props>
+	    </property>
+	  </bean>
+	  
+	  <!-- ========================= Class UserproductLogic: CONFIGURE ========================= -->
+	  <bean id="userproductLogicTarget" class="netTest.product.logic.impl.UserproductLogicImpl" singleton="true">
+	    <property name="usrproDao">
+	      <ref local="userproductDaoProxy"/>
+	    </property>
+	    <property name="buylogDao">
+	      <ref local="userprodbuylogDao"/>
+	    </property>
+	    <property name="stalogDao">
+	      <ref local="userprodstatuslogDao"/>
+	    </property>
+	    <property name="usernotificationDao">
+	      <ref bean="usernotificationDao"/>
+	    </property>
+	    <property name="productdao">
+	       <ref local="productbaseDaoTarget"/>
+	     </property>
+	  </bean>
+	
+	  <bean id="userproductLogic" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	    <property name="transactionManager">
+	      <ref bean="transactionManager"/>
+	    </property>
+	    <property name="target">
+	      <ref local="userproductLogicTarget"/>
+	    </property>
+	    <property name="transactionAttributes">
+	      <props>
+	        <prop key="*">PROPAGATION_REQUIRED</prop>
+	      </props>
+	    </property>
+	  </bean>
+
+	  <!-- ======productLogic: CONFIGURE ====== -->
+	  <bean id="productLogicTarget" class="netTest.product.logic.impl.ProductLogicImpl" singleton="true">
+	     <property name="dao">
+	       <ref local="productbaseDaoTarget"/>
+	     </property>
+	     <property name="userproductDao">
+	       <ref local="userproductDao"/>
+	     </property>
+	     <property name="testinfoLogic">
+	       <ref bean="testinfoLogicTarget"/>
+	     </property>
+	     <property name="exerciseLogic">
+	       <ref bean="exerciseLogicTarget"/>
+	     </property>
+	     <property name="paperLogic">
+	       <ref bean="paperLogicTarget"/>
+	     </property>
+	     <property name="wareLogic">
+	       <ref bean="wareLogicTarget"/>
+	     </property>
+	     <property name="learncontentLogic">
+	       <ref bean="learncontentLogic"/>
+	     </property>
+	     <property name="productlogDao">
+	       <ref bean="productlogDao"/>
+	     </property>
+	     <property name="goodproductDao">
+	       <ref bean="goodproductDao"/>
+	     </property>
+	     <property name="contentcateDao">
+	       <ref bean="contentcateDao"/>
+	     </property>
+	     <property name="userproductLogic">
+	       <ref bean="userproductLogicTarget"/>
+	     </property>
+	  </bean>
+	  
+	  <bean id="productLogic" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	    <property name="transactionManager">
+	      <ref bean="transactionManager"/>
+	    </property>
+	    <property name="target">
+	      <ref local="productLogicTarget"/>
+	    </property>
+	    <property name="transactionAttributes">
+	      <props>
+	        <prop key="*">PROPAGATION_REQUIRED</prop>
+	      </props>
+	    </property>
+	  </bean>
+	
+	  <!-- ========================= Class Productbase: CONFIGURE ========================= -->
+	  <bean id="productbaseDaoTarget" class="netTest.product.dao.impl.ProductbaseDaoImpl" singleton="true">
+	    <property name="dataSource">
+	      <ref bean="dataSource"/>
+	    </property>
+	    <property name="sqlMapClient">
+	      <ref bean="sqlMapClient_netTest"/>
+	    </property>
+	  </bean>
+	
+	  <bean id="productbaseDaoProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	    <property name="transactionManager">
+	      <ref bean="transactionManager"/>
+	    </property>
+	    <property name="target">
+	      <ref local="productbaseDaoTarget"/>
+	    </property>
+	    <property name="transactionAttributes">
+	      <props>
+	        <prop key="*">PROPAGATION_REQUIRED</prop>
+	      </props>
+	    </property>
+	  </bean>
+	  
+	  <!-- ========================= Class goodproductDao: CONFIGURE ========================= -->
+	  <bean id="goodproductDao" class="netTest.product.dao.impl.GoodproductDaoImpl" singleton="true">
+         <property name="dataSource">
+		    <ref bean="dataSource" />
+		 </property>
+		 <property name="sqlMapClient">
+			<ref bean="sqlMapClient_netTest" />
+		 </property>
+      </bean>
+	  
+	  <!-- ========================= Class Productlog: CONFIGURE ========================= -->
+	  <bean id="productlogDao" class="netTest.product.dao.impl.ProductlogDaoImpl" singleton="true">
+	     <property name="dataSource">
+	        <ref bean="dataSource"/>
+	     </property>
+	     <property name="sqlMapClient">
+	        <ref bean="sqlMapClient_netTest"/>
+	     </property>
+	  </bean>
+	  
+	  <!-- ========================= Class learnactivityDao: CONFIGURE ========================= -->
+	  <bean id="learnactivityDao" class="netTest.product.dao.impl.LearnactivityDaoImpl" singleton="true">
+         <property name="dataSource">
+		    <ref bean="dataSource" />
+		 </property>
+		 <property name="sqlMapClient">
+			<ref bean="sqlMapClient_netTest" />
+		 </property>
+      </bean>
+      
+      <!-- ========================= Class learnactivityLogic: CONFIGURE ========================= -->
+	  <bean id="learnactivityLogic" class="netTest.product.logic.impl.LearnactivityLogicImpl" singleton="true">
+	      <property name="learnactivityDao">
+	         <ref local="learnactivityDao"/>
+	      </property>
+	  </bean>
+	  
+	  <bean id="coursepostDao" class="netTest.product.dao.impl.CoursepostDaoImpl" singleton="true">
+         <property name="dataSource">
+		    <ref bean="dataSource" />
+		 </property>
+		 <property name="sqlMapClient">
+			<ref bean="sqlMapClient_netTest" />
+		 </property>
+      </bean>
+      
+      <bean id="coursepostLogic" class="netTest.product.logic.impl.CoursepostLogicImpl" singleton="true">
+	      <property name="coursepostDao">
+	         <ref local="coursepostDao"/>
+	      </property>
+	  </bean>
+	  
+	  <!-- ========================= Class Openactivitymember: CONFIGURE ========================= -->
+	  <bean id="openactivitymemberDao" class="netTest.product.dao.impl.OpenactivitymemberDaoImpl" singleton="true">
+	    <property name="dataSource">
+	      <ref bean="dataSource"/>
+	    </property>
+	    <property name="sqlMapClient">
+	      <ref bean="sqlMapClient_netTest"/>
+	    </property>
+	  </bean>
+	
+	  <!-- ========================= Class Openactivity: CONFIGURE ========================= -->
+	  <bean id="openactivityDao" class="netTest.product.dao.impl.OpenactivityDaoImpl" singleton="true">
+	    <property name="dataSource">
+	      <ref bean="dataSource"/>
+	    </property>
+	    <property name="sqlMapClient">
+	      <ref bean="sqlMapClient_netTest"/>
+	    </property>
+	  </bean>
+	  
+	  <!-- ========================= Class OpenactivityLogic: CONFIGURE ========================= -->
+	  <bean id="openactivityLogic" class="netTest.product.logic.impl.OpenactivityLogicImpl" singleton="true">
+	    <property name="openactivityDao">
+	      <ref bean="openactivityDao"/>
+	    </property>
+	    <property name="openactivitymemberDao">
+	      <ref bean="openactivitymemberDao"/>
+	    </property>
+	  </bean>
+
+</beans>

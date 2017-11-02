@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:security="http://www.springframework.org/schema/security"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                        http://www.springframework.org/schema/security 
+                        http://www.springframework.org/schema/security/spring-security-2.0.6.xsd">
+		
+	<!--
+        FilterChainProxy会按顺序来调用这些filter,使这些filter能享用Spring Ioc的功能,
+        CONVERT_URL_TO_LOWERCASE_BEFORE_COMPARISON 定义url比较前先转为小写
+        PATTERN_TYPE_APACHE_ANT 定义使用Apache ant的匹配模式
+     -->
+	<bean id="filterChainProxy"
+		class="org.springframework.security.util.FilterChainProxy">
+		<property name="filterInvocationDefinitionSource">
+			<value><![CDATA[
+				CONVERT_URL_TO_LOWERCASE_BEFORE_COMPARISON
+				PATTERN_TYPE_APACHE_ANT
+				/file/**=#NONE#
+                /pubs/**=#NONE#
+                /styles/**=#NONE#
+                /bower_components/**=#NONE#
+                /dwr/call/plaincall/**=#NONE#
+				/**=concurrentSessionFilter,httpSessionContextIntegrationFilter,logoutFilter,authenticationProcessingFilter,securityContextHolderAwareRequestFilter,rememberMeProcessingFilter,anonymousProcessingFilter,exceptionTranslationFilter,filterSecurityInterceptor
+			]]></value>
+		</property>
+	</bean>
+	
+	<bean id="httpSessionContextIntegrationFilter"
+		class="org.springframework.security.context.HttpSessionContextIntegrationFilter"
+		p:forceEagerSessionCreation="true"/>
+	
+	<bean id="logoutFilter"
+		class="org.springframework.security.ui.logout.LogoutFilter">
+		<!-- 退出系统后系统跳转到此URL -->
+		<constructor-arg value="/index.jsp"/>
+		<!-- 退出系统后的操作(调用logout方法) -->
+		<constructor-arg>
+			<list>
+				<!-- 实现了LogoutHandler接口(logout方法) -->
+				<bean class="netTestWeb.security.LogoutLogic"/>
+				<ref bean="rememberMeServices"/>
+				<bean class="org.springframework.security.ui.logout.SecurityContextLogoutHandler"/>
+			</list>
+		</constructor-arg>
+	</bean>
+	<!--
+         处理表单认证filter:
+         1.authenticationManager     认证管理器
+         2.authenticationFailureUrl  定义登录失败时转向的页面
+         3.defaultTargetUrl 	      定义登录成功时转向的页面
+         4.filterProcessesUrl        定义登录请求的地址
+         5.rememberMeServices        在验证成功后添加cookie信息
+         alwaysUseDefaultTargetUrl 这里设置了true,总是转向默认地址,太臭了，但是因为我的shop是需要额外加载权限的,
+                                       直接转向会报错的，所以先这么做，有空再改
+     -->
+	<bean id="authenticationProcessingFilter"
+		class="org.springframework.security.ui.webapp.AuthenticationProcessingFilter"
+		p:authenticationManager-ref="authenticationManager"
+		p:authenticationFailureUrl="/tologin.do?urltype=simple"
+		p:defaultTargetUrl="/login.do"
+		p:rememberMeServices-ref="rememberMeServices"
+		p:filterProcessesUrl="/spring_security_login"
+		p:alwaysUseDefaultTargetUrl="true"
+		p:authenticationDetailsSource-ref="socialAuthenticationDetailsSource"
+		/>
+	
+	<!-- for social login validate, will get accesstoken from request and other fields -->
+	<bean id="socialAuthenticationDetailsSource" class="commonWeb.security.authentication.SocialAuthenticationDetailsSource"></bean>
+	
+	<!-- want to change the relogin forward url, for case: iframe, or save page,  
+	     but the solution is too complicated, should use it.
+	     if use it, add {p:targetUrlResolver-ref="targetUrlResolverCust"} in "authenticationProcessingFilter"
+	     then set p:alwaysUseDefaultTargetUrl="true"
+	 -->
+	<!-- 
+	<bean id="targetUrlResolverCust" class="commonWeb.security.authentication.TargetUrlResolverCust"
+	    p:parenturlkey="parentUrl"
+	    p:backurlkey="backUrl"
+	    p:targeturlkey="targetUrl"
+	/>	
+	 -->
+	<!--
+         通过Providers提供认证者列表,如果一个认证提供者失败可以尝试另外一个认证提供者,以保证获取不同来源的身份认证，如
+         DaoAuthenticationProvider        从数据库中读取用户信息验证身份
+         AnonymousAuthenticationProvider  匿名用户身份认证
+         RememberMeAuthenticationProvider 已存cookie中的用户信息身份认证
+         每个认证者会对自己指定的证明信息进行认证，如DaoAuthenticationProvider仅对UsernamePasswordAuthenticationToken这个证明信息进行认证。
+     -->
+	<bean id="authenticationManager"
+		class="org.springframework.security.providers.ProviderManager"
+		p:sessionController-ref="concurrentSessionController">
+		<property name="providers">
+			<list>
+				<ref bean="daoAuthenticationProvider"/>
+				<ref bean="socialAuthenticationProvider"/>
+				<bean
+					class="org.springframework.security.providers.anonymous.AnonymousAuthenticationProvider"
+					p:key="springsecurityAnonymous"/>
+				<bean
+					class="org.springframework.security.providers.rememberme.RememberMeAuthenticationProvider"
+					p:key="springsecurityRememberMe"/>
+			</list>
+		</property>
+	</bean>
+	
+    <bean id="daoAuthenticationProvider"
+		class="org.springframework.security.providers.dao.DaoAuthenticationProvider"
+		p:passwordEncoder-ref="passwordEncoder"
+		p:saltSource-ref="saltSource"
+		p:userDetailsService-ref="userDetailsService"/>
+		
+	<bean id="socialAuthenticationProvider"
+		class="commonWeb.security.authentication.SocialLoginAuthenticationProvider"
+		p:userDetailsService-ref="userDetailsService"/>
+		
+	<!-- 使用动态盐值MD5的方式加密解密 -->
+	<bean id="passwordEncoder"
+		class="org.springframework.security.providers.encoding.Md5PasswordEncoder"/>
+		
+    <bean id="saltSource" class="org.springframework.security.providers.dao.salt.ReflectionSaltSource">   
+       <property name="userPropertyToUse" value="getUsername" />   
+    </bean>   
+		
+	<!-- 自定义UserDetailsService实现 -->
+	<bean id="userDetailsService" class="netTestWeb.security.UserDetailsServiceJdbcImpl">
+	</bean>
+		
+	<!-- 阻止用户在成功登录之后再进行一次成功登录 
+	     exceptionIfMaximumExceeded: false, it means: the later login user will kick off the
+	     previous login user, the previous user cannot use again
+	-->
+	<bean id="concurrentSessionController"
+		class="org.springframework.security.concurrent.ConcurrentSessionControllerImpl"
+		p:maximumSessions="1"
+		p:exceptionIfMaximumExceeded="false"
+		p:sessionRegistry-ref="sessionRegistry"
+		p:messageSource-ref="messageSource"/>
+		
+	<bean id="sessionRegistry"
+		class="org.springframework.security.concurrent.SessionRegistryImpl"/>
+		
+	<bean id="concurrentSessionFilter" class="org.springframework.security.concurrent.ConcurrentSessionFilter">  
+        <property name="sessionRegistry" ref="sessionRegistry"/>  
+        <property name="expiredUrl" value="/tologin.do?messcode=-2"/>  
+    </bean>  
+		
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource"
+		p:basename="classpath:netTestWeb/resource/securitymessages"/>
+
+	<bean id="securityContextHolderAwareRequestFilter"
+		class="org.springframework.security.wrapper.SecurityContextHolderAwareRequestFilter"/>
+		
+	<!--
+		利用cookie自动登陆filter
+         当SecurityContextHolder中不存在Authentication.用户授权信息，
+         rememberMeProcessingFilter就会调用autoLogin()方法从cookie中获取用户信息,在验证filter之前使用
+     -->
+	<bean id="rememberMeProcessingFilter"
+		class="org.springframework.security.ui.rememberme.RememberMeProcessingFilter"
+		p:authenticationManager-ref="authenticationManager"
+		p:rememberMeServices-ref="rememberMeServices"/>
+	<!--
+         如果不存在任何授权信息时，自动添加匿名用户身份至SecurityContextHolder中
+	 -->
+	<bean id="anonymousProcessingFilter"
+		class="commonWeb.security.filter.SaasAnonymousProcessingFilter"
+		p:key="springsecurity"
+		p:userAttribute="anonymousUser,ROLE_ANONYMOUS"/>
+	<!--
+    	异常处理filter(异常转换过滤器)，主要是处理AccessDeniedException和AuthenticationException，
+	     将给每个异常找到合适的"去向"
+	 -->
+	 <bean id="exceptionTranslationFilter"
+	 	class="org.springframework.security.ui.ExceptionTranslationFilter"
+	 	p:accessDeniedHandler-ref="accessDeniedHandler"
+	 	p:authenticationEntryPoint-ref="authenticationEntryPoint"/>
+	 <!-- 处理AccessDeniedException, 属性errorPage不起作用,因此不设置了 -->
+	 <bean id="accessDeniedHandler"
+	 	class="org.springframework.security.ui.AccessDeniedHandlerImpl"/>
+	 <!--  -->
+	 <bean id="authenticationEntryPoint"
+	 	class="org.springframework.security.ui.webapp.AuthenticationProcessingFilterEntryPoint"
+	 	p:loginFormUrl="/login_forward.jsp"
+	 	p:forceHttps="false"/>
+
+	 <!--
+	 	 使用过滤器安全拦截器保护资源
+         filterSecurityInterceptor在执行转向目标url前检查objectDefinitionSource中设定的用户权限信息,
+          安全强制过滤器负责拦截请求，判断请求是否安全，并且给予认证和访问决策管理器一个机会来验证用户的身份和权限
+          过程：
+              首先，过滤器安全拦截器使用authenticationManager调用自己的provider来对用户的认证信息进行验证并获取用户已有的权限。
+              然后，使用访问决策管理器来判断用户是否拥用合适的授权来访问受保护的资源。
+               (objectDefinitionSource属性定义了访问URL需要的权限信息)
+              最后，有投票者根据用户持有认证和访问url需要的属性，调用自己的voter来投票，决定是否允许访问。
+         rejectPublicInvocations: 如果没有定义的url的定义，是否报错，true为报错
+     -->
+	 <bean id="filterSecurityInterceptor"
+	 	class="org.springframework.security.intercept.web.FilterSecurityInterceptor"
+	 	p:rejectPublicInvocations="true"
+	 	p:authenticationManager-ref="authenticationManager"
+	 	p:accessDecisionManager-ref="accessDecisionManager"
+	 	p:objectDefinitionSource-ref="objectDefinitionSource">
+	 	<!--
+	 	<property name="objectDefinitionSource">
+	 		<value><![CDATA[
+				CONVERT_URL_TO_LOWERCASE_BEFORE_COMPARISON
+				PATTERN_TYPE_APACHE_ANT
+				/admins/**=ROLE_SUPERVISOR
+				/user/**=ROLE_USER,IS_AUTHENTICATED_REMEMBERED
+				/default.jsp=ROLE_USER,IS_AUTHENTICATED_REMEMBERED
+				/**=IS_AUTHENTICATED_ANONYMOUSLY
+			]]></value>
+	 	</property>
+	 	 -->
+	 </bean>
+	 <bean id="objectDefinitionSource"
+	 	class="commonWeb.security.resource.DataBaseFilterInvocationDefinitionSource"
+	 	p:convertUrlToLowercaseBeforeComprison="true"
+	 	p:useAntPath="true"
+	 	p:resourceLoader-ref="resourceLoader"/>
+	 	
+	 <bean id="resourceLoader" class="commonWeb.security.resource.ResourceLoader">
+		<property name="syscode">
+		    <value>00000002</value>
+		</property>
+		<property name="cache">
+			<bean class="commonTool.cache.EHCacheFactory"
+			      p:cacheManager-ref="cacheManagerFactory_netTest"
+			      p:cacheName="netTest.resourceCache"/>
+		</property>
+	</bean>
+	 	
+	 <!--
+	 	 访问决策管理器
+	 	   验证用户是否有权限访问相应的资源(filterSecurityInterceptor中objectDefinitionSource属性定义的访问URL需要的属性信息)
+	     这里的RoleVoterEx除了检查通常的角色外，还检查数据级别的安全
+	 -->
+	 <bean id="accessDecisionManager"
+	 	class="org.springframework.security.vote.AffirmativeBased"
+	 	p:allowIfAllAbstainDecisions="false">
+	 	<property name="decisionVoters">
+	 		<list>
+	 			<ref bean="roleVoter"/>
+	 			<bean class="org.springframework.security.vote.AuthenticatedVoter"/>
+	 		</list>
+	 	</property>
+	 </bean>
+	 
+	 <bean id="roleVoter" class="netTestWeb.security.RoleVoterEx" p:probeaccess-ref="probeAccess"/>
+
+	<bean id="rememberMeServices"
+		class="org.springframework.security.ui.rememberme.TokenBasedRememberMeServices"
+		p:key="springsecurity"
+		p:userDetailsService-ref="userDetailsService"/>
+		
+	<!-- user缓存配置, 略去不要了, 2012.05.06 -->
+
+	<!-- ========== 保护方法 ========== -->
+	<bean id="myInterceper"
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="interceptorNames">
+			<list>
+				<value>methodInvocationIntercept</value>
+			</list>
+		</property>
+		<property name="beanNames">
+			<list>
+				<value>newsService</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="methodInvocationIntercept"
+		class="org.springframework.security.intercept.method.aopalliance.MethodSecurityInterceptor"
+		p:authenticationManager-ref="authenticationManager"
+		p:accessDecisionManager-ref="accessDecisionManager"
+		p:objectDefinitionSource-ref="methodDefinitionSource">
+		<!--
+		<property name="objectDefinitionSource">
+			<value>
+				com.test.service.NewsService.get*=ROLE_SUPERVISOR
+			</value>
+		</property>
+		 -->
+	</bean>
+	<bean id="methodDefinitionSource"
+		class="commonWeb.security.resource.DataBaseMethodInvocationDefinitionSource"
+		p:resourceLoader-ref="resourceLoader"/>
+	<!-- ========== 保护方法 ========== -->
+
+	<bean id="loggerListener"
+		  class="org.springframework.security.event.authentication.LoggerListener"/>
+
+    <bean id="probeAccess" class="commonWeb.security.authorized.ProbeAccess" />
+
+</beans>

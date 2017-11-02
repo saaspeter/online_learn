@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Learncontent">
+<!-- ###################### learncontentResult ########################## -->
+  <resultMap id="LearncontentResult" class="netTest.learncont.vo.Learncontent">
+    <result column="contentID" property="contentid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="caption" property="caption" jdbcType="VARCHAR"/>
+    <result column="productBaseID" property="productbaseid" jdbcType="BIGINT"/>
+    <result column="contentCateID" property="contentcateid" jdbcType="BIGINT"/>
+    <result column="contentType" property="contenttype" jdbcType="INTEGER"/>
+    <result column="linktype" property="linktype" jdbcType="SMALLINT"/>
+    <result column="linkFileID" property="linkfileid" jdbcType="VARCHAR"/>
+    <result column="linkFileSource" property="linkfilesource" jdbcType="VARCHAR"/>
+    <result column="linkFileName" property="linkfilename" jdbcType="VARCHAR"/>
+    <result column="linkFileDate" property="linkfiledate" jdbcType="TIMESTAMP"/>
+    <result column="linkUserID" property="linkuserid" jdbcType="VARCHAR"/>
+    <result column="filesize" property="filesize" jdbcType="BIGINT"/>
+    <result column="isTry" property="istry" jdbcType="SMALLINT"/>
+    <result column="downloadable" property="downloadable" jdbcType="SMALLINT"/>
+    <result column="parentID" property="parentid" jdbcType="BIGINT"/>
+    <result column="orderNo" property="orderno" jdbcType="INTEGER"/>
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP"/>
+    <result column="lastupdateTime" property="lastupdatetime" jdbcType="TIMESTAMP"/>
+    <result column="creator" property="creator" jdbcType="BIGINT"/>
+	<result column="content" property="content" jdbcType="LONGVARCHAR"/>
+	<result column="status" property="status" jdbcType="SMALLINT"/>
+	<result column="contentCateName" property="contentcatename" jdbcType="VARCHAR"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="contentid"><![CDATA[ contentID=#contentid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="caption"><![CDATA[ caption=#caption:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="productbaseid"><![CDATA[ productBaseID=#productbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="contentcateid"><![CDATA[ contentCateID=#contentcateid:BIGINT# ]]></isNotNull>
+      <isNull prepend="and" property="contentcateid">
+          <isEqual property="querydoclevel" compareValue="1">
+              contentCateID is null
+          </isEqual>
+      </isNull>
+      <isNotNull prepend="and" property="contenttype"><![CDATA[ contentType=#contenttype:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="and" property="linktype"><![CDATA[ linktype=#linktype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="istry"><![CDATA[ isTry=#istry:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="downloadable"><![CDATA[ downloadable=#downloadable:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="learntypequery">
+          <isEqual property="learntypequery" compareValue="1">
+             contentType != 0
+          </isEqual>
+          <isEqual property="learntypequery" compareValue="2">
+             contentType = 0
+          </isEqual>
+      </isNotNull>
+      <isNotNull prepend="and" property="parentid"><![CDATA[ parentID=#parentid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+    </dynamic>
+  </sql>
+    
+  <!-- ###################### selectPlainByPK ########################## -->
+  <select id="selectPlainByPK" resultMap="LearncontentResult" parameterClass="java.lang.Long"> 
+     select  contentID, shopID, caption, productBaseID, contentCateID,contentType, linktype,
+             linkFileID,linkFileSource,linkFileName,linkFileDate,linkUserID,filesize,isTry,downloadable,parentID,orderNo,createTime, 
+             lastupdateTime, creator, status, null as content, null as contentCateName   
+     from learncontent   
+     where contentID = #value:BIGINT#  
+  </select>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="LearncontentResult" parameterClass="java.lang.Long"> 
+     select  a.contentID, a.shopID, a.caption, a.productBaseID, a.contentCateID,a.contentType, a.linktype,
+             a.linkFileID, a.linkFileSource, a.linkFileName, a.linkFileDate, a.linkUserID, a.filesize, a.isTry, a.downloadable, a.parentID,a.orderNo,  
+             a.createTime, a.lastupdateTime, a.creator, a.status, b.content, c.contentCateName 
+     from learncontent a inner join learncontenttext b  on a.contentID=b.contentID 
+          left outer join ContentCate c  on a.contentCateID=c.contentCateID 
+     where  a.contentID = #value:BIGINT# 
+  </select>
+  
+  <!-- ###################### selectIdsByProdId ########################## -->
+  <select id="selectIdsByProdId" resultClass="java.lang.Long" parameterClass="java.lang.Long"> 
+     select  contentID from learncontent  
+     where productBaseID = #value:BIGINT#  
+  </select>
+  
+  <!-- ###################### selectAllLinkedFileID ########################## -->
+  <select id="selectAllLinkedFileID" resultClass="java.lang.String" parameterClass="netTest.learncont.dto.LearncontentQuery"> 
+     select  linkFileID from learncontent where productBaseID = #productbaseid:BIGINT# and linktype=#linktype:SMALLINT#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="LearncontentResult" parameterClass="netTest.learncont.dto.LearncontentQuery"> 
+     select  contentID, shopID, caption, productBaseID, contentCateID, contentType, linktype, linkFileID, 
+             linkFileSource, linkFileName, linkFileDate, linkUserID, filesize, isTry, downloadable, parentID, orderNo, createTime,  
+    	     lastupdateTime, creator, status, null as content, null as contentCateName  
+     from learncontent
+    <include refid="Learncontent.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+  <!-- ###################### selectLongTimeData ########################## -->
+  <select id="selectLongTimeData" resultMap="LearncontentResult" parameterClass="netTest.learncont.dto.LearncontentQuery"> 
+     select contentID, shopID, caption, productBaseID, contentCateID,contentType, linktype,linkFileID,
+             linkFileSource, linkFileName, linkFileDate, linkUserID, filesize, isTry, downloadable, parentID, orderNo, createTime,   
+             lastupdateTime, creator, status, null as content, null as contentCateName 
+     from learncontent
+     <![CDATA[ where status=#status:SMALLINT# 
+               and createTime > #createtime:TIMESTAMP# limit 0,600 ]]>
+  </select>
+  
+  <!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.learncont.vo.Learncontent"> 
+     insert into learncontent
+     (     contentID,
+    shopID,
+    caption,
+    productBaseID,
+    contentCateID,
+    contentType, linktype, linkFileID, linkFileSource, linkFileName, linkFileDate, linkUserID, filesize, isTry, downloadable, parentID, orderNo,
+    createTime, lastupdateTime,
+    creator,
+    status ) 
+    values 
+     (     #contentid:BIGINT#, 
+    #shopid:BIGINT#, 
+    #caption:VARCHAR#, 
+    #productbaseid:BIGINT#, 
+    #contentcateid:BIGINT#, 
+    #contenttype:INTEGER#, #linktype:SMALLINT#,#linkfileid:VARCHAR#,#linkfilesource:VARCHAR#, #linkfilename:VARCHAR#, 
+    #linkfiledate:TIMESTAMP#, #linkuserid:VARCHAR#, #filesize:BIGINT#, #istry:SMALLINT#, #downloadable:SMALLINT#, #parentid:BIGINT#, #orderno:INTEGER#, #createtime:TIMESTAMP#, #lastupdatetime:TIMESTAMP#,
+    #creator:BIGINT#, #status:SMALLINT# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="contentid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+  <!-- ###################### insertText ########################## -->
+  <insert id="insertText" parameterClass="netTest.learncont.vo.Learncontent"> 
+     insert into learncontenttext
+     ( contentID, content ) 
+    values 
+     ( #contentid:BIGINT#, #content:LONGVARCHAR# )
+  </insert>
+  
+  <!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.learncont.vo.Learncontent"> 
+     update learncontent
+    <dynamic prepend="set"> 
+      <isNotEmpty prepend="," property="caption"><![CDATA[ caption=#caption:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="," property="contentcateid"><![CDATA[ contentCateID=#contentcateid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="contenttype"><![CDATA[ contentType=#contenttype:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="linktype"><![CDATA[ linktype=#linktype:SMALLINT# ]]></isNotNull>
+      <isNotEmpty prepend="," property="linkfileid"><![CDATA[ linkFileID=#linkfileid:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="," property="linkfilesource"><![CDATA[ linkFileSource=#linkfilesource:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="," property="linkfilename"><![CDATA[ linkFileName=#linkfilename:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="," property="linkfiledate"><![CDATA[ linkFileDate=#linkfiledate:TIMESTAMP# ]]></isNotNull>
+      <isNotEmpty prepend="," property="linkuserid"><![CDATA[ linkUserID=#linkuserid:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="," property="filesize"><![CDATA[ filesize=#filesize:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="istry"><![CDATA[ isTry=#istry:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="downloadable"><![CDATA[ downloadable=#downloadable:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="orderno"><![CDATA[ orderNo=#orderno:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="lastupdatetime"><![CDATA[ lastupdateTime=#lastupdatetime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="creator"><![CDATA[ creator=#creator:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+    </dynamic> where contentID = #contentid:BIGINT#
+  </update>
+  
+  <!-- ###################### updateTextByPK ########################## -->
+  <update id="updateTextByPK" parameterClass="netTest.learncont.vo.Learncontent"> 
+     update learncontenttext set <![CDATA[ content=#content:LONGVARCHAR# ]]> 
+     where contentID = #contentid:BIGINT#
+  </update>
+  
+  <!-- ###################### updateEditTimeByPK ########################## -->
+  <update id="updateEditTimeByPK" parameterClass="netTest.learncont.vo.Learncontent"> 
+     update learncontent set <![CDATA[ lastupdateTime=#lastupdatetime:TIMESTAMP# ]]> 
+     where contentID = #contentid:BIGINT#
+  </update>
+
+  <!-- ###################### updfilesourceByPK ########################## -->
+  <update id="updfilesourceByPK" parameterClass="netTest.learncont.vo.Learncontent"> 
+     update learncontent set 
+           <![CDATA[ linkFileSource=#linkfilesource:VARCHAR#, linkFileDate=#linkfiledate:TIMESTAMP#,
+                     lastupdateTime=#lastupdatetime:TIMESTAMP# ]]> 
+     where contentID = #contentid:BIGINT#
+  </update>
+  
+  <!-- ###################### removeLinkFileByPK ########################## -->
+  <update id="removeLinkFileByPK" parameterClass="netTest.learncont.vo.Learncontent"> 
+     update learncontent set 
+           <![CDATA[ linkFileID=null, linkFileSource=null, linkFileName=null,
+                     linkUserID=null, filesize=0, linkFileDate=#linkfiledate:TIMESTAMP#,
+                     lastupdateTime=#lastupdatetime:TIMESTAMP# ]]> 
+     where contentID = #contentid:BIGINT#
+  </update>
+  
+  <!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from learncontent where contentID = #value#
+  </delete>
+  
+  <!-- ###################### deleteByProduct ########################## -->
+  <delete id="deleteByProduct" parameterClass="java.lang.Long"> 
+     delete from learncontent where productBaseID = #value#
+  </delete>
+  
+  <!-- ###################### deleteTextByPK ########################## -->
+  <delete id="deleteTextByPK" parameterClass="java.lang.Long"> 
+     delete from learncontenttext where contentID = #value#
+  </delete>
+  
+  <!-- ###################### deleteTextByProduct ########################## -->
+  <delete id="deleteTextByProduct" parameterClass="java.lang.Long"> 
+     delete from learncontenttext where exists(select 1 from learncontent
+                    where learncontent.contentID=learncontenttext.contentID and learncontent.contentID = #value#)
+  </delete>
+  
+  <!-- ###################### deleteLongTimeData ########################## -->
+  <delete id="deleteLongTimeData" parameterClass="netTest.learncont.dto.LearncontentQuery"> 
+     delete from learncontent
+     <![CDATA[ where status=#status:SMALLINT# 
+               and createTime > #createtime:TIMESTAMP#]]>
+  </delete>
+  
+  <!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.learncont.dto.LearncontentQuery"> 
+     select count(*) from learncontent
+     <include refid="Learncontent.where_Clause"/>  
+  </select>
+  
+  <!-- ###################### selectAllStorageByProd ########################## -->
+  <select id="selectAllStorageByProd" resultClass="java.lang.Long" parameterClass="java.lang.Long"> 
+     select sum(filesize) from learncontent where productBaseID = #value:BIGINT# 
+  </select>
+    
+</sqlMap>

@@ -1,0 +1,147 @@
+body{ line-height:150% }
+
+input {
+	padding-left: 5px;
+}
+
+.readonly {
+	background-color: #efefef;
+}
+
+.fontBold{
+	font-weight: bold;
+}
+
+.font2Large{
+	font-size: 2em;
+}
+
+#functionLineDiv {
+	background-color: #DCEAFC;
+}
+
+#functionBarTopDiv {
+	
+}
+
+#functionBarTopDiv ul {
+	
+}
+
+#functionBarTopDiv li {
+	
+}
+
+#toUrl {
+	
+}
+
+#help {
+	
+}
+
+.alertFont {
+	color: #FF0000;
+}
+
+#displayMessDiv {
+	color: #FF0000;
+	background-color: #EEEEEE;
+}
+
+#functionBarButtomDiv {
+	
+}
+
+#functionBarButtomDiv ul {
+	
+}
+
+#functionBarButtomDiv li {
+	
+}
+
+.formTable_nowidth {
+	border: 1px solid #dddddd;
+	margin-top: 5px;
+	text-align: left;
+}
+
+.formTable2 {
+	border: 1px solid #dddddd;
+	margin-top: 5px;
+	text-align: left;
+	width: 98%;
+}
+
+.formTable2 td, .formTable_nowidth td {
+	border: 1px solid #dddddd;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+.formTable2 input, .formTable_nowidth input {
+	font-size: 20px;
+}
+
+.formTable2 select, .formTable_nowidth input {
+	font-size: 20px;
+}
+
+.formTable2 .keytd, .formTable_nowidth .keytd {
+	text-align: right !important;
+	font-weight: bold;
+}
+
+.formTable2 .valuetd, .formTable_nowidth .valuetd {
+	text-align: left !important;
+}
+
+.titleBar {
+	text-align: center;
+	font-size: 2em;
+	background-color: #F5FBFE;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.ModerateButton {
+	font-size: 20px;
+	padding: 3px;
+}
+
+.bigButton {
+	font-size: 25px;
+	padding: 5px;
+}
+
+input[type=checkbox]{
+    display: inline;
+    padding:0;
+    height: 1.2em;
+    width: 1.2em;
+}
+
+input[type=radio]{
+    display: inline;
+    padding:0;
+    height: 1.2em;
+    width: 1.2em;
+}
+
+.alertBorder{
+    border: 2px #ff0000 solid;
+}
+
+.alertFont{
+    font-weight: bold;
+    color:  #FF0000;
+}
+
+.messLink{
+    margin-left: 0px !important;
+    text-decoration: underline;
+    font-weight: bold;
+}

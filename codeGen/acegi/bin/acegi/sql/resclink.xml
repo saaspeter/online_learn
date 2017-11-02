@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Resclink">
+<!-- ###################### resclinkResult ########################## -->
+  <resultMap id="ResclinkResult" class="acegi.vo.Resclink">
+    <result column="linkID" property="linkid" jdbcType="BIGINT"/>
+    <result column="methodID" property="methodid" jdbcType="BIGINT"/>
+    <result column="back1" property="back1" jdbcType="BIGINT"/>
+
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="linkid"><![CDATA[ linkID=#linkid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="methodid"><![CDATA[ methodID=#methodid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="back1"><![CDATA[ back1=#back1:BIGINT# ]]></isNotNull>
+
+    </dynamic>
+  </sql>
+  
+<!-- ###################### selectAll ########################## -->
+  <select id="selectAll" resultMap="ResclinkResult"> 
+     select 
+         linkID,
+    methodID,
+    back1 
+     from resclink
+  </select>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="ResclinkResult" parameterClass="java.lang.Long"> 
+     select 
+         linkID,
+    methodID,
+    back1 
+     from resclink 
+     where linkID = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="ResclinkResult" parameterClass="acegi.dto.ResclinkQuery"> 
+     select 
+         linkID,
+    methodID,
+    back1
+     from resclink
+    <include refid="Resclink.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="acegi.vo.Resclink"> 
+     insert into resclink
+     (     linkID,
+    methodID,
+    back1 ) 
+    values 
+     (     #linkid:BIGINT#, 
+    #methodid:BIGINT#, 
+    #back1:BIGINT# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="linkid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="acegi.vo.Resclink"> 
+     update resclink
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="methodid"><![CDATA[ methodID=#methodid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="back1"><![CDATA[ back1=#back1:BIGINT# ]]></isNotNull>
+
+    </dynamic> where linkID = #linkid:BIGINT#
+      and methodID = #methodid:BIGINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from resclink where linkID = #value#
+  </delete>
+  
+<!-- ###################### deleteByVO ########################## -->
+  <delete id="deleteByVO" parameterClass="acegi.dto.ResclinkQuery"> 
+     delete from resclink
+     <include refid="Resclink.where_Clause"/> 
+  </delete>
+  
+<!-- ###################### selectAllCount ########################## -->
+  <select id="selectAllCount" resultClass="java.lang.Integer"> 
+     select count(*) from resclink
+  </select>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="acegi.dto.ResclinkQuery"> 
+     select count(*) from resclink
+     <include refid="Resclink.where_Clause"/>  
+  </select>
+    
+</sqlMap>

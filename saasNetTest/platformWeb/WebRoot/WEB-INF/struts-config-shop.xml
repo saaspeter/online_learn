@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+  <data-sources/>
+  
+  <form-beans>
+     <form-bean name="shopForm" type="platformWeb.shop.form.ShopForm" />
+     <form-bean name="shopappForm" type="platformWeb.shop.form.ShopappForm" />
+     <form-bean name="shopstatuslogForm" type="platformWeb.shop.form.ShopstatuslogForm" />
+  </form-beans>
+  
+  <global-exceptions>
+      <exception key="commonWeb.java.commonaction.errors.noLogin" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoLoginException" path="/login.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.editPage.noSuchRecord" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoSuchRecordException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.resubmit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.ResubmitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.DaoException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="org.springframework.dao.DataAccessException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.noRight" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoRightException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+  </global-exceptions>
+  
+  <global-forwards>
+     <forward name="errorPage" path="/pubs/errorPage.jsp" ></forward>
+     <forward name="failure" path="/pubs/404.jsp" ></forward>
+     <forward name="messagePage" path="/pubs/message.jsp" ></forward>
+     <forward name="messageClosePage" path="/pubs/messageClose.jsp" ></forward>
+     <forward name="treeXml" path="/pubs/treeXml.jsp" ></forward>
+     <forward name="toUrl" path="/pubs/toUrl.jsp" ></forward>
+	 <forward name="inprogress" path="/pubs/inprogress.jsp"/>
+	 <forward name="leftMenu" path="/pubs/leftMenu.jsp"/>
+	 <forward name="topMenu" path="/pubs/topMenu.jsp"/>
+  </global-forwards>
+    
+  <action-mappings>
+  
+    <!-- shopappAction start -->
+    <action parameter="listmyshopapp" path="/shop/listmyshopapp" name="shopappForm" type="platformWeb.shop.action.ShopappAction" scope="request">
+       <forward name="listmyapp" path="/shop/shopapp_listmyapp.jsp"></forward>
+    </action>
+    
+    <action parameter="listshopapp" path="/shop/listshopapp" name="shopappForm" type="platformWeb.shop.action.ShopappAction" scope="request">
+       <forward name="listapp" path="/shop/shopapp_listapp.jsp"></forward>
+    </action>
+    
+    <action parameter="applyNewShop" path="/shop/applyNewShop" name="shopappForm" type="platformWeb.shop.action.ShopappAction" scope="request">
+       <forward name="addpage" path="/shop/shop_add.jsp"></forward>
+    </action>
+    
+    <action parameter="saveApplyNewShop" path="/shop/saveApplyNewShop" name="shopappForm" type="platformWeb.shop.action.ShopappAction" scope="request">
+    </action>
+    
+    <action parameter="approveshopappbatch" path="/shop/approveshopappbatch" name="shopappForm" type="platformWeb.shop.action.ShopappAction" scope="request">
+       
+    </action>
+    
+    <action parameter="approveshopapp" path="/shop/approveshopapp" name="shopappForm" type="platformWeb.shop.action.ShopappAction" scope="request">
+       
+    </action>
+    
+    <action parameter="editshopappPage" path="/shop/editshopappPage" name="shopappForm" type="platformWeb.shop.action.ShopappAction" scope="request">
+       <forward name="approvepage" path="/shop/shopapp_approve.jsp"></forward>
+       <forward name="viewpage" path="/shop/shopapp_view.jsp"></forward>
+    </action>
+    
+    <action parameter="viewshopappPage" path="/shop/viewshopappPage" name="shopappForm" type="platformWeb.shop.action.ShopappAction" scope="request">
+       <forward name="viewpage" path="/shop/shopapp_view.jsp"></forward>
+    </action>
+    
+    <action parameter="delshopapp" path="/shop/delshopapp" name="shopappForm" type="platformWeb.shop.action.ShopappAction" scope="request">
+    </action>
+    <!-- shopappAction end -->
+  
+    <!-- shopAction begin -->   
+    <action parameter="listshop" path="/shop/listshop" name="shopForm" type="platformWeb.shop.action.ShopAction" scope="request">
+       <forward name="list1" path="/shop/shop_list1.jsp"></forward>
+    </action>
+    
+    <action parameter="listShopIndex" path="/shop/listShopIndex" name="shopForm" type="platformWeb.shop.action.ShopAction" scope="request">
+       <forward name="shoplistIndex" path="/shop/shoplist_index.jsp"></forward>
+    </action>
+    
+    <action parameter="updatesaveshop" path="/shop/updatesaveshop" name="shopForm" type="platformWeb.shop.action.ShopAction" scope="request">
+       
+    </action>
+    
+    <action parameter="editshoppage" path="/shop/editshoppage" name="shopForm" type="platformWeb.shop.action.ShopAction" scope="request">
+       <forward name="editPage" path="/shop/shop_edit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewshoppage" path="/shop/viewshoppage" name="shopForm" type="platformWeb.shop.action.ShopAction" scope="request">
+       <forward name="viewPage" path="/shop/shop_view.jsp"></forward>
+    </action>
+    
+    <action parameter="shopStatusChangePage" path="/shop/shopStatusChangePage" name="shopForm" type="platformWeb.shop.action.ShopAction" scope="request">
+       <forward name="statusChangePage" path="/shop/shopstatus_change.jsp"></forward>
+    </action>
+    
+    <action parameter="saveShopStatus" path="/shop/saveShopStatus" name="shopForm" type="platformWeb.shop.action.ShopAction" scope="request">
+       
+    </action>
+    
+    <action parameter="deleteShop" path="/shop/deleteShop" name="shopForm" type="platformWeb.shop.action.ShopAction" scope="request">
+       
+    </action>
+    <!-- shopAction end -->
+    
+    <action parameter="listshopstatus" path="/shop/listshopstatus" name="shopstatuslogForm" type="platformWeb.shop.action.ShopstatuslogAction" scope="request">
+       <forward name="list" path="/shop/shopstatuslog_list.jsp"></forward>
+    </action>
+    
+    
+  </action-mappings>
+  
+  <message-resources parameter="platformWeb.resource.ApplicationResources" />
+  <message-resources key="BizKey" parameter="platformWeb.resource.CommonResources" />
+    
+</struts-config>

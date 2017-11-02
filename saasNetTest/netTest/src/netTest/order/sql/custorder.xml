@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Custorder">
+<!-- ###################### custorderResult ########################## -->
+  <resultMap id="CustorderResult" class="netTest.order.vo.Custorder">
+    <result column="orderID" property="orderid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="userID" property="userid" jdbcType="BIGINT"/>
+    <result column="orderCode" property="ordercode" jdbcType="VARCHAR"/>
+    <result column="orderName" property="ordername" jdbcType="VARCHAR"/>
+    <result column="orderType" property="ordertype" jdbcType="SMALLINT"/>
+    <result column="orderTime" property="ordertime" jdbcType="TIMESTAMP"/>
+    <result column="baseAccountID" property="baseaccountid" jdbcType="BIGINT"/>
+    <result column="fullCost" property="fullcost" jdbcType="DOUBLE"/>
+    <result column="fullPayTime" property="fullpaytime" jdbcType="TIMESTAMP"/>
+    <result column="payWay" property="payway" jdbcType="SMALLINT"/>
+    <result column="payStatus" property="paystatus" jdbcType="SMALLINT"/>
+    <result column="orderStatus" property="orderstatus" jdbcType="SMALLINT"/>
+    <result column="operatorID" property="operatorid" jdbcType="BIGINT"/>
+    <result column="approveDate" property="approvedate" jdbcType="TIMESTAMP"/>
+  </resultMap>
+  
+  <resultMap id="CustorderResultExt" class="netTest.order.vo.Custorder" extends="Custorder.CustorderResult">
+    <result column="notes" property="notes" jdbcType="VARCHAR"/>
+    <result column="appNotes" property="appnotes" jdbcType="VARCHAR"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="orderid"><![CDATA[ orderID=#orderid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="userid"><![CDATA[ userID=#userid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="ordercode"><![CDATA[ orderCode like CONCAT('%',#ordercode:VARCHAR#,'%') ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="ordername"><![CDATA[ orderName=#ordername:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="ordertype"><![CDATA[ orderType=#ordertype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="ordertime"><![CDATA[ orderTime=#ordertime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="and" property="fullpaytime"><![CDATA[ fullPayTime=#fullpaytime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="and" property="paystatus"><![CDATA[ payStatus=#paystatus:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="orderstatus"><![CDATA[ orderStatus=#orderstatus:SMALLINT# ]]></isNotNull>
+         
+    </dynamic>
+  </sql>
+  
+   
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="CustorderResult" parameterClass="java.lang.Long"> 
+     select 
+         orderID,shopID,
+    userID,
+    orderCode,
+    orderName,
+    orderType,
+    orderTime,
+    baseAccountID,
+    fullCost,
+    fullPayTime,
+    payWay,
+    payStatus,
+    orderStatus,operatorID,approveDate 
+     from custorder 
+     where orderID = #value#
+  </select>
+  
+  <!-- ###################### qryWholeByPK ########################## -->
+  <select id="qryWholeByPK" resultMap="CustorderResultExt" parameterClass="java.lang.Long"> 
+     select  a.orderID,a.shopID,a.userID,a.orderCode,
+       a.orderName,a.orderType,a.orderTime,a.baseAccountID,
+    a.fullCost,a.fullPayTime,a.payWay,a.payStatus,
+    a.orderStatus,a.operatorID,a.approveDate,b.notes,b.appNotes  
+     from custorder a, CustOrderExt b 
+     where a.orderID=b.orderID and a.orderID = #value#
+  </select>
+     
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="CustorderResult" parameterClass="netTest.order.dto.CustorderQuery"> 
+     select 
+         orderID,shopID,
+    userID,
+    orderCode,
+    orderName,
+    orderType,
+    orderTime,
+    baseAccountID,
+    fullCost,
+    fullPayTime,
+    payWay,
+    payStatus,
+    orderStatus,operatorID,approveDate 
+     from custorder
+    <include refid="Custorder.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.order.vo.Custorder"> 
+     insert into custorder
+     (     orderID,shopID,
+    userID,
+    orderCode,
+    orderName,
+    orderType,
+    orderTime,
+    baseAccountID,
+    fullCost,
+    fullPayTime,
+    payWay,
+    payStatus,
+    orderStatus,operatorID,approveDate ) 
+    values 
+     (     #orderid:BIGINT#, #shopid:BIGINT#, 
+    #userid:BIGINT#, 
+    #ordercode:VARCHAR#, 
+    #ordername:VARCHAR#, 
+    #ordertype:SMALLINT#, 
+    #ordertime:TIMESTAMP#, 
+    #baseaccountid:BIGINT#, 
+    #fullcost:DOUBLE#, 
+    #fullpaytime:TIMESTAMP#, 
+    #payway:SMALLINT#, 
+    #paystatus:SMALLINT#, 
+    #orderstatus:SMALLINT#,#operatorid:BIGINT#,#approvedate:TIMESTAMP# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="orderid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.order.vo.Custorder"> 
+     update custorder
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="baseaccountid"><![CDATA[ baseAccountID=#baseaccountid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="fullcost"><![CDATA[ fullCost=#fullcost:DOUBLE# ]]></isNotNull>
+      <isNotNull prepend="," property="fullpaytime"><![CDATA[ fullPayTime=#fullpaytime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="payway"><![CDATA[ payWay=#payway:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="paystatus"><![CDATA[ payStatus=#paystatus:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="orderstatus"><![CDATA[ orderStatus=#orderstatus:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="operatorid"><![CDATA[ operatorID=#operatorid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="approvedate"><![CDATA[ approveDate=#approvedate:TIMESTAMP# ]]></isNotNull>
+    </dynamic> where orderID = #orderid:BIGINT#
+  </update>
+  
+  <!-- ###################### geneOrderCode ########################## -->
+  <insert id="geneOrderCode" parameterClass="netTest.order.vo.SequenceOrderCode"> 
+       insert into sequence_orderCode(id,nouse) values(#id:BIGINT#,#nouse:VARCHAR#)
+  	  <selectKey resultClass="java.lang.Long" keyProperty="id" >  
+         SELECT  LAST_INSERT_ID()  
+      </selectKey> 
+  </insert>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from custorder where orderID = #value#
+  </delete>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.order.dto.CustorderQuery"> 
+     select count(*) from custorder
+     <include refid="Custorder.where_Clause"/>  
+  </select>
+  
+  <!-- ###################### insertOrderExt ########################## -->
+  <insert id="insertOrderExt" parameterClass="netTest.order.vo.Custorder"> 
+     insert into CustOrderExt
+     ( orderID, notes, appNotes ) 
+    values 
+     ( #orderid:BIGINT#, #notes:VARCHAR#, #appnotes:VARCHAR# )
+  </insert>
+  
+  <!-- ###################### updateOrderExt ########################## -->
+  <update id="updateOrderExt" parameterClass="netTest.order.vo.Custorder"> 
+     update CustOrderExt 
+     <dynamic prepend="set"> 
+      <isNotNull prepend="," property="notes"><![CDATA[ notes=#notes:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="appnotes"><![CDATA[ appNotes=#appnotes:VARCHAR# ]]></isNotNull>
+    </dynamic> where orderID = #orderid:BIGINT# 
+  </update>
+  
+  <!-- ###################### delOrderExt ########################## -->
+  <delete id="delOrderExt" parameterClass="java.lang.Long"> 
+     delete from CustOrderExt where orderID = #value#
+  </delete>
+      
+</sqlMap>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry path="src" kind="src"/>
+	<classpathentry path="org.eclipse.jdt.launching.JRE_CONTAINER" kind="con"/>
+	<classpathentry path="/platform" combineaccessrules="false" kind="src"/>
+	<classpathentry path="/commonTool" combineaccessrules="false" kind="src"/>
+	<classpathentry path="/saasNetTest/tools/poi-2.5.1-final-20040804.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/acegi-security-1.0.3.jar" kind="lib"/>
+	<classpathentry path="com.genuitec.eclipse.j2eedt.core.J2EE14_CONTAINER" kind="con"/>
+	<classpathentry path="/saasNetTest/tools/dwr.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/commons-beanutils-1.7.0.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/commons-logging-1.0.4.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/commons-codec-1.3.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/jdom-1.0.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/junit.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/log4j-1.2.8.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/mail-1.4.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/mysql-connector-3.1.12.jar" kind="lib"/>
+	<classpathentry path="/commonService" combineaccessrules="false" kind="src"/>
+	<classpathentry path="/saasNetTest/tools/struts.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/struts-menu-2.4.3-modified.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/ehcache-1.3.0.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/oro-2.0.8.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/standard-1.1.2.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/casclient.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/commons-collections-3.1.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/commons-lang-2.1.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/jstl-1.1.2.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/commons-digester.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/commons-io-1.3.2.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/fckeditor-java-core-2.4.1.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/slf4j-simple-1.5.11.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/commons-fileupload-1.2.1.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/slf4j-api-1.5.11.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/jcaptcha-1.0-all.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/spring-2.5.6.jar" kind="lib"/>
+	<classpathentry path="/saasNetTest/tools/ibatis-2.3.3.720.jar" kind="lib"/>
+	<classpathentry path="WebRoot/WEB-INF/classes" kind="output"/>
+</classpath>

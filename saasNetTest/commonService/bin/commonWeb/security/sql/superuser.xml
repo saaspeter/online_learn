@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Superuser">
+<!-- ###################### superuserResult ########################## -->
+  <resultMap id="SuperuserResult" class="commonWeb.security.vo.Superuser">
+    <result column="loginname" property="loginname" jdbcType="VARCHAR"/>
+    <result column="password" property="password" jdbcType="VARCHAR"/>
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP"/>
+    <result column="dueTime" property="duetime" jdbcType="TIMESTAMP"/>
+    <result column="ipStr" property="ipstr" jdbcType="VARCHAR"/>
+    <result column="syscodeStr" property="syscodestr" jdbcType="VARCHAR"/>
+    <result column="state" property="state" jdbcType="SMALLINT"/>
+
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotEmpty prepend="and" property="loginname"><![CDATA[ loginname=#loginname:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="password"><![CDATA[ password=#password:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="createtime"><![CDATA[ createTime=#createtime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="and" property="duetime"><![CDATA[ dueTime=#duetime:TIMESTAMP# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="ipstr"><![CDATA[ ipStr=#ipstr:VARCHAR# ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="syscodestr"><![CDATA[ syscodeStr=#syscodestr:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="state"><![CDATA[ state=#state:SMALLINT# ]]></isNotNull>
+
+    </dynamic>
+  </sql>
+    
+
+  <!-- ###################### selectAll ########################## -->
+  <select id="selectAll" resultMap="SuperuserResult" parameterClass="java.lang.String"> 
+     select  loginname,password,createTime,dueTime,ipStr,syscodeStr,state 
+     from Superuser limit 0,100
+     
+  </select>
+   
+    
+</sqlMap>

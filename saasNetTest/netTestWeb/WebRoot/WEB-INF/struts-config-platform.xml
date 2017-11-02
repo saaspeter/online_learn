@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="subsysmanageForm" type="netTestWeb.platform.systemset.form.SubsysmanageForm" />
+	<form-bean name="i18nForm" type="netTestWeb.platform.systemset.form.I18nForm" />
+	<form-bean name="sysparamForm" type="netTestWeb.platform.systemset.form.SysparamForm" />
+    <form-bean name="sysfunctionitemForm" type="netTestWeb.platform.systemset.form.SysfunctionitemForm" />
+	<form-bean name="shopfuncForm" type="netTestWeb.platform.shop.form.ShopfuncForm" />
+	<form-bean name="sysconstForm" type="netTestWeb.platform.systemset.form.SysconstForm" />
+    <form-bean name="sysconstvalForm" type="netTestWeb.platform.systemset.form.SysconstvalForm" />
+	<form-bean name="sysconstitemForm" type="netTestWeb.platform.systemset.form.SysconstitemForm" />
+	<form-bean name="sysconstitemvalForm" type="netTestWeb.platform.systemset.form.SysconstitemvalForm" />
+    <form-bean name="newscategoryForm" type="netTestWeb.platform.news.form.NewscategoryForm" />
+    <form-bean name="infonewsForm" type="netTestWeb.platform.news.form.InfonewsForm" />
+    
+  </form-beans>
+
+  <global-exceptions>
+      <exception key="commonWeb.java.commonaction.errors.noLogin" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoLoginException" path="/login_forward.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.editPage.noSuchRecord" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoSuchRecordException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.resubmit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.ResubmitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.DaoException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="org.springframework.dao.DataAccessException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.Unauthorized" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoRightException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.LogicErr" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.LogicException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.SystemError" handler="commonWeb.base.StrutsExceptionHandler" type="java.lang.Throwable" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+  </global-exceptions>
+  
+  <global-forwards>
+      <forward name="errorPage" path="/pubs/errorPage.jsp" ></forward>
+      <forward name="messagePage" path="/pubs/message.jsp" ></forward>
+      <forward name="treeXml" path="/pubs/treeXml.jsp" ></forward>
+      <forward name="forwardToUrl" path="/pubs/forwardToUrl.jsp" ></forward>
+      <forward name="toUrl" path="/pubs/toUrl.jsp" ></forward>
+  </global-forwards>
+  
+  <action-mappings >
+
+    <!-- Subsysmanage begin -->
+    <action parameter="listSubsys" path="/subsysMag/listSubsys" name="subsysmanageForm" type="netTestWeb.platform.systemset.action.SubsysmanageAction" scope="request">
+      <forward name="listSubsys" path="/platform/subsysMag/subSystem_list.jsp"></forward>
+    </action>
+
+    <!-- Subsysmanage end -->
+    
+    <action
+      attribute="sysconstForm" input="/sysAdmin/basicSet/sysconst_addEdit.jsp"
+      name="sysconstForm" path="/basicset/sysconst" scope="request"
+      type="netTestWeb.platform.systemset.action.SysconstAction" parameter="method" validate="true">
+      <forward name="list" path="/platform/sysAdmin/basicSet/sysconst_list.jsp"></forward>
+      <forward name="addPage" path="/platform/sysAdmin/basicSet/sysconst_add.jsp"></forward>
+      <forward name="editPage" path="/platform/sysAdmin/basicSet/sysconst_edit.jsp"></forward>
+    </action>
+
+    <action
+      attribute="sysconstvalForm" input="/sysAdmin/basicSet/sysconstval_addEdit.jsp"
+      name="sysconstvalForm" path="/basicset/sysconstval" scope="request"
+      type="netTestWeb.platform.systemset.action.SysconstvalAction" parameter="method" validate="true">
+      <forward name="list" path="/platform/sysAdmin/basicSet/sysconstval_list.jsp"></forward>
+      <forward name="addEditPage" path="/platform/sysAdmin/basicSet/sysconstval_addEdit.jsp"></forward>
+      <forward name="viewPage" path="/platform/sysAdmin/basicSet/sysconstval_view.jsp"></forward>
+    </action>
+
+    <action
+      attribute="sysconstitemForm" input="/sysAdmin/basicSet/sysconstitem_addEdit.jsp"
+      name="sysconstitemForm" path="/basicset/sysconstitem" scope="request"
+      type="netTestWeb.platform.systemset.action.SysconstitemAction" parameter="method" validate="true">
+      <forward name="list" path="/platform/sysAdmin/basicSet/sysconstitem_list.jsp"></forward>
+      <forward name="addPage" path="/platform/sysAdmin/basicSet/sysconstitem_add.jsp"></forward>
+      <forward name="editPage" path="/platform/sysAdmin/basicSet/sysconstitem_edit.jsp"></forward>
+    </action>
+      
+    <action
+      attribute="sysconstitemvalForm" input="/sysAdmin/basicSet/sysconstitemval_addEdit.jsp"
+      name="sysconstitemvalForm" path="/basicset/sysconstitemval" scope="request"
+      type="netTestWeb.platform.systemset.action.SysconstitemvalAction" parameter="method" validate="true">
+      <forward name="list" path="/platform/sysAdmin/basicSet/sysconstitemval_list.jsp"></forward>
+      <forward name="addEditPage" path="/platform/sysAdmin/basicSet/sysconstitemval_addEdit.jsp"></forward>
+      <forward name="viewPage" path="/platform/sysAdmin/basicSet/sysconstitemval_view.jsp"></forward>
+    </action>
+ 
+    <action
+      attribute="sysfunctionitemForm" input="/sysAdmin/sysfunctionitem_edit.jsp"
+      name="sysfunctionitemForm" path="/sysadmin/sysfunctionitem" scope="request"
+      type="netTestWeb.platform.systemset.action.SysfunctionitemAction" parameter="method" validate="true">
+      <forward name="list" path="/platform/sysAdmin/sysfunctionitem_list.jsp"></forward>
+      <forward name="viewPage" path="/platform/sysAdmin/sysfunctionitem_view.jsp"></forward>
+    </action>
+    
+    <!--  ShopfuncAction begin  -->
+    <action parameter="showorderapproveconfig" name="shopfuncForm" path="/shop/showorderapproveconfig" scope="request"
+            type="netTestWeb.platform.shop.action.ShopfuncAction" >
+    </action>
+    
+    <action parameter="saveorderapprovefunc" name="shopfuncForm" path="/shop/saveorderapprovefunc" scope="request"
+            type="netTestWeb.platform.shop.action.ShopfuncAction" >
+    </action>
+    
+    <action parameter="deletefunction" name="shopfuncForm" path="/shop/deletefunction" scope="request"
+            type="netTestWeb.platform.shop.action.ShopfuncAction" >
+    </action>
+    <!--  ShopfuncAction end  -->
+    
+    <action
+      attribute="i18nForm" input="/i18n/i18n_addEdit.jsp"
+      name="i18nForm" path="/i18n/i18n" scope="request"
+      type="netTestWeb.platform.systemset.action.I18nAction" parameter="method" validate="true">
+      <forward name="list" path="/platform/i18n/i18n_list.jsp"></forward>
+      <forward name="addEditPage" path="/platform/i18n/i18n_addEdit.jsp"></forward>
+      <forward name="viewPage" path="/platform/i18n/i18n_view.jsp"></forward>
+    </action>
+    
+    <action
+      attribute="sysparamForm" input="/basicset/sysparam_addEdit.jsp"
+      name="sysparamForm" path="/basicset/sysparam" scope="request"
+      type="netTestWeb.platform.systemset.action.SysparamAction" parameter="method" validate="true">
+      <forward name="list" path="/platform/sysAdmin/basicSet/sysparam_list.jsp"></forward>
+      <forward name="addEditPage" path="/platform/sysAdmin/basicSet/sysparam_addEdit.jsp"></forward>
+      <forward name="viewPage" path="/platform/sysAdmin/basicSet/sysparam_view.jsp"></forward>
+    </action>
+
+    <!-- NewscategoryAction begin -->
+    <action parameter="addNewscategory" path="/news/addNewscategory" name="newscategoryForm" type="netTestWeb.platform.news.action.NewscategoryAction" scope="request">
+       <forward name="addPage" path="/platform/news/newscate_add.jsp"></forward>
+    </action>
+    
+    <action parameter="editNewscategory" path="/news/editNewscategory" name="newscategoryForm" type="netTestWeb.platform.news.action.NewscategoryAction" scope="request">
+       <forward name="editPage" path="/platform/news/newscate_edit.jsp"></forward>
+    </action>
+    
+    <action parameter="saveNewscategory" path="/news/saveNewscategory" name="newscategoryForm" type="netTestWeb.platform.news.action.NewscategoryAction" scope="request">
+       <forward name="editPage" path="/platform/news/newscate_edit.jsp"></forward>
+    </action>
+    
+    <action parameter="saveNewscategoryValue" path="/news/saveNewscategoryValue" name="newscategoryForm" type="netTestWeb.platform.news.action.NewscategoryAction" scope="request">
+    </action>
+    
+    <action parameter="updateNewsCate" path="/news/updateNewsCate" name="newscategoryForm" type="netTestWeb.platform.news.action.NewscategoryAction" scope="request">
+    </action>
+    
+    <action parameter="deleteNewscategory" path="/news/deleteNewscategory" name="newscategoryForm" type="netTestWeb.platform.news.action.NewscategoryAction" scope="request">
+    </action>
+    
+    <action parameter="deleteNewscategoryValue" path="/news/deleteNewscategoryValue" name="newscategoryForm" type="netTestWeb.platform.news.action.NewscategoryAction" scope="request">
+    </action>
+    <!-- NewscategoryAction end -->
+    
+    <!-- InfonewsAction begin -->
+    <action parameter="listInfonews" path="/index/listInfonews" name="infonewsForm" type="netTestWeb.platform.news.action.InfonewsAction" scope="request">
+       <forward name="listpost" path="/index/infor_cate.jsp"></forward>
+       <forward name="listsocialpost" path="/social/socialpost_list.jsp"></forward>
+    </action>
+    
+    <action parameter="listInfonewsMag" path="/index/listInfonewsMag" name="infonewsForm" type="netTestWeb.platform.news.action.InfonewsAction" scope="request">
+       <forward name="listMag" path="/index/infor_cate_mag.jsp"></forward>
+       <forward name="listsocialpost" path="/social/socialpost_list.jsp"></forward>
+    </action>
+    
+    <action parameter="saveInfonews" path="/index/saveInfonews" name="infonewsForm" type="netTestWeb.platform.news.action.InfonewsAction" scope="request">
+       <forward name="list" path="/index/infor_cate_mag.jsp"></forward>
+    </action>
+    
+    <action parameter="editInfonews" path="/index/editInfonews" name="infonewsForm" type="netTestWeb.platform.news.action.InfonewsAction" scope="request">
+       <forward name="addEditPage" path="/platform/news/infonews_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewInfonews" path="/index/viewInfonews" name="infonewsForm" type="netTestWeb.platform.news.action.InfonewsAction" scope="request">
+       <forward name="viewPage" path="/platform/news/infonews_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addInfonews" path="/index/addInfonews" name="infonewsForm" type="netTestWeb.platform.news.action.InfonewsAction" scope="request">
+       <forward name="addEditPage" path="/platform/news/infonews_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteInfonews" path="/index/deleteInfonews" name="infonewsForm" type="netTestWeb.platform.news.action.InfonewsAction" scope="request">
+    </action>
+    <!-- InfonewsAction end -->
+    
+    <!-- to home -->
+    <action parameter="tohome" path="/tohome" type="netTestWeb.index.action.SearchAction" scope="request">
+       <forward name="defaultpage" path="/index.jsp"></forward>
+    </action>
+    
+    <!-- common search -->
+    <action parameter="commonsearch" path="/commonsearch" type="netTestWeb.index.action.SearchAction" scope="request">
+       <forward name="defaultpage" path="/index.jsp"></forward>
+    </action>
+    
+    <!-- flush cache -->
+    <action path="/flushcache" type="commonWeb.base.FlushCacheAction" scope="request">
+	</action>
+    
+  </action-mappings>
+
+  <message-resources parameter="netTestWeb.platform.resource.PagetextResources" />
+  <message-resources key="BizKey" parameter="netTestWeb.resource.BizMessResources" />
+  <message-resources key="platform.pagemess" parameter="netTestWeb.platform.resource.PagetextResources" />
+  
+</struts-config>
+

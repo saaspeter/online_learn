@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Shoplicense">
+  <!-- ###################### shoplicenseResult ########################## -->
+  <resultMap id="ShoplicenseResult" class="platform.shop.vo.Shoplicense">
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="syscode" property="syscode" jdbcType="CHAR"/>
+    <result column="resourceCode" property="resourcecode" jdbcType="VARCHAR"/>
+    <result column="allocateNum" property="allocatenum" jdbcType="BIGINT"/>
+    <result column="useNum" property="usenum" jdbcType="BIGINT"/>
+    <result column="updateDate" property="updatedate" jdbcType="TIMESTAMP"/>
+
+  </resultMap>
+    
+  <!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="syscode"><![CDATA[ syscode=#syscode:CHAR# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="resourcecode"><![CDATA[ resourceCode=#resourcecode:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="allocatenum"><![CDATA[ allocateNum=#allocatenum:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="usenum"><![CDATA[ useNum=#usenum:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="updatedate"><![CDATA[ updateDate=#updatedate:TIMESTAMP# ]]></isNotNull>
+
+    </dynamic>
+  </sql>
+    
+  <!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="ShoplicenseResult" parameterClass="platform.shop.vo.Shoplicense"> 
+     select  shopID, syscode, resourceCode, allocateNum, useNum, updateDate 
+     from shoplicense 
+     where shopID=#shopid:BIGINT# and syscode=#syscode:CHAR# 
+     and resourceCode=#resourcecode:VARCHAR#
+  </select>
+   
+  <!-- ###################### selectByShop ########################## -->
+  <select id="selectByShop" resultMap="ShoplicenseResult" parameterClass="platform.shop.vo.Shoplicense"> 
+     select  shopID, syscode, resourceCode, allocateNum, useNum, updateDate
+     from shoplicense where shopID=#shopid:BIGINT# 
+     <isNotNull prepend="and" property="syscode"><![CDATA[ syscode=#syscode:CHAR# ]]></isNotNull>
+  </select>
+  
+  <!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="platform.shop.vo.Shoplicense"> 
+     insert into shoplicense
+     ( shopID,
+    syscode,
+    resourceCode,
+    allocateNum,
+    useNum,
+    updateDate ) 
+    values 
+     ( #shopid:BIGINT#, 
+    #syscode:CHAR#, 
+    #resourcecode:VARCHAR#, 
+    #allocatenum:BIGINT#, 
+    #usenum:BIGINT#, 
+    #updatedate:TIMESTAMP# )
+  </insert>
+  
+  <!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="platform.shop.vo.Shoplicense"> 
+     update shoplicense 
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="allocatenum"><![CDATA[ allocateNum=#allocatenum:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="usenum"><![CDATA[ useNum=#usenum:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="updatedate"><![CDATA[ updateDate=#updatedate:TIMESTAMP# ]]></isNotNull>
+    </dynamic> 
+     where shopID=#shopid:BIGINT# and syscode=#syscode:CHAR# 
+     and resourceCode=#resourcecode:VARCHAR#
+  </update>
+  
+  <!-- ###################### updateLicenseUsageSum ########################## -->
+  <update id="updateLicenseUsageSum" parameterClass="platform.shop.vo.Shoplicense"> 
+     update shoplicense set useNum = useNum + #usenum:BIGINT#
+     where shopID=#shopid:BIGINT# and syscode=#syscode:CHAR# 
+     and resourceCode=#resourcecode:VARCHAR#
+  </update>
+  
+  <!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from shoplicense where shopID=#shopid:BIGINT# and syscode=#syscode:CHAR# 
+     and resourceCode=#resourcecode:VARCHAR#
+  </delete>
+  
+  <!-- ###################### deleteByShop ########################## -->
+  <delete id="deleteByShop" parameterClass="platform.shop.vo.Shoplicense"> 
+     delete from shoplicense 
+     where shopID=#shopid:BIGINT# 
+     <isNotNull prepend="and" property="syscode"><![CDATA[ syscode=#syscode:CHAR# ]]></isNotNull>
+  </delete>
+    
+</sqlMap>

@@ -1,0 +1,32 @@
+        <td><bean:message key="platform.page.{[#folder#]}.accountvalidatetask.userid"/></td>
+
+        <td><bean:message key="platform.page.{[#folder#]}.accountvalidatetask.email"/></td>
+
+        <td><bean:message key="platform.page.{[#folder#]}.accountvalidatetask.validatetype"/></td>
+
+        <td><bean:message key="platform.page.{[#folder#]}.accountvalidatetask.validatecode"/></td>
+
+        <td><bean:message key="platform.page.{[#folder#]}.accountvalidatetask.status"/></td>
+
+        <td><bean:message key="platform.page.{[#folder#]}.accountvalidatetask.createdate"/></td>
+
+        <td><bean:message key="platform.page.{[#folder#]}.accountvalidatetask.aliveenddate"/></td>
+
+        <td><bean:message key="platform.page.{[#folder#]}.accountvalidatetask.activedate"/></td>
+
+
+
+        <td><bean:message key="platform.page.{[#folder#]}.useractivity.userid"/></td>
+
+        <td><bean:message key="platform.page.{[#folder#]}.useractivity.actiontype"/></td>
+
+        <td><bean:message key="platform.page.{[#folder#]}.useractivity.targetobject"/></td>
+
+        <td><bean:message key="platform.page.{[#folder#]}.useractivity.result"/></td>
+
+        <td><bean:message key="platform.page.{[#folder#]}.useractivity.note"/></td>
+
+        <td><bean:message key="platform.page.{[#folder#]}.useractivity.createtime"/></td>
+
+
+

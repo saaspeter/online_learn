@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Question">
+  
+<!-- ###################### questionResult ########################## -->
+  <resultMap id="QuestionResult" class="netTest.wareques.vo.Question">
+    <result column="quesID" property="quesid" jdbcType="BIGINT"/>
+    <result column="wareID" property="wareid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="question" property="question" jdbcType="VARCHAR"/>
+    <result column="quesTypeID" property="questypeid" jdbcType="BIGINT"/>
+    <result column="quesType" property="questype" jdbcType="INTEGER"/>
+    <result column="quesOptNum" property="quesoptnum" jdbcType="INTEGER"/>
+    <result column="quesCreateTime" property="quescreatetime" jdbcType="TIMESTAMP"/>
+    <result column="quesCheckType" property="queschecktype" jdbcType="SMALLINT"/>
+    <result column="productBaseID" property="productbaseid" jdbcType="BIGINT"/>
+    <result column="contentCateID" property="contentcateid" jdbcType="BIGINT"/>
+    <result column="difficultID" property="difficultid" jdbcType="BIGINT"/>
+    <result column="fileUrl" property="fileurl" jdbcType="VARCHAR"/>
+    <result column="fileType" property="filetype" jdbcType="SMALLINT"/>
+    <result column="answerSim" property="answersim" jdbcType="VARCHAR"/>
+    <result column="compType" property="comptype" jdbcType="SMALLINT"/>
+    <result column="rowItems" property="rowitems" jdbcType="SMALLINT"/>
+    <result column="pID" property="pid" jdbcType="BIGINT"/>
+    <result column="refNum" property="refnum" jdbcType="INTEGER"/>
+    <result column="creatorID" property="creatorid" jdbcType="BIGINT"/>
+    <result column="status" property="status" jdbcType="SMALLINT"/>
+  </resultMap>
+
+  
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="quesid"><![CDATA[ quesID=#quesid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="questypeid"><![CDATA[ quesTypeID=#questypeid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="questype"><![CDATA[ quesType=#questype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="quescreatetime"><![CDATA[ quesCreateTime=#quescreatetime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="and" property="queschecktype"><![CDATA[ quesCheckType=#queschecktype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="contentcateid"><![CDATA[ contentCateID=#contentcateid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="difficultid"><![CDATA[ difficultID=#difficultid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="comptype"><![CDATA[ compType=#comptype:SMALLINT# ]]></isNotNull>
+      <isEqual prepend="and" property="qrywholeques" compareValue="true"><![CDATA[ compType in(0,1) ]]></isEqual>
+      <isNotNull prepend="and" property="pid"><![CDATA[ pID=#pid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="refnum"><![CDATA[ refNum=#refnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="and" property="creatorid"><![CDATA[ creatorID=#creatorid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="question"><![CDATA[ question like CONCAT('%',#question:VARCHAR#,'%') ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="wareidStr"><![CDATA[ wareID in($wareidStr$) ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="productbaseid"><![CDATA[ productBaseID = #productbaseid:BIGINT# ]]></isNotEmpty>
+    </dynamic>
+  </sql>
+  
+  <!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="QuestionResult" parameterClass="java.lang.Long"> 
+     select quesID, wareID, shopID, question, quesTypeID, quesType, quesOptNum, 
+            quesCreateTime, quesCheckType, productBaseID, contentCateID,
+            difficultID, fileUrl, fileType, answerSim, compType, rowItems,
+            pID, refNum, creatorID, status  
+     from Question where quesID = #value#
+  </select>
+  
+  <!-- ###################### selectByPid ########################## -->
+  <select id="selectByPid" resultMap="QuestionResult" parameterClass="java.lang.Long"> 
+     select quesID,wareID,shopID,question,quesTypeID,quesType,quesOptNum,quesCreateTime,
+            quesCheckType,productBaseID,contentCateID,difficultID,fileUrl,fileType,
+            answerSim,compType,rowItems,pID,refNum,creatorID,status
+     from  Question 
+     where pID = #value#
+  </select>
+   
+  <!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="QuestionResult" parameterClass="netTest.wareques.dto.QuestionQuery"> 
+     select quesID,wareID,shopID,question,quesTypeID,quesType,quesOptNum,
+            quesCreateTime,quesCheckType,productBaseID,contentCateID,
+            difficultID,fileUrl,fileType,answerSim,compType,rowItems,
+            pID,refNum,creatorID,status   
+     from Question 
+    <include refid="Question.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+  <!-- ###################### selectByPkStr ########################## -->
+  <select id="selectByPkStr" resultMap="QuestionResult" parameterClass="java.lang.String"> 
+     select quesID,wareID,shopID,question,quesTypeID,quesType,quesOptNum,
+            quesCreateTime,quesCheckType,productBaseID,contentCateID,
+            difficultID,fileUrl,fileType,answerSim,compType,rowItems,
+            pID,refNum,creatorID,status
+     from Question 
+     where quesID in($value$) 
+  </select>
+  
+
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.wareques.vo.Question"> 
+     insert into question
+     (     quesID,
+    wareID,
+    shopID,
+    quesTypeID,
+    quesType,
+    quesOptNum,
+    quesCreateTime,
+    quesCheckType,
+    productBaseID,
+    contentCateID,
+    difficultID,
+    fileUrl,
+    fileType,
+    answerSim,
+    comptype, rowItems,
+    pID,
+    refNum,
+    creatorID,
+    status,
+    question ) 
+    values 
+     (     #quesid:BIGINT#, 
+    #wareid:BIGINT#,
+    #shopid:BIGINT#, 
+    #questypeid:BIGINT#,
+    #questype:INTEGER#, 
+    #quesoptnum:INTEGER#, 
+    #quescreatetime:TIMESTAMP#, 
+    #queschecktype:SMALLINT#, 
+    #productbaseid:BIGINT#, 
+    #contentcateid:BIGINT#,
+    #difficultid:BIGINT#, 
+    #fileurl:VARCHAR#, 
+    #filetype:SMALLINT#, 
+    #answersim:VARCHAR#, 
+    #comptype:SMALLINT#, #rowitems:SMALLINT#,
+    #pid:BIGINT#, 
+    #refnum:INTEGER#, 
+    #creatorid:BIGINT#, 
+    #status:SMALLINT#, 
+    #question:VARCHAR# )
+	  <selectKey resultClass="java.lang.Long" keyProperty="quesid" >  
+          SELECT   LAST_INSERT_ID()  
+      </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.wareques.vo.Question"> 
+     update question
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="quesoptnum"><![CDATA[ quesOptNum=#quesoptnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="quescreatetime"><![CDATA[ quesCreateTime=#quescreatetime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="queschecktype"><![CDATA[ quesCheckType=#queschecktype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="contentcateid"><![CDATA[ contentCateID=#contentcateid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="difficultid"><![CDATA[ difficultID=#difficultid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="fileurl"><![CDATA[ fileUrl=#fileurl:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="filetype"><![CDATA[ fileType=#filetype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="answersim"><![CDATA[ answerSim=#answersim:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="comptype"><![CDATA[ compType=#comptype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="rowitems"><![CDATA[ rowItems=#rowitems:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="pid"><![CDATA[ pID=#pid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="refnum"><![CDATA[ refNum=#refnum:INTEGER# ]]></isNotNull>
+      <isNotNull prepend="," property="creatorid"><![CDATA[ creatorID=#creatorid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="question"><![CDATA[ question=#question:VARCHAR# ]]></isNotNull>
+    </dynamic> where quesID = #quesid:BIGINT#
+  </update>
+  
+    <!-- ###################### updateQuesOptNum ########################## -->
+  <update id="updateQuesOptNum" parameterClass="netTest.wareques.vo.Question"> 
+     update question set quesOptNum = quesOptNum + #quesoptnum:INTEGER# 
+     where quesID = #quesid:BIGINT#
+  </update>
+  
+  <!-- ###################### updateFileurl ########################## -->
+  <update id="updateFileurl" parameterClass="netTest.wareques.vo.Question"> 
+     update question set fileUrl=#fileurl:VARCHAR# 
+     where quesID = #quesid:BIGINT#
+  </update>
+  
+  <!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from question where quesID = #value#
+  </delete>
+  
+  <!-- ###################### delByPid ########################## -->
+  <delete id="delByPid" parameterClass="java.lang.Long"> 
+     delete from question where pID = #value# 
+  </delete>
+  
+  <!-- ###################### delQuesByProd ########################## -->
+  <delete id="delQuesByProd" parameterClass="java.lang.Long"> 
+     delete from question where productBaseID = #value#
+  </delete>
+  
+  <!-- ###################### delQuesitemByProd ########################## -->
+  <delete id="delQuesitemByProd" parameterClass="java.lang.Long"> 
+     delete from QuestionItem where exists(select 1 from question 
+        where question.quesID=QuestionItem.quesID and question.productBaseID = #value#)
+  </delete>
+  
+  <!-- ###################### delQuesanswerByProd ########################## -->
+  <delete id="delQuesanswerByProd" parameterClass="java.lang.Long"> 
+     delete from QuesAnswer where exists(select 1 from question 
+        where question.quesID=QuesAnswer.quesID and question.productBaseID = #value#)
+  </delete>
+      
+  <!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.wareques.dto.QuestionQuery"> 
+     select count(*) from Question a 
+     <include refid="Question.where_Clause"/>  
+  </select>
+
+  
+</sqlMap>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="beacon" >
+
+  <resultMap id="BeaconResult" class="com.joybeacon.model.Beacon" >
+    <result column="beaconID" property="beaconid" jdbcType="BIGINT" />
+    <result column="cityCode" property="citycode" jdbcType="VARCHAR" />
+    <result column="shipID" property="shipid" jdbcType="BIGINT" />
+    <result column="beaconName" property="beaconname" jdbcType="VARCHAR" />
+    <result column="uuid" property="uuid" jdbcType="VARCHAR" />
+    <result column="major" property="major" jdbcType="VARCHAR" />
+    <result column="minor" property="minor" jdbcType="VARCHAR" />
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="updateTime" property="updatetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  
+  <sql id="Where_Clause" >
+    <dynamic prepend="where" >
+       <isNotNull prepend="and" property="beaconid"><![CDATA[ beaconID=#beaconid:BIGINT# ]]></isNotNull>
+       <isNotNull prepend="and" property="citycode"><![CDATA[ cityCode=#citycode:VARCHAR# ]]></isNotNull>
+       <isNotNull prepend="and" property="shipid"><![CDATA[ shipID=#shipid:BIGINT# ]]></isNotNull>
+       <isNotNull prepend="and" property="beaconname"><![CDATA[ beaconName=#beaconname:VARCHAR# ]]></isNotNull>
+       <isNotNull prepend="and" property="uuid"><![CDATA[ uuid=#uuid:VARCHAR# ]]></isNotNull>
+       <isNotNull prepend="and" property="major"><![CDATA[ major=#major:VARCHAR# ]]></isNotNull>
+       <isNotNull prepend="and" property="minor"><![CDATA[ minor=#minor:VARCHAR# ]]></isNotNull>
+    </dynamic>
+  </sql>
+  
+  <select id="selectByPK" resultMap="BeaconResult" parameterClass="com.joybeacon.model.BeaconKey" >
+    select beaconID, cityCode, shipID, beaconName, uuid, major, minor, createTime, updateTime
+    from beacon
+    where beaconID = #beaconid:BIGINT#
+  </select>
+  
+  <select id="selectByVO" resultMap="BeaconResult" parameterClass="com.joybeacon.model.Beacon" >
+    select beaconID, cityCode, shipID, beaconName, uuid, major, minor, createTime, updateTime
+    from beacon
+    <isParameterPresent >
+      <include refid="beacon.Where_Clause" />
+      <isPropertyAvailable property="beaconID" >
+        order by $beaconID$
+      </isPropertyAvailable>
+    </isParameterPresent>
+  </select>
+  
+  <delete id="deleteByPK" parameterClass="java.lang.Long" >
+    delete from beacon
+    where beaconID = #beaconid:BIGINT#
+  </delete>
+  
+  <insert id="insert" parameterClass="com.joybeacon.model.Beacon" >
+    insert into beacon (beaconID, cityCode, shipID, beaconName, uuid, major, minor, createTime,
+      updateTime)
+    values (#beaconid:BIGINT#, #citycode:VARCHAR#, #shipid:BIGINT#, #beaconname:VARCHAR#,
+      #uuid:VARCHAR#, #major:VARCHAR#, #minor:VARCHAR#, #createtime:TIMESTAMP#,
+      #updatetime:TIMESTAMP#)
+  </insert>
+  
+  <update id="updateByPK" parameterClass="com.joybeacon.model.Beacon" >
+    update beacon
+    <dynamic prepend="set" >
+      <isNotNull prepend="," property="beaconname" >
+        beaconName = #beaconname:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="uuid" >
+        uuid = #uuid:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="major" >
+        major = #major:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="minor" >
+        minor = #minor:VARCHAR#
+      </isNotNull>
+      <isNotNull prepend="," property="updatetime" >
+        updateTime = #updatetime:TIMESTAMP#
+      </isNotNull>
+    </dynamic>
+    where beaconID = #beaconid:BIGINT#
+  </update>
+</sqlMap>

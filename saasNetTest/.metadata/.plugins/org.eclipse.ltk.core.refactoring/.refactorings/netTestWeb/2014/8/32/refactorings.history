@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;qiniu_upload.html&apos; to &apos;qiniu_upload.html&apos;&#x0D;&#x0A;- Original project: &apos;netTestWeb&apos;&#x0D;&#x0A;- Destination element: &apos;qiniu_upload.html&apos;&#x0D;&#x0A;- Original element: &apos;qiniu_upload.html&apos;" description="Copy file" element1="WebRoot/styles/qiniu_upload.html" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1407316161480" target="/netTestWeb/WebRoot/styles/qiniu_upload.html" units="0" version="1.0"/>
+</session>

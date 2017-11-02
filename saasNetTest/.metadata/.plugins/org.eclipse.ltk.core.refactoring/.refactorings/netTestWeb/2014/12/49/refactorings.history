@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;howto-make-record-zh.html&apos; to &apos;howto-make-record-zh.html&apos;&#x0D;&#x0A;- Original project: &apos;netTestWeb&apos;&#x0D;&#x0A;- Destination element: &apos;howto-make-record-zh.html&apos;&#x0D;&#x0A;- Original element: &apos;howto-make-record-zh.html&apos;" description="Copy file" element1="WebRoot/static/help/howto-make-record-zh.html" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1417674474027" target="/netTestWeb/WebRoot/static/help/howto-make-record-zh.html" units="0" version="1.0"/>
+</session>

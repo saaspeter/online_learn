@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+  "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+  
+  <!-- ========================= DAO DEFINITIONS: IBATIS IMPLEMENTATIONS ========================= -->
+
+  <!-- ========================= Class LearncontentDao: CONFIGURE ========================= -->
+  
+  <bean id="learncontentDaoTarget" class="netTest.learncont.dao.impl.LearncontentDaoImpl" singleton="true">
+       <property name="dataSource">
+		  <ref bean="dataSource" />
+	   </property>
+	   <property name="sqlMapClient">
+		  <ref bean="sqlMapClient_netTest" />
+	   </property>
+  </bean>
+  
+  <bean id="learncontentDao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager"/>
+    </property>
+    <property name="target">
+       <ref local="learncontentDaoTarget" />
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+  
+  <bean id="learncontentLogic" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager"/>
+    </property>
+    <property name="target">
+        <bean class="netTest.learncont.logic.impl.LearncontentLogicImpl" singleton="true">
+           <property name="dao">
+			  <ref local="learncontentDaoTarget" />
+		   </property>
+        </bean>
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="*">PROPAGATION_REQUIRED</prop>
+      </props>
+    </property>
+  </bean>
+
+</beans>

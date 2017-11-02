@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Baseaccount">
+<!-- ###################### baseaccountResult ########################## -->
+  <resultMap id="BaseaccountResult" class="platform.vo.Baseaccount">
+    <result column="baseAccountID" property="baseaccountid" jdbcType="BIGINT"/>
+    <result column="objectID" property="objectid" jdbcType="BIGINT"/>
+    <result column="accountCode" property="accountcode" jdbcType="VARCHAR"/>
+    <result column="accountType" property="accounttype" jdbcType="SMALLINT"/>
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP"/>
+    <result column="accountNum" property="accountnum" jdbcType="DOUBLE"/>
+    <result column="prepayNum" property="prepaynum" jdbcType="DOUBLE"/>
+    <result column="status" property="status" jdbcType="SMALLINT"/>
+    <result column="statusDisc" property="statusdisc" jdbcType="VARCHAR"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="where"> 
+      <isNotNull prepend="and" property="baseaccountid"><![CDATA[ baseAccountID=#baseaccountid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="objectid"><![CDATA[ objectID=#objectid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="accountcode"><![CDATA[ accountCode=#accountcode:VARCHAR# ]]></isNotEmpty>
+      <isNotNull prepend="and" property="accounttype"><![CDATA[ accountType=#accounttype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="createtime"><![CDATA[ createTime=#createtime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="and" property="accountnum"><![CDATA[ accountNum=#accountnum:DOUBLE# ]]></isNotNull>
+      <isNotNull prepend="and" property="prepaynum"><![CDATA[ prepayNum=#prepaynum:DOUBLE# ]]></isNotNull>
+      <isNotNull prepend="and" property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="statusdisc"><![CDATA[ statusDisc=#statusdisc:VARCHAR# ]]></isNotEmpty>
+    </dynamic>
+  </sql>
+  
+<!-- ###################### selectAll ########################## -->
+  <select id="selectAll" resultMap="BaseaccountResult"> 
+     select 
+         baseAccountID,
+    	 objectID,
+   		 accountCode,
+  		 accountType,
+         createTime,
+         accountNum,
+         prepayNum,
+         status,
+         statusDisc 
+     from baseaccount
+  </select>
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="BaseaccountResult" parameterClass="java.lang.Long"> 
+     select 
+         baseAccountID,
+         objectID,
+         accountCode,
+         accountType,
+         createTime,
+         accountNum,
+         prepayNum,
+    	 status,
+    	 statusDisc 
+     from baseaccount 
+     where baseAccountID = #value#
+  </select>
+   
+<!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="BaseaccountResult" parameterClass="platform.dto.BaseaccountQuery"> 
+     select 
+         baseAccountID,
+    	 objectID,
+    	 accountCode,
+    	 accountType,
+    	 createTime,
+    	 accountNum,
+    	 prepayNum,
+    	 status,
+     	 statusDisc
+     from baseaccount
+    <include refid="Baseaccount.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+<!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="platform.vo.Baseaccount"> 
+     insert into baseaccount
+     ( baseAccountID,
+       objectID,
+       accountCode,
+       accountType,
+       createTime,
+       accountNum,
+       prepayNum,
+       status,
+       statusDisc ) 
+     values 
+     ( #baseaccountid:BIGINT#, 
+       #objectid:BIGINT#, 
+       #accountcode:VARCHAR#, 
+       #accounttype:SMALLINT#, 
+       #createtime:TIMESTAMP#, 
+       #accountnum:DOUBLE#, 
+       #prepaynum:DOUBLE#, 
+       #status:SMALLINT#, 
+       #statusdisc:VARCHAR# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="baseaccountid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="platform.vo.Baseaccount"> 
+     update baseaccount
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="objectid"><![CDATA[ objectID=#objectid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="accountcode"><![CDATA[ accountCode=#accountcode:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="accounttype"><![CDATA[ accountType=#accounttype:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="createtime"><![CDATA[ createTime=#createtime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="accountnum"><![CDATA[ accountNum=#accountnum:DOUBLE# ]]></isNotNull>
+      <isNotNull prepend="," property="prepaynum"><![CDATA[ prepayNum=#prepaynum:DOUBLE# ]]></isNotNull>
+      <isNotNull prepend="," property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="statusdisc"><![CDATA[ statusDisc=#statusdisc:VARCHAR# ]]></isNotNull>
+    </dynamic> where baseAccountID = #baseaccountid:BIGINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from baseaccount where baseAccountID = #value#
+  </delete>
+  
+<!-- ###################### deleteByVO ########################## -->
+  <delete id="deleteByVO" parameterClass="platform.dto.BaseaccountQuery"> 
+     delete from baseaccount
+     <include refid="Baseaccount.where_Clause"/> 
+  </delete>
+  
+<!-- ###################### selectAllCount ########################## -->
+  <select id="selectAllCount" resultClass="java.lang.Integer"> 
+     select count(*) from baseaccount
+  </select>
+  
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="platform.dto.BaseaccountQuery"> 
+     select count(*) from baseaccount
+     <include refid="Baseaccount.where_Clause"/>  
+  </select>
+    
+</sqlMap>

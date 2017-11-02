@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+  <data-sources />
+  
+  <form-beans>
+     <form-bean name="resourcesForm" type="commonWeb.security.webform.ResourcesForm" />
+     <form-bean name="rolesForm" type="commonWeb.security.webform.RolesForm" />
+	 <form-bean name="usersForm" type="commonWeb.security.webform.UsersForm" />
+	 <form-bean name="roleRescForm" type="commonWeb.security.webform.RoleRescForm" />
+	 <form-bean name="userRoleForm" type="commonWeb.security.webform.UserRoleForm" />
+	 <form-bean name="rolesvalueForm" type="commonWeb.security.webform.RolesvalueForm" />
+     <form-bean name="resourcesvalueForm" type="commonWeb.security.webform.ResourcesvalueForm" />
+     <!-- 
+     <form-bean name="menusvalueForm" type="commonWeb.security.webform.MenusvalueForm" />
+      -->
+  </form-beans>
+  
+  <global-exceptions>
+      <exception key="commonWeb.java.commonaction.errors.noLogin" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoLoginException" path="/login_forward.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.editPage.noSuchRecord" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoSuchRecordException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.resubmit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.ResubmitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.DaoException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.database" handler="commonWeb.base.StrutsExceptionHandler" type="org.springframework.dao.DataAccessException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.Unauthorized" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.NoRightException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+ 	  <exception key="commonWeb.java.commonaction.errors.LogicErr" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.LogicException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.InvalidVisit" handler="commonWeb.base.StrutsExceptionHandler" type="commonTool.exception.InvalideVisitException" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+      <exception key="commonWeb.java.commonaction.errors.SystemError" handler="commonWeb.base.StrutsExceptionHandler" type="java.lang.Throwable" path="/pubs/errorPage.jsp" bundle="BizKey"></exception>
+  </global-exceptions>
+  
+  <global-forwards>
+     <forward name="errorPage" path="/pubs/errorPage.jsp" ></forward>
+     <forward name="failure" path="/pubs/404.jsp" ></forward>
+     <forward name="messagePage" path="/pubs/message.jsp" ></forward>
+     <forward name="messageClosePage" path="/pubs/messageClose.jsp" ></forward>
+     <forward name="treeXml" path="/pubs/treeXml.jsp" ></forward>
+     <forward name="toUrl" path="/pubs/toUrl.jsp" ></forward>
+	 <forward name="inprogress" path="/pubs/inprogress.jsp"/>
+	 <forward name="leftMenu" path="/pubs/leftMenu.jsp"/>
+	 <forward name="topMenu" path="/pubs/topMenu.jsp"/>
+  </global-forwards>
+    
+  <action-mappings>
+    <!-- User begin -->
+    
+    <!-- 
+    <action parameter="listUsers" path="/securityManage/listUsers" name="usersForm" type="commonWeb.security.webaction.UsersAction">
+      <forward name="list" path="/securityManage/baseUser_list.jsp"></forward>
+    </action>
+     -->
+    <action parameter="listUsersForRoleAdd" path="/securityManage/listUsersForRoleAdd" name="usersForm" type="commonWeb.security.webaction.UsersAction">
+      <forward name="listUsersForRoleAdd" path="/securityManage/usersForRoleAdd_list.jsp"></forward>
+    </action>
+    
+    <action parameter="viewUserPage" path="/securityManage/viewUserPage" name="usersForm" type="commonWeb.security.webaction.UsersAction">
+      <forward name="addEditPage" path="/securityManage/users_addEdit.jsp"></forward>
+      <forward name="viewPage" path="/securityManage/users_view.jsp"></forward>
+    </action>
+    
+    <!-- User end -->
+    
+    <!-- Resource begin -->
+    <action parameter="listResources" path="/securityManage/listResources" name="resourcesForm" type="commonWeb.security.webaction.ResourcesAction">
+      <forward name="list" path="/securityManage/resources_list.jsp"></forward>
+    </action>
+       
+    <action parameter="saveResource" path="/securityManage/saveResource" name="resourcesForm" type="commonWeb.security.webaction.ResourcesAction">
+      <forward name="list" path="/securityManage/resources_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editResourcePage" path="/securityManage/editResourcePage" name="resourcesForm" type="commonWeb.security.webaction.ResourcesAction">
+      <forward name="addEditPage" path="/securityManage/resources_addEdit.jsp"></forward>
+      <forward name="viewPage" path="/securityManage/resources_view.jsp"></forward>
+    </action>
+    
+    <action parameter="viewResourcePage" path="/securityManage/viewResourcePage" name="resourcesForm" type="commonWeb.security.webaction.ResourcesAction">
+      <forward name="addEditPage" path="/securityManage/resources_addEdit.jsp"></forward>
+      <forward name="viewPage" path="/securityManage/resources_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addResourcePage" path="/securityManage/addResourcePage" name="resourcesForm" type="commonWeb.security.webaction.ResourcesAction">
+      <forward name="addEditPage" path="/securityManage/resources_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteResource" path="/securityManage/deleteResource" name="resourcesForm" type="commonWeb.security.webaction.ResourcesAction">
+      <forward name="list" path="/securityManage/resources_list.jsp"></forward>
+    </action>
+    
+    <action parameter="toRescfoldTreePage" path="/securityManage/toRescfoldTreePage" name="resourcesForm" type="commonWeb.security.webaction.ResourcesAction">
+      <forward name="rescTree" path="/securityManage/rescfold_tree.jsp"></forward>
+    </action>
+    
+    <action parameter="toRescfoldTreeXml" path="/securityManage/toRescfoldTreeXml" name="resourcesForm" type="commonWeb.security.webaction.ResourcesAction">
+    </action>
+    
+    <!-- Resource end -->
+    
+    <!-- Roles begin -->
+    <action parameter="listRoles" path="/securityManage/listRoles" name="rolesForm" type="commonWeb.security.webaction.RolesAction">
+      <forward name="list" path="/securityManage/roles_list.jsp"></forward>
+    </action>
+    
+    <action parameter="listShopRolesSel" path="/shopuserManage/listShopRolesSel" name="rolesForm" type="commonWeb.security.webaction.RolesAction">
+      <forward name="listShopRoleSel" path="/securityManage/roles_list_mulSel.jsp"></forward>
+    </action>
+   
+    <action parameter="saveRole" path="/securityManage/saveRole" name="rolesForm" type="commonWeb.security.webaction.RolesAction">
+      <forward name="list" path="/securityManage/roles_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editRolePage" path="/securityManage/editRolePage" name="rolesForm" type="commonWeb.security.webaction.RolesAction">
+      <forward name="addEditPage" path="/securityManage/roles_addEdit.jsp"></forward>
+      <forward name="viewPage" path="/securityManage/roles_view.jsp"></forward>
+    </action>
+    
+    <action parameter="viewRolePage" path="/securityManage/viewRolePage" name="rolesForm" type="commonWeb.security.webaction.RolesAction">
+      <forward name="addEditPage" path="/securityManage/roles_addEdit.jsp"></forward>
+      <forward name="viewPage" path="/securityManage/roles_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addRolePage" path="/securityManage/addRolePage" name="rolesForm" type="commonWeb.security.webaction.RolesAction">
+      <forward name="addEditPage" path="/securityManage/roles_addEdit.jsp"></forward>
+    </action>
+    <!-- 
+    <action parameter="deleteRole" path="/securityManage/deleteRole" name="rolesForm" type="commonWeb.security.webaction.RolesAction">
+      <forward name="list" path="/securityManage/roles_list.jsp"></forward>
+    </action>
+     -->
+    <!-- Roles end -->
+        
+    <!-- RoleResc begin -->
+    <action name="roleRescForm" parameter="listRoleResc" path="/securityManage/listRoleResc" type="commonWeb.security.webaction.RoleRescAction">
+      <forward name="listRoleResc" path="/securityManage/roleResc_list.jsp"></forward>
+    </action>
+   
+    <action name="roleRescForm" parameter="saveRoleResc" path="/securityManage/saveRoleResc" type="commonWeb.security.webaction.RoleRescAction">
+       <forward name="listRoleResc" path="/securityManage/roleResc_list.jsp"></forward>
+    </action>
+               
+    <action name="roleRescForm" parameter="deleteRoleResc" path="/securityManage/deleteRoleResc" type="commonWeb.security.webaction.RoleRescAction">
+       <forward name="listRoleResc" path="/securityManage/roleResc_list.jsp"></forward>
+    </action>
+    
+    <action name="roleRescForm" parameter="showThisMenu" path="/securityManage/showThisMenu" type="commonWeb.security.webaction.RoleRescAction">
+       <forward name="listRoleResc" path="/securityManage/roleResc_list.jsp"></forward>
+    </action>
+    <!-- RoleResc end -->
+    
+    <!-- UserRole begin -->
+    <action name="userRoleForm" parameter="listUserRole" path="/securityManage/listUserRole" type="commonWeb.security.webaction.UserRoleAction">
+      <forward name="listUserRole" path="/securityManage/userRole_list.jsp"></forward>
+    </action>
+    
+    <action name="userRoleForm" parameter="listShopUserRole" path="/shopuserManage/listShopUserRole" type="commonWeb.security.webaction.UserRoleAction">
+      <forward name="listUserRole" path="/securityManage/userRole_list.jsp"></forward>
+    </action>
+    
+    <action name="userRoleForm" parameter="listRoleUser" path="/securityManage/listRoleUser" type="commonWeb.security.webaction.UserRoleAction">
+      <forward name="listRoleUser" path="/securityManage/roleUser_list.jsp"></forward>
+    </action>
+   
+    <action name="userRoleForm" parameter="saveUserRole" path="/securityManage/saveUserRole" type="commonWeb.security.webaction.UserRoleAction">
+       <forward name="listUserRole" path="/securityManage/userRole_list.jsp"></forward>
+    </action>
+    
+    <action name="userRoleForm" parameter="saveShopUserRole" path="/shopuserManage/saveShopUserRole" type="commonWeb.security.webaction.UserRoleAction">
+       <forward name="listUserRole" path="/securityManage/userRole_list.jsp"></forward>
+    </action>
+    
+    <action name="userRoleForm" parameter="saveRoleUser" path="/securityManage/saveRoleUser" type="commonWeb.security.webaction.UserRoleAction">
+       <forward name="listRoleUser" path="/securityManage/roleUser_list.jsp"></forward>
+    </action>
+               
+    <action name="userRoleForm" parameter="deleteRoleUser" path="/securityManage/deleteRoleUser" type="commonWeb.security.webaction.UserRoleAction">
+       <forward name="listRoleUser" path="/securityManage/roleUser_list.jsp"></forward>
+    </action>
+    
+    <action name="userRoleForm" parameter="deleteUserRole" path="/securityManage/deleteUserRole" type="commonWeb.security.webaction.UserRoleAction">
+       <forward name="listUserRole" path="/securityManage/userRole_list.jsp"></forward>
+    </action>
+    
+    <action name="userRoleForm" parameter="deleteShopUserRole" path="/shopuserManage/deleteShopUserRole" type="commonWeb.security.webaction.UserRoleAction">
+       <forward name="listUserRole" path="/securityManage/userRole_list.jsp"></forward>
+    </action>
+    
+    <action parameter="listRescsForRoleAdd" path="/securityManage/listRescsForRoleAdd" name="userRoleForm" type="commonWeb.security.webaction.UserRoleAction">
+      <forward name="listRescsForRoleAdd" path="/securityManage/rescForRoleAdd_list.jsp"></forward>
+    </action>
+    <!-- UserRole end -->
+    
+    <!-- rolesvalue begin -->
+    <action parameter="listRolesvalue" path="/securityManage/listRolesvalue" name="rolesvalueForm" type="commonWeb.security.webaction.RolesvalueAction">
+       <forward name="list" path="/securityManage/rolesvalue_list.jsp"></forward>
+    </action>
+    
+    <action parameter="saveRolesvalue" path="/securityManage/saveRolesvalue" name="rolesvalueForm" type="commonWeb.security.webaction.RolesvalueAction">
+       <forward name="list" path="/securityManage/rolesvalue_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editRolesvalue" path="/securityManage/editRolesvalue" name="rolesvalueForm" type="commonWeb.security.webaction.RolesvalueAction">
+       <forward name="addEditPage" path="/securityManage/rolesvalue_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewRolesvalue" path="/securityManage/viewRolesvalue" name="rolesvalueForm" type="commonWeb.security.webaction.RolesvalueAction">
+        <forward name="viewPage" path="/securityManage/rolesvalue_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addRolesvalue" path="/securityManage/addrolesvalue" name="rolesvalueForm" type="commonWeb.security.webaction.RolesvalueAction">
+       <forward name="addEditPage" path="/securityManage/rolesvalue_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteRolesvalue" path="/securityManage/deleterolesvalue" name="rolesvalueForm" type="commonWeb.security.webaction.RolesvalueAction">
+       <forward name="list" path="/securityManage/rolesvalue_list.jsp"></forward>
+    </action>
+    <!-- rolesvalue end -->
+    
+    <!-- resourcesvalue begin -->
+    <action parameter="listResourcesvalue" path="/securityManage/listResourcesvalue" name="resourcesvalueForm" type="commonWeb.security.webaction.ResourcesvalueAction">
+       <forward name="list" path="/securityManage/resourcesvalue_list.jsp"></forward>
+    </action>
+    
+    <action parameter="saveResourcesvalue" path="/securityManage/saveResourcesvalue" name="resourcesvalueForm" type="commonWeb.security.webaction.ResourcesvalueAction">
+       <forward name="list" path="/securityManage/resourcesvalue_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editResourcesvalue" path="/securityManage/editResourcesvalue" name="resourcesvalueForm" type="commonWeb.security.webaction.ResourcesvalueAction">
+       <forward name="addEditPage" path="/securityManage/resourcesvalue_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewResourcesvalue" path="/securityManage/viewResourcesvalue" name="resourcesvalueForm" type="commonWeb.security.webaction.ResourcesvalueAction">
+        <forward name="viewPage" path="/securityManage/resourcesvalue_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addResourcesvalue" path="/securityManage/addResourcesvalue" name="resourcesvalueForm" type="commonWeb.security.webaction.ResourcesvalueAction">
+       <forward name="addEditPage" path="/securityManage/resourcesvalue_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteResourcesvalue" path="/securityManage/deleteResourcesvalue" name="resourcesvalueForm" type="commonWeb.security.webaction.ResourcesvalueAction">
+       <forward name="list" path="/securityManage/resourcesvalue_list.jsp"></forward>
+    </action>
+    <!-- resourcesvalue end -->
+
+      
+    <!-- menusvalue begin 
+    <action parameter="listMenusvalue" path="/securityManage/listMenusvalue" name="menusvalueForm" type="commonWeb.security.webaction.MenusvalueAction">
+       <forward name="list" path="/securityManage/menusvalue_list.jsp"></forward>
+    </action>
+    
+    <action parameter="saveMenusvalue" path="/securityManage/saveMenusvalue" name="menusvalueForm" type="commonWeb.security.webaction.MenusvalueAction">
+       <forward name="list" path="/securityManage/menusvalue_list.jsp"></forward>
+    </action>
+    
+    <action parameter="editMenusvalue" path="/securityManage/editMenusvalue" name="menusvalueForm" type="commonWeb.security.webaction.MenusvalueAction">
+       <forward name="addEditPage" path="/securityManage/menusvalue_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="viewMenusvalue" path="/securityManage/viewMenusvalue" name="menusvalueForm" type="commonWeb.security.webaction.MenusvalueAction">
+        <forward name="viewPage" path="/securityManage/menusvalue_view.jsp"></forward>
+    </action>
+    
+    <action parameter="addMenusvalue" path="/securityManage/addMenusvalue" name="menusvalueForm" type="commonWeb.security.webaction.MenusvalueAction">
+       <forward name="addEditPage" path="/securityManage/menusvalue_addEdit.jsp"></forward>
+    </action>
+    
+    <action parameter="deleteMenusvalue" path="/securityManage/deleteMenusvalue" name="menusvalueForm" type="commonWeb.security.webaction.MenusvalueAction">
+       <forward name="list" path="/securityManage/menusvalue_list.jsp"></forward>
+    </action>
+    menusvalue end -->
+    
+    
+  </action-mappings>
+  
+  <message-resources parameter="netTestWeb.resource.PagetextResources" />
+  <message-resources key="BizKey" parameter="netTestWeb.resource.BizMessResources" />
+    
+</struts-config>

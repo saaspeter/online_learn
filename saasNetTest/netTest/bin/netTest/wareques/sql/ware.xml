@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Ware">
+<!-- ###################### wareResult ########################## -->
+  <resultMap id="WareResult" class="netTest.wareques.vo.Ware">
+    <result column="wareID" property="wareid" jdbcType="BIGINT"/>
+    <result column="shopID" property="shopid" jdbcType="BIGINT"/>
+    <result column="wareName" property="warename" jdbcType="VARCHAR"/>
+    <result column="wareCreateTime" property="warecreatetime" jdbcType="TIMESTAMP"/>
+    <result column="productBaseID" property="productbaseid" jdbcType="BIGINT"/>
+    <result column="productName" property="productname" jdbcType="VARCHAR"/>
+    <result column="wareQuesNum" property="warequesnum" jdbcType="BIGINT"/>
+    <result column="creatorID" property="creatorid" jdbcType="BIGINT"/>
+    <result column="status" property="status" jdbcType="SMALLINT"/>
+    <result column="wareDesc" property="waredesc" jdbcType="VARCHAR"/>
+  </resultMap>
+    
+<!-- ###################### where_Clause ########################## -->
+  <sql id="where_Clause"> 
+    <dynamic prepend="and"> 
+      <isNotNull prepend="and" property="wareid"><![CDATA[ a.wareID=#wareid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="shopid"><![CDATA[ a.shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="warename"><![CDATA[ a.wareName like CONCAT('%',#warename:VARCHAR#,'%') ]]></isNotEmpty>
+      <isNotNull prepend="and" property="warecreatetime"><![CDATA[ a.wareCreateTime=#warecreatetime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="and" property="productbaseid"><![CDATA[ a.productBaseID=#productbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="warequesnum"><![CDATA[ a.wareQuesNum=#warequesnum:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="creatorid"><![CDATA[ a.creatorID=#creatorid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="and" property="status"><![CDATA[ a.status=#status:SMALLINT# ]]></isNotNull>
+      <isNotEmpty prepend="and" property="prodidStr"><![CDATA[ a.productBaseID in($prodidStr$) ]]></isNotEmpty>
+      <isNotEmpty prepend="and" property="wareidStr"><![CDATA[ a.wareID in($wareidStr$) ]]></isNotEmpty>
+    </dynamic>
+  </sql>
+  
+    
+<!-- ###################### selectByPK ########################## -->
+  <select id="selectByPK" resultMap="WareResult" parameterClass="java.lang.Long"> 
+     select a.wareID,a.shopID,a.wareName,a.wareCreateTime,a.productBaseID,
+            a.wareQuesNum,a.creatorID,a.status,a.wareDesc,b.productName   
+     from ware a, ProductBase b 
+     where a.wareID = #value# and a.productBaseID=b.productBaseID 
+  </select>
+  
+  <!-- ###################### selectByVO ########################## -->
+  <select id="selectByVO" resultMap="WareResult" parameterClass="netTest.wareques.dto.WareQuery"> 
+     select a.wareID,a.shopID,a.wareName,a.wareCreateTime,a.productBaseID,
+            a.wareQuesNum,a.creatorID,a.status,a.wareDesc,b.productName
+     from ware a,ProductBase b
+     where a.productBaseID=b.productBaseID 
+    <include refid="Ware.where_Clause"/>  
+    <isNotEmpty property="order_By_Clause"><![CDATA[ order by $order_By_Clause$ ]]></isNotEmpty> 
+  </select>
+  
+  <!-- ###################### insert ########################## -->
+  <insert id="insert" parameterClass="netTest.wareques.vo.Ware"> 
+     insert into ware
+     (     wareID,
+    shopID,
+    wareName,
+    wareCreateTime,
+    productBaseID,
+    wareQuesNum,
+    creatorID,
+    status,
+    wareDesc ) 
+    values 
+     (     #wareid:BIGINT#, 
+    #shopid:BIGINT#, 
+    #warename:VARCHAR#, 
+    #warecreatetime:TIMESTAMP#, 
+    #productbaseid:BIGINT#, 
+    #warequesnum:BIGINT#, 
+    #creatorid:BIGINT#, 
+    #status:SMALLINT#, 
+    #waredesc:VARCHAR# )
+	 <selectKey resultClass="java.lang.Long" keyProperty="wareid" >  
+        SELECT   LAST_INSERT_ID()  
+     </selectKey> 
+  </insert>
+  
+<!-- ###################### updateByPK ########################## -->
+  <update id="updateByPK" parameterClass="netTest.wareques.vo.Ware"> 
+     update ware
+    <dynamic prepend="set"> 
+      <isNotNull prepend="," property="shopid"><![CDATA[ shopID=#shopid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="warename"><![CDATA[ wareName=#warename:VARCHAR# ]]></isNotNull>
+      <isNotNull prepend="," property="warecreatetime"><![CDATA[ wareCreateTime=#warecreatetime:TIMESTAMP# ]]></isNotNull>
+      <isNotNull prepend="," property="productbaseid"><![CDATA[ productBaseID=#productbaseid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="warequesnum"><![CDATA[ wareQuesNum=#warequesnum:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="creatorid"><![CDATA[ creatorID=#creatorid:BIGINT# ]]></isNotNull>
+      <isNotNull prepend="," property="status"><![CDATA[ status=#status:SMALLINT# ]]></isNotNull>
+      <isNotNull prepend="," property="waredesc"><![CDATA[ wareDesc=#waredesc:VARCHAR# ]]></isNotNull>
+    </dynamic> where wareID = #wareid:BIGINT#
+  </update>
+  
+  <!-- ###################### updateQuesNumByPK ########################## -->
+  <update id="updateQuesNumByPK" parameterClass="netTest.wareques.vo.Ware"> 
+     update ware set wareQuesNum = wareQuesNum+#warequesnum:BIGINT#
+                     where wareID = #wareid:BIGINT#
+  </update>
+  
+<!-- ###################### deleteByPK ########################## -->
+  <delete id="deleteByPK" parameterClass="java.lang.Long"> 
+     delete from ware where wareID = #value#
+  </delete>
+  
+  <!-- ###################### deleteByProd ########################## -->
+  <delete id="deleteByProd" parameterClass="java.lang.Long"> 
+     delete from ware where productBaseID = #value#
+  </delete>
+    
+<!-- ###################### selectByVOCount ########################## -->
+  <select id="selectByVOCount" resultClass="java.lang.Integer" parameterClass="netTest.wareques.dto.WareQuery"> 
+     select count(*) from ware a,ProductBase b 
+      where a.productBaseID=b.productBaseID 
+     <include refid="Ware.where_Clause"/>  
+  </select>
+    
+</sqlMap>
