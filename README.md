@@ -1,7 +1,7 @@
 # online_learn
-online learning system
+open source my online learning system, it is a multiple-tenant system, thus a SAAS system in which anyone can open a school and add its learing content and add the online testing examnation, anyone can join any school's course. 
 
-open source my online learning system. The code is old, but it has its special design:
+The code is old, but it has its special design:
 
 1. It is a saas system, each user can open its shop, in its shop, can create its courses
 2. everyone can open its shop, also can join other shop's course.
